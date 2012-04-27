@@ -6,6 +6,14 @@ jQuery(function() {
 		$('div#policies').show();
 		return false;
 	});
+	
+	$('div.modal-footer div.pagination ul li a').click(function() {
+		$('div.modal-footer div.pagination ul li').removeClass('active');
+		$(this).parent('li').addClass('active');
+		$('fieldset.package, fieldset.account, fieldset.credit-card').hide();
+		$('fieldset.' + $(this).attr('id')).show();
+		 return false;
+	});
 
 	$('input#ebook-preselect').click(function() { $('input#ebook').prop('checked', true); });
 	$('input#ebook').click(function() { $('input#ebook-preselect').prop('checked', true); });
