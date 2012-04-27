@@ -1,0 +1,216 @@
+<script src="https://js.stripe.com/v1/"></script>
+<script src="/js/marketing.js"></script>
+
+<div class="row product-banner">
+	<div class="span4">
+		<p><img src="/img/ncmhce-large.png" /></p>
+		<p>
+			<form class="form-inline">
+				<hr />
+				<p style="padding-left: 1em;">
+					<label class="radio">
+						<input type="radio" name="package-preselect" id="full-preselect" /> Full Package <small>(all 35 scenarios)</small> <strong>$175</strong>
+					</label>
+				</p>
+				<p style="padding-left: 1em;">
+					<label class="radio">
+						<input type="radio" name="package-preselect" id="starter-preselect" /> Starter Package <small>(10 scenarios)</small> <strong>$99</strong>
+					</label>
+				</p>
+				<p>
+					<a class="btn btn-success btn-large" data-toggle="modal" href="#checkout" style="font-weight: bold; width: 86%;">BUY NOW!</a>
+				</p>
+			</form>
+		</p>
+	</div>
+	<div class="span8">
+		<p><img src="/img/ncmhce-group-wide.png" /></p>
+	</div>
+	<div class="span12">
+		<p class="lead">We are very proud that 95% of our customers passed their exam in 2011!<sup>1</sup></p>
+		<h4>Since 2000, counselors have used the Arthur-Brende Study Program for the NCMHCE to prepare for their state licensure exam.</h4>
+	</div>
+</div>
+
+<div class="modal fade" id="checkout" style="display: none;">
+	<div class="modal-header">
+		<a class="close" data-dismiss="modal">×</a>
+		<h3>Arthur-Brende NCMHCE Study Program</h3>
+	</div>
+	<div class="modal-body">
+		<form class="form-horizontal" action="" method="POST" id="payment-form">
+			<fieldset>
+				<legend>Program Package</legend>
+				<br />
+				<p style="padding-left: 1em;">
+					<label class="radio">
+						<input type="radio" name="package" id="full" value="full" /> Full Package <small>(all 35 scenarios)</small> <strong>$175</strong>
+					</label>
+				</p>
+				<p style="padding-left: 1em;">
+					<label class="radio">
+						<input type="radio" name="package" id="starter" value="starter" /> Starter Package <small>(10 scenarios)</small> <strong>$99</strong>
+					</label>
+				</p>
+			</fieldset>
+			<br />
+			<fieldset>
+				<legend>DSM IV–TR Study Overview</legend>
+				<br />
+				<p style="padding-left: 1em;">
+					<label class="radio">
+						<input type="radio" name="optional" id="ebook-option" value="ebook-option" /> eBook <strong>FREE</strong>
+					</label>
+				</p>
+				<p style="padding-left: 1em;">
+					<label class="radio">
+						<input type="radio" name="optional" id="hard-copy-option" value="hard-copy-option" /> Hard Copy <strong>$12.95 shipping</strong>
+					</label>
+				</p>
+			</fieldset>
+			<br />
+			<%= erb :'marketing/form', layout: false %>			
+		</form>
+
+	</div>
+	<div class="modal-footer">
+		<strong>$<span id='total-display'></span></strong>
+		&nbsp;
+		<input type="submit" class="btn btn-success submit-button disabled" value="Checkout" disabled />
+	</div>
+</div>
+
+<div class="row">
+	<div class="span6">
+		<p><img src="/img/ncmhce-scenario.png" style="width: 67%;" /></p>
+		<h2>NCMHCE Online Scenario Simulator</h2>
+		<p>The Arthur-Brende Scenario Simulator includes 36 online scenarios that emulate the actual NCMHCE exam, measuring your information gathering and decision making abilities. Each includes one or more of the five axis as found in the DSM-IV-TR diagnostic manual. Scenarios may be taken multiple times for up to a full year allowing you to learn at your own pace.</p>
+	</div>
+	<div class="span6">
+		<p><img src="/img/ncmhce-supp.png" style="width: 67%;" /></p>
+		<h2>NCMHCE Study Supplement</h2>
+		<p>The Arthur-Brende Study Supplement, an overview of the DSM-IV-TR disorders, is comprehensive in scope, while succinct in description, providing Definition, Incident, and Treatment information of each disorder. This overview of the actual NCMHCE and study/test taking strategies is included with your Scenario Simulator purchase - available in hardcopy and eBook.</p>
+	</div>
+</div>
+
+<br />
+<div class="page-header">
+	<h1>About the Authors</h1>
+</div>
+
+<div class="row">
+	<div class="span6">
+		<h3>Gary L. Arthur <small>Ed.D., LPC, NCC</small></h3>
+		<p>
+			<img src="/img/gary.gif" style="float: left; padding: 3px; border: 1px solid #efefef; margin-bottom: 3em; margin-right: 1.5em;" />
+			Dr. Gary Arthur is Professor Emeritus of Professional Counseling at Georgia State University. He has taught counseling courses at the graduate level for 34+ years and he was named Counselor Educator of the Year 2007 by the Licensed Professional Counselor Association of Georgia. He has published numerous articles in referred journals, and he co-wrote this study guide for the specific purpose of preparing you for the NCMHCE licensure exam.
+		</p>
+	</div>
+	<div class="span6">
+		<h3>Joel Osler Brende <small>M.D.</small></h3>
+		<p>Joel Osler Brende, M.D. is Professor & Chairman Emeritus, Dept of Psychiatry & Clinical Professor, Dept of Internal Medicine, Mercer University School of Medicine, Macon, GA. He is certified by The American Board of Psychiatry and Neurology and a Life Fellow of the American Psychiatric Association. He has extensive experience in medical and psychiatric education and has been actively involved in the teaching and supervision of psychotherapists, marriage and family therapy students, and resident physicians in psychiatry and internal medicine. Dr. Brende is a graduate of the University of Minnesota Medical School and received his psychiatric training at the Karl Menninger School of psychiatry.</p>
+	</div>
+</div>
+
+<br />
+<div class="page-header">
+	<img src="/img/pass_icon.jpg" style="float: right;" />
+	<h1>Satisfaction Guarantee + Money Back Pass Guarantee</h1>
+</div>
+
+<p class="lead">Pass the NCMHCE or the purchase price will be refunded (less shipping and taxes)</p>
+
+<p>Dr. Arthur’s Study Guides remain the most trusted guides in the field and are designed to provide you with comprehensive material that will prepare you to pass your licensure examination!</p>
+
+<p id="policies-link"><a href="#">See policies for details...</a></p>
+
+<div class="row" id="policies" style="display: none;">
+	<div class="span12">
+		<p>The below policies are applicable to The Arthur-Brende Study Supplement for the NCMHCE National Clinical Mental Health Counseling Examination Online Scenario Simulator.</p>
+	</div>
+	<div class="span6">
+		<h3>Satisfaction Guarantee Return Policy Terms</h3>
+		<ul>
+			<li>The customer has 1 week upon delivery of the Study Supplement to review the material to confirm that it is what he or she expected. The customer cannot access more than three online scenarios to qualify for a refund.</li>
+			<li>If unhappy with the content for any reason, the customer is required to notify CTC within 7 days of the delivery date either by phone or e-mail that he/she is returning the Study Supplement.</li>
+			<li>Note: The return expense is the responsibility of the customer.</li>
+			<li>Once CTC receives the Study Supplement in good condition, CTC will send a refund check to the original purchaser for the original price of the Study Supplement (excludes all shipping and any applicable sales tax).</li>
+		</ul>
+	</div>
+	<div class="span6">
+		<h3>Money Back Pass Guarantee Policy Terms</h3>
+		<p>CTC offers a money back pass guarantee for The Arthur-Brende Study Supplement for the NCMHCE National Clinical Mental Health Counseling Examination Online Scenario Simulator. Pass the NCMHCE or CTC will refund your money (excludes shipping and any sales tax).</p>
+		<ul>
+			<li>The Study Guide must be purchased at least 30 days, and not more than one year, prior to the exam date.</li>
+			<li>If the exam is failed, the customer has 90 days to return the Study Supplement along with a copy of proof of failure to CTC.</li>
+			<li>Note: The return expense is the responsibility of the customer.</li>
+			<li>Once CTC receives the Study Supplement, CTC will send a refund check to the original purchaser for the original price (excludes all shipping charges and any applicable sales tax).</li>
+		</ul>
+	</div>
+	<div class="span12">
+		<p>For questions about the above policies, or any aspect of the Study Supplement, please call 770-326- 9229.</p>
+	</div>
+</div>
+
+<br />
+<div class="page-header">
+	<h1>Testimonials</h1>
+</div>
+
+<div class="row">
+
+	<div class="span6">
+		<blockquote>
+			<p>
+				&ldquo;I can't imagine taking the licensure exam without having used the <strong>Arthur-Brende NCMHCE Scenario Simulator</strong> materials to study. I highly recommend it to others preparing for the NCMHCE!&rdquo;
+			</p>
+			<small>Mindy Parsons</small>
+		</blockquote>
+		<blockquote>
+			<p>
+				&ldquo;I just want to thank everyone who is involved in the development and distribution of these amazing prep materials! They helped me pass the exam and get the license I have worked so hard to obtain! It's the only study guide I recommend!&rdquo;
+			</p>
+			<small>Jodi C.</small>
+		</blockquote>
+		<blockquote>
+			<p>
+				&ldquo;I am a licensed professional and have taken lots of other exams. The NCMHCE is by far the most difficult exam I have taken. If it wasn’t for your material and excellent assistance, I would not have passed my NCMHCE exam and received my state license. Other study material sites are not as professional or helpful as yours.&rdquo;
+			</p>
+			<small>S. Winkelmann</small>
+		</blockquote>
+	</div>
+
+	<div class="span6">
+		<blockquote>
+			<p>
+				&ldquo;I just received word that I passed the NCMHCE! I previously took the test twice and failed twice. I had studied with another company's materials. I just did not understand what they were asking me to do. But by studying with your scenarios, I was able to see the pattern, understand the structure of the test and apply all the knowledge I had. Your examples and explanations of your scoring made it clear why some choices were not acceptable. Thanks for your wonderful web site and your personal service. It made all the difference and I went in feeling completely confident. I passed both sections with 30 more points than I actually needed!&rdquo;
+			</p>
+			<small>Jane Pitts</small>
+		</blockquote>
+		<blockquote>
+			<p>
+				&ldquo;I passed the NCMHCE yesterday and I couldn't have done it without Dr. Arthur's Study Guide and the practice simulations. The way the study guide tied everything together (diagnosis, treatment planning, counseling interventions, and psychological testing) was incredibly helpful and the simulations assisted me in learning how to take the test. Thanks for your help.&rdquo;
+			</p>
+			<small>Penny Minor</small>
+		</blockquote>
+	</div>
+	
+	<div class="span12">
+		<blockquote>
+			<p>
+				&ldquo;The scenarios were very helpful as this was not the type I had in my course work. I had to change my way of thinking to take the examination. Dr. Arthur's Study Guides are excellent resources.&rdquo;
+			</p>
+			<br />
+			<p>
+				&ldquo;I am recommending the <strong>Arthur-Brende NCMHCE Scenario Simulator</strong> to everyone. It was like the actual exam, and very thorough.&rdquo;
+			</p>
+			<small>Debra Fitzgerald</small>
+		</blockquote>
+
+	</div>
+
+</div>
+<br />
+<div class="well">
+	<sup>1</sup> Based on number of refunds requested due to failed exams.
+</div>

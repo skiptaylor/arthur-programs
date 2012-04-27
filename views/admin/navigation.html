@@ -1,0 +1,27 @@
+<div class="well" style="padding: .5em 0;">
+	
+	<ul class="nav nav-list">
+		
+		<li class="nav-header">People</li>
+		
+		<li class="<%= active '/admin/purchases' %>">
+			<a href="/admin/purchases"><i class="icon-shopping-cart <%= 'icon-white' if request.path_info.include? '/admin/purchases' %>"></i> Purchases</a>
+		</li>
+
+		<li class="<%= active '/admin/users' %>">
+			<a href="/admin/users"><i class="icon-user <%= 'icon-white' if request.path_info.include? '/admin/users' %>"></i> Users</a>
+		</li>
+				
+		<li class="nav-header">Products</li>
+		
+		<li class="<%= active '/admin/exams' %>">
+			<a href="/admin/exams"><i class="icon-list-alt <%= 'icon-white' if request.path_info.include? '/admin/exams' %>"></i> NCE Exams</a>
+		</li>
+
+		<li class="<%= active '/admin/scenarios' %>">
+			<a href="/admin/scenarios"><i class="icon-list-alt <%= 'icon-white' if request.path_info.include? '/admin/scenarios' %>"></i> NCMHCE Scenarios</a>
+		</li>
+		
+	</ul>
+	
+</div>

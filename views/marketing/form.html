@@ -1,0 +1,101 @@
+<fieldset>
+	<legend>Create an account</legend>
+	<div class="control-group" id="email-group">
+		<label class="control-label" for="email">Email address</label>
+		<div class="controls">
+			<input type="text" class="input-xlarge" id="email" name="email" />
+			<span class="help-inline" style="display: none;">
+				That address is already being used.
+				<br />
+				<a href="/sign-in">Maybe you need to sign in instead...</a>
+			</span>
+		</div>
+	</div>
+	<div class="control-group">
+		<label class="control-label" for="password">Password</label>
+		<div class="controls">
+			<input type="password" class="input-xlarge" id="password" name="password" />
+		</div>
+	</div>
+	<div class="control-group">
+		<div class="controls">
+			How did you hear about us?
+			<select id="hear-about-us" name="hear_about_us" />
+				<option value="NA"></option>
+				<option value="Google search">Google search</option>
+				<option value="Other Internet search">Other Internet search</option>
+				<option value="NBCC Web site">NBCC Web site</option>
+				<option value="Friend recommended">Friend recommended</option>
+				<option value="Professor recommended">Professor recommended</option>
+				<option value="Other">Other</option>
+				</optgroup>
+			</select>
+		</div>
+	</div>
+</fieldset>
+<br />
+<fieldset>
+	<legend>Credit card info</legend>
+	<div class="control-group" id="card-number-group">
+		<label class="control-label">Card number</label>
+		<div class="controls">
+			<input type="text" size="20" autocomplete="off" class="input-xlarge card-number">
+			<span class="help-inline" id="invalid_number" style="display: none;">The card number is invalid.</span>
+			<span class="help-inline" id="incorrect_number" style="display: none;">The card number is incorrect.</span>
+		</div>
+	</div>
+	<div class="control-group" id="card-cvc-group">
+		<label class="control-label">CVC</label>
+		<div class="controls">
+			<input type="text" size="4" autocomplete="off" class="span1 card-cvc">
+			<span class="help-inline" id="invalid_cvc" style="display: none;">The card's security code is invalid.</span>
+			<span class="help-inline" id="incorrect_cvc" style="display: none;">The card's security code is incorrect.</span>
+		</div>
+	</div>
+	<div class="control-group" id="card-expiry-group">
+		<label class="control-label">Expiration (MM/YYYY)</label>
+		<div class="controls">
+			<input type="text" size="2" autocomplete="off" class="span1 card-expiry-month">
+			/
+			<input type="text" size="4" autocomplete="off" class="span1 card-expiry-year">
+			<span class="help-inline" id="invalid_expiry_month" style="display: none;">The card's expiration month is invalid.</span>
+			<span class="help-inline" id="invalid_expiry_year" style="display: none;">The card's expiration year is invalid.</span>
+		</div>
+	</div>
+	
+	<div class="control-group" id="generic-card-group">
+		<div class="controls">
+			<span class="help-inline" id="expired_card" style="display: none;">The card has expired.</span>
+			<span class="help-inline" id="invalid_amount" style="display: none;">An invalid amount was entered.</span>
+			<span class="help-inline" id="card_declined" style="display: none;">The card was declined.</span>
+			<span class="help-inline" id="missing" style="display: none;">There is no card on a customer that is being charged.</span>
+			<span class="help-inline" id="duplicate_transaction" style="display: none;">A transaction with identical amount and credit card information was submitted very recently.</span>
+			<span class="help-inline" id="processing_error" style="display: none;">An error occurred while processing the card.</span>
+		</div>
+	</div>
+	
+	<div class="control-group">
+		<label class="control-label" for="name">Name</label>
+		<div class="controls">
+			<input type="text" class="input-xlarge" id="name" name="name" />
+		</div>
+	</div>
+	<div class="control-group">
+		<label class="control-label" for="address1">Address</label>
+		<div class="controls">
+			<input type="text" class="input-xlarge" id="address1" name="address1" />
+			<br /><br />
+			<input type="text" class="input-xlarge" id="address2" name="address2" />
+		</div>
+	</div>
+	<div class="control-group">
+		<label class="control-label" for="city">City State, Zip</label>
+		<div class="controls">
+			<input type="text" class="span2" id="city" name="city" />
+			<input type="text" class="span1" id="state" name="state" />,
+			<input type="text" class="span1" id="zip" name="zip" />
+		</div>
+	</div>
+</fieldset>
+
+<input type="hidden" id="amount" name="amount" value="0" />

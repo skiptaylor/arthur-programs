@@ -1,0 +1,57 @@
+<div class="row">
+
+	<div class="span3">
+		<%= view 'admin/navigation', layout: false %>
+	</div>
+
+	<div class="span9">
+		<ul class="breadcrumb">
+			<li>Admin <span class="divider">/</span></li>
+			<li class="active">Purchases</li>
+		</ul>
+<!--
+		<form class="form-search" method="get" action="/admin/purchases">
+			<input type="text" class="input-xlarge search-query" name="search" value="<%= params[:search] %>" />
+			<button type="submit" class="btn">Search</button>
+		</form>
+-->
+		<table class="table table-condensed">
+			<thead>
+				<tr>
+					<th>Date</th>
+					<th>Amount</th>
+					<th>Item</th>
+					<th>Stripe ID</th>
+					<th>Address</th>
+					<th>User</th>
+				</tr>
+			</thead>
+			<tbody>
+				<% @purchases.each do |purchase| %>
+					<tr>
+						<td><%= purchase.created_at.display :american_day %></td>
+						<td><%= purchase.amount.dollarize %></td>
+						<td>
+							<%= purchase.package %>
+							<br />
+							<span style="font-size: 90%;"><%= purchase.options %></span>
+						</td>
+						<td><a href="https://manage.stripe.com/#test/payments/<%= purchase.stripe_id %>" target="_blank"><%= purchase.stripe_id %></a></td>
+						<td>
+							<%= purchase.user.name %>
+							<%= '<br />' if purchase.user.name.length > 0 %>
+							<%= purchase.address1 %>
+							<%= '<br />' if purchase.address2.length > 0 %>
+							<%= purchase.address2 %>
+							<br />
+							<%= purchase.city %> <%= purchase.state %>, <%= purchase.zip %>
+						</td>
+						<td><a href="/admin/users/<%= purchase.user.id %>"><%= purchase.user.email %></a></td>
+					</tr>
+				<% end %>
+			</tbody>
+		</table>
+
+	</div>
+
+</div>

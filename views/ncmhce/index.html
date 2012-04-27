@@ -1,0 +1,26 @@
+<ul class="breadcrumb">
+	<li>
+		NCMHCE <span class="divider">/</span>
+	</li>
+	<li class="active">Scenarios</li>
+</ul>
+
+<div class="page-header">
+	<h1>NCMHCE Scenarios</h1>
+</div>
+
+<% @scenarios.each do |scenario| %>
+	<%= '<div class="row">' if scenario.id.odd? %>
+		<div class="span6">
+			<h3>
+				<%= scenario.id %>. <%= scenario.title %>
+				<%= '<span class="label label-info">Sample</span>' if scenario.sample? %>
+				<% avg = @averages.detect {|a| a.scenario_id == scenario.id} %>
+				<%= "<small>#{avg.score}%</small>" if avg %>
+			</h3>
+			<%= scenario.body.truncate(100).markdown %>
+			<p><a href="/ncmhce/scenarios/<%= scenario.id %>">Take scenario <%= scenario.id %></a></p>
+			<br />
+		</div>
+	<%= '</div>' if scenario.id.even? %>
+<% end %>

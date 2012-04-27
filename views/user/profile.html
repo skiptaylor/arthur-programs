@@ -1,0 +1,210 @@
+<div class="page-header">
+	<h1>
+		<%= @user.name %>
+		<%= '<small>Admin</small>' if @user.admin? %>
+	</h1>
+</div>
+
+<div class="row">
+	
+	<div class="span3">
+		<form class="well form-horizontal" method="post">
+			<p>
+				<label for="email">Email address</label>
+				<input type="text" style="width: 96%;" name="email" id="email" value="<%= @user.email %>" />
+			</p>
+			<p>
+				<label for="phone">Phone number</label>
+				<input type="text" style="width: 96%;" name="phone" id="phone" value="<%= @user.phone %>" />
+			</p>
+			<p>
+				<label for="password">New password</label>
+				<input type="password" style="width: 96%;" name="password" id="password" />
+				<span class="help-inline">Leave blank unless you want a new password.</span>
+			</p>
+			<p>
+				<button type="submit" class="btn">Update Account</button>
+			</p>
+			<hr />
+			<p>
+				<small>
+					<% if @user.admin? %>
+						No expiration date.
+					<% else %>
+						Account expires on <%= @user.expiration_date.display :american_day %>.
+					<% end %>
+				</small>
+			</p>
+		</form>
+	</div>
+	
+	<div class="span9">
+
+		<% if @user.max_exams > 0 %>
+		
+			<div class="page-header">
+				<h3>
+					NCE Exams
+					<small><%= @user.remaining_exams %> Remaining</small>
+				</h3>
+			</div>
+			
+			<% unless @exams.empty? %>
+			
+				<table class="table table-condensed">
+				<thead>
+					<tr>
+						<th>Exam</th>
+						<th>Score</th>
+						<th>Taken On</th>
+						<th></th>
+					</tr>
+				</thead>
+				<tbody>
+					<% @exams.sort { |a,b| a.exam_id <=> b.exam_id }.each do |average| %>
+						<tr>
+							<td><%= average.exam_id %>. <%= average.exam.title %></td>
+							<td><%= average.score %>%</td>
+							<td><%= average.created_at.display %></td>
+							<td style="text-align: right;"><a href="/nce/exams/<%= average.exam_id %>">Retake</a></td>
+						</tr>
+					<% end %>
+				</tbody>
+			
+				</table>
+			
+			<% else %>
+				<p><a href="/nce/exams">Choose an exam</a> to get started.</p>
+			<% end %>
+		
+			<br />
+		<% end %>
+		
+		<% if @user.max_scenarios > 0 %>
+		
+			<div class="page-header">
+				<h3>
+					NCMHCE Scenarios
+					<small><%= @user.remaining_scenarios %> Remaining</small>
+				</h3>
+			</div>
+			
+			<% unless @scenarios.empty? %>
+			
+				<table class="table table-condensed">
+				<thead>
+					<tr>
+						<th>Scenario</th>
+						<th>Score</th>
+						<th>Taken On</th>
+						<th></th>
+					</tr>
+				</thead>
+				<tbody>
+					<% @scenarios.sort { |a,b| a.scenario_id <=> b.scenario_id }.each do |average| %>
+						<tr>
+							<td><%= average.scenario_id %>. <%= average.scenario.title %></td>
+							<td><%= average.score %>%</td>
+							<td><%= average.created_at.display %></td>
+							<td style="text-align: right;"><a href="/ncmhce/scenarios/<%= average.scenario_id %>">Retake</a></td>
+						</tr>
+					<% end %>
+				</tbody>
+
+				</table>
+			
+			<% else %>
+				<p><a href="/ncmhce/scenarios">Choose a scenario</a> to get started.</p>
+			<% end %>
+		
+			<br />
+		<% end %>
+		
+		<% if @user.nce_downloads || @user.ncmhce_downloads %>
+			<div class="page-header">
+				<h3>Downloads</h3>
+			</div>
+			
+			<table class="table table-condensed">
+				<thead>
+					<tr>
+						<th>Book</th>
+						<th>Format</th>
+						<th></th>
+					</tr>
+				</thead>
+				
+				<tbody>
+					<% if @user.nce_downloads %>
+						<tr>
+							<td>NCE Study Guide.epub</td>
+							<td>iPhone/iPad, Android, eReaders</td>
+							<td style="text-align: right;"><a href="/downloads/nce/NCE Study Guide.epub">Download</a></td>
+						</tr>
+						<tr>
+							<td>NCE Study Guide.mobi</td>
+							<td>Kindle</td>
+							<td style="text-align: right;"><a href="/downloads/nce/NCE Study Guide.mobi">Download</a></td>
+						</tr>
+						<tr>
+							<td>NCE Study Guide.pdf</td>
+							<td></td>
+							<td style="text-align: right;"><a href="/downloads/nce/NCE Study Guide.pdf">Download</a></td>
+						</tr>
+					<% end %>
+					<% if @user.ncmhce_downloads %>
+						<tr>
+							<td>NCMHCE Study Supplement.epub</td>
+							<td>iPhone/iPad, Android, eReaders</td>
+							<td style="text-align: right;"><a href="/downloads/nce/NCMHCE Study Supplement.epub">Download</a></td>
+						</tr>
+						<tr>
+							<td>NCMHCE Study Supplement.mobi</td>
+							<td>Kindle</td>
+							<td style="text-align: right;"><a href="/downloads/nce/NCMHCE Study Supplement.mobi">Download</a></td>
+						</tr>
+						<tr>
+							<td>NCMHCE Study Supplement.pdf</td>
+							<td></td>
+							<td style="text-align: right;"><a href="/downloads/nce/NCMHCE Study Supplement.pdf">Download</a></td>
+						</tr>
+					<% end %>
+				</tbody>
+			</table>
+
+			<br />
+		<% end %>
+				
+		<% if @user.purchases.count > 0 %>
+
+			<div class="page-header">
+				<h3>Purchases</h3>
+			</div>
+			
+			<table class="table table-condensed">
+				<thead>
+					<tr>
+						<th>Date</th>
+						<th>Amount</th>
+						<th>Item</th>
+					</tr>
+				</thead>
+				<tbody>
+					<% @user.purchases.each do |purchase| %>
+						<tr>
+							<td><%= purchase.created_at.display :american_day %></td>
+							<td>	<%= purchase.amount.dollarize %></td>
+							<td>
+								<%= purchase.package %> /
+								<small><%= purchase.options %></small>
+							</td>
+						</tr>
+					<% end %>
+				</tbody>
+			</table>
+		
+		<% end %>
+		
+	</div>
+	
+</div>
