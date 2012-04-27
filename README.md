@@ -1,5 +1,3 @@
-# Counselor Exams
-
 ## Creating a Local Build
 
 Clone the site:
