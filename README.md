@@ -1,4 +1,6 @@
-# Creating a Local Build
+# Counselor Exams
+
+## Creating a Local Build
 
 Clone the site:
 
@@ -16,8 +18,12 @@ Build and seed the database:
 Run the server:
 
     rake server
-    
+
+---
+
 Visit the site at: [http://localhost:4567/](http://localhost:4567/)
+
+---
 
 When you're done, shut it down:
 
