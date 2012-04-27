@@ -11,8 +11,6 @@ gem 'pony', '~> 1.4'
 
 gem 'redcarpet', '~> 2.1.1'
 
-gem 'screensized', '~> 1.0.0.pre2'
-
 gem 'sinatra', '~> 1.3.2'
 
 gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
