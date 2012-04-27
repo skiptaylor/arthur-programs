@@ -80,10 +80,10 @@ post '/ncmhce/?' do
 	case params[:package]
 	when 'full'
 		params[:package] = 'NCMHCE Full'
-		max_scenarios = 35
+		max_scenarios = 36
 	when 'starter'
 		params[:package] = 'NCMHCE Starter'
-		max_scenarios = 10
+		max_scenarios = 12
 	end
 
 	case params[:optional]
