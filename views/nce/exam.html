@@ -76,15 +76,18 @@
 	<%= '<div class="set" id="set-8" style="display: none;">'  if question.position == 141 %>
 	<%= '<div class="set" id="set-9" style="display: none;">'  if question.position == 161 %>
 	<%= '<div class="set" id="set-10" style="display: none;">' if question.position == 181 %>
-
-	<p>
-		<strong><%= question.position %>. <%= question.body %></strong>
-	</p>
 	
 	<%
+		read = false
 		answers = []
 		@answers.each {|a| answers << a if a.question_id == question.id}
+		answers.each {|a| read = true if @scores.include? a.id }
 	%>
+	
+	<p <%= 'class="unread"' unless read %>>
+		<%= question.position %>. <%= question.body %>
+	</p>
+
 	<form>
 		<div class="row">
 			<% answers.each do |answer| %>
@@ -128,7 +131,7 @@
 		<li><a class="set-link" href="#part9">9</a></li>
 		<li><a class="set-link" href="#part10">10</a></li>
 		<% unless @average %>
-			<li><a href="/nce/exams/<%= @exam.id %>/score" id="score-link" style="display: none;">Show Score</a></li>
+			<li class="disabled"><a href="/nce/exams/<%= @exam.id %>/score" id="score-link">Show Score</a></li>
 		<% end %>
 	</ul>
 </div>

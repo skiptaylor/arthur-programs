@@ -3,8 +3,12 @@ jQuery(function() {
 	show_submit();
 	
 	$('input[type=radio]').click(function() {
-		id = $(this).attr('value');
-		$.post('/add-score', {answer: id}, function(data) { show_submit(); });
+		self = $(this);
+		id = self.attr('value');
+		$.post('/add-score', {answer: id}, function(data) {
+			self.parent('label').parent('div').parent('div').parent('form').prev('p').removeClass('unread');
+			show_submit();
+		});
 	});
 	
 	$('a.restart').click(function() {
@@ -12,11 +16,15 @@ jQuery(function() {
 		{ return false; }
 	});
 	
+	$('a#score-link').click(function() {
+		if ( $(this).parent('li').hasClass('disabled') )
+		{ return false; }
+	});
+	
 	function show_submit() {
 		answer_count = $('input:checked').size();
-		question_count = $('input').size()/4;
-		if (answer_count == question_count) {
-			$('a#score-link').show();
+		if (answer_count == 200) {
+			$('a#score-link').parent('li').removeClass('disabled');
 		}
 	}
 

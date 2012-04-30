@@ -67,3 +67,7 @@
 .product-banner form { text-align: left; }
 
 .product-banner img { width: 100%; }
+
+.unread {
+	font-weight: bold;
+}
