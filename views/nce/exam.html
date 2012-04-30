@@ -84,7 +84,7 @@
 		answers.each {|a| read = true if @scores.include? a.id }
 	%>
 	
-	<p <%= 'class="unread"' unless read %>>
+	<p <%= 'class="unread"' unless @average || read %>>
 		<%= question.position %>. <%= question.body %>
 	</p>
 
