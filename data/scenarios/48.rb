@@ -1,420 +1,294 @@
 scenario = Scenario.create(
   :id => 48,
-  :title => "Jack Kelly",
+  :title => "John Gurstner",
   active: false,
-  :body => "History of Presenting Complaint: Jack Kelly is a 42-year-old divorced white male who complains of symptoms which are episodic in nature dating back many years but worse the past six months in relationship to the death of his brother. He has primarily complained of irritability, anxiety, racing thoughts and speech, feelings of agitation, and a sleep disturbance. However his mood has also been prone to rapid changes into depression, feelings of worthlessness, and fleeting suicidal thoughts. In addition, he has not been able to sustain relationships.<br /><br /><strong>Medical History:</strong> He has medical problems including chronic severe back pain for which he is on medication daily. He also has been treated for gastrointestinal distress.\n<br /><br />\n<strong>Past History:</strong>  He states that his symptoms date back to pre-adolescence when teachers told his parents he should be treated for Attention Deficit Hyperactive Disorder (ADHD). He recalls periodically being moody, getting in trouble at school, and being sent to the principal's office. In spite of these problems he managed to get good grades, went out for sports, and was quite good in football. He struggled in college and noticed his symptoms characterized by depression, irritability, problems with concentration, anxiety, and restlessness, and sleep. He was prescribed Ritalin when he was a teenager and received Prozac and Paxil as an adult but these medications only made him feel worse. He also received psychotherapy for several months after being incarcerated for repeatedly stealing from department stores at age 20 when he was in college and drinking episodically.\n<br /><br />\n<strong>Family History:</strong>  His father suffered from alcohol dependency and Bipolar Disorder. His brother was a substance abuser who died from an overdose of crack cocaine six months ago.\n<br /><br />\n<strong>Social History:</strong> He reports difficulties sustaining relationships. He has had two broken marriages, one marriage lasting three years and the other seven years. His current relationship is to a woman 10 years older and has been marked by strife and accusations that he lacks emotions and has been unfaithful. Jack states that he is not interested in marriage and would never get married for a third time. \n<br /><br />\n<strong>Substance abuse:</strong>  He has a long history of drinking alcohol episodically. He had gone through detoxification four years ago and remained sober for six months with the help of AA. For the past six months he has been drinking 4-6 beers every night to control his insomnia and whenever he begins to feel anxious and irritable. On several occasions when going to bars at night, he has driven home intoxicated. Three months ago he was stopped by an officer and charged with a DUI. Two months ago, after leaving a bar on a Saturday afternoon, he stopped at a department store and was caught shoplifting. He realizes that his drinking is a problem, particularly since it has gotten him into trouble with the law and has been the primary reason for his divorces.\n<br /><br />\n<strong>Legal History:</strong>  Shortly after Mr. Kelly started college he was arrested for stealing and sentenced to weekends in jail and house arrest for a period of six months. He admitted difficulty in his efforts to stop stealing and his first divorce came shortly after he was caught shoplifting for the second time. He was sentenced to one year in prison and with good behavior served six months.  One condition of his release was that he enter into therapy for \"kleptomania\". Mr. Kelly said that he was told by his therapist that shoplifting and alcohol abuse were interrelated problems that were probably related to his unresolved anger toward his father.\n<br /><br />\n<strong>Mental Status Examination:</strong> Mr. Kelly is a 42-year old white male who appears to be older than his stated age. He is oriented to time, place, and person. His long-term memory is intact but he has a mild impairment with recent memory. He has no thought disorder and reports no hallucinations or delusions. He reports angry outbursts, depression, dysphoria, anxiety, guilt, racing thoughts and speech, and worry. He also reports a sleep disorder which coincides with his dysphoric moods. He describes problems with his anger dating back to a time he had conflicts with his father and acknowledges that he has tended to act out his angry feelings through shoplifting behavior and alcohol use."
+  :body => "John Gurstner is a 49-year-old married Caucasian male.\r\nHistory of presenting complaint. Mr. Gurstner is self referred to a counselor in a group practice because of angry outbursts. He states that his wife insisted that he get help because his verbal aggressive outbursts toward her mother who is staying with them are upsetting the family. He has requested individual counseling rather than group therapy because he's afraid someone in the group will provoke him and he is fearful of what will happen when he gets angry. He tends to disagree with most people and can get angry so quickly he is not aware he is about to explode. One time he went across a table and hit a man because he looked at the guy and automatically did not like him. Sometimes his mother-in-law looks at him in that same manner. When asked about his sleep pattern John said that he usually gets about 4-5 hours per night.  <br /><br /><strong>Past History:</strong>  He has had problems controlling his anger ever since the death of his father and brother. Even as a schoolboy he was considered a problem student because of his tendency to fight with other students.\r\n<br /><br />\r\n<strong>Family History:</strong> He recalls his father as being a difficult person who was moody and frequently abusive. He is not aware of any family members who had mental illnesses. \r\n<br /><br />\r\n<strong>Medical History:</strong> Nine months ago he had a neurological evaluation because of lapses in consciousness and was been told that he has a type of seizure disorder for which he's been prescribed an anti-convulsant medication.\r\n<br /><br />\r\n<strong>Social History:</strong> He was physically abused by his father and witnessed his father's murder when he was 12 years of age.  Four years later he witnessed his brother drowning at an abandoned gravel pit pool. These painful and traumatic losses have had a significant effect on him. He complains that his mother-in-law interferes in their marriage and he wants her to leave their house but his wife will not permit that to happen. He has been married for 18 years and has two children and says he has had a good relationship with his family. He is a religious man, attends church regularly, but has a reputation of often opposing the minister's decisions. He was employed until this past year and was known for being easily angered toward officials in the company where he worked.\r\n<br /><br />\r\n<strong>Substance History:</strong> He describes himself as a social drinker who only drinks no more than three drinks when they go to parties. However, his wife says she noticed that during the past few months he has been drinking more than three drinks and at those times his behavior changes in embarrassing ways. For example, on several occasions he struck someone after he'd had five drinks. She always goes with him to social events where alcohol is served so she can take him home when he begins drinking and before his behavior is out of control. She is convinced he has no memory of his embarrassing behavior because he will deny all episodes of embarrassing or aggressive behaviors while claiming that he only had a few drinks to enjoy himself. In truth, he does not remember what he does after having three drinks.\r\n<br /><br />\r\n<strong>Mental Status Examination:</strong> He is a relatively short man, is somewhat overweight, and appears his stated age. He is oriented as to time, place, and person. He reveals very little personal information about himself and has difficulty expressing feelings other than anger. He says he can't remember the last time he ever cried. His affect is blunt and he denies having depressed moods. When asked about his sleep pattern John said that he usually gets about 4-5 hours per night. He is not introspective nor receptive to personal criticism and tends to blame others, particularly his mother-in- law."
 )
 scenario.questions.create(
   :score_type => 'Information Gathering',
   :notes => "",
-  :body => "Of the following what is considered of primary importance in assessing for Axis I DSM-IV-TR provisional diagnosis? (Select as many as you consider indicated in this section.)",
+  :body => "Which of the following is considered important for assessing for Axis I DSM-IV-TR provisional diagnosis or diagnoses?",
   :position => 1,
   :answers => [
     {
-      :value => 2,
-      :body => "a. Presenting symptoms",
-      :response => "Answer: This is a good probe. Jack's presenting complaint dates back many years but symptoms worsened in the last six months. He has experienced depression, angry outbursts, anxiety, dysphoria, sleep disturbance, and problems sustaining relationships. Each of these complaints can be further probed for a common theme and symptoms that meet criteria for a diagnosis or dual diagnosis. Further probing will lead to past history and may reveal a precipitating event that has brought on the symptom behavior in the last six months. Probing angry outbursts and assessing for self-harm is important. Jack said he has not had any pre-thoughts about hurting himself or others rather he lashes out for unknown reasons. Submit select another or go to Question 2."
+      :value => -2,
+      :body => "a. Spiritual affiliation",
+      :response => "Answers:  Incorrect. Spiritual affiliation would not provide diagnostic information. \r\nSelect another answer or go to Question 2."
     },
     {
-      :value => 1,
-      :body => "b. Medical history",
-      :response => "Answer: Medical history lists a chronic severe back pain and medication for the pain. This information could be important especially if the medical doctor has not located a reason for the pain. Jack told the counselor he had an MRI for this back pain but the doctor said everything appeared to be normal. Select another answer or go to Question 2."
+      :value => 3,
+      :body => "b. History of presenting complaint",
+      :response => "Answer: Correct. The only information he volunteered during the intake interview was a concern about angry outbursts and his displeasure with his mother-in-law. Breaking the antique was out of proportion to the provocation. He responded to requests for more details as follows: His anger at his mother-in-law always takes place when she confronts his inadequacies in understanding his children. He verbally opposes her as he has his minister. He was physically abused by his father, fighting during the school years, witnessed his brother drowning, and his father's murder. He says he thinks that is why he disagrees with just about everyone. Bad things seem to happen to him. He has requested one-one counseling rather than a group because someone in a group is likely to tick him off. Some one told him that he had flash anger. It comes on so fast that he does not even know that he is about to explode. One time he went across a table and hit a man because he said a major league pitcher from his favorite team was a drip. He knows that was not a reason to hit the man but he just looked at the guy and he automatically did not like him. He just wanted an excuse to hit him. Sometimes his mother-in-law looks at him in that same manner. Select another answer or go to Question 2."
+    },
+    {
+      :value => -3,
+      :body => "c. Marital relationship",
+      :response => "Answer: Incorrect. There was no indication that further questioning would be helpful in a diagnosis. In fact, his wife was the first to rule out drinking as a problem for the two of them. Select another answer or go to Question 2."
     },
     {
       :value => -2,
-      :body => "c. Spiritual affiliation",
-      :response => "Answer: This information was not available from the intake form and is likely not to be helpful in making a diagnosis. Select another answer or go to Question 2."
-    },
-    {
-      :value => -1,
-      :body => "d. Relationship with his brother",
-      :response => "Answer: Information about his brother's relationship with cocaine and death from an overdose contribute to Jack's symptoms and relationship to drugs. However, it is not likely to help in making a diagnosis for Jack. Select another answer or go to Question 2."
-    },
-    {
-      :value => 2,
-      :body => "e. Substance history",
-      :response => "Answer: Intake information regarding Jack's use of substances is important because he has a long history of drinking alcohol, detoxifications, short periods of sobriety, continued drinking 4-6 beers per night and more on weekends (he often drank 1-2 six packs per weekend and hard liquor when the beer ran out), and also drank to cope with anxiety. Jack's drinking is also associated with anti-social behavior and has shop-lifted during and after he has been drinking. Select another answer or go to Question 2."
-    },
-    {
-      :value => 2,
-      :body => "f. Social history",
-      :response => "Answer: Jack's inability to sustain a relationship (two divorces)as well as current conflicts with his wife which he blames on difficulty in expressing his emotions may be a partial reason why he has developed an abusive involvement and relationship with substances. Select another answer or go to Question 2."
-    },
-    {
-      :value => 2,
-      :body => "g. Past history",
-      :response => "Answer: The past history provided a great deal of information that can be explored for important information pertaining to possible dual diagnoses. He had difficulties with learning and demonstrated behaviors typical of ADHD during his pre-adolescent years, according to teachers, and was prescribed Ritalin as a teenager. Background data suggests that he was a good athlete and received good grades in high school, yet he also had a lot of problems. He was moody,  experienced depression and irritability, had difficultly concentrating, demonstrated anxiety and resltessness, and had difficulty sleeping. He was prescribed Prozac and Paxil for symptoms of depression and axiety as an adult.  Select another answer or go to Question 2."
-    },
-    {
-      :value => 2,
-      :body => "h. Mental Status Examination",
-      :response => "Answer: The mental status examination revealed mild impairment in memory otherwise his symptoms appeared to be localized to angry outbursts, depression, dysphoria, anxiety, guilt, worry, sleep disorder, and shop lifting.  Select another answer or go to Question 2."
+      :body => "d. Relationship with mother-in-law",
+      :response => "Answer: Even though His relationship with his mother-in-law is very poor in spite of the fact she does live with them this information is not significant for establishing an Axis I diagnosis Select another answer or go to Question 2."
     },
     {
       :value => 1,
-      :body => "i. Legal history",
-      :response => "Answer: Although legal history has limited diagnostic benefit activity in this realm it is aimed at ruling out a disorder. Select another answer or go to Question 2."
+      :body => "e. Medical history",
+      :response => "Answer: Correct. This information would reveal about whether his angry outbursts had a neurological rather than a psychological etiology. It would be helpful to learn of his seizure disorder and the medication he is taking to control the seizures. Medial history indicates that he has lapses of consciousness. Select another answer or go to Question 2."
+    },
+    {
+      :value => 0,
+      :body => "f. Family history",
+      :response => "Answer:	Yes and no. Family history information is particularly helpful when Bi-polar Disorders are considered. John's family history revealed that his father had a serious problem with a bad temper but there was no evidence of Bi-polar disease. His father, who abused John also lacked patience, could not tolerate noise, and declared that he had never wanted children. As helpful as this information may be for understanding the cause of John's illness it is likely to be more helpful during treatment. He says he is a good father to his two children, is not physical with them but has yelled at them. Select another answer or go to Question 2.\r\n"
+    },
+    {
+      :value => 1,
+      :body => "g. Substance history",
+      :response => "Answer:	Correct. John said he had been a social drinker, although his wife insisted he stopped drinking. John shared that if he did lose his temper he would drink one or two mixed drinks (Scotch and water). These drinks would soothe him for the time being. He even had a drink or two if he thought he might be getting angry but that did not seem to work. He was never sure when he was getting angry. He did not drink in high school or take any drugs. He was afraid if he used drugs like his high school friends he would lose control. \r\nSelect another answer or go to Question 2.\r\n"
+    },
+    {
+      :value => 3,
+      :body => "h. Social history",
+      :response => "Answer:	This information would reveal whether his angry outbursts might be related to previous traumas, and if so, his angry outbursts could be secondary to a primary disorder. It is important to follow up on the after-effects of his father's murder and brother's drowning. John was twelve when his father was murdered. He and his father had gone to the local pool hall and his father would play cards for money. His father got into an argument with one of the card players and the other player accused his father of cheating. John was playing pool at the time, heard the yelling men, and saw his father hit the man and knock him down. When the man got up he left the card area only to return with a pistol, walk over to his father who was seated at a card table and shot his father four times.\r\nDuring the shooting the man appeared to be calm and after shooting his father looked right at John, and walked out of the pool room. The pool room was quiet. No one did or said anything but stood and look at both men. John said that ever once in awhile he replays the entire scene during his dreams and even when he is awake. He wakes up in a sweat, sometimes in a tremor, and thinks this is the reason for his seizures. Guns scare him and he will not watch movies that are mystery types where shooting others takes place. When movie or television shootings take place he knows his pulse rate increases and feels an urge to get up and leave the room. \r\n Just before his brother dived into the pool the two of them had been talking about his father's death. John was 14 and his brother was eight at the time of their father's death. They had been embarrassed about their father's anger and mistreatment of their mother and hated the gossip that was spread among his boyhood friends. As a result there was a residual of guilt feelings about their father's death   His brother was 10 years old when he died.  He could not save his brother who was apparently knocked out at the time he dove in because he hit a rock at the bottom of the pit. Please submit additional answers or go to the next question. \r\nCorrect.Select another answer or go to Question 2.\r\n"
+    },
+    {
+      :value => 3,
+      :body => "i. Mental status examination",
+      :response => "Answer:	Correct. This information would reveal about whether his symptoms are associated with a mood or a thought disorder and there is no evidence of either. John revealed very little personal information about himself and had difficulty expressing feelings other than anger. His affect was blunt and he was not introspective, nor receptive to criticis. Instead he blamed others for the difficulties he created.\r\nSelect another answer or go to Question 2.\r\n"
     }
   ]
 )
 scenario.questions.create(
   :score_type => 'Information Gathering',
   :notes => "",
-  :body => "To help determine the provisional diagnosis (es), the counselor might make which of the following recommendations? (Select only those you consider very important in this section.)",
+  :body => "After reviewing the intake report, the counselor would seek clarification for which of the following statements or content of the report in order to make a provisional diagnosis?",
   :position => 2,
   :answers => [
     {
       :value => 1,
-      :body => "a. Request psychological testing",
-      :response => "Answer: Psychological testing can be helpful to confirm or rule out Adult Attention Deficit Hyperactive Disorder, Kleptomania, Depression, Anxiety Disorder, Substance use and abuse. Select another answer or go to Question 3.\r\n"
+      :body => "a. More specific information about the quality of his sleep",
+      :response => "Answer:	Correct. This information would be important to assess for a primary or secondary sleep \r\ndisorder. Quality of sleep is important to determine along with knowledge of interrupted sleep. \r\nJohn said he usually gets 4-5 hours of sleep and this has been going on for years. His doctor told \r\nhim this was sleep deprivation and prescribed sleeping pills. The pills did help him go to sleep but \r\ndid not keep him asleep. John stays up late until 12 or 1 o'clock in order to have a chance of sleeping longer during the night and awakens at about 5 a.m. If he did not go to sleep late he would need to get up around 2:30-3:00 AM because he cannot go back to sleep. He takes an early morning walk for 30-50 minutes and returns for a cup of coffee when his wife awakens.  His wife says he rolls and turns many times during the night and sometimes makes loud noises, will thrash his arms about often his arms will hit her somewhere on her body. When she tells him about this in the morning John is unaware of hitting her. John says many times just before he awakens he is aware he has been dreaming. The dreams are about natural disasters  such as volcanoes, floods, plane crashes, floods, and lately and sometimes human instigated disasters such as road side bombs. When he awakens from these dreams he feels so tense he has to get up and go for a walk to free his mind from the images although it has bee taking longer and longer to get those images out of his mind. \r\n Select another answer or go to Question 3.\r\n"
     },
     {
-      :value => 1,
-      :body => "b. Clarify family history",
-      :response => "Answer: Clarifying family history involvement and association with his father's alcohol dependency and brother's substance abuse and overdose is helpful. Family members involvement with dependency and abuse with substances is helpful. This information will also pin point first use and drug of choice at that time. \r\nSelect another answer or go to Question 3.\r\n"
+      :value => -2,
+      :body => "b. Frequency and type of mood swings",
+      :response => "Answer:	Incorrect. There was no evidence provided in the history to indicate a need to clarify further. He denies having mood swings. The counselor had to define mood swings and John said he does not have them. He just never seems to be happy or excited like a lot of other people. His boss told hm he had a chip on his shoulder but he told the boss he was crazy and the chip he thought he saw was John's ability to tell it like it is something most people cannot tolerate. His boss told him he needs to see his clergy for help because he comes across like he does not like people boss told him he had a chip on his shoulder. He told the boss he was crazy and the chip he thought he saw was John's ability to tell it like it is something most people cannot tolerate. His boss told him he needs to see his clergy for help because he comes across like he does not like people.\r\nSelect another answer or go to Question 3."
     },
     {
       :value => 2,
-      :body => "c. Determine if alcohol use is only associated with his mood swings",
-      :response => "Answer: Alcohol use and mood swings inter-relationship is helpful information to assess to determine if alcohol is the depressant or if the mood swings are cyclical or associated with another disorder. Jack has indicated that he has been depressed for a long time and has taken antidepressant medication. Select another answer or go to Question 3.\n"
+      :body => "c. More details about the deaths of his father and brother and how he grieved those traumatic deaths",
+      :response => "Answer:	Correct. This information would be helpful to assess for diagnoses related to pathological bereavement or mood disorder. John said that his mother moved he and his brother to her parents in Idaho. The move took place one month after the funeral, however both boys left a week after the funeral to live with her parents until she arrived a month later. John said he did not grieve his father's death and as far as he knew no one did. All he could focus on was the man who shot his father. His mother told them the man went to prison shortly after they moved but was paroled three years ago.  His mother married another man three years after the move to Idaho. The marriage took place during his senior year in high school and he shortly left for Colorado and college so did not know this man very well. During the year they lived together the man seemed to be passive and quiet. He misses his brother because they were very close. During the two years after his father's death he and his brother would frequent a swimming hole. They had good times together and his brother is in his dreams as much as is his father. He still has not cried for either death. His mother died four years ago of a heart attack. Select another answer or go to Question 3.\r\n"
+    },
+    {
+      :value => 2,
+      :body => "d. Quality of angry outbursts, degree of physical or verbal abuse, presence of dissociation",
+      :response => "Answer:	Correct. This information would be helpful to assess for diagnoses of impulse or dissociative disorders. John was unable to describe any special kind of quality in his anger. He fears and hates his anger and knows it is like that of his father.  He does not hit people like he did in junior high school but he does yell a lot. He thinks he may get mad at least once a day sometimes more frequently at work. It seems to have gotten worse since he no longer works. He says he wants to hit but knows it is not right. After his rage is over he shakes and his skin feels funny for an hour or so before he feels normal. When he can he goes to sleep to get over the awful feeling associated with being angry. Select another answer or go to Question 3.\r\n"
     },
     {
       :value => 1,
-      :body => "d. Obtain more information about his anxiety",
-      :response => "Answer: It would be helpful to probe for the possibility of panic attacks with questions about episodes of rapid pulse, shortness of breath, tightness in the chest, and feelings of dread.  Jack could not recall a time when he has panicked. He is not sure he would recognize a panic attack.  Select another answer or go to Question 3."
+      :body => "e. More information about the relationship with his children",
+      :response => "Answer:	 This information would be helpful to clarify a provisional diagnosis. John said \r\nhe did not want children for fear they would grow up like he did around angry people. What he \r\ndid not want to happen has happened; he has angry outbursts like his father. Never-the-less John says he is a good father, provides for the family, takes the children to their games, and school events but they do not talk. When he yells they become quiet and he realizes he was like that when his father did the same thing only \r\nhis father would hit. He has trouble developing a deep relationship with his children and is prone to smother his wife because he needs her with him all the time. Select another answer or go to Question 3.\r\n"
     },
     {
-      :value => 1,
-      :body => "e. Clarify past traumatic events",
-      :response => "Answer: Although Jack reports no traumatic events it would be helpful to determine if physical or emotional abuse took place during his developmental years of human growth and development. Jack said that he did not experience physical, mental and any known emotional abuse.\r\nSelect another answer or go to Question 3."
-    },
-    {
-      :value => -1,
-      :body => "f. Talk to the client's significant relationships",
-      :response => "Answer: This information would not be helpful in determining a diagnosis but would be good information for treatment planning. Select another answer or go to Question 3."
-    },
-    {
-      :value => -3,
-      :body => "g. Recommend Mr. Kelly attend Shoplifters Anonymous meetings and report back his observations",
-      :response => "Answer: This would not provide information in forming a diagnosis. His involvement in shop lifting was not recent (23 years ago). He participated in psychotherapy. \r\nSelect another answer or go to Question 3."
-    },
-    {
-      :value => -3,
-      :body => "h. Refer for a sleep analysis",
-      :response => "Answer: A sleep analysis can be done at a later time if further symptoms suggesting a possible primary sleep disorder are assessed. His disturbance in sleep is more likely secondary to depression, anxiety, worry, dysphoria, a dysfunctional relationship  and excessive alcohol intake. Select another answer or go to Question 3."
-    },
-    {
-      :value => 0,
-      :body => "i. Request a release of information of past therapy",
-      :response => "Answer:	There may be important information regarding his commitment to therapy but that was 23 years ago and not likely to be helpful in a current diagnosis. Select another answer or go to Question 3."
-    },
-    {
-      :value => 3,
-      :body => "j. Assess in more detail the quality of anger outbursts, degree of physical or verbal abuse, and presence of dissociation",
-      :response => "Answer: Specific information regarding these symptoms would be helpful in order to establish and rule out diagnoses such as Intermittent Explosive Disorder.  The intake interview did not comment on the angry outbursts as aggressive impulses or what exactly precipitated the anger. For the most part he said he acted out. Although he met Category B his anger was out of proportion to the stressor and Jack did not report the frequency of these outbursts.  He did not meet criteria A and C for Intermittent Explosive Disorder. Select another answer or go to Question 3."
+      :value => -2,
+      :body => "f. More information about his major conflicts with his mother-in-law",
+      :response => "Answer: This information would not be helpful in forming a diagnosis. Select another answer or go to Question 3.\r\n"
     }
   ]
 )
 scenario.questions.create(
   :score_type => 'Information Gathering',
-  :notes => "<strong>Diagnostic discussion</strong><br />\r\nThis client's symptoms are consistent with two Axis I diagnoses: The first diagnosis, Bipolar Disorder-mixed type, is characterized by mania and depression occurring at the same time. Symptoms are occurring simultaneously with anxiety. This has resulted in dysphoric mood, sleep disturbance, and irritability which worsened with Serotonin Reuptake Inhibitor antidepressant medications prescribed for him(Prozac and Paxil). \r\n<br /><br />\r\nHis second diagnosis, Alcohol Abuse, is consistent with his maladaptive pattern of alcohol use which, in large part, is his attempt at controlling dysphoric symptoms. Since his use of alcohol has caused significant social and legal consequences as manifested by episodes of stealing and loss of two marriages, it is more characteristic of Alcohol Abuse rather than Alcohol Dependency. \r\n<br /><br />\r\nThis client's symptoms are also consistent with an Axis II Diagnosis of Personality Disorder, NOS. The signs and symptoms of Personality Disorder, NOS is a mixed list of those personality linked dysfunctions, signs, symptoms or complaints that will not fit into a specific pesonaity disorder category. The only required sign and symptom of Personaltiy Disorder, NOS is that a person's social or mental personality is impaired in such a way that causes a distress and dyfunction in one or more of the important areas of life. Self-defeating personality disorder (also known as masochistic personality disorder) is a personality disorder that was never formally admitted into the Diagnostic and Statistical Manual of Mental Disorders (DSM) although it was discussed in an appendix of the manual's revised third edition (DSM-III-R). As an alternative, the diagnosis Personality Disorder, Not Otherwise Specified (NOS) is used instead.\r\n\r\nCompulsive Shoplifting:  Shulman divides shoplifters into seven (7) distinct groups, each with certain identifiable characteristics and expected responses if they are caught.  1) Addictive-compulsive shoplifters (75%) This group emotionally has a lot of repressed anger and often exhibits signs of other compulsive addictions, such as overeating, shopping, drug use, or gambling. Typically, they will steal items that are often inexpensive, and then give them to others as gifts. If caught, they will show guilt, shame, or remorse. Often, they will breakdown and cry when caught and confronted.  2)  Professionals who steal for profit (5%) this group steal expensive items. Many carry tools to assist with the theft. They will resist arrest if confronted and attempt to flee the store. If caught and detained, they will remain cool and calm, showing no remorse or emotion.  3) The impoverished who steal out of economic need. (5%)  - Typically, they will steal necessities, like food, diapers, toiletries, or children's clothing. If caught, they will usually show remorse, but state their frustration with their lack of money, and may voice hostility against a \"System\" that keeps them impoverished. 4) The thrill seekers who steal on a dare or for excitement  (5%)   These shoplifters will often steal in groups. Many teenagers fall into this category. 5) Drug and gambling addicts who steal to pay for their habit (5%) Like Professionals, they prefer stealing expensive items and often carry drugs or drug paraphernalia on themselves. They are usually less careful than the Professional, but will likely arrest and flee the store if confronted.  6) Kleptomaniacs who steal for no reason (1%) They are impulsive and often careless and often take items they don't need and can't use, like stealing shoes that do not fit. If caught, many will admit they are kleptomaniacs and do not feel much remorse or shame. They will often use common excuses, like \"I don't remember taking it\", or \"I don't know why I took it because I don't even need it\".   7) The absent minded (1%)  People in a hurry, elderly people, people on medications or those who would have cognitive or memory issues.\r\n Although he was once treated for 'Kleptomania' it appears that his stealing was not a compulsive behavior disorder but an impulse and behavioral problem related to his alcohol abuse. He does not provide a current history of 'kleptomania' behavior.\r\n\r\n",
-  :body => "The correct provisional diagnosis(es) for Jack is (are)?",
+  :notes => "<strong>Diagnostic discussion</strong><br />\r\nJohn Gurstner's symptoms are consistent with a diagnosis of Intermittent Explosive Disorder rather than antisocial or borderline personality disorder wherein aggressiveness and impulsivity are part of the client's character and are present between outbursts. The diagnosis of Intermittent Explosive Disorder can be made when the client reports several episodes of loss of control over aggressive outbursts causing injury to  person or destruction of property. The outbursts, sometimes occurring without clear memory of the details, are usually followed by genuine regret or self-reproach. It would also be important for the counselor to assess for the possibility of Posttraumatic Stress Disorder because of his history of traumatic events. However, his presenting symptoms did not meet criteria for that diagnosis. Other causes of aggressive outbursts could be personality disorders, psychotic disorders, manic episodes, conduct disorders, ADHD, drug effects, medical conditions, brain tumors, or head traumas.\r\nIn addition, Mr. Gurstner has serious problems with loss of control of his anger after drinking more than three drinks of alcohol. The diagnosis of Alcohol Intoxication includes the following:\r\nA.  Recent ingestion of alcohol.\r\nB. Clinically significant maladaptive behavioral or psychological changes (e.g., inappropriate sexual or aggressive behavior, mood lability, impaired judgment, impaired social or occupational functioning) that developed during, or shortly after, alcohol ingestion.\r\nC.  One (or more) of the following signs, developing during, or shortly after, alcohol use:\r\n(1) slurred speech\r\n(2) incoordination\r\n(3) unsteady gait\r\n(4) nystagmus\r\n(5) impairment in attention or memory\r\n(6) stupor or coma\r\nD. The symptoms are not due to a general medical condition and are not better accounted for by another mental disorder.\r\nWhite the diagnosis of \"Pathological Intoxication\" has been previously used in the DSM-III it has ceased to be an official diagnosis in the DSM-IV-TR although it may still have forensic application and is often associated with the assumption of legal insanity.\r\nSeveral laboratory studies have supported the idea that the level of alcohol related aggression is related to whether a person has a history of past aggressive behavior. For example, Giancola and Zeichner (1995) demonstrated in a study using laboratory measures of aggression that aggressive personality characteristics are associated with alcohol related aggression.\r\nThe diagnosis of Alcohol Abuse can't be used in this client since he did not have all of the following criteria-symptoms have been presented for over one year. Failed work or home obligations, hazardous driving, or operating machinery while intoxicated, legal problems, and social or interpersonal problems.",
+  :body => "The correct provisional Axis I diagnosis or diagnoses for this client is?",
   :position => 3,
   :answers => [
     {
       :value => -2,
-      :body => "a. Alcohol Dependency",
-      :response => "Answer: Jack had an early history of excessive and episodic alcohol use but does not meet the criteria for alcohol dependency in spite of a family history of that diagnosis.  Select another diagnosis."
-    },
-    {
-      :value => 3,
-      :body => "b. Bipolar Disorder, Mixed State",
-      :response => "Answer: This is a good choice. Please select another diagnosis before going to the next question.\r\nBipolar Disorder-mixed type, is characterized by mania and depression occurring at the same time. Symptoms are occurring simultaneously with anxiety. Symptoms are dysphoric mood, sleep disturbance, and irritability which worsened with Serotonin Reuptake Inhibitor antidepressant medications prescribed for him(Prozac and Paxil). \r\n\r\nJack has a history of depression dating back to high school. In addition he identified angry outbursts, anxiety, worry, dysphoria, sleep disturbances, guilt, and taking prescription medications (Ritalin, Prozac, and Paxil) as problem areas. "
+      :body => "a. Alcohol Abuse",
+      :response => "Answer: Incorrect. John does not meet criteria for this disorder. Alcohol abuse is manifested by a pattern of drinking that results in harm to one's health, interpersonal relationships, ability to work, and legal problems. The risk of suicide is also high in older men who have a history of drinking and suffer from depression. Certain manifestations of alcohol abuse include failure to fulfill responsibilities at work, school or home and hazardous driving patterns.  His drinking pattern, although associated with angry outbursts and memory lapses, has not deteriorated to the point that he can be diagnosed with Alcohol Abuse.  Select another diagnosis."
     },
     {
       :value => -2,
-      :body => "c. Intermittent Explosive Disorder",
-      :response => "Answer: Even though Jack has had angry outbursts he does not meet criteria for Intermittent Explosive disorder. Select another diagnosis."
+      :body => "b. Bipolar Disorder, Mixed",
+      :response => "Answer: Incorrect. John does not meet criteria for this disorder.  Select another answer."
     },
     {
       :value => 3,
-      :body => "d. Alcohol Abuse",
-      :response => "Answer: This is a good choice. Please select another diagnosis before going to the next question.\r\nJack has a history of abusing alcohol and, in spite of going through severaal detoxification programs he has continued drinking alcohol as his drug of choice. Although his use of alcohol has, in large part, been a maladaptive attempt at controlling dysphoric symptoms, his drinking has caused significant social and legal consequences as manifested by episodes of stealing and loss of two marriages and is more characteristic of Alcohol Abuse. "
+      :body => "c. Intermittent Explosive Disorder",
+      :response => "Answer:	Correct diagnosis:  Correct diagnosis: This disorder should only be made after a thorough medical work-up. Although this option was not made available in this scenario it is recommended and should include a neurological examination and other diagnostic procedures, particularly since he's been told he has a seizure disorder. John's symptoms are consistent with a diagnosis of Intermittent Explosive Disorder rather than antisocial or borderline personality disorder wherein aggressiveness and impulsivity are part of the client's character and are present between outbursts. His anger is out of proportion to any provocations or the stressors associated with his mother-in-law's disagreement about his parenting. It would be important for the counselor to assess for the possibility of Posttraumatic Stress Disorder because of his history of traumatic events. Although he presents symptoms of frightening dreams, sweating, and sleep disturbance there are not sufficient symptoms to meet criteria for that diagnosis.  He did not ave any soft signs such delayed speech or poor coordination, migraine headaches, or history of head injury. However he did have an unconscious episode. The mental health professional should also rule out disorders associated with impulsive behaviors, such as  Antisocial Personality, Conduct Disorder, Dementia, Oppositional Defiant Disorder and Post-traumatic Stress Disorder. Go to Question 4."
+    },
+    {
+      :value => -2,
+      :body => "d. Major Depressive Disorder",
+      :response => "Answer: Incorrect. John does not meet criteria for this disorder. Select another diagnosis."
     },
     {
       :value => -2,
       :body => "e. Generalized Anxiety Disorder",
-      :response => "Answer: Jack's symptoms of anxiety are associated with they dysphoria he tries to control with alcohol, which only makes him feel worse. His anxiety is not consistent with GAD, the criteria which is as follows:  Category A (last six months-excessive anxiety and worry), does not meet Category B (needs three and he has expressed two symptoms: irritability, and sleep disturbance). His symptoms do not meet Category D, likely meet Category E (significant stress in social functioning), and uncertain about Category F (medical condition-lower back pain unfounded for physical reasons) for GAD. This would be a disorder to be ruled out. Select another diagnosis."
+      :response => "Answer: Incorrect. John does not meet criteria for this disorder. Select another answer."
     },
     {
       :value => -2,
-      :body => "f. Panic Disorder",
-      :response => "Answer: The information acquired during the intake interview did not suggest that Jack experienced sudden panic behaviors or episodes. Select another diagnosis."
+      :body => "f. Pathological intoxication",
+      :response => "Answer: No. This diagnosis has ceased to be an official diagnosis in the DSM-IV-TR.\r\n\r\n"
     },
     {
-      :value => -2,
-      :body => "g. Kleptomania",
-      :response => "Answer: Jack's release from prison was contingent upon his entering therapy for kleptomania. The information acquired during the intake interview did not yield sufficient symptoms to suggest kleptomania as a diagnosis. Select another diagnosis."
-    },
-    {
-      :value => -2,
-      :body => "h. Antisocial Personality Disorder",
-      :response => "Answer: Even though Jack has had difficulty sustaining a spousal relationship to three ladies there was no data to suggest that his symptoms meet Category B or any of the nine behaviors for Category A for a personality disorder. Select another diagnosis.\r\n"
-    },
-    {
-      :value => -2,
-      :body => "i. Attention Deficit Hyperactivity Disorder (ADHD)",
-      :response => "Answer: ADHD is frequently associated with alcohol use especially with adolescents.  Jack's parents were told by teachers that Jack had ADHD. No information was available to suggest that an assessment was conducted, however he was prescribed Ritalin. He can be referred for assessment for adult ADHD. He does not meet the criteria for Category A and B but does meet symptoms for Category C (symptoms present in two or more settings). Select another diagnosis."
-    },
-    {
-      :value => -2,
-      :body => "j. Self-defeating personality disorder (Axis II)",
-      :response => "Answer:  Self-defeating personality disorder that was never formally admitted into the Diagnostic and Statistical Manual of Mental Disorders (DSM) although it was discussed in an appendix of the manual's revised third edition (DSM-III-R)as an alternative, the diagnosis. \r\n"
-    },
-    {
-      :value => 2,
-      :body => "k. Personality Disorder, NOS (Axis II)",
-      :response => "Answer: The only required sign and symptom of Personality Disorder, NOS is that a person's social or mental personality is impaired in such a way that causes a distress and dysfunction in one of more of the important areas of life.\r\n"
-    },
-    {
-      :value => -1,
-      :body => "l. Deferred diagnosis (Axis II)",
-      :response => "Answer: Incorrect choice. There are sufficient symptoms to assign a different Axis II Disorder therefore does not meet the criteria for Deferred diagnosis Axis II (799.9). Select another answer.\r\n"
+      :value => 3,
+      :body => "g. Alcohol intoxication",
+      :response => "Answer: Yes. This diagnosis includes recent ingestion of alcohol (John meets this criteria), see diagnostic discussion after completing the scenario.   "
     }
   ]
 )
 scenario.questions.create(
   :score_type => 'Information Gathering',
-  :notes => "<strong>Recommendations</strong><br />\r\nThe recommendations is to obtain additional information about the following: the quality of depression and frequency and type of mood swings, precipitating factors for worsening symptoms, the quality of angry outbursts and physical or verbal abuse, possibility of dissociation, degree of anxiety, reasons for stealing, why and what does he steal, and possible guilty feelings.",
-  :body => "After reviewing the intake report, the counselor would seek clarification for which of the following statements or content of the report in order to determine a treatment plan?",
+  :notes => "<strong>Recommendations</strong><br />\r\nTo be certain of the diagnosis the counselor might request psychological testing, clarify more family history, determine if alcohol use is associated with the outbursts, clarify the presence of possible mood changes, and ask for more details about past traumatic events.",
+  :body => "To be certain of the diagnosis the counselor might make which of the following recommendations?",
   :position => 4,
   :answers => [
     {
-      :value => 3,
-      :body => "a. More specific information about the quality of depression",
-      :response => "Answer: This information would be critical as he described symptoms of depression, dysphoria, anxiety, guilt, sleep disturbances, and a family history of Bipolar Disorder during the initial session.  Jack said he was prescribed medication for his depression, ie. but said these medicationsmade him feel worse. Furthermore he preferred to spend his money on alcohol. Although he recalled episodes of depressed and dysphoric mood lasting a couple of weeks, drinking alcohol would alter his emotional state and he was uncertain he felt the depression. Please submit additional answers or go to Question 5. "
-    },
-    {
-      :value => 3,
-      :body => "b. Frequency and type of mood swing",
-      :response => "Answer: It is important to assess for length of time when or what kind of depression or mood swings he may be experiencing (seasonal depression or Bipolar disorder: types I or II, recent depressed, hypomanic, manic, mixed, unspecified and Cyclothymic Disorder as examples).  \r\nPlease submit additional answers or go to Question 5. "
-    },
-    {
-      :value => 1,
-      :body => "c. Precipitating factors associated with worsening symptoms six months ago",
-      :response => "Answer: This probe may or may not be helpful. When asked why Jack though his drinking had gotten worse he said it had to do with his brother's death and the worsening relationship with a female friend, and a concern he was losing important people in his life. He said drinking temporarily blocked out those memories of  recent losses. Please submit additional answers or go to Question 5. "
-    },
-    {
-      :value => 2,
-      :body => "d. Quality of anger outbursts, degree of physical or verbal abuse, and presence of dissociation",
-      :response => "Answer: It is important to probe for more information regarding anger, verbal abuse and dissociation. Clients who have Bipolar Disorders and substance use tend to experience a higher number of mood-related, manic, impulsive, and violent behaviors. Additional questions can include: Under what conditions did he become angry and act out? Was he aware that he was getting angry? Could he resist the impulse to act out? Jack responded that he was aware he was angry but he did not care if he pushed it to the point that others became angry at times but he did not care if he pushed it to the point that others became angry. He never got into any fights and usually he just picked up his bottle of beer and walked away. \r\nPlease submit additional answers or go to Question 5."
-    },
-    {
-      :value => 1,
-      :body => "e. Specific information about his anxiety, physical complaints, and cognitive functioning ",
-      :response => "Answer: The mental status examination did not account for cognitive impairment in the form of long term memory losses although his short term memory was slightly impaired. Examples he gave had to do with keeping track of where he placed things about the house, the number of games he had bowled, and what nights of the week he had gone to the bars. He recalled that he became anxious when he had nothing to do or at times right after the evening meal.  Lately his anxiety has had to do with death and \"feeling down\" for longer periods of time. He reported that drinking relieved anxiety around people and helped him enjoy being with friends. His physical manifestations were in the form of back pain, which at times, kept him from bowling-something he enjoyed to do with his friends.  Submit another answer or go to Question 5."
-    },
-    {
-      :value => -2,
-      :body => "f. Specific information as to why he married someone ten years older",
-      :response => "Answer: This information would not provide diagnostic information. Submit another answer or go to Question 5."
-    },
-    {
-      :value => -2,
-      :body => "g. Specific reasons for each of the divorces",
-      :response => "Answer: This information would not provide diagnostic information. Submit another answer or go to Question 5."
+      :value => -1,
+      :body => "a. Request psychological testing",
+      :response => "Answer:	Incorrect. John's chart indicates he had a neurological examination and the results indicated a seizure disorder. To repeat the examination is likely to not be different than the testing 9 months ago.  Two different projective instruments were utilized and an organic cause was ruled out. Select another answer or go to Question 5.\r\n"
     },
     {
       :value => -3,
-      :body => "h. The type of objects shoplifted",
-      :response => "Answer: Irrelevant for making a diagnosis unless it was alcohol.  Submit another answer or go to Question 5."
+      :body => "b. Administer a socialization inventory",
+      :response => "Answer: Incorrect. This information is not likely to be helpful in forming a diagnosis. Select another answer or go to Question 5.\r\n"
     },
     {
-      :value => 0,
-      :body => "i. The last time he shoplifted",
-      :response => "Answer:	This assessment may have some benefit especially if his shoplifting was addictive or compulsive.  He reported a pattern of deliberate shoplifting that took place oly when he had been drinking.  The last time he shoplifted he had been drunk. He stopped by the local 7-11 Pantry and pocketed two doughnuts without reporting them at the check-out.   He told the cashier he just forgot but the surveillance camera picked up his body language which revealed that he had picked up the doughnuts and then looked around the store two or three times before slipping them inside a jacket pocket, behavior that was contrary to his verbal report. Submit another answer or go to Question 5."
-    },
-    {
-      :value => 1,
-      :body => "j. What he derived from stealing",
-      :response => "Answer: This information could be helpful in assessing his risk-taking, compulsive, and self-defeating behaviors. If he derived an emotional 'high' from the risk of stealing rather than obtaining the item itself it would indicate that he obtained pleasure from the risk and that it had a compulsive or 'addictive' quality even though self-defeating. Jack said taking the risk was exciting and pleasureable and this feeling negated any fear of getting caught.   Select another answer or go to Question 5."
+      :value => -1,
+      :body => "c. Clarify family history",
+      :response => "Answer: Incorrect. This information is not likely to provide symptoms for a diagnosis. Select another answer or go to Question 5.\r\n"
     },
     {
       :value => 1,
-      :body => "k. The nature of his guilt",
-      :response => "Answer: Probing for the nature of his guilt could reveal information about the source of his anxiety, worry, intra-psychic conflict, capacity to experience normal guilt  feelings and depression. Jack was unable to provide a known reason for his guilt feeling although he seemed to feel guilty for surviving while his brother had died. Select another answer or go to Question 5."
+      :body => "d. Determine if alcohol use is associated with his angry outbursts",
+      :response => "Answer:	Correct. John has provided some information regarding immediate use of liquor (Scotch and water)after an angry outburst and using the same to anticipate an outburst that may be forthcoming. Further inquiry could surface symptoms and information regarding the association between anger and drinking behaviors. \r\nSelect another answer or go to Question 5.\r\n"
     },
     {
-      :value => 0,
-      :body => "l. Sleep patterns, length of time experienced, dreams",
-      :response => "Answer:	Jack did not provide any symptoms specific to a sleep disturbance that would indicate a need to assess for a sleep disorder. Medical history did not reveal headaches, periods of apnea, night terrors, blood pressure issues, or falling asleep during the day. Please submit additional answers or go to Question 5. "
+      :value => -1,
+      :body => "e. Re-administer the Mental Status Examination",
+      :response => "Answer:	There was sufficient information from the initial mental status examination to suggest that John's cognitive functioning is intact and that his affect may be blunted but he recognizes his temper and is willing to work on how to resist the impulses during therapy. Select another answer or go to Question 5.\r\n"
+    },
+    {
+      :value => 2,
+      :body => "f. Ask for details about possible mood changes",
+      :response => "Answer:	Even though John professed to not know what a mood swing was he did indicate that he feel like he is not a happy person like other people. This inquiry could bring about awareness regarding his mood before and after the deaths of his father and brother. John was in his teenage years and an age when his identity was forming. As a result of the traumatic deaths and his relationship to those individuals the impact on his understanding and grieving would affect his functioning. \r\nSelect another answer or go to Question 5.\r\n"
+    },
+    {
+      :value => 3,
+      :body => "g. More details about past traumatic events",
+      :response => "Answer:	Information regarding past traumatic events is important to rule out post traumatic stress disorder. The symptoms associated with murder and drowning, dreams, anger, and sleep deprivation are closely aligned with several disorders. \r\nSelect another answer or go to Question 5.\r\n"
+    },
+    {
+      :value => -1,
+      :body => "h. Talk to the client's mother-in-law",
+      :response => "Answer: This information is not likely to be helpful in making a diagnosis. Select another answer or go to Question 5.\r\n"
     }
   ]
 )
 scenario.questions.create(
   :score_type => 'Information Gathering',
-  :notes => "<strong>Treatment recommendations</strong><br />\r\n \r\nBipolar Disorder: Pharmacotherapy has been well established for all Bipolar Disorders including mixed states and is generally the treatment of choice (Markovitz & Klerman, 1991). Mood stabilizing medications including Lithium and anticonvulsants, particularly Lamotrogine for Mixed Bipolar States, are commonly prescribed.  \r\n<br /><br />\r\n<strong>Alcohol Abuse</strong><br />\r\nThe standard treatment for alcohol abuse and dependency begins with the acute management of withdrawal symptoms in detoxification programs. This is followed by long-term management of abuse and prevention of relapse (Klerman et al., 1994). Maxwell and Shinderman (2000) indicate that Naltrexone shows good results for clients dually diagnosed with Alcohol Abuse Disorder and Bipolar Disorder. Treatment at the time and later is for the client to be active in an AA 12-Step program. \r\n<br /><br />\r\nPersonality Disorder: For treatment of his Axis II diagnosis structured settings might include reducing stimuli by setting limits such as restraining the expression of intense feelings (e.g., anger, frustration). Practical recommendations regarding the structure of the environment appear to be most productive when an Axis II diagnosis is noted (Janowsky, Ell-Yousef & Davis, 1974).\r\n<br /><br />\r\n\r\nRelationship problems: Individual and supportive psychotherapy will help him resolve early life issues and conflict with his father as well as his current problems with establishing and maintaining relationships.\r\n\r\nIn a review of empirical studies on treatment effectiveness Cognitive-Behavioral approaches are more effective in alcoholics with antisocial personality disorders or more impaired individuals in general, whereas, relationship-oriented approaches are more effective for clients who are functioning better (i.e., weaker urges, lesser psychiatric severity, and better social skills) (Finney & Moos, 1998; Ritvo, Lewis, Irvine, Brown, Matthew, & Shaw, 2003). The duration of treatment appears to have a significant effect on outcome. Lower intensity over a longer duration of time appears to be the most effective treatment strategy (Finney & Moos, 1998).\r\n",
-  :body => "What therapies, techniques, and/or strategies would be recommended treatment? (Select as many as you consider important in this section.)",
+  :notes => "<strong>Treatment recommendations</strong><br />\r\nJohn Gurstner's needs help for both diagnoses, i.e. Intermittent Explosive Disorder, and Alcohol Intoxication. Individual supportive and psychodynamic psychotherapies can be very useful because of dynamic issues dating back to childhood and the unresolved grief associated with the deaths of his brother and father.  Cognitive Behavioral Therapy has also been found to be a useful therapeutic modality, particularly for post-traumatic symptoms. John also needs to be confronted about his problems associated with his drinking. After he has accepted the fact that he loses self-control after drinking alcohol it should be recommended that he completely stop drinking and attend AA meetings at the minimum.\r\n\r\n<br /><br />\r\n",
+  :body => "What therapies or techniques would be appropriate to respond to the provisional diagnosis?",
   :position => 5,
   :answers => [
     {
-      :value => 2,
-      :body => "a. Alcohol detoxification",
-      :response => "Answer: This would be a first priority since Jack said his drinking was on the increase especially within the last six months. Jack went through detoxification 4 years ago followed by some counseling. During additional probes he revealed that he was drinking more than he admitted during the intake interview.  The standard treatment for alcohol abuse and dependency begins with the acute management of withdrawal symptoms which takes place in alcohol detoxification programs. Detoxification is followed by long-term management of abuse and prevention of relapse (Klerman et al., 1994). \r\nPlease submit additional answers or go to Question 6.\r\n"
-    },
-    {
-      :value => 2,
-      :body => "b. Individual psychotherapy",
-      :response => "Answer: Individual psychotherapy is recommended to begin after he has started his journey of sobriety. The goal of individual therapy is to treat his anxiety, worry, guilt, lack of emotional expression, difficulties sustaining relationships and other problems that make him vulnerable to relapse. Please submit additional answers or go to Question 6.\r\n"
-    },
-    {
-      :value => -2,
-      :body => "c. Relationship therapy",
-      :response => "Answer: Jack has more pressing psychological and physical needs at the present. He will need to focus on breaking his drinking patterns, maintaining sobriety, coping with bipolar symptoms, and understanding addictive triggers. Please submit additional answers or go to Question 6. \r\n"
+      :value => -3,
+      :body => "a. Exposure Therapy",
+      :response => "Answer: Incorrect. Exposure and response prevention are known to be effective treatment for compulsions in response to anxiety. Select another answer or go to Question 6."
     },
     {
       :value => -3,
-      :body => "d. Family therapy",
-      :response => "Answer: This therapy would not be recommended. Jack has lost his brother to death and is in a conflictual relationship with a female friend. There was no discussion of continued relationship with any living family members. Please submit additional answers or go to Question 6. "
+      :body => "b. Dialectic Behavior Therapy",
+      :response => "Answer: Incorrect. Dialectic Behavior therapy is known to be successful with Borderline personality disorder. Select another answer or go to Question 6.\r\n"
+    },
+    {
+      :value => -3,
+      :body => "c. Solution Focused Therapy",
+      :response => "Answer: Incorrect. Solution-focused therapy is not therapy of choice for Intermittent Explosive Disorder. Select another answer or go to Question 6.\r\n"
     },
     {
       :value => 1,
-      :body => "e. Cognitive-Behavioral Therapy",
-      :response => "Answer: Cognitive behavioral therapy is recommended for psychological treatment. Integrated cognitive group therapy is recommended for dual diagnoses of Bipolar Disorder and substance use. The focus of these sessions will be on managing his Bipolar Disorder without abusing substances. Please submit additional answers or go to Question 6. "
+      :body => "d. Individual Supportive Psychotherapy",
+      :response => "Answer:	Correct. One-on-one supportive psychotherapy would be recommended. The counselor\r\nestablishes a trusting environment in which John can talk about the issues that are troubling him in his daily life such as loss of job and conflicts with individuals, and learn to understand his feelings and modulate  and appropriately direct his anger rather than impulsively act out physically as did his father.\r\nSelect another answer or go to Question 6.\r\n"
+    },
+    {
+      :value => 2,
+      :body => "e. Individual psychodynamic psychotherapy",
+      :response => "Answer:	Incorrect. This type of treatment can be helpful. Psychodynamic psychotherapy would be effective when the counselor establishes a trusting environment in which John can explore his early memories, understand his feelings associated with his losses, learn to compensate for those losses, and learn to modulate and properly direct his anger rather than impulsively act out physically as did his father. However at this time John's anger plus negative environmental conditions (loss of job, increased frequency of anger awareness, impulsive destruction) suggest that he will need the stabilizing effect of supportive therapy for a time before early memory exploration can take place. Select another answer or go to Question 6.\r\n"
+    },
+    {
+      :value => 1,
+      :body => "f. Relationship therapy",
+      :response => "Answer: Correct. Relationship therapy can be helpful. John has not experienced a healthy relationship and can benefit in therapy by being in the presence of a role model.\r\nSelect another answer or go to Question 6."
+    },
+    {
+      :value => -1,
+      :body => "g. Family therapy",
+      :response => "Answer: Family therapy is not recommended at this time. John has a presenting problem of anger and before he can work with family members he has personal work to be done.\r\nSelect another answer or go to Question 6."
     },
     {
       :value => 3,
-      :body => "f. Pharmacotherapy",
-      :response => "Answer. Pharmacotherapy for Bipolar Disorder, Mixed type is considered the primary mode of treatment. The medications of choice are mood stabilizing agents which include Lithium and anti-convulsants. Antipsychotic medications may also be prescribed for psychotic symptoms during mania or psychotic depression. Jack had poor resutls from taking Prozac and Paxil for his depression because it induced dysphoria or manic symptoms. There are some Bipolar clients, however, who may benfit from taking an anti-depressant during depressed cycles but in most cases it is in addition to a mood stablizer. Please submit additional answers or go to Question 6. "
+      :body => "h. Cognitive Behavioral Therapy",
+      :response => "Answer: Correct. This treatment is recommended. The therapy is to include a social skills training with a focus on increased awareness of anger and physiological arousal to begin the problem solving. This treatment should include inhibiting impulsive reactions, considering the consequences, and generating alternative behaviors. Cognitive interventions are to include self-statements and re-framing interpretations of the stressful stimuli. Select another answer or go to Question 6.\r\n"
+    },
+    {
+      :value => 3,
+      :body => "i. Pharmacotherapy",
+      :response => "Answer: Yes. There is evidence to support the use of anti-convulsant medication for Intermittent Explosive Disorder.   \r\n Select another answer or go to Question 6.\r\n"
+    },
+    {
+      :value => 2,
+      :body => "j. AA attendance",
+      :response => "Answer: Yes. Commitment and attendance in AA would be a strong recommendation for John. Although he claims to be a social drinker information shared by his wife reveals that John loses track of the number of drinks he consumes. He becomes so intoxicated that he does not remember what he does after having consumed three drinks."
     }
   ]
 )
 scenario.questions.create(
   :score_type => 'Information Gathering',
-  :notes => "<strong>Monitoring recommendations</strong><br />\r\nIt is recommended for follow-up psychological testing, reports by family members, consistent participation in a 12-Step support group, medication compliance, and Mr. Kelly's self-reports of improvement.",
-  :body => "Treatment improvement for Jack can be monitored through?",
+  :notes => "<strong>Monitoring recommendations</strong><br />\r\nTreatment improvement can be monitored through follow-up psychological testing, reports by family members, and compliance with prescribed medications.",
+  :body => "Treatment improvement can be monitored through?",
   :position => 6,
   :answers => [
     {
-      :value => 1,
-      :body => "a. Reduction in number of relapses",
-      :response => "Answer: This would be a good choice to monitor for reduced number of relapses. The intake interview revealed that Jack went through detoxification 4 years ago and relapsed 6 months later. Since that time he has not been in therapy for substance abuse. The goal for Jack is to maintain sobriety and not have any futher relapses. If he should have another relapse, he will most likely need to go thorugh detoxification once again although a partern of recurring relapses is not likely to occur. However, monitoring the number of relapses might be a useful way of monitoring improvement for clients who have considerable difficultly maintaining sobriety.  Select additional answers or go to Question 7."
+      :value => -1,
+      :body => "a. Follow-up psychological testing",
+      :response => "There were no psychological tests administered specifically for the angry outbursts. Rather a neurological and two paper-pencil tests such as the Bender Gestalt and Nebraska Luria were administered as initial screeners for an organic cause. Because this 9 months ago this may be too soon for a retest.  Select an additional answer or go to the next scenario."
     },
     {
       :value => -1,
-      :body => "b. Increase in short-term memory recall",
-      :response => "Answer: Even though this was one behavior listed in the history of presenting complaints his short-term memory deficit was more likely a result of the depression. Once his symptoms are stabilized and he is no longer depressed his short term memory is likely to improve. Select additional answers or go to Question 7."
-    },
-    {
-      :value => 1,
-      :body => "c. Follow-up psychological testing",
-      :response => "Answer: If a psychological instrument was administered early in the therapy it could be useful to monitor his psychological improvement. Select additional answers or go to Question 7."
-    },
-    {
-      :value => -1,
-      :body => "d. Reports by family members",
-      :response => "Answer: Family members were not made known during the intake. His brother is deceased and securing information from his female friend is not recommended. Select additional answers or go to Question 7."
-    },
-    {
-      :value => 2,
-      :body => "e. Consistent participation in a 12-Step support group",
-      :response => "Answer: Participation in a 12-Step support group like Alcoholics Anonymous (AA) is recommended. Jack's commitment to his program of change and therapy can be monitored by his attendance and participation in the program as well as developing a relationship with an AA sponsor. Select additional answers or go to Question 7."
-    },
-    {
-      :value => 2,
-      :body => "f. Medication compliance",
-      :response => "Answer: Compliance is very important for Jack especially since he reported that the last time he was prescribed anti-depressant medications he stopped taking them. The counselor should explain to Jack that if he has any discomfort with the antidepressant medication he should share his concern with his psychiatrist. Select additional answers or go to Question 7."
-    },
-    {
-      :value => 1,
-      :body => "g. Consistent participation in Shoplifters Anonymous meetings",
-      :response => "Answer:  This group participation is only recommended for individuals who have a compulsive shoplifting problem and are asking for help from others with a similar 'addiction'. He was asked to attend therapy for kleptomania after being incarcerated (C7). There is no evidence that his continued shoplifting was an addiction. This self-help group was founded in Detroit in 1992.Select additional answers or go to Question 7."
-    },
-    {
-      :value => 3,
-      :body => "h. Jack's self-reports of improvement",
-      :response => "Answer: Self-reports can be a good method to monitor improvement. In addition, pointing out improvement is reinforcing to the client to continue disciplined work at sobriety and improving his psychological condition related to Bipolar Disorder. Select additional answers or go to Question 7."
-    },
-    {
-      :value => -1,
-      :body => "i. Check-list of behaviors that were prior difficulties",
-      :response => "Answer: Jack has pressing problems with alcohol abuse and Bipolar Disorder. To focus on prior difficulties is likely to take away from his present behavioral problems. Select additional answers or go to Question 7."
-    }
-  ]
-)
-scenario.questions.create(
-  :score_type => 'Information Gathering',
-  :notes => "",
-  :body => "Improvement reports for Jack should be based upon which one or more of the following?",
-  :position => 7,
-  :answers => [
-    {
-      :value => 2,
-      :body => "a. Fewer symptoms of depression, anxiety, and dysphoric mood, worry",
-      :response => "Answer: It is recommended to assess improvement based on the intake assessment symptoms. Please submit additional answers or go to Question 8. "
-    },
-    {
-      :value => 0,
-      :body => "b. Fewer involvements in stealing",
-      :response => "Answer: Although Jack was involved in shoplifting, that does not appear to be a consistent behavior yet he acknowledges that he has acted out angry feelings through shoplifting behavior and alcohol use. No additional information was availabe regarding his involement in Cleptomaniacs and Shoplifters Anonymous (CASA) Please submit additional answers or go to Question 8. "
-    },
-    {
-      :value => 1,
-      :body => "c. Less intense anger",
-      :response => "Answer: Jack seems to have a prolonged experience with anger outbursts. It was suggested by a previous counselor the anger is aligned with Jack's feelings toward his father. Becoming aware of his anger, type of anger, and stimuli that triggers these outbursts would be an indication of improvement. Individuals who have dual diagnoses of alcohol abuse and Bipolar I Disorder frequently have higher rates of violent behavior. Please submit additional answers or go to Question 8. "
-    },
-    {
-      :value => 0,
-      :body => "d. Improved marital status",
-      :response => "Answer:	Even though Jack indicated he has not been successful in relationship with two previous women he states he is not interested in another marriage. Submit additional answers or go to Question 8.\r\n"
-    },
-    {
-      :value => -1,
-      :body => "e. Jack not reporting new information or recurrence of complaints",
-      :response => "Answer: This recommendation would be one way to focus on the lack of improvement. In fact, \"not reporting\" would be an example of hiding his behavior. Thus, Jack would not be improving. Submit additional answers or go to Question 8.\r\n"
+      :body => "b. Reduction in interrupted sleep",
+      :response => "Answer: Incorrect. John did not indicate that he had interrupted sleep, rather he could only sleep 4-5 hours per night but would awaken early in the morning. The reasons for this limited amount of sleep was explored. His doctor indicated that he was sleep deprived and with this information the doctor taught him methods to help him sleep through the night.  Select an additional answer or go to the next scenario."
     },
     {
       :value => -3,
-      :body => "f. Elimination of suicidal talk",
-      :response => "Answer: Jack has not said anything about suicide. Keep in mind however that suicidal attempts and ideation are fairly common with a dual diagnoses of substance abuse and Bipolar Disorder. Submit additional answers or go to Question 8.\r\n"
+      :body => "c. Fewer relapses in consciousness reports by family members",
+      :response => "Answer: Incorrect. This information to monitor improvement is more likely related to his seizure disorder and his medication compliance. This information is not likely to reveal improvement in his control of anger. Select an additional answer or go to the next scenario."
+    },
+    {
+      :value => 1,
+      :body => "d. Church attendance and good relationship with his pastor",
+      :response => "Answer: Correct.  John is a religious and spiritual person who has had regular church attendance. His interactions with the minister had become conflictual prior to the counseling. A reduction in his opposition to the minister and improved ability to interact in spite of his differences would be a sign of improvement and an accepted way of monitoring his acting out with others.   Select an additional answer or go to the next scenario."
     },
     {
       :value => 2,
-      :body => "g. Cessation of drinking",
-      :response => "Answer: To stop drinking would be a goal for the therapy. Submit additional answers or go to Question 8.\r\n"
-    }
-  ]
-)
-scenario.questions.create(
-  :score_type => 'Information Gathering',
-  :notes => "",
-  :body => "The counselor in planning for termination should be very concerned with which of the following?",
-  :position => 8,
-  :answers => [
-    {
-      :value => 1,
-      :body => "a. Stealing: because if it should recur Jack is likely to receive a much longer sentence",
-      :response => "Answer:	Stealing although is not presently a defined problem three months ago he was stopped by an officer and charged with a DUI. Two months ago, after leaving a bar on a Saturday afternoon, he stopped a department store and was caught shoplifting. It would appear that stealing is a current problem and that he enjoys the risk.  If he should resume drinking behavior, stealing could become a problem once again. Submit additional answers or go to another scenario."
+      :body => "e. Taking medications as directed",
+      :response => "Answer:  Correct. Monitoring consistency in taking his medication would be effective since he takes medication for his seizure disorder and is very likely going to be prescribed medications for his anger outbursts. There was no information to suggest that he was not taking his medication Select an additional answer or go to the next scenario."
     },
     {
-      :value => 3,
-      :body => "b. Relapse",
-      :response => "Answer: A relapse is always of concern for a client who is diagnosed with Alcohol Abuse. If Jack resumes drinking he likely to re-develop physical symptoms and require hospitalization.  Submit additional answers or go to another scenario."
-    },
-    {
-      :value => 3,
-      :body => "c. Depression and anxiety",
-      :response => "Answer: If these symptoms are not controlled Mr. Kelly will likely return to alcohol and other self-defeating behaviors. He would also be at a higher risk to relapse into alcohol abuse and kleptomania.  Submit additional answers or go to another scenario."
-    },
-    {
-      :value => -1,
-      :body => "d. A trend toward paranoia and delusional symptoms ",
-      :response => "Answer: Jack has not presented with paranoia or delusional symptoms therefore is not likely to become depressed and turn to alcohol for relief because of the paranoia and delusions. Submit additional answers or go to another scenario."
+      :value => 2,
+      :body => "f. Observing for the possible emergence of symptoms related to repressed or 'split-off' traumatic memories",
+      :response => "Answer: Correct. Monitoring for possible emergence of symptoms related to repressed traumatic memories would be important since it would be helpful to gain access to those memories.  Select an additional answer or go to the next scenario."
     },
     {
       :value => 1,
-      :body => "e. Emotional intimacy",
-      :response => "Answer: Therapy for Bipolar Disorder symptoms and substance abuse probably will surface a theme related to the lack of emotional intimacy which was expressed in his relationship with others during the initial interview. The counselor and client might establish a goal for the client to associate with a friendship group of non-drinkers. Since he enjoyed bowling this might be a good place to begin this association.  Improvement in emotional expression and sensitivity would be a positive sign. Submit additional answers or go to another scenario."
+      :body => "g. Observing for the possible emergence of symptoms related to repressed or 'split-off' traumatic memories",
+      :response => "Yes. Monitoring for possible emergence of symptoms related to repressed traumatic memories would be important since it would be helpful to gain access to those memories. "
+    },
+    {
+      :value => 2,
+      :body => "h. Monitoring his willingness and ability to stop drinking alcohol",
+      :response => "Answer:  Yes.  This would be very important. "
     }
   ]
 )

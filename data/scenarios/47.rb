@@ -1,294 +1,315 @@
 scenario = Scenario.create(
   :id => 47,
-  :title => "John Gurstner",
+  :title => "Sonoras Tews",
   active: false,
-  :body => "John Gurstner is a 49-year-old married Caucasian male.\r\nHistory of presenting complaint. Mr. Gurstner is self referred to a counselor in a group practice because of angry outbursts. He states that his wife insisted that he get help because his verbal aggressive outbursts toward her mother who is staying with them are upsetting the family. He has requested individual counseling rather than group therapy because he's afraid someone in the group will provoke him and he is fearful of what will happen when he gets angry. He tends to disagree with most people and can get angry so quickly he is not aware he is about to explode. One time he went across a table and hit a man because he looked at the guy and automatically did not like him. Sometimes his mother-in-law looks at him in that same manner. When asked about his sleep pattern John said that he usually gets about 4-5 hours per night.  <br /><br /><strong>Past History:</strong>  He has had problems controlling his anger ever since the death of his father and brother. Even as a schoolboy he was considered a problem student because of his tendency to fight with other students.\r\n<br /><br />\r\n<strong>Family History:</strong> He recalls his father as being a difficult person who was moody and frequently abusive. He is not aware of any family members who had mental illnesses. \r\n<br /><br />\r\n<strong>Medical History:</strong> Nine months ago he had a neurological evaluation because of lapses in consciousness and was been told that he has a type of seizure disorder for which he's been prescribed an anti-convulsant medication.\r\n<br /><br />\r\n<strong>Social History:</strong> He was physically abused by his father and witnessed his father's murder when he was 12 years of age.  Four years later he witnessed his brother drowning at an abandoned gravel pit pool. These painful and traumatic losses have had a significant effect on him. He complains that his mother-in-law interferes in their marriage and he wants her to leave their house but his wife will not permit that to happen. He has been married for 18 years and has two children and says he has had a good relationship with his family. He is a religious man, attends church regularly, but has a reputation of often opposing the minister's decisions. He was employed until this past year and was known for being easily angered toward officials in the company where he worked.\r\n<br /><br />\r\n<strong>Substance History:</strong> He describes himself as a social drinker who only drinks no more than three drinks when they go to parties. However, his wife says she noticed that during the past few months he has been drinking more than three drinks and at those times his behavior changes in embarrassing ways. For example, on several occasions he struck someone after he'd had five drinks. She always goes with him to social events where alcohol is served so she can take him home when he begins drinking and before his behavior is out of control. She is convinced he has no memory of his embarrassing behavior because he will deny all episodes of embarrassing or aggressive behaviors while claiming that he only had a few drinks to enjoy himself. In truth, he does not remember what he does after having three drinks.\r\n<br /><br />\r\n<strong>Mental Status Examination:</strong> He is a relatively short man, is somewhat overweight, and appears his stated age. He is oriented as to time, place, and person. He reveals very little personal information about himself and has difficulty expressing feelings other than anger. He says he can't remember the last time he ever cried. His affect is blunt and he denies having depressed moods. When asked about his sleep pattern John said that he usually gets about 4-5 hours per night. He is not introspective nor receptive to personal criticism and tends to blame others, particularly his mother-in- law."
+  :body => "Sonora Tews is a 43-year-old African American male.\nPresenting Concern: Mr. Tews is seeking help for depression, suicidal ideation associated with pain, muscle cramps, sleeplessness, irritability, and gastrointestinal symptoms. He was been unable to work since his back injury, which was two years ago, and subsequent chronic back pain. He reports being more depressed the past two weeks and has symptoms of insomnia, fatigue, diminished appetite, and weight loss of 10 pounds. This depression has worsened the last two days and is associated with fleeting but recurring thoughts of stepping in the path of a car or shooting himself but he has no clear plan to do either.<br /><br /><strong>Past Psychiatric History:</strong>  He was first prescribed medication for a mild depression two years ago by his family physician and he took it for a brief time until he felt better. There is no history of previous depression prior to two years ago or suicidal ideation prior to the past two weeks, nor has he ever been in psychotherapy.  \r\n<br /><br />\r\n<strong>Family History:</strong> His father has a history of chronic alcohol use. His mother was frequently depressed during his childhood years and would often spend her weekends in bed. \r\n<br /><br />\r\n<strong>Medical History:</strong> The onset of back pain occurred 2 years ago due to an automobile accident. In spite of back surgery one year ago there has been no improvement. His pain is partially controlled by narcotics. He has been under the care of a physician who has prescribed Lortab, 7.5 mg., 4 or 5 times a day and he has severe pain if he misses a dose. Two days ago he ran out of Lortab while his physician was on vacation and was unable to obtain it from other physicians.He also has peripheral neuropathy secondary to Type II Diabetes Mellitus also requiring medication for pain. He was 30 pounds overweight but has been losing weight over the past two years. \r\n<br /><br />\r\n<strong>Social History:</strong> His father abandoned the family when he was 9-years-old and his mother never remarried. He was dependent on his older sister because his mother worked full time. He is a, Junior college graduate and was employed by a local company as an accounts manager until 2 years ago when his back was injured and his pain interfered with his capacity to work. He has been married for 10 years and has two children ages 9 and 5. He has been separated from his wife for the past six months and lives with his sister. \r\n<br /><br />\r\n<strong>Substance History:</strong>  He reports drinking no more than an occasional beer. He smokes a pack of cigarettes each day. He has been taking the narcotic Lortab, 7.5 mg.,  4 or 5 times a day and cannot tolerate missing a dose without suffering severe pain. Two days ago he ran out of Lortab while his physician was on vacation and was unable to obtain it from other physicians. He began to suffer from worsening pain and apparent withdrawal symptoms, muscle cramps, sleeplessness, irritability, and gastrointestinal problems.\r\n<br /><br />\r\n<strong>Mental Status Examination:</strong> Mr. Tews is a 43-year-old African American male, 5 foot 8 inches, who weighs 150 pounds, which is a 41 pound weight loss from two years ago. He is oriented to time, place, and person and is of average intelligence. His thoughts are circumstantial and consumed by worries about the seriousness of his worsening back pain, muscle cramps, sleeplessness, irritability, and gastrointestinal problems. His mood and affect are depressed, he denies suicidal intent, but he's had fleeting thoughts of stepping in front of a car or shooting himself. He has reported occasional visual hallucinations in the form of flashes of light and seeing people dressed in old-fashioned clothing the past two days."
 )
 scenario.questions.create(
   :score_type => 'Information Gathering',
   :notes => "",
-  :body => "Which of the following is considered important for assessing for Axis I DSM-IV-TR provisional diagnosis or diagnoses?",
+  :body => "From the information contained in the chart the counselor would consider which of the following as an initial best practice?",
   :position => 1,
   :answers => [
     {
+      :value => 2,
+      :body => "a. Establish a psychiatric diagnosis",
+      :response => "Answer: There are numerous symptoms presented during the initial session and listed in the clinical chart to make a diagnosis. The history of depression and conditions worsening in the last two days warrants careful consideration of his health. He also reports suicide ideation of stepping in front of a car or shooting himself and also has occasional visual hallucinations. Please submit additional answers or go to the Question 2."
+    },
+    {
+      :value => -1,
+      :body => "b. Refer Mr. Tews to an opiate detoxification program",
+      :response => "Answer:   He appears to be dependent on Lortab, but his pain medicine there is no evidence he is abusing opiates which he needs to control his pain.He drinks a beer occasionally but at this time there is not sufficient information to warrant this referral to consider he has a drinking problem  Please submit additional answers or go to the Question 2."
+    },
+    {
+      :value => -1,
+      :body => "c. Consider this a medical crisis and refer Mr. Tews to a temporary physician who can prescribe his pain medication until the return of his permanent physician  ",
+      :response => "Answer: A referral to a temporary physician to prescribe pain medication would not be appropriate and would be very difficult to arrange at this time. His depression and suicidal ideation are more pressing problems at this time and he could be referred to a hospital emergency center if his pain is that severe.  Please submit additional answers or go to the Question 2."
+    },
+    {
+      :value => 2,
+      :body => "d. Refer Mr. Tews to an emergency care center for medical treatment",
+      :response => "Answer: This referral has some possible advantages if the care center can respond to his withdrawal symptoms from his prescribed narcotic medications as well as possible other medication needs for the diabetes and chronic pain. Please submit additional answers or go to the Question 2."
+    },
+    {
       :value => -2,
-      :body => "a. Spiritual affiliation",
-      :response => "Answers:  Incorrect. Spiritual affiliation would not provide diagnostic information. \r\nSelect another answer or go to Question 2."
+      :body => "e. Refer Mr. Tews to an AA program",
+      :response => "Answer: There is not sufficient history or recent information to suggest that Mr. Tews has a drinking problem. He is experiencing withdrawal symptoms from the pain medication and needs medical treatment until his physician returns. Please submit additional answers or go to the Question 2."
     },
     {
-      :value => 3,
-      :body => "b. History of presenting complaint",
-      :response => "Answer: Correct. The only information he volunteered during the intake interview was a concern about angry outbursts and his displeasure with his mother-in-law. Breaking the antique was out of proportion to the provocation. He responded to requests for more details as follows: His anger at his mother-in-law always takes place when she confronts his inadequacies in understanding his children. He verbally opposes her as he has his minister. He was physically abused by his father, fighting during the school years, witnessed his brother drowning, and his father's murder. He says he thinks that is why he disagrees with just about everyone. Bad things seem to happen to him. He has requested one-one counseling rather than a group because someone in a group is likely to tick him off. Some one told him that he had flash anger. It comes on so fast that he does not even know that he is about to explode. One time he went across a table and hit a man because he said a major league pitcher from his favorite team was a drip. He knows that was not a reason to hit the man but he just looked at the guy and he automatically did not like him. He just wanted an excuse to hit him. Sometimes his mother-in-law looks at him in that same manner. Select another answer or go to Question 2."
+      :value => -1,
+      :body => "f. Monitor his withdrawal symptoms daily and proceed with counseling after the physical symptoms have subsided",
+      :response => "Answer: Monitoring his withdrawal symptoms is the responsibility of his physician. Please submit additional answers or go to the Question 2."
     },
     {
-      :value => -3,
-      :body => "c. Marital relationship",
-      :response => "Answer: Incorrect. There was no indication that further questioning would be helpful in a diagnosis. In fact, his wife was the first to rule out drinking as a problem for the two of them. Select another answer or go to Question 2."
-    },
-    {
-      :value => -2,
-      :body => "d. Relationship with mother-in-law",
-      :response => "Answer: Even though His relationship with his mother-in-law is very poor in spite of the fact she does live with them this information is not significant for establishing an Axis I diagnosis Select another answer or go to Question 2."
-    },
-    {
-      :value => 1,
-      :body => "e. Medical history",
-      :response => "Answer: Correct. This information would reveal about whether his angry outbursts had a neurological rather than a psychological etiology. It would be helpful to learn of his seizure disorder and the medication he is taking to control the seizures. Medial history indicates that he has lapses of consciousness. Select another answer or go to Question 2."
-    },
-    {
-      :value => 0,
-      :body => "f. Family history",
-      :response => "Answer:	Yes and no. Family history information is particularly helpful when Bi-polar Disorders are considered. John's family history revealed that his father had a serious problem with a bad temper but there was no evidence of Bi-polar disease. His father, who abused John also lacked patience, could not tolerate noise, and declared that he had never wanted children. As helpful as this information may be for understanding the cause of John's illness it is likely to be more helpful during treatment. He says he is a good father to his two children, is not physical with them but has yelled at them. Select another answer or go to Question 2.\r\n"
-    },
-    {
-      :value => 1,
-      :body => "g. Substance history",
-      :response => "Answer:	Correct. John said he had been a social drinker, although his wife insisted he stopped drinking. John shared that if he did lose his temper he would drink one or two mixed drinks (Scotch and water). These drinks would soothe him for the time being. He even had a drink or two if he thought he might be getting angry but that did not seem to work. He was never sure when he was getting angry. He did not drink in high school or take any drugs. He was afraid if he used drugs like his high school friends he would lose control. \r\nSelect another answer or go to Question 2.\r\n"
-    },
-    {
-      :value => 3,
-      :body => "h. Social history",
-      :response => "Answer:	This information would reveal whether his angry outbursts might be related to previous traumas, and if so, his angry outbursts could be secondary to a primary disorder. It is important to follow up on the after-effects of his father's murder and brother's drowning. John was twelve when his father was murdered. He and his father had gone to the local pool hall and his father would play cards for money. His father got into an argument with one of the card players and the other player accused his father of cheating. John was playing pool at the time, heard the yelling men, and saw his father hit the man and knock him down. When the man got up he left the card area only to return with a pistol, walk over to his father who was seated at a card table and shot his father four times.\r\nDuring the shooting the man appeared to be calm and after shooting his father looked right at John, and walked out of the pool room. The pool room was quiet. No one did or said anything but stood and look at both men. John said that ever once in awhile he replays the entire scene during his dreams and even when he is awake. He wakes up in a sweat, sometimes in a tremor, and thinks this is the reason for his seizures. Guns scare him and he will not watch movies that are mystery types where shooting others takes place. When movie or television shootings take place he knows his pulse rate increases and feels an urge to get up and leave the room. \r\n Just before his brother dived into the pool the two of them had been talking about his father's death. John was 14 and his brother was eight at the time of their father's death. They had been embarrassed about their father's anger and mistreatment of their mother and hated the gossip that was spread among his boyhood friends. As a result there was a residual of guilt feelings about their father's death   His brother was 10 years old when he died.  He could not save his brother who was apparently knocked out at the time he dove in because he hit a rock at the bottom of the pit. Please submit additional answers or go to the next question. \r\nCorrect.Select another answer or go to Question 2.\r\n"
-    },
-    {
-      :value => 3,
-      :body => "i. Mental status examination",
-      :response => "Answer:	Correct. This information would reveal about whether his symptoms are associated with a mood or a thought disorder and there is no evidence of either. John revealed very little personal information about himself and had difficulty expressing feelings other than anger. His affect was blunt and he was not introspective, nor receptive to criticis. Instead he blamed others for the difficulties he created.\r\nSelect another answer or go to Question 2.\r\n"
+      :value => -1,
+      :body => "g. Obtain psychiatric consultation for referral to a detoxification program",
+      :response => "Answer: There is no information to suggest that Mr. Tews has an alcohol problem to recommend a detoxification program and he is not a candidate for detoxification from narcotics. Please submit additional answers or go to the Question 2."
     }
   ]
 )
 scenario.questions.create(
   :score_type => 'Information Gathering',
   :notes => "",
-  :body => "After reviewing the intake report, the counselor would seek clarification for which of the following statements or content of the report in order to make a provisional diagnosis?",
+  :body => "Mr. Tews did go to the Emergency Care Center where his prescription was filled for the amount of days until his physician returned. In addition he was referred back to the counselor for counseling and support. To make a provisional DSM-IV-TR Axis I and II diagnosis and record information on Axis III what information is important? (Continue to select an answer until directed to advance to Question 3.)",
   :position => 2,
   :answers => [
     {
       :value => 1,
-      :body => "a. More specific information about the quality of his sleep",
-      :response => "Answer:	Correct. This information would be important to assess for a primary or secondary sleep \r\ndisorder. Quality of sleep is important to determine along with knowledge of interrupted sleep. \r\nJohn said he usually gets 4-5 hours of sleep and this has been going on for years. His doctor told \r\nhim this was sleep deprivation and prescribed sleeping pills. The pills did help him go to sleep but \r\ndid not keep him asleep. John stays up late until 12 or 1 o'clock in order to have a chance of sleeping longer during the night and awakens at about 5 a.m. If he did not go to sleep late he would need to get up around 2:30-3:00 AM because he cannot go back to sleep. He takes an early morning walk for 30-50 minutes and returns for a cup of coffee when his wife awakens.  His wife says he rolls and turns many times during the night and sometimes makes loud noises, will thrash his arms about often his arms will hit her somewhere on her body. When she tells him about this in the morning John is unaware of hitting her. John says many times just before he awakens he is aware he has been dreaming. The dreams are about natural disasters  such as volcanoes, floods, plane crashes, floods, and lately and sometimes human instigated disasters such as road side bombs. When he awakens from these dreams he feels so tense he has to get up and go for a walk to free his mind from the images although it has bee taking longer and longer to get those images out of his mind. \r\n Select another answer or go to Question 3.\r\n"
-    },
-    {
-      :value => -2,
-      :body => "b. Frequency and type of mood swings",
-      :response => "Answer:	Incorrect. There was no evidence provided in the history to indicate a need to clarify further. He denies having mood swings. The counselor had to define mood swings and John said he does not have them. He just never seems to be happy or excited like a lot of other people. His boss told hm he had a chip on his shoulder but he told the boss he was crazy and the chip he thought he saw was John's ability to tell it like it is something most people cannot tolerate. His boss told him he needs to see his clergy for help because he comes across like he does not like people boss told him he had a chip on his shoulder. He told the boss he was crazy and the chip he thought he saw was John's ability to tell it like it is something most people cannot tolerate. His boss told him he needs to see his clergy for help because he comes across like he does not like people.\r\nSelect another answer or go to Question 3."
+      :required => true,
+      :body => "a. Presenting concern and mental status examination",
+      :response => "Answer: The presenting concern of depression and suicide ideation, sleeplessness, irritability, dependency on pain medicine, and gastrointestinal problems provide information for possible Axis I and III diagnoses.  The Mental Status Examination reveals depressed mood and affect, circumstantial thoughts and hallucinations which would suggest an Axis I diagnosis. **Please submit additional answers or go to the next question.(NOTE: There are three correct diagnoses for this scenario. Go to the next question after data gathering.)\r\nSelect another answer or go to the next question**."
     },
     {
       :value => 2,
-      :body => "c. More details about the deaths of his father and brother and how he grieved those traumatic deaths",
-      :response => "Answer:	Correct. This information would be helpful to assess for diagnoses related to pathological bereavement or mood disorder. John said that his mother moved he and his brother to her parents in Idaho. The move took place one month after the funeral, however both boys left a week after the funeral to live with her parents until she arrived a month later. John said he did not grieve his father's death and as far as he knew no one did. All he could focus on was the man who shot his father. His mother told them the man went to prison shortly after they moved but was paroled three years ago.  His mother married another man three years after the move to Idaho. The marriage took place during his senior year in high school and he shortly left for Colorado and college so did not know this man very well. During the year they lived together the man seemed to be passive and quiet. He misses his brother because they were very close. During the two years after his father's death he and his brother would frequent a swimming hole. They had good times together and his brother is in his dreams as much as is his father. He still has not cried for either death. His mother died four years ago of a heart attack. Select another answer or go to Question 3.\r\n"
-    },
-    {
-      :value => 2,
-      :body => "d. Quality of angry outbursts, degree of physical or verbal abuse, presence of dissociation",
-      :response => "Answer:	Correct. This information would be helpful to assess for diagnoses of impulse or dissociative disorders. John was unable to describe any special kind of quality in his anger. He fears and hates his anger and knows it is like that of his father.  He does not hit people like he did in junior high school but he does yell a lot. He thinks he may get mad at least once a day sometimes more frequently at work. It seems to have gotten worse since he no longer works. He says he wants to hit but knows it is not right. After his rage is over he shakes and his skin feels funny for an hour or so before he feels normal. When he can he goes to sleep to get over the awful feeling associated with being angry. Select another answer or go to Question 3.\r\n"
-    },
-    {
-      :value => 1,
-      :body => "e. More information about the relationship with his children",
-      :response => "Answer:	 This information would be helpful to clarify a provisional diagnosis. John said \r\nhe did not want children for fear they would grow up like he did around angry people. What he \r\ndid not want to happen has happened; he has angry outbursts like his father. Never-the-less John says he is a good father, provides for the family, takes the children to their games, and school events but they do not talk. When he yells they become quiet and he realizes he was like that when his father did the same thing only \r\nhis father would hit. He has trouble developing a deep relationship with his children and is prone to smother his wife because he needs her with him all the time. Select another answer or go to Question 3.\r\n"
+      :required => true,
+      :body => "b. Presenting concern and past psychiatric history",
+      :response => "Answer: The presenting concern of depression and suicide ideation, sleeplessness, irritability, and gastrointestinal problems provides information for Axes I and III. The past psychiatric history also provides enough specific information to help formulate an Axis I Diagnosis. **Please submit additional answers or go to the next question.(NOTE: There are three correct diagnoses for this scenario. Go to the next question after data gathering.)**\r\n"
     },
     {
       :value => -2,
-      :body => "f. More information about his major conflicts with his mother-in-law",
-      :response => "Answer: This information would not be helpful in forming a diagnosis. Select another answer or go to Question 3.\r\n"
+      :body => "c. Presenting concern, family history, and social history",
+      :response => "Answer:  The presenting concern of depression and suicide ideation, sleeplessness, irritability, and gastrointestinal problems provides information for Axes I and III. Family and social history do not provide adequate information for Axes I, II, or III. (NOTE: There are three correct diagnoses for this scenario. Go to Question 3 after data gathering.)\r\n"
+    },
+    {
+      :value => -1,
+      :body => "d. Presenting concern, substance use history, and social history",
+      :response => "Answer: The presenting concern of depression and suicide ideation, sleeplessness, irritability, and gastrointestinal problems provides information for Axes I and III. The substance use history suggests dependency on Lortab, significant for Axis I.   However, there is inadequate information in the social history to provide diagnostic information for Axes I, II, or III.  (NOTE: There are three correct diagnoses for this scenario. Go to Question 3 after data gathering.) \r\n"
+    },
+    {
+      :value => 2,
+      :required => true,
+      :body => "e. Presenting concern, mental status exam, and substance history",
+      :response => "Answer: The presenting concern of depression and suicide ideation, sleeplessness, irritability, and gastrointestinal problems provides information for Axes I and III. Mr. Tews' substance use history provides information about his limited use of alcohol and dependency on Lortab with withdrawal symptoms from discontinuing Lortab and is important information for Axis I. Mental status information reports circumstantial thoughts, depressed mood, and hallucination also useful information for Axis I. **(NOTE: There are three correct diagnoses for this scenario. Go to the next question after data gathering.)**\r\n"
+    },
+    {
+      :value => -1,
+      :body => "f. Presenting concern, medical history, and social history",
+      :response => "Answer: Only two of these three items are important yet still provide inadequate information for making Axis I and III diagnoses. The presenting concern of depression and suicide ideation, sleeplessness, irritability, and gastrointestinal problems as well as the medical history provide information for Axes I and III. There is inadequate information in the social history to make an Axis I, II, or III diagnosis. (NOTE: There are three correct diagnoses for this scenario. Go to Question 3 after data gathering.)   "
+    },
+    {
+      :value => 2,
+      :required => true,
+      :body => "g. Presenting concern, substance history, medical history, and mental status examination",
+      :response => "Answer: These four items provide information for making Axis I and III diagnoses. Mr. Tews presents with depression and suicide ideation. He reports little to no use of alcohol. Medical history lists Type II Diabetes, peripheral neuropathy, and chronic pain associated with back injury. He reports withdrawal symptoms for Lortab. The Mental Status Examination revealed hallucinations, circumstantial thoughts, and depressed mood. **(NOTE: There are three correct diagnoses for this scenario. Select another answer or go to the next question)**"
+    },
+    {
+      :value => 2,
+      :required => true,
+      :body => "h. Presenting concern, past psychiatric history, substance history, medical history, and mental status examination",
+      :response => "Answer: These five items provide significant information essential for making Axis I and III diagnoses. The presenting concern of depression and suicide ideation, sleeplessness, irritability, and gastrointestinal problems as well as the medical history and substance history provide information for Axis I and III. Axis III information would include chronic back pain, muscle cramps, peripheral Neuropathy, secondary to Type II Diabetes and gastrointestinal symptoms. The past psychiatric history also provides additional information to help make an Axis I diagnosis. Additional Axis I related information is provided by the Mental Status Examination which revealed hallucinations associated with suicide ideation, depressed affect, circumstantial thoughts, irritability, and worries. **(NOTE: There are three correct diagnoses for this scenario. Select another answer or go to the next question)**"
     }
   ]
 )
 scenario.questions.create(
   :score_type => 'Information Gathering',
-  :notes => "<strong>Diagnostic discussion</strong><br />\r\nJohn Gurstner's symptoms are consistent with a diagnosis of Intermittent Explosive Disorder rather than antisocial or borderline personality disorder wherein aggressiveness and impulsivity are part of the client's character and are present between outbursts. The diagnosis of Intermittent Explosive Disorder can be made when the client reports several episodes of loss of control over aggressive outbursts causing injury to  person or destruction of property. The outbursts, sometimes occurring without clear memory of the details, are usually followed by genuine regret or self-reproach. It would also be important for the counselor to assess for the possibility of Posttraumatic Stress Disorder because of his history of traumatic events. However, his presenting symptoms did not meet criteria for that diagnosis. Other causes of aggressive outbursts could be personality disorders, psychotic disorders, manic episodes, conduct disorders, ADHD, drug effects, medical conditions, brain tumors, or head traumas.\r\nIn addition, Mr. Gurstner has serious problems with loss of control of his anger after drinking more than three drinks of alcohol. The diagnosis of Alcohol Intoxication includes the following:\r\nA.  Recent ingestion of alcohol.\r\nB. Clinically significant maladaptive behavioral or psychological changes (e.g., inappropriate sexual or aggressive behavior, mood lability, impaired judgment, impaired social or occupational functioning) that developed during, or shortly after, alcohol ingestion.\r\nC.  One (or more) of the following signs, developing during, or shortly after, alcohol use:\r\n(1) slurred speech\r\n(2) incoordination\r\n(3) unsteady gait\r\n(4) nystagmus\r\n(5) impairment in attention or memory\r\n(6) stupor or coma\r\nD. The symptoms are not due to a general medical condition and are not better accounted for by another mental disorder.\r\nWhite the diagnosis of \"Pathological Intoxication\" has been previously used in the DSM-III it has ceased to be an official diagnosis in the DSM-IV-TR although it may still have forensic application and is often associated with the assumption of legal insanity.\r\nSeveral laboratory studies have supported the idea that the level of alcohol related aggression is related to whether a person has a history of past aggressive behavior. For example, Giancola and Zeichner (1995) demonstrated in a study using laboratory measures of aggression that aggressive personality characteristics are associated with alcohol related aggression.\r\nThe diagnosis of Alcohol Abuse can't be used in this client since he did not have all of the following criteria-symptoms have been presented for over one year. Failed work or home obligations, hazardous driving, or operating machinery while intoxicated, legal problems, and social or interpersonal problems.",
-  :body => "The correct provisional Axis I diagnosis or diagnoses for this client is?",
+  :notes => "",
+  :body => "What additional measures would affirm a provisional diagnosis or diagnoses?",
   :position => 3,
   :answers => [
     {
-      :value => -2,
-      :body => "a. Alcohol Abuse",
-      :response => "Answer: Incorrect. John does not meet criteria for this disorder. Alcohol abuse is manifested by a pattern of drinking that results in harm to one's health, interpersonal relationships, ability to work, and legal problems. The risk of suicide is also high in older men who have a history of drinking and suffer from depression. Certain manifestations of alcohol abuse include failure to fulfill responsibilities at work, school or home and hazardous driving patterns.  His drinking pattern, although associated with angry outbursts and memory lapses, has not deteriorated to the point that he can be diagnosed with Alcohol Abuse.  Select another diagnosis."
+      :value => 1,
+      :body => "a. Psychological testing",
+      :response => "Answer: A paper-pencil diagnostic tool would provide validating information to confirm or rule out an Axis I and or Axis II diagnosis. There are also over 100 instruments to assess for suicide and several for depression. Select another answer or go to Question 4."
+    },
+    {
+      :value => 1,
+      :body => "b. Information obtained from his sister about his mood and the quality of his relationships and activities at home",
+      :response => "Answer: His sister might be able to  provide a six months inventory of his mood changes and any behavior out of the ordinary which would be minimally helpful.  Select another answer or go to Question 4."
     },
     {
       :value => -2,
-      :body => "b. Bipolar Disorder, Mixed",
-      :response => "Answer: Incorrect. John does not meet criteria for this disorder.  Select another answer."
+      :body => "c. His feelings and thoughts regarding abandonment issues",
+      :response => "Answer: This information would not be helpful in making a diagnosis. It might be helpful if he engages in psychotherapy to understand his past. Select another answer or go to Question 4."
     },
     {
-      :value => 3,
-      :body => "c. Intermittent Explosive Disorder",
-      :response => "Answer:	Correct diagnosis:  Correct diagnosis: This disorder should only be made after a thorough medical work-up. Although this option was not made available in this scenario it is recommended and should include a neurological examination and other diagnostic procedures, particularly since he's been told he has a seizure disorder. John's symptoms are consistent with a diagnosis of Intermittent Explosive Disorder rather than antisocial or borderline personality disorder wherein aggressiveness and impulsivity are part of the client's character and are present between outbursts. His anger is out of proportion to any provocations or the stressors associated with his mother-in-law's disagreement about his parenting. It would be important for the counselor to assess for the possibility of Posttraumatic Stress Disorder because of his history of traumatic events. Although he presents symptoms of frightening dreams, sweating, and sleep disturbance there are not sufficient symptoms to meet criteria for that diagnosis.  He did not ave any soft signs such delayed speech or poor coordination, migraine headaches, or history of head injury. However he did have an unconscious episode. The mental health professional should also rule out disorders associated with impulsive behaviors, such as  Antisocial Personality, Conduct Disorder, Dementia, Oppositional Defiant Disorder and Post-traumatic Stress Disorder. Go to Question 4."
+      :value => 2,
+      :body => "d. More detailed information about the nature of his depressed mood to include severity, frequency, duration of symptoms, and how these symptoms are associated with his hallucinatory experiences",
+      :response => "Answer: This information is critical to the diagnosis. To secure more detailed information about his depressed mood and if, when, or in what way they may be related to hallucinations would enable the examiner to consider a range of psychotic diagnoses or to rule out a diagnosis related to hallucinations. Select another answer or go to Question 4."
     },
     {
-      :value => -2,
-      :body => "d. Major Depressive Disorder",
-      :response => "Answer: Incorrect. John does not meet criteria for this disorder. Select another diagnosis."
-    },
-    {
-      :value => -2,
-      :body => "e. Generalized Anxiety Disorder",
-      :response => "Answer: Incorrect. John does not meet criteria for this disorder. Select another answer."
+      :value => 2,
+      :body => "e. More detailed information from Mr. Tews about the interrelationship of his mood disorder, his pain, and use of Lortab",
+      :response => "Answer: It is important to determine how Mr. Tews relates to his pain, how pain is related to mood fluctuations and how his mood and pain are affected by Lortab. It is also important to learn how his withdrawal symptoms affected his mood. Select another answer or go to Question 4."
     },
     {
       :value => -2,
-      :body => "f. Pathological intoxication",
-      :response => "Answer: No. This diagnosis has ceased to be an official diagnosis in the DSM-IV-TR.\r\n\r\n"
-    },
-    {
-      :value => 3,
-      :body => "g. Alcohol intoxication",
-      :response => "Answer: Yes. This diagnosis includes recent ingestion of alcohol (John meets this criteria), see diagnostic discussion after completing the scenario.   "
+      :body => "f. More detailed information about his early family life including the nature of, or absence of, the relationship with his father",
+      :response => "Answer: This information would not be helpful in making a diagnosis. Select another answer or go to Question 4."
     }
   ]
 )
 scenario.questions.create(
   :score_type => 'Information Gathering',
-  :notes => "<strong>Recommendations</strong><br />\r\nTo be certain of the diagnosis the counselor might request psychological testing, clarify more family history, determine if alcohol use is associated with the outbursts, clarify the presence of possible mood changes, and ask for more details about past traumatic events.",
-  :body => "To be certain of the diagnosis the counselor might make which of the following recommendations?",
+  :notes => "<strong>Diagnostic discussion</strong><br />\r\nMr. Tews has symptoms of Major Depressive Disorder, Single Episode, Psychotic Opiate Dependency, and Opiate withdrawal symptoms. Two days ago he ran out of Lortab while his physician was on vacation and he began to suffer from worsening pain, muscle cramps, sleeplessness,irritability, and gastrointestinal problems. Following detoxication it was possible to evaluate his depression. Based on history and mental status examination depressive symptoms clearly met criteria for a Major Depressive Episode. Although hallucinations are very rarely caused by opiate withdrawal,it should be noted that as he considers a diagnosis, the clinician is faced with making a decision as to whether or not his client's psychotic symptoms are secondary to opiate withdrawal or his Major Depressive Disorder.\r\n\r\nMr. Tews' immediate medical problem requires emergency treatment for symptoms consistent with Opiate withdrawal. Two days ago he ran out of Lortab while his physician was on vacation and he began to suffer from worsening pain, muscle cramps, sleeplessness, emergency consultation so an emergency room physician recognized the problem and Mr. Tews was hospitalized and treated for opiate withdrawal. Following completion of the withdrawal, he should be referred to a psychiatrist for evaluation for psychotropic medications.\r\n\r\n\r\nDiagnostic criteria for Opiate withdrawal.  \r\nA. Cessation of (or reduction in) opioid use that has been heavy and prolonged (several weeks or longer)   \r\nB. Three (or more) of the following, developing within minutes to several days after Criterion A: \r\n(1) dysphoric mood (2) nausea or vomiting  (3) muscle aches  (4) lacrimation or rhinorrhea  (5) pupillary dilation, piloerection, or sweating  (6) diarrhea  (7) yawning  (8) fever  (9) Insomnia\r\nC. The symptoms in Criterion B cause clinically significant distress or impairment in social, occupational, or other important areas of functioning.  D. The symptoms are not due to a general medical condition and are not better accounted for by another mental disorder.\r\n",
+  :body => "What provisional diagnoses would the counselor consider for a treatment plan? \r\n<br /><br />\r\na. Major Depressive Disorder, Single Episode, Non-Psychotic<br />\r\nb. Bipolar Disorder, Depressed<br />\r\nc. Major Depressive Disorder, Single Episode, Psychotic<br />\r\nd. Opiate Dependency<br />\r\ne. Opiate Abuse<br />\r\nf. Opiate Withdrawal<br />\r\n",
   :position => 4,
   :answers => [
     {
       :value => -1,
-      :body => "a. Request psychological testing",
-      :response => "Answer:	Incorrect. John's chart indicates he had a neurological examination and the results indicated a seizure disorder. To repeat the examination is likely to not be different than the testing 9 months ago.  Two different projective instruments were utilized and an organic cause was ruled out. Select another answer or go to Question 5.\r\n"
-    },
-    {
-      :value => -3,
-      :body => "b. Administer a socialization inventory",
-      :response => "Answer: Incorrect. This information is not likely to be helpful in forming a diagnosis. Select another answer or go to Question 5.\r\n"
-    },
-    {
-      :value => -1,
-      :body => "c. Clarify family history",
-      :response => "Answer: Incorrect. This information is not likely to provide symptoms for a diagnosis. Select another answer or go to Question 5.\r\n"
-    },
-    {
-      :value => 1,
-      :body => "d. Determine if alcohol use is associated with his angry outbursts",
-      :response => "Answer:	Correct. John has provided some information regarding immediate use of liquor (Scotch and water)after an angry outburst and using the same to anticipate an outburst that may be forthcoming. Further inquiry could surface symptoms and information regarding the association between anger and drinking behaviors. \r\nSelect another answer or go to Question 5.\r\n"
-    },
-    {
-      :value => -1,
-      :body => "e. Re-administer the Mental Status Examination",
-      :response => "Answer:	There was sufficient information from the initial mental status examination to suggest that John's cognitive functioning is intact and that his affect may be blunted but he recognizes his temper and is willing to work on how to resist the impulses during therapy. Select another answer or go to Question 5.\r\n"
+      :body => "a. b and d",
+      :response => "Answer:	 Mr. Tews symptoms do not meet criteria for Bipolar Disorder, depressed but does meet diagnostic criteria for opiate dependency.  Select another answer. "
     },
     {
       :value => 2,
-      :body => "f. Ask for details about possible mood changes",
-      :response => "Answer:	Even though John professed to not know what a mood swing was he did indicate that he feel like he is not a happy person like other people. This inquiry could bring about awareness regarding his mood before and after the deaths of his father and brother. John was in his teenage years and an age when his identity was forming. As a result of the traumatic deaths and his relationship to those individuals the impact on his understanding and grieving would affect his functioning. \r\nSelect another answer or go to Question 5.\r\n"
+      :required => true,
+      :body => "b. c and d",
+      :response => "Answer:  Mr. Tews has symptoms of both Major Depressive Disorder, Single Episode, Psychotic and Opiate Dependency. His symptoms appear to meet criteria for Major Depressive Episode with Psychotic Features and less likely related to Opiate withdrawal.  It should be noted that as a diagnosis is considered, the clinician is faced with making a decision as to whether or not Mr. Tew's psychotic symptoms are secondary to opiate withdrawal or his Major Depressive Disorder. **Go to the next question**. "
     },
     {
-      :value => 3,
-      :body => "g. More details about past traumatic events",
-      :response => "Answer:	Information regarding past traumatic events is important to rule out post traumatic stress disorder. The symptoms associated with murder and drowning, dreams, anger, and sleep deprivation are closely aligned with several disorders. \r\nSelect another answer or go to Question 5.\r\n"
+      :value => -2,
+      :body => "c. b and e",
+      :response => "Answer:	Mr. Tews does not meet criteria for Bipolar Depressed and Opiate Abuse. Select another answer."
     },
     {
-      :value => -1,
-      :body => "h. Talk to the client's mother-in-law",
-      :response => "Answer: This information is not likely to be helpful in making a diagnosis. Select another answer or go to Question 5.\r\n"
+      :value => 1,
+      :required => true,
+      :body => "d. a and d",
+      :response => "Answer:	Mr. Tews' symptoms do not clearly  meet criteria for Major Depressive Disorder, Single Episode, Non- Psychotic although they do however meet criteria for Opiate Dependency since he has withdrawal symptoms when he ran out of Lortab. His hallucinations, although most likely caused by his depression, are less likely associated with Lortab withdrawal.  Select another answer."
+    },
+    {
+      :value => 1,
+      :required => true,
+      :body => "e. d, e, and f",
+      :response => "Mr. Tews does meet criteria  for Opiate Dependency and Opiate Withdrawal symptoms however he does not meet criteria for Opiate Abuse. "
     }
   ]
 )
 scenario.questions.create(
   :score_type => 'Information Gathering',
-  :notes => "<strong>Treatment recommendations</strong><br />\r\nJohn Gurstner's needs help for both diagnoses, i.e. Intermittent Explosive Disorder, and Alcohol Intoxication. Individual supportive and psychodynamic psychotherapies can be very useful because of dynamic issues dating back to childhood and the unresolved grief associated with the deaths of his brother and father.  Cognitive Behavioral Therapy has also been found to be a useful therapeutic modality, particularly for post-traumatic symptoms. John also needs to be confronted about his problems associated with his drinking. After he has accepted the fact that he loses self-control after drinking alcohol it should be recommended that he completely stop drinking and attend AA meetings at the minimum.\r\n\r\n<br /><br />\r\n",
-  :body => "What therapies or techniques would be appropriate to respond to the provisional diagnosis?",
+  :notes => "",
+  :body => "To determine a therapeutic plan which of these elements are most important?",
   :position => 5,
   :answers => [
     {
-      :value => -3,
-      :body => "a. Exposure Therapy",
-      :response => "Answer: Incorrect. Exposure and response prevention are known to be effective treatment for compulsions in response to anxiety. Select another answer or go to Question 6."
+      :value => 3,
+      :body => "a. Present illness and mental status examination",
+      :response => "Answer: Information provided by his presenting concern and mental status exam are important. These two elements reveal his depression, fleeting thoughts of stepping in front of a car or shooting himself, his occasional visual hallucinations, and his worries about the seriousness of his worsening back pain. muscle cramps, sleeplessness, irritability, and gastrointestinal problems. Select another answer or go to Question 6."
     },
     {
-      :value => -3,
-      :body => "b. Dialectic Behavior Therapy",
-      :response => "Answer: Incorrect. Dialectic Behavior therapy is known to be successful with Borderline personality disorder. Select another answer or go to Question 6.\r\n"
-    },
-    {
-      :value => -3,
-      :body => "c. Solution Focused Therapy",
-      :response => "Answer: Incorrect. Solution-focused therapy is not therapy of choice for Intermittent Explosive Disorder. Select another answer or go to Question 6.\r\n"
+      :value => -2,
+      :body => "b. Work dynamics",
+      :response => "Answer: Work capacity goals would be much lower on the treatment plan. Until he has his mood stabilized and pain under control work capacity is of lesser importance at this time.  Select another answer or go to Question 6."
     },
     {
       :value => 1,
-      :body => "d. Individual Supportive Psychotherapy",
-      :response => "Answer:	Correct. One-on-one supportive psychotherapy would be recommended. The counselor\r\nestablishes a trusting environment in which John can talk about the issues that are troubling him in his daily life such as loss of job and conflicts with individuals, and learn to understand his feelings and modulate  and appropriately direct his anger rather than impulsively act out physically as did his father.\r\nSelect another answer or go to Question 6.\r\n"
+      :body => "c. Past psychiatric history",
+      :response => " Answer: Mr. Tews has a limited past psychiatric history. He was medicated for depression two years ago. This information should be explored to determine the cause of his past depression, what factors contributed to his recovery at that time, and the possible relationship to his presenting concern. Select another answer or go to Question 6."
     },
     {
-      :value => 2,
-      :body => "e. Individual psychodynamic psychotherapy",
-      :response => "Answer:	Incorrect. This type of treatment can be helpful. Psychodynamic psychotherapy would be effective when the counselor establishes a trusting environment in which John can explore his early memories, understand his feelings associated with his losses, learn to compensate for those losses, and learn to modulate and properly direct his anger rather than impulsively act out physically as did his father. However at this time John's anger plus negative environmental conditions (loss of job, increased frequency of anger awareness, impulsive destruction) suggest that he will need the stabilizing effect of supportive therapy for a time before early memory exploration can take place. Select another answer or go to Question 6.\r\n"
+      :value => -2,
+      :body => "d. Spiritual preference",
+      :response => "Answer: There was no indication during the presenting concern that spirituality was a factor in his life. Select another answer or go to Question 6."
+    },
+    {
+      :value => -2,
+      :body => "e. Family history",
+      :response => "Answer: The issues of his father's chronic alcohol use and mother's depression will have little to do with his treatment. Select another answer or go to Question 6."
+    },
+    {
+      :value => 0,
+      :body => "f. Social history",
+      :response => "Answer: There is little of his history that would be pertinent to his treatment plan. Select another answer or go to Question 6."
+    },
+    {
+      :value => 3,
+      :body => "g. Substance use history",
+      :response => "Answer: Mr. Tews indicates that alcohol use is limited. The narcotic which he takes for pain may be a problem since it is potentially addictive. He has experienced symptoms of withdrawal when he ran out of Lortab, indicating a physiological dependency on the medication. Since his father's alcohol behavior was considered an addiction it is possible that Mr. Tews could abuse Lortab in the future. Addressing his withdrawal symptoms is an immediate treatment goal and helping him control and/or reduce or eliminate his Lortab use gradually, with the cooperation and support of his physician, would be another treatment goal.  Select another answer or go to Question 6."
     },
     {
       :value => 1,
-      :body => "f. Relationship therapy",
-      :response => "Answer: Correct. Relationship therapy can be helpful. John has not experienced a healthy relationship and can benefit in therapy by being in the presence of a role model.\r\nSelect another answer or go to Question 6."
-    },
-    {
-      :value => -1,
-      :body => "g. Family therapy",
-      :response => "Answer: Family therapy is not recommended at this time. John has a presenting problem of anger and before he can work with family members he has personal work to be done.\r\nSelect another answer or go to Question 6."
-    },
-    {
-      :value => 3,
-      :body => "h. Cognitive Behavioral Therapy",
-      :response => "Answer: Correct. This treatment is recommended. The therapy is to include a social skills training with a focus on increased awareness of anger and physiological arousal to begin the problem solving. This treatment should include inhibiting impulsive reactions, considering the consequences, and generating alternative behaviors. Cognitive interventions are to include self-statements and re-framing interpretations of the stressful stimuli. Select another answer or go to Question 6.\r\n"
-    },
-    {
-      :value => 3,
-      :body => "i. Pharmacotherapy",
-      :response => "Answer: Yes. There is evidence to support the use of anti-convulsant medication for Intermittent Explosive Disorder.   \r\n Select another answer or go to Question 6.\r\n"
-    },
-    {
-      :value => 2,
-      :body => "j. AA attendance",
-      :response => "Answer: Yes. Commitment and attendance in AA would be a strong recommendation for John. Although he claims to be a social drinker information shared by his wife reveals that John loses track of the number of drinks he consumes. He becomes so intoxicated that he does not remember what he does after having consumed three drinks."
+      :body => "h. Medical history",
+      :response => "Answer: His medical history reveals back pain partially controlled by narcotics, Type II Diabetes Mellitus, and peripheral neuropathy also requiring medication for pain. For these problems he is under the care of his physician. However, the counselor can help the client understand the relationship of his pain to his anxiety and depression and teach him ways to reduce the severity of that pain so that he doesn't have to depend exclusively on narcotics. Select another answer or go to Question 6."
     }
   ]
 )
 scenario.questions.create(
   :score_type => 'Information Gathering',
-  :notes => "<strong>Monitoring recommendations</strong><br />\r\nTreatment improvement can be monitored through follow-up psychological testing, reports by family members, and compliance with prescribed medications.",
-  :body => "Treatment improvement can be monitored through?",
+  :notes => "<strong>Treatment recommendations</strong><br />\r\nSonoras Tews immediate medical problem required emergency treatment for symptoms consistent with Opiate withdrawal. Two days previously he ran out of Lortab while his physician was on vacation and he began to suffer from worsening pain, muscle cramps, sleeplessness, irritability, and gastrointestinal problems. Since Mr. Tews psychiatrist was not available at that time he was referred directly to a hospital emergency room where the physician requested a psychiatric evaluation including an assessment for suicide risk since safety was of primary importance. Mr. Tews was hospitalized and treated for opiate withdrawal symptoms following which he was evaluated again for treatment of his Major Depressive Disorder. The following treatments were recommended: Pharmacotherapy in combination with counseling, psychoeducation, and Cognitive-Behavioral Therapy. <br /><br />\r\nKates and Craven (1998) reviewed several treatment approaches for the depressed client. In general, most cases of mild depression will respond to supportive counseling and problem solving approaches, while more severe cases will require medication. Kirby and Paradise (2005) recommended interpersonal psychotherapy for severe depression. Hollon et al. (2002) found that a combination of cognitive and behavioral approaches were the most effective. Evidence suggests that a combination of psychotherapy and pharmacotherapy is more effective than either alone (Elkin, 1994).",
+  :body => "What are the most important considerations in determining a successful treatment plan?",
   :position => 6,
   :answers => [
     {
       :value => -1,
-      :body => "a. Follow-up psychological testing",
-      :response => "There were no psychological tests administered specifically for the angry outbursts. Rather a neurological and two paper-pencil tests such as the Bender Gestalt and Nebraska Luria were administered as initial screeners for an organic cause. Because this 9 months ago this may be too soon for a retest.  Select an additional answer or go to the next scenario."
+      :body => "a. Plan treatment duration and frequency to fit the parameters of the client's insurance plan or other source of payment",
+      :response => "Answer: Fitting a treatment plan to insurance resources points to a dilemma facing under-insured clients who need help and counselors who cannot afford to work for free.  First of all, it is important that counselors maintain appropriate ethical standards which insist that the health of the client is more important than strict adherence to the restrictions of an insurance company. If a client has no insurance or severe restrictions, the counselor must not abandon the client but either refer him/her to an appropriate agency willing to accept him/her or agree to a reduced fee and provide whatever is necessary to treat the condition properly.  Select another answer or go to Question 7."
+    },
+    {
+      :value => 3,
+      :body => "b. Psychiatrist available to refer to for psychopharmacological treatment of depression",
+      :response => "Answer: This is of primary importance as his moods, depression, irritability, pain, and suicidal ideation are interconnected and medication is likely to be an effective treatment. Select another answer or go to Question 7."
     },
     {
       :value => -1,
-      :body => "b. Reduction in interrupted sleep",
-      :response => "Answer: Incorrect. John did not indicate that he had interrupted sleep, rather he could only sleep 4-5 hours per night but would awaken early in the morning. The reasons for this limited amount of sleep was explored. His doctor indicated that he was sleep deprived and with this information the doctor taught him methods to help him sleep through the night.  Select an additional answer or go to the next scenario."
+      :body => "c. Sister and children available for family therapy",
+      :response => "Answer: This is not recommended. Select another answer or go to Question 7."
+    },
+    {
+      :value => 1,
+      :body => "d. Client's interest, motivation, and capacity to benefit from psychotherapy",
+      :response => "Answer: This is always important when considering treatment. The motivation to seek and make changes is a challenge for many clients. Select another answer or go to Question 7."
+    },
+    {
+      :value => 3,
+      :body => "e. Determination of the risk for suicide and plan to manage that risk",
+      :response => "Answer: Suicide risk requires an on-going assessment for the counselor who must continue to re-evaluate the significance of the client's suicide ideation of stepping in front of  a car and shooting himself. Assessment for suicide risk needs to take place at different times during his treatment. Select another answer or go to Question 7."
+    },
+    {
+      :value => 1,
+      :body => "f. Collaboration with Mr. Tew's physician and with the client's consent",
+      :response => "Answer: It would be helpful to be in touch with his primary physician to provide feedback and to monitor the Lortab and obtain information about medical issues that would be important in his psychiatric treatment. Select another answer or go to Question 7."
+    },
+    {
+      :value => -2,
+      :body => "g. Age, gender, ethnicity of the client",
+      :response => "Answer: The treatment plan would not specifically be based on these indices. Although there is to be found in the literature data reporting suicide risk based on age, gender, and ethnicity. Select another answer or go to Question 7."
+    },
+    {
+      :value => 0,
+      :body => "h. Client's resistance to engage in therapy",
+      :response => "Answer:	Although client resistance is expected in many client relationships it is not to be made a goal in the client's treatment plan. Client resseems is related to change of behavior, particularly addictive behavior and it is the therapist's task to recognize resistance and help the client to overcome resistances and make necessary changes in behavior. Select another answer or go to Question 7."
+    }
+  ]
+)
+scenario.questions.create(
+  :score_type => 'Information Gathering',
+  :notes => "<strong>Recommendations</strong> The immediate need is to respond to Mr. Tews' worsening depression and suicidal ideation by considering this an emergency and consulting with Mr. Tews'  psychiatrist for possible hospitalization. It was important to determine the client's compliance with medication. Mr. Tews' was asked if he had been taking his medication but he couldn't remember. However, his sister thought he had stopped taking it. Once the counselor or Mr. Tews' psychiatrist has determined the degree of risk and/or hospitalization, individual psychotherapy counseling should be resumed. A transference interpretation would not be indicated during the emergency but would be useful during the course of psychotherapy or counseling.",
+  :body => "Sonoras Tews was placed on antidepressant medication by a psychiatrist and met with the counselor for six sessions after which his depression improved and he requested family counseling to improve his relationship with his children. Family therapy was then started which included his sister and his children. His depression continued to improve. During the sixth month of family therapy Mr. Tew's sister called the counselor to say that her brother had become very depressed and was expressing suicidal ideation. \r\n<br /><br />\r\nWhat would the counselor do at this time?",
+  :position => 7,
+  :answers => [
+    {
+      :value => 2,
+      :body => "a. Call his psychiatrist for consultation",
+      :response => "Answer: Consultation with the psychiatrist is recommended. The release was signed during treatment. There may be new physical developments that have contributed to this behavior. He may have discontinued his medication for depression, suffered worsening physical symptoms, or failed to take his Lortab as prescribed.  Select another answer or go to another scenario."
+    },
+    {
+      :value => 0,
+      :body => "b. Recommend hospitalization",
+      :response => "Answer: This may be required but would not be recommended until you have seen and assessed the current situation and consulted with the psychiatrist. Select another answer or go to another scenario."
+    },
+    {
+      :value => 1,
+      :body => "c. Inquire about whether or not he was still taking his medication",
+      :response => "Answer: This would be important information to assess as discontinuation of medication would present a change in mood. Select another answer or go to another scenario."
+    },
+    {
+      :value => -1,
+      :body => "d. Recommend individual psychotherapy beginning immediately",
+      :response => "Answer: Immediate psychotherapy is premature until an assessment has taken place. Select another answer or go to another scenario."
+    },
+    {
+      :value => -2,
+      :body => "e. Recommend immediate family session",
+      :response => "Answer: Immediate family session work is premature until an assessment has taken place. Select another answer or go to another scenario."
     },
     {
       :value => -3,
-      :body => "c. Fewer relapses in consciousness reports by family members",
-      :response => "Answer: Incorrect. This information to monitor improvement is more likely related to his seizure disorder and his medication compliance. This information is not likely to reveal improvement in his control of anger. Select an additional answer or go to the next scenario."
+      :body => "f. Interpret his symptoms as acting out his transference related to a belief that the counselor had abandoned him",
+      :response => "Answer: This assumption is not warranted. Select another answer or go to another scenario."
     },
     {
-      :value => 1,
-      :body => "d. Church attendance and good relationship with his pastor",
-      :response => "Answer: Correct.  John is a religious and spiritual person who has had regular church attendance. His interactions with the minister had become conflictual prior to the counseling. A reduction in his opposition to the minister and improved ability to interact in spite of his differences would be a sign of improvement and an accepted way of monitoring his acting out with others.   Select an additional answer or go to the next scenario."
-    },
-    {
-      :value => 2,
-      :body => "e. Taking medications as directed",
-      :response => "Answer:  Correct. Monitoring consistency in taking his medication would be effective since he takes medication for his seizure disorder and is very likely going to be prescribed medications for his anger outbursts. There was no information to suggest that he was not taking his medication Select an additional answer or go to the next scenario."
-    },
-    {
-      :value => 2,
-      :body => "f. Observing for the possible emergence of symptoms related to repressed or 'split-off' traumatic memories",
-      :response => "Answer: Correct. Monitoring for possible emergence of symptoms related to repressed traumatic memories would be important since it would be helpful to gain access to those memories.  Select an additional answer or go to the next scenario."
-    },
-    {
-      :value => 1,
-      :body => "g. Observing for the possible emergence of symptoms related to repressed or 'split-off' traumatic memories",
-      :response => "Yes. Monitoring for possible emergence of symptoms related to repressed traumatic memories would be important since it would be helpful to gain access to those memories. "
-    },
-    {
-      :value => 2,
-      :body => "h. Monitoring his willingness and ability to stop drinking alcohol",
-      :response => "Answer:  Yes.  This would be very important. "
+      :value => 3,
+      :body => "g. Arrange for the sister to bring Mr. Tews in for an emergency consultation",
+      :response => "Answer: This is a first step recommendation to assess the severity of the depression and seriousness of his suicide ideation. Select another answer or go to another scenario."
     }
   ]
 )

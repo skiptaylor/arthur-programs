@@ -1,321 +1,358 @@
 scenario = Scenario.create(
   :id => 39,
-  :title => "Alice Ordanize",
+  :title => "Aaron Harmistead",
   active: false,
-  :body => "Alice Ordanize a 47-year-old white female.\r\nHistory of Presenting Complaint: Alice overdosed on 100 Benadryl pills and was found at home in a stupor by her 18-year-old daughter who called for an ambulance. When the ambulance arrived so did the county sheriff's department, which had been called to this home on at least two prior occasions. Alice was brought to the hospital emergency room and admitted to intensive care. It was determined that she had overdosed on 100 Benadryl pills and alcohol at an undetermined time before being discovered by her daughter. When she awakened from her stupor 12 hours later she became enraged with the medical staff, her daughter, and the sheriff. She insisted on being released immediately and had to be restrained. After being transferred to the psychiatric unit on a court order she finally acknowledged her need for help and was discharged from the hospital after 5 days. Two weeks later her daughter set up an appointment with the counselor.<br /><br /><strong>Past History:</strong>  Alice describes a history of mood swings with periods of increased energy and sleeplessness for several days occurring every two months followed by a period of depression lasting for one or more weeks. She recalled that her first mood swings occurred after her grandmother committed suicide 20 years ago. She had a serious depressive period 8 years ago and made a suicide attempt five years ago after her divorce from her fourth husband.\r\n<br /><br />\r\n<strong>Family History:</strong>   Alice was unclear whether there was a history of mental illness in the family but her grandmother committed suicide 20 years ago and her mother had comparable problems with depression. According to friends, Alice suffered from symptoms similar to those of her mother. Although her mother had never been diagnosed with a psychiatric disorder Alice recalled her as a difficult person to be around, suffered from depression and committed suicide 6 years ago. <br /><br />\r\n<strong>Medical History:</strong>  She has a history of gastrointestinal problems including heart burn and episodic diarrhea. She has also suffered from fractured limbs on two occasions, caused by a boyfriend who abused her.\r\n<br /><br />\r\n<strong>Social History:</strong> Alice is currently separated from a live-in boyfriend who abused her mentally and physically. She has repeatedly and impulsively become involved with abusive men during her adult life. She was arrested two months ago for dealing drugs but claimed that her boy friend, who sold drugs for a living got her involved in this and set her up. She spent two weeks in jail while awaiting sentencing and is currently on probation. She claims that she has learned from her bad experiences with men and states she has no plans to begin any more relationships. She has two children from her first marriage. Her first husband gained custody of their 16-year-old son eight years ago. Her 18-year-old daughter, who left home two years ago to get married, lives in the same community.\r\n<br /><br />\r\n<strong>Substance History:</strong>  Past history reveals that Alice has used drugs excessively.  After initially denying she was addicted to anything she eventually described a 20 year history of periodic and excessive drug use including marijuana, alcohol, methamphetamines, and hallucinogens. She says that there were periods of time when she didn't use drugs but described her excessive use as associated with changes in her mood, particularly at times when feeling creative and also when depressed. According to her daughter she frequently saw a variety of drugs around her mother's house. She recalled that she and her brother often would accompany their mother to parties at subdivision homes where her mother would often be under the influence of drugs and behave in such disturbing ways that neighbors would call the police. Several times the daughter and her brother, along with her mother, would spend the night at a different home. In fact, one time after her mother fainted at a restaurant from drinking hard liquor they rode in the ambulance with their mother when she was taken to the hospital. Alice became upset after listening to her daughter's description about these distressing events and insisted that her daughter not be present for the rest of the interview. Her daughter respected the request and left the room.\r\n<br /><br />\r\n<strong>Mental Status Examination:</strong>  Alice appears fully oriented at the time of the interview and focused her thoughts appropriately without evidence of pressured speech or thought blocking. She is guarded, hypervigilant, and her affect is moderately depressed. The content of her thoughts includes excessive worry about having to return to jail, intrusive recollections of prior abuse, and concerns about her son who lives with her ex-husband. She also has difficulty remembering her childhood and her relationship with the abusive boyfriend. She reports having difficulty getting to sleep, which she tries to control by using alcohol. She also suffers from frequent nightmares when she awakens perspiring, panicky, and unable to return to sleep. She has passing suicidal thoughts but no suicide plan at this time."
+  :body => "Aaron Harmistead is a 66-year-old man.\r\nHistory of Complaint: Aaron Harmistead is a 66 year-old man who has been complaining of problems with his memory that began about two years ago. He has also complained of a lack of energy and an inability  to become enthusiastic about a new relationship with a woman he's been seeing since the death of his wife. Aaron volunteered without being asked that since the death of his wife he has been \"seeing\" Margaret Jones, a lady whose husband died three years ago. Aaron and his wife had been close friends of the Jones and often spent time together playing cards or going out to eat. Margaret remained in contact with Aaron and his wife after her husband's death and since Aaron's wife died she has frequently called to invite him to church or to go out to eat. Aaron says he needs someone but does not have the energy at his age to invest in another relationship, i.e. getting to know and live with someone new and with whatever faults she may have, nor does he want to make the adjustments necessary for someone to live with him.<br /><br /><strong>Past History:</strong>  He provides a history of going \"into a funk\" 15 years ago after he grew tired of changing jobs so often. He has had many different jobs during his work career. He started out as a farmer, then he became a service station owner, foreman of a tire recapping firm, and then a service station employee. He became depressed and decided to retire at age 62.   \r\n<br /><br />\r\n<strong>Family History:</strong>  His parents, who were in their mid 80s, died within the past 5 years. His mother had Alzheimer's Disease. His father had late onset diabetes, obesity, and heart disease. He has a younger brother and two sisters who are healthy although his brother has a moderate drinking problem and his younger sister, who is married, has two children and has been depressed in the past.\r\n<br /><br />\r\n<strong>Medical History:</strong> He has gained 25 pounds over the past year because of eating sweets and idleness. He spends his time watching television. He has complained of fatigue and is unable to keep up with the yard work he used to do. He smokes between 1 to 2 packs of cigarettes a day ever since he was 12 years of age. He has attempted to stop smoking several times during his life time but has not been successful.\r\n<br /><br />\r\n<strong>Social history:</strong> He worked many jobs during his life and retired at age 62. Then he became self-employed and mowed yards for small business firms in his city. During his first two years of retirement he and his wife rented a plot of land and raised a substantial garden.  At 65 he retired a second time from a janitorial position in the public school system because of his worsening fatigue. However, he has not handled retirement well because it eliminated the only significant activity in his life (going to work every day) with the exception of ocassional contacts with Margaret Jones. During this time his older sister,who has a chronic back pain and renal impairment requiring frequent dialysis, has been living with he and his wife and disapproves of his relationship with Margaret Jones.  Retirement has eliminated the only significant activity in his life (going to work every day) with the exception of occasional contact with Margaret Jones.  According to Aaron his sister is concerned that 'this woman' is looking for a place to live. But Aaron says that Margaret is financially well-off and does not need his finances. He feels conflicted because he like this woman but does not want to make his sister unhappy or ask her to move out after inviting her to move in during the past year. <br /><br />\r\n<strong>Substance History:</strong>  He has a habit of drinking two glasses of wine after his evening meal and sometimes has a drink before bedtime. He says he does not enjoy wine but his wife has told him drinking wine is supposed to be healthy so he continues for health reasons. However, he has found that when he drinks three glasses of wine he has experienced early morning awakening and headaches the following day. \r\n<br /><br />\r\n<strong>Hobbies:</strong>  He claims no real hobbies and does not read other than the headlines or brief passages in the daily newspaper. He and his wife had taken a daily newspaper because she enjoyed the cross word puzzles. He has continued the subscription since his wife's death although he does not often read the paper and frequently throws it away before taking it out of the plastic encasement. He says that gardening, playing occasional golf with his wife, and fishing could have been considered hobbies but he only participated in these activities to please his wife and never found much enjoyment in them. Now he wishes he had learned to enjoy them but lacks the energy to try to do so. He recalled that he lacked the patience to play golf and if the foursome ahead of him was slow he would sometimes become agitated,stop playing and leave the course.\r\n<br /><br />\r\n<strong>Mental Status Examination:</strong> The client is obese. He is 5' 9\" and weighs 240 pounds. His affect is blunted and he reports feeling 'down in the dumps'. He denies feeling suicidal but often wishes he could join his wife. He also complains of fatigue, restless sleep, early morning awakening, and problems with concentration, recent memory, and immediate recall; he can  remember only one of three objects after five minutes. He also has problems finding words and remembering people's names and faces."
 )
 scenario.questions.create(
   :score_type => 'Information Gathering',
   :notes => "",
-  :body => "Which additional questions might the counselor probe in order to make a DSM-IV-TR provisional diagnosis that also includes information for Axes III and IV?",
+  :body => "Which of the following is (are) considered of importance in assessing for Axis I DSM-IV-TR provisional diagnosis or diagnoses?",
   :position => 1,
   :answers => [
     {
       :value => 2,
-      :body => "a. More details about her use of drugs",
-      :response => "Answer: Correct. Questioning, in more detail, her about her use of drugs would be of primary importance in assessing for a provisional Axis I DSM-IV-TR diagnosis. Select an additional answer or go to Question 2."
-    },
-    {
-      :value => 2,
-      :body => "b. More information about the abusive relationships with her ex-husbands and other men",
-      :response => "Answer: Correct. Requesting more detailed information about her abusive relationships with men would be  important to help in assessing for a provisional Axis II DSM-IV-TR diagnosis. Select an additional answer or go to Question 2."
-    },
-    {
-      :value => -2,
-      :body => "c. More information about her live-in boyfriend",
-      :response => "Answer: Incorrect. Requesting more information about her live-in boyfriend would not help in establishing a diagnosis.  Select another answer or go to Question 2."
-    },
-    {
-      :value => 1,
-      :body => "d. More details about her physical health including presence or absence of weight loss",
-      :response => "Answer: Correct. Requesting more information about her physical health, including presence or absence of weight gain would help in establishing the presence or absence of an Axis III diagnosis. Select an additional answer or go to Question 2."
+      :body => "a. History of presenting complaint",
+      :response => "Answer: The History of Present Complaint is of primary importance in assessing for a provisional Axis I DSM-IV-TR diagnosis. "
     },
     {
       :value => 3,
-      :body => "e. More details about what precipitated her overdose on Benadryl",
-      :response => "Answer: Correct. Requesting more information about what precipitated her overdose would be important in assessing for a provisional Axis I DSM-IV-TR diagnosis. However, since she has little or no recall of the overdose experience, this may be difficult to obtain. None-the-less,  if she had been a victim of a significant traumatic event at that time, it is possible that she may have dissociated, causing memory problems associated with acute traumatic stress. Select an additional answer or go to Question 2."
+      :body => "b. Medical history",
+      :response => "Answer: The Medical History is of primary importance in assessing for both a provisional Axis I and Axis II DSM-IV-TR diagnosis in this case. "
     },
     {
-      :value => -1,
-      :body => "f. More details about her legal situation and incarceration experience",
-      :response => "Answer: Incorrect. Requesting more information about her legal situation and incarceration would not help in establishing a diagnosis although it would be significant information to process during therapy. Select another answer or go to Question 2."
+      :value => 3,
+      :body => "c. Mental status examination",
+      :response => "Answer: The Mental Status Examination is of primary importance in assessing for a provisional Axis I DSM-IV-TR diagnosis. "
+    },
+    {
+      :value => 2,
+      :body => "d. Family history",
+      :response => "Answer: The Family History is of primary importance in assessing for a provisional Axis I DSM-IV-TR diagnosis when the disorder (some mood disorders in particular) might have a genetic origin. "
     },
     {
       :value => -2,
-      :body => "g. More information about her relationship with her son",
-      :response => "Answer: Incorrect. Requesting more information about her relationship with her son would not help in establishing a diagnosis although it would be significant information to process during therapy. Select another answer or go to Question 2."
+      :body => "e. Social history",
+      :response => "Answer: The Social History is not of primary importance in assessing for a provisional Axis I DSM-IV-TR diagnosis in this case. Select another answer or go to Question 2."
     },
     {
-      :value => 2,
-      :body => "h. More information about past suicide attempts",
-      :response => "Answer: Correct. Requesting more information about possible past suicide attempts would help to determine the seriousness of past depressive episodes and assessing for a provisional Axis I DSM-IV-TR diagnosis as well as assessing the Axis IV. Select an additional answer or go to Question 2."
+      :value => 1,
+      :body => "f. Substance history",
+      :response => "Answer: The Substance History is of primary importance in assessing for or ruling out a provisional Axis I DSM-IV-TR diagnosis of Substance Disorder. "
     },
     {
-      :value => 2,
-      :body => "i. More details about memories of abuse",
-      :response => "Answer: Correct. Requesting more detailed information about memories of abuse would be helpful in assessing Axis IV. Select an additional answer or go to Question 2."
-    },
-    {
-      :value => 2,
-      :body => "j. More details regarding her mother's and grandmother's suicide",
-      :response => "Answer: Correct. Requesting more detailed information about her mother's and grandmother's suicide would be important to assess for a familial mood disorder, helpful in determining a provisional Axis I diagnosis. Select an additional answer or go to Question 2. "
+      :value => -2,
+      :body => "g. Hobbies",
+      :response => "Answer: Asking about hobbies is generally not relevant in assessing for a provisional Axis I DSM-IV-TR diagnosis. "
     }
   ]
 )
 scenario.questions.create(
   :score_type => 'Information Gathering',
   :notes => "",
-  :body => "Within the information now available about Alice Ordanize what would be important to pursue as you formulate the first four axes of a DSM-IV diagnosis?",
+  :body => "After reviewing the intake report, the counselor would seek clarification for which of the following statements or content of the report in order to make an Axis I provisional diagnosis?",
   :position => 2,
   :answers => [
     {
-      :value => -1,
-      :body => "a. Nutritional information",
-      :response => "Answer: Incorrect. Requesting more detailed nutritional information would not be helpful in helping to formulate the first four axes of a DSM-IV-TR diagnosis. Select another answer or go to Question 3."
-    },
-    {
       :value => 3,
-      :body => "b. Medical information",
-      :response => "Answer: Correct. Requesting more detailed medical information would be helpful to formulate the Axis III diagnosis. Select an additional answer or go to Question 3."
-    },
-    {
-      :value => 3,
-      :body => "c. Psychological stressors",
-      :response => "Answer: Correct. Requesting more detailed information about psychological stressors would be helpful to formulate the Axis IV. Select an additional answer or go to Question 3."
-    },
-    {
-      :value => 3,
-      :body => "d. Past history",
-      :response => "Answer: Correct. Requesting more detailed past history would be helpful to formulate Axes I and II diagnoses. Select an additional answer or go to Question 3."
-    },
-    {
-      :value => 3,
-      :body => "e. Substance history",
-      :response => "Answer: Correct. Requesting more detailed substance history would be helpful to formulate the Axis I diagnosis and possibly Axis III diagnosis. Select an additional answer or go to Question 3."
-    },
-    {
-      :value => -2,
-      :body => "f. Problems with peers",
-      :response => "Answer: Incorrect. Requesting more detailed information about problems with peers would not be helpful in helping to formulate the first four axes of a DSM-IV-TR diagnosis. Select an additional answer or go to Question 3."
+      :body => "a. More specific information about the quality of his mood",
+      :response => "Answer: Correct. It is important to seek more information about the quality of his mood in order to make a provisional Axis I DSM-IV-TR diagnosis. "
     },
     {
       :value => -1,
-      :body => "g. Spiritual affiliation",
-      :response => "Answer: Incorrect. Requesting more detailed information about her spiritual affiliation would not be helpful in helping to formulate the first four axes of a DSM-IV-TR diagnosis. Select an additional answer or go to Question 3."
+      :body => "b. Quality and quantity of food intake",
+      :response => "Answer: Incorrect. Obtaining more information about the quality and quantity of his food intake will not help in making a provisional Axis I DSM-IV-TR diagnosis. "
+    },
+    {
+      :value => 2,
+      :body => "c. More information about his 'funk' 15 years earlier after he changed jobs at that time.",
+      :response => "Answer: Correct. It is important to seek more information about his 'funk' 15 years earlier in order to determine whether a provisional Axis I DSM-IV-TR diagnosis might be Major Depressive Disorder, Recurrent. "
+    },
+    {
+      :value => 2,
+      :body => "d. Severity of his memory problems",
+      :response => "Answer: Correct. Obtaining more information about his memory problems will help in making a provisional Axis I DSM-IV-TR diagnosis. "
     },
     {
       :value => 1,
-      :body => "h. Relational history",
-      :response => "Answer: Correct. Requesting more detailed information about her relational history would be helpful in helping to formulate an Axis II DSM-IV-TR diagnosis because it would help to determine patterns of behavior typical for someone with a personality disorder. Select an additional answer or go to Question 3."
+      :body => "e. Specific information about his drinking patterns (target accuracy of reported wine drinking)",
+      :response => "Answer: Correct. Obtaining more information about his drinking patterns can help in making a provisional Axis I DSM-IV-TR diagnosis. "
     },
     {
-      :value => -2,
-      :body => "i. Legal history",
-      :response => "Answer: Incorrect. Requesting more detailed information about her legal history would not be helpful to formulate the first four axes of a DSM-IV-TR diagnosis. Select an additional answer or go to Question 3."
+      :value => 1,
+      :body => "f. More details about his problems with sleeping (More specifics about the restless sleep and early morning awakening described in the mental status examination.)",
+      :response => "Answer: Correct. Obtaining more information about his problems with sleeping can help in making a provisional Axis I DSM-IV-TR diagnosis. "
     },
     {
-      :value => -2,
-      :body => "j. Work history",
-      :response => "Answer: Incorrect. Requesting more detailed information about her work history would not be helpful to formulate the first four axes of a DSM-IV-TR diagnosis. Select an additional answer or go to Question 3."
+      :value => -1,
+      :body => "g. His neediness for a woman in his life",
+      :response => "Answer: Incorrect. Obtaining more information about his neediness for a woman in his life will not help in making a provisional Axis I DSM-IV-TR diagnosis. "
+    },
+    {
+      :value => 1,
+      :body => "h. More information about his weight gain (Gain of 25 pounds in one year-need for specificity.)",
+      :response => "Answer: Correct. Obtaining more information about his weight gain of 25 pounds will help to get more specifics about considering a primary eating disorder as a provisional Axis I DSM-IV-TR diagnosis or a medical disorder for an Axis III DSM-IV-TR diagnosis. "
+    },
+    {
+      :value => -1,
+      :body => "i. His lack of enjoyment in hobbies and work",
+      :response => "Answer: Incorrect. Obtaining more information about his lack of enjoyment in hobbies and work will not help to make a provisional Axis I DSM-IV-TR diagnosis although it might add some collateral information to consolidate a diagnosis. "
     }
   ]
 )
 scenario.questions.create(
   :score_type => 'Information Gathering',
-  :notes => "<strong>Referral recommendations:</strong> Refer for psychological testing and drug rehabilitation.",
-  :body => "To acquire additional information to make a provisional diagnoses what recommendations would the counselor make?",
+  :notes => "<strong>Diagnostic discussion</strong><br />\r\nAaron Harmistead's symptoms are consistent with the Axis I diagnosis of Major Depressive Disorder, Single Episode. He reported feeling depressed for two years and presents with a complaint of memory problems and his mental status examination confirmed his difficulties with recent memory, immediate recall, word finding, and remembering people's names and faces. He also had a depressed affect and reported feeling 'blue', fatigued, problems with sleeping and concentration, interpersonal withdrawal, and a loss of interest in activities. \r\n<br /><br />\r\nThis man's symptoms are not consistent with Adjustment Disorder with Depressed Mood which is characterized by moderate symptoms of depression which last no longer than 6 months. Neither are they consistent with Bereavement even though his symptoms began after the death of his wife since bereavement is generally limited to no longer than six months. If it persists, however, the bereaved individual may develop a depressive disorder and lose the capacity to cry and express normal emotion of sadness and grief.  Furthermore, he/she may seem unaware of being depressed and will not complain of a mood disturbance, even though exhibiting withdrawal from family, friends, and activities that were of previous interest.  Most depressed individuals complain of difficulties with memory and concentration, reduced energy, difficulty in finishing tasks, work impairment, and decreased motivation to undertake new projects. The majority also ruminate about their problems and complain of trouble sleeping and early morning awakening.",
+  :body => "The Correct Axis I provisional diagnosis or diagnoses?",
   :position => 3,
   :answers => [
     {
       :value => -2,
-      :body => "a. Refer for short term individual psychotherapy",
-      :response => "Answer: Incorrect. A referral for short term individual psychotherapy is not going to help gain additional information that would help to make a provisional DSM-IV-TR diagnosis. Select an additional answer or go to Question 4."
-    },
-    {
-      :value => 2,
-      :body => "b. Refer for medical evaluation",
-      :response => "Answer: Correct.  A referral for medical evaluation may lead to additional information that would help to make a provisional Axis III DSM-IV-TR diagnosis. Select another answer or go to Question 4."
-    },
-    {
-      :value => 1,
-      :body => "c. Refer for psychological testing",
-      :response => "Answer: Correct. A referral for psychological testing may lead to additional information that would help to make a provisional Axis I DSM-IV-TR diagnosis. Select another answer or go to Question 4."
-    },
-    {
-      :value => 2,
-      :body => "d. Refer for a drug screen ",
-      :response => "Answer: Correct. A referral for drug screen may lead to additional information that would help to make a provisional Axis I DSM-IV-TR diagnosis. Select another answer or go to Question 4."
-    },
-    {
-      :value => -2,
-      :body => "e. Refer for neurological evaluation",
-      :response => "Answer: Incorrect. A referral for neurological evaluation is not indicated and would only be done by a primary care physician. Select another answer or go to Question 4."
-    },
-    {
-      :value => -2,
-      :body => "f. Inquire about the reasons for the father's custody of her son",
-      :response => "Answer: Incorrect. Inquiring about reasons for father's custody of the son will not provide information that would help to make a provisional DSM-IV-TR diagnosis. Select another answer or go to Question 4."
-    }
-  ]
-)
-scenario.questions.create(
-  :score_type => 'Information Gathering',
-  :notes => "<strong>Diagnostic discussion</strong><br />\r\nThe diagnosis of Bipolar II Disorder can be made because of her history of mood swings with periods of increased energy and sleeplessness typical of hypomania, lasting for several days and occurring every two months followed by a period of depression lasting for one or more weeks. Her most recent symptoms were of major depression with a suicide attempt. \r\n<br /><br />\r\nThe diagnosis of Substance Abuse Disorder can be made because the pattern of her use was not typical of dependency, her abuse occurred primarily in relationship to mood changes, and it resulted in the neglect of her children, difficulties with the law, and other significant psychosocial problems. She has abused a multiplicity of drugs including methamphetamines, marijuana, alcohol, and hallucinogens to a serious degree.\r\n\r\nThe diagnosis of Post Traumatic Stress Disorder can be made because of a history of serious trauma-traumatic childhood experiences and physical and mental abuse at the hands of a boyfriend. Her symptoms include intrusive recollections, memory problems, nightmares, sleep disturbance, and physiological hyperarousal.",
-  :body => "In considering multiple diagnoses the interviewer might consider which of these provisional Axis I and Axis II diagnoses? (Select until you are instructed to go to Question 5.)",
-  :position => 4,
-  :answers => [
-    {
-      :value => 2,
-      :required => true,
-      :body => "a. Bipolar II Disorder",
-      :response => "Answer: **Correct. (NOTE: There are two correct diagnoses for this scenario. Go to the next question after you select both.)**\r\nAnswer:  Yes. According to the DSM-IV-TR, the diagnosis of Bipolar Disorder Type II requires the presence of major depressive and hypomanic episodes. This patient had episodes of both major depression and hypomania. Episodes of hypomania are not characterized by the presence of psychoses, i.e. hallucinations or delusions.  Hypomania is characterized by \r\n(a)  periods of elevated or irritable mood (mood changes), which must always be present and must last at least 4 days; \r\n(b) 3 of the following 8 symptoms if mood is elevated or 4 if mood is irritable: 1) inflated self-esteem, 2) decreased need for sleep, 3) more talkativeness, 4) racing thoughts, 5) distractibility, 6) increased goal-directed activity, 7) psychomotor agitation, and 8) excessive involvement in risky activities; \r\n(c)	change in functioning; \r\n(d)	observable mood and functioning change; \r\n(e)	no marked impairment of functioning, no psychotic symptoms; and \r\n(f) symptoms must not be caused by substances, drugs (including antidepressants), or medical disorders.\r\nHer symptoms include: mood swings with episodes of irritability, inflated self-esteem, decreased need for sleep, high energy and creativeness, increased talkativeness, and excessive drinking but without accompanying delusions or hallucinations.\r\n\r\n"
-    },
-    {
-      :value => -1,
-      :body => "b. Bipolar I Disorder, Most Recent Episode Depressed ",
-      :response => "Answer: Incorrect. Select another diagnosis:\r\nAnswer: Bipolar I Disorder,  Most recent episode depressed requires the presence of both manic and depressive episodes, however her 'highs' are more typically hypomanic rather than manic which usually include psychotic manifestations, hallucinations, or delusions. \r\n"
-    },
-    {
-      :value => -2,
-      :body => "c. Alcohol Abuse Disorder",
-      :response => "Answer: Incorrect. Select another diagnosis.\r\nAnswer: While it is true that she abuses alcohol, this diagnosis would be inadequate because it omits her abuse of other drugs which include marijuana, methamphetamines, and hallucinogens."
+      :body => "a. Bipolar Disorder",
+      :response => "Answer: Incorrect.  While the client reported symptoms of depression they were not of a cyclic nature nor did they warrant a diagnosis of Bipolar Disorder."
     },
     {
       :value => 3,
       :required => true,
-      :body => "d. Polysubstance Abuse ",
-      :response => "Answer: **Correct. (NOTE: There are two correct diagnoses for this scenario. Go to the next question after you select both.)**\r\nAnswer: Although Polysubstance Abuse Disorder was previously an acceptable diagnosis, Substance Abuse Disorder is now in the DSM-IV-TR. Specific drugs that are being abused should be listed, to include alcohol, marijuana, methamphetamines, and hallucinogens. "
-    },
-    {
-      :value => 0,
-      :body => "e. Major Depressive Disorder",
-      :response => "Answer: Select another diagnosis.\r\nAnswer: Although she suffered symptoms of a major depression, this would not be the most likely diagnosis. "
+      :body => "b. Major Depressive Disorder, Single Incident",
+      :response => "**Correct Diagnosis:** \r\nAnswer: The client's symptoms are consistent with a DSM-IV-TR diagnosis and include at least five of the necessary criteria for this disorder: markedly diminished interest or pleasure in all, or almost all, activities nearly every day; a change of more than 5% body weight (25 pounds weight gain); sleep disturbance and hypersomnia nearly every day; fatigue or loss of energy nearly every day, diminished ability to think or concentrate, nearly every day; and depressed mood and/or affect nearly every day. "
     },
     {
       :value => -1,
-      :body => "f. Adjustment Disorder",
-      :response => "Answer: Incorrect. Select another diagnosis.\r\nAnswer:  Her history of a cyclic mood disorder, most recently depressed, is more accurate than depression in response to situational stress.  "
+      :body => "c. Major Depressive Disorder, Recurrent",
+      :response => "Incorrect.\r\nAnswer: While the client reported a history of having a 'funk' 15 years previously, there was not enough information available to confirm that this represented a Major Depressive Disorder rather than Adjustment Disorder with Depressed Mood at that time. "
     },
     {
       :value => -2,
-      :body => "g. Antisocial Personality Disorder",
-      :response => "Answer: Incorrect. Select another diagnosis.\r\nAnswer: She may have an Axis II Diagnosis, but it would not be Antisocial Personality Disorder which is characterized by three (or more) of the following: repeatedly performing acts that are grounds for arrest; lying or conning others for personal profit or pleasure; impulsivity or failure to plan ahead; aggressiveness and repeated physical fights or assaults; reckless disregard for safety of self or others; consistent serious irresponsibility; lack of remorse about hurting, mistreating, or stealing from another."
+      :body => "d. Adjustment Disorder With Depressed Mood",
+      :response => "Incorrect\r\nAnswer: Select another diagnosis. While the client reported a history of depression, it did not meet criteria for adjustment disorder which would be characterized by moderate symptoms of depression which last no longer than 6 months.  "
     },
     {
       :value => -2,
-      :body => "h. Posttraumatic Stress Disorder",
-      :response => "Answer: Incorrect. Select another diagnosis.\r\nAnswer: She reports being physically and psychologically abused by her boyfriend and other men but  does not report the necessary criteria of symptoms during the past month, necessary for a diagnosis of Acute Stress Disorder, i.e. intra or post-trauma reduced awareness of the surroundings, derealization, depersonalization, or dissociative amnesia; reliving experiences; a subjective sense of numbing, avoidance, detachment or lack of emotional responsiveness; and hyperarousal.  Her nightmares are not sufficient symptoms to qualify for a diagnosis of either Acute Stress or Post-traumatic Stress Disorder."
+      :body => "e. Alzheimer's Disease",
+      :response => "Incorrect.\r\nAnswer: This client's memory problems have persisted for two years at the same time as his depression, appear to be secondary to his depressive disorder, and are not typical of Alzheimer's Disease. "
+    },
+    {
+      :value => -2,
+      :body => "f. Eating Disorder",
+      :response => "Incorrect.\r\nAnswer:  While the client reported a significant weight gain, his symptoms were not consistent with a primary eating disorder but rather secondary to his depression. "
+    },
+    {
+      :value => -2,
+      :body => "g. Sleep Apnea",
+      :response => "Incorrect.\r\nAnswer: While the client reported a sleep disorder, his symptoms are not consistent with Sleep Apnea rather but rather is secondary to his depression. "
+    },
+    {
+      :value => -2,
+      :body => "h. Bereavement",
+      :response => "Incorrect.\r\nAnswer:  While the client's symptoms of depression began after the death of his wife, the persistence of these symptoms over two years are more characteristic than would be the relatively shorter symptoms of bereavement. "
     }
   ]
 )
 scenario.questions.create(
   :score_type => 'Information Gathering',
-  :notes => "<strong>Treatment recommendations</strong><br />\r\n\r\n<br /><br />\r\nWhile pharmacotheapy has been well established and is generally the treatment of choice for Bipolar Disorder (Markovitz & Klerman, 1991), practical recommendations regarding the structure of the environment appear to be most productive (Janowsky, El-Yousef & Davis, 1974). Structured settings might include reducing stimuli by setting limits such as restraining the expression of intense feelings (e.g., anger, frustration.\r\n\r\nBehavioral treatment has been cited as an effective treatment modality for PTSD and could be used in this case if the diagnosis had been established. In fact, patients with a history of abuse sometimes develop PTSD symptoms after beginning psychotherapy. This therapeutic approach which generally consists of some form of exposure desensitization therapy, has been found to be an effective treatment. Since Behaviorists believe PTSD is created by an aversion resulting from operant or classical conditioning (Emmelkapm, 1994, Levine, 2010), they promote behavior therapy as a highly effective treatment. Resick et al.(1988) have also found stress inoculation training (SRT) to be superior in the short-term, versus supportive counseling and exposure. Brief psychotherapy, as research evidence has demonstrated, can also be quite effective to threat clients with PTSD (Foa, Heart-Ikeda, & Perry, 1995, Smith, Glass, & Miller, 1980).",
+  :notes => "<strong>Monitoring recommendations</strong><br />\r\nRequest neuropsychological testing. Monitor the quantity of his alcohol intake and potential withdrawal symptoms when he does not drink. Evaluate his sleep patterns. Determine the relationship of his wife's death to possible mood changes. Clarify past depression and prior treatments. Talk to Aaron's sister, with his permission, in order to obtain more information about his memory problems and activities at home.",
+  :body => "To be certain of the diagnosis the counselor might make which of the following recommendations?",
+  :position => 4,
+  :answers => [
+    {
+      :value => -3,
+      :body => "a. Clarify his past job likes and dislikes",
+      :response => "Answer: Incorrect.  Obtaining more information about his job likes and dislikes will not help in clarifying a provisional Axis I DSM-IV-TR diagnosis. "
+    },
+    {
+      :value => 3,
+      :body => "b. Request neuropsychological testing",
+      :response => "Answer: Correct.  Requesting neuropsychological testing will help to clarify whether or not there is an organic basis for his memory problems, which will aid in determining a provisional Axis I DSM-IV-TR diagnosis. "
+    },
+    {
+      :value => -3,
+      :body => "c. Determine his intelligence factor (IQ)",
+      :response => "Answer: Incorrect.\r\nDetermining his intelligence quotient (IQ) will not help in clarifying a provisional Axis I DSM-IV-TR diagnosis since it is a non-specific measurement of cognitive functioning and not specific for a mood disorder or Alzheimer's Disorder. "
+    },
+    {
+      :value => -1,
+      :body => "d. Determine if he and his brother drink together",
+      :response => "Answer: Incorrect.\r\nDetermining whether or not he and his brother drink together will not help in clarifying a provisional Axis I DSM-IV-TR diagnosis. "
+    },
+    {
+      :value => 0,
+      :body => "e. Clarify family history",
+      :response => "Answer: Clarifying family history, particularly a history of Bipolar Disorder, can be potentially be helpful in clarifying a provisional Axis I DSM-IV-TR diagnosis. However, this client does not have bipolar disorder.  Select another answer or go to Question 5."
+    },
+    {
+      :value => 1,
+      :body => "f. Determine the quantity of alcohol and the nature of or possibility of withdrawal symptoms when he does not drink",
+      :response => "Answer: Correct. Determining the quantity of alcohol and the nature of or possibility of withdrawal symptoms when he does not drink will help to make or rule out a provisional Axis I DSM-IV-TR diagnosis of Substance Disorder. "
+    },
+    {
+      :value => 2,
+      :body => "g. Evaluate his sleep patterns",
+      :response => "Answer: Correct.  Evaluating his sleep patterns will help to determine whether or not his sleep disorder is secondary to a mood disorder and this will help in determining a provisional Axis I DSM-IV-TR diagnosis. "
+    },
+    {
+      :value => 2,
+      :body => "h. Determine the relationship of the death of his wife to possible mood changes",
+      :response => "Answer: Correct. Determining the relationship of the death of his wife to possible mood changes will help to determine whether or not a diagnosis of Bereavement or Adjustment Disorder should be considered, while recognizing this is only one of a number of factors that can point to a diagnosis of Adjustment Disorder.   "
+    },
+    {
+      :value => 1,
+      :body => "i. Clarification of past depression and prior treatments",
+      :response => "Answer: Correct. Clarifying the presence of past depression and prior treatments is particularly important in determining whether or not he has an Axis I DSM-IV-TR diagnosis such as Major Depressive Disorder, recurrent. "
+    },
+    {
+      :value => 2,
+      :body => "j. Talk to Aaron's sister who can provide more information about his memory problems and activities at home",
+      :response => "Answer: Correct. Talking to Aaron's sister who can provide more information about his memory problems and activities at home will help to clarify symptoms that might be consistent with either Axis I DSM-IV-TR diagnoses such as Major Depressive Disorder or Alzheimer's Disorder.  "
+    }
+  ]
+)
+scenario.questions.create(
+  :score_type => 'Information Gathering',
+  :notes => "<strong>Treatment recommendation</strong><br />\r\nMr. Harmistead did demonstrate memory impairment and would be a good client for individual therapy as a treatment of choice since one of the major reasons his depression has persisted is his inability to resolve the loss of his wife two years ago. Cognitive-Behavioral therapy could be considered since it has an established effectiveness rate for Major Depressive Disorder in combination with pharmacotherapy. Researchers have found that the combination of pharmacotherapy and psychotherapy is more effective than either one alone.  The effective use of antidepressant medication can facilitate more rapid improvement in cognitive functioning which, in turn, will enhance self-esteem and enable him to function more effectively in talk therapy, remember what takes place during sessions, and be able to follow-through with therapy assignments.",
   :body => "What therapies, techniques, and/or strategies would be recommended treatment? (Select as many as you consider important in this section.)",
   :position => 5,
   :answers => [
     {
       :value => -1,
-      :body => "a. Confrontive Psychotherapy",
-      :response => "Answer:  Incorrect. Confrontive Psychotherapy is not recommended for her disorder. Select another answer or go to Question 6."
+      :body => "a. Alcohol Detoxification",
+      :response => "Answer: Incorrect.\r\nWhile alcohol detoxification is recommended for individuals with clear evidence of acute or chronic intoxication or substance dependency this client does not demonstrate evidence of such problems.  "
+    },
+    {
+      :value => 2,
+      :body => "b. Individual psychotherapy",
+      :response => "Answer:  Correct.  This client has symptoms of depression and also has circumstances in his life that will benefit from therapeutic work."
     },
     {
       :value => 0,
-      :body => "b. Relationship Therapy",
-      :response => "Answer: Relationship therapy is not the treatment of choice for her disorder. Select another answer or go to Question 6. "
+      :body => "c. Relationship therapy",
+      :response => "Answer:  This client has relationship issues but none that would be suitable for relationship therapy. "
+    },
+    {
+      :value => 0,
+      :body => "d. Weight reduction program",
+      :response => "Answer:  This client has problems with weight and should see a physician and/or dietitian about this matter. "
+    },
+    {
+      :value => 0,
+      :body => "e. Cognitive-Behavioral Therapy",
+      :response => "Answer:  This client has symptoms of depression that often benefit from CBT but since his depressed mood is in large part related to the death of his wife he  will more likely benefit from Individual Psychotherapy. "
     },
     {
       :value => 2,
-      :body => "c. Cognitive-Behavioral Therapy",
-      :response => "Answer:  Correct. This can be a helpful therapeutic approach. Cognitive-Behavioral therapy is a psychosocial therapy which assumes that maladaptive, or faulty, thinking patterns cause maladaptive behavior and \"negative\" emotions. The treatment focuses on changing an individual's thoughts in order to change behavior and emotional states and has been used for a number of mental disorders, including mood disorders, personality disorders, social phobia, obsessive-compulsive disorder, eating disorders, substance abuse, anxiety or panic disorder, agoraphobia, post-traumatic stress disorder (PTSD), and attention-deficit/hyperactivity disorder (ADHD). Select an additional answer or go to Question 6."
-    },
-    {
-      :value => 2,
-      :body => "d. Pharmacotherapy",
-      :response => "Answer: Correct. Pharmacotherapy has been well established and is generally the treatment of choice for Bipolar Disorder (Markovitz & Klerman, 1991).  Medications commonly prescribed are mood stabilizers such as an anti-convulsant medication or Lithium. Select an additional answer or go to Question 6."
+      :body => "f. Pharmacotherapy for mood disorder",
+      :response => "Answer:  Correct. This client has symptoms of Major Depressive Disorder that will benefit from anti-depressive medications. "
     },
     {
       :value => -1,
-      :body => "e. Dialectic Behavior Therapy",
-      :response => "Answer:  Incorrect. Dialectic-Behavioral therapy is recommended for Borderline Personality disorder but not for her symptoms. Select another answer or go to Question 6."
+      :body => "g. Pharmacotherapy for dementia",
+      :response => "Answer:  Incorrect. This client's symptoms of memory loss are not consistent with Alzheimer's Dementia and would not benefit from the use of pharmacotherapy, which typically would be one of the cholinesterase inhibitors.  "
     },
     {
-      :value => 0,
-      :body => "f. Nutritional supplements",
-      :response => "Answer:  Nutritional supplements may be helpful, but not part of the treatment recommendations for her disorder. Select another answer or go to Question 6."
-    },
-    {
-      :value => 1,
-      :body => "g. Individual supportive psychotherapy",
-      :response => "Answer:  Correct. Individual Supportive Psychotherapy can help her deal with the stress and losses she has experienced. Practical recommendations regarding the structure of the environment can be productive, including reducing external stimuli and restraining the expression of intense feelings of anger and frustration. Select an additional answer or go to Question 6."
-    },
-    {
-      :value => 3,
-      :body => "h. 12 step program",
-      :response => "Answer: Correct. 12 Step programs are recommended for individuals coping with substance disorders who can benefit from an ongoing support group as well as the content of the 12 step program. Select an additional answer or go to Question 6."
-    },
-    {
-      :value => 1,
-      :body => "i. Rational Emotive Behavioral Therapy (REBT)",
-      :response => "Answer: Correct.Rational Emotive Behavior Therapy (REBT), originally developed by psychologist Albert Ellis, is a form of cognitive behavioral therapy which also utilizes educational methods to cope with irrational and self-defeating thinking, emoting, and behaving caused by self-blame, jealousy, guilt, depression, and anxiety. The therapist teaches the client how to identify and dispute these negative and irrational thoughts and feelings and replace them with more rational and self-helping ones. Select an additional answer or go to Question 6."
-    },
-    {
-      :value => 2,
-      :body => "j. Behavioral Treatment",
-      :response => "Behavioral treatment such as exposure therapy has been found to be effective treamtnet for PTSD."
+      :value => -2,
+      :body => "h. Stress Inoculation Training",
+      :response => "Answer:  Incorrect.  Stress Inoculation Training is a multifaceted form of cognitive-behavioral therapy and has been employed to help individuals cope with the aftermath of exposure to stressful events and on a preventative basis to \"inoculate\" individuals to future and ongoing stressors.  It would not be useful for this client. "
     }
   ]
 )
 scenario.questions.create(
   :score_type => 'Information Gathering',
-  :notes => "<strong>Monitoring recommendations</strong><br />\r\nMonitor her progress as follows: attendance in Narcotics Anonymous, maintaining compliance on medications, following probation guidelines, self-reports of abstinence, the use of journaling to document intrusive memories, nightmares, and physiological hyperarousal, and monitoring sleep.",
-  :body => "During treatment how is her progress to be monitored?",
+  :notes => "<strong>Monitoring recommendations</strong><br />\r\nIt is important for the counselor to monitor compliance with his physician's treatment recommendations including taking his prescribed medication, monitor proper nutrition, exercise, home, and yard activities. Monitor changes in his mood with a Brief Depression Inventory.",
+  :body => "Treatment improvement for this client can be monitored through which of the following? (Select as many as you consider appropriate in this section.)",
   :position => 6,
   :answers => [
     {
-      :value => 2,
-      :body => "a. Attendance in Narcotics Anonymous",
-      :response => "Answer:  Correct. Monitoring her attendance in a 12 step group such as Narcotics Anonymous would be helpful in determining her progress. Select an additional answer or go to another scenario."
-    },
-    {
-      :value => 2,
-      :body => "b. Maintaining compliance on medications",
-      :response => "Answer:  Correct. Monitoring her compliance on medications would be helpful in determining the reduction and/or elimination of mood swings.  Select another answer or go to an additional scenario."
-    },
-    {
       :value => 1,
-      :body => "c. Following probation guidelines",
-      :response => "Answer:  Correct. She is currently on probation for dealing drugs and it would be helpful to engage her about how she is following the probation guidelines. Select another answer or go to an additional scenario."
+      :body => "a. Monitoring his compliance with his physician's treatment recommendations",
+      :response => "Answer: Correct.  Monitoring compliance with his physician's treatment recommendations, which will likely help his general health and psychological state, can be a way to observe treatment improvement.  "
     },
     {
       :value => -1,
-      :body => "d. Following a proper nutrition program",
-      :response => "Answer:  Incorrect. There has not been a nutrition program included in her treatment program. Select another answer or go to another scenario."
-    },
-    {
-      :value => 0,
-      :body => "e. Discontinuing selling drugs",
-      :response => "Answer:  While this is important, it is best handled by her probation officer. Select another answer or go to another scenario."
-    },
-    {
-      :value => 0,
-      :body => "f. The use of journaling",
-      :response => "Answer:  While she may find journaling helpful it is not an essential part of her treatment. Select another answer or go to another scenario."
+      :body => "b. Sister's involvement in his treatment",
+      :response => "Answer:  Incorrect. Monitoring his sister's involvement in his treatment would not be a helpful way to observe for treatment improvement.  "
     },
     {
       :value => 1,
-      :body => "g. Session self-reports of abstinence",
-      :response => "Answer:  Correct. Monitoring self reports of abstinence would be helpful in determining her progress. Select an additional answer or go to another scenario."
+      :body => "c. Monitoring his compliance to take antidepressant medication as prescribed by a medical doctor",
+      :response => "Answer:  Correct. Monitoring compliance to take antidepressant medications, which will likely help his depression, can be one of the ways to observe for treatment improvement. "
     },
     {
       :value => 0,
-      :body => "h. Use of a pre-post substance use inventory",
-      :response => "Answer:  The use of such an inventory is not likely to be useful. Select another answer or go to another scenario."
+      :body => "d. Monitoring his weight and sweet intake",
+      :response => "Answer:  Monitoring his weight and sweet intake may be helpful but is not likely to be one of the best ways to observe for treatment improvement.  "
     },
     {
       :value => 1,
-      :body => "i. Monitor sleep disturbances",
-      :response => "Answer:  Correct. Monitoring her sleep disturbances would be helpful in determining her progress. Select an additional answer or go to another scenario."
+      :body => "e. Proper nutrition and exercise program",
+      :response => "Answer: Correct. Monitoring his nutrition and exercise program would be a helpful way to observe for treatment improvement since he had demonstrated a lack of interest in his health and appropriate weight.   "
+    },
+    {
+      :value => 1,
+      :body => "f. Home and yard activities",
+      :response => "Answer:  Correct. Monitoring his home and yard activities would be a helpful way to observe for treatment improvement since one of the expected outcomes of treatment would be improved energy and interest in activities. "
+    },
+    {
+      :value => -2,
+      :body => "g. Assessing his alcohol intake",
+      :response => "Answer:  Incorrect. Monitoring his alcohol intake would not be one of the ways to observe for treatment improvement since it was not defined to be problematic.  "
+    },
+    {
+      :value => 3,
+      :body => "h. Brief Depression Inventory",
+      :response => "Answer: Correct.  Monitoring a Brief Depression Inventory would be a very helpful way to observe for treatment improvement.  "
+    }
+  ]
+)
+scenario.questions.create(
+  :score_type => 'Information Gathering',
+  :notes => "",
+  :body => "Mr. Harmistead was prescribed an anti-depressant medication and participated in weekly individual counseling for two months without missing an appointment. During the third month he missed three appointment but scheduled new appointments for the following weeks and paid for those he failed to keep. When he returned for the fourth week appointment he claimed to be too busy to continue with therapy. When asked what he had been doing during the three weeks he had missed appointments he said he had been going to church and talking with the pastor. Together they had decided he should marry Margaret. Since that time he and Margaret had been busy with details and traveling. He said that she had expressed a desire to take care of him and it felt good. His sister expressed disappointment because she did not want to move out. \r\n<br /><br />\r\nWhat should the counselor do?",
+  :position => 7,
+  :answers => [
+    {
+      :value => 1,
+      :body => "a. Determine if he is maintaining his medication",
+      :response => "Answer:  Correct. Determining if he is maintaining his anti-depressant medication would be important since the failure to take it could indicate worsening depressive symptoms.\r\n"
+    },
+    {
+      :value => 2,
+      :body => "b. Assess his mood",
+      :response => "Answer: Correct.  Assessing his mood would be important since either worsening depressive symptoms or hypomanic behavior could explain his missed appointments and failure to continue therapy. "
+    },
+    {
+      :value => 0,
+      :body => "c. Recommend that he delay the marriage until the wisdom of this decision can be processed (There could be an argument made in that direction)",
+      :response => "Answer:  Recommending that he delay the marriage until the wisdom of such a decision can be processed has merit. However the best place to process such a decision is in psychotherapy and he has decided to discontinued that phase of treatment. "
+    },
+    {
+      :value => -2,
+      :body => "d. Request Mr. Harmistead to establish goals for returning to therapy",
+      :response => "Answer:  Incorrect. Requesting him to establish goals to return to therapy is reasonable but he has indicated his wish to discontinue therapy and such a request would likely be met with his resistance as well as Margaret's. "
+    },
+    {
+      :value => -3,
+      :body => "e. Request that Mr. Harmistead and this woman come in for a session",
+      :response => "Answer:  Incorrect. Recommending that Mr. Harmistead and Margaret come in for a session would not be recommended. He has not requested a joint session and her involvement could be seen as a violation of confidential boundaries."
+    },
+    {
+      :value => -3,
+      :body => "f. Close the case as Mr. Harmistead appears to be functioning rather well",
+      :response => "Answer:  Incorrect. Mr. Harmistead's current decision to discontinue therapy cannot be assumed to be evidence of recovery. There are remaining signs and symptoms of marginal functioning. For example, he missed three appointments while presumably avoiding to deal with important issues and his behavior could be interpreted as evidence of unhealthy dependency on Margaret. Furthermore his premature termination from therapy could be interpreted  as a 'flight from recovery'. "
+    },
+    {
+      :value => 1,
+      :body => "g. Assess his cognitive functioning through a Mental Status Examination",
+      :response => "Answer:  Correct. Determining a change in his cognitive functioning would be important since a decline could explain his missed appointments and reveal faulty cognitive processing in his decision about discontinuing therapy. "
+    },
+    {
+      :value => -2,
+      :body => "h. Call the pastor to talk about the advisability of two people counseling Mr. Harmistead and possibly the undermining of his therapy",
+      :response => "Answer:  Incorrect. Even though the pastor's involvement may have undermined the therapy, calling him could be seen as a violation of confidential boundaries.  "
+    },
+    {
+      :value => -2,
+      :body => "i. Support his statement that he is too busy to continue counseling but keep the door open for him to return if he desires",
+      :response => "Answer:  Incorrect. Supporting his statement to discontinue counseling because he is too busy is not recommended since it sounds like his 'busy-ness' could be a defense against dealing with issues in therapy. "
     }
   ]
 )
