@@ -1,5 +1,5 @@
 jQuery ->
-	
+
 	$('a#save-scenario-btn').click ->
 		$('#edit-scenario-form').submit()
 		return false

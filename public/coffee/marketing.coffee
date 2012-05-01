@@ -13,22 +13,10 @@ jQuery ->
 		$("fieldset.#{$(this).attr 'id'}").show()
 		return false
 	
-	$('input#ebook-preselect').click -> $('input#ebook').prop 'checked', true
-	$('input#ebook').click -> $('input#ebook-preselect').prop 'checked', true
-	
-	$('input#hard-copy-preselect').click -> $('input#hard-copy').prop 'checked', true
-	$('input#hard-copy').click -> $('input#hard-copy-preselect').prop 'checked', true
-
-	$('input#full-preselect').click -> $('input#full').prop 'checked', true
-	$('input#full').click -> $('input#full-preselect').prop 'checked', true
-
-	$('input#starter-preselect').click -> $('input#starter').prop 'checked', true
-	$('input#starter').click -> $('input#starter-preselect').prop 'checked', true
-
 	total = 0;
 	$('span#total-display').html total
 
-	$('input[name=package]:radio, input[name=package-preselect]:radio, input[name=optional]:radio, input[name=optional]:checkbox').click ->
+	$('input[type=radio], input[type=checkbox]').click ->
 		total = 0;
 		
 		total += 224 		if $('input#ebook:checked').val()
@@ -70,9 +58,8 @@ jQuery ->
 		
 		return false
 
-	$('input[name=package-preselect]:radio, input[name=package]:radio').click -> validate_form()
+	$('input[type=radio]').click -> validate_form()
 	$('input[type=text], input[type=password]').keyup -> validate_form()
-
 
 	validate_form = () ->
 		$('.submit-button').attr('disabled', 'disabled').removeClass('disabled').addClass('disabled')
@@ -96,7 +83,7 @@ jQuery ->
 
 		$('.submit-button').removeAttr('disabled').removeClass('disabled') if validation_errors == 0
 
-		return false
+		#return false
 
 	stripeResponseHandler = (status, response) ->
 		if response.error
