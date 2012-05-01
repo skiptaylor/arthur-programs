@@ -2,6 +2,7 @@ source :rubygems
 
 gem 'chronic', '~> 0.6.7'
 
+gem 'therubyracer', '~> 0.10.1'
 gem 'coffee-script', '~> 2.2.0'
 
 gem 'data_mapper', '~> 1.2.0'
