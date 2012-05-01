@@ -2,6 +2,8 @@ source :rubygems
 
 gem 'chronic', '~> 0.6.7'
 
+gem 'coffee-script', '~> 2.2.0'
+
 gem 'data_mapper', '~> 1.2.0'
 # gem 'dm-mysql-adapter', '~> 1.2.0'
 # gem 'dm-postgres-adapter', '~> 1.2.0'
