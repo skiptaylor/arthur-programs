@@ -3,8 +3,13 @@ Bundler.require
 
 set :environment, ENV['RACK_ENV'] || ENV['env'] || ENV['environment'] || ENV['rack_env'] || :development
 
-enable :sessions
-set :session_secret, ENV['SESSION_KEY'] || 'beansong'
+#enable :sessions
+#set :session_secret, ENV['SESSION_KEY'] || 'beansong'
+
+use Rack::Session::Cookie, key: 'counselorexams',
+													 path: '/',
+													 expire_after: 1209600,
+													 secret: 'beansong'
 
 Tilt.register Tilt::ERBTemplate, 'html'
 
