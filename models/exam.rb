@@ -14,7 +14,7 @@ class Exam
 	def remove
 		self.questions.each {|q| q.remove}
 		self.averages.each  {|a| a.remove}
-		self.uses.each  		{|u| u.remove}
+		Use.all(exams_id: self.id).destroy
 		self.destroy!
 	end
 

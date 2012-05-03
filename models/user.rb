@@ -38,7 +38,7 @@ class User
 		self.scores.each 		{|s| s.remove}
 		self.purchases.each {|p| p.remove}
 		self.averages.each  {|a| a.remove}
-		self.uses.each  		{|u| u.remove}
+		Use.all(user_id: self.id).destroy
 		self.destroy!
 	end
 
