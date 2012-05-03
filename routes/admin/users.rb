@@ -41,6 +41,7 @@ post '/admin/users/:id/?' do
 		email: 				 	 params[:email],
 		name:  				 	 params[:name],
 		phone: 				 	 params[:phone],
+		notes:					 params[:notes],
 		max_exams: 		 	 params[:max_exams],
 		max_scenarios: 	 params[:max_scenarios],
 		expiration_date: Date.from_fields(

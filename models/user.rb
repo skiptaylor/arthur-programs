@@ -13,6 +13,8 @@ class User
 	property :name,  				 String
 	property :phone, 				 String
 	property :hear_about_us, String
+	
+	property :notes,	Text
 
 	property :expiration_date, Date, default: Chronic.parse('1 year from now')
 

@@ -13,7 +13,7 @@
 		
 		<div class="page-header">
 			<a href="/admin/users/<%= @user.id %>/delete" class="btn btn-danger" style="float: right;">Delete This User</a>
-			<h2>Profile</h2>
+			<h2><%= @user.name %></h2>
 		</div>
 		
 		<form class="form-horizontal" method="post">
@@ -88,6 +88,13 @@
 				<div class="controls">
 					<%= @user.expiration_date.to_fields 'expiration' %>
 					<span class="help-inline">Doesn't apply to admin accounts.</span>
+				</div>
+			</div>
+
+			<div class="control-group" id="notes-group">
+				<label class="control-label" for="notes">Notes</label>
+				<div class="controls">
+					<textarea name="notes" id="notes" class="input-xlarge" rows="7"><%= @user.notes %></textarea>
 				</div>
 			</div>
 						
