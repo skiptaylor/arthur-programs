@@ -1,11 +1,27 @@
 get '/nce/exams/?' do
 	authorize!
+	@max_exams = User.get(session[:user]).max_exams
 	@exams = Exam.all order: :id
 	view :'nce/index'
 end
 
 get '/nce/exams/:id/?' do
 	authorize!
+	
+	max_exams = User.get(session[:user]).max_exams
+	
+	if (params[:id] == '1') || (params[:id] == '4')
+		unless max_exams >= 2
+			session[:alert] = { message: "You haven't purchased that exam." }
+			redirect '/nce'
+		end
+	else
+		unless max_exams >= 4
+			session[:alert] = { message: "You haven't purchased that exam." }
+			redirect '/nce'
+		end
+	end
+	
 	if Average.all(exam_id: params[:id], user_id: session[:user]).count > 0
 		redirect "/nce/exams/#{params[:id]}/score"
 	end

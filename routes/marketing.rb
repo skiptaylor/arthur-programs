@@ -42,10 +42,10 @@ post '/nce/?' do
 	
 	if params[:optional]
 		params[:optional] = '2 Online Exams'
-		max_exams = 2
+		max_exams = 4
 	else
 		params[:optional] = 'No Exams'
-		max_exams = 0
+		max_exams = 2
 	end
 	
 	Stripe.api_key = "QRp65gQkBAAx250DpTmCtzXydPnI8qLf"
