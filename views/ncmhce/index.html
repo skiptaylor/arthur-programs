@@ -9,6 +9,12 @@
 	<h1>NCMHCE Scenarios</h1>
 </div>
 
+<% if @remaining_scenarios == 0 %>
+	<div class="well">
+		<p>Buy More</p>
+	</div>
+<% end %>
+
 <% @scenarios.each do |scenario| %>
 	<%= '<div class="row">' if scenario.id.odd? %>
 		<div class="span6">
@@ -19,7 +25,11 @@
 				<%= "<small>#{avg.score}%</small>" if avg %>
 			</h3>
 			<%= scenario.body.truncate(100).markdown %>
-			<p><a href="/ncmhce/scenarios/<%= scenario.id %>">Take scenario <%= scenario.id %></a></p>
+			
+			<% if scenario.sample? || @uses.include?(scenario.id) || @remaining_scenarios > 0 %>
+				<p><a href="/ncmhce/scenarios/<%= scenario.id %>">Take scenario <%= scenario.id %></a></p>
+			<% end %>
+			
 			<br />
 		</div>
 	<%= '</div>' if scenario.id.even? %>

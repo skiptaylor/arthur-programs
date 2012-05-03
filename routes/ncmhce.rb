@@ -2,17 +2,30 @@ get '/ncmhce/scenarios/?' do
 	authorize!
 	@scenarios = Scenario.all order: :id, active: true
 	@averages = Average.all(:user_id => session[:user], :scenario_id.not => nil)
+	@remaining_scenarios = User.get(session[:user]).remaining_scenarios
+	@uses = []
+	Use.all(user_id: session[:user]).each { |u| @uses << u.scenario_id }
 	view 'ncmhce/index'
 end
 
 get '/ncmhce/scenarios/:id/?' do
 	authorize!
+	@scenario = Scenario.get params[:id]
+	
+	unless @scenario.sample?
+		if User.get(session[:user]).remaining_scenarios == 0
+			unless Use.all(user_id: session[:user], scenario_id: params[:id]).count > 0
+				session[:alert] = { message: "Please purchase more scenarios to continue." }
+				redirect '/ncmhce'
+			end
+		end
+	end
+	
 	if Average.all(scenario_id: params[:id], user_id: session[:user]).count > 0
 		redirect "/ncmhce/scenarios/#{params[:id]}/score"
 	end
 	@scores = []
 	Score.all(user_id: session[:user], scenario_id: params[:id]).each {|s| @scores << s.answer_id }
-	@scenario = Scenario.get params[:id]
 	@questions = @scenario.questions order: :position
 	@answers = @questions.answers order: :body
 	view 'ncmhce/scenario'
