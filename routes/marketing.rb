@@ -1,7 +1,21 @@
 get('/welcome/?')      { view 'marketing/welcome'      }
-get('/nce/?')          { view 'marketing/nce'          }
-get('/ncmhce/?')       { view 'marketing/ncmhce'       }
 get('/how-it-works/?') { view 'marketing/how-it-works' }
+
+get '/nce/?' do
+	if session[:user]
+		user = User.get session[:user]
+		redirect '/nce/exams' if user.max_exams > 0
+	end
+	view 'marketing/nce'
+end
+
+get '/ncmhce/?' do
+	if session[:user]
+		user = User.get session[:user]
+		redirect '/ncmhce/scenarios' if user.max_scenarios > 0
+	end
+	view 'marketing/ncmhce'
+end
 
 post '/nce/?' do
 	params[:email].strip!
