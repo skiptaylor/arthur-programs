@@ -1,9 +1,21 @@
+<%
+	if session[:user]
+		user = User.get session[:user]
+	end
+%>
+
 <fieldset class="account" style="display: none;">
-	<legend>Create an account</legend>
+	<legend>
+		<% if user %>
+			You're already signed in
+		<% else %>
+			Create an account
+		<% end %>
+	</legend>
 	<div class="control-group" id="email-group">
 		<label class="control-label" for="email">Email address</label>
 		<div class="controls">
-			<input type="text" class="input-xlarge" id="email" name="email" />
+			<input type="text" class="input-xlarge" id="email" name="email" <%= "value='#{user.email}' disabled" if user %> />
 			<span class="help-inline" style="display: none;">
 				That address is already being used.
 				<br />
@@ -14,13 +26,13 @@
 	<div class="control-group">
 		<label class="control-label" for="password">Password</label>
 		<div class="controls">
-			<input type="password" class="input-xlarge" id="password" name="password" />
+			<input type="password" class="input-xlarge" id="password" name="password" <%= "value='secret123' disabled" if user %> />
 		</div>
 	</div>
 	<div class="control-group">
 		<div class="controls">
 			How did you hear about us?
-			<select id="hear-about-us" name="hear_about_us" />
+			<select id="hear-about-us" name="hear_about_us" <%= "disabled" if user %> />
 				<option value="NA"></option>
 				<option value="Google search">Google search</option>
 				<option value="Other Internet search">Other Internet search</option>
@@ -32,7 +44,13 @@
 			</select>
 		</div>
 	</div>
+	<% if user %>
+		<input type="hidden" name="user_id" id="user_id" value="<%= user.id %>" />
+	<% end %>
 </fieldset>
+
+
+
 <fieldset class="credit-card" style="display: none;">
 	<legend>Credit card info</legend>
 	<div class="control-group" id="card-number-group">

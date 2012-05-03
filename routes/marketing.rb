@@ -18,10 +18,12 @@ get '/ncmhce/?' do
 end
 
 post '/nce/?' do
-	params[:email].strip!
-	params[:email].downcase!
-	params[:password].strip!
-	params[:password].downcase!
+	unless params[:user_id]
+		params[:email].strip!
+		params[:email].downcase!
+		params[:password].strip!
+		params[:password].downcase!
+	end
 	params[:name].strip!
 	params[:address1].strip!
 	params[:address2].strip!
@@ -55,15 +57,21 @@ post '/nce/?' do
 		:description => "#{params[:name]}: #{params[:package]} / #{params[:optional]}"
 	)
 	
-	user = User.create(
-		email: params[:email],
-		password: params[:password],
-		name: params[:name],
-		hear_about_us: params[:hear_about_us],
-		max_exams: max_exams,
-		nce_downloads: nce_downloads
-	)
-		
+	if params[:user_id]
+		user = User.get params[:user_id]
+		user.update(max_exams: (user.max_exams + max_exams))
+		user.update(nce_downloads: true) if nce_downloads == true
+	else
+		user = User.create(
+			email: params[:email],
+			password: params[:password],
+			name: params[:name],
+			hear_about_us: params[:hear_about_us],
+			max_exams: max_exams,
+			nce_downloads: nce_downloads
+		)
+	end
+			
 	purchase = user.purchases.create(
 		package: params[:package],
 		options: params[:optional],
@@ -80,10 +88,12 @@ post '/nce/?' do
 end
 
 post '/ncmhce/?' do	
-	params[:email].strip!
-	params[:email].downcase!
-	params[:password].strip!
-	params[:password].downcase!
+	unless params[:user_id]
+		params[:email].strip!
+		params[:email].downcase!
+		params[:password].strip!
+		params[:password].downcase!
+	end
 	params[:name].strip!
 	params[:address1].strip!
 	params[:address2].strip!
@@ -117,15 +127,22 @@ post '/ncmhce/?' do
 		:card => params[:stripeToken],
 		:description => "#{params[:name]}: #{params[:package]} / #{params[:optional]}"
 	)
+	
+	if params[:user_id]
+		user = User.get params[:user_id]
+		user.update(max_scenarios: (user.max_scenarios + max_scenarios))
+		user.update(ncmhce_downloads: true) if ncmhce_downloads == true
+	else
+		user = User.create(
+			email: params[:email],
+			password: params[:password],
+			name: params[:name],
+			hear_about_us: params[:hear_about_us],
+			max_scenarios: max_scenarios,
+			ncmhce_downloads: ncmhce_downloads
+		)
+	end
 
-	user = User.create(
-		email: params[:email],
-		password: params[:password],
-		name: params[:name],
-		hear_about_us: params[:hear_about_us],
-		max_scenarios: max_scenarios,
-		ncmhce_downloads: ncmhce_downloads
-	)
 			
 	purchase = user.purchases.create(
 		package: params[:package],
