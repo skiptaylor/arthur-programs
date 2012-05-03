@@ -16,7 +16,11 @@
 
 <% if @average %>
 	<div class="well">
-		<h3>Score: <%= @average %>%</h3><br />
+		<h3>
+			Your Score: <%= @average %>%
+			<small>Average Score: <%= @scenario.group_average %>%</small>
+		</h3>
+		<br />
 		<div class="row">
 			<div class="span5">
 				Professional Orientation:

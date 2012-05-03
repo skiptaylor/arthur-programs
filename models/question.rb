@@ -137,20 +137,6 @@ class Average
 	belongs_to :exam,     required: false
 	belongs_to :user
 
-	def self.ncmhce
-		scores = all :scenario_id.not => nil
-		average = 0
-		scores.each {|a| average += a.score}
-		(average/scores.count).to_i
-	end
-
-	def self.nce
-		scores = all :exam_id.not => nil
-		average = 0
-		scores.each {|a| average += a.score}
-		(average/scores.count).to_i
-	end
-
 	def remove
 		self.destroy!
 	end
