@@ -1,18 +1,12 @@
-set :mail_server, {
-	address: '',
-	port: '',
-	enable_starttls_auto: true,
-	user_name: '',
-	password: '',
-	authentication: :plain
+Pony.options = {
+	via: :smtp,
+	via_options: {
+		address: 'smtp.sendgrid.net',
+		port: '587',
+		domain: 'heroku.com',
+		user_name: ENV['SENDGRID_USERNAME'],
+		password: ENV['SENDGRID_PASSWORD'],
+		authentication: :plain,
+		enable_starttls_auto: true
+	}
 }
-
-# Example using GMail:
-# set :mail_server, {
-#   address: 'smtp.gmail.com',
-#   port: '587',
-#   enable_starttls_auto: true,
-#   user_name: 'you@gmail.com', # Google Apps domains also work here
-#   password: '********',
-#   authentication: :plain
-# }
