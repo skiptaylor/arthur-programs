@@ -1,11 +1,46 @@
 get '/ncmhce/scenarios/?' do
 	authorize!
+	@max_scenarios = User.get(session[:user]).max_scenarios
 	@scenarios = Scenario.all order: :id, active: true
 	@averages = Average.all(:user_id => session[:user], :scenario_id.not => nil)
 	@remaining_scenarios = User.get(session[:user]).remaining_scenarios
 	@uses = []
 	Use.all(user_id: session[:user]).each { |u| @uses << u.scenario_id }
 	view 'ncmhce/index'
+end
+
+post '/ncmhce/scenarios/?' do
+	authorize!
+	
+	Stripe.api_key = STRIPE_KEY
+	
+	params[:package] = 'NCMHCE Additional Scenarios Package'
+	params[:amount]  = '80'
+	
+	charge = Stripe::Charge.create(
+		:amount => params[:amount].to_i * 100,
+		:currency => "usd",
+		:card => params[:stripeToken],
+		:description => "#{params[:name]}: #{params[:package]}"
+	)
+	
+	user = User.get params[:user_id]
+	user.update(max_scenarios: (user.max_scenarios + 12))
+	
+	purchase = user.purchases.create(
+		package: params[:package],
+		options: nil,
+		stripe_id: charge.id,
+		amount: params[:amount],
+		address1: params[:address1],
+		address2: params[:address2],
+		city: params[:city],
+		state: params[:state],
+		zip: params[:zip]
+	)
+	
+	session[:alert] = { style: 'alert-success', message: 'Thank you for your purchase.' }
+	redirect '/profile'
 end
 
 get '/ncmhce/scenarios/:id/?' do

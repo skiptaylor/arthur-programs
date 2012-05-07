@@ -194,8 +194,11 @@
 							<td><%= purchase.created_at.display :american_day %></td>
 							<td>	<%= purchase.amount.dollarize %></td>
 							<td>
-								<%= purchase.package %> /
-								<small><%= purchase.options %></small>
+								<%= purchase.package %>
+								<% if purchase.options %>
+									 /
+									<small><%= purchase.options %></small>
+								<% end %>
 							</td>
 						</tr>
 					<% end %>

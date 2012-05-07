@@ -5,6 +5,40 @@ get '/nce/exams/?' do
 	view :'nce/index'
 end
 
+post '/nce/exams/?' do
+	authorize!
+	
+	Stripe.api_key = STRIPE_KEY
+	
+	params[:package] = 'NCE Additional Exams Package'
+	params[:amount]  = '60'
+	
+	charge = Stripe::Charge.create(
+		:amount => params[:amount].to_i * 100,
+		:currency => "usd",
+		:card => params[:stripeToken],
+		:description => "#{params[:name]}: #{params[:package]}"
+	)
+
+	user = User.get params[:user_id]
+	user.update(max_exams: (user.max_exams + 2))
+	
+	purchase = user.purchases.create(
+		package: params[:package],
+		options: nil,
+		stripe_id: charge.id,
+		amount: params[:amount],
+		address1: params[:address1],
+		address2: params[:address2],
+		city: params[:city],
+		state: params[:state],
+		zip: params[:zip]
+	)
+
+	session[:alert] = { style: 'alert-success', message: 'Thank you for your purchase.' }
+	redirect '/profile'
+end
+
 get '/nce/exams/:id/?' do
 	authorize!
 	

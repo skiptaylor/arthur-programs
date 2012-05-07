@@ -48,7 +48,7 @@ post '/nce/?' do
 		params[:optional] = 'NCE eBook'
 	end
 	
-	Stripe.api_key = "QRp65gQkBAAx250DpTmCtzXydPnI8qLf"
+	Stripe.api_key = STRIPE_KEY
 	
 	charge = Stripe::Charge.create(
 		:amount => params[:amount].to_i * 100,
@@ -118,7 +118,7 @@ post '/ncmhce/?' do
 		params[:optional] = 'NCMHCE eBook'
 	end
 	
-	Stripe.api_key = "QRp65gQkBAAx250DpTmCtzXydPnI8qLf"
+	Stripe.api_key = STRIPE_KEY
 	
 	charge = Stripe::Charge.create(
 		:amount => params[:amount].to_i * 100,

@@ -14,6 +14,8 @@ jQuery ->
 		return false
 	
 	total = 0;
+	total += 60 if $('input#additional-exams-package:checked').val()
+	total += 80 if $('input#additional-scenarios-package:checked').val()
 	$('span#total-display').html total
 
 	$('input[type=radio], input[type=checkbox]').click ->
@@ -26,6 +28,9 @@ jQuery ->
 		total += 190 	 if $('input#full-package:checked').val()
 		total += 80    if $('input#starter-package:checked').val()
 		total += 12.95 if $('input#ncmhce-hard-copy:checked').val()
+		
+		total += 60 if $('input#additional-exams-package:checked').val()
+		total += 80 if $('input#additional-scenarios-package:checked').val()
 
 		$('input#amount').val total
 
