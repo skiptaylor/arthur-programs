@@ -19,13 +19,13 @@ jQuery ->
 	$('input[type=radio], input[type=checkbox]').click ->
 		total = 0;
 		
-		total += 224 		if $('input#ebook:checked').val()
-		total += 236.95 if $('input#hard-copy:checked').val()
-		total += 60 		if $('input#online-exams-option:checked').val()
+		total += 229 	 if $('input#enhanced-package:checked').val()
+		total += 189   if $('input#basic-package:checked').val()
+		total += 12.95 if $('input#nce-hard-copy:checked').val()
 		
-		total += 175 	 if $('input#full:checked').val()
-		total += 99 	 if $('input#starter:checked').val()
-		total += 12.95 if $('input#hard-copy-option:checked').val()
+		total += 190 	 if $('input#full-package:checked').val()
+		total += 80    if $('input#starter-package:checked').val()
+		total += 12.95 if $('input#ncmhce-hard-copy:checked').val()
 
 		$('input#amount').val total
 

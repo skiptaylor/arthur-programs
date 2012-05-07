@@ -32,18 +32,21 @@
 		<form class="form-horizontal" action="" method="POST" id="payment-form">
 			<fieldset class="package">
 				<legend>Program Package</legend>
-				<br />
-				<p>
-					Both packages include the online pre-assessment exam and one online practice exam.
-				</p>
+				<br />				
 				<p style="padding-left: 1em;">
 					<label class="radio">
-						<input type="radio" name="package" id="ebook" value="ebook" /> eBook  <strong>$224</strong>
+						<input name="package" type="radio" id="enhanced-package" value="enhanced-package" /> Enhanced Package <strong>$229</strong> <em>Save $20!</em>
+						<br />
+						<small>Online Pre-Assessment Exam, 3 Online Practice Exams, Study Guide eBook</small>
 					</label>
 				</p>
 				<p style="padding-left: 1em;">
 					<label class="radio">
-						<input type="radio" name="package" id="hard-copy" value="hard-copy" /> Hard Copy <strong>$224 + $12.95 shipping</strong>
+						<input name="package" type="radio" id="basic-package" value="basic-package" /> Basic Package <strong>$189</strong>
+						<br />
+						<small>Online Pre-Assessment Exam, 1 Online Practice Exam, Study Guide eBook</small>
+						<br />
+						<small>(2 additional online practice exams can be purchased later for $60)</small>
 					</label>
 				</p>
 				<br />
@@ -53,7 +56,9 @@
 				<br />
 				<p style="padding-left: 1em;">
 					<label class="checkbox">
-						<input type="checkbox" name="optional" id="online-exams-option" /> 2 Additional Online Practice Exams <strong>$60</strong>
+						<input type="checkbox" name="optional" id="nce-hard-copy" /> Study Guide Hard Copy <strong>$12.95 shipping</strong>
+						<br />
+						<small>Same study guide as the eBook</small>
 					</label>
 				</p>
 			</fieldset>

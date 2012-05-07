@@ -32,20 +32,20 @@ post '/nce/?' do
 	params[:zip].strip!
 	
 	case params[:package]
-	when 'ebook'
-		params[:package] = 'NCE eBook'
+	when 'enhanced-package'
+		params[:package] = 'NCE Enhanced Package'
 		nce_downloads = true
-	when 'hard-copy'
-		params[:package] = 'NCE Hard Copy'
-		nce_downloads = false
+		max_exams = 4
+	when 'basic-package'
+		params[:package] = 'NCE Basic Package'
+		nce_downloads = true
+		max_exams = 2
 	end
 	
 	if params[:optional]
-		params[:optional] = '2 Online Exams'
-		max_exams = 4
+		params[:optional] = 'NCE Hard Copy'
 	else
-		params[:optional] = 'No Exams'
-		max_exams = 2
+		params[:optional] = 'NCE eBook'
 	end
 	
 	Stripe.api_key = "QRp65gQkBAAx250DpTmCtzXydPnI8qLf"
@@ -102,21 +102,20 @@ post '/ncmhce/?' do
 	params[:zip].strip!
 	
 	case params[:package]
-	when 'full'
-		params[:package] = 'NCMHCE Full'
+	when 'full-package'
+		params[:package] = 'NCMHCE Full Package'
 		max_scenarios = 36
-	when 'starter'
-		params[:package] = 'NCMHCE Starter'
+		ncmhce_downloads = true
+	when 'starter-package'
+		params[:package] = 'NCMHCE Starter Package'
 		max_scenarios = 12
+		ncmhce_downloads = true
 	end
 
-	case params[:optional]
-	when 'ebook-option'
-		params[:optional] = 'eBook'
-		ncmhce_downloads = true
-	when 'hard-copy-option'
-		params[:optional] = 'Hard Copy'
-		ncmhce_downloads = false
+	if params[:optional]
+		params[:optional] = 'NCMHCE Hard Copy'
+	else
+		params[:optional] = 'NCMHCE eBook'
 	end
 	
 	Stripe.api_key = "QRp65gQkBAAx250DpTmCtzXydPnI8qLf"
