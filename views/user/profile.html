@@ -65,7 +65,7 @@
 							<td><%= average.exam_id %>. <%= average.exam.title %></td>
 							<td><%= average.score %>%</td>
 							<td><%= average.created_at.display %></td>
-							<td style="text-align: right;"><a href="/nce/exams/<%= average.exam_id %>">Retake</a></td>
+							<td style="text-align: right;"><a href="/nce/exams/<%= average.exam_id %>">Review</a></td>
 						</tr>
 					<% end %>
 				</tbody>
@@ -105,7 +105,7 @@
 							<td><%= average.scenario_id %>. <%= average.scenario.title %></td>
 							<td><%= average.score %>%</td>
 							<td><%= average.created_at.display %></td>
-							<td style="text-align: right;"><a href="/ncmhce/scenarios/<%= average.scenario_id %>">Retake</a></td>
+							<td style="text-align: right;"><a href="/ncmhce/scenarios/<%= average.scenario_id %>">Review</a></td>
 						</tr>
 					<% end %>
 				</tbody>

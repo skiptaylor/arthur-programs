@@ -29,7 +29,7 @@
 				<small><%= previous_score.score %>%</small>
 			<% end %>
 		</h3>
-		<p><a href="/nce/exams/4">Take this exam</a></p>
+		<p><a href="/nce/exams/4">Go to Pre-Assessment Exam</a></p>
 	</div>
 
 	<div class="span6">
@@ -37,7 +37,7 @@
 		<% if previous_score = Average.first(user_id: session[:user], exam_id: 1) %>
 				<small><%= previous_score.score %>%</small>
 		<% end %>
-		<p><a href="/nce/exams/1">Take this exam</a></p>
+		<p><a href="/nce/exams/1">Go to Practice Exam 1</a></p>
 	</div>
 	<% if @max_exams > 2 %>
 		<div class="span6">
@@ -45,7 +45,7 @@
 			<% if previous_score = Average.first(user_id: session[:user], exam_id: 2) %>
 					<small><%= previous_score.score %>%</small>
 			<% end %>
-			<p><a href="/nce/exams/2">Take this exam</a></p>
+			<p><a href="/nce/exams/2">Go to Practice Exam 2</a></p>
 		</div>
 	
 		<div class="span6">
@@ -55,7 +55,7 @@
 					<small><%= previous_score.score %>%</small>
 				<% end %>
 			</h3>
-			<p><a href="/nce/exams/3">Take this exam</a></p>
+			<p><a href="/nce/exams/3">Go to Practice Exam 3</a></p>
 		</div>
 	<% end %>
 </div>

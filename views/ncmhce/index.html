@@ -32,7 +32,7 @@
 			<%= scenario.body.truncate(100).markdown %>
 			
 			<% if scenario.sample? || @uses.include?(scenario.id) || @remaining_scenarios > 0 %>
-				<p><a href="/ncmhce/scenarios/<%= scenario.id %>">Take scenario <%= scenario.id %></a></p>
+				<p><a href="/ncmhce/scenarios/<%= scenario.id %>">Go to scenario <%= scenario.id %></a></p>
 			<% end %>
 			
 			<br />
