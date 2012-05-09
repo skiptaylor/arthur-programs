@@ -16,6 +16,7 @@ post '/ncmhce/scenarios/?' do
 	
 	params[:package] = 'NCMHCE Additional Scenarios Package'
 	params[:amount]  = '80'
+	params[:name] = "#{params[:first_name].strip} #{params[:last_name].strip}"
 	
 	charge = Stripe::Charge.create(
 		:amount => params[:amount].to_i * 100,

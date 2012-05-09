@@ -12,6 +12,7 @@ post '/nce/exams/?' do
 	
 	params[:package] = 'NCE Additional Exams Package'
 	params[:amount]  = '60'
+	params[:name] = "#{params[:first_name].strip} #{params[:last_name].strip}"
 	
 	charge = Stripe::Charge.create(
 		:amount => params[:amount].to_i * 100,

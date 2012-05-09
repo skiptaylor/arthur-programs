@@ -24,7 +24,7 @@ post '/nce/?' do
 		params[:password].strip!
 		params[:password].downcase!
 	end
-	params[:name].strip!
+	params[:name] = "#{params[:first_name].strip} #{params[:last_name].strip}"
 	params[:address1].strip!
 	params[:address2].strip!
 	params[:city].strip!
@@ -94,7 +94,7 @@ post '/ncmhce/?' do
 		params[:password].strip!
 		params[:password].downcase!
 	end
-	params[:name].strip!
+	params[:name] = "#{params[:first_name].strip} #{params[:last_name].strip}"
 	params[:address1].strip!
 	params[:address2].strip!
 	params[:city].strip!
