@@ -1,6 +1,6 @@
 ['scenarios', 'exams'].each {|dir| Dir["./data/#{dir}/**/*.rb"].each {|file| require file}}
 
-exec 'rake taxes:import'
+system 'rake taxes:import'
 
 jarrod = User.create email: 'jarrodtaylor@me.com',     password: 'secret', admin: true, max_exams: 2, max_scenarios: 36, ncmhce_downloads: true, nce_downloads: true, name: 'Jarrod Taylor'
 skip   = User.create email: 'skip@tayloraid.com',      password: 'secret', admin: true, max_exams: 2, max_scenarios: 36, ncmhce_downloads: true, nce_downloads: true, name: 'Skip Taylor'
