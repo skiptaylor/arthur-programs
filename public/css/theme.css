@@ -72,6 +72,28 @@
 
 .product-banner img { width: 100%; }
 
-.unread {
-	font-weight: bold;
+.unread { font-weight: bold; }
+
+.correct { color: green; }
+
+blockquote.correct {
+	color: green;
+	background-color: #e1ffe0;
+	border-left-color: green;
+}
+
+.incorrect { color: red; }
+
+blockquote.incorrect {
+	color: red;
+	background-color: #fedee0;
+	border-left-color: red;
+}
+
+.neutral { color: blue; }
+
+blockquote.neutral {
+	color: blue;
+	background-color: #e6dffe;
+	border-left-color: blue;
 }

@@ -51,27 +51,27 @@
 		<p><strong><%= question.position %>. <%= question.body %></strong></p>
 		
 		<% answers = @answers.find_all {|a| a.question_id == question.id } %>
-		
+
 		<form>
 			<% answers.each do |answer| %>
 				<%
-					if @average && answer.value > 0
-						style = 'color: green;'
-						substyle = 'background-color: #e1ffe0; border-left-color: green;'
-					elsif @average && answer.value < 0
-						style = 'color: red;'
-						substyle = 'background-color: #fedee0; border-left-color: red;'
+					if answer.value > 0
+						style = 'correct'
+					elsif answer.value < 0
+						style = 'incorrect'
+					elsif answer.value == 0
+						style = 'neutral'
 					else
-						style = 'color: blue;'
-						substyle = 'background-color: #e6dffe; border-left-color: blue;'
+						style = ''
 					end
 				%>
-				<label class="checkbox" style="<%= style if @average && @scores.include?(answer.id) %>">
+				
+				<label class="checkbox <%= style if @average && @scores.include?(answer.id) %>">
 					<input type="checkbox" class="<%= 'required' if answer.required? %>" id="<%= answer.id %>" name="<%= answer.id %>" <%= 'checked' if @scores.include?(answer.id) %> <%= 'disabled' if @average || @scores.include?(answer.id) %>>
 					<%= answer.body %>
 					<%= "<strong>(#{answer.value} points)</strong>" if @average && @scores.include?(answer.id) %>
 				</label>
-				<blockquote style="<%= hidden unless @average %> <%= "#{style} #{substyle}" if @average && @scores.include?(answer.id) %>" id="response-<%= answer.id %>">
+				<blockquote style="<%= hidden unless @average || @scores.include?(answer.id) %>" class="<%= style if (@average && @scores.include?(answer.id)) || answer.required? %>" id="response-<%= answer.id %>">
 					<p><%= answer.response %></p>
 				</blockquote>
 			<% end %>
