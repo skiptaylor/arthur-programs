@@ -71,7 +71,7 @@
 					<%= answer.body %>
 					<%= "<strong>(#{answer.value} points)</strong>" if @average && @scores.include?(answer.id) %>
 				</label>
-				<blockquote style="<%= hidden unless @scores.include? answer.id %> <%= "#{style} #{substyle}" if @average && @scores.include?(answer.id) %>" id="response-<%= answer.id %>">
+				<blockquote style="<%= hidden unless @average %> <%= "#{style} #{substyle}" if @average && @scores.include?(answer.id) %>" id="response-<%= answer.id %>">
 					<p><%= answer.response %></p>
 				</blockquote>
 			<% end %>
