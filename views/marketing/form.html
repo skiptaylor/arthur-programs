@@ -1,8 +1,4 @@
-<%
-	if session[:user]
-		user = User.get session[:user]
-	end
-%>
+<% user = User.get session[:user] if session[:user] %>
 
 <fieldset class="account" style="display: none;">
 	<legend>
@@ -116,6 +112,7 @@
 			<input type="text" class="span2" id="city" name="city" />,
 			<input type="text" class="span1" id="state" name="state" />
 			<input type="text" class="span1" id="zip" name="zip" />
+			<span class="help-inline" id="tax">+ sales tax in GA.</span>
 		</div>
 	</div>
 </fieldset>

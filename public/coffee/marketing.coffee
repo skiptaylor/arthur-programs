@@ -18,23 +18,9 @@ jQuery ->
 	total += 80 if $('input#additional-scenarios-package:checked').val()
 	$('span#total-display').html total
 
-	$('input[type=radio], input[type=checkbox]').click ->
-		total = 0;
+	$('input[type=radio], input[type=checkbox]').click -> update_total()
 		
-		total += 229 	 if $('input#enhanced-package:checked').val()
-		total += 189   if $('input#basic-package:checked').val()
-		total += 12.95 if $('input#nce-hard-copy:checked').val()
-		
-		total += 190 	 if $('input#full-package:checked').val()
-		total += 80    if $('input#starter-package:checked').val()
-		total += 12.95 if $('input#ncmhce-hard-copy:checked').val()
-		
-		total += 60 if $('input#additional-exams-package:checked').val()
-		total += 80 if $('input#additional-scenarios-package:checked').val()
-
-		$('input#amount').val total
-
-		$('span#total-display').html $('input#amount').val()
+	$('input#zip').keyup -> update_total()
 
 	$('input#email').keyup ->
 		$.post(
@@ -65,6 +51,34 @@ jQuery ->
 
 	$('input[type=radio]').click -> validate_form()
 	$('input[type=text], input[type=password]').keyup -> validate_form()
+	
+	update_total = () ->
+		total = 0;
+		
+		total += 229 	 if $('input#enhanced-package:checked').val()
+		total += 189   if $('input#basic-package:checked').val()
+		total += 12.95 if $('input#nce-hard-copy:checked').val()
+		
+		total += 190 	 if $('input#full-package:checked').val()
+		total += 80    if $('input#starter-package:checked').val()
+		total += 12.95 if $('input#ncmhce-hard-copy:checked').val()
+		
+		total += 60 if $('input#additional-exams-package:checked').val()
+		total += 80 if $('input#additional-scenarios-package:checked').val()
+		
+		if $('input#zip').val()
+			zip = $('input#zip').val()
+		else
+			zip = 0
+		
+		$.get(
+			'/tax/' + zip,
+			(data) ->
+				tax = total * data
+				total += tax
+				$('input#amount').val total
+				$('span#total-display').html $('input#amount').val()
+		)
 
 	validate_form = () ->
 		$('.submit-button').attr('disabled', 'disabled').removeClass('disabled').addClass('disabled')
