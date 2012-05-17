@@ -24,7 +24,6 @@
 	<div class="span6">
 		<h3>
 			NCE Pre-Asssessment Exam
-			<span class="label label-info">Sample</span>
 			<% if previous_score = Average.first(user_id: session[:user], exam_id: 4) %>
 				<small><%= previous_score.score %>%</small>
 			<% end %>
