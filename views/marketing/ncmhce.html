@@ -33,32 +33,38 @@
 		<form class="form-horizontal" action="" method="POST" id="payment-form">
 			<fieldset class="package">
 				<legend>Program Package</legend>
-				<br />
-				<p style="padding-left: 1em;">
-					<label class="radio">
-						<input name="package" type="radio" id="full-package" value="full-package" /> Full Package <strong>$190</strong> <em>Save $50!</em>
-						<br />
-						<small>
-							All 36 Online Scenarios, Study Supplement eBook,
-							<br />
-							30 Minute Consultation with Gary Arthur, Pass Guarantee
-						</small>
-					</label>
-				</p>
-				<p style="padding-left: 1em;">
-					<label class="radio">
-						<input name="package" type="radio" id="starter-package" value="starter-package" /> Starter Package <strong>$80</strong>
-						<br />
-						<small>
-							12 Online Scenarios, Study Supplement eBook,
-							<br />
-							30 Minute Consultation with Gary Arthur, Pass Guarantee
-							<br />
-							(Additional online scenarios can be purchased later in sets of 12 for $80)
-						</small>
-					</label>
-				</p>				
-				<br />
+				<div class="row">
+					<br />
+					<div class="span3">
+						<p style="padding-left: 1em;">
+							<label class="radio">
+								<input name="package" type="radio" id="full-package" value="full-package" /> Full Package <strong>$190</strong>
+								<ul class="package-features">
+									<li><strong>Save $50!</strong></li>
+									<li>All 36 Online Scenarios</li>
+									<li>Study Supplement eBook</li>
+									<li>30 Minute Consultation with Gary Arthur</li>
+									<li>Pass Guarantee</li>
+								</ul>
+							</label>
+						</p>
+					</div>
+					<div class="span3">
+						<p style="padding-left: 1em;">
+							<label class="radio">
+								<input name="package" type="radio" id="starter-package" value="starter-package" /> Starter Package <strong>$80</strong>
+								<ul class="package-features">
+									<li>12 Online Scenarios</li>
+									<li>Study Supplement eBook</li>
+									<li>30 Minute Consultation with Gary Arthur</li>
+									<li>Pass Guarantee</li>
+									<li>Additional online scenarios can be purchased later in sets of 12 for $80</li>
+								</ul>
+							</label>
+						</p>					
+					</div>
+					<br />	
+				</div>
 			</fieldset>
 			<fieldset class="package">
 				<legend>Optional Enhancements</legend>

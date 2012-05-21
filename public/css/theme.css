@@ -97,3 +97,9 @@ blockquote.neutral {
 	background-color: #e6dffe;
 	border-left-color: blue;
 }
+
+ul.package-features {
+	color: #666;
+	padding-left: .5em;
+	font-size: 90%;
+}

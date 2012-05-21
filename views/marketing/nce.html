@@ -33,24 +33,36 @@
 		<form class="form-horizontal" action="" method="POST" id="payment-form">
 			<fieldset class="package">
 				<legend>Program Package</legend>
-				<br />				
-				<p style="padding-left: 1em;">
-					<label class="radio">
-						<input name="package" type="radio" id="enhanced-package" value="enhanced-package" /> Enhanced Package <strong>$229</strong> <em>Save $20!</em>
-						<br />
-						<small>Online Pre-Assessment Exam, 3 Online Practice Exams, Study Guide eBook</small>
-					</label>
-				</p>
-				<p style="padding-left: 1em;">
-					<label class="radio">
-						<input name="package" type="radio" id="basic-package" value="basic-package" /> Basic Package <strong>$189</strong>
-						<br />
-						<small>Online Pre-Assessment Exam, 1 Online Practice Exam, Study Guide eBook</small>
-						<br />
-						<small>(2 additional online practice exams can be purchased later for $60)</small>
-					</label>
-				</p>
-				<br />
+				<div class="row">
+					<br />
+					<div class="span3">
+						<p style="padding-left: 1em;">
+							<label class="radio">
+								<input name="package" type="radio" id="enhanced-package" value="enhanced-package" /> Enhanced Package <strong>$229</strong>
+								<ul class="package-features">
+									<li><strong>Save $20!</strong>
+									<li>Online Pre-Assessment Exam</li>
+									<li>3 Online Practice Exams</li>
+									<li>Study Guide eBook</li>
+								</ul>
+							</label>
+						</p>
+					</div>
+					<div class="span3">
+						<p style="padding-left: 1em;">
+							<label class="radio">
+								<input name="package" type="radio" id="basic-package" value="basic-package" /> Basic Package <strong>$189</strong>
+								<ul class="package-features">
+									<li>Online Pre-Assessment Exam</li>
+									<li>1 Online Practice Exams</li>
+									<li>Study Guide eBook</li>
+									<li>2 additional online practice exams can be purchased later for $60</li>
+								</ul>
+							</label>
+						</p>
+					</div>
+					<br />
+				</div>
 			</fieldset>
 			<fieldset class="package">
 				<legend>Optional Enhancements</legend>
