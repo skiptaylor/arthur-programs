@@ -1,13 +1,20 @@
 <% user = User.get session[:user] if session[:user] %>
 
 <fieldset class="account" style="display: none;">
-	<legend>
+	<legend style="margin-bottom: 1em;">
 		<% if user %>
 			You're already signed in
 		<% else %>
 			Create an account
 		<% end %>
 	</legend>
+	<div class="control-group">
+		<label class="control-label" for="first_name">Name</label>
+		<div class="controls">
+			<input type="text" class="input-small" id="first_name" name="first_name" />
+			<input type="text" class="input-small" id="last_name" name="last_name" />
+		</div>
+	</div>
 	<div class="control-group" id="email-group">
 		<label class="control-label" for="email">Email address</label>
 		<div class="controls">
@@ -48,7 +55,7 @@
 
 
 <fieldset class="credit-card" style="display: none;">
-	<legend>Credit card info</legend>
+	<legend style="margin-bottom: 1em;">Credit card and shipping info</legend>
 	<div class="control-group" id="card-number-group">
 		<label class="control-label">Card number</label>
 		<div class="controls">
@@ -87,13 +94,6 @@
 		</div>
 	</div>
 	
-	<div class="control-group">
-		<label class="control-label" for="first_name">Name</label>
-		<div class="controls">
-			<input type="text" class="input-small" id="first_name" name="first_name" />
-			<input type="text" class="input-small" id="last_name" name="last_name" />
-		</div>
-	</div>
 	<div class="control-group">
 		<label class="control-label" for="address1">Address 1</label>
 		<div class="controls">
