@@ -9,7 +9,7 @@ exam.questions.create(
     {
       value: 1,
       required: true,
-      response: "Proxemics is defined as interrelated observations and theories of man's use of space. Proxemics is often taught as one component of communication, such as in diversity the comfort zone for speaking, standing, and physical nearness/farness to one another. See Chapter 5, page 15.",
+      response: "Proxemics is defined as interrelated observations and theories of man's use of space. Proxemics is often taught as one component of communication, such as in diversity the comfort zone for speaking, standing, and physical nearness/farness to one another. See Chapter 5.",
       body: "b. proxemics."
     },
     { value: 1, body: "c. paralanguage."  },
@@ -109,7 +109,7 @@ exam.questions.create(
 
 exam.questions.create(
   score_type: "Social and Cultural Foundations",
-  body: "According to Sidney Simon, during the valuing process an individual will cherish and publicly affirm his/her value. What is the term for this aspect of valuing is?",
+  body: "According to Sidney Simon, during the valuing process an individual will cherish and publicly affirm his/her value. What is the term for this aspect of valuing?",
   position: 7,
   answers: [
     { value: 1, body: "a. choosing" },
@@ -132,12 +132,13 @@ exam.questions.create(
   answers: [
     { value: 1, body: "a. father" },
     { value: 1, body: "b. daughter"  },
-    { value: 1, body: "c. father-mother-daughter"  },
+    { value: 1, body: "c. father-daughter"  },
+    { value: 1, body: "d. father-mother-daughter"  },
     {
       value: 1,
       required: true,
       response: "When abuse occurs in a family, all members are affected. Each member has questions to be answered. This does not preclude the fact certain members may seek or be referred for individual counseling.",
-      body: "d. family"
+      body: "e. family"
     }
   ]
 )
@@ -184,7 +185,6 @@ exam.questions.create(
   answers: [
     { value: 1, body: "a. inform the wife you will maintain confidentiality until the next session and she will have to share this information at that time" },
     { value: 1, body: "b. inform the wife you will maintain her confidentiality"  },
-    { value: 1, body: "c. inform the wife you cannot maintain this confidentiality because the two of them are your clients"  },
     {
       value: 1,
       required: true,
@@ -239,7 +239,6 @@ exam.questions.create(
     { value: 1, body: "a. this is an absolute and the counselor will not break this confidence" },
     { value: 1, body: "b. confidential is a matter of professional ethics and is also a legal issue"  },
     { value: 1, body: "c. confidentiality is reserved only for the medical, religious, and legal (attorneys) professions"  },
-    { value: 1, body: "d. confidentiality involves a relationship of trust in which one person imparts private or personal matters to a second party" },
     {
       value: 1,
       required: true,
@@ -268,7 +267,7 @@ exam.questions.create(
 
 exam.questions.create(
   score_type: "Professional Orientation",
-  body: "You have been counseling a family of five that includes three children, ages 16, 14, and 11. During the last session family rules were discussed, outlined and drawn up. All five members agreed upon consequences for misbehavior. During the next week the 14-yearold violated a curfew and was reprimanded by losing dating and telephone privileges for an indefinite period of time. The 14 year-old calls the counselor and informs the counselor that she plans to hurt her parents. What is the appropriate counselor action?",
+  body: "You have been counseling a family of five that includes three children, ages 16, 14, and 11. During the last session family rules were discussed, outlined and drawn up. All five members agreed upon consequences for misbehavior. During the next week the 14-year old violated a curfew and was reprimanded by losing dating and telephone privileges for an indefinite period of time. The 14 year-old calls the counselor and informs the counselor that she plans to hurt her parents. What is the appropriate counselor action?",
   position: 16,
   answers: [
     { value: 1, body: "a. keep the 14-year-old on the telephone and have someone call 911 for an immediate response" },
@@ -279,7 +278,7 @@ exam.questions.create(
       response: "There is likely to be disagreement over the correct answer. This question can be looked upon as a crisis whereby the counselor takes control and perhaps calls 911. Since harm is not defined in the question the informed choice would be to inform the client of your actions and since she is a minor the parents have a right to this information. <br />Letters b. and d. have elements of good practice, however in letter b. to do nothing regarding the parents' knowledge may be in question and in letter d. to involve the mother as mediator may be unwise, since this has not worked in the past. Letter c. is to follow informed consent, duty to warn, and to take immediate action for remediation (session). In addition, it is advisable to inform the person who is being threatened.",
       body: "c. inform the 14-year-old that you will have to inform her father and that you will ask for an immediate session to assist in the family argument"
     },
-    { value: 1, body: "d. contact the mother in order that she will mediate and attempt to get family in for a session as the consequences appear to be too severe" }
+    { value: 1, body: "d. contact the mother in order that she will mediate and attempt to get the family in for a session as the consequences appear to be too severe" }
   ]
 )
 
@@ -323,14 +322,12 @@ exam.questions.create(
   position: 19,
   answers: [
     { value: 1, body: "a. remove that member from the group." },
-    {
-      value: 1,
+    { value: 1, body: "b. attempt to use silences as a way to draw the member out." },
+    { value: 1, body: "c. request him/her to reflect on others in the group; that way he/she will not have to talk about himself/herself."  },
+    { value: 1, 
       required: true,
       response: "The two choices likely would be letters c and d. Letter c. is not the preferred choice because a non-involving person realizes that if he/she comments upon others in the group he/she will have opened oneself up for interest by others. A low anxiety and involvement would be letter d. Low involvement would be closer to his present behavior.",
-      body: "b. attempt to use silences as a way to draw the member out."
-    },
-    { value: 1, body: "c. request him/her to reflect on others in the group; that way he/she will not have to talk about himself/herself."  },
-    { value: 1, body: "d. break the group into dyads for appropriate experiences, thus each member responds to another member in the group." }
+      body: "d. break the group into dyads for appropriate experiences, thus each member responds to another member in the group." }
   ]
 )
 
@@ -374,7 +371,6 @@ exam.questions.create(
   body: "The importance of evaluating counselor effectiveness is a professional issue related to:",
   position: 22,
   answers: [
-    { value: 1, body: "a. accountability." },
     {
       value: 1,
       required: true,
@@ -732,13 +728,13 @@ exam.questions.create(
   answers: [
     { value: 1, body: "a. recognize that good examiner-examinee relationships are important to good test results and attempt to assist the student without giving the answer or even a hint toward the answer." },
     { value: 1, body: "b. refuse to answer on the premise the examiner is likely to bias the results."  },
+    { value: 1, body: "c. tell the student you are sorry but you are unable to answer any questions once a timed test has begun." }
     {
       value: 1,
       required: true,
       response: "There are several answers that are not only correct under certain circumstances but also take into consideration the need for good interpersonal relations and positive interactions with examinees. However, because responses are so different from instrument to instrument, it is advisable to know beforehand the appropriate response. This question reinforces the basics. Be aware of appropriate manual instructions.",
-      body: "c. know the appropriate response based on instructions in the instructor's manual."
+      body: "d. know the appropriate response based on instructions in the instructor's manual."
     },
-    { value: 1, body: "d. tell the student you are sorry but you are unable to answer any questions once a timed test has begun." }
   ]
 )
 
@@ -803,7 +799,7 @@ exam.questions.create(
     {
       value: 1,
       required: true,
-      response: "The terminology in this question suggests a social learning counselor. Terms such as unrealistic expectations, faulty beliefs, generalizations, and priori learning are in agreement with social learning theory.",
+      response: "The terminology in this question suggests a social learning counselor. Terms such as unrealistic expectations, faulty beliefs, generalizations, and prior learning are in agreement with social learning theory.",
       body: "b. social learning"
     },
     { value: 1, body: "c. psycho-dynamic"  },
@@ -905,7 +901,7 @@ exam.questions.create(
 
 exam.questions.create(
   score_type: "Professional Orientation",
-  body: "Karen, a socially mature 16-year-old, confides in her counselor that she is pregnant. Her family is active in the \"pro-life\" movement, and Karen held similar beliefs before pregnancy. She now wishes to explore the physical and psychological ramifications of an abortion. She wants assurance that whatever the final decision, the counselor will not reveal any information to her family. The counselor, who is also \"pro-lifer,\" contemplates informing the girl's parents. What is the appropriate action of the counselor?",
+  body: "Karen, a socially mature 16-year-old, confides in her counselor that she is pregnant. Her family is active in the \"pro-life\" movement, and Karen held similar beliefs before pregnancy. She now wishes to explore the physical and psychological ramifications of an abortion. She wants assurance that whatever the final decision, the counselor will not reveal any information to her family. The counselor, who is also \"pro-life,\" contemplates informing the girl's parents. What is the appropriate action of the counselor?",
   position: 52,
   answers: [
     { value: 1, body: "a. consciously encourage Karen to accept the values, lifestyle, and beliefs of her parents" },
@@ -1100,7 +1096,11 @@ exam.questions.create(
     { value: 1, body: "a. continue to counsel with Robert and Mark. Work with Mark on relationship issues as this might be the cause of the discontent with Robert. This would allow time to work for the benefit of both clients." },
     { value: 1, body: "b. talk with each client individually about this discrepancy and set up a joint counseling session for Robert and Mark to resolve any interpersonal difficulties which might exist"  },
     { value: 1, body: "c. continue to see both clients because Robert has only two more paid (EAP) sessions remaining and will most likely terminate."  },
-    { value: 1, body: "d. refer Mark to another colleague without telling him that you are the primary therapist for Robert." }
+    { value: 1, 
+      required: true,
+      response: "",
+      body: "d. refer Mark to another colleague without telling him that you are the primary therapist for Robert." 
+    }
   ]
 )
 
@@ -1168,7 +1168,7 @@ exam.questions.create(
       response: "Purpose of the test. Generally an achievement test is for acquired knowledge while an aptitude test is to describe one's ability to learn certain skills. In the past aptitude was thought to be an innate quality.",
       body: "b. purpose for which the test is given."
     },
-    { value: 1, body: "c. time limits that a subject has to complete a section or the test."  },
+    { value: 1, body: "c. time limits that a subject has to complete a section of the test."  },
     { value: 1, body: "d. difficulty level of the items." }
   ]
 )
@@ -1340,8 +1340,8 @@ exam.questions.create(
       body: "a. degree of vocational development, vocational attitudes, and competence in coping with vocational developmental tasks."
     },
     { value: 1, body: "b. effectiveness of career education programs."  },
-    { value: 1, body: "c. amount of information an individual has concerning careers and planning skills."  },
-    { value: 1, body: "d. perceived amount of interest and skills a person has regarding career fields." }
+    { value: 1, body: "c. perceived amount of interest and skills a person has regarding career fields." },
+    { value: 1, body: "d. amount of information an individual has concerning careers and planning skills."  }
   ]
 )
 
@@ -1483,7 +1483,7 @@ exam.questions.create(
 
 exam.questions.create(
   score_type: "Professional Orientation",
-  body: "During a counseling session with a family of four (mother, stepfather, 17-year-old female, 10-yearold boy) the mother becomes irate and states she does not have to listen to her daughter's tirades and blaming any longer and walks out of session. Within a few minutes the 10-year-old boy walks out of session. Shortly thereafter the 17-year-old departs, leaving only the father and counselor. Thirty minutes remain in the hour-long session. What is the appropriate action for the counselor?",
+  body: "During a counseling session with a family of four (mother, stepfather, 17-year-old female, 10-year-old boy) the mother becomes irate and states she does not have to listen to her daughter's tirades and blaming any longer and walks out of the session. Within a few minutes the 10-year-old boy walks out of the session. Shortly thereafter the 17-year-old departs, leaving only the father and counselor. Thirty minutes remain in the hour-long session. What is the appropriate action for the counselor?",
   position: 86,
   answers: [
     { value: 1, body: "a. continue the session with the father" },
@@ -1602,7 +1602,7 @@ exam.questions.create(
 
 exam.questions.create(
   score_type: "Group Counseling",
-  body: "A technique used by group leaders to encourage and reinforce members to focus. on an issue or topic is:",
+  body: "A technique used by group leaders to encourage and reinforce members to focus on an issue or topic is:",
   position: 93,
   countable: false,
   answers: [
@@ -1852,7 +1852,7 @@ exam.questions.create(
     {
       value: 1,
       required: true,
-      response: "Co-leadership with a make and female would present a parental structure and allow group members to interact and resolve any issues they had with authority. If this question had not specified an opposite gender co-leader alternative, a. would have been a viable answer.",
+      response: "Co-leadership with a male and female would present a parental structure and allow group members to interact and resolve any issues they had with authority. If this question had not specified an opposite gender co-leader alternative, a. would have been a viable answer.",
       body: "c. group members may realize and relive earlier family dynamics, thereby work on resolving issues"
     },
     { value: 1, body: "d. each leader can establish collusion with a different group member, thus surfacing unexpected emotional material for the other leader. This allows conflict to develop and the leader to model and the member to work through his/her issues" }
@@ -1899,7 +1899,11 @@ exam.questions.create(
   position: 110,
   answers: [
     { value: 1, body: "a. tasks" },
-    { value: 1, body: "b. communication"  },
+    { value: 1, 
+      required: true,
+      response: "",
+      body: "b. communication"  
+    },
     { value: 1, body: "c. goals"  },
     { value: 1, body: "d. bonds" }
   ]
@@ -2085,7 +2089,7 @@ exam.questions.create(
     {
       value: 1,
       required: true,
-      response: "All of the alternatives are plausible, however informed consent procedures allow the leader to deal with each of the alternatives plus other concerns. See Chapter 6, page 8 and the ASGW Code of Ethics for Group Leaders.",
+      response: "All of the alternatives are plausible, however informed consent procedures allow the leader to deal with each of the alternatives plus other concerns. See Chapter 6, and the ASGW Code of Ethics for Group Leaders.",
       body: "b. informed consent"
     },
     { value: 1, body: "c. to determine the seriousness of the divorce"  },
@@ -2192,8 +2196,8 @@ exam.questions.create(
       body: "a. to explore further the reasons for these choices where interest and aptitudes are in discrepancy."
     },
     { value: 1, body: "b. to allow for time to resolve this type of an issue since the student is only 15."  },
-    { value: 1, body: "c. to recognize the obvious pressures the student is feeling from sibling rivalry and that the choice of a vocation as an engineer will be eliminated with maturity."  },
-    { value: 1, body: "d. to provide some interventions which will provide a realistic view of the engineer's work requirements and daily work, that is, a sheltered placement because it is possible this student could likely do the work of an engineer." }
+    { value: 1, body: "c. to provide some interventions which will provide a realistic view of the engineer's work requirements and daily work, that is, a sheltered placement because it is possible this student could likely do the work of an engineer." },
+    { value: 1, body: "d. to recognize the obvious pressures the student is feeling from sibling rivalry and that the choice of a vocation as an engineer will be eliminated with maturity."  }
   ]
 )
 
@@ -2285,7 +2289,7 @@ exam.questions.create(
 
 exam.questions.create(
   score_type: "Research and Program Evaluation",
-  body: "A research report in the Journal of Personality revealed a .05 level of significance with regards to the findings. What does this mean?",
+  body: "A research report in the _Journal of Personality_ revealed a .05 level of significance with regards to the findings. What does this mean?",
   position: 133,
   answers: [
     { value: 1, body: "a. there is a 95% correlation between the two variables under study which accounted for the difference" },
@@ -2500,7 +2504,7 @@ exam.questions.create(
     {
       value: 1,
       required: true,
-      response: "Moral Development. Values define ideals, customs, and how a person has decided to play out his/her life (usually an emotion). This question seems tricky in that the question calls for a process, therefore moral development, whereas value judgment reflects an act. Values and morals are often utilized interchangeably. See Chapter 7, page 20, Sidney Simon and Lawrence Kohlberg.",
+      response: "Moral Development. Values define ideals, customs, and how a person has decided to play out his/her life (usually an emotion). This question seems tricky in that the question calls for a process, therefore moral development, whereas value judgment reflects an act. Values and morals are often utilized interchangeably. See Chapter 7, Sidney Simon and Lawrence Kohlberg.",
       body: "c. moral development"
     },
     { value: 1, body: "d. maturity" }
@@ -2533,7 +2537,7 @@ exam.questions.create(
     {
       value: 1,
       required: true,
-      response: "Alternatives a. and b. are good responses. Before accepting the silence, it is best to understand this person's disposition. The member may be shy, threatened, or hostile for any number of reasons. Understanding the silence would determine the leaders' behavior. See Chapter 6, pages 30 and 33, for the silent member.",
+      response: "Alternatives a. and b. are good responses. Before accepting the silence, it is best to understand this person's disposition. The member may be shy, threatened, or hostile for any number of reasons. Understanding the silence would determine the leaders' behavior. See Chapter 6 for the silent member.",
       body: "a. attempt to determine the reason for the silence."
     },
     { value: 1, body: "b. accept the silence."  },
@@ -2670,7 +2674,7 @@ exam.questions.create(
     {
       value: 1,
       required: true,
-      response: "Alternatives a. and b. are the two reasonable choices. Both Piaget and Kohlberg use the cognitive capacity of the person to determine the developing morals. Neither dismiss parental influence. Chapter 7, pages 14-16 (Piaget) and 20 (Kohlberg).",
+      response: "Alternatives a. and b. are the two reasonable choices. Both Piaget and Kohlberg use the cognitive capacity of the person to determine the developing morals. Neither dismiss parental influence. Chapter 7, (Piaget) and (Kohlberg).",
       body: "b. cognitive development"
     },
     { value: 1, body: "c. personal attitudes of kindness"  },
@@ -2726,7 +2730,7 @@ exam.questions.create(
     {
       value: 1,
       required: true,
-      response: "",
+      response: "Frequently group members will conclude with one another to resist movement in a group. Thus, members will self-protect.",
       body: "d. self-protect."
     }
   ]
@@ -2860,7 +2864,7 @@ exam.questions.create(
     {
       value: 1,
       required: true,
-      response: "1. and 4. are good alternatives. Alternative 4. is temporary while alternative 1. would be lasting.",
+      response: "a. and d. are good alternatives. Alternative d. is temporary while alternative a. would be lasting.",
       body: "a. use legal means to keep the spouse away from the other spouse."
     },
     { value: 1, body: "b. counsel the abusing spouse over a long period of time."  },
@@ -2945,13 +2949,12 @@ exam.questions.create(
   answers: [
     { value: 1, body: "a. attribution." },
     { value: 1, body: "b. role conflict."  },
-    {
-      value: 1,
+    { value: 1, body: "c. bias." },
+    { 
+      value: 1, 
       required: true,
       response: " Cognitive dissonance.",
-      body: "c. bias."
-    },
-    { value: 1, body: "d. cognitive dissonance." }
+      body: "d. cognitive dissonance." }
   ]
 )
 
@@ -2999,7 +3002,7 @@ exam.questions.create(
     {
       value: 1,
       required: true,
-      response: "Alternatives 1., 2., and 3. are correct answers. However, the most correct is alternative 2. The role is dependent upon the model and stage of intervention.",
+      response: "Alternatives a., b., and c. are correct answers. However, the most correct is alternative b. The role is dependent upon the model and stage of intervention.",
       body: "b. dependent upon the consultation model and stage of consultation."
     },
     { value: 1, body: "c. a facilitator."  },
@@ -3083,7 +3086,6 @@ exam.questions.create(
     { value: 1, body: "a. thought stop." },
     { value: 1, body: "b. reframing."  },
     { value: 1, body: "c. stress inoculation."  },
-    { value: 1, body: "d. systematic desensitization." },
     {
       value: 1,
       required: true,
@@ -3228,13 +3230,13 @@ exam.questions.create(
   position: 188,
   answers: [
     { value: 1, body: "a. .36" },
-    {
-      value: 1,
+    {  value: 1,  body: "b. .40" },
+    { 
+      value: 1, 
       required: true,
       response: "The predicted score is attained by multiplying the z-score times the correlation, thus 1.0 x .60 equals .60.",
-      body: "b. .40"
+      body: "c. .60"  
     },
-    { value: 1, body: "c. .60"  },
     { value: 1, body: "d. 1.2" }
   ]
 )
@@ -3258,8 +3260,7 @@ exam.questions.create(
 
 exam.questions.create(
   score_type: "Social and Cultural Foundations",
-  body: "The social theory that suggests that aging people separate themselves from society is:
-  engagement theory.",
+  body: "The social theory that suggests that aging people separate themselves from society is:",
   position: 190,
   answers: [
     { value: 1, body: "a. engagement theory." },
@@ -3285,7 +3286,7 @@ exam.questions.create(
     {
       value: 1,
       required: true,
-      response: "The coefficient of determination is attained by squaring the correlation (.60). The result (.36) is read as a percent indicating that the two variables share a common association. See Chapter 3, page 25. This term is also referred to Variance Accounted For.",
+      response: "The coefficient of determination is attained by squaring the correlation (.60). The result (.36) is read as a percent indicating that the two variables share a common association. See Chapter 3. This term is also referred to Variance Accounted For.",
       body: "c. thirty-six percent of the factors associated with improvement are associated with counseling attendance"
     },
     { value: 1, body: "d. sixty-four percent of the factors associated with improvement are associated with attending counseling sessions" }
@@ -3299,13 +3300,13 @@ exam.questions.create(
   answers: [
     { value: 1, body: "a. indicate that you will make a Xerox copy for her but you cannot give her the original because it belongs to the agency." },
     { value: 1, body: "b. refuse this request and indicate this is not standard procedure."  },
+    { value: 1, body: "c. indicate to the client you would be willing to send a synopsis of your therapy notes, and any clinical forms would need a signature for release of information." },
     {
       value: 1,
       required: true,
-      response: "Alternatives 2., 3., and 4 are possible answers. The reason alternative 3. was selected is that under no conditions should a counselor release any forms contained within the file to a client. Forms sent to another therapist, medical doctor, and courts set up a different question and response. Alternative 3. does provide an option for the client. Sending to the client provides too many opportunities for misinterpretations.",
-      body: "c. tell the client you will be happy to talk with her new therapist, assuming she signs a release of information, but you do not send copies of your files."
-    },
-    { value: 1, body: "d. indicate to the client you would be willing to send a synopsis of your therapy notes, and any clinical forms would need a signature for release of information." }
+      response: "Alternatives b., c., and d are possible answers. The reason alternative c. was selected is that under no conditions should a counselor release any forms contained within the file to a client. Forms sent to another therapist, medical doctor, and courts set up a different question and response. Alternative c. does provide an option for the client. Sending to the client provides too many opportunities for misinterpretations.",
+      body: "d. tell the client you will be happy to talk with her new therapist, assuming she signs a release of information, but you do not send copies of your files."
+    }
   ]
 )
 
@@ -3402,17 +3403,17 @@ exam.questions.create(
     <tr>
       <td></td>
       <td>Math</td>
-      <td>English</td>
+      <td>English &nbsp; </td>
       <td>S.S.</td>
     </tr>
     <tr>
-      <td>Robin</td>
+      <td>Robin &nbsp; </td>
       <td>78%</td>
       <td>65%</td>
       <td>47%</td>
     </tr>
     <tr>
-      <td>Claire</td>
+      <td>Claire &nbsp; </td>
       <td>85%</td>
       <td>75%</td>
       <td>21%</td>
