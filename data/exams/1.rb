@@ -728,13 +728,13 @@ exam.questions.create(
   answers: [
     { value: 1, body: "a. recognize that good examiner-examinee relationships are important to good test results and attempt to assist the student without giving the answer or even a hint toward the answer." },
     { value: 1, body: "b. refuse to answer on the premise the examiner is likely to bias the results."  },
-    { value: 1, body: "c. tell the student you are sorry but you are unable to answer any questions once a timed test has begun." }
+    { value: 1, body: "c. tell the student you are sorry but you are unable to answer any questions once a timed test has begun." },
     {
       value: 1,
       required: true,
       response: "There are several answers that are not only correct under certain circumstances but also take into consideration the need for good interpersonal relations and positive interactions with examinees. However, because responses are so different from instrument to instrument, it is advisable to know beforehand the appropriate response. This question reinforces the basics. Be aware of appropriate manual instructions.",
       body: "d. know the appropriate response based on instructions in the instructor's manual."
-    },
+    }
   ]
 )
 
