@@ -2,13 +2,13 @@ exam = Exam.create id: 4, title: "NCE Pre-Asssessment Exam", sample: true
 
 exam.questions.create(
   score_type: "Professional Orientation",
-  body: "In his book, A Mind That Found Itself this author drew attention to not only the concept of mental illness but also the methods for helping those afflicted:",
+  body: "In his book, _A Mind That Found Itself_ this author drew attention to not only the concept of mental illness but also the methods for helping those afflicted:",
   position: 1,
   answers: [
     {
       value: 1,
       required: true,
-      response: "Clifford Beers. A Mind That Found Itself is a published account (1952) of Beers experiences with mental illness. He organized The National Committee for Mental Hygiene in 1909 and established the American Foundation for Mental Hygiene in 1928. Between ages 24-26 Beers experienced fears of being stricken by ill health, as did his older brother who died of a brain tumor.",
+      response: "Clifford Beers. _A Mind That Found Itself_ is a published account (1952) of Beers experiences with mental illness. He organized The National Committee for Mental Hygiene in 1909 and established the American Foundation for Mental Hygiene in 1928. Between ages 24-26 Beers experienced fears of being stricken by ill health, as did his older brother who died of a brain tumor.",
       body: "a. Clifford Beers"
     },
     { value: 1, body: "b. Frank Parsons" },
@@ -42,7 +42,7 @@ exam.questions.create(
     {
       value: 1,
       required: true,
-      response: "\"A theory synthesizes a body of knowledge, provides a framework for observations and understandings, increases understanding of that knowledge, provides the tools to make predictions, and encourages research,\" (Shaffer, 1994, p. 225). See Chapter 5, page 4.",
+      response: "\"A theory synthesizes a body of knowledge, provides a framework for observations and understandings, increases understanding of that knowledge, provides the tools to make predictions, and encourages research,\" (Shaffer, 1994, p. 225). See Chapter 5.",
       body: "a. a collection of facts organized into a framework."
     },
     { value: 1, body: "b. a model, which blends reality of experiences with ideas about plausible explanations." },
@@ -93,7 +93,7 @@ exam.questions.create(
     {
       value: 1,
       required: true,
-      response: "Informed consent refers to prior knowledge or information. Information expressed before counseling usually includes fee structure, length and number of sessions, duty to warn, confidentiality, and data supporting risks in counseling (consequences). See Chapter 1, pages 23, 26, 30, and 54.",
+      response: "Informed consent refers to prior knowledge or information. Information expressed before counseling usually includes fee structure, length and number of sessions, duty to warn, confidentiality, and data supporting risks in counseling (consequences). See Chapter 1.",
       body: "a. informed consent."
     },
     { value: 1, body: "b. duty to warn." },
@@ -128,7 +128,7 @@ exam.questions.create(
     {
       value: 1,
       required: true,
-      response: "The ACA Code of Ethics recognizes competence as remaining current and working up to your level of expertise. See Chapter 1, pages 24, 27, 30, 32, 34, and 45.",
+      response: "The ACA Code of Ethics recognizes competence as remaining current and working up to your level of expertise. See Chapter 1.",
       body: "b. to gather data on your effectiveness."
     },
     { value: 1, body: "c. to recognize the need for continuing education." },
@@ -145,7 +145,7 @@ exam.questions.create(
     {
       value: 1,
       required: true,
-      response: "the policing of professional behavior is through the professions code of ethics and the membership monitoring itself rather than the legal system. Laws that are broken by professional would be sanctioned by the legal laws of that state. Professional definition and characteristics can be located in Chapter 1, pages 4-5.",
+      response: "The policing of professional behavior is through the professions code of ethics and the membership monitoring itself rather than the legal system. Laws that are broken by professional would be sanctioned by the legal laws of that state. Professional definition and characteristics can be located in Chapter 1.",
       body: "a. Behaviors considered unethical are policed by the legal network for each state."
     },
     { value: 1, body: "b. Developing a personal standard of excellence." },
@@ -197,7 +197,7 @@ exam.questions.create(
     {
       value: 1,
       required: true,
-      response: "Privilege belongs to the client and the courts extend that privilege to certain groups, such as medical doctors, lawyers, spouses, and certain others as granted by a judge. See Chapter 1, pages 42 and 45.",
+      response: "Privilege belongs to the client and the courts extend that privilege to certain groups, such as medical doctors, lawyers, spouses, and certain others as granted by a judge. See Chapter 1.",
       body: "b. privilege"
     },
     { value: 1, body: "c. confidentiality" },
@@ -216,7 +216,7 @@ exam.questions.create(
     {
       value: 1,
       required: true,
-      response: "Confidentiality is not protected by the law.  See Chapter 1, pages 24-26, 29, 42, and 52. Confidentiality is supported by ethics so if ordered by the courts to reveal one must do so.",
+      response: "Confidentiality is not protected by the law.  See Chapter 1. Confidentiality is supported by ethics so if ordered by the courts to reveal one must do so.",
       body: "c. confidentiality"
     },
     { value: 1, body: "d. subpoena issued by a judge" }
@@ -251,8 +251,8 @@ exam.questions.create(
     {
       value: 1,
       required: true,
-      response: "Although follow-up effectiveness is vital, it is rarely, if ever, included in case notes. See Chapter 1, pages 26 and 44.",
-      body: "d. follow-up effectivenes"
+      response: "Although follow-up effectiveness is vital, it is rarely, if ever, included in case notes. See Chapter 1.",
+      body: "d. follow-up effectiveness"
     }
   ]
 )
@@ -484,13 +484,13 @@ exam.questions.create(
   position: 29,
   answers: [
     { value: 1, body: "a. all therapy is effective" },
-    {
+    { value: 1, body: "b. Eysenck said no effect with psychotherapy was evident, while Bergin said psychotherapy was more effective than no treatment" },
+    { 
       value: 1,
       required: true,
       response: "Once again, these data have become dated but were a reflection of outcome variables studied and those results.",
-      body: "b. Eysenck said no effect with psychotherapy was evident, while Bergin said psychotherapy was more effective than no treatment"
+      body: "c. Eysenck said psychotherapy was more effective than no treatment, while Bergin said there was no difference with psychotherapy" 
     },
-    { value: 1, body: "c. Eysenck said psychotherapy was more effective than no treatment, while Bergin said there was no difference with psychotherapy" },
     { value: 1, body: "d. both said psychotherapy was not effective" }
   ]
 )
@@ -868,14 +868,14 @@ exam.questions.create(
   position: 51,
   answers: [
     { value: 1, body: "a. learning difficulty" },
-    {
-      value: 1,
+    { value: 1, body: "b. social desirability" },
+    { value: 1, body: "c. success of satisfaction" },
+    { 
+      value: 1, 
       required: true,
       response: "Talents are skills and frequently assessed by aptitude tests. See Chapter 3.",
-      body: "b. social desirability"
-    },
-    { value: 1, body: "c. success of satisfaction" },
-    { value: 1, body: "d. talents" }
+      body: "d. talents" 
+    }
   ]
 )
 
@@ -1210,7 +1210,7 @@ exam.questions.create(
     {
       value: 1,
       required: true,
-      response: "Nonverbal behaviors include a variety of areas in communication. Paralanguage (voice), proxemics (space), and kinesics (body) all contribute to the verbal message.  See Chapter 5, page 15. Prolixin is an antipsychotic a first generation medication frequently referred to as fluphenazine (low potency and high movement side effects).",
+      response: "Nonverbal behaviors include a variety of areas in communication. Paralanguage (voice), proxemics (space), and kinesics (body) all contribute to the verbal message.  See Chapter 5. Prolixin is an antipsychotic a first generation medication frequently referred to as fluphenazine (low potency and high movement side effects).",
       body: "a. kinesics"
     },
     { value: 1, body: "b. proxemics" },
@@ -1714,7 +1714,7 @@ exam.questions.create(
     {
       value: 1,
       required: true,
-      response: "Dictionary of Occupational Titles.  The CareerInfoNet  is a Department of Employment Security is a comprehensive listing of career sites.  National Career Development competencies is a guide for career counseling training programs. This listing is a checklist of competencies and performance indicators. The Occupational Outlook Handbook is a resource guide of200-250 of the occupations with a high frequency of workers.",
+      response: "Dictionary of Occupational Titles.  The CareerInfoNet  is a Department of Employment Security is a comprehensive listing of career sites.  National Career Development competencies is a guide for career counseling training programs. This listing is a checklist of competencies and performance indicators. The Occupational Outlook Handbook is a resource guide of 200-250 of the occupations with a high frequency of workers.",
       body: "b. Dictionary of Occupational Titles"
     },
     { value: 1, body: "c. National Career  Development competencies" },
