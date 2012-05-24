@@ -1473,7 +1473,7 @@ exam.questions.create(
     {
       value: 1,
       required: true,
-      response: "Attraction. Kanfer and Goldstein (1991) identify structure, imitation, and conformity pressure as three elements of attraction. These components are extremely helpful in enhancing the therapeutic relationship. Attraction is the least helpful of the three when it comes to developing a relationship. Clients indicate expertness and trustworthy components are the factors which create and hold the client.",
+      response: "Attraction. Kanfer and Goldstein (1991) identify structure, imitation, and conformity pressure as three elements of attraction. These components are extremely helpful in enhancing the therapeutic relationship. Clients indicate expertness and trustworthy components are the factors which create and hold the client.",
       body: "b. attractiveness"
     },
     { value: 1, body: "c. trustworthiness"  },

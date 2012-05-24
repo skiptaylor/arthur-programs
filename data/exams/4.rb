@@ -368,7 +368,7 @@ exam.questions.create(
       value: 1,
       required: true,
       response: "The participant must not be harmed, physically or psychologically-this takes priority. See Chapter 1 and Chapter 3.",
-      body: "a. must leave the experiment unharmed, either psychologically or physically."
+      body: "a. must leave the participant unharmed, either psychologically or physically."
     },
     { value: 1, body: "b. under certain conditions have their personal privacy invaded." },
     { value: 1, body: "c. under certain conditions may not be able to decline participation." },
