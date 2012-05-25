@@ -983,7 +983,7 @@ exam.questions.create(
 
 exam.questions.create(
   score_type: "Research and Program Evaluation",
-  body: "A researcher carried out a study to determine if orange juice or water had an effect on performance for 40 competitive runners who drank orange juice on day one and water on day two. The two time trails were 7 days apart. Two time trails were run for each of 40 runners. This type of study is an example of what type of research?",
+  body: "A researcher carried out a study to determine if orange juice or water had an effect on performance for 40 competitive runners who drank orange juice on day one and water on day two. The two time trials were 7 days apart. Two time trials were run for each of 40 runners. This type of study is an example of what type of research?",
   position: 53,
   countable: false,
   answers: [
@@ -3440,7 +3440,7 @@ exam.questions.create(
 
 exam.questions.create(
   score_type: "Research and Program Evaluation",
-  body: "A sports counselor investigated a single runner's time on the 100 meter dash wearing a different number of shoe cleats each time. The counselor equipped pairs with 6, 8, 10, and 12 cleats. Two time trails were run for each pair of cleats. How many independent variables were there for this investigation?",
+  body: "A sports counselor investigated a single runner's time on the 100 meter dash wearing a different number of shoe cleats each time. The counselor equipped pairs with 6, 8, 10, and 12 cleats. Two time trials were run for each pair of cleats. How many independent variables were there for this investigation?",
   position: 174,
   answers: [
     { value: 1, body: "a. 1"
