@@ -1,4 +1,4 @@
-exam = Exam.create id: 4, title: "NCE Pre-Asssessment Exam", sample: true
+exam = Exam.create id: 4, title: "NCE Pre-Assessment Exam", sample: true
 
 exam.questions.create(
   score_type: "Professional Orientation",
