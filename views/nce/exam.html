@@ -107,8 +107,8 @@
 						end
 					%>
 					<label class="radio" style="<%= style %>">
-						<input type="radio" name="<%= question.id %>" value="<%= answer.id %>" <%= 'checked' if @scores.include? answer.id %> <%= 'disabled' if @average %> /> <%= answer.body %>
 						<%= '<i class="icon-ok"></i>' if answer.required? && @average %>
+						<input type="radio" name="<%= question.id %>" value="<%= answer.id %>" <%= 'checked' if @scores.include? answer.id %> <%= 'disabled' if @average %> /> <%= answer.body %>
 					</label>
 				</div>
 			<% end %>
