@@ -157,3 +157,18 @@ post '/ncmhce/?' do
 		
 	sign_in user.id
 end
+
+get '/feedback/?' do
+	view 'marketing/feedback'
+end
+
+post '/feedback/?' do
+		Pony.mail(
+			to: 'jarrodtaylor@me.com',
+			from: 'feedback@counselorexams.com',
+			subject:'Counselor Exams Feedback',
+			body: "#{params[:msg].markdown}<hr />#{params[:name]}<br />#{params[:name]}"
+	)
+	session[:alert] = { message: 'Thank you for your feedback.', style: 'alert-info' }
+	redirect '/feedback'
+end
