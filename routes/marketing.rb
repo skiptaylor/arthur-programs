@@ -168,7 +168,7 @@ post '/feedback/?' do
 			to: 'jarrodtaylor@me.com',
 			from: 'feedback@counselorexams.com',
 			subject:'Counselor Exams Feedback',
-			body: "#{params[:msg].markdown}<hr />#{params[:name]}<br />#{params[:name]}"
+			body: "#{params[:msg].markdown}<hr />#{params[:name]}<br />#{params[:email]}"
 	)
 	session[:alert] = { message: 'Thank you for your feedback.', style: 'alert-info' }
 	redirect '/feedback'
