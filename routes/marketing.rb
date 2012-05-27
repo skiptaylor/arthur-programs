@@ -164,6 +164,7 @@ end
 
 post '/feedback/?' do
 		Pony.mail(
+			headers: { 'Content-Type' => 'text/html' },
 			to: 'jarrodtaylor@me.com',
 			from: 'feedback@counselorexams.com',
 			subject:'Counselor Exams Feedback',
