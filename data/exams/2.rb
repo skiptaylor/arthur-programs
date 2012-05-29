@@ -3174,7 +3174,7 @@ exam.questions.create(
 
 exam.questions.create(
   score_type: "Professional Orientation",
-  body: "A counselor has developed an Anger Management CD-DVD set of tapes to be used in treatment centers. The CD is designed especially for clients to be used in preparation for the psycho-education component and the DVD in the group interaction therapy. The counselor entered into a contract with a small business enterprise to market the products. The product has been selling for 2 years and no follow up effectiveness studies have been conducted. The counselor requested the small business to discontinue the 90% effectiveness advertising until data is acquired. The company refused to discontinue the 90% advertising because sales were very good and the marketing agent indicated that sooner or later all clients have some degree of success. The counselor might:",
+  body: "A counselor has developed an Anger Management CD/DVD set to be used in treatment centers. The CD is designed especially for clients to be used in preparation for the psycho-education component and the DVD in the group interaction therapy. The counselor entered into a contract with a small business enterprise to market the products. The product has been selling for 2 years and no follow up effectiveness studies have been conducted. The counselor requested the small business to discontinue the 90% effectiveness advertising until data is acquired. The company refused to discontinue the 90% advertising because sales were very good and the marketing agent indicated that sooner or later all clients have some degree of success. The counselor might:",
   position: 161,
   answers: [
     {
