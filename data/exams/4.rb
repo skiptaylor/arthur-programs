@@ -843,7 +843,7 @@ exam.questions.create(
     {
       value: 1,
       required: true,
-      response: "The coefficient of determination is found by squaring the correlation for the 2 tests (.80). The coefficient of determination is helpful in determining the strength of the association between the two variables. A second term helpful in this association is referred to as the coefficient of nondetermination See Chapter 8.",
+      response: "The coefficient of determination is found by squaring the correlation for the 2 tests (.80). The coefficient of determination is helpful in determining the strength of the association between the two variables. A second term helpful in this association is referred to as the coefficient of nondetermination See Chapter 3.",
       body: "a. .64"
     },
     { value: 1, body: "b. .49" },
@@ -1714,7 +1714,7 @@ exam.questions.create(
     {
       value: 1,
       required: true,
-      response: "Dictionary of Occupational Titles.  The CareerInfoNet  is a Department of Employment Security is a comprehensive listing of career sites.  National Career Development competencies is a guide for career counseling training programs. This listing is a checklist of competencies and performance indicators. The Occupational Outlook Handbook is a resource guide of 200-250 of the occupations with a high frequency of workers.",
+      response: "Dictionary of Occupational Titles.  The CareerInfoNet  is a Department of Employment Security and is a comprehensive listing of career sites.  National Career Development competencies is a guide for career counseling training programs. This listing is a checklist of competencies and performance indicators. The Occupational Outlook Handbook is a resource guide of 200-250 of the occupations with a high frequency of workers.",
       body: "b. Dictionary of Occupational Titles"
     },
     { value: 1, body: "c. National Career  Development competencies" },
@@ -2636,7 +2636,7 @@ exam.questions.create(
     {
       value: 1,
       required: true,
-      response: "Jean Piaget's theory of cognitive development is adaptation of assimilation and accommodation. See Chapter 6.",
+      response: "Jean Piaget's theory of cognitive development is adaptation of assimilation and accommodation. See Chapter 7.",
       body: "c. Jean Piaget."
     },
     { value: 1, body: "d. David McClelland." }
@@ -2669,7 +2669,7 @@ exam.questions.create(
     {
       value: 1,
       required: true,
-      response: "Classical conditioning. See Chapter 6.",
+      response: "Classical conditioning. See Chapter 7.",
       body: "b. classical conditioning"
     },
     { value: 1, body: "c. generalization" },
@@ -2702,7 +2702,7 @@ exam.questions.create(
     {
       value: 1,
       required: true,
-      response: "Concrete operational, the beginning of rational activity and the mastery of logical operations. See Chapter 6.",
+      response: "Concrete operational, the beginning of rational activity and the mastery of logical operations. See Chapter 7.",
       body: "a. concrete operational"
     },
     { value: 1, body: "b. formal operational" },
@@ -2721,7 +2721,7 @@ exam.questions.create(
     {
       value: 1,
       required: true,
-      response: "Correlational. See Chapter 6.",
+      response: "Correlational. See Chapter 7.",
       body: "c. correlational"
     },
     { value: 1, body: "d. experimental" }
@@ -2737,7 +2737,7 @@ exam.questions.create(
     {
       value: 1,
       required: true,
-      response: "Self-awareness level. The stage just before the conscientious stage. See Chapter 6.",
+      response: "Self-awareness level. The stage just before the conscientious stage. See Chapter 7.",
       body: "b. self-aware"
     },
     { value: 1, body: "c. conscientious" },
@@ -2755,7 +2755,7 @@ exam.questions.create(
     {
       value: 1,
       required: true,
-      response: "Intimacy vs. isolation stage. See Chapter 6.",
+      response: "Intimacy vs. isolation stage. See Chapter 7.",
       body: "c. intimacy vs. isolation stage."
     },
     { value: 1, body: "d. industry vs. inferiority stage." }
@@ -2773,7 +2773,7 @@ exam.questions.create(
     {
       value: 1,
       required: true,
-      response: "Sidney Simon's values categories are choosing, prizing, and acting. See Chapter 6.",
+      response: "Sidney Simon's values categories are choosing, prizing, and acting. See Chapter 7.",
       body: "d. Sidney Simon"
     }
   ]
@@ -2787,7 +2787,7 @@ exam.questions.create(
     {
       value: 1,
       required: true,
-      response: "Pictures form the language development at this stage. See Chapter 6.",
+      response: "Pictures form the language development at this stage. See Chapter 7.",
       body: "a. the child's head is filled with pictures."
     },
     { value: 1, body: "b. motor behavior is important in language development." },
@@ -2804,7 +2804,7 @@ exam.questions.create(
     {
       value: 1,
       required: true,
-      response: "Token economy is an operant technique. See Chapter 6.",
+      response: "Token economy is an operant technique. See Chapter 7.",
       body: "a. token economy"
     },
     { value: 1, body: "b. flooding" },
@@ -2821,7 +2821,7 @@ exam.questions.create(
     {
       value: 1,
       required: true,
-      response: "Approach-avoidance. The student is positive about the colleges and yet negative about being so far from home. The conflict is between college and distance from home. This conflict is usually between the two colleges. See Chapter 6.",
+      response: "Approach-avoidance. The student is positive about the colleges and yet negative about being so far from home. The conflict is between college and distance from home. This conflict is usually between the two colleges. See Chapter 7.",
       body: "a. approach-avoidance"
     },
     { value: 1, body: "b. approach-approach" },
@@ -2839,7 +2839,7 @@ exam.questions.create(
     {
       value: 1,
       required: true,
-      response: "Threshold method is similar to the systematic desensitization. Bring the unwanted stimuli up to the threshold of exposure and counteract this with stronger stimuli. See Chapter 6.",
+      response: "Threshold method is similar to the systematic desensitization. Bring the unwanted stimuli up to the threshold of exposure and counteract this with stronger stimuli. See Chapter 7.",
       body: "b. systematic desensitization"
     },
     { value: 1, body: "c. flooding" },
@@ -2874,7 +2874,7 @@ exam.questions.create(
     {
       value: 1,
       required: true,
-      response: "Conservation is taking an object, liquid or solid, and distorting the shape. The object contains the same amount of material it did in the beginning, however it may appear to be different due to the different shape of the containers. See Chapter 6.",
+      response: "Conservation is taking an object, liquid or solid, and distorting the shape. The object contains the same amount of material it did in the beginning, however it may appear to be different due to the different shape of the containers. See Chapter 7.",
       body: "c. conservation."
     },
     { value: 1, body: "d. constancy." }
@@ -2890,7 +2890,7 @@ exam.questions.create(
     {
       value: 1,
       required: true,
-      response: "Maturation. See Chapter 6.",
+      response: "Maturation. See Chapter 7.",
       body: "b. maturation."
     },
     { value: 1, body: "c. imprinting." },
@@ -2907,7 +2907,7 @@ exam.questions.create(
     {
       value: 1,
       required: true,
-      response: "Ainsworth (1989) in Stage 2, active proximity-seeking, the child resists the separation. See Chapter 6.",
+      response: "Ainsworth (1989) in Stage 2, active proximity-seeking, the child resists the separation. See Chapter 7.",
       body: "b. separation-anxiety."
     },
     { value: 1, body: "c. size constancy." },
@@ -2959,7 +2959,7 @@ exam.questions.create(
     {
       value: 1,
       required: true,
-      response: "Maslow's Hierarchy of needs would illustrate that love is the next level for a person who is satisfied with food, shelter, and education. See Chapter 6.",
+      response: "Maslow's Hierarchy of needs would illustrate that love is the next level for a person who is satisfied with food, shelter, and education. See Chapter 7.",
       body: "c. love."
     },
     { value: 1, body: "d. self-actualization." }
@@ -3005,13 +3005,12 @@ exam.questions.create(
   body: "The part of the brain that responds to temporal value systems, logic, numbers, etc., is the:",
   position: 174,
   answers: [
-    { value: 1, body: "a. left brain." },
-    {
-      value: 1,
+    { 
+      value: 1, 
       required: true,
       response: "Left brain. See Chapter 3.",
-      body: "b. right brain."
-    },
+      body: "a. left brain." },
+    { value: 1, body: "b. right brain." },
     { value: 1, body: "c. limbic." },
     { value: 1, body: "d. frontal lobe." }
   ]
@@ -3293,7 +3292,7 @@ exam.questions.create(
     {
       value: 1,
       required: true,
-      response: "Type A is better known as the hurry syndrome and certain types of A's are more prone to stress. Type B individuals tend to be capable of relaxing without feeling guilty and have the ability to have fun. Type C is a hardiness factor (Maddi and Kobasa, 1984, cited in Peterson and Nisenholz). This type views stress as a challenge rather than a threat. See Chapter 6.",
+      response: "Type A is better known as the hurry syndrome and certain types of A's are more prone to stress. Type B individuals tend to be capable of relaxing without feeling guilty and have the ability to have fun. Type C is a hardiness factor (Maddi and Kobasa, 1984, cited in Peterson and Nisenholz). This type views stress as a challenge rather than a threat. See Chapter 7.",
       body: "b. highly driven, competitive, and feel rushed"
     },
     { value: 1, body: "c. under-driven and amotivational" },
