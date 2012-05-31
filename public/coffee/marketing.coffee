@@ -75,7 +75,7 @@ jQuery ->
 			'/tax/' + zip,
 			(data) ->
 				tax = total * data
-				total += tax
+				total = (total + tax).toFixed(2)
 				$('input#amount').val total
 				$('span#total-display').html $('input#amount').val()
 		)
