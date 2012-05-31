@@ -12,8 +12,16 @@
 		</ul>
 		
 		<div class="page-header">
-			<a href="/admin/users/<%= @user.id %>/delete" class="btn btn-danger" style="float: right;">Delete This User</a>
-			<h2><%= @user.name %></h2>
+			<% if @user.id %>
+				<a href="/admin/users/<%= @user.id %>/delete" class="btn btn-danger" style="float: right;">Delete This User</a>
+			<% end %>
+			<h2>
+				<% if @user.name %>
+					<%= @user.name %>
+				<% else %>
+					New User
+				<% end %>
+			</h2>
 		</div>
 		
 		<form class="form-horizontal" method="post">
@@ -100,7 +108,7 @@
 						
 			<div class="control-group">
 				<div class="controls">
-					<input type="submit" class="btn btn-primary" value="Update" />
+					<input type="submit" class="btn btn-primary" value="<%= @user.id ? 'Update' : 'Create' %>" />
 				</div>
 			</div>
 			
