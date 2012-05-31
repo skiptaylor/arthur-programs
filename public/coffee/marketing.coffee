@@ -9,9 +9,74 @@ jQuery ->
 	$('div.modal-footer div.pagination ul li a').click ->
 		$('div.modal-footer div.pagination ul li').removeClass('active')
 		$(this).parent('li').addClass('active')
-		$('fieldset.package, fieldset.account, fieldset.credit-card').hide()
+		$('fieldset.package, fieldset.account, fieldset.credit-card, fieldset.confirmation').hide()
 		$("fieldset.#{$(this).attr 'id'}").show()
 		return false
+	
+	$('div.modal-footer div.pagination ul li a#confirmation').click ->
+		program_package = '* Please choose'
+		program_package = 'Enhanced Package $229' 		if $('input#enhanced-package:checked').val()
+		program_package = 'Basic Package $189' 				if $('input#basic-package:checked').val()
+		program_package = 'Full Package $190' 				if $('input#full-package:checked').val()
+		program_package = 'Starter Package $80' 			if $('input#starter-package:checked').val()
+		program_package = 'Additional Exams $60'  		if $('input#additional-exams-package:checked').val()
+		program_package = 'Additional Scenarios $80'	if $('input#additional-scenarios-package:checked').val()
+		$('#program-package-confirmation').html program_package
+		
+		optional_enhancements = 'NA'
+		optional_enhancements = 'NCE Hard Copy $12.95' if $('input#nce-hard-copy:checked').val()
+		optional_enhancements = 'NCMHCE Hard Copy $12.95' if $('input#ncmhce-hard-copy:checked').val()
+		$('#optional-enhancements-confirmation').html optional_enhancements
+		
+		if $('input#first_name').val() && $('input#last_name').val()
+			$('#name-confirmation').html "#{$('input#first_name').val()} #{$('input#last_name').val()}"
+		else
+			$('#name-confirmation').html '* Please choose'
+		
+		if $('input#email').val()
+			$('#email-confirmation').html $('input#email').val()
+		else
+			$('#email-confirmation').html '* Please choose'
+		
+		if $('input#password').val()
+			$('#password-confirmation').html '********'
+		else
+			$('#password-confirmation').html '* Please choose'		
+
+		if $('input.card-number').val()
+			$('#card-number-confirmation').html $('input.card-number').val()
+		else
+			$('#card-number-confirmation').html '* Please choose'
+
+		if $('input.card-cvc').val()
+			$('#cvc-confirmation').html $('input.card-cvc').val()
+		else
+			$('#cvc-confirmation').html '* Please choose'
+		
+		if $('input.card-expiry-month').val() && $('input.card-expiry-year').val()
+			$('#expiration-confirmation').html "#{$('input.card-expiry-month').val()}/#{$('input.card-expiry-year').val()}"
+		else
+			$('#expiration-confirmation').html '* Please choose'
+		
+		if $('input#address1').val()
+			$('#address-confirmation').html "#{$('input#address1').val()} #{$('input#address2').val()}"
+		else
+			$('#address-confirmation').html '* Please choose'
+		
+		if $('input#city').val()
+			$('#city-confirmation').html $('input#city').val()
+		else
+			$('#city-confirmation').html '* Please choose'
+		
+		if $('input#state').val()
+			$('#state-confirmation').html $('input#state').val()
+		else
+			$('#state-confirmation').html '* Please choose'
+		
+		if $('input#zip').val()
+			$('#zip-confirmation').html $('input#zip').val()
+		else
+			$('#zip-confirmation').html '* Please choose'
 	
 	total = 0;
 	total += 60 if $('input#additional-exams-package:checked').val()
