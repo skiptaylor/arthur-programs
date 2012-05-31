@@ -48,32 +48,29 @@
 				</h3>
 			</div>
 			
+			<p><a href="/nce/exams">Choose an exam</a> to get started.</p>
+			
 			<% unless @exams.empty? %>
-			
 				<table class="table table-condensed">
-				<thead>
-					<tr>
-						<th>Exam</th>
-						<th>Score</th>
-						<th>Taken On</th>
-						<th></th>
-					</tr>
-				</thead>
-				<tbody>
-					<% @exams.sort { |a,b| a.exam_id <=> b.exam_id }.each do |average| %>
+					<thead>
 						<tr>
-							<td><%= average.exam_id %>. <%= average.exam.title %></td>
-							<td><%= average.score %>%</td>
-							<td><%= average.created_at.display %></td>
-							<td style="text-align: right;"><a href="/nce/exams/<%= average.exam_id %>">Review</a></td>
+							<th>Exam</th>
+							<th>Score</th>
+							<th>Taken On</th>
+							<th></th>
 						</tr>
-					<% end %>
-				</tbody>
-			
+					</thead>
+					<tbody>
+						<% @exams.sort { |a,b| a.exam_id <=> b.exam_id }.each do |average| %>
+							<tr>
+								<td><%= average.exam_id %>. <%= average.exam.title %></td>
+								<td><%= average.score %>%</td>
+								<td><%= average.created_at.display %></td>
+								<td style="text-align: right;"><a href="/nce/exams/<%= average.exam_id %>">Review</a></td>
+							</tr>
+						<% end %>
+					</tbody>			
 				</table>
-			
-			<% else %>
-				<p><a href="/nce/exams">Choose an exam</a> to get started.</p>
 			<% end %>
 		
 			<br />
@@ -88,32 +85,29 @@
 				</h3>
 			</div>
 			
+			<p><a href="/ncmhce/scenarios">Choose a scenario</a> to get started.</p>
+			
 			<% unless @scenarios.empty? %>
-			
 				<table class="table table-condensed">
-				<thead>
-					<tr>
-						<th>Scenario</th>
-						<th>Score</th>
-						<th>Taken On</th>
-						<th></th>
-					</tr>
-				</thead>
-				<tbody>
-					<% @scenarios.sort { |a,b| a.scenario_id <=> b.scenario_id }.each do |average| %>
+					<thead>
 						<tr>
-							<td><%= average.scenario_id %>. <%= average.scenario.title %></td>
-							<td><%= average.score %>%</td>
-							<td><%= average.created_at.display %></td>
-							<td style="text-align: right;"><a href="/ncmhce/scenarios/<%= average.scenario_id %>">Review</a></td>
+							<th>Scenario</th>
+							<th>Score</th>
+							<th>Taken On</th>
+							<th></th>
 						</tr>
-					<% end %>
-				</tbody>
-
+					</thead>
+					<tbody>
+						<% @scenarios.sort { |a,b| a.scenario_id <=> b.scenario_id }.each do |average| %>
+							<tr>
+								<td><%= average.scenario_id %>. <%= average.scenario.title %></td>
+								<td><%= average.score %>%</td>
+								<td><%= average.created_at.display %></td>
+								<td style="text-align: right;"><a href="/ncmhce/scenarios/<%= average.scenario_id %>">Review</a></td>
+							</tr>
+						<% end %>
+					</tbody>
 				</table>
-			
-			<% else %>
-				<p><a href="/ncmhce/scenarios">Choose a scenario</a> to get started.</p>
 			<% end %>
 		
 			<br />
