@@ -137,8 +137,8 @@ scenario.questions.create(
     },
     {
       :value => 0,
-      :body => "g. TBD",
-      :response => "TBD"
+      :body => "g. No Diagnosis or condition on Axis I",
+      :response => "V71.09. A diagnosis on Axis I is recommended."
     }
   ]
 )
