@@ -2289,7 +2289,7 @@ exam.questions.create(
 
 exam.questions.create(
   score_type: "Research and Program Evaluation",
-  body: "A research report in the _Journal of Personality_ revealed a .05 level of significance with regards to the findings. What does this mean?",
+  body: "A research report in the <em>Journal of Personality</em> revealed a .05 level of significance with regards to the findings. What does this mean?",
   position: 133,
   answers: [
     { value: 1, body: "a. there is a 95% correlation between the two variables under study which accounted for the difference" },
@@ -3401,21 +3401,30 @@ exam.questions.create(
   body: "Seventh grade students Robin and Claire were discussing their Math, English, and Social Studies scores on the California Achievement Battery.
   <table>
     <tr>
-      <td></td>
-      <td>Math</td>
-      <td>English &nbsp; </td>
-      <td>S.S.</td>
+      <th></th>
+      <th> &nbsp; &nbsp; </th>
+      <th>Math</th>
+      <th> &nbsp; &nbsp; </th>
+      <th>English</th>
+      <th> &nbsp; &nbsp; </th>
+      <th>S.S.</th>
     </tr>
     <tr>
-      <td>Robin &nbsp; </td>
+      <td>Robin</td>
+      <td> &nbsp; &nbsp; </td>
       <td>78%</td>
+      <td> &nbsp; &nbsp; </td>
       <td>65%</td>
+      <td> &nbsp; &nbsp; </td>
       <td>47%</td>
     </tr>
     <tr>
-      <td>Claire &nbsp; </td>
+      <td>Claire</td>
+      <td> &nbsp; &nbsp; </td>
       <td>85%</td>
+      <td> &nbsp; &nbsp; </td>
       <td>75%</td>
+      <td> &nbsp; &nbsp; </td>
       <td>21%</td>
     </tr>
   </table>
