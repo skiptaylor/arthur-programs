@@ -86,6 +86,7 @@
 <% end %>
 
 <div class="pagination pagination-centered">
+	<p><small>Questions:</small></p>
 	<ul>
 		<li class="active"><a class="question-link" href="#question1">1</a></li>
 		<% @questions.each do |question| %>
@@ -96,6 +97,5 @@
 		<% unless @average %>
 			<li class="disabled"><a href="/ncmhce/scenarios/<%= @scenario.id %>/score" id="score-link">Show Score</a></li>
 		<% end %>
-
 	</ul>
 </div>
