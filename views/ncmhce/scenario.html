@@ -46,6 +46,8 @@
 
 <%= @scenario.body.markdown %>
 
+	<hr />
+	
 <% @questions.each do |question| %>
 	<div class="question" id="question-<%= question.position %>" <%= 'style="display: none;"' if question.position > 1 %>>
 		<p><strong><%= question.position %>. <%= question.body %></strong></p>
