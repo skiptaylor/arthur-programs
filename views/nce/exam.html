@@ -96,7 +96,7 @@
 		<div class="row">
 			<% answers.each do |answer| %>
 				<% notes = answer.response if @average && answer.required? %>
-				<div class="span6">
+				<div class="span12">
 					<%
 						if @average && @scores.include?(answer.id) && answer.required?
 							style = 'color: green; font-weight: bold;'
