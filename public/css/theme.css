@@ -192,8 +192,24 @@ div.features p	{
 	margin-left: 2.6em;
 }
 
+.carousel	{
+    -webkit-box-shadow: 0 2px 7px gray;
+       -moz-box-shadow: 0 2px 7px gray;
+            box-shadow: 0 2px 7px gray;
+}
+
 div.carousel-caption p	{
-	font-size: .9em;
+	font-size: .8em;
+	line-height: 1.1em;
+}
+
+.carousel-caption	{
+	padding: 5px 0 0 10px;
+	bottom: -2px;
+}
+
+.carousel-control	{
+	opacity:0.2;filter:alpha(opacity=20);
 }
 
 .top-space	{
