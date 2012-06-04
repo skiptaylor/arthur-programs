@@ -104,6 +104,8 @@ ul.package-features {
 	font-size: 90%;
 }
 
+input:disabled { cursor: default; }
+
 /* For pricing matrix */
 
 .price-ground {
