@@ -1,5 +1,6 @@
-get('/welcome/?')      { view 'marketing/welcome'      }
-get('/how-it-works/?') { view 'marketing/how-it-works' }
+get('/welcome/?')      		 { view 'marketing/welcome'      		 }
+get('/how-it-works/?') 		 { view 'marketing/how-it-works' 		 }
+get('/terms-of-service/?') { view 'marketing/terms_of_service' }
 
 get '/nce/?' do
 	if session[:user]
