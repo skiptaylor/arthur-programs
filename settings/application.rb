@@ -7,7 +7,7 @@ STRIPE_KEY = 'QRp65gQkBAAx250DpTmCtzXydPnI8qLf'
 
 use Rack::Session::Cookie, key: 'counselorexams',
 													 path: '/',
-													 expire_after: 1209600,
+													 expire_after: 864000,
 													 secret: 'beansong'
 
 Tilt.register Tilt::ERBTemplate, 'html'
