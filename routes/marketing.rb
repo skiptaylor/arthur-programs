@@ -166,11 +166,14 @@ end
 post '/feedback/?' do
 		Pony.mail(
 			headers: { 'Content-Type' => 'text/html' },
-			to: 'jarrodtaylor@me.com',
+			to: 'dstorm@careertrain.com',
 			from: 'feedback@counselorexams.com',
 			subject: params[:subject],
 			body: "#{params[:msg].markdown}<hr />#{params[:name]}<br />#{params[:email]}"
 	)
-	session[:alert] = { message: 'Thank you for your feedback.', style: 'alert-info' }
-	redirect '/feedback'
+	redirect '/feedback/thanks'
+end
+
+get '/feedback/thanks/?' do
+	view 'marketing/feedback-thanks'
 end
