@@ -15,7 +15,7 @@
 	<div class="well">
 		<h3>
 			Your Score: <%= @average %>%
-			<small>Average Score: <%= @scenario.group_average %>%</small>
+			<small class="darker-gray">Average Score: <%= @scenario.group_average %>%</small>
 		</h3>
 		<br />
 		<div class="row">
@@ -34,7 +34,7 @@
 		<a href="/ncmhce/scenarios/<%= params[:id] %>/restart" class="btn restart">Start Over</a>
 		<br /><br />
 		<strong>
-			<span style="color: silver; font-size: 90%;">COLOR CODE:</span>
+			<span style="color: #666666; font-size: 90%;">COLOR CODE:</span>
 			<span style="color: green; background-color: #e1ffe0;">Correct</span>,
 			<span style="color: red; background-color: #fedee0;">Incorrect</span>
 			<span style="color: blue; background-color: #e6dffe;">No Value</span>

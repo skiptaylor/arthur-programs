@@ -27,7 +27,7 @@
 				<%= scenario.id %>. <%= scenario.title %>
 				<%= '<span class="label label-info">Sample</span>' if scenario.sample? %>
 				<% avg = @averages.detect {|a| a.scenario_id == scenario.id} %>
-				<%= "<small>#{avg.score}%</small>" if avg %>
+				<%= "<small class='darker-gray'>#{avg.score}%</small>" if avg %>
 			</h3>
 			<%= scenario.body.truncate(100).markdown %>
 			

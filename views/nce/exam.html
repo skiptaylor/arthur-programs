@@ -10,7 +10,7 @@
 <div class="page-header">
 	<h1>
 		<%= @exam.title %>
-		<small>Part <span id="set-label">1</span> of 10</small>
+		<small class="darker-gray">Part <span id="set-label">1</span> of 10</small>
 	</h1>
 </div>
 
@@ -18,7 +18,7 @@
 	<div class="well">
 		<h3>
 			Your Score: <%= @average %>%
-			<small>Average Score: <%= @exam.group_average %>%</small>
+			<small class="darker-gray">Average Score: <%= @exam.group_average %>%</small>
 		</h3>
 		<br />
 		<div class="row">
@@ -59,7 +59,7 @@
 		<a href="/nce/exams/<%= params[:id] %>/restart" class="btn restart">Start Over</a>
 		<br /><br />
 		<strong>
-			<span style="color: silver; font-size: 90%;">COLOR CODE:</span>
+			<span style="color: #666666; font-size: 90%;">COLOR CODE:</span>
 			<span style="color: green;">Correct</span>,
 			<span style="color: red;">Incorrect</span>
 		</strong>
