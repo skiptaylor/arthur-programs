@@ -166,9 +166,9 @@ end
 post '/feedback/?' do
 		Pony.mail(
 			headers: { 'Content-Type' => 'text/html' },
-			to: 'dstorm@careertrain.com',
+			to: 'jarrodtaylor@me.com',
 			from: 'feedback@counselorexams.com',
-			subject:'Counselor Exams Feedback',
+			subject: params[:subject],
 			body: "#{params[:msg].markdown}<hr />#{params[:name]}<br />#{params[:email]}"
 	)
 	session[:alert] = { message: 'Thank you for your feedback.', style: 'alert-info' }
