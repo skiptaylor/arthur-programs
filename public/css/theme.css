@@ -227,3 +227,6 @@ div.carousel-caption p	{
 .alert-danger,.alert-error{border-color:#b94a48;}
 .alert-info{border-color:#3a87ad;}
 
+.guarantee ul li	{
+	padding: 4px 0;
+}
