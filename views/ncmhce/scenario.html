@@ -71,8 +71,8 @@
 				
 				<label class="checkbox <%= style if @average && @scores.include?(answer.id) %>">
 					<input type="checkbox" class="<%= 'required' if answer.required? %>" id="<%= answer.id %>" name="<%= answer.id %>" <%= 'checked' if @scores.include?(answer.id) %> <%= 'disabled' if @average || @scores.include?(answer.id) %>>
+					<%= "<strong>(#{answer.value})</strong>" if @average %>
 					<%= answer.body.sub /\w[.]/, '' %>
-					<%= "<strong>(#{answer.value} points)</strong>" if @average %>
 				</label>
 				<blockquote style="<%= hidden unless @average || @scores.include?(answer.id) %>" class="<%= style if (@average && @scores.include?(answer.id)) || answer.required? %>" id="response-<%= answer.id %>">
 					<p><%= answer.response %></p>

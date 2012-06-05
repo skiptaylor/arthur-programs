@@ -3292,7 +3292,7 @@ exam.questions.create(
     {
       value: 1,
       required: true,
-      response: "Type A is better known as the hurry syndrome and certain types of A's are more prone to stress. Type B individuals tend to be capable of relaxing without feeling guilty and have the ability to have fun. Type C is a hardiness factor (Maddi and Kobasa, 1984, cited in Peterson and Nisenholz). This type views stress as a challenge rather than a threat. See Chapter 7.",
+      response: "Type A is better known as the hurry syndrome and certain types of A's are more prone to stress. Type B individuals tend to be capable of relaxing without feeling guilty and have the ability to have fun. Type C is a hardiness factor (Maddi and Kobasa, 1984, cited in Peterson and Nisenholz). This type views stress as a challenge rather than a threat. See Chapter 8.",
       body: "b. highly driven, competitive, and feel rushed"
     },
     { value: 1, body: "c. under-driven and amotivational" },
