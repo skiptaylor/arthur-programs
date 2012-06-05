@@ -26,6 +26,12 @@ jQuery ->
 
 	$('a.restart').click -> return false unless confirm 'This will reset your score! Continue?'
 
+	$('a#show-all').click ->
+		$('a#show-all').parent('p').hide()
+		$('div.pagination').hide()
+		$('div.question').show()
+		return false
+
 	paginate = () ->
 		$('a.question-link').each ->
 			question = $(this).text()
