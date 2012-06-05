@@ -2,7 +2,11 @@ jQuery ->
 	
 	setTimeout( ->
 		$('input#password').val('')
+		set_reset_link()
 	500)
+	
+	$('input#email').keyup ->
+		set_reset_link()
 	
 	$('input#email, input#password').keyup -> validate_account()
 	
@@ -36,3 +40,6 @@ jQuery ->
 				else
 					$('#sign-in-btn').removeClass('btn-primary').removeClass('disabled').addClass('disabled').attr('disabled', true)
 		)
+	
+	set_reset_link = () ->
+		$('a#reset-password').attr 'href', "/reset-password/#{$('input#email').val()}"

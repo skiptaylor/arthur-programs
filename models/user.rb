@@ -7,6 +7,9 @@ class User
 
 	property :email,    Text
 	property :password, BCryptHash
+	
+	property :pass_reset_key,	String
+	property :pass_reset_date, Date
 
 	property :admin, Boolean, default: false
 

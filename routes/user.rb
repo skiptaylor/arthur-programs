@@ -42,6 +42,42 @@ get '/sign-out/?' do
 	redirect '/'
 end
 
+get '/reset-password/:email/?' do
+	params[:email].strip!
+	params[:email].downcase!
+	if user = User.first(email: params[:email])
+		user.pass_reset_key = (0...8).map{65.+(rand(25)).chr}.join
+		user.pass_reset_date = Chronic.parse 'now'
+		user.save
+		Pony.mail(
+			to: user.email,
+			from: 'no-reply@counselorexams.com',
+			subject:'Counselor Exams password reset link',
+			body: "To reset your password: http://#{request.host}/new-password/#{user.pass_reset_key}"
+		)
+		session[:alert] = { message: 'Password reset instructions have been sent to your inbox.' }
+	else
+		session[:alert] = { message: 'No account was found with that email address.' }
+	end
+	redirect '/sign-in'
+end
+
+get '/new-password/:key/?' do
+	if user = User.first(pass_reset_key: params[:key], :pass_reset_date.gte => Chronic.parse('1 day ago'))
+		view 'user/new_password'
+	else
+		session[:alert] = { message: 'That password reset link has expired.' }
+		redirect '/sign-in'
+	end
+end
+
+post '/new-password/:key/?' do
+	user = User.first(pass_reset_key: params[:key])
+	user.update(password: params[:password], pass_reset_key: nil, pass_reset_date: nil)
+	session[:alert] = { message: 'Your password has been reset.', style: 'alert-success' }
+	sign_in user.id
+end
+
 get '/profile/?' do
 	authorize!
 	@user = User.get session[:user]
