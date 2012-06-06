@@ -230,3 +230,5 @@ div.carousel-caption p	{
 .guarantee ul li	{
 	padding: 4px 0;
 }
+
+input[disabled],select[disabled],textarea[disabled],input[readonly],select[readonly],textarea[readonly]{cursor:pointer;}
