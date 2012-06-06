@@ -72,7 +72,7 @@
 					<input type="checkbox" class="<%= 'required' if answer.required? %>" id="<%= answer.id %>" name="<%= answer.id %>" <%= 'checked' if @scores.include?(answer.id) %> <%= 'disabled' if @average || @scores.include?(answer.id) %>>
 					<% if @average %>
 						<strong>
-							(<%= '+' if answer.value > 0 %><%= answer.value %>)
+							<span class="badge"><%= '+' if answer.value > 0 %><%= answer.value %></span>
 						</strong>
 					<% end %>
 					<%= answer.body.sub /\w[.]/, '' %>

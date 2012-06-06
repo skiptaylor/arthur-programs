@@ -82,6 +82,10 @@ blockquote.correct {
 	border-left-color: green;
 }
 
+.correct .badge	{
+	background-color: green;
+}
+
 .incorrect { color: red; }
 
 blockquote.incorrect {
@@ -90,12 +94,19 @@ blockquote.incorrect {
 	border-left-color: red;
 }
 
+.incorrect .badge	{
+	background-color: red;
+}
+
 .neutral { color: blue; }
 
 blockquote.neutral {
 	color: blue;
 	background-color: #e6dffe;
 	border-left-color: blue;
+}
+.neutral .badge	{
+	background-color: blue;
 }
 
 ul.package-features {
