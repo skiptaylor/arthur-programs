@@ -154,6 +154,32 @@
 				<% end %>
 			</tbody>
 		</table>
+		
+		<br />
+		
+		<div class="page-header">
+			<h2>Scores</h2>
+		</div>
+		
+		<table class="table table-condensed">
+			<thead>
+				<tr>
+					<th>Score</th>
+					<th>Scenario</th>
+					<th>Exam</th>
+				</tr>
+			</thead>
+			<tbody>
+				<% @user.averages.each do |avg| %>
+					<tr>
+						<td><%= avg.score %>%</td>
+						<td><%= avg.scenario_id %></td>
+						<td><%= avg.exam_id %></td>
+					</tr>
+				<% end %>
+			</tbody>
+		</table>
+
 
 	</div>
 
