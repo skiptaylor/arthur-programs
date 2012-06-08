@@ -64,7 +64,7 @@
 }
 
 .product-banner {
-	margin-bottom: 3em;
+	margin-bottom: .1em;
 	margin-top: 1.5em;
 	text-align: center;
 }
@@ -249,3 +249,9 @@ div.carousel-caption p	{
 }
 
 input[disabled],select[disabled],textarea[disabled],input[readonly],select[readonly],textarea[readonly]{cursor:pointer;}
+
+.section-div	{
+	text-align: center;
+	color: #e6e6e6;
+	margin: 32px 0;
+}
