@@ -15,7 +15,7 @@
 	<div class="well">
 		<h3>
 			Your Score: <%= @average %>% &nbsp;
-			<small class="darker-gray">Average Score: <%= @scenario.group_average %>% &nbsp; (This is the average score of all users to date)</small>
+			<small class="darker-gray">Average score of all users to date: <strong><%= @scenario.group_average %>%</strong> </small>
 		</h3>
 		<br />
 		<div class="row">
@@ -31,7 +31,7 @@
 			</div>
 		</div>
 		<br />
-		<a href="/ncmhce/scenarios/<%= params[:id] %>/restart" class="btn restart">Start Over</a>
+		<a href="/ncmhce/scenarios/<%= params[:id] %>/restart" class="btn restart">Start Over</a> &nbsp; <a href="/ncmhce/scenarios" class="btn">New Scenario</a>
 		<br /><br />
 		<strong>
 			<span style="color: #666666; font-size: 90%;">Answers are highlighted as follows:</span> &nbsp;
