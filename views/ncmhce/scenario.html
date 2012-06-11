@@ -14,8 +14,8 @@
 <% if @average %>
 	<div class="well">
 		<h3>
-			Your Score: <%= @average %>%
-			<small class="darker-gray">Average Score: <%= @scenario.group_average %>%</small>
+			Your Score: <%= @average %>% &nbsp;
+			<small class="darker-gray">Average Score: <%= @scenario.group_average %>% &nbsp; (This is the average score of all users to date)</small>
 		</h3>
 		<br />
 		<div class="row">
@@ -34,10 +34,11 @@
 		<a href="/ncmhce/scenarios/<%= params[:id] %>/restart" class="btn restart">Start Over</a>
 		<br /><br />
 		<strong>
-			<span style="color: #666666; font-size: 90%;">Your chosen answers are highlighted as follows:</span>
-			<span style="color: green; background-color: #e1ffe0;">Correct</span>,
-			<span style="color: red; background-color: #fedee0;">Incorrect</span>,
-			<span style="color: blue; background-color: #e6dffe;">No Value</span>
+			<span style="color: #666666; font-size: 90%;">Answers are highlighted as follows:</span> &nbsp;
+			<span class="badge" style="color: white; background-color: green;">Correct</span> &nbsp;
+			<span class="badge" style="color: white; background-color: red;">Incorrect</span> &nbsp;
+			<span class="badge" style="color: white; background-color: blue;">No Value</span> &nbsp;
+			<span class="badge" style="color: white; background-color: #777777;">Not Chosen</span>
 		</strong>
 	</div>
 	
