@@ -17,8 +17,8 @@
 <% if @average %>
 	<div class="well">
 		<h3>
-			Your Score: <%= @average %>%
-			<small class="darker-gray">Average Score: <%= @exam.group_average %>%</small>
+			Your Score: <%= @average %>% &nbsp; 
+			<small class="darker-gray">Average score of all users to date: <strong><%= @exam.group_average %>%</strong></small>
 		</h3>
 		<br />
 		<div class="row">
@@ -56,11 +56,11 @@
 			</div>
 		</div>
 		<br />
-		<a href="/nce/exams/<%= params[:id] %>/restart" class="btn restart">Start Over</a>
+		<a href="/nce/exams/<%= params[:id] %>/restart" class="btn restart">Start Over</a> &nbsp; <a href="/nce/exams" class="btn">Exams</a>
 		<br /><br />
 		<strong>
-			<span style="color: #666666; font-size: 90%;">COLOR CODE:</span>
-			<span style="color: green;">Correct</span>,
+			<span style="color: #666666; font-size: 90%;">COLOR CODE:</span> &nbsp; 
+			<span style="color: green;"><i class="icon-ok"></i> Correct</span>, &nbsp; 
 			<span style="color: red;">Incorrect</span>
 		</strong>
 	</div>
