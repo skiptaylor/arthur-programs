@@ -159,6 +159,15 @@ post '/ncmhce/?' do
 	sign_in user.id
 end
 
+get '/ncmhce/sample/?' do
+	unless session[:user]
+		user = User.create(email: 'sample', password: 'sample')
+		session[:user] = user.id
+		session[:sample] = true
+	end
+	redirect '/ncmhce/scenarios/1'
+end
+
 get '/feedback/?' do
 	view 'marketing/feedback'
 end

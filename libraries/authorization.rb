@@ -7,8 +7,8 @@ helpers do
 		redirect '/profile'
 	end
 
-	def authorize!
-		unless session[:user]
+	def authorize! sample = false
+		unless ( (session[:user]) && !(session[:sample]) ) || ( (sample == true) && (session[:sample]) )
 			session[:alert] = 'You must sign in to see that page.'
 			session[:alert] = { heading: 'Unauthorized Access', message: 'You must sign in to see that page.' }
 			redirect '/sign-in'

@@ -21,6 +21,8 @@ post '/user/account-exists/?' do
 end
 
 post '/sign-in/?' do
+	session[:sample] = nil
+
 	params[:email].strip!
 	params[:email].downcase!
 	params[:password].strip!
@@ -38,6 +40,7 @@ end
 get '/sign-out/?' do
 	session[:user] = nil
 	session[:admin] = nil
+	session[:sample] = nil
 	session[:alert] = { style: 'alert-info', heading: 'You are now signed out.', message: 'Thank you, come again!' }
 	redirect '/'
 end

@@ -45,8 +45,13 @@ post '/ncmhce/scenarios/?' do
 end
 
 get '/ncmhce/scenarios/:id/?' do
-	authorize!
 	@scenario = Scenario.get params[:id]
+	
+	if @scenario.sample?
+		authorize! sample = true
+	else
+		authorize!
+	end
 	
 	unless @scenario.sample?
 		if User.get(session[:user]).remaining_scenarios == 0
@@ -68,12 +73,18 @@ get '/ncmhce/scenarios/:id/?' do
 end
 
 get '/ncmhce/scenarios/:id/score/?' do
-	authorize!
+	@scenario = Scenario.get params[:id]
+	
+	if @scenario.sample?
+		authorize! sample = true
+	else
+		authorize!
+	end
+
 	@scores = []
 	scores = Score.all(user_id: session[:user], scenario_id: params[:id])
 	scores.each {|s| @scores << s.answer_id }
 	
-	@scenario = Scenario.get params[:id]
 	@questions = @scenario.questions order: :position
 	@answers = @questions.answers order: :body
 	
