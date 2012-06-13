@@ -79,7 +79,7 @@
 					<%= answer.body.sub /\w[.]/, '' %>
 				</label>
 				<blockquote style="<%= hidden unless @average || @scores.include?(answer.id) %>" class="<%= style if (@average && @scores.include?(answer.id)) || answer.required? %>" id="response-<%= answer.id %>">
-					<p><%= answer.response %></p>
+					<%= answer.response.markdown %>
 				</blockquote>
 			<% end %>
 		</form>
