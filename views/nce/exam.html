@@ -5,7 +5,6 @@
 	<li><a href="/nce/exams">Exams</a> <span class="divider">/</span></li>
 	<li class="active"><%= @exam.title %></li>
 </ul>
-
 	
 <div class="page-header">
 	<h1>
@@ -135,7 +134,7 @@
 		<li><a class="set-link" href="#part9">9</a></li>
 		<li><a class="set-link" href="#part10">10</a></li>
 		<% unless @average %>
-			<li class="disabled"><a href="/nce/exams/<%= @exam.id %>/score" id="score-link">Show Score</a></li>
+			<li><a href="/nce/exams/<%= @exam.id %>/score" id="score-link">Show Score</a></li>
 		<% end %>
 	</ul>
 </div>

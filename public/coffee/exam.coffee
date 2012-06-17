@@ -28,8 +28,3 @@ jQuery ->
 		$('html, body').scrollTop 0
 		
 		return false
-	
-	show_submit = () ->
-		$('a#score-link').parent('li').removeClass('disabled') if $('input:checked').size() == 200
-	
-	show_submit()
