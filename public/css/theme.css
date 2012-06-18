@@ -25,17 +25,17 @@
 }
 
 #welcome-banner p.lead {
-	color: #333;
+	color: #555555;
 	font-size: 2.2em;
 }
 
-#welcome-banner h1 { font-size: 3.6em; }
+#welcome-banner h1 { font-size: 3em; }
 
 #welcome-banner p { color: grey; }
 
 #welcome-banner img {
 	padding: 1.5em 0 0 0;
-	width: 100%;
+	width: 90%;
 }
 
 #welcome-buttons { text-align: center; }
@@ -50,9 +50,9 @@
 	padding-bottom: 1em;
 }
 
-#welcome-buttons img { width: 100%; }
+#welcome-buttons img { width: 70%; }
 
-#welcome-buttons .btn { width: 86%; }
+#welcome-buttons .btn { width: 70%; }
 
 .welcome-phone { text-align: center; }
 
