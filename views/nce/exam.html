@@ -16,8 +16,10 @@
 <% if @average %>
 	<div class="well">
 		<h3>
-			Your Score: <%= @average %>% &nbsp; 
-			<small class="darker-gray">Average score of all users to date: <strong><%= @exam.group_average %>%</strong></small>
+			Your Score: <%= @average %>% &nbsp;
+			<% if @exam.group_average %>
+				<small class="darker-gray">Average score of all users to date: <strong><%= @exam.group_average %>%</strong></small>
+			<% end %>
 		</h3>
 		<br />
 		<div class="row">
