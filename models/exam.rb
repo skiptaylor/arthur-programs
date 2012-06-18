@@ -12,7 +12,7 @@ class Exam
 	has n, :averages
 	
 	def group_average
-		averages = self.averages
+		averages = self.averages(:score.gt => 20)
 		avg = 0
 		averages.each {|a| avg += a.score}
 		avg = (avg/averages.count).to_i
