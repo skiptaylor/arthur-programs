@@ -14,13 +14,13 @@
 .hero-unit	{
 	background-image: url(../img/pass-icon-welcome.png);
 	background-repeat: no-repeat;
-	background-position: right top;
+	background-position: 95% 5%;
 }
 
 #welcome-banner {
 	background-color: white;
 	padding-bottom: 0;
-	padding-top: 1.5em;
+	padding-top: 1em;
 	text-align: center;
 }
 
@@ -29,30 +29,50 @@
 	font-size: 2.2em;
 }
 
-#welcome-banner h1 { font-size: 3em; }
+#welcome-banner h1 { font-size: 3em; line-height: 1.1em; }
 
 #welcome-banner p { color: grey; }
 
 #welcome-banner img {
-	padding: 1.5em 0 0 0;
-	width: 90%;
+	padding: 1em 0 0 0;
+	width: 65%;
 }
 
 #welcome-buttons { text-align: center; }
 
 #welcome-buttons .well {
-	background-color: transparent;
-	background-image: url(../img/well.jpg);
-	background-repeat: repeat-x;
-	border-bottom: none;
-	border-left: none;
-	border-right: none;
-	padding-bottom: 1em;
+	background-color: white;
+	padding: 1em 0;
+    border: 1px solid #ddd;
+    -webkit-border-radius: 6px;
+       -moz-border-radius: 6px;
+            border-radius: 6px;
 }
 
-#welcome-buttons img { width: 70%; }
 
-#welcome-buttons .btn { width: 70%; }
+#welcome-buttons .well:hover {
+	cursor: pointer;
+}
+
+
+#welcome-buttons .well h3 { 
+	color: #0088d0;
+	font-size: 1.2em;
+	text-align: center;
+	text-decoration: none;
+	padding: 12px 0 13px 0;
+	line-height: 1.1em;
+}
+
+#welcome-buttons p { 
+	font-size: 1.1em;
+	text-align: center;
+	text-decoration: none;
+	color: #666666;
+	padding: 0 0 14px 0; 
+}
+
+#welcome-buttons .btn { width: 80%; }
 
 .welcome-phone { text-align: center; }
 
