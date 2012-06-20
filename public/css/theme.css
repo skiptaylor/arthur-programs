@@ -14,7 +14,7 @@
 .hero-unit	{
 	background-image: url(../img/pass-icon-welcome.png);
 	background-repeat: no-repeat;
-	background-position: 95% 5%;
+	background-position: 97% 4%;
 }
 
 #welcome-banner {
@@ -29,7 +29,10 @@
 	font-size: 2.2em;
 }
 
-#welcome-banner h1 { font-size: 3em; line-height: 1.1em; }
+#welcome-banner h1 { 
+	font-size: 3.2em; 
+	line-height: 1.1em; 
+}
 
 #welcome-banner p { color: grey; }
 
@@ -43,6 +46,9 @@
 #welcome-buttons .well {
 	background-color: white;
 	padding: 1em 0;
+	padding-bottom: 0;
+	position: relative;
+	height: 155px;
     border: 1px solid #ddd;
     -webkit-border-radius: 6px;
        -moz-border-radius: 6px;
@@ -52,6 +58,9 @@
 
 #welcome-buttons .well:hover {
 	cursor: pointer;
+	background-image: url(../img/grad-button.png);
+	background-repeat: repeat-x;
+	box-shadow: 0 0 6px #ededed;
 }
 
 
@@ -72,7 +81,15 @@
 	padding: 0 0 14px 0; 
 }
 
-#welcome-buttons .btn { width: 80%; }
+#welcome-buttons .btn {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	-webkit-border-top-left-radius: 0;
+	-webkit-border-top-right-radius: 0;
+	margin: 0 -1px;
+}
 
 .welcome-phone { text-align: center; }
 
