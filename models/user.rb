@@ -4,6 +4,8 @@ class User
 	property   :id,        Serial
 	property   :delete_at, ParanoidDateTime
 	timestamps :at
+  
+  property :legacy_id, Integer
 
 	property :email,    Text
 	property :password, BCryptHash
