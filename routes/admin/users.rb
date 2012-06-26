@@ -6,7 +6,10 @@ get '/admin/users/?' do
 		if params[:search].include? '@'
 			@users = User.all(:email.like => "%#{params[:search]}%", limit: 100)
 		else
-			@users = User.all(:name.like => "%#{params[:search]}%", limit: 100)
+			upcase 		 = User.all(:name.like => "%#{params[:search].upcase}%", limit: 100)
+			downcase 	 = User.all(:name.like => "%#{params[:search].downcase}%", limit: 100)
+			capitalize = User.all(:name.like => "%#{params[:search].capitalize}%", limit: 100)
+			@users = upcase | downcase | capitalize
 		end
 	else
 		@users = User.all(order: [:updated_at.desc], limit: 100)
