@@ -24,7 +24,7 @@ class Email
 		body << "<p>We are also available by phone during the business hours of 9:30 AM to 4:30 PM Eastern time, Monday through Friday, at: 888-326-9229.</p>"
 	
 		Pony.mail(
-			headers: { 'Content-Type' => 'text/xml' },
+			headers: { 'Content-Type' => 'text/html' },
 			to: 'jarrodtaylor@me.com',
 			from: 'no-reply@counselorexams.com',
 			subject: 'Welcome to counselorexams.com',
@@ -45,7 +45,7 @@ class Email
 		body << "<p>We are also available by phone during the business hours of 9:30 AM to 4:30 PM Eastern time, Monday through Friday, at: 888-326-9229.</p>"
 	
 		Pony.mail(
-			headers: { 'Content-Type' => 'text/xml' },
+			headers: { 'Content-Type' => 'text/html' },
 			to: 'jarrodtaylor@me.com',
 			from: 'no-reply@counselorexams.com',
 			subject: 'Welcome to counselorexams.com',
