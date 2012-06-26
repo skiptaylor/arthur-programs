@@ -71,8 +71,9 @@ post '/nce/?' do
 			max_exams: max_exams,
 			nce_downloads: nce_downloads
 		)
+		Email.welcome user.email, user.name, user.email, 'nce'
 	end
-			
+	
 	purchase = user.purchases.create(
 		package: params[:package],
 		options: params[:optional],
@@ -84,6 +85,7 @@ post '/nce/?' do
 		state: params[:state],
 		zip: params[:zip]
 	)
+	Email.receipt user.email, user.name, "#{params[:package]} / #{params[:optional]}", params[:amount]
 		
 	sign_in user.id
 end
@@ -141,6 +143,7 @@ post '/ncmhce/?' do
 			max_scenarios: max_scenarios,
 			ncmhce_downloads: ncmhce_downloads
 		)
+		Email.welcome user.email, user.name, user.email, 'ncmhce'
 	end
 
 			
@@ -155,6 +158,7 @@ post '/ncmhce/?' do
 		state: params[:state],
 		zip: params[:zip]
 	)
+	Email.receipt user.email, user.name, "#{params[:package]} / #{params[:optional]}", params[:amount]
 		
 	sign_in user.id
 end
