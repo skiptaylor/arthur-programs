@@ -25,7 +25,7 @@ class Email
 	
 		Pony.mail(
 			headers: { 'Content-Type' => 'text/html' },
-			to: 'jarrodtaylor@me.com',
+			to: to,
 			from: 'no-reply@counselorexams.com',
 			subject: 'Welcome to counselorexams.com',
 			body: body
@@ -46,7 +46,7 @@ class Email
 	
 		Pony.mail(
 			headers: { 'Content-Type' => 'text/html' },
-			to: 'jarrodtaylor@me.com',
+			to: to,
 			from: 'no-reply@counselorexams.com',
 			subject: 'Welcome to counselorexams.com',
 			body: body
