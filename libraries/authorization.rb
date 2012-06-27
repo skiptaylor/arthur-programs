@@ -1,9 +1,16 @@
 helpers do
 
-	def sign_in user_id
+	def sign_in user_id, msg = false
 		user = User.get user_id
 		session[:user] = user.id
 		session[:admin] = user.admin?
+		if msg
+			session[:alert] = {
+				style: 'alert-success',
+				heading: 'Payment Accepted',
+				message: 'Welcome to CounselorExams!'
+			}
+		end
 		redirect '/profile'
 	end
 

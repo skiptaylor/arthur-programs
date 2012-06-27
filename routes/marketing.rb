@@ -71,7 +71,7 @@ post '/nce/?' do
 			max_exams: max_exams,
 			nce_downloads: nce_downloads
 		)
-		Email.welcome user.email, user.name, user.email, 'nce'
+		Email.welcome(user.email, user.name, user.email, 'nce') if settings.environment == 'production'
 	end
 	
 	purchase = user.purchases.create(
@@ -85,9 +85,9 @@ post '/nce/?' do
 		state: params[:state],
 		zip: params[:zip]
 	)
-	Email.receipt user.email, user.name, "#{params[:package]} / #{params[:optional]}", params[:amount]
+	Email.receipt(user.email, user.name, "#{params[:package]} / #{params[:optional]}", params[:amount]) if settings.environment == 'production'
 		
-	sign_in user.id
+	sign_in user.id, msg: true
 end
 
 post '/ncmhce/?' do	
@@ -143,7 +143,7 @@ post '/ncmhce/?' do
 			max_scenarios: max_scenarios,
 			ncmhce_downloads: ncmhce_downloads
 		)
-		Email.welcome user.email, user.name, user.email, 'ncmhce'
+		Email.welcome(user.email, user.name, user.email, 'ncmhce') if settings.environment == 'production'
 	end
 
 			
@@ -158,9 +158,9 @@ post '/ncmhce/?' do
 		state: params[:state],
 		zip: params[:zip]
 	)
-	Email.receipt user.email, user.name, "#{params[:package]} / #{params[:optional]}", params[:amount]
+	Email.receipt(user.email, user.name, "#{params[:package]} / #{params[:optional]}", params[:amount]) if settings.environment == 'production'
 		
-	sign_in user.id
+	sign_in user.id, msg: true
 end
 
 get '/ncmhce/sample/?' do
