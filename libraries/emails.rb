@@ -21,7 +21,7 @@ class Email
 		end
 	
 		body << "<p>If you have any questions about your purchase, please contact us at http://counselorexams.com/feedback.</p>"
-		body << "<p>We are also available by phone during the business hours of 9:30 AM to 4:30 PM Eastern time, Monday through Friday, at: 888-326-9229.</p>"
+		body << "<p>We are also available by phone during the business hours of 9:30 AM to 4:30 PM Eastern time, Monday through Friday, at 888-326-9229.</p>"
 	
 		Pony.mail(
 			headers: { 'Content-Type' => 'text/html' },
@@ -37,12 +37,11 @@ class Email
 		body = ''
 		body << "<p>Dear #{name},</p>"
 		body << "<p>Thank you for your purchase at counselorexams.com!</p>"
-		body << "<p>We are confident our preparatory materials will help you pass your counselor licensure exam, because they have helped thousands of previous customers do just that.</p>"
 		body << "<p>The online products you have purchased should be immediately available at your profile page. If you purchased a hard-copy of any study materials, you will receive a separate email from FedEx with a tracking number once it is shipped. (Shipping usually occurs within 2 business days.)</p>"
 		body << "<h3>Your Purchase</h3>"
 		body << "<p>#{item}: $#{price}</p>"
 		body << "<p>If you have any questions about your purchase, please contact us at http://counselorexams.com/feedback.</p>"
-		body << "<p>We are also available by phone during the business hours of 9:30 AM to 4:30 PM Eastern time, Monday through Friday, at: 888-326-9229.</p>"
+		body << "<p>We are also available by phone during the business hours of 9:30 AM to 4:30 PM Eastern time, Monday through Friday, at 888-326-9229.</p>"
 	
 		Pony.mail(
 			headers: { 'Content-Type' => 'text/html' },
