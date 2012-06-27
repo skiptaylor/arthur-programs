@@ -21,7 +21,9 @@ class User
 	
 	property :notes,	Text
 
-	property :expiration_date, Date, default: Chronic.parse('1 year from now')
+	property :expiration_date, 		 Date, default: Chronic.parse('1 year from now')
+	property :refund_request_date, Date
+	property :refund_check_date,	 Date
 
 	property :max_exams, 		 Integer, default: 0
 	property :max_scenarios, Integer, default: 0

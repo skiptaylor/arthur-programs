@@ -98,6 +98,28 @@
 					<span class="help-inline">Doesn't apply to admin accounts.</span>
 				</div>
 			</div>
+			
+			<div class="control-group" id="refund-request-date-group">
+				<label class="control-label" for="refund_request_date">Refund Request Date</label>
+				<div class="controls">
+					<% if @user.refund_request_date.nil? %>
+						<%= Date.new.to_fields 'refund_request' %>
+					<% else %>
+						<%= @user.refund_request_date.to_fields 'refund_request' %>
+					<% end %>
+				</div>
+			</div>
+
+			<div class="control-group" id="refund-check-date-group">
+				<label class="control-label" for="refund_check_date">Refund Check Date</label>
+				<div class="controls">
+					<% if @user.refund_check_date.nil? %>
+						<%= Date.new.to_fields 'refund_check' %>
+					<% else %>
+						<%= @user.refund_check_date.to_fields 'refund_check' %>
+					<% end %>
+				</div>
+			</div>
 
 			<div class="control-group" id="notes-group">
 				<label class="control-label" for="notes">Notes</label>

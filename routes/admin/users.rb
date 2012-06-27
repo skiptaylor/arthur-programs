@@ -54,6 +54,18 @@ post '/admin/users/:id/?' do
 		)
 	)
 	
+	unless params[:refund_request_year] == '' || params[:refund_request_month] == '' || params[:refund_request_day] == ''
+		user.update(refund_request_date: Date.from_fields(params[:refund_request_year], params[:refund_request_month], params[:refund_request_day]))
+	else
+		user.update(refund_request_date: nil)
+	end
+
+	unless params[:refund_check_year] == '' || params[:refund_check_month] == '' || params[:refund_check_date] == ''
+		user.update(refund_check_date: Date.from_fields(params[:refund_check_year], params[:refund_check_month], params[:refund_check_day]))
+	else
+		user.update(refund_check_date: nil)
+	end
+	
 	params[:password].strip!
 	params[:password].downcase!
 	user.update(password: params[:password]) unless params[:password].length == 0
