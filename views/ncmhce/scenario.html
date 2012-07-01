@@ -50,7 +50,7 @@
 	<hr />
 	
 <% @questions.each do |question| %>
-	<div class="question" id="question-<%= question.position %>" <%= 'style="display: none;"' if question.position > 1 %>>
+	<div class="question" id="question-<%= question.position %>" style="<%= hidden unless @average || question.position == 1 %>">
 		<p><strong><%= question.position %>. <%= question.body %></strong></p>
 		
 		<% answers = @answers.find_all {|a| a.question_id == question.id } %>
@@ -90,6 +90,7 @@
 
 <% end %>
 
+<% unless @average %>
 <div class="pagination pagination-centered">
 	<p><small>Questions:</small></p>
 	<ul>
@@ -99,11 +100,10 @@
 				<li class="disabled"><a class="question-link" href="#question<%= question.position %>"><%= question.position %></a></li>
 			<% end %>
 		<% end %>
-		<% unless @average %>
-			<li class="disabled"><a href="/ncmhce/scenarios/<%= @scenario.id %>/score" id="score-link">Show Score</a></li>
-		<% end %>
+		<li class="disabled"><a href="/ncmhce/scenarios/<%= @scenario.id %>/score" id="score-link">Show Score</a></li>
 	</ul>
 </div>
+<% end %>
+
 <br />
-<%= '<p style="text-align: center;"><a href="#" id="show-all">Show all</a></p>' if @average %>
 <p><center><a href="/ncmhce/scenarios">Take another scenario</a></center></p>
