@@ -2,6 +2,14 @@
 
 	<div class="span3">
 		<%= view 'admin/navigation', layout: false %>
+		<form method="get" class="well">
+			<p><%= @start.to_fields 'start' %></p>
+			<p><%= @end.to_fields 'end' %></p>
+			<p>
+				<button type="submit" class="btn btn-primary">Filter</button>
+				<a href="<%= request.url %><%= params.count > 0 ? '&export=true' : '?export=true' %>" class="btn">Export</a>
+			</p>
+		</form>
 	</div>
 
 	<div class="span9">
@@ -9,12 +17,7 @@
 			<li>Admin <span class="divider">/</span></li>
 			<li class="active">Purchases</li>
 		</ul>
-<!--
-		<form class="form-search" method="get" action="/admin/purchases">
-			<input type="text" class="input-xlarge search-query" name="search" value="<%= params[:search] %>" />
-			<button type="submit" class="btn">Search</button>
-		</form>
--->
+
 		<table class="table table-condensed">
 			<thead>
 				<tr>
