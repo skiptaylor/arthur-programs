@@ -75,9 +75,26 @@
 	<div class="control-group" id="card-expiry-group">
 		<label class="control-label">Expiration (MM/YYYY)</label>
 		<div class="controls">
-			<input type="text" size="2" autocomplete="off" class="span1 card-expiry-month">
+			<select class="span1 card-expiry-month">
+				<option value="01">01</option>
+				<option value="02">02</option>
+				<option value="03">03</option>
+				<option value="04">04</option>
+				<option value="05">05</option>
+				<option value="06">06</option>
+				<option value="07">07</option>
+				<option value="08">08</option>
+				<option value="09">09</option>
+				<option value="10">10</option>
+				<option value="11">11</option>
+				<option value="12">12</option>
+			</select>
 			/
-			<input type="text" size="4" autocomplete="off" class="span1 card-expiry-year">
+			<select class="span1 card-expiry-year">
+			<% (Chronic.parse('now').strftime('%Y').to_i..Chronic.parse('15 years from now').strftime('%Y').to_i).each do |y| %>
+				<option value="<%= y %>"><%= y %></option>
+			<% end %>
+			</select>
 			<span class="help-inline" id="invalid_expiry_month" style="display: none;">The card's expiration month is invalid.</span>
 			<span class="help-inline" id="invalid_expiry_year" style="display: none;">The card's expiration year is invalid.</span>
 		</div>
