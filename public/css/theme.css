@@ -298,3 +298,5 @@ input[disabled],select[disabled],textarea[disabled],input[readonly],select[reado
             border-radius: 4px;
 	
 }
+
+.control-group.error input, .control-group.error select, .control-group.error textarea { background-color: #fff9f9; }

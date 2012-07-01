@@ -22,13 +22,18 @@ jQuery ->
 				if data == 'account exists'
 					$('#email-group').removeClass 'error'
 					$('#password-group').removeClass 'error'
+					$('#error-group').hide();
 				
 				if data == 'email exists'
+					$('#error-group .controls').html '<i class="icon icon-lock"></i> Password does not match.'
+					$('#error-group').show();
 					$('#email-group').removeClass 'error'
 					$('#password-group').addClass 'error'
 					errors++
 				
 				if data == 'false'
+					$('#error-group .controls').html '<i class="icon icon-user"></i> Account not found.'
+					$('#error-group').show();
 					$('#email-group').addClass 'error'
 					$('#password-group').addClass 'error'
 					errors++
