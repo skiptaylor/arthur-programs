@@ -4,15 +4,15 @@ get '/admin/users/?' do
 	@users = User.all
 	if params[:search] && !params[:search].nil?
 		if params[:search].include? '@'
-			@users = User.all(:email.like => "%#{params[:search]}%", limit: 100)
+			@users = User.all(:email.like => "%#{params[:search]}%", limit: 100, order: [:updated_at.desc])
 		else
-			upcase 		 = User.all(:name.like => "%#{params[:search].upcase}%", limit: 100)
-			downcase 	 = User.all(:name.like => "%#{params[:search].downcase}%", limit: 100)
-			capitalize = User.all(:name.like => "%#{params[:search].capitalize}%", limit: 100)
+			upcase 		 = User.all(:email.not => 'sample', :name.like => "%#{params[:search].upcase}%", limit: 100, order: [:updated_at.desc])
+			downcase 	 = User.all(:email.not => 'sample', :name.like => "%#{params[:search].downcase}%", limit: 100, order: [:updated_at.desc])
+			capitalize = User.all(:email.not => 'sample', :name.like => "%#{params[:search].capitalize}%", limit: 100, order: [:updated_at.desc])
 			@users = upcase | downcase | capitalize
 		end
 	else
-		@users = User.all(order: [:updated_at.desc], limit: 100)
+		@users = User.all(:email.not => 'sample', order: [:updated_at.desc], limit: 100)
 	end
 	view 'admin/users'
 end
