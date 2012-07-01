@@ -86,8 +86,8 @@ get '/profile/?' do
 	@user = User.get session[:user]
 	averages = @user.averages
 	
-	@scenarios = averages.find_all {|a| a.scenario_id}
-	@exams = averages.find_all {|a| a.exam_id}
+	@scenarios = Use.all(user_id: session[:user], :scenario_id.not => nil)
+	@exams = Use.all(user_id: session[:user], :exam_id.not => nil)
 	
 	view 'user/profile'
 end

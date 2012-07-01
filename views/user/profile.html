@@ -64,7 +64,13 @@
 						<% @exams.sort { |a,b| a.exam_id <=> b.exam_id }.each do |average| %>
 							<tr>
 								<td><%= average.exam_id %>. <%= average.exam.title %></td>
-								<td><%= average.score %>%</td>
+								<td>
+									<% if avg = Average.last(user_id: session[:user], exam_id: average.exam_id) %>
+										<%= avg.score %>%
+									<% else %>
+										N/A
+									<% end %>
+								</td>
 								<td><%= average.created_at.display %></td>
 								<td style="text-align: right;"><a href="/nce/exams/<%= average.exam_id %>">Review</a></td>
 							</tr>
@@ -101,7 +107,13 @@
 						<% @scenarios.sort { |a,b| a.scenario_id <=> b.scenario_id }.each do |average| %>
 							<tr>
 								<td><%= average.scenario_id %>. <%= average.scenario.title %></td>
-								<td><%= average.score %>%</td>
+								<td>
+									<% if avg = Average.last(user_id: session[:user], scenario_id: average.scenario_id) %>
+										<%= avg.score %>%
+									<% else %>
+										N/A
+									<% end %>
+								</td>
 								<td><%= average.created_at.display %></td>
 								<td style="text-align: right;"><a href="/ncmhce/scenarios/<%= average.scenario_id %>">Review</a></td>
 							</tr>

@@ -96,6 +96,21 @@ post '/add-score/?' do
 		score_type:  answer.question.score_type,
 		countable: 	 answer.question.countable
 	)
+	
+	sample = false
+	
+	if answer.question.scenario_id
+		sample = true if answer.question.scenario.sample
+	elsif answer.question.exam_id
+		sample = true if answer.question.exam.sample
+	end
+	
+	Use.first_or_create(
+		user_id: session[:user],
+		scenario_id: answer.question.scenario_id,
+		exam_id: answer.question.exam_id,
+		sample: sample
+	)
 end
 
 
