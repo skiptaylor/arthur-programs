@@ -1,4 +1,4 @@
-Stripe.setPublishableKey 'pk_lftWkHIVeqGIIk4dK3rxXlJB28ZPd'
+Stripe.setPublishableKey 'pk_R6tPQTDRzEVjV6m5f3IqHhQxr7EML'
 
 jQuery ->
 	$('p#policies-link a').click ->
