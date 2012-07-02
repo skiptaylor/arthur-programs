@@ -2,6 +2,10 @@ get('/welcome/?')      		 { view 'marketing/welcome'      		 }
 get('/how-it-works/?') 		 { view 'marketing/how-it-works' 		 }
 get('/terms-of-service/?') { view 'marketing/terms_of_service' }
 
+get '/home/?' do
+  redirect '/'
+end
+
 get '/nce/?' do
 	if session[:user]
 		user = User.get session[:user]
