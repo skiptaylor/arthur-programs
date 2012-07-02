@@ -44,14 +44,16 @@ namespace :legacy do
   	
   	CSV.open('./data/legacy/ncescores.csv', col_sep: ';') do |scores|
   		scores.each do |score|
-				if score[1].to_i > 0
-					Average.first_or_create(user_id: score[0].to_i, exam_id: 2, score: score[1].to_i)
-					Use.first_or_create(user_id: score[0].to_i, exam_id: 2)
-				end
-				if score[2].to_i > 0
-					Average.first_or_create(user_id: score[0].to_i, exam_id: 3, score: score[2].to_i)
-					Use.first_or_create(user_id: score[0].to_i, exam_id: 3)
-				end
+  			if user = User.get(score[0].to_i)
+  				if score[1].to_i > 0
+  					Average.first_or_create(user_id: score[0].to_i, exam_id: 2, score: score[1].to_i)
+  					Use.first_or_create(user_id: score[0].to_i, exam_id: 2)
+  				end
+  				if score[2].to_i > 0
+  					Average.first_or_create(user_id: score[0].to_i, exam_id: 3, score: score[2].to_i)
+  					Use.first_or_create(user_id: score[0].to_i, exam_id: 3)
+  				end
+  			end
   		end
   	end
   	
@@ -63,8 +65,10 @@ namespace :legacy do
   	
   	CSV.open('./data/legacy/ncmhcescores.csv', col_sep: ';') do |scores|
   		scores.each do |score|
-  			Average.first_or_create(user_id: score[1].to_i, scenario_id: score[2].to_i, score: score[3].to_i)
- 				Use.first_or_create(user_id: score[1].to_i, scenario_id: score[2].to_i)
+  			if user = User.get(score[1].to_i)
+  				Average.first_or_create(user_id: score[1].to_i, scenario_id: score[2].to_i, score: score[3].to_i)
+  				Use.first_or_create(user_id: score[1].to_i, scenario_id: score[2].to_i)
+  			end
   		end
   	end
   	
