@@ -1,4 +1,4 @@
-<% if (@remaining_scenarios == 0) && (@max_scenarios < 36) %>
+<% if @max_scenarios < 36 %>
 	<script src="https://js.stripe.com/v1/"></script>
 	<%= coffee 'marketing' %>
 <% end %>
@@ -14,7 +14,7 @@
 <div>
 	<h1>
 		NCMHCE Scenarios
-		<% if (@remaining_scenarios == 0) && (@max_scenarios < 36) %>
+		<% if @max_scenarios < 36 %>
 			<span style="float: right;"><a class="btn btn-success" data-toggle="modal" href="#checkout">Buy 12 more scenarios for $80</a></span>
 		<% end %>
 	</h1>
@@ -65,7 +65,7 @@
 	<%= '</div>' if scenario.id.even? %>
 <% end %>
 
-<% if (@remaining_scenarios == 0) && (@max_scenarios < 36) %>
+<% if @max_scenarios < 36 %>
 
 	<div class="modal fade" id="checkout" style="display: none;">
 		<div class="modal-header">
