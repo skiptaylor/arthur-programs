@@ -1,4 +1,4 @@
-<% if (@remaining_scenarios == 0) && (@max_scenarios > 36) %>
+<% if (@remaining_scenarios == 0) && (@max_scenarios < 36) %>
 	<script src="https://js.stripe.com/v1/"></script>
 	<%= coffee 'marketing' %>
 <% end %>
