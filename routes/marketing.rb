@@ -11,9 +11,7 @@ get '/nce/?' do
 		user = User.get session[:user]
 		redirect '/nce/exams' if user.max_exams > 0
 	end
-  
-  redirect   'https://counselorexams.herokuapp.com/nce' unless request.url == 'https://counselorexams.herokuapp.com/nce'
-		
+  		
 	view 'marketing/nce'
 end
 
@@ -22,9 +20,7 @@ get '/ncmhce/?' do
 		user = User.get session[:user]
 		redirect '/ncmhce/scenarios' if user.max_scenarios > 0
 	end
-  
-  redirect   'https://counselorexams.herokuapp.com/ncmhce' unless request.url == 'https://counselorexams.herokuapp.com/ncmhce'
-		
+  		
 	view 'marketing/ncmhce'
 end
 

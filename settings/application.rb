@@ -15,6 +15,16 @@ Tilt.register Tilt::ERBTemplate, 'html'
 set :views,         './views'
 set :public_folder, './public'
 
+configure :production do
+	before do
+		
+		unless request.url.include? "https://www."
+			redirect "https://www.counselorexams.com#{request.path}"
+		end
+		
+	end
+end
+
 ['settings', 'libraries', 'models', 'routes'].each do |dir|
   Dir["./#{dir}/**/*.rb"].each do |file|
   	require file unless file == './settings/application.rb'
