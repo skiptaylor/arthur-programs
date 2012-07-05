@@ -39,7 +39,7 @@
 							<br />
 							<span style="font-size: 90%;"><%= purchase.options %></span>
 						</td>
-						<td><a href="https://manage.stripe.com/#test/payments/<%= purchase.stripe_id %>" target="_blank"><%= purchase.stripe_id %></a></td>
+						<td><a href="https://manage.stripe.com/#payments/<%= purchase.stripe_id %>" target="_blank"><%= purchase.stripe_id %></a></td>
 						<td>
 							<%= purchase.user.name %>
 							<%= '<br />' if purchase.user.name.length > 0 %>
