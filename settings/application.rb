@@ -18,7 +18,7 @@ set :public_folder, './public'
 configure :production do
 	before do
 		
-		unless request.request_method == 'POST' && request.url.include? "https://www."
+		unless (request.request_method == 'POST') && (request.url.include? "https://www.")
 			redirect "https://www.counselorexams.com#{request.path}"
 		end
 		
