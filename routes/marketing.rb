@@ -11,7 +11,11 @@ get '/nce/?' do
 		user = User.get session[:user]
 		redirect '/nce/exams' if user.max_exams > 0
 	end
-  		
+  
+	session[:user] = nil
+	session[:admin] = nil
+	session[:sample] = nil
+  
 	view 'marketing/nce'
 end
 
@@ -20,7 +24,11 @@ get '/ncmhce/?' do
 		user = User.get session[:user]
 		redirect '/ncmhce/scenarios' if user.max_scenarios > 0
 	end
-  		
+  
+	session[:user] = nil
+	session[:admin] = nil
+	session[:sample] = nil
+  
 	view 'marketing/ncmhce'
 end
 
