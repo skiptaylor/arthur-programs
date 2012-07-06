@@ -36,6 +36,13 @@ end
 
 get('/?') { session[:user] ? redirect('/profile') : redirect('/welcome') }
 
+["/home/?", "/account/?"].each do |path|
+  get path do
+    redirect '/'
+  end
+end
+
+
 DataMapper.finalize
 
 configure :production do
