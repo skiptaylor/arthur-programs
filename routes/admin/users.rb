@@ -86,7 +86,7 @@ end
 
 post '/admin/user/new/?' do
 	admin!
-	
+	puts 'Formatting input'
 	params[:email].strip!
 	params[:email].downcase!
 	
@@ -100,7 +100,8 @@ post '/admin/user/new/?' do
 	
 	params[:max_exams].is_numeric? ? params[:max_exams] = params[:max_exams].to_i : params[:max_exams] = user.max_exams
 	params[:max_scenarios].is_numeric? ? params[:max_scenarios] = params[:max_scenarios].to_i : params[:max_scenarios] = user.max_scenarios
-
+  
+  puts 'Creating user'
 	user = User.create(
 		admin: 					 	false,
 		email: 					 	params[:email],
@@ -119,11 +120,14 @@ post '/admin/user/new/?' do
 		)
 	)
 	
+  puts 'Updating admin'
 	user.update(admin: true) if params[:admin]
 	
+  puts 'Updating downloads'
 	user.update(ncmhce_downloads: true) if params[:ncmhce_downloads]
 	user.update(nce_downloads: true) if params[:nce_downloads]
 
+  puts 'Setting session and redirecting'
 	session[:alert] = { style: 'alert-success', message: "#{user.name} has been created." }
 	redirect "/admin/users/#{user.id}"
 end
