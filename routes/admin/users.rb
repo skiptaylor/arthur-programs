@@ -78,13 +78,13 @@ post '/admin/users/:id/?' do
 	redirect "/admin/users/#{user.id}"
 end
 
-get '/admin/user/new/?' do
+get '/admin/users/new/?' do
 	admin!
 	@user = User.new
 	view 'admin/user'
 end
 
-post '/admin/user/new/?' do
+post '/admin/users/new/?' do
 	admin!
 	puts 'Formatting input'
 	params[:email].strip!
