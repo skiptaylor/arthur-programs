@@ -24,7 +24,7 @@
 				<tr>
 					<td><%= scenario.id %></td>
 					<td><%= scenario.title %></td>
-					<td><%#= @averages.find_all { |a| a['scenario_id'] == scenario.id }.count %></td>
+					<td><%= scenario.averages.count %></td>
 					<td style="text-align: right;"><a href="/admin/scenarios/<%= scenario.id %>">Edit</a></td>
 				</tr>
 				<% end %>

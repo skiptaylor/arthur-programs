@@ -1,7 +1,6 @@
 get '/admin/scenarios/?' do
 	admin!
 	@scenarios = Scenario.all
-	@averages = Average.all
 	view 'admin/scenarios'
 end
 
