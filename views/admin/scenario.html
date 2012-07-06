@@ -170,15 +170,16 @@
 			<%
 				answers = []
 				@answers.each {|a| answers << a if a.question_id == question.id}
+				scores_total = question.answers.scores.count
 			%>
 			<p>
 				<% answers.each do |answer| %>
 					<div class="row">
 						<div class="span7">
-							(<%= answer.scores.count/question.answers.scores.count %>%)
 							<%= answer.body %>
 							<strong>(<%= answer.value %>)</strong>
 							<%= '<i class="icon-ok"></i>' if answer.required? %>
+							<%= (answer.scores.count/scores_total)*100 %>%
 							<blockquote><%= answer.response.markdown %></blockquote>
 							
 							<div class="modal fade" id="edit-answer-<%= answer.id %>" style="display: none;">
