@@ -175,6 +175,7 @@
 				<% answers.each do |answer| %>
 					<div class="row">
 						<div class="span7">
+							(<%= answer.scores.count/question.answers.scores.count %>%)
 							<%= answer.body %>
 							<strong>(<%= answer.value %>)</strong>
 							<%= '<i class="icon-ok"></i>' if answer.required? %>
