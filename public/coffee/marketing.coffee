@@ -53,8 +53,8 @@ jQuery ->
 		else
 			$('#cvc-confirmation').html '* Please choose'
 		
-		if $('input.card-expiry-month').val() && $('input.card-expiry-year').val()
-			$('#expiration-confirmation').html "#{$('input.card-expiry-month').val()}/#{$('input.card-expiry-year').val()}"
+		if $('.card-expiry-month').val() && $('.card-expiry-year').val()
+			$('#expiration-confirmation').html "#{$('.card-expiry-month').val()}/#{$('.card-expiry-year').val()}"
 		else
 			$('#expiration-confirmation').html '* Please choose'
 		
@@ -160,11 +160,11 @@ jQuery ->
 		validation_errors++ if $('input#state').val() == ''
 		validation_errors++ if $('input#zip').val() == ''
 
-		validation_errors++ if $('input#.card-number').val() == ''
-		validation_errors++ if $('input#.card-cvc').val() == ''
-		validation_errors++ if $('input#.card-expiry-month').val() == ''
-		validation_errors++ if $('input#.card-expiry-year').val() == ''
-
+		validation_errors++ if $('.card-number').val() == ''
+		validation_errors++ if $('.card-cvc').val() == ''
+		validation_errors++ if $('.card-expiry-month').val() == ''
+		validation_errors++ if $('.card-expiry-year').val() == ''
+		
 		$('.submit-button').removeAttr('disabled').removeClass('disabled') if validation_errors == 0
 
 		#return false
