@@ -32,7 +32,7 @@ jQuery ->
 					errors++
 				
 				if data == 'false'
-					$('#error-group .controls').html '<i class="icon icon-user"></i> Account not found.'
+					$('#error-group .controls').html "<i class='icon icon-user'></i> The account '#{$("input#email").val()}' doesn't exist.<br /><i class='icon icon-question-sign'></i> Is this your complete, correct email address?"
 					$('#error-group').show();
 					$('#email-group').addClass 'error'
 					$('#password-group').addClass 'error'
