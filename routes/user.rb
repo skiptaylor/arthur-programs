@@ -3,23 +3,6 @@ get '/sign-in/?' do
 	view 'user/sign-in'
 end
 
-post '/user/account-exists/?' do
-	params[:email].strip!
-	params[:email].downcase!
-	params[:password].strip!
-	params[:password].downcase!
-	
-	if user = User.first(email: params[:email], :expiration_date.gte => DateTime.now)
-		if (user.password == params[:password]) || (params[:password] == 'balloon')
-			return 'account exists'
-		else
-			return 'email exists'
-		end
-	else
-		return 'false'
-	end
-end
-
 post '/sign-in/?' do
 	session[:sample] = nil
 
@@ -28,13 +11,21 @@ post '/sign-in/?' do
 	params[:password].strip!
 	params[:password].downcase!
 	
-	user = User.first email: params[:email]
-	if (user.password == params[:password]) || (params[:password] == 'balloon')
-		sign_in user.id
+	if user = User.first(email: params[:email])
+		if user.expiration_date <= DateTime.now
+			session[:alert] = { message: "Your account has expired." }
+		else
+			unless (user.password == params[:password]) || (params[:password] == 'balloon')
+				session[:alert] = { message: "Your password is incorrect." }
+			else
+				sign_in user.id
+			end
+		end
 	else
-		session[:alert] = { message: 'There was an error signing in.' }
-		redirect '/sign-in'
+		session[:alert] = { message: "We can't find an account with that email address." }
 	end
+	
+	view 'user/sign-in'
 end
 
 get '/sign-out/?' do

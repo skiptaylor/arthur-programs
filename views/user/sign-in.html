@@ -1,4 +1,4 @@
-<%= coffee 'sign-in' %>
+<%#= coffee 'sign-in' %>
 
 <div class="row">	
 	<div class="span8 offset2">
@@ -15,12 +15,7 @@
 					<input type="text" class="input-xlarge" id="email" name="email" value="<%= params[:email] %>">
 				</div>
 			</div>
-			
-			<div class="control-group" id="error-group" style="display: none;">
-				<div class="controls" style="color: #ababab;">
-				</div>
-			</div>
-			
+						
 			<div class="control-group" id="password-group">
 				<label class="control-label" for="password">Password</label>
 				<div class="controls">
@@ -40,7 +35,7 @@
 
 			<div class="control-group">
 				<div class="controls">
-					<input type="submit" class="btn disabled" id="sign-in-btn" value="Sign in" disabled />
+					<input type="submit" class="btn btn-primary" id="sign-in-btn" value="Sign in" />
 				</div>
 			</div>
 
