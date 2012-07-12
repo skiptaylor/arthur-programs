@@ -15,7 +15,6 @@
 				<tr>
 					<th></th>
 					<th>Title</th>
-					<th>Scores</th>
 					<th></th>
 				</tr>
 			</thead>
@@ -24,7 +23,6 @@
 				<tr>
 					<td><%= scenario.id %></td>
 					<td><%= scenario.title %></td>
-					<td><%= scenario.averages.count %></td>
 					<td style="text-align: right;"><a href="/admin/scenarios/<%= scenario.id %>">Edit</a></td>
 				</tr>
 				<% end %>
