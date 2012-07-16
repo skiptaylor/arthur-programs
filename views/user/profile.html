@@ -1,3 +1,7 @@
+<script src="https://js.stripe.com/v1/"></script>
+<%= coffee 'marketing' %>
+
+
 <div class="page-header">
 	<h1>
 		<%= @user.name %>
@@ -45,6 +49,9 @@
 			<div class="page-header">
 				<h3>
 					NCE Exams
+						<% unless @user.max_exams > 2 %>
+							<span style="float: right;"><a class="btn btn-success" data-toggle="modal" href="#checkout-nce">Buy 2 more practice exams for $60</a></span>
+						<% end %>
 				</h3>
 			</div>
 			
@@ -88,6 +95,9 @@
 				<h3>
 					NCMHCE Scenarios
 					<small><%= @user.remaining_scenarios %> Remaining</small>
+					<% if @user.max_scenarios < 36 %>
+						<span style="float: right;"><a class="btn btn-success" data-toggle="modal" href="#checkout-ncmhce">Buy 12 more scenarios for $80</a></span>
+					<% end %>
 				</h3>
 			</div>
 			
@@ -233,3 +243,89 @@
 	</div>
 	
 </div>
+
+
+
+
+
+<% unless @user.max_exams > 2 %>
+	<div class="modal fade" id="checkout-nce" style="display: none;">
+		<div class="modal-header">
+			<a class="close" data-dismiss="modal">×</a>
+			<h3>Dr. Arthur&#39;s NCE Study Guide</h3>
+		</div>
+		<div class="modal-body" style="padding-bottom: 0;">
+			<form class="form-horizontal" action="" method="POST" id="payment-form">
+				<fieldset class="package">
+					<legend>Program Package</legend>
+					<br />				
+					<p style="padding-left: 1em;">
+						<label class="radio">
+							<input name="package" type="radio" id="additional-exams-package" value="additional-exams-package" checked="checked" /> Additional Exams Package <strong>$60</strong>
+							<br />
+							<small>2 More Online Practice Exams</small>
+						</label>
+					</p>
+				</fieldset>
+				<%= erb :'marketing/form', layout: false %>
+			</form>
+	
+		</div>
+		<div class="modal-footer">
+			<div class="pagination" style="text-align: center; margin: 0;">
+				<ul>
+					<li class="active">
+						<a href="#" id="package">1. Package</a>
+					</li>
+					<li><a href="#" id="account">2. Account</a></li>
+					<li><a href="#" id="credit-card">3. Credit Card</a></li>
+					<li><a href="#" id="confirmation">4. Confirmation & Checkout</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+<% end %>
+
+
+
+
+
+<% if @user.max_scenarios < 36 %>
+
+	<div class="modal fade" id="checkout-ncmhce" style="display: none;">
+		<div class="modal-header">
+			<a class="close" data-dismiss="modal">×</a>
+			<h3>Arthur-Brende NCMHCE Study Program</h3>
+		</div>
+		<div class="modal-body" style="padding-bottom: 0;">
+			<form class="form-horizontal" action="" method="POST" id="payment-form">
+				<fieldset class="package">
+					<legend>Program Package</legend>
+					<br />				
+					<p style="padding-left: 1em;">
+						<label class="radio">
+							<input name="package" type="radio" id="additional-scenarios-package" value="additional-scenarios-package" checked="checked" /> Additional Scenarios Package <strong>$80</strong>
+							<br />
+							<small>12 More Scenarios</small>
+						</label>
+					</p>
+				</fieldset>
+				<%= erb :'marketing/form', layout: false %>
+			</form>
+	
+		</div>
+		<div class="modal-footer">
+			<div class="pagination" style="text-align: center; margin: 0;">
+				<ul>
+					<li class="active">
+						<a href="#" id="package">1. Package</a>
+					</li>
+					<li><a href="#" id="account">2. Account</a></li>
+					<li><a href="#" id="credit-card">3. Credit Card</a></li>
+					<li><a href="#" id="confirmation">4. Confirmation & Checkout</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+<% end %>
