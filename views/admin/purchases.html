@@ -25,8 +25,8 @@
 					<th>Amount</th>
 					<th>Item</th>
 					<th>Stripe ID</th>
-					<th>Address</th>
 					<th>User</th>
+					<th></th>
 				</tr>
 			</thead>
 			<tbody>
@@ -40,16 +40,11 @@
 							<span style="font-size: 90%;"><%= purchase.options %></span>
 						</td>
 						<td><a href="https://manage.stripe.com/#payments/<%= purchase.stripe_id %>" target="_blank"><%= purchase.stripe_id %></a></td>
-						<td>
-							<%= purchase.user.name %>
-							<%= '<br />' if purchase.user.name.length > 0 %>
-							<%= purchase.address1 %>
-							<%= '<br />' if purchase.address2.length > 0 %>
-							<%= purchase.address2 %>
-							<br />
-							<%= purchase.city %> <%= purchase.state %>, <%= purchase.zip %>
-						</td>
 						<td><a href="/admin/users/<%= purchase.user.id %>"><%= purchase.user.email %></a></td>
+						<td style="text-align: right;">
+							<%= '<span class="label label-warning">To Be Shipped</span>' if purchase.needs_shipping? %>
+							<a href="/admin/purchases/<%= purchase.id %>" class="btn btn-mini btn-info"><i class="icon icon-edit icon-white"></i></a>
+						</td>
 					</tr>
 				<% end %>
 			</tbody>

@@ -42,3 +42,31 @@ get '/admin/purchases/?' do
 		view 'admin/purchases'
 	end
 end
+
+get '/admin/purchases/:id/?' do
+  admin!
+  @purchase = Purchase.get params[:id]
+  view 'admin/purchase'
+end
+
+post '/admin/purchases/:id/?' do
+  admin!
+
+  purchase = Purchase.get params[:id]
+  purchase.update(
+    shipped_on: Date.from_fields(
+      params[:shipped_on_year],
+      params[:shipped_on_month],
+      params[:shipped_on_day]
+    ),
+    received_on: Date.from_fields(
+      params[:received_on_year],
+      params[:received_on_month],
+      params[:received_on_day]
+    ),
+    tracking_number: params[:tracking_number].strip
+  )
+
+  session[:alert] = { message: 'Shipping info updated.' }
+  redirect request.referrer
+end
