@@ -49,9 +49,10 @@
 			<div class="page-header">
 				<h3>
 					NCE Exams
-						<% unless @user.max_exams > 2 && true != false %>
+						<% if true == false %>
+						<% unless @user.max_exams > 2 %>
 							<span style="float: right;"><a class="btn btn-success" data-toggle="modal" href="#checkout-nce">Buy 2 more practice exams for $60</a></span>
-						<% end %>
+						<% end %><% end %>
 				</h3>
 			</div>
 			
@@ -95,9 +96,10 @@
 				<h3>
 					NCMHCE Scenarios
 					<small><%= @user.remaining_scenarios %> Remaining</small>
-					<% if @user.max_scenarios < 36 && true == false %>
+					<% if true == false %>
+					<% if @user.max_scenarios < 36 %>
 						<span style="float: right;"><a class="btn btn-success" data-toggle="modal" href="#checkout-ncmhce">Buy 12 more scenarios for $80</a></span>
-					<% end %>
+					<% end %><% end %>
 				</h3>
 			</div>
 			
