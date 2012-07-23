@@ -49,7 +49,7 @@
 			<div class="page-header">
 				<h3>
 					NCE Exams
-						<% unless @user.max_exams > 2 && true != true %>
+						<% unless @user.max_exams > 2 && true != false %>
 							<span style="float: right;"><a class="btn btn-success" data-toggle="modal" href="#checkout-nce">Buy 2 more practice exams for $60</a></span>
 						<% end %>
 				</h3>
