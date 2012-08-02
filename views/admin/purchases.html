@@ -40,7 +40,8 @@
 							<span style="font-size: 90%;"><%= purchase.options %></span>
 						</td>
 						<td><a href="https://manage.stripe.com/#payments/<%= purchase.stripe_id %>" target="_blank"><%= purchase.stripe_id %></a></td>
-						<td><a href="/admin/users/<%= purchase.user.id %>"><%= purchase.user.email %></a></td>
+						<td><%= purchase.user.name %><br />
+							<a href="/admin/users/<%= purchase.user.id %>"><%= purchase.user.email %></a></td>
 						<td style="text-align: right;">
 							<a href="/admin/purchases/<%= purchase.id %>" class="btn btn-mini btn-info"><i class="icon icon-edit icon-white"></i></a>
 							<br />
