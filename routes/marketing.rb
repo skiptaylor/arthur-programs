@@ -193,7 +193,7 @@ end
 post '/feedback/?' do
 		Pony.mail(
 			headers: { 'Content-Type' => 'text/html' },
-			to: 'dstorm@careertrain.com',
+			to: 'counselorexams@careertrain.com',
 			from: 'feedback@counselorexams.com',
 			subject: params[:subject],
 			body: "#{params[:msg].markdown}<hr />#{params[:name]}<br />#{params[:email]}"
