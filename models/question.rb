@@ -77,7 +77,6 @@ end
 
 
 post '/add-score/?' do
-	authorize!
 
 	answer = Answer.get params[:answer]
 
