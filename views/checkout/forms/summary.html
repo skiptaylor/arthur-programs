@@ -1,0 +1,41 @@
+<fieldset style="background-color: #fafafa;">
+	<legend class="summary"> &nbsp;  Summary</legend>
+	
+	<p style="margin: 2em 0;"><strong style="vertical-align: middle; font-size: 16px;">Total: $<span id='total-display'></span></strong></p>
+	
+	<div class="row-fluid">
+		<div class="span4">
+			<p><strong>Program Package:</strong> <span id="program-package-confirmation"></span></p>
+			<!--<p><strong>Optional Enhancements:</strong> <span id="optional-enhancements-confirmation">N/A</span></p>-->
+	
+			<p><strong>Name:</strong> <span id="name-confirmation"></span></p>
+			<p><strong>Email address:</strong> <span id="email-confirmation"></span></p>
+			<p><strong>Password:</strong> <span id="password-confirmation"></span></p>
+		</div>
+		
+		<div class="span4">
+			
+			<p><strong>Card number:</strong> <span id="card-number-confirmation"></span></p>
+			<p><strong>CVC:</strong> <span id="cvc-confirmation"></span></p>
+			<p><strong>Expiration:</strong> <span id="expiration-confirmation"></span></p>
+	
+		</div>
+		
+		<div class="span4">
+			<p><strong>Address:</strong> <span id="address-confirmation"></span></p>
+			<p><strong>City:</strong> <span id="city-confirmation"></span></p>
+			<p><strong>State:</strong> <span id="state-confirmation"></span></p>
+			<p><strong>Zip:</strong> <span id="zip-confirmation"></span></p>
+			
+		</div>
+	</div>
+		
+	<p style="text-align: right;">
+		<strong style="vertical-align: middle;">Total: $<span id='total-display'></span></strong>
+		&nbsp;
+		<input type="submit" class="btn btn-success btn-large submit-button disabled" value="Checkout" disabled style="font-weight: bold;" />
+	</p>
+	
+	<input type="hidden" id="amount" name="amount" value="0" />
+		
+</fieldset>

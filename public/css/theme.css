@@ -310,3 +310,40 @@ input[disabled],select[disabled],textarea[disabled],input[readonly],select[reado
 }
 
 .control-group.error input, .control-group.error select, .control-group.error textarea { background-color: #fff9f9; }
+
+form#payment-form fieldset {
+	border: 1px solid silver;
+	margin-bottom: 1em;
+	padding: 2.5em 2em .5em 2em;
+	position: relative;
+	-webkit-border-radius: 6px;
+		 -moz-border-radius: 6px;
+		 		  border-radius: 6px;
+}
+
+form#payment-form fieldset legend {
+	background-color: #f0f0f0;
+	background-image: url('../img/number-button.png');
+	background-position: 9px 5px;
+	background-repeat: no-repeat;
+	margin: 0;
+	position: absolute;
+	left: 0;
+	top: 0;
+	-webkit-border-top-left-radius: 6px;
+		 -moz-border-top-left-radius: 6px;
+		 			border-top-left-radius: 6px;
+	-webkit-border-top-right-radius: 6px;
+		 -moz-border-top-right-radius: 6px;
+		 			border-top-right-radius: 6px;
+}
+
+form#payment-form fieldset legend.summary {
+	color: #006cbf;
+	background-image: none;
+}
+
+form#payment-form fieldset legend span {
+	color: white;
+	margin-left: .5em;
+}
