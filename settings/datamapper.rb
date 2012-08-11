@@ -7,13 +7,13 @@ configure :development do
 	# DataMapper.setup :default, 'sqlite::memory:'
 
 	# SQLite
-	DataMapper.setup :default, "sqlite://#{Dir.pwd}/data/development.sqlite3"
+	# DataMapper.setup :default, "sqlite://#{Dir.pwd}/data/development.sqlite3"
 
 	# MySQL
 	# DataMapper.setup :default, 'mysql://username:password@host_url/database_name:port'
 
 	# PostreSQL
-	# DataMapper.setup :default, 'postgres://username:password@host_url/database_name:port'
+	DataMapper.setup :default, 'postgres://jarrod@localhost:5432/counselorexams'
 
 end
 
