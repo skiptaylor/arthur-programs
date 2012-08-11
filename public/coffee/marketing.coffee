@@ -1,6 +1,5 @@
-Stripe.setPublishableKey 'pk_R6tPQTDRzEVjV6m5f3IqHhQxr7EML'
-
 jQuery ->
+
 	$('p#policies-link a').click ->
 		$('p#policies-link').hide()
 		$('div#policies').show()

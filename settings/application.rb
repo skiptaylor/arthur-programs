@@ -3,7 +3,15 @@ Bundler.require
 
 set :environment, ENV['RACK_ENV'] || ENV['env'] || ENV['environment'] || ENV['rack_env'] || :development
 
-STRIPE_KEY = 'FMhuCJP5KSlhxJUbVJM1KapBZJBPEqWU'
+configure :development do
+	STRIPE_KEY = 'sk_09rfsOUSGXAHUVhrpeRXhd1CHcTPN'
+	set :env_name, 'development'
+end
+
+configure :production do
+	STRIPE_KEY = 'FMhuCJP5KSlhxJUbVJM1KapBZJBPEqWU'
+	set :env_name, 'production'
+end
 
 use Rack::Session::Cookie, key: 'counselorexams',
 													 path: '/',
