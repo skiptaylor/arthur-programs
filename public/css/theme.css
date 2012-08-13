@@ -311,6 +311,7 @@ input[disabled],select[disabled],textarea[disabled],input[readonly],select[reado
 
 .control-group.error input, .control-group.error select, .control-group.error textarea { background-color: #fff9f9; }
 
+/*
 form#payment-form fieldset {
 	border: 1px solid silver;
 	margin-bottom: 1em;
@@ -347,3 +348,4 @@ form#payment-form fieldset legend span {
 	color: white;
 	margin-left: .5em;
 }
+*/
