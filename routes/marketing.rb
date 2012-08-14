@@ -66,7 +66,7 @@ post '/nce/?' do
 	Stripe.api_key = STRIPE_KEY
 	
 	charge = Stripe::Charge.create(
-		:amount => params[:amount].to_i * 100,
+		:amount => (params[:amount].to_f * 100).to_i,
 		:currency => "usd",
 		:card => params[:stripeToken],
 		:description => "#{params[:name]}: #{params[:package]} / #{params[:optional]}"
@@ -138,7 +138,7 @@ post '/ncmhce/?' do
 	Stripe.api_key = STRIPE_KEY
 	
 	charge = Stripe::Charge.create(
-		:amount => params[:amount].to_i * 100,
+		:amount => (params[:amount].to_f * 100).to_i,
 		:currency => "usd",
 		:card => params[:stripeToken],
 		:description => "#{params[:name]}: #{params[:package]} / #{params[:optional]}"
