@@ -40,7 +40,7 @@ class User
 	end
 
 	def remaining_scenarios
-		self.max_scenarios - Use.all(user_id: self.id, :scenario.not => nil, :sample => false).count
+		self.max_scenarios - Use.all(user_id: self.id, :scenario_id.not => nil, :sample => false).count
 	end
 
 	def remove
