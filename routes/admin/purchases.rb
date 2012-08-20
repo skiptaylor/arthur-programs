@@ -14,7 +14,7 @@ get '/admin/purchases/?' do
   end
 
 	
-	@purchases = Purchase.all(:created_at.gte => @start, :created_at.lte => @end, :order => :created_at.desc)
+	@purchases = Purchase.all(:created_at.gte => (@start - (12*60*60)), :created_at.lt => (@end + (12*60*60)), :order => :created_at.desc)
 	
 	if params[:export]
   	response.headers['Content-Type'] = 'text/csv; charset=utf-8' 
