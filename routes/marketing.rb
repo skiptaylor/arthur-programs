@@ -6,6 +6,10 @@ get '/home/?' do
   redirect '/'
 end
 
+get '/marketing/terms_of_service/?' do
+	view 'marketing/terms_of_service'
+end
+
 get '/nce/?' do
 	if session[:user]
 		user = User.get session[:user]
