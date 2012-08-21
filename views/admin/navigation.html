@@ -11,6 +11,10 @@
 		<li class="<%= active '/admin/users' %>">
 			<a href="/admin/users"><i class="icon-user <%= 'icon-white' if request.path_info.include? '/admin/users' %>"></i> Users</a>
 		</li>
+
+		<li class="<%= active '/admin/stats' %>">
+			<a href="/admin/stats"><i class="icon-info-sign <%= 'icon-white' if request.path_info.include? '/admin/stats' %>"></i> Stats</a>
+		</li>
 				
 		<li class="nav-header">Products</li>
 		

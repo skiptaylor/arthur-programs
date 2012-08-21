@@ -110,7 +110,7 @@ post '/user/update/?' do
 	user.update params[:key].to_sym => params[:value]
 end
 
-get '/downloads/nce/:file/?' do
+get '/downloads/nce/?' do
 	authorize!
 	user = User.get session[:user]
 	unless user.nce_downloads
@@ -119,17 +119,32 @@ get '/downloads/nce/:file/?' do
 	end
 	
 	content_type = ''
-	content_type = 'application/epub+zip' 					if params[:file].include? 'epub'
-	content_type = 'application/x-mobipocket-ebook' if params[:file].include? 'mobi'
-	content_type = 'application/pdf' 								if params[:file].include? 'pdf'
 	
-	response.headers['Content-Type'] = "#{content_type}"
-	response.headers['Content-Disposition'] = "attachment; filename=#{params[:file]}"
+	if params[:file].include? 'epub'
+		content_type = 'application/epub+zip'
+		s = Stat.all(name: 'NCE Study Guide epub').first
+		s.content = s.content + 1
+		s.save
+	end
 
-	File.read("./public/downloads/#{params[:file]}")
+	if params[:file].include? 'mobi'
+		content_type = 'application/x-mobipocket-ebook'
+		s = Stat.all(name: 'NCE Study Guide mobi').first
+		s.content = s.content + 1
+		s.save
+	end
+
+	if params[:file].include? 'pdf'
+		content_type = 'application/pdf'
+		s = Stat.all(name: 'NCE Study Guide pdf').first
+		s.content = s.content + 1
+		s.save
+	end
+	
+	redirect URI.escape(params[:file])
 end
 
-get '/downloads/ncmhce/:file/?' do
+get '/downloads/ncmhce/?' do
 	authorize!
 	user = User.get session[:user]
 	unless user.ncmhce_downloads
@@ -138,12 +153,27 @@ get '/downloads/ncmhce/:file/?' do
 	end
 	
 	content_type = ''
-	content_type = 'application/epub+zip' 					if params[:file].include? 'epub'
-	content_type = 'application/x-mobipocket-ebook' if params[:file].include? 'mobi'
-	content_type = 'application/pdf' 								if params[:file].include? 'pdf'
 	
-	response.headers['Content-Type'] = "#{content_type}"
-	response.headers['Content-Disposition'] = "attachment; filename=#{params[:file]}"
+	if params[:file].include? 'epub'
+		content_type = 'application/epub+zip'
+		s = Stat.all(name: 'NCMHCE Study Supplement epub').first
+		s.content = s.content + 1
+		s.save
+	end
 
-	File.read("./public/downloads/#{params[:file]}")
+	if params[:file].include? 'mobi'
+		content_type = 'application/x-mobipocket-ebook'
+		s = Stat.all(name: 'NCMHCE Study Supplement mobi').first
+		s.content = s.content + 1
+		s.save
+	end
+
+	if params[:file].include? 'pdf'
+		content_type = 'application/pdf'
+		s = Stat.all(name: 'NCMHCE Study Supplement pdf').first
+		s.content = s.content + 1
+		s.save
+	end
+	
+	redirect URI.escape(params[:file])
 end
