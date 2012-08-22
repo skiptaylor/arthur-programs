@@ -36,6 +36,8 @@ post '/admin/users/new/?' do
 	
 	params[:password].strip!
 	params[:password].downcase!
+    
+    params[:expiration_day] = '30' if params[:expiration_day] == '31'
 	
 	params[:max_exams].is_numeric? ? params[:max_exams] = params[:max_exams].to_i : params[:max_exams] = user.max_exams
 	params[:max_scenarios].is_numeric? ? params[:max_scenarios] = params[:max_scenarios].to_i : params[:max_scenarios] = user.max_scenarios
@@ -90,6 +92,8 @@ post '/admin/users/:id/?' do
 
 	params[:phone].strip!
 	params[:phone].downcase!
+    
+    params[:expiration_day] = '30' if params[:expiration_day] == '31'
 	
 	params[:max_exams].is_numeric? ? params[:max_exams] = params[:max_exams].to_i : params[:max_exams] = user.max_exams
 	params[:max_scenarios].is_numeric? ? params[:max_scenarios] = params[:max_scenarios].to_i : params[:max_scenarios] = user.max_scenarios
