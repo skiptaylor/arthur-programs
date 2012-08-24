@@ -22,4 +22,6 @@ end
 
 group :production do
 	gem 'dm-postgres-adapter', '~> 1.2.0'
+	
+	gem 'newrelic_rpm', require: 'newrelic_rpm'
 end
