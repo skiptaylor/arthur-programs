@@ -107,7 +107,7 @@ post '/checkout/:product/?' do
 		when 'NCMHCE: Upgrade'
 			user.update(max_scenarios: (user.max_scenarios + 12))
 		when 'Account Extension'
-			user.update(expiration_date: user.expiration_date + 30)
+			user.update(expiration_date: user.expiration_date + 90)
 		end
 	else
 		user = User.create(
