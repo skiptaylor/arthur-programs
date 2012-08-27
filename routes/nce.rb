@@ -1,43 +1,21 @@
+get '/nce/?' do
+	if session[:user]
+		user = User.get session[:user]
+		redirect '/nce/exams' if user.max_exams > 0
+	end
+	
+	session[:user] 	 = nil
+	session[:admin]  = nil
+	session[:sample] = nil
+	
+	erb :nce
+end
+
 get '/nce/exams/?' do
 	authorize!
 	@max_exams = User.get(session[:user]).max_exams
 	@exams = Exam.all order: :id
-	view :'nce/index'
-end
-
-post '/nce/exams/?' do
-	authorize!
-	
-	Stripe.api_key = STRIPE_KEY
-	
-	params[:package] = 'NCE Additional Exams Package'
-	params[:amount]  = '60'
-	params[:name] = "#{params[:first_name].strip} #{params[:last_name].strip}"
-	
-	charge = Stripe::Charge.create(
-		:amount => (params[:amount].to_f * 100).to_i,
-		:currency => "usd",
-		:card => params[:stripeToken],
-		:description => "#{params[:name]}: #{params[:package]}"
-	)
-
-	user = User.get params[:user_id]
-	user.update(max_exams: (user.max_exams + 2))
-	
-	purchase = user.purchases.create(
-		package: params[:package],
-		options: nil,
-		stripe_id: charge.id,
-		amount: params[:amount],
-		address1: params[:address1],
-		address2: params[:address2],
-		city: params[:city],
-		state: params[:state],
-		zip: params[:zip]
-	)
-
-	session[:alert] = { style: 'alert-success', message: 'Thank you for your purchase.' }
-	redirect '/profile'
+	erb :'nce/index'
 end
 
 get '/nce/exams/:id/?' do
@@ -65,7 +43,7 @@ get '/nce/exams/:id/?' do
 	@exam = Exam.get params[:id]
 	@questions = @exam.questions(:order => :position)
 	@answers = @questions.answers(:order => :body)
-	view :'nce/exam'
+	erb :'nce/exam'
 end
 
 get '/nce/exams/:id/score/?' do
@@ -104,7 +82,7 @@ get '/nce/exams/:id/score/?' do
 		@breakdown[s.score_type][:correct]  += 1 if s.required?
 	end
 
-	view :'nce/exam'
+	erb :'nce/exam'
 end
 
 get '/nce/exams/:id/restart/?' do

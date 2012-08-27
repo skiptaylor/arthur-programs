@@ -1,3 +1,5 @@
+# Standard MiniTest, see MiniTest docs for more info.
+
 class WidgetTest < MiniTest::Unit::TestCase
 
 	def test_made_by

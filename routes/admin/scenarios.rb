@@ -1,7 +1,7 @@
 get '/admin/scenarios/?' do
 	admin!
 	@scenarios = Scenario.all
-	view 'admin/scenarios'
+	erb :'admin/scenarios'
 end
 
 get '/admin/scenarios/:id/?' do
@@ -9,7 +9,7 @@ get '/admin/scenarios/:id/?' do
 	@scenario = Scenario.get params[:id]
 	@questions = @scenario.questions(:order => :position)
 	@answers = @questions.answers(:order => :body)
-	view 'admin/scenario'
+	erb :'admin/scenario'
 end
 
 post '/admin/scenarios/:id/?' do

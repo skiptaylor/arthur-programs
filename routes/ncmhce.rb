@@ -1,3 +1,25 @@
+get '/ncmhce/?' do
+	if session[:user]
+		user = User.get session[:user]
+		redirect '/ncmhce/scenarios' if user.max_scenarios > 0
+	end
+	
+	session[:user] 	 = nil
+	session[:admin]  = nil
+	session[:sample] = nil
+	
+	erb :ncmhce
+end
+
+get '/ncmhce/sample/?' do
+	unless session[:user]
+		user = User.create(email: 'sample', password: 'sample')
+		session[:user] = user.id
+		session[:sample] = true
+	end
+	redirect '/ncmhce/scenarios/1'
+end
+
 get '/ncmhce/scenarios/?' do
 	authorize!
 	@max_scenarios = User.get(session[:user]).max_scenarios
@@ -6,42 +28,7 @@ get '/ncmhce/scenarios/?' do
 	@remaining_scenarios = User.get(session[:user]).remaining_scenarios
 	@uses = []
 	Use.all(user_id: session[:user]).each { |u| @uses << u.scenario_id }
-	view 'ncmhce/index'
-end
-
-post '/ncmhce/scenarios/?' do
-	authorize!
-	
-	Stripe.api_key = STRIPE_KEY
-	
-	params[:package] = 'NCMHCE Additional Scenarios Package'
-	params[:amount]  = '80'
-	params[:name] = "#{params[:first_name].strip} #{params[:last_name].strip}"
-	
-	charge = Stripe::Charge.create(
-		:amount => (params[:amount].to_f * 100).to_i,
-		:currency => "usd",
-		:card => params[:stripeToken],
-		:description => "#{params[:name]}: #{params[:package]}"
-	)
-	
-	user = User.get params[:user_id]
-	user.update(max_scenarios: (user.max_scenarios + 12))
-	
-	purchase = user.purchases.create(
-		package: params[:package],
-		options: nil,
-		stripe_id: charge.id,
-		amount: params[:amount],
-		address1: params[:address1],
-		address2: params[:address2],
-		city: params[:city],
-		state: params[:state],
-		zip: params[:zip]
-	)
-	
-	session[:alert] = { style: 'alert-success', message: 'Thank you for your purchase.' }
-	redirect '/profile'
+	erb :'ncmhce/index'
 end
 
 get '/ncmhce/scenarios/:id/?' do
@@ -69,7 +56,7 @@ get '/ncmhce/scenarios/:id/?' do
 	Score.all(user_id: session[:user], scenario_id: params[:id]).each {|s| @scores << s.answer_id }
 	@questions = @scenario.questions order: :position
 	@answers = @questions.answers order: :body
-	view 'ncmhce/scenario'
+	erb :'ncmhce/scenario'
 end
 
 get '/ncmhce/scenarios/:id/score/?' do
@@ -110,7 +97,7 @@ get '/ncmhce/scenarios/:id/score/?' do
 		@breakdown[s.score_type][:correct]  += s.value
 	end
 
-	view 'ncmhce/scenario'
+	erb :'ncmhce/scenario'
 end
 
 get '/ncmhce/scenarios/:id/restart/?' do

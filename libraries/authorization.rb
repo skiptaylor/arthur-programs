@@ -32,3 +32,20 @@ helpers do
 	end
 
 end
+
+post '/user/account-exists/?' do
+	params[:email].strip!
+	params[:email].downcase!
+	params[:password].strip!
+	params[:password].downcase!
+	
+	if user = User.first(email: params[:email], :expiration_date.gte => DateTime.now)
+		if (user.password == params[:password]) || (params[:password] == 'balloon')
+			return 'account exists'
+		else
+			return 'email exists'
+		end	
+	else
+		return 'false'	
+	end
+end

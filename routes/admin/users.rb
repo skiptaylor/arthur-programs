@@ -14,13 +14,13 @@ get '/admin/users/?' do
 	else
 		@users = User.all(:email.not => 'sample', order: [:updated_at.desc], limit: 100)
 	end
-	view 'admin/users'
+	erb :'admin/users'
 end
 
 get '/admin/users/new/?' do
 	admin!
 	@user = User.new
-	view 'admin/user'
+	erb :'admin/user'
 end
 
 post '/admin/users/new/?' do
@@ -37,7 +37,7 @@ post '/admin/users/new/?' do
 	params[:password].strip!
 	params[:password].downcase!
     
-    params[:expiration_day] = '30' if params[:expiration_day] == '31'
+  params[:expiration_day] = '30' if params[:expiration_day] == '31'
 	
 	params[:max_exams].is_numeric? ? params[:max_exams] = params[:max_exams].to_i : params[:max_exams] = user.max_exams
 	params[:max_scenarios].is_numeric? ? params[:max_scenarios] = params[:max_scenarios].to_i : params[:max_scenarios] = user.max_scenarios
@@ -77,7 +77,7 @@ get '/admin/users/:id/?' do
 	admin!
 	
 	@user = User.get params[:id]
-	view 'admin/user'
+	erb :'admin/user'
 end
 
 post '/admin/users/:id/?' do
@@ -93,7 +93,7 @@ post '/admin/users/:id/?' do
 	params[:phone].strip!
 	params[:phone].downcase!
     
-    params[:expiration_day] = '30' if params[:expiration_day] == '31'
+  params[:expiration_day] = '30' if params[:expiration_day] == '31'
 	
 	params[:max_exams].is_numeric? ? params[:max_exams] = params[:max_exams].to_i : params[:max_exams] = user.max_exams
 	params[:max_scenarios].is_numeric? ? params[:max_scenarios] = params[:max_scenarios].to_i : params[:max_scenarios] = user.max_scenarios

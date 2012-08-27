@@ -1,0 +1,55 @@
+<ul class="breadcrumb">
+	<li>
+		NCE <span class="divider">/</span>
+	</li>
+	<li class="active">Exams</li>
+</ul>
+
+<div class="page-header">
+	<h1>
+		NCE Exams
+		<% unless @max_exams > 2 %>
+			<span style="float: right;"><a class="btn btn-success" href="/checkout/nce-upgrade">Buy 2 more practice exams for $60</a></span>
+		<% end %>
+	</h1>
+</div>
+
+<div class="row">
+	
+	<div class="span6">
+		<h3>
+			NCE Pre-Assessment Exam
+			<% if previous_score = Average.first(user_id: session[:user], exam_id: 4) %>
+				<small class="darker-gray"><%= previous_score.score %>%</small>
+			<% end %>
+		</h3>
+		<p><a href="/nce/exams/4">Go to Pre-Assessment Exam</a></p>
+	</div>
+
+	<div class="span6">
+		<h3>Practice Exam 1</h3>
+		<% if previous_score = Average.first(user_id: session[:user], exam_id: 1) %>
+				<small class="darker-gray"><%= previous_score.score %>%</small>
+		<% end %>
+		<p><a href="/nce/exams/1">Go to Practice Exam 1</a></p>
+	</div>
+	<% if @max_exams > 2 %>
+		<div class="span6">
+			<h3>Practice Exam 2</h3>
+			<% if previous_score = Average.first(user_id: session[:user], exam_id: 2) %>
+					<smal class="darker-gray"l><%= previous_score.score %>%</small>
+			<% end %>
+			<p><a href="/nce/exams/2">Go to Practice Exam 2</a></p>
+		</div>
+	
+		<div class="span6">
+			<h3>
+				Practice Exam 3
+				<% if previous_score = Average.first(user_id: session[:user], exam_id: 3) %>
+					<small class="darker-gray"><%= previous_score.score %>%</small>
+				<% end %>
+			</h3>
+			<p><a href="/nce/exams/3">Go to Practice Exam 3</a></p>
+		</div>
+	<% end %>
+</div>

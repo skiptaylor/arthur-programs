@@ -39,14 +39,14 @@ get '/admin/purchases/?' do
   	
   	return file
 	else
-		view 'admin/purchases'
+		erb :'admin/purchases'
 	end
 end
 
 get '/admin/purchases/:id/?' do
   admin!
   @purchase = Purchase.get params[:id]
-  view 'admin/purchase'
+  erb :'admin/purchase'
 end
 
 post '/admin/purchases/:id/?' do

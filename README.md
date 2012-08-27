@@ -9,9 +9,9 @@ Install the gems:
 
     bundle
     
-Build and seed the database:
+Build the database:
 
-    rake dm:setup
+    rake dm:restore[counselorexams]
     
 Run the server:
 

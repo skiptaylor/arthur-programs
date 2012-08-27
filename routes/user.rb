@@ -1,6 +1,6 @@
 get '/sign-in/?' do
 	session[:user] = nil
-	view 'user/sign-in'
+	erb :'sign-in'
 end
 
 post '/sign-in/?' do
@@ -25,14 +25,14 @@ post '/sign-in/?' do
 		session[:alert] = { message: "We can't find an account with that email address." }
 	end
 	
-	view 'user/sign-in'
+	erb :'sign-in'
 end
 
 get '/sign-out/?' do
-	session[:user] = nil
-	session[:admin] = nil
+	session[:user] 	 = nil
+	session[:admin]  = nil
 	session[:sample] = nil
-	session[:alert] = { style: 'alert-info', heading: 'You are now signed out.', message: 'Thank you, come again!' }
+	session[:alert]  = { style: 'alert-info', heading: 'You are now signed out.', message: 'Thank you, come again!' }
 	redirect '/'
 end
 
@@ -58,7 +58,7 @@ end
 
 get '/new-password/:key/?' do
 	if user = User.first(pass_reset_key: params[:key], :pass_reset_date.gte => Chronic.parse('1 day ago'))
-		view 'user/new_password'
+		erb :'new-password'
 	else
 		session[:alert] = { message: 'That password reset link has expired.' }
 		redirect '/sign-in'
@@ -80,7 +80,7 @@ get '/profile/?' do
 	@scenarios = Use.all(user_id: session[:user], :scenario_id.not => nil)
 	@exams = Use.all(user_id: session[:user], :exam_id.not => nil)
 	
-	view 'user/profile'
+	erb :profile
 end
 
 post '/profile/?' do

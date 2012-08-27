@@ -1,1 +1,0 @@
-Stripe.setPublishableKey 'pk_R6tPQTDRzEVjV6m5f3IqHhQxr7EML'

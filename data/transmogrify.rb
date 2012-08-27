@@ -1,6 +1,0 @@
-Stat.create(name: 'NCE Study Guide epub', content: 0)
-Stat.create(name: 'NCE Study Guide mobi', content: 0)
-Stat.create(name: 'NCE Study Guide pdf', content: 0)
-Stat.create(name: 'NCMHCE Study Supplement epub', content: 0)
-Stat.create(name: 'NCMHCE Study Supplement mobi', content: 0)
-Stat.create(name: 'NCMHCE Study Supplement pdf', content: 0)

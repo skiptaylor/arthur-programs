@@ -1,7 +1,7 @@
 get '/admin/exams/?' do
 	admin!
 	@exams = Exam.all
-	view 'admin/exams'
+	erb :'admin/exams'
 end
 
 get '/admin/exams/:id/?' do
@@ -9,7 +9,7 @@ get '/admin/exams/:id/?' do
 	@exam = Exam.get params[:id]
 	@questions = @exam.questions(:order => :position)
 	@answers = @questions.answers(:order => :body)
-	view 'admin/exam'
+	erb :'admin/exam'
 end
 
 post '/admin/exams/:exam_id/questions/:question_id' do
