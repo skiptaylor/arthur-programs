@@ -1,7 +1,5 @@
 source :rubygems
 
-ruby '1.9.3'
-
 require 'net/http'
 
 gem 'chronic', '~> 0.6.7'
