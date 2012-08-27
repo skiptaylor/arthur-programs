@@ -31,7 +31,11 @@
 					<% if @user.admin? %>
 						No expiration date.
 					<% else %>
-						Account expires on <%= @user.expiration_date.display :american_day %>.
+						<% if (@user.expiration_date - 30) > Time.now.to_date %>
+							Account expires on <%= @user.expiration_date.display :american_day %>.
+						<% else %>
+							<strong style="color: red; font-size: 100%;">Account expires on <%= @user.expiration_date.display :american_day %>.</strong>
+						<% end %>
 					<% end %>
 				</small>
 			</p>
