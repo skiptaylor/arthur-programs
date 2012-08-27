@@ -7,7 +7,7 @@ gem 'coffee-script', '~> 2.2.0'
 gem 'data_mapper', '~> 1.2.0'
 gem 'dm-postgres-adapter', '~> 1.2.0'
 
-gem 'json', '~> 1.7.5'
+gem 'json', '~> 1.6'
 
 gem 'pony', '~> 1.4'
 
