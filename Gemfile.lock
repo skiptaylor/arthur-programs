@@ -120,7 +120,7 @@ DEPENDENCIES
   coffee-script (~> 2.2.0)
   data_mapper (~> 1.2.0)
   dm-postgres-adapter (~> 1.2.0)
-  json (~> 1.7.4)
+  json (~> 1.7.5)
   newrelic_rpm
   pony (~> 1.4)
   rack-flash3 (~> 1.0.1)
