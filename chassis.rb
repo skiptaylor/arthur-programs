@@ -2,6 +2,9 @@
 require 'bundler'
 Bundler.require
 
+require 'sinatra/namespace'
+require 'net/http'
+
 # Sets environment, defaults to development
 #   ~: rake app:server env=production
 set :environment, ENV['RACK_ENV'] || ENV['env'] || :development

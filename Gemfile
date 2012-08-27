@@ -1,7 +1,5 @@
 source :rubygems
 
-require 'net/http'
-
 gem 'chronic', '~> 0.6.7'
 
 gem 'coffee-script', '~> 2.2.0'
@@ -21,7 +19,6 @@ gem 'sass', '~> 3.1.19'
 
 gem 'sinatra', '~> 1.3.3'
 gem 'sinatra-contrib', '~> 1.3.1'
-require 'sinatra/namespace'
 
 gem 'sprockets', '~> 2.0'
 
