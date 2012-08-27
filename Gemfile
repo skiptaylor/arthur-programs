@@ -28,4 +28,4 @@ group :production do
 	gem 'newrelic_rpm', require: 'newrelic_rpm'
 end
 
-Dir["./vendor/**/Gemfile"].each { |gemfile| self.send(:eval, File.open(gemfile, 'r').read) }
+# Dir["./vendor/**/Gemfile"].each { |gemfile| self.send(:eval, File.open(gemfile, 'r').read) }
