@@ -1,5 +1,6 @@
 get '/sign-in/?' do
 	session[:user] = nil
+	session.clear
 	erb :'sign-in'
 end
 
@@ -32,6 +33,7 @@ get '/sign-out/?' do
 	session[:user] 	 = nil
 	session[:admin]  = nil
 	session[:sample] = nil
+	session.clear
 	session[:alert]  = { style: 'alert-info', heading: 'You are now signed out.', message: 'Thank you, come again!' }
 	redirect '/'
 end
