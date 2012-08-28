@@ -4,10 +4,6 @@ get '/nce/?' do
 		redirect '/nce/exams' if user.max_exams > 0
 	end
 	
-	session[:user] 	 = nil
-	session[:admin]  = nil
-	session[:sample] = nil
-	
 	erb :nce
 end
 

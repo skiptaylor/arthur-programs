@@ -4,10 +4,6 @@ get '/ncmhce/?' do
 		redirect '/ncmhce/scenarios' if user.max_scenarios > 0
 	end
 	
-	session[:user] 	 = nil
-	session[:admin]  = nil
-	session[:sample] = nil
-	
 	erb :ncmhce
 end
 
