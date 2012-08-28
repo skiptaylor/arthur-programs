@@ -10,6 +10,9 @@
   <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/img/apple-touch-icon-72-precomposed.png">
   <link rel="apple-touch-icon-precomposed" href="/img/apple-touch-icon-57-precomposed.png">
 	<link href="/css/theme.css" rel="stylesheet" />
+	<% if mobile_request? %>
+		<script src="/js/prefixes/hide_addressbar.js"></script>
+	<% end %>
 	<script src="https://js.stripe.com/v1/"></script>
 	<script src="/js/global.js"></script>
 	<script type="text/javascript">

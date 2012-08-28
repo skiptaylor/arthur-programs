@@ -1,4 +1,3 @@
-#= require 'prefixes/hide_addressbar'
 #= require 'prefixes/jquery-1.8.0.min'
 #= require 'prefixes/jquery-ui-1.8.22.min'
 #= require 'prefixes/bootstrap.min'
