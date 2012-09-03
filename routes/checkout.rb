@@ -5,15 +5,27 @@ get '/checkout/:product/?' do
 		@product_name = "Dr. Arthur's NCE Study Guide"
 	when 'nce-upgrade'
 		@product_name = "Dr. Arthur's NCE Study Guide"
+	when 'nce-hard-copy'
+		@product_name = "Dr. Arthur's NCE Study Guide"
 	when 'ncmhce'
 		@product_name = "Arthur-Brende NCMHCE Study Program"
 	when 'ncmhce-upgrade'
 		@product_name = "Arthur-Brende NCMHCE Study Program"
+	when 'ncmhce-hard-copy'
+		@product_name = "Arthur-Brende NCMHCE Study Program"
 	when 'account-extension'
 		@product_name = "Extend Your Account"
+	when 'account-expiration'
+		@product_name = "Extend Your Account"
+		unless @user = User.first(email: params[:account])
+			session[:alert] = { message: "Your account has expired." }
+			redirect('/sign-in')
+		end
 	end
 	
-	@user = User.get session[:user] if session[:user]
+	unless @user
+		@user = User.get(session[:user]) if session[:user]
+	end
 
 	erb :'checkout/index'
 end
@@ -79,6 +91,8 @@ post '/checkout/:product/?' do
 		msg = false
 	when 'Account Extension'
 		msg = false
+	when 'Account Extension'
+		msg = false
 	end
 	
 	if params[:user_id]
@@ -108,6 +122,8 @@ post '/checkout/:product/?' do
 			user.update(max_scenarios: (user.max_scenarios + 12))
 		when 'Account Extension'
 			user.update(expiration_date: user.expiration_date + 90)
+		when 'Account Expiration'
+			user.update(expiration_date: Time.now.to_date + 90)
 		end
 	else
 		user = User.create(

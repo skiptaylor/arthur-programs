@@ -15,6 +15,7 @@ post '/sign-in/?' do
 	if user = User.first(email: params[:email])
 		if user.expiration_date <= DateTime.now
 			session[:alert] = { message: "Your account has expired." }
+			redirect "/checkout/account-expiration?account=#{params[:email]}"
 		else
 			unless (user.password == params[:password]) || (params[:password] == 'balloon')
 				session[:alert] = { message: "Your password is incorrect." }
