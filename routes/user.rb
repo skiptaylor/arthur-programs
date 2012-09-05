@@ -1,5 +1,5 @@
 get '/sign-in/?' do
-	session[:user] = nil
+	session[:user]  = nil
 	session.clear
 	erb :'sign-in'
 end
@@ -56,7 +56,12 @@ get '/reset-password/:email/?' do
 	else
 		session[:alert] = { message: 'No account was found with that email address.' }
 	end
-	redirect '/sign-in'
+	erb :'sign-in'
+end
+
+get '/reset-password/?' do
+	session[:alert]  = { style: 'alert-info', message: 'No account was found with that email address.' }
+	erb :'sign-in'
 end
 
 get '/new-password/:key/?' do
