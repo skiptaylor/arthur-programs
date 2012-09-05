@@ -86,8 +86,14 @@ post '/checkout/:product/?' do
 	when 'NCE Upgrade'
 		params[:package] = 'NCE: Upgrade'
 		msg = false
+	when 'NCE Hard Copy'
+		params[:package] = 'NCE: Hard Copy'
+		msg = false
 	when 'NCMHCE Upgrade'
 		params[:package] = 'NCMHCE: Upgrade'
+		msg = false
+	when 'NCMHCE Hard Copy'
+		params[:package] = 'NCMHCE: Hard Copy'
 		msg = false
 	when 'Account Extension'
 		msg = false

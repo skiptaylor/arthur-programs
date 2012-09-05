@@ -22,7 +22,7 @@ class Purchase
 	belongs_to :user
 
 	def needs_shipping?
-		true if shipped_on == nil && options && options.include?('Hard Copy')
+		true if shipped_on == nil && ( (package && package.include?('Hard Copy')) || (options && options.include?('Hard Copy')) )
 	end
 
 	def remove

@@ -7,8 +7,8 @@ helpers do
 		if msg
 			session[:alert] = {
 				style: 'alert-success',
-				heading: 'Payment Accepted',
-				message: 'Welcome to CounselorExams!'
+				heading: 'Thank You!',
+				message: 'Payment Accepted.'
 			}
 		end
 		redirect '/profile'
