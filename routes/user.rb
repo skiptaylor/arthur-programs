@@ -149,7 +149,10 @@ get '/downloads/nce/?' do
 		s.save
 	end
 	
-	redirect URI.escape(params[:file])
+	response.headers['Content-Type'] = "#{content_type}"
+	response.headers['Content-Disposition'] = "attachment; filename=#{params[:file]}"
+	
+	File.read("./public/downloads/#{params[:file]}")
 end
 
 get '/downloads/ncmhce/?' do
@@ -182,6 +185,9 @@ get '/downloads/ncmhce/?' do
 		s.content = s.content + 1
 		s.save
 	end
+
+	response.headers['Content-Type'] = "#{content_type}"
+	response.headers['Content-Disposition'] = "attachment; filename=#{params[:file]}"
 	
-	redirect URI.escape(params[:file])
+	File.read("./public/downloads/#{params[:file]}")
 end
