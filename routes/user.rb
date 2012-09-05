@@ -52,9 +52,9 @@ get '/reset-password/:email/?' do
 			subject:'Counselor Exams password reset link',
 			body: "To reset your password: http://#{request.host}/new-password/#{user.pass_reset_key}"
 		)
-		session[:alert] = { message: 'Password reset instructions have been sent to your inbox.' }
+		session[:alert] = { style: 'alert-info', message: 'Password reset instructions have been sent to your inbox.' }
 	else
-		session[:alert] = { message: 'No account was found with that email address.' }
+		session[:alert] = { style: 'alert-info', message: 'No account was found with that email address.' }
 	end
 	erb :'sign-in'
 end
