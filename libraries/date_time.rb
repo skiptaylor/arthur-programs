@@ -45,21 +45,21 @@ module Chassis
 	
 			date_field = ""
 	
-			date_field << "<select name='#{field}_month' id='#{field}_month' style='width: 50px;'>"
+			date_field << "<select name='#{field}_month' id='#{field}_month' style='width: 60px;'>"
 			date_field << "<option value=''></option>"
 			(1..12).each do |m|
 				date_field << "<option value='#{m}' #{'selected' if !empty_date && m == self.strftime('%m').to_i}>#{m}</option>"
 			end
 			date_field << "</select> &nbsp;"
 	
-			date_field << "<select name='#{field}_day' id='#{field}_day' style='width: 50px;'>"
+			date_field << "<select name='#{field}_day' id='#{field}_day' style='width: 60px;'>"
 			date_field << "<option value=''></option>"
 			(1..31).each do |d|
 				date_field << "<option value='#{d}' #{'selected' if !empty_date && d == self.strftime('%d').to_i}>#{d}</option>"
 			end
 			date_field << "</select> &nbsp;"
 	
-			date_field << "<select name='#{field}_year' id='#{field}_year' style='width: 60px;'>"
+			date_field << "<select name='#{field}_year' id='#{field}_year' style='width: 74px;'>"
 			date_field << "<option value=''></option>"
 			(2007..Chronic.parse('3 years from now').strftime('%Y').to_i).each do |y|
 				date_field << "<option value='#{y}' #{'selected' if !empty_date && y == self.strftime('%Y').to_i}>#{y}</option>"
