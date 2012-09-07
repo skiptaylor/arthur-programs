@@ -45,6 +45,10 @@ jQuery ->
 	
 	summarize()
 	
+	validateEmail = (emailAddress) ->
+		pattern = new RegExp(/@/)
+		return pattern.test(emailAddress)
+	
 	$('.submit-button').click (event) ->
 		$('.submit-button').attr('disabled', 'disabled').removeClass('disabled').addClass('disabled')
 				
@@ -54,8 +58,8 @@ jQuery ->
 			errors.push 'You must choose a package.'
 		if ($('input#first_name').val() == '') || ($('input#last_name').val() == '')
 			errors.push 'You must enter a first and last name.'
-		if $('input#email').val() == ''
-			errors.push 'You must enter an email address.'
+		unless validateEmail($('input#email').val())
+			errors.push 'You must enter a valid email address.'
 		if $('input#password').val() == ''
 			errors.push 'You must enter a password.'
 		if $('input.card-number').val() == ''
