@@ -1,0 +1,57 @@
+<%= erb :'how-it-works/nav', layout: false %>
+
+<br />
+
+<h2>Signing in</h2>
+
+	<ul class="nav nav-pills" id="myTab">
+		<li class="active"><a href="#go-to" data-toggle="pill">Step 1</a></li>
+		<li><a href="#sign-in" data-toggle="pill">Step 2</a></li>
+	</ul>
+		
+
+  		<div class="go-to">
+  		
+  		<div class="tab-content">	
+			</div><div class="tab-content">
+			<div class="tab-pane active" id="go-to">
+			  
+			  <div class="row">
+		  			<div class="span8">
+		  				<img src="/img/how-it-works/sign-in-button.png" style="border: 1px solid silver" />
+		  			</div>
+		  			<div class="span4">
+		  			<br />
+			  			<h3>Getting there</h3>
+			  			<p>Go to <b>counselorexams.com</b> and select the green 'Sign-in' button at top right of the screen. This will take you to the sign in page.</p>
+			  		</div>
+		  		</div>
+		  		
+		  </div>
+
+		  <div class="tab-pane" id="sign-in">
+		  
+			  	<div class="row">
+		  			<div class="span8">
+		  				<img src="/img/how-it-works/sign-in-cred.png" style="border: 1px solid silver" />
+		  			</div>
+		  			<div class="span4">
+		  			<br />
+			  			<h3>Signing in</h3>
+			  			<p>Enter your account email address and password. Select the 'Sign in' button and you will be taken to your Profile page where you will find access to your study program.</p>
+			  		</div>
+		  		</div>
+			  
+		  </div>
+		</div>
+	</div>
+<br />
+
+
+ 
+<script>
+  $(function () {
+    $('#myTab a:first').tab('show');
+  })
+</script>
+
