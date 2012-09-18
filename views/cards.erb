@@ -1,0 +1,26 @@
+<div class="row">	
+	<div class="span12">
+		
+			<h1>NCMHCE Study Glossary</h1>
+			
+			<!--<a href="/cards/random" class="btn btn-primary btn-large pull-right">Flash Cards</a> -->
+			
+			<p>The following terms were used with the disorders in this training Supplement. <br />The definitions of the different terms are brief and may require further research.</p>
+		
+	</div>
+</div>
+<hr style="border-top: 1px solid silver;" />
+
+<% Glossary.all.each do |glossary| %>
+<div class="row">
+
+	<div class="span2 offset2">
+		<strong><%= glossary.term %></strong>
+	</div>
+	<div class="span5">
+	<%= glossary.definition %>
+	</div>
+	
+</div>
+<hr style="border-top: 1px solid silver;" />
+<% end %>
