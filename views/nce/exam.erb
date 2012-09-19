@@ -15,46 +15,37 @@
 
 <% if @average %>
 	<div class="well">
-		<h3>
-			Your Score: <%= @average %>% &nbsp;
-			<% if @exam.group_average %>
-				<small class="darker-gray">Average score of all users to date: <strong><%= @exam.group_average %>%</strong></small>
-			<% end %>
-		</h3>
-		<br />
 		<div class="row">
-			<div class="span5">
-				Professional Orientation:
-				<%= @breakdown['Professional Orientation'][:correct] %> / <%= @breakdown['Professional Orientation'][:possible] %>
+			<div class="span11">
+				<h3>
+					Your Score: <%= @average %>% &nbsp;
+					<% if @exam.group_average %>
+						<small class="darker-gray">Average score of all users to date: <strong><%= @exam.group_average %>%</strong></small>
+					<% end %>
+				</h3>
+				<%
+					style = 'progress-danger'
+					style = 'progress-warning' if @average > 60
+					style = 'progress-success' if @average > 80
+				%>
+				<div class="progress <%= style %>">
+					<div class="bar" style="width: <%= @average %>%;"></div>
+				</div>
 			</div>
-			<div class="span5">
-				Research and Program Evaluation:
-				<%= @breakdown['Research and Program Evaluation'][:correct] %> / <%= @breakdown['Research and Program Evaluation'][:possible] %>
-			</div>
-			<div class="span5">
-				Appraisal:
-				<%= @breakdown['Appraisal'][:correct] %> / <%= @breakdown['Appraisal'][:possible] %>
-			</div>
-			<div class="span5">
-				Lifestyle and Career Development:
-				<%= @breakdown['Lifestyle and Career Development'][:correct] %> / <%= @breakdown['Lifestyle and Career Development'][:possible] %>
-			</div>
-			<div class="span5">
-				Helping Relationships:
-				<%= @breakdown['Helping Relationships'][:correct] %> / <%= @breakdown['Helping Relationships'][:possible] %>
-			</div>
-			<div class="span5">
-				Group Counseling:
-				<%= @breakdown['Group Counseling'][:correct] %> / <%= @breakdown['Group Counseling'][:possible] %>
-			</div>
-			<div class="span5">
-				Human Growth and Development:
-				<%= @breakdown['Human Growth and Development'][:correct] %> / <%= @breakdown['Human Growth and Development'][:possible] %>
-			</div>
-			<div class="span5">
-				Social and Cultural Foundations:
-				<%= @breakdown['Social and Cultural Foundations'][:correct] %> / <%= @breakdown['Social and Cultural Foundations'][:possible] %>
-			</div>
+		</div>
+
+		<div class="row">			
+			<%= erb :progressbar, layout: false, locals: { label: 'Professional Orientation', correct: @breakdown['Professional Orientation'][:correct], possible: @breakdown['Professional Orientation'][:possible] } %>			
+			<%= erb :progressbar, layout: false, locals: { offset: true, label: 'Research and Program Evaluation', correct: @breakdown['Research and Program Evaluation'][:correct], possible: @breakdown['Research and Program Evaluation'][:possible] } %>			
+
+			<%= erb :progressbar, layout: false, locals: { label: 'Appraisal', correct: @breakdown['Appraisal'][:correct], possible: @breakdown['Appraisal'][:possible] } %>			
+			<%= erb :progressbar, layout: false, locals: { offset: true, label: 'Lifestyle and Career Development', correct: @breakdown['Lifestyle and Career Development'][:correct], possible: @breakdown['Lifestyle and Career Development'][:possible] } %>			
+
+			<%= erb :progressbar, layout: false, locals: { label: 'Helping Relationships', correct: @breakdown['Helping Relationships'][:correct], possible: @breakdown['Helping Relationships'][:possible] } %>			
+			<%= erb :progressbar, layout: false, locals: { offset: true, label: 'Group Counseling', correct: @breakdown['Group Counseling'][:correct], possible: @breakdown['Group Counseling'][:possible] } %>						
+
+			<%= erb :progressbar, layout: false, locals: { label: 'Human Growth and Development', correct: @breakdown['Human Growth and Development'][:correct], possible: @breakdown['Human Growth and Development'][:possible] } %>			
+			<%= erb :progressbar, layout: false, locals: { offset: true, label: 'Social and Cultural Foundations', correct: @breakdown['Social and Cultural Foundations'][:correct], possible: @breakdown['Social and Cultural Foundations'][:possible] } %>			
 		</div>
 		<br />
 		<a href="/nce/exams/<%= params[:id] %>/restart" class="btn restart">Start Over</a> &nbsp; <a href="/nce/exams" class="btn">Exams</a>

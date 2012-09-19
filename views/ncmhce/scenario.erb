@@ -13,22 +13,26 @@
 
 <% if @average %>
 	<div class="well">
-		<h3>
-			Your Score: <%= @average %>% &nbsp;
-			<small class="darker-gray">Average score of all users to date: <strong><%= @scenario.group_average %>%</strong> </small>
-		</h3>
-		<br />
 		<div class="row">
-			<div class="span5">
-				Information Gathering:
-				<%= @breakdown['Information Gathering'][:correct] %>/<%= @breakdown['Information Gathering'][:possible] %>
-				points
+			<div class="span11">
+				<h3>
+					Your Score: <%= @average %>% &nbsp;
+					<small class="darker-gray">Average score of all users to date: <strong><%= @scenario.group_average %>%</strong> </small>
+				</h3>
+				<%
+					style = 'progress-danger'
+					style = 'progress-warning' if @average > 60
+					style = 'progress-success' if @average > 80
+				%>
+				<div class="progress <%= style %>">
+					<div class="bar" style="width: <%= @average %>%;"></div>
+				</div>
 			</div>
-			<div class="span5">
-				Decision Making:
-				<%= @breakdown['Decision Making'][:correct] %>/<%= @breakdown['Decision Making'][:possible] %>
-				points
-			</div>
+		</div>
+		
+		<div class="row">
+			<%= erb :progressbar, layout: false, locals: { label: 'Information Gathering', correct: @breakdown['Information Gathering'][:correct], possible: @breakdown['Information Gathering'][:possible] } %>			
+			<%= erb :progressbar, layout: false, locals: { offset: true, label: 'Decision Making', correct: @breakdown['Decision Making'][:correct], possible: @breakdown['Decision Making'][:possible] } %>
 		</div>
 		<br />
 		<a href="/ncmhce/scenarios/<%= params[:id] %>/restart" class="btn restart">Start Over</a> &nbsp; <a href="/ncmhce/scenarios" class="btn">New Scenario</a>
