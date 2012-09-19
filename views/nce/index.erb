@@ -8,48 +8,62 @@
 <div class="page-header">
 	<h1>
 		NCE Exams
-		<% unless @max_exams > 2 %>
-			<span style="float: right;"><a class="btn btn-success" href="/checkout/nce-upgrade">Buy 2 more practice exams for $60</a></span>
-		<% end %>
 	</h1>
 </div>
 
 <div class="row">
 	
 	<div class="span6">
+		<h2>NCE Pre-Assessment Exam</h2>
+		<p>This is a practice examination that has not been standardized. This examination is not constructed like the actual NCE. There are 25 questions for each of the eight areas, which is unlike the NCE. The purpose of this examination is to determine your strengths and weaknesses so that you can prioritize your study. See the introductory chapter for the actual number of questions for each area. Feedback from those who have taken this examination has indicated it is more difficult than the actual NCE. Thus, do not be too discouraged if you do not do well. If you take this examination before any study, and if you have been out of your college program for at least two years, the result may be disappointing. In all likelihood you can add approximately 16 points to your raw score and that may be close to where you would score today on the NCE.</p>
 		<h3>
-			NCE Pre-Assessment Exam
+			Pre-Assessment Exam
 			<% if previous_score = Average.first(user_id: session[:user], exam_id: 4) %>
 				<small class="darker-gray"><%= previous_score.score %>%</small>
 			<% end %>
 		</h3>
-		<p><a href="/nce/exams/4">Go to Pre-Assessment Exam</a></p>
+		<p><a href="/nce/exams/4" class="btn btn-mini btn-info">Go to Pre-Assessment Exam</a></p>
 	</div>
 
 	<div class="span6">
-		<h3>Practice Exam 1</h3>
+		
+		<h2>NCE Practice Exams</h2>
+		<p>These practice examinations are recently developed versions that are intended to represent the actual format and content of the NCE. Hopefully, these examinations will serve three purposes. The first is to expose you to many practice questions that are styled in a variety of forms to include scenario practice exercises. The second is to model a scoring system that will reflect the two sets of scores you will receive upon completing the NCE. The third is to give you practice in taking a 200-item examination. Even though these questions have been screened by professionals in the respective specialty areas, the questions have not been validated. This process is under way and soon will be completed. There always appear to be errors that have gone unnoticed by the reviewers and for this I apologize. If you should become aware of any detail, omission, lack of clarity, misleading material, or writing that is unclear, I would appreciate your feedback and helpful suggestions. Answers and explanations follow at the end of this examination. You may want to time yourself to see how long it takes you to complete 200 problems.</p>
+
+		<h3>Practice Exam 1
 		<% if previous_score = Average.first(user_id: session[:user], exam_id: 1) %>
 				<small class="darker-gray"><%= previous_score.score %>%</small>
 		<% end %>
-		<p><a href="/nce/exams/1">Go to Practice Exam 1</a></p>
-	</div>
-	<% if @max_exams > 2 %>
-		<div class="span6">
-			<h3>Practice Exam 2</h3>
+		</h3>
+		<p><a href="/nce/exams/1" class="btn btn-mini btn-info">Go to Practice Exam 1</a></p>
+		
+		
+		
+		<% unless @max_exams > 2 %>
+			<br />
+			<span><a class="btn btn-success" href="/checkout/nce-upgrade">Buy 2 more practice exams for $60</a></span>
+		<% end %>
+		
+
+
+		<% if @max_exams > 2 %>
+		
+			<h3>Practice Exam 2
 			<% if previous_score = Average.first(user_id: session[:user], exam_id: 2) %>
-					<smal class="darker-gray"l><%= previous_score.score %>%</small>
+					<small class="darker-gray"l><%= previous_score.score %>%</small>
 			<% end %>
-			<p><a href="/nce/exams/2">Go to Practice Exam 2</a></p>
-		</div>
+			</h3>
+			<p><a href="/nce/exams/2" class="btn btn-mini btn-info">Go to Practice Exam 2</a></p>
+		
 	
-		<div class="span6">
+		
 			<h3>
 				Practice Exam 3
 				<% if previous_score = Average.first(user_id: session[:user], exam_id: 3) %>
 					<small class="darker-gray"><%= previous_score.score %>%</small>
 				<% end %>
 			</h3>
-			<p><a href="/nce/exams/3">Go to Practice Exam 3</a></p>
+			<p><a href="/nce/exams/3" class="btn btn-mini btn-info">Go to Practice Exam 3</a></p>
 		</div>
 	<% end %>
 </div>

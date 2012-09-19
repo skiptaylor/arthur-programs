@@ -435,27 +435,36 @@ div#errors {
 
 
 div.flashcard {
-	width: 500px;
-	height: 300px;
-	padding: 32px;
-	background-color: red;
-	color: white;
-}
-
-div.flashcard.flipped {
-	height: 300px;
-	padding: 32px; 
-	border: 1px solid silver;
+	padding: 0 32px 24px 32px;
+		border: 1px solid silver;
 	-webkit-border-radius: 3px;
 		 -moz-border-radius: 3px;
 		 		  border-radius: 3px;
-	color: transparent;
-	width: 1%;
-	margin-left: 247px;
-	transform: skew (30deg,20deg);
--ms-transform: skew(30deg,20deg); /* IE 9 */
--webkit-transform: skew(30deg,20deg); /* Safari and Chrome */
--o-transform: skew(30deg,20deg); /* Opera */
--moz-transform: skew(30deg,20deg); /* Firefox */
+	@include box-shadow(0px, 0px, 7px, #b2b5bc);
+}
 
+div.flashcard:hover {
+	border: 1px solid #41ceff;
+	@include box-shadow(0px, 0px, 7px, #2f95b8);
+}
+
+div.flashcard h2	{
+	font-size: 2.4em;
+	color: #4c4c4c;
+	margin: 24px 0 12px 0;
+	padding: 0;
+}
+
+div.flashcard p	{
+	font-size: 1.1em;
+	line-height: 1.5em;
+	color: #4c4c4c;
+	margin: 14px 0 0 0;
+	padding: 0;
+	opacity: 0;
+	-webkit-transition: all 0.2s ease-in-out;
+}
+
+div.flashcard.flipped p {
+	opacity: 100;
 }

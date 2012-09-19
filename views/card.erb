@@ -9,61 +9,19 @@
 <hr />
 
 <div class="row">
-	<div class="span2">
-
-		<a href="/cards/random" class="btn btn-primary">Next Card</a>
-		
-	</div>
-	<div class="span6">
-	
-
-<script type="text/javascript">
-  var f2b = function(){
-    $("#card").flip({
-      direction: 'rl',
-      color: '#ffffff',
-      content: $('#back')
-    });
-  }
-
-  var b2f = function(){
-    $("#card").flip({
-      direction: 'rl',
-      color: '#ffffff',
-      content: $('#front')
-    });
-  }
-  $(document).ready(function(){
-    $("#flip1").live('click', f2b);
-    $("#flip2").live('click', b2f);
-    $("#flip2").trigger('click');
-  });
-</script>
-
-  <div class="card" id="card"></div>
-  
-  <div class="front" id="front">
-    <center><h2><%= @card.term %></h2></center>
-    
-  </div>
-  
-  <div class="back" id="back">
-    
-    <p style="font-size: 18px;"><%= markdown @card.definition %></p>
-  </div>
-  
-  <br />
-  
-  <a href="#" id="flip2" title="flip to front" class="btn btn-small">Front</a> &nbsp; 
-  
-  <a href="#" id="flip1" title="flip to back" class="btn btn-small">Back</a>
-  
-  
-  <br /><br />
-  
-  <div class="flashcard">
-  	<center><h2><%= @card.term %></h2></center>
-  </div>
-  
+	<div class="span12">
+		<div class="row">
+			<div class="span2">
+				<a href="/cards/random" class="btn btn-primary">Next Card</a>
+				<br /><br />
+			</div>
+			<div class="span8">
+		  	<div class="flashcard">
+			  	<center><h2><%= @card.term %></h2></center>
+			  	<hr style="margin: 0;" />
+			  	<p><%= markdown @card.definition %></p>
+			  </div>
+			</div>
+		</div>
 	</div>
 </div>
