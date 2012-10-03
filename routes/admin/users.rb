@@ -3,14 +3,7 @@ get '/admin/users/?' do
 	
 	@users = User.all
 	if params[:search] && !params[:search].nil?
-		if params[:search].include? '@'
-			@users = User.all(:email.like => "%#{params[:search]}%", limit: 100, order: [:updated_at.desc])
-		else
-			upcase 		 = User.all(:email.not => 'sample', :name.like => "%#{params[:search].upcase}%", limit: 100, order: [:updated_at.desc])
-			downcase 	 = User.all(:email.not => 'sample', :name.like => "%#{params[:search].downcase}%", limit: 100, order: [:updated_at.desc])
-			capitalize = User.all(:email.not => 'sample', :name.like => "%#{params[:search].capitalize}%", limit: 100, order: [:updated_at.desc])
-			@users = upcase | downcase | capitalize
-		end
+		@users = User.all(conditions: ["email ILIKE ? or name ILIKE ?", "%#{params[:search].strip}%", "%#{params[:search].strip}%"])
 	else
 		@users = User.all(:email.not => 'sample', order: [:updated_at.desc], limit: 100)
 	end
