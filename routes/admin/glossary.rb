@@ -14,7 +14,8 @@ post '/admin/glossary/new/?' do
 	admin!
 	Glossary.create(
 		term: params[:term],
-		definition: params[:definition]
+		definition: params[:definition],
+		chapter: params[:chapter]
 	)
 	session[:alert] = {
 		style: 'alert-success',
@@ -34,7 +35,8 @@ post '/admin/glossary/:id/?' do
 	@term = Glossary.first term: params[:id]
 	@term.update(
 		term: params[:term],
-		definition: params[:definition]
+		definition: params[:definition],
+		chapter: params[:chapter]
 	)
 	session[:alert] = {
 		style: 'alert-success',

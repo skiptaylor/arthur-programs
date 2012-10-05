@@ -1,3 +1,15 @@
+<%
+	chapters = []
+	Glossary.all.group_by(&:chapter).each {|chapter, term| chapters << chapter if chapter}
+%>
+
+<script>
+	$(document).ready(function() {
+		var chapters = <%= chapters.to_json %>;
+		$('#chapter').typeahead( { source: chapters } );
+	});
+</script>
+
 <div class="row">
 
 	<div class="span3">
@@ -26,6 +38,13 @@
 				<label class="control-label" for="definition">Definition</label>
 				<div class="controls">
 					<textarea name="definition" id="definition" class="input-xlarge" rows="7"><%= @term.definition %></textarea>
+				</div>
+			</div>
+
+			<div class="control-group" id="chapter-group">
+				<label class="control-label" for="chapter">Chapter</label>
+				<div class="controls">
+					<input type="text" class="input-xlarge" id="chapter" name="chapter" value="<%= @term.chapter %>">
 				</div>
 			</div>
 

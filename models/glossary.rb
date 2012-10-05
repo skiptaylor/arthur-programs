@@ -7,5 +7,6 @@ class Glossary
 
 	property 	 :term,    	  Text
 	property   :definition, Text
+	property   :chapter, 		String
 	
 end
