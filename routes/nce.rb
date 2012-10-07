@@ -38,6 +38,9 @@ get '/nce/exams/:id/?' do
 	Score.all(user_id: session[:user], exam_id: params[:id]).each {|s| @scores << s.answer_id }
 	@exam = Exam.get params[:id]
 	@questions = @exam.questions(:order => :position)
+	if params[:group]
+		@questions = @questions.all(score_type: params[:group])
+	end
 	@answers = @questions.answers(:order => :body)
 	erb :'nce/exam'
 end

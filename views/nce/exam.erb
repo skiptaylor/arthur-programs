@@ -9,7 +9,13 @@
 <div class="page-header">
 	<h1>
 		<%= @exam.title %>
-		<small class="darker-gray">Part <span id="set-label">1</span> of 10</small>
+		<small class="darker-gray">
+			<% if params[:group] %>
+				<%= params[:group] %>
+			<% else %>
+				Part <span id="set-label">1</span> of 10
+			<% end %>
+		</small>
 	</h1>
 </div>
 
@@ -62,16 +68,34 @@
 <% @questions.each do |question| %>
 	<% notes = nil %>
 
-	<%= '<div class="set" id="set-1">'  if question.position == 1 %>
-	<%= '<div class="set" id="set-2" style="display: none;">'  if question.position == 21 %>
-	<%= '<div class="set" id="set-3" style="display: none;">'  if question.position == 41 %>
-	<%= '<div class="set" id="set-4" style="display: none;">'  if question.position == 61 %>
-	<%= '<div class="set" id="set-5" style="display: none;">'  if question.position == 81 %>
-	<%= '<div class="set" id="set-6" style="display: none;">'  if question.position == 101 %>
-	<%= '<div class="set" id="set-7" style="display: none;">'  if question.position == 121 %>
-	<%= '<div class="set" id="set-8" style="display: none;">'  if question.position == 141 %>
-	<%= '<div class="set" id="set-9" style="display: none;">'  if question.position == 161 %>
-	<%= '<div class="set" id="set-10" style="display: none;">' if question.position == 181 %>
+	<%=
+		if params[:group]
+			puts '<div>'
+		else
+			case question.position
+			when 1
+				'<div class="set" id="set-1">'
+			when 21
+				'<div class="set" id="set-2" style="display: none;">'
+			when 41
+				'<div class="set" id="set-3" style="display: none;">'
+			when 61
+				'<div class="set" id="set-4" style="display: none;">'
+			when 81
+				'<div class="set" id="set-5" style="display: none;">'
+			when 101
+				'<div class="set" id="set-6" style="display: none;">'
+			when 121
+				'<div class="set" id="set-7" style="display: none;">'
+			when 141
+				'<div class="set" id="set-8" style="display: none;">'
+			when 161
+				'<div class="set" id="set-9" style="display: none;">'
+			when 181
+				'<div class="set" id="set-10" style="display: none;">'
+			end
+		end
+	%>
 	
 	<%
 		read = false
@@ -110,24 +134,32 @@
 	<%= "<blockquote><p>#{notes}</p></blockquote>" if notes %>	
 	
 	<hr />
-	<%= '</div>' if [20, 40, 60, 80, 100, 120, 140, 160, 180, 200].include? question.position %>
+	<%= '</div>' if ([20, 40, 60, 80, 100, 120, 140, 160, 180, 200].include? question.position) && !params[:group] %>
 
 <% end %>
 
-<div class="pagination pagination-centered">
-	<ul>
-		<li class="active"><a class="set-link" href="#part1">1</a></li>
-		<li><a class="set-link" href="#part2">2</a></li>
-		<li><a class="set-link" href="#part3">3</a></li>
-		<li><a class="set-link" href="#part4">4</a></li>
-		<li><a class="set-link" href="#part5">5</a></li>
-		<li><a class="set-link" href="#part6">6</a></li>
-		<li><a class="set-link" href="#part7">7</a></li>
-		<li><a class="set-link" href="#part8">8</a></li>
-		<li><a class="set-link" href="#part9">9</a></li>
-		<li><a class="set-link" href="#part10">10</a></li>
-		<% unless @average %>
-			<li><a href="/nce/exams/<%= @exam.id %>/score" id="score-link">Show Score</a></li>
-		<% end %>
-	</ul>
-</div>
+<% if params[:group] %>
+	</div>
+	
+	<p style="text-align: center;">
+		<a href="/nce/exams/<%= @exam.id %>/score" class="btn btn-primary">Show Score</a>
+	</p>
+<% else %>
+	<div class="pagination pagination-centered">
+		<ul>
+			<li class="active"><a class="set-link" href="#part1">1</a></li>
+			<li><a class="set-link" href="#part2">2</a></li>
+			<li><a class="set-link" href="#part3">3</a></li>
+			<li><a class="set-link" href="#part4">4</a></li>
+			<li><a class="set-link" href="#part5">5</a></li>
+			<li><a class="set-link" href="#part6">6</a></li>
+			<li><a class="set-link" href="#part7">7</a></li>
+			<li><a class="set-link" href="#part8">8</a></li>
+			<li><a class="set-link" href="#part9">9</a></li>
+			<li><a class="set-link" href="#part10">10</a></li>
+			<% unless @average %>
+				<li><a href="/nce/exams/<%= @exam.id %>/score" id="score-link">Show Score</a></li>
+			<% end %>
+		</ul>
+	</div>
+<% end %>

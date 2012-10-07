@@ -22,7 +22,9 @@
 				<small class="darker-gray"><%= previous_score.score %>%</small>
 			<% end %>
 		</h3>
-		<p><a href="/nce/exams/4" class="btn btn-mini btn-info">Go to Pre-Assessment Exam</a></p>
+		<p>
+			<a href="/nce/exams/4" class="btn btn-info btn-mini">Go to Pre-Assessment Exam</a>
+		</p>
 	</div>
 
 	<div class="span6">
@@ -35,7 +37,25 @@
 				<small class="darker-gray"><%= previous_score.score %>%</small>
 		<% end %>
 		</h3>
-		<p><a href="/nce/exams/1" class="btn btn-mini btn-info">Go to Practice Exam 1</a></p>
+		<div class="btn-group">
+			<a href="/nce/exams/1" class="btn btn-info btn-mini">Go to Practive Exam 1</a>
+			<button class="btn btn-info dropdown-toggle btn-mini" data-toggle="dropdown">
+				<span class="caret"></span>
+			</button>
+			<ul class="dropdown-menu">
+				<li><a href="/nce/exams/4">Take the full exam</a></li>
+				<li class="divider"></li>
+				<li><a href="/nce/exams/1?group=Professional%20Orientation">Professional Orientation</a></li>
+				<li><a href="/nce/exams/1?group=Research%20and%20Program%20Evaluation">Research and Program Evaluation</a></li>
+				<li><a href="/nce/exams/1?group=Appraisal">Appraisal</a></li>
+				<li><a href="/nce/exams/1?group=Lifestyle%20and%20Career%20Development">Lifestyle and Career Development</a></li>
+				<li><a href="/nce/exams/1?group=Helping%20Relationships">Helping Relationships</a></li>
+				<li><a href="/nce/exams/1?group=Group%20Counseling">Group Counseling</a></li>
+				<li><a href="/nce/exams/1?group=Human%20Growth%20and%20Development">Human Growth and Development</a></li>
+				<li><a href="/nce/exams/1?group=Social%20and%20Cultural%20Foundations">Social and Cultural Foundations</a></li>
+			</ul>
+		</div>
+
 		
 		
 		
@@ -53,7 +73,25 @@
 					<small class="darker-gray"l><%= previous_score.score %>%</small>
 			<% end %>
 			</h3>
-			<p><a href="/nce/exams/2" class="btn btn-mini btn-info">Go to Practice Exam 2</a></p>
+			<div class="btn-group">
+			<a href="/nce/exams/2" class="btn btn-info btn-mini">Go to Practive Exam 2</a>
+			<button class="btn btn-info dropdown-toggle btn-mini" data-toggle="dropdown">
+				<span class="caret"></span>
+			</button>
+			<ul class="dropdown-menu">
+				<li><a href="/nce/exams/4">Take the full exam</a></li>
+				<li class="divider"></li>
+				<li><a href="/nce/exams/2?group=Professional%20Orientation">Professional Orientation</a></li>
+				<li><a href="/nce/exams/2?group=Research%20and%20Program%20Evaluation">Research and Program Evaluation</a></li>
+				<li><a href="/nce/exams/2?group=Appraisal">Appraisal</a></li>
+				<li><a href="/nce/exams/2?group=Lifestyle%20and%20Career%20Development">Lifestyle and Career Development</a></li>
+				<li><a href="/nce/exams/2?group=Helping%20Relationships">Helping Relationships</a></li>
+				<li><a href="/nce/exams/2?group=Group%20Counseling">Group Counseling</a></li>
+				<li><a href="/nce/exams/2?group=Human%20Growth%20and%20Development">Human Growth and Development</a></li>
+				<li><a href="/nce/exams/2?group=Social%20and%20Cultural%20Foundations">Social and Cultural Foundations</a></li>
+			</ul>
+		</div>
+
 		
 	
 		
@@ -63,7 +101,25 @@
 					<small class="darker-gray"><%= previous_score.score %>%</small>
 				<% end %>
 			</h3>
-			<p><a href="/nce/exams/3" class="btn btn-mini btn-info">Go to Practice Exam 3</a></p>
+			<div class="btn-group">
+			<a href="/nce/exams/3" class="btn btn-info btn-mini">Go to Practive Exam 3</a>
+			<button class="btn btn-info dropdown-toggle btn-mini" data-toggle="dropdown">
+				<span class="caret"></span>
+			</button>
+			<ul class="dropdown-menu">
+				<li><a href="/nce/exams/4">Take the full exam</a></li>
+				<li class="divider"></li>
+				<li><a href="/nce/exams/3?group=Professional%20Orientation">Professional Orientation</a></li>
+				<li><a href="/nce/exams/3?group=Research%20and%20Program%20Evaluation">Research and Program Evaluation</a></li>
+				<li><a href="/nce/exams/3?group=Appraisal">Appraisal</a></li>
+				<li><a href="/nce/exams/3?group=Lifestyle%20and%20Career%20Development">Lifestyle and Career Development</a></li>
+				<li><a href="/nce/exams/3?group=Helping%20Relationships">Helping Relationships</a></li>
+				<li><a href="/nce/exams/3?group=Group%20Counseling">Group Counseling</a></li>
+				<li><a href="/nce/exams/3?group=Human%20Growth%20and%20Development">Human Growth and Development</a></li>
+				<li><a href="/nce/exams/3?group=Social%20and%20Cultural%20Foundations">Social and Cultural Foundations</a></li>
+			</ul>
+		</div>
+
 		</div>
 	<% end %>
 </div>
