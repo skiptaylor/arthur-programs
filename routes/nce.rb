@@ -80,6 +80,10 @@ get '/nce/exams/:id/score/?' do
 	scores.each do |s|
 		@breakdown[s.score_type][:correct]  += 1 if s.required?
 	end
+	
+	if params[:group]
+		@questions = @questions.all(score_type: params[:group])
+	end
 
 	erb :'nce/exam'
 end

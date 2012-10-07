@@ -10,10 +10,14 @@
 	<h1>
 		<%= @exam.title %>
 		<small class="darker-gray">
-			<% if params[:group] %>
-				<%= params[:group] %>
+			<% if request.path_info.include? 'score' %>
+				Score
 			<% else %>
-				Part <span id="set-label">1</span> of 10
+				<% if params[:group] %>
+					<%= params[:group] %>
+				<% else %>
+					Part <span id="set-label">1</span> of 10
+				<% end %>
 			<% end %>
 		</small>
 	</h1>
@@ -21,37 +25,41 @@
 
 <% if @average %>
 	<div class="well">
-		<div class="row">
-			<div class="span11">
-				<h3>
-					Your Score: <%= @average %>% &nbsp;
-					<% if @exam.group_average %>
-						<small class="darker-gray">Average score of all users to date: <strong><%= @exam.group_average %>%</strong></small>
-					<% end %>
-				</h3>
-				<%
-					style = 'progress-danger'
-					style = 'progress-warning' if @average > 60
-					style = 'progress-success' if @average > 80
-				%>
-				<div class="progress <%= style %>">
-					<div class="bar" style="width: <%= @average %>%;"></div>
+		<% unless params[:group] %>
+			<div class="row">
+				<div class="span11">
+					<h3>
+						Your Score: <%= @average %>% &nbsp;
+						<% if @exam.group_average %>
+							<small class="darker-gray">Average score of all users to date: <strong><%= @exam.group_average %>%</strong></small>
+						<% end %>
+					</h3>
+					<%
+						style = 'progress-danger'
+						style = 'progress-warning' if @average > 60
+						style = 'progress-success' if @average > 80
+					%>
+					<div class="progress <%= style %>">
+						<div class="bar" style="width: <%= @average %>%;"></div>
+					</div>
 				</div>
 			</div>
-		</div>
+		<% end %>
 
-		<div class="row">			
-			<%= erb :progressbar, layout: false, locals: { label: 'Professional Orientation', correct: @breakdown['Professional Orientation'][:correct], possible: @breakdown['Professional Orientation'][:possible] } %>			
-			<%= erb :progressbar, layout: false, locals: { offset: true, label: 'Research and Program Evaluation', correct: @breakdown['Research and Program Evaluation'][:correct], possible: @breakdown['Research and Program Evaluation'][:possible] } %>			
+		<div class="row">
+			<% params[:group] ? offset ||= true : offset ||= false %>
+		
+			<%= erb(:progressbar, layout: false, locals: { label: 'Professional Orientation', correct: @breakdown['Professional Orientation'][:correct], possible: @breakdown['Professional Orientation'][:possible] }) if (params[:group] == 'Professional Orientation') || !params[:group] %>
+			<%= erb(:progressbar, layout: false, locals: { offset: offset, label: 'Research and Program Evaluation', correct: @breakdown['Research and Program Evaluation'][:correct], possible: @breakdown['Research and Program Evaluation'][:possible] }) if (params[:group] == 'Research and Program Evaluation') || !params[:group] %>
 
-			<%= erb :progressbar, layout: false, locals: { label: 'Appraisal', correct: @breakdown['Appraisal'][:correct], possible: @breakdown['Appraisal'][:possible] } %>			
-			<%= erb :progressbar, layout: false, locals: { offset: true, label: 'Lifestyle and Career Development', correct: @breakdown['Lifestyle and Career Development'][:correct], possible: @breakdown['Lifestyle and Career Development'][:possible] } %>			
+			<%= erb(:progressbar, layout: false, locals: { label: 'Appraisal', correct: @breakdown['Appraisal'][:correct], possible: @breakdown['Appraisal'][:possible] }) if (params[:group] == 'Appraisal') || !params[:group] %>
+			<%= erb(:progressbar, layout: false, locals: { offset: offset, label: 'Lifestyle and Career Development', correct: @breakdown['Lifestyle and Career Development'][:correct], possible: @breakdown['Lifestyle and Career Development'][:possible] }) if (params[:group] == 'Lifestyle and Career Development') || !params[:group] %>
 
-			<%= erb :progressbar, layout: false, locals: { label: 'Helping Relationships', correct: @breakdown['Helping Relationships'][:correct], possible: @breakdown['Helping Relationships'][:possible] } %>			
-			<%= erb :progressbar, layout: false, locals: { offset: true, label: 'Group Counseling', correct: @breakdown['Group Counseling'][:correct], possible: @breakdown['Group Counseling'][:possible] } %>						
+			<%= erb(:progressbar, layout: false, locals: { label: 'Helping Relationships', correct: @breakdown['Helping Relationships'][:correct], possible: @breakdown['Helping Relationships'][:possible] }) if (params[:group] == 'Helping Relationships') || !params[:group] %>
+			<%= erb(:progressbar, layout: false, locals: { offset: offset, label: 'Group Counseling', correct: @breakdown['Group Counseling'][:correct], possible: @breakdown['Group Counseling'][:possible] }) if (params[:group] == 'Group Counseling') || !params[:group] %>
 
-			<%= erb :progressbar, layout: false, locals: { label: 'Human Growth and Development', correct: @breakdown['Human Growth and Development'][:correct], possible: @breakdown['Human Growth and Development'][:possible] } %>			
-			<%= erb :progressbar, layout: false, locals: { offset: true, label: 'Social and Cultural Foundations', correct: @breakdown['Social and Cultural Foundations'][:correct], possible: @breakdown['Social and Cultural Foundations'][:possible] } %>			
+			<%= erb(:progressbar, layout: false, locals: { label: 'Human Growth and Development', correct: @breakdown['Human Growth and Development'][:correct], possible: @breakdown['Human Growth and Development'][:possible] }) if (params[:group] == 'Human Growth and Development') || !params[:group] %>
+			<%= erb(:progressbar, layout: false, locals: { offset: offset, label: 'Social and Cultural Foundations', correct: @breakdown['Social and Cultural Foundations'][:correct], possible: @breakdown['Social and Cultural Foundations'][:possible] }) if (params[:group] == 'Social and Cultural Foundations') || !params[:group] %>
 		</div>
 		<br />
 		<a href="/nce/exams/<%= params[:id] %>/restart" class="btn restart">Start Over</a> &nbsp; <a href="/nce/exams" class="btn">Exams</a>
@@ -142,7 +150,7 @@
 	</div>
 	
 	<p style="text-align: center;">
-		<a href="/nce/exams/<%= @exam.id %>/score" class="btn btn-primary">Show Score</a>
+		<a href="/nce/exams/<%= @exam.id %>/score?group=<%= params[:group] %>" class="btn btn-primary">Show Score</a>
 	</p>
 <% else %>
 	<div class="pagination pagination-centered">
