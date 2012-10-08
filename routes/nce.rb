@@ -14,6 +14,29 @@ get '/nce/exams/?' do
 	erb :'nce/index'
 end
 
+get '/nce/guide/:id/:group/?' do
+	authorize!
+	
+	max_exams = User.get(session[:user]).max_exams
+	
+	if (params[:id] == '1') || (params[:id] == '4')
+		unless max_exams >= 2
+			session[:alert] = { message: "You haven't purchased that exam." }
+			redirect '/nce'
+		end
+	else
+		unless max_exams >= 4
+			session[:alert] = { message: "You haven't purchased that exam." }
+			redirect '/nce'
+		end
+	end
+
+	@exam = Exam.get params[:id]
+	@questions = @exam.questions(:order => :position, score_type: params[:group])
+	@answers = @questions.answers(:order => :body)
+	erb :'nce/guide'
+end
+
 get '/nce/exams/:id/?' do
 	authorize!
 	
