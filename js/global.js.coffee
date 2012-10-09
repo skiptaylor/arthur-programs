@@ -13,6 +13,3 @@ jQuery ->
 			window.location = $(this).attr('data-url')
 	
 	$('a#reset-password').click -> $('a#reset-password').attr 'href', "/reset-password/#{$('input#email').val()}"
-	
-	$('div.flashcard, div.tap').click ->
-		$('div.flashcard').toggleClass('flipped')

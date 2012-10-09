@@ -1,32 +1,45 @@
+<script src="/js/cards.js"></script>
+
 <div class="row">
 	<div class="span12">
 		<h1>
 			NCMHCE Flash Cards
+			<small><%= params[:chapter] %></small>
 		</h1>	
 	</div>
 </div>
 
 <hr />
 
-<div class="row">
-	<div class="span12">
-		<div class="row">
-			<div class="span2">
-				<a href="/cards/random" class="btn btn-primary">Next Card</a>
-				<br /><br />
-			</div>
-			<div class="span8">
-		  	<div class="flashcard">
-			  	<center><h2><%= @card.term %></h2></center>
-			  	<hr style="margin: 0;" />
-			  	<p><%= markdown @card.definition %></p>
-			  </div>
-			</div>
-			<div class="span2">
-				<br /><br />
-				<div class="tap"><img src="/img/click.png" class="visible-desktop" /></div>
-				<div class="tap"><img src="/img/tap.png" class="visible-tablet" /></div>
+<% @cards.each_with_index do |card, i| %>
+
+	<div class="row current-card" style="<%= hidden unless i == 0 %>">
+		<div class="span12">
+			<div class="row">
+				<div class="span2">
+					<a href="#" class="btn btn-primary next">Next Card</a>
+					<br /><br />
+				</div>
+				<div class="span8">
+			  	<div class="flashcard">
+				  	<center><h2><%= card.term %></h2></center>
+				  	<hr style="margin: 0;" />
+				  	<p><%= markdown card.definition %></p>
+				  </div>
+				</div>
+				<div class="span2">
+					<br /><br />
+					<div class="tap"><img src="/img/click.png" class="visible-desktop" /></div>
+					<div class="tap"><img src="/img/tap.png" class="visible-tablet" /></div>
+				</div>
 			</div>
 		</div>
+	</div>
+
+<% end %>
+
+<div class="row current-card" style="display: none;">
+	<div class="span6 offset3">
+		<p>No more cards</p>
 	</div>
 </div>
