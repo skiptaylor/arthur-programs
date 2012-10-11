@@ -1,4 +1,4 @@
-jQuery ->
+$(window).load ->
 	
 	$('input[type=radio]').click ->
 		self = $(this)
