@@ -1,4 +1,4 @@
-jQuery ->
+$(window).load ->
 
 	$('input[type=radio]').click ->
 		question = $("div#question-#{$(this).attr('name')}")
