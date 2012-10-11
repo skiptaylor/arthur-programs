@@ -8,7 +8,7 @@ jQuery ->
 			{ answer: id },
 			(data) ->
 				self.parent('label').parent('div').parent('div').parent('form').prev('p').removeClass('unread')
-				show_submit()
+				#show_submit()
 		)
 	
 	$('a.restart').click -> return false unless confirm 'This will reset your score! Continue?'
