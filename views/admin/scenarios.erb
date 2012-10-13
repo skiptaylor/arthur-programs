@@ -16,6 +16,7 @@
 					<th></th>
 					<th>Title</th>
 					<th></th>
+					<th></th>
 				</tr>
 			</thead>
 			<tbody>
@@ -23,6 +24,14 @@
 				<tr>
 					<td><%= scenario.id %></td>
 					<td><%= scenario.title %></td>
+					<td>
+						<% if scenario.active? %>
+							<span class="label label-success">Active</span>
+						<% end %>
+						<% if scenario.workshop? %>
+							<span class="label label-info">Workshop</span>
+						<% end %>
+					</td>
 					<td style="text-align: right;"><a href="/admin/scenarios/<%= scenario.id %>">Edit</a></td>
 				</tr>
 				<% end %>

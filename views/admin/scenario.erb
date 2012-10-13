@@ -40,6 +40,11 @@
 											<input type="checkbox" name="sample" <%= 'checked' if @scenario.sample? %> /> Sample
 										</label>
 									</div>
+									<div class="span2">
+										<label class="checkbox">
+											<input type="checkbox" name="workshop" <%= 'checked' if @scenario.workshop? %> /> Workshop
+										</label>
+									</div>
 								</div>
 							</fieldset>
 						</form>
@@ -179,7 +184,7 @@
 					<%= answer.body %>
 					<strong>(<%= answer.value %>)</strong>
 					<%= '<i class="icon-ok"></i>' if answer.required? %>
-					<%= ((answer.scores.count.to_f/scores_total)*100).to_i %>%
+					<%= ((answer.scores.count.to_f/scores_total)*100).to_i if answer.scores.count > 0 %>%
 					<blockquote><%= markdown answer.response %></blockquote>
 							
 					<div class="modal fade" id="edit-answer-<%= answer.id %>" style="display: none;">
