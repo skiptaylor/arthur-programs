@@ -42,7 +42,11 @@ class User
 	end
 
 	def remaining_scenarios
-		self.max_scenarios - Use.all(user_id: self.id, :scenario_id.not => nil, :sample => false).count
+		used = 0
+		Use.all(user_id: self.id, :scenario_id.not => nil, :sample => false).each do |use|
+			used = used + 1 unless use.scenario.workshop?
+		end
+		self.max_scenarios - used
 	end
 
 	def remove

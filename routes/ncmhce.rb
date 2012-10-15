@@ -19,7 +19,7 @@ end
 get '/ncmhce/scenarios/?' do
 	authorize!
 	@max_scenarios = User.get(session[:user]).max_scenarios
-	@scenarios = Scenario.all order: :id, active: true
+	@scenarios = Scenario.all order: :id, active: true, workshop: false
 	@averages = Average.all(:user_id => session[:user], :scenario_id.not => nil)
 	@remaining_scenarios = User.get(session[:user]).remaining_scenarios
 	@uses = []
@@ -36,7 +36,7 @@ get '/ncmhce/scenarios/:id/?' do
 		authorize!
 	end
 	
-	unless @scenario.sample?
+	unless @scenario.sample? || @scenario.workshop?
 		if User.get(session[:user]).remaining_scenarios == 0
 			unless Use.all(user_id: session[:user], scenario_id: params[:id]).count > 0
 				session[:alert] = { message: "Please purchase more scenarios to continue." }
