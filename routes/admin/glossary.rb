@@ -15,6 +15,7 @@ post '/admin/glossary/new/?' do
 	Glossary.create(
 		term: params[:term],
 		definition: params[:definition],
+		exam: params[:exam],
 		chapter: params[:chapter]
 	)
 	session[:alert] = {
@@ -36,6 +37,7 @@ post '/admin/glossary/:id/?' do
 	@term.update(
 		term: params[:term],
 		definition: params[:definition],
+		exam: params[:exam],
 		chapter: params[:chapter]
 	)
 	session[:alert] = {

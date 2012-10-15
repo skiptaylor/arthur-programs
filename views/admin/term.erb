@@ -40,6 +40,17 @@
 					<textarea name="definition" id="definition" class="input-xlarge" rows="7"><%= @term.definition %></textarea>
 				</div>
 			</div>
+			
+			<div class="control-group" id="exam-group">
+				<label class="control-label" for="exam">Exam</label>
+				<div class="controls">
+					<select id="exam" name="exam">
+						<option value=""></option>
+						<option value="NCE" <%= 'selected' if @term.exam == 'NCE' %>>NCE</option>
+						<option value="NCMHCE" <%= 'selected' if @term.exam == 'NCMHCE' %>>NCMHCE</option>
+					</select>
+				</div>
+			</div>
 
 			<div class="control-group" id="chapter-group">
 				<label class="control-label" for="chapter">Chapter</label>
