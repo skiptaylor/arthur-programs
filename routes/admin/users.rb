@@ -61,6 +61,8 @@ post '/admin/users/new/?' do
 	user.update(ncmhce_downloads: true) if params[:ncmhce_downloads]
 	user.update(nce_downloads: true) if params[:nce_downloads]
 
+	user.update(workshop_scenarios: true) if params[:workshop_scenarios]
+
   puts 'Setting session and redirecting'
 	session[:alert] = { style: 'alert-success', message: "#{user.name} has been created." }
 	redirect "/admin/users/#{user.id}"
@@ -124,6 +126,8 @@ post '/admin/users/:id/?' do
 	params[:admin] ? user.update(admin: true) : user.update(admin: false)
 	params[:ncmhce_downloads] ? user.update(ncmhce_downloads: true) : user.update(ncmhce_downloads: false)
 	params[:nce_downloads] ? user.update(nce_downloads: true) : user.update(nce_downloads: false)
+	
+	params[:workshop_scenarios] ? user.update(workshop_scenarios: true) : user.update(workshop_scenarios: false)
 	
 	session[:alert] = { style: 'alert-success', message: "#{user.name} has been updated." }
 	redirect "/admin/users/#{user.id}"
