@@ -16,29 +16,31 @@
 		
 		<h1>Terms</h1>
 
-		<hr style="border-top: 1px solid silver;" />
-
-		<% @glossary.each do |glossary| %>
-			<div class="row">
-			
-				<div class="span2">
-					<strong><%= glossary.term %></strong>
-					<br />
-					<%= glossary.chapter %>
-				</div>
-				<div class="span5">
-					<%= markdown glossary.definition %>
-				</div>
-				<div class="span2">
-					<div class="btn-group" style="float: right;">
-						<a href="/admin/glossary/<%= glossary.term %>" class="btn btn-info btn-mini"><i class="icon-edit icon-white"></i></a>
-						<a class="btn btn-mini btn-danger" href="/admin/glossary/<%= glossary.term %>/delete"><i class="icon-remove icon-white"></i></a>
-					</div>
-				</div>
-				
+		<% @glossary.sort_by{|g| g.chapter}.group_by(&:chapter).each do |chapter, terms| %>
+			<div class="page-header">
+				<h3><%= chapter %></h3>
 			</div>
 
-			<hr style="border-top: 1px solid silver;" />
+			<% terms.sort!{|a,b| a.term <=> b.term}.each do |glossary| %>
+				<div class="row">
+				
+					<div class="span2">
+						<strong><%= glossary.term %></strong>
+						<br />
+						<%= glossary.chapter %>
+					</div>
+					<div class="span5">
+						<%= markdown glossary.definition %>
+					</div>
+					<div class="span2">
+						<div class="btn-group" style="float: right;">
+							<a href="/admin/glossary/<%= glossary.term %>" class="btn btn-info btn-mini"><i class="icon-edit icon-white"></i></a>
+							<a class="btn btn-mini btn-danger" href="/admin/glossary/<%= glossary.term %>/delete"><i class="icon-remove icon-white"></i></a>
+						</div>
+					</div>
+					
+				</div>
+			<% end %>
 		<% end %>
 
 	</div>

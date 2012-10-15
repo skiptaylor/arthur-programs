@@ -1,6 +1,24 @@
-get '/admin/glossary/?' do
+get '/admin/glossary/other?' do
 	admin!
-	@glossary = Glossary.all(order: :term)
+	n = Glossary.all(exam: nil)
+	s = Glossary.all(exam: '')
+	@glossary = n | s
+	@glossary.uniq!
+	@glossary.each do |g|
+		g.chapter = '' if g.chapter.nil?
+	end
+	erb :'admin/glossary'
+end
+
+get '/admin/glossary/ncmhce?' do
+	admin!
+	@glossary = Glossary.all(order: :term, exam: 'NCMHCE')
+	erb :'admin/glossary'
+end
+
+get '/admin/glossary/nce?' do
+	admin!
+	@glossary = Glossary.all(order: :term, exam: 'NCE')
 	erb :'admin/glossary'
 end
 
@@ -22,7 +40,8 @@ post '/admin/glossary/new/?' do
 		style: 'alert-success',
 		message: "#{params[:term]} has been created."
 	}
-	redirect '/admin/glossary'
+	params[:exam] = 'other' if params[:exam].empty?
+	redirect "/admin/glossary/#{params[:exam].downcase}"
 end
 
 get '/admin/glossary/:id/?' do
@@ -44,7 +63,8 @@ post '/admin/glossary/:id/?' do
 		style: 'alert-success',
 		message: "#{params[:term]} has been updated."
 	}
-	redirect '/admin/glossary'
+	params[:exam] = 'other' if params[:exam].empty?
+	redirect "/admin/glossary/#{params[:exam].downcase}"
 end
 
 get '/admin/glossary/:id/delete/?' do
@@ -55,5 +75,5 @@ get '/admin/glossary/:id/delete/?' do
 		style: 'alert-success',
 		message: "#{params[:id]} has been removed."
 	}
-	redirect '/admin/glossary'
+	redirect request.referrer
 end

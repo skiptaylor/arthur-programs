@@ -5,8 +5,8 @@ class Glossary
 	property   :deleted_at, ParanoidDateTime
 	timestamps :at
 
-	property 	 :term,    	  Text
-	property   :definition, Text
+	property 	 :term,    	  Text, lazy: false
+	property   :definition, Text, lazy: false
 	property	 :exam,				String
 	property   :chapter, 		String
 	
