@@ -47,13 +47,15 @@
 
 	<div class="span9">
 	
-	<div class="alert alert-info">
-		<h4 class='alert-heading'>Admin Preview</h4>
-		<br />
-		<ul>
-			<li><a href="/cards">Flash Cards</a></li>
-		</ul>
-	</div>
+	<% if @user.admin? %>
+		<div class="alert alert-info">
+			<h4 class='alert-heading'>Admin Preview</h4>
+			<br />
+			<ul>
+				<li><a href="/cards">Flash Cards</a></li>
+			</ul>
+		</div>
+	<% end %>
 
 	<% if @user.max_exams > 0 %>
 		
