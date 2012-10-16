@@ -5,7 +5,8 @@
 		<h1>
 			<%= params[:exam] %> Flash Cards
 			<small><%= params[:chapter] %></small>
-		</h1>	
+
+		</h1>
 	</div>
 </div>
 
@@ -17,8 +18,9 @@
 		<div class="span12">
 			<div class="row">
 				<div class="span2">
-					<a href="#" class="btn btn-primary next">Next Card</a>
 					<br /><br />
+					<a href="#" class="last pull-right"><img src="/img/arrow-left.png" /></a>
+					
 				</div>
 				<div class="span8">
 			  	<div class="flashcard">
@@ -26,11 +28,16 @@
 				  	<hr style="margin: 0;" />
 				  	<p><%= markdown card.definition %></p>
 				  </div>
+				 <br />
+				  <p style="text-align: center;"><a href="" class="btn btn-mini pull-left">Start over</a>
+				  <img src="/img/arrow-reveal.png" />
+				  <a href="/nce/glossary" class="btn btn-mini pull-right">Glossary</a>
+				  </p>
 				</div>
 				<div class="span2">
 					<br /><br />
-					<div class="tap"><img src="/img/click.png" class="visible-desktop" /></div>
-					<div class="tap"><img src="/img/tap.png" class="visible-tablet" /></div>
+					<a href="#" class="next"><img src="/img/arrow-right.png" /></a>
+				
 				</div>
 			</div>
 		</div>
@@ -40,6 +47,8 @@
 
 <div class="row current-card" style="display: none;">
 	<div class="span6 offset3">
-		<p>No more cards</p>
+		<h4 style="text-align: center;">No more cards</h4><br /><br />
+		<a href="" class="btn btn-mini">Start over</a>
+		<a href="/nce/glossary" class="btn btn-mini pull-right">Glossary</a>
 	</div>
 </div>
