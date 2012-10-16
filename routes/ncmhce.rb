@@ -7,6 +7,12 @@ get '/ncmhce/?' do
 	erb :ncmhce
 end
 
+get '/ncmhce/glossary/?' do
+	@exam = 'NCMHCE'
+	@glossary = Glossary.all(exam: 'NCMHCE')
+	erb :'cards'
+end
+
 get '/ncmhce/sample/?' do
 	unless session[:user]
 		user = User.create(email: 'sample', password: 'sample')

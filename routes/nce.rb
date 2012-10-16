@@ -7,6 +7,12 @@ get '/nce/?' do
 	erb :nce
 end
 
+get '/nce/glossary/?' do
+	@exam = 'NCE'
+	@glossary = Glossary.all(exam: 'NCE')
+	erb :'cards'
+end
+
 get '/nce/exams/?' do
 	authorize!
 	@max_exams = User.get(session[:user]).max_exams

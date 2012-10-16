@@ -3,8 +3,8 @@ get "/cards/?" do
 	erb :'cards'
 end
 
-get "/cards/:chapter/?" do
+get "/cards/:exam/:chapter/?" do
 	admin!
-	@cards = Glossary.all(chapter: params[:chapter], order: :term)
+	@cards = Glossary.all(exam: params[:exam], chapter: params[:chapter], order: :term)
 	erb :'card'
 end
