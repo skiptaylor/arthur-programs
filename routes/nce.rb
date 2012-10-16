@@ -9,7 +9,7 @@ end
 
 get '/nce/glossary/?' do
 	@exam = 'NCE'
-	@glossary = Glossary.all(exam: 'NCE')
+	@glossary = Glossary.all(exam: 'NCE').sort!{|a,b| a.chapter <=> b.chapter}
 	erb :'cards'
 end
 

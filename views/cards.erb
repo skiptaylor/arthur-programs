@@ -8,24 +8,34 @@
 	</div>
 </div>
 
+<ul class="nav nav-tabs">
+	<% @glossary.group_by(&:chapter).each_with_index do |(chapter, terms), index| %>
+		<li <%= 'class="active"' if index == 0 %>><a href="#terms-<%= index %>" data-toggle="tab"><%= chapter %></a></li>
+	<% end %>
+</ul>
 
-<% @glossary.sort_by{|g| g.chapter}.group_by(&:chapter).each do |chapter, terms| %>
-
-	<div class="page-header">
-		<a href="/cards/<%= @exam %>/<%= chapter %>" class="btn btn-info pull-right">Flash Cards</a>
-		<h3><%= chapter %></h3>		
-	</div>
-
-	<% terms.sort!{|a,b| a.term <=> b.term}.each do |glossary| %>
-		<div class="row">
+<div class="tab-content">
+	<% @glossary.group_by(&:chapter).each_with_index do |(chapter, terms), index| %>
+		<div class="tab-pane <%= 'active' if index == 0 %>" id="terms-<%= index %>">
 		
-			<div class="span3">
-				<strong><%= glossary.term %></strong>
-			</div>
-			<div class="span9">
-				<%= markdown glossary.definition %>
-			</div>
+			<p>
+				<a href="/cards/<%= @exam %>/<%= chapter %>" class="btn btn-info"><%= chapter %> Flash Cards</a>
+			</p>
 			
+			<hr />
+		
+			<% terms.sort!{|a,b| a.term <=> b.term}.each do |glossary| %>
+				<div class="row">
+				
+					<div class="span3">
+						<strong><%= glossary.term %></strong>
+					</div>
+					<div class="span9">
+						<%= markdown glossary.definition %>
+					</div>
+					
+				</div>
+			<% end %>
 		</div>
 	<% end %>
-<% end %>
+</div>
