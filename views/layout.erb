@@ -58,8 +58,33 @@
         	<% else %>
         		<ul class="nav">
               <li class="<%= active 'profile' %>"><a href="/profile">Profile</a></li>
-              <li class="<%= active 'nce' %>"><a href="/nce">NCE</a></li>
-              <li class="<%= active 'ncmhce' %>"><a href="/ncmhce">NCMHCE</a></li>
+              
+              <% if session[:admin] %>
+	              <li class="dropdown <%= active 'nce' %>">
+	              	<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+	              		NCE
+	              		<b class="caret"></b>
+	              	</a>
+	              	<ul class="dropdown-menu">
+	              		<li><a href="/nce/exams">Exams</a></li>
+	              		<li><a href="/nce/glossary">Glossary</a></li>
+	              	</ul>
+	              </li>
+	              <li class="dropdown <%= active 'ncmhce' %>">
+	              	<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+	              		NCMHCE
+	              		<b class="caret"></b>
+	              	</a>
+	              	<ul class="dropdown-menu">
+	              		<li><a href="/ncmhce/scenarios">Scenarios</a></li>
+	              		<li><a href="/ncmhce/glossary">Glossary</a></li>
+	              	</ul>
+	              </li>
+              <% else %>
+              	<li class="<%= active 'nce' %>"><a href="/nce/exams">NCE</a></li>
+              	<li class="<%= active 'ncmhce' %>"><a href="/ncmhce/scenarios">NCMHCE</a></li>
+              <% end %>
+                          
               <li class="<%= active 'how-it-works' %>"><a href="/how-it-works">How It Works</a></li>
               <li class="<%= active 'feedback' %>"><a href="/feedback">Questions & Comments</a></li>
             </ul>
