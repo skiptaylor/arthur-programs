@@ -15,6 +15,10 @@ end
 
 get '/nce/exams/?' do
 	authorize!
+	
+	user = User.get session[:user]
+	redirect '/nce' unless user.max_exams > 0
+
 	@max_exams = User.get(session[:user]).max_exams
 	@exams = Exam.all order: :id
 	erb :'nce/index'

@@ -24,6 +24,10 @@ end
 
 get '/ncmhce/scenarios/?' do
 	authorize!
+	
+	user = User.get session[:user]
+	redirect '/ncmhce' unless user.max_scenarios > 0
+
 	@max_scenarios = User.get(session[:user]).max_scenarios
 	@scenarios = Scenario.all order: :id, active: true, workshop: false
 	@averages = Average.all(:user_id => session[:user], :scenario_id.not => nil)
