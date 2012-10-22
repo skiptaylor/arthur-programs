@@ -1,4 +1,4 @@
-jQuery ->
+$(window).load ->
 	
 	Stripe.setPublishableKey '<%= STRIPE_PUBLISH_KEY %>'
 	
