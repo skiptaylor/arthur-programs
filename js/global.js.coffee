@@ -2,7 +2,7 @@
 #= require 'prefixes/jquery-ui-1.8.22.min'
 #= require 'prefixes/bootstrap.min'
 
-jQuery ->
+$(window).load ->
 
 	$('a.btn-danger').click -> return false unless confirm 'This cannot be undone! Continue?'
 	$('a[rel="popover"]').hover -> $(this).popover('toggle')

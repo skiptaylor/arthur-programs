@@ -1,4 +1,4 @@
-jQuery ->
+$(window).load ->
 
 	$('a.last').click ->
 		card = $(this).parents('div.current-card')

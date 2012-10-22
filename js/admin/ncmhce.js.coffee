@@ -1,4 +1,4 @@
-jQuery ->
+$(window).load ->
 
 	$('a#save-scenario-btn').click ->
 		$('#edit-scenario-form').submit()
