@@ -455,7 +455,7 @@ div.flashcard h2	{
 	padding: 0;
 }
 
-div.flashcard p	{
+div.flashcard	 span.definition {
 	font-size: 1.1em;
 	line-height: 1.5em;
 	color: #4c4c4c;
@@ -463,9 +463,10 @@ div.flashcard p	{
 	padding: 0;
 	opacity: 0;
 	-webkit-transition: all 0.2s ease-in-out;
+	display: block;
 }
 
-div.flashcard.flipped p {
+div.flashcard.flipped span.definition {
 	opacity: 100;
 }
 

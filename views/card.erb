@@ -2,11 +2,19 @@
 
 <div class="row">
 	<div class="span12">
-		<h1>
+		<h2 class="visible-phone">
 			<%= params[:exam] %> Flash Cards
 			<small><%= params[:chapter] %></small>
-
+		</h2>
+		<p class="pull-right">
+			<a href="/nce/glossary" class="btn">Glossary</a> &nbsp; 
+			<a href="" class="btn btn-success">Start over</a>
+		</p>
+		<h1 class="hidden-phone">
+			<%= params[:exam] %> Flash Cards
+			<small><%= params[:chapter] %></small>
 		</h1>
+		
 	</div>
 </div>
 
@@ -15,29 +23,45 @@
 <% @cards.each_with_index do |card, i| %>
 
 	<div class="row current-card" style="<%= hidden unless i == 0 %>">
-		<div class="span12">
+		<div class="span12 hidden-phone">
 			<div class="row">
 				<div class="span2">
-					<br /><br />
-					<a href="#" class="last pull-right"><img src="/img/arrow-left.png" /></a>
-					
+					<p><a href="#" class="last pull-right" style="<%= hidden if i == 0 %>"><img src="/img/arrow-left.png" /></a></p>
 				</div>
 				<div class="span8">
+					<div class="flashcard">
+				  	<center><h2><%= card.term %></h2></center>
+				  	<hr style="margin: 0;" />
+				  	<span class="definition">
+					  	<%= markdown card.definition %>
+					  </span>
+				  </div>
+				</div>
+				<div class="span2">
+					<a href="#" class="next"><img src="/img/arrow-right.png" /></a>
+				</div>
+			</div>
+		</div>
+		
+		<div class="span12 visible-phone">	
+			<div class="row">
+				<div class="span12">
+					
+					<a href="#" class="last pull-left btn btn-mini" style="<%= hidden if i == 0 %>">Previous</a>
+					<a href="#" class="next pull-right btn btn-mini">Next</a>
+					<br /><br />
+					
 			  	<div class="flashcard">
 				  	<center><h2><%= card.term %></h2></center>
 				  	<hr style="margin: 0;" />
-				  	<p><%= markdown card.definition %></p>
+				  	<span class="definition">
+					  	<%= markdown card.definition %>
+					  </span>
 				  </div>
-				 <br />
-				  <p style="text-align: center;"><a href="" class="btn btn-mini pull-left">Start over</a>
-				  <img src="/img/arrow-reveal.png" />
-				  <a href="/nce/glossary" class="btn btn-mini pull-right">Glossary</a>
-				  </p>
-				</div>
-				<div class="span2">
-					<br /><br />
-					<a href="#" class="next"><img src="/img/arrow-right.png" /></a>
-				
+				  
+				  <br />
+				  <p style="text-align: center;"><img src="/img/arrow-reveal.png" /></p>
+				  
 				</div>
 			</div>
 		</div>
@@ -48,7 +72,5 @@
 <div class="row current-card" style="display: none;">
 	<div class="span6 offset3">
 		<h4 style="text-align: center;">No more cards</h4><br /><br />
-		<a href="" class="btn btn-mini">Start over</a>
-		<a href="/nce/glossary" class="btn btn-mini pull-right">Glossary</a>
 	</div>
 </div>
