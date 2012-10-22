@@ -24,9 +24,9 @@
 				<small class="darker-gray"><%= previous_score.score %>%</small>
 			<% end %>
 		</h3>
-		<p>
-			<a href="/nce/exams/4" class="btn btn-primary btn-mini">Go to Pre-Assessment Exam</a>
-		</p>
+		<ul class="nav nav-pills">
+				<li class="active"><a href="/nce/exams/4" class="">Go to Pre-Assessment Exam</a></li>
+		</ul>
 	</div>
 
 	<div class="span7">
@@ -54,30 +54,27 @@
 				<small class="darker-gray"><%= previous_score.score %>%</small>
 		<% end %>
 		</h3>
-		
-			<div class="btn-group">
-				<a href="/nce/exams/1" class="btn btn-primary btn-mini pull-left">Go to Practice Exam 1</a>
-			
-			
-			<button class="btn btn-info dropdown-toggle btn-mini" data-toggle="dropdown">Exam Areas
-				<span class="caret"></span>
-			</button>
-			
-				<ul class="dropdown-menu">
-					<li><h1 style="font-size: 1em; padding-left: 1em;">Study Areas</h1></li>
-					<li class="divider"></li>
-					<li><a href="/nce/guide/1/Professional%20Orientation">Professional Orientation</a></li>
-					<li><a href="/nce/guide/1/Research%20and%20Program%20Evaluation">Research and Program Evaluation</a></li>
-					<li><a href="/nce/guide/1/Appraisal">Appraisal</a></li>
-					<li><a href="/nce/guide/1/Lifestyle%20and%20Career%20Development">Lifestyle and Career Development</a></li>
-					<li><a href="/nce/guide/1/Helping%20Relationships">Helping Relationships</a></li>
-					<li><a href="/nce/guide/1/Group%20Counseling">Group Counseling</a></li>
-					<li><a href="/nce/guide/1/Human%20Growth%20and%20Development">Human Growth and Development</a></li>
-					<li><a href="/nce/guide/1/Social%20and%20Cultural%20Foundations">Social and Cultural Foundations</a></li>
-				</ul>
-			</div>
-		
-		
+		<ul class="nav nav-pills">
+			<li class="active"><a href="/nce/exams/1" class="">Go to Practice Exam 1</a></li>
+	  		<li class="dropdown">
+	  			<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+	  				Exam Areas
+	  				<b class="caret"></b>
+	  			</a>
+	  			<ul class="dropdown-menu">
+						<li><h1 style="font-size: 1em; padding-left: 1em;">Study Areas</h1></li>
+						<li class="divider"></li>
+						<li><a href="/nce/guide/1/Professional%20Orientation">Professional Orientation</a></li>
+						<li><a href="/nce/guide/1/Research%20and%20Program%20Evaluation">Research and Program Evaluation</a></li>
+						<li><a href="/nce/guide/1/Appraisal">Appraisal</a></li>
+						<li><a href="/nce/guide/1/Lifestyle%20and%20Career%20Development">Lifestyle and Career Development</a></li>
+						<li><a href="/nce/guide/1/Helping%20Relationships">Helping Relationships</a></li>
+						<li><a href="/nce/guide/1/Group%20Counseling">Group Counseling</a></li>
+						<li><a href="/nce/guide/1/Human%20Growth%20and%20Development">Human Growth and Development</a></li>
+						<li><a href="/nce/guide/1/Social%20and%20Cultural%20Foundations">Social and Cultural Foundations</a></li>
+	        </ul>
+	  		</li>
+			</ul>
 		
 		<% unless @max_exams > 2 %>
 			<br />
@@ -93,52 +90,55 @@
 					<small class="darker-gray"l><%= previous_score.score %>%</small>
 			<% end %>
 			</h3>
-			<div class="btn-group">
-			<a href="/nce/exams/2" class="btn btn-primary btn-mini">Go to Practice Exam 2</a>
-			<button class="btn btn-info dropdown-toggle btn-mini" data-toggle="dropdown">Exam Areas
-				<span class="caret"></span>
-			</button>
-			<ul class="dropdown-menu">
-				<li><h1 style="font-size: 1em; padding-left: 1em;">Study Areas</h1></li>
-				<li class="divider"></li>
-				<li><a href="/nce/guide/2/Professional%20Orientation">Professional Orientation</a></li>
-				<li><a href="/nce/guide/2/Research%20and%20Program%20Evaluation">Research and Program Evaluation</a></li>
-				<li><a href="/nce/guide/2/Appraisal">Appraisal</a></li>
-				<li><a href="/nce/guide/2/Lifestyle%20and%20Career%20Development">Lifestyle and Career Development</a></li>
-				<li><a href="/nce/guide/2/Helping%20Relationships">Helping Relationships</a></li>
-				<li><a href="/nce/guide/2/Group%20Counseling">Group Counseling</a></li>
-				<li><a href="/nce/guide/2/Human%20Growth%20and%20Development">Human Growth and Development</a></li>
-				<li><a href="/nce/guide/2/Social%20and%20Cultural%20Foundations">Social and Cultural Foundations</a></li>
+			<ul class="nav nav-pills">
+				<li class="active"><a href="/nce/exams/2" class="">Go to Practice Exam 2</a></li>
+	  		<li class="dropdown">
+	  			<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+	  				Exam Areas
+	  				<b class="caret"></b>
+	  			</a>
+	  			<ul class="dropdown-menu">
+						<li><h1 style="font-size: 1em; padding-left: 1em;">Study Areas</h1></li>
+						<li class="divider"></li>
+						<li><a href="/nce/guide/2/Professional%20Orientation">Professional Orientation</a></li>
+						<li><a href="/nce/guide/2/Research%20and%20Program%20Evaluation">Research and Program Evaluation</a></li>
+						<li><a href="/nce/guide/2/Appraisal">Appraisal</a></li>
+						<li><a href="/nce/guide/2/Lifestyle%20and%20Career%20Development">Lifestyle and Career Development</a></li>
+						<li><a href="/nce/guide/2/Helping%20Relationships">Helping Relationships</a></li>
+						<li><a href="/nce/guide/2/Group%20Counseling">Group Counseling</a></li>
+						<li><a href="/nce/guide/2/Human%20Growth%20and%20Development">Human Growth and Development</a></li>
+						<li><a href="/nce/guide/2/Social%20and%20Cultural%20Foundations">Social and Cultural Foundations</a></li>
+	        </ul>
+	  		</li>
 			</ul>
-		</div>
-
-		
-	
+			
 			<h3 style="margin-top: 9px;">
 				Practice Exam 3
 				<% if previous_score = Average.first(user_id: session[:user], exam_id: 3) %>
 					<small class="darker-gray"><%= previous_score.score %>%</small>
 				<% end %>
 			</h3>
-			<div class="btn-group">
-			<a href="/nce/exams/3" class="btn btn-primary btn-mini">Go to Practice Exam 3</a>
-			<button class="btn btn-info dropdown-toggle btn-mini" data-toggle="dropdown">Exam Areas
-				<span class="caret"></span>
-			</button>
-			<ul class="dropdown-menu">
-				<li><h1 style="font-size: 1em; padding-left: 1em;">Study Areas</h1></li>
-				<li class="divider"></li>
-				<li><a href="/nce/guide/3/Professional%20Orientation">Professional Orientation</a></li>
-				<li><a href="/nce/guide/3/Research%20and%20Program%20Evaluation">Research and Program Evaluation</a></li>
-				<li><a href="/nce/guide/3/Appraisal">Appraisal</a></li>
-				<li><a href="/nce/guide/3/Lifestyle%20and%20Career%20Development">Lifestyle and Career Development</a></li>
-				<li><a href="/nce/guide/3/Helping%20Relationships">Helping Relationships</a></li>
-				<li><a href="/nce/guide/3/Group%20Counseling">Group Counseling</a></li>
-				<li><a href="/nce/guide/3/Human%20Growth%20and%20Development">Human Growth and Development</a></li>
-				<li><a href="/nce/guide/3/Social%20and%20Cultural%20Foundations">Social and Cultural Foundations</a></li>
+			<ul class="nav nav-pills">
+				<li class="active"><a href="/nce/exams/3" class="">Go to Practice Exam 3</a></li>
+	  		<li class="dropdown">
+	  			<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+	  				Exam Areas
+	  				<b class="caret"></b>
+	  			</a>
+	  			<ul class="dropdown-menu">
+	          <li><h1 style="font-size: 1em; padding-left: 1em;">Study Areas</h1></li>
+						<li class="divider"></li>
+						<li><a href="/nce/guide/3/Professional%20Orientation">Professional Orientation</a></li>
+						<li><a href="/nce/guide/3/Research%20and%20Program%20Evaluation">Research and Program Evaluation</a></li>
+						<li><a href="/nce/guide/3/Appraisal">Appraisal</a></li>
+						<li><a href="/nce/guide/3/Lifestyle%20and%20Career%20Development">Lifestyle and Career Development</a></li>
+						<li><a href="/nce/guide/3/Helping%20Relationships">Helping Relationships</a></li>
+						<li><a href="/nce/guide/3/Group%20Counseling">Group Counseling</a></li>
+						<li><a href="/nce/guide/3/Human%20Growth%20and%20Development">Human Growth and Development</a></li>
+						<li><a href="/nce/guide/3/Social%20and%20Cultural%20Foundations">Social and Cultural Foundations</a></li>
+	        </ul>
+	  		</li>
 			</ul>
-		</div>
-
 		</div>
 	<% end %>
 </div>

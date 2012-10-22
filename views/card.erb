@@ -7,8 +7,8 @@
 			<small><%= params[:chapter] %></small>
 		</h2>
 		<p class="pull-right">
-			<a href="/nce/glossary" class="btn">Glossary</a> &nbsp; 
-			<a href="" class="btn btn-success">Start over</a>
+			<a href="/<%= params[:exam].downcase %>/glossary" class="btn">Glossary</a> &nbsp; 
+			<a href="<%= request.url %>" class="btn btn-success">Start over</a>
 		</p>
 		<h1 class="hidden-phone">
 			<%= params[:exam] %> Flash Cards
@@ -36,6 +36,8 @@
 					  	<%= markdown card.definition %>
 					  </span>
 				  </div>
+				  <br />
+				  <p style="text-align: center;"><img src="/img/arrow-reveal.png" /></p>
 				</div>
 				<div class="span2">
 					<a href="#" class="next"><img src="/img/arrow-right.png" /></a>

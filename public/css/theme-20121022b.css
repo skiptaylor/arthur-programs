@@ -853,6 +853,9 @@ a.brand {
   .hero-unit img#pass-icon {
     position: absolute;
     right: 100px; }
+  @media (max-width: 980px) {
+    .hero-unit img#pass-icon {
+      right: 11px; } }
   .hero-unit p.lead {
     color: #555;
     font-size: 2.2em;
