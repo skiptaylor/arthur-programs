@@ -46,7 +46,7 @@
 						<td style="text-align: right;">
 							<a href="/admin/purchases/<%= purchase.id %>" class="btn btn-mini btn-info"><i class="icon icon-edit icon-white"></i></a>
 							<br />
-							<%= '<span class="label label-warning">To Be Shipped</span>' if purchase.needs_shipping? %>
+							<%= "<span class='label label-#{purchase.shipping_status}'>Shipping</span>" if ( (purchase.package && purchase.package.include?('Hard Copy')) || (purchase.options && purchase.options.include?('Hard Copy')) ) %>
 						</td>
 					</tr>
 				<% end %>

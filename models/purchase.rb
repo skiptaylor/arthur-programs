@@ -20,9 +20,12 @@ class Purchase
 	property :tracking_number, String
 
 	belongs_to :user
-
-	def needs_shipping?
-		true if shipped_on == nil && ( (package && package.include?('Hard Copy')) || (options && options.include?('Hard Copy')) )
+	
+	def shipping_status
+		color = 'warning'		
+		color = 'important' if shipped_on
+		color = 'success' if received_on
+		color
 	end
 
 	def remove
