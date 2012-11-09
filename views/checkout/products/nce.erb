@@ -26,7 +26,7 @@
 			<p style="margin-top: 2.5em;">
 				<label class="radio package-name">
 					<input name="package" type="radio" id="enhanced-package" value="Enhanced Package" data-price='229' <%= 'checked="checked"' if params[:package] == 'Enhanced Package' %> /> &nbsp;Enhanced Package <strong>$229</strong>
-					<span style="color: red;"> &nbsp; Save $20!</span>
+					 &nbsp; <span class="badge badge-important">Save $20!</span>
 					<ul class="package-features">
 						<li>Online Pre-Assessment Exam</li>
 						<li><strong>3 Online Practice Exams</strong></li>
@@ -39,14 +39,14 @@
 			</p>			
 		</div>	<!-- span5 -->
 	</div>	<!-- row -->
+	<hr style="margin: 9px 0" />
+	<h3 class="option-header">Optional Enhancements <small>for either package</small></h3>
 	
-	<h3 class="option-header">Optional Enhancements</h3>
-	
-		<p>
+		<p style="margin: 9px 0;">
 			<label class="checkbox">
-				<input type="checkbox" name="optional" value="Hard Copy" id="nce-hard-copy" data-price='12.95' <%= 'checked="checked"' if params[:optional] %> /> Study Guide Hard Copy <strong>$12.95 shipping</strong> &nbsp; <small>Same study supplement as the eBook</small>
+				<input type="checkbox" name="optional" value="Hard Copy" id="nce-hard-copy" data-price='12.95' <%= 'checked="checked"' if params[:optional] %> /> Study Guide <strong><span class="badge badge-success">Hard Copy</span> $12.95 shipping</strong> &nbsp; <small>Same study supplement as the eBook</small>
 				<br />
-				<small style="color: black;"><strong>Note: If you require shipment to a PO Box please call toll free 888-326-9229 for details.</strong></small>
+				<small style="color: black;"><strong>Note:</strong> If you require shipment to a PO Box please call toll free 888-326-9229 for details.</small>
 												
 			</label>
 		</p>	
