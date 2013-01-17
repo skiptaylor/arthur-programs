@@ -1,7 +1,7 @@
 <%
 	offset ||= false
 
-	percent = ((correct.to_f/possible.to_f)*100).to_i
+	percent = ((correct.to_f/possible.to_f)*100)#.to_i
 	
 	style = 'progress-danger'
 	style = 'progress-warning' if percent > 60
