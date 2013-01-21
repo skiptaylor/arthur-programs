@@ -7,7 +7,7 @@ class Email
 		body << "<p>Welcome - you have successfully created an account at counselorexams.com! You will receive a separate email confirming the details of your purchase.</p>"
 		body << "<p>Thank you for choosing us as a source for your exam preparatory materials. We are confident our prep services can help you pass your counselor licensure exam, because they have helped thousands of previous customers do just that.</p>"
 		body << "<h3>Access Instructions:</h3>"
-		body << "<p>To access your account profile, which lists the products you have purchased and provides access to your online services, go to: http://counselorexams/sign-in</p>"
+		body << "<p>To access your account profile, which lists the products you have purchased and provides access to your online services, go to: http://counselorexams.com/sign-in</p>"
 		body << "<p>Your account email address is: #{email}</p>"
 		body << "<p>If you do not remember the password you used when you created your account, you may use the 'forgot password' link at the above URL to change it.</p>"
 		body << "<h3>Satisfaction Guarantee Return Policy:</h3>"
