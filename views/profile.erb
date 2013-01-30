@@ -53,7 +53,7 @@
 			<h3>
 				NCE Exams
 					<% unless @user.max_exams > 2 %>
-						<span style="float: right; margin-left: 3px;"><a class="btn btn-success btn-small" href="/checkout/nce-upgrade">Buy 2 more practice exams for $60</a></span>
+						<span style="float: right; margin-left: 3px;">&nbsp;<a class="btn btn-success btn-small" href="/checkout/nce-upgrade">Buy 2 more practice exams for $60</a></span>
 					<% end %>
 					<% unless @user.purchases.any? { |purchase| purchase.shipped_on != nil } %>
 						<span style="float: right;"><a class="btn btn-success btn-small" href="/checkout/nce-hard-copy">Buy a hard copy for $12.95</a></span>
@@ -102,7 +102,7 @@
 				NCMHCE Scenarios
 				<small><%= @user.remaining_scenarios %> Remaining</small>
 				<% if @user.max_scenarios < 36 %>
-					<span style="float: right;"><a class="btn btn-success btn-small" href="/checkout/ncmhce-upgrade">Buy 12 more scenarios for $80</a></span>
+					<span style="float: right;">&nbsp; <a class="btn btn-success btn-small" href="/checkout/ncmhce-upgrade">Buy 12 more scenarios for $80</a></span>
 				<% end %>
 				<% unless @user.purchases.any? { |purchase| purchase.shipped_on != nil } %>
 						<span style="float: right;"><a class="btn btn-success btn-small" href="/checkout/ncmhce-hard-copy">Buy a hard copy for $12.95</a></span>
