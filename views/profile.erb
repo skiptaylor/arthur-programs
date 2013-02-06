@@ -134,7 +134,7 @@
 										N/A
 									<% end %>
 								</td>
-								<td><%= avg.updated_at.display %></td>
+								<td><%= avg.updated_at.display if avg %></td>
 								<td style="text-align: right;"><a href="/ncmhce/scenarios/<%= average.scenario_id %>">Review</a></td>
 							</tr>
 						<% end %>
