@@ -88,9 +88,7 @@ get '/ncmhce/scenarios/:id/score/?' do
 	
 	@average = ((actual_total.to_f/possible_total.to_f)*100).to_i
 	@average = 0 if @average < 0
-	a = Average.first_or_create(scenario_id: params[:id], user_id: session[:user])
-	a.score = @average
-	a.save
+	a = Average.first_or_create(scenario_id: params[:id], user_id: session[:user], score: @average)
 	Use.first_or_create(user_id: session[:user], scenario_id: params[:id], sample: @scenario.sample)
 
 	@breakdown = {}
