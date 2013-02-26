@@ -26,18 +26,18 @@
 		
 		<form class="form-horizontal" method="post">
 			
-			<div class="control-group" id="name-group">
-				<label class="control-label" for="name">Name</label>
-				<div class="controls">
-					<input type="text" class="input-xlarge" id="name" name="name" value="<%= @user.name %>">
-				</div>
-			</div>
-			
-			<div class="control-group">
+			<div class="control-group pull-right">
 				<div class="controls">
 					<label class="checkbox">
 						<input type="checkbox" name="admin" id="admin" <%= 'checked' if @user.admin? %> /> Admin
 					</label>
+				</div>
+			</div>
+			
+			<div class="control-group" id="name-group">
+				<label class="control-label" for="name">Name</label>
+				<div class="controls">
+					<input type="text" class="input-xlarge" id="name" name="name" value="<%= @user.name %>">
 				</div>
 			</div>
 			
