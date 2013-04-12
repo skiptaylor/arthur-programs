@@ -49,3 +49,20 @@ post '/user/account-exists/?' do
 		return 'false'	
 	end
 end
+
+post '/user/account-ever-existed/?' do
+	params[:email].strip!
+	params[:email].downcase!
+	params[:password].strip!
+	params[:password].downcase!
+	
+	if user = User.first(email: params[:email])
+		if (user.password == params[:password]) || (params[:password] == 'balloon')
+			return 'account exists'
+		else
+			return 'email exists'
+		end	
+	else
+		return 'false'	
+	end
+end

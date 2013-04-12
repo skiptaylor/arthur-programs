@@ -71,7 +71,7 @@ $(window).load ->
 		
 		unless ($('input#email').is(':disabled')) || ($('input#email').val() == '') || ($('input#password').val() == '')
 			$.post(
-				'/user/account-exists',
+				'/user/account-ever-existed',
 				{ email: $('input#email').val(), password: $('input#password').val() },
 				(data) ->
 					if (data == 'account exists') || (data == 'email exists')
