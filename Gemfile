@@ -1,4 +1,4 @@
-source :rubygems
+source 'https://rubygems.org'
 
 gem 'chronic', '~> 0.6.7'
 
@@ -23,9 +23,3 @@ gem 'sinatra-contrib', '~> 1.3.1'
 gem 'sprockets', '~> 2.0'
 
 gem 'stripe', '~> 1.6.2'
-
-group :production do
-	gem 'newrelic_rpm', require: 'newrelic_rpm'
-end
-
-# Dir["./vendor/**/Gemfile"].each { |gemfile| self.send(:eval, File.open(gemfile, 'r').read) }
