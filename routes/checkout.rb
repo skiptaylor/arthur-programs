@@ -131,8 +131,6 @@ post '/checkout/:product/?' do
 		when 'Account Expiration'
 			user.update(expiration_date: Time.now.to_date + 90)
 		end
-		
-		user.udpate(expiration_date: Chronic.parse('1 year from now'))
 	else
 		user = User.create(
 			email: params[:email],
