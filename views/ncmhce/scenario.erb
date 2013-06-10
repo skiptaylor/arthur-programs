@@ -20,9 +20,9 @@
 					<small class="darker-gray">Average score of all users to date: <strong><%= @scenario.group_average %>%</strong> </small>
 				</h3>
 				<%
-					style = 'progress-danger'
-					style = 'progress-warning' if @average > 60
-					style = 'progress-success' if @average > 80
+					style = 'progress'
+					style = 'progress' if @average > 60
+					style = 'progress' if @average > 80
 				%>
 				<div class="progress <%= style %>">
 					<div class="bar" style="width: <%= @average %>%;"></div>
