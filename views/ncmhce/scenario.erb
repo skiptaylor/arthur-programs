@@ -30,10 +30,13 @@
 			</div>
 		</div>
 		
+		<% if @scenario.id < 38 %>
 		<div class="row">
 			<%= erb :progressbar, layout: false, locals: { label: 'Information Gathering', correct: @breakdown['Information Gathering'][:correct], possible: @breakdown['Information Gathering'][:possible] } %>			
 			<%= erb :progressbar, layout: false, locals: { offset: true, label: 'Decision Making', correct: @breakdown['Decision Making'][:correct], possible: @breakdown['Decision Making'][:possible] } %>
 		</div>
+		<% end %>
+		
 		<br />
 		<a href="/ncmhce/scenarios/<%= params[:id] %>/restart" class="btn restart">Start Over</a> &nbsp; <a href="/ncmhce/scenarios" class="btn">New Scenario</a>
 		<br /><br />
