@@ -38,15 +38,9 @@ class Email
 		body = ''
 		body << "<p>Dear #{name},</p>"
 		body << "<p>Thank you for your purchase at counselorexams.com!</p>"
+		body << "<p>The online products you have purchased should be immediately available at your profile page. If you purchased a hard-copy of any study materials, you will receive a separate email from FedEx with a tracking number once it is shipped. (Shipping usually occurs within 2 business days.)</p>"
 		body << "<h3>Your Purchase</h3>"
 		body << "<p>#{item}: $#{price}</p>"
-		body << "<p>The online products you have purchased should be immediately available at your profile page.</p>" 
-    body << "<p>To access your account, go to our website, www.counselorexams.com.</p>"
-    body << "<p>Click on the green “Sign In” button found at the top right of our web page.</p>"
-    body << "<p>Enter your email address and the password you created at the time of your purchase.</p>"
-    body << "<p>Your online account will open to your profile page where you can access your online product and/or download your eBook.</p>"
-    body << "<p>For step-by-step instructions on downloading your eBook, go to our “How it Works” tab found at the top of the page, click on the “eBooks” tab, and then choose the device type you wish to download.</p>"
-    body << "<p>If you purchased a hard-copy of any study materials, you will receive a separate email from FedEx with a tracking number once it is shipped. (Shipping usually occurs within 2 business days.)</p>"
 		body << "<p>If you have any questions about your purchase, please contact us at http://counselorexams.com/feedback.</p>"
 		body << "<p>We are also available by phone during the business hours of 9:30 AM to 4:30 PM Eastern time, Monday through Friday, at 888-326-9229.</p>"
 	
