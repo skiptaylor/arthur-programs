@@ -152,7 +152,7 @@
 			<h3>Workshop Scenarios</h3>
 		</div>
 		
-		<table class="table condensed">
+		<table class="table table-condensed">
 			<thead>
 				<tr>
 					<th>Scenario</th>
@@ -163,6 +163,44 @@
 			</thead>
 			<tbody>
 				<% Scenario.all(workshop: true, active: true).each do |scenario| %>
+					<% use = Use.last(scenario_id: scenario.id, user_id: @user.id) %>
+					<% avg = Average.last(scenario_id: scenario.id, user_id: @user.id) %>
+					<tr>
+						<td><%= scenario.title %></td>
+						<td>
+							<%= avg ? "#{avg.score}%" : 'N/A' %>
+						</td>
+						<td>
+							<%= avg ? avg.created_at.display : '' %>
+						</td>
+						<td style="text-align: right;">
+							<a href="/ncmhce/scenarios/<%= scenario.id %>">Take</a>
+						</td>
+					</tr>
+				<% end %>
+			</tbody>
+		</table>
+		
+		<br />
+	<% end %>
+	
+	<% if @user.ceu_scenarios? %>
+	
+		<div class="page-header">
+			<h3>CEU Scenarios</h3>
+		</div>
+		
+		<table class="table table-condensed">
+			<thead>
+				<tr>
+					<th>Scenario</th>
+					<th>Score</th>
+					<th>Taken On</th>
+					<th></th>
+				</tr>
+			</thead>
+			<tbody>
+				<% Scenario.all(ceu: true, active: true).each do |scenario| %>
 					<% use = Use.last(scenario_id: scenario.id, user_id: @user.id) %>
 					<% avg = Average.last(scenario_id: scenario.id, user_id: @user.id) %>
 					<tr>

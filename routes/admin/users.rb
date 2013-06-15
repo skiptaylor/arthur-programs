@@ -62,6 +62,8 @@ post '/admin/users/new/?' do
 	user.update(nce_downloads: true) if params[:nce_downloads]
 
 	user.update(workshop_scenarios: true) if params[:workshop_scenarios]
+  
+  user.update(ceu_scenarios: true) if params[:ceu_scenarios]
 
   puts 'Setting session and redirecting'
 	session[:alert] = { style: 'alert-success', message: "#{user.name} has been created." }
@@ -128,6 +130,8 @@ post '/admin/users/:id/?' do
 	params[:nce_downloads] ? user.update(nce_downloads: true) : user.update(nce_downloads: false)
 	
 	params[:workshop_scenarios] ? user.update(workshop_scenarios: true) : user.update(workshop_scenarios: false)
+  
+  params[:ceu_scenarios] ? user.update(ceu_scenarios: true) : user.update(ceu_scenarios: false)
 	
 	session[:alert] = { style: 'alert-success', message: "#{user.name} has been updated." }
 	redirect "/admin/users/#{user.id}"

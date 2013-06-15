@@ -46,7 +46,7 @@ get '/ncmhce/scenarios/:id/?' do
 		authorize!
 	end
 	
-	unless @scenario.sample? || @scenario.workshop?
+	unless @scenario.sample? || @scenario.workshop? || @scenario.ceu?
 		if User.get(session[:user]).remaining_scenarios == 0
 			unless Use.all(user_id: session[:user], scenario_id: params[:id]).count > 0
 				session[:alert] = { message: "Please purchase more scenarios to continue." }

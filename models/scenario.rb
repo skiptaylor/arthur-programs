@@ -11,6 +11,7 @@ class Scenario
 	property :active,	Boolean, 	 default: true
 	property :sample, Boolean, 	 default: false
 	property :workshop, Boolean, default: false
+  property :ceu, Boolean,      default: false
 
 	has n, :questions
 	has n, :averages
