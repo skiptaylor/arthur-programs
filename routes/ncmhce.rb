@@ -29,7 +29,9 @@ get '/ncmhce/scenarios/?' do
 	redirect '/ncmhce' unless user.max_scenarios > 0
 
 	@max_scenarios = User.get(session[:user]).max_scenarios
-	@scenarios = Scenario.all order: :id, active: true, workshop: false
+  @scenarios = Scenario.all(order: :id, active: true)
+  @scenarios = @scenarios.all(workshop: false) unless user.workshop_scenarios == true
+  @scenarios = @scenarios.all(ceu: false) unless user.ceu_scenarios == true
 	@averages = Average.all(:user_id => session[:user], :scenario_id.not => nil)
 	@remaining_scenarios = User.get(session[:user]).remaining_scenarios
 	@uses = []
