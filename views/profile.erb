@@ -47,6 +47,10 @@
 
 	<div class="span9">
 	
+  <% Message.all(profile: true).each do |m| %>
+    <div class="alert alert-info" style="border: none;"><%= m.body %></div>
+  <% end %>
+  
 	<% if @user.max_exams > 0 %>
 		
 		<div class="page-header">
@@ -60,7 +64,11 @@
 					<% end %>
 			</h3>
 		</div>
-				
+		
+    <% Message.all(nce: true).each do |m| %>
+      <div class="alert alert-info" style="border: none;"><%= m.body %></div>
+    <% end %>
+    
 		<p><a href="/nce/exams">Choose an exam</a> to get started.</p>
 			
 		<% unless @exams.empty? %>
@@ -109,8 +117,11 @@
 				<% end %>
 			</h3>
 		</div>
-			
-			
+		
+    <% Message.all(ncmhce: true).each do |m| %>
+      <div class="alert alert-info" style="border: none;"><%= m.body %></div>
+    <% end %>
+		
 		<p><a href="/ncmhce/scenarios">Choose a scenario</a> to get started.</p>
 			
 		<% unless @scenarios.empty? %>

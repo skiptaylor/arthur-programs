@@ -1,0 +1,64 @@
+<div class="row">
+  
+  <div class="span3">
+    <%= erb :'admin/navigation', layout: false %>
+  </div>
+  
+  <div class="span9">
+    <ul class="breadcrumb">
+      <li>Admin <span class="divider">/</span></li>
+      <li class="active">Messages</li>
+    </ul>
+    
+    <h2>New Message</h2>
+    
+    <form method="post">
+      <p>
+        <textarea name="body" id="body" class="span9"></textarea>
+      </p>
+      <div class="row">
+        <div class="span2">
+          <label class="checkbox" for="profile">
+            <input type="checkbox" name="profile" id="profile" /> Profile
+          </label>
+        </div>
+        <div class="span2">
+          <label class="checkbox" for="ncmhce">
+            <input type="checkbox" name="ncmhce" id="ncmhce"> NCMHCE
+          </label>
+        </div>
+        <div class="span2">
+          <label class="checkbox" for="nce">
+            <input type="checkbox" name="nce" id="nce"> NCE
+          </label>
+        </div>
+        <div class="span3" style="text-align: right;">
+          <input type="submit" value="Add Message" class="btn btn-primary" />
+        </div>
+      </div>
+    </form>
+    
+    <h2>Messages</h2>
+    <table class="table">
+      <thead>
+        <th>Message</th>
+        <th>Profile</th>
+        <th>NCMHCE</th>
+        <th>NCE</th>
+        <th></th>
+      </thead>
+      <tbody>
+        <% @messages.each do |m| %>
+          <tr>
+            <td><%= m.body %></td>
+            <td><%= '<i class="icon-check"' if m.profile == true %></td>
+            <td><%= '<i class="icon-check"' if m.ncmhce == true %></td>
+            <td><%= '<i class="icon-check"' if m.nce == true %></td>
+            <td><a href="/admin/messages/<%= m.id %>/delete" class='delete'><i class="icon icon-remove"></i></a></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+    
+  </div>
+</div>
