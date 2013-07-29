@@ -74,6 +74,10 @@ get '/admin/users/:id/?' do
 	admin!
 	
 	@user = User.get params[:id]
+  
+	@scenarios = Use.all(user_id: @user.id, :scenario_id.not => nil)
+	@exams = Use.all(user_id: @user.id, :exam_id.not => nil)
+  
 	erb :'admin/user'
 end
 
