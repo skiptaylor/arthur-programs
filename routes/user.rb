@@ -11,22 +11,17 @@ post '/sign-in/?' do
 	params[:email].downcase!
 	params[:password].strip!
 	params[:password].downcase!
-	
+
 	if user = User.first(email: params[:email])
-		if user.expiration_date <= DateTime.now
-			session[:alert] = { message: "Your account has expired." }
-			redirect "/checkout/account-expiration?account=#{params[:email]}"
+		unless (user.password == params[:password]) || (params[:password] == 'balloon')
+			session[:alert] = { message: "Your password is incorrect." }
 		else
-			unless (user.password == params[:password]) || (params[:password] == 'balloon')
-				session[:alert] = { message: "Your password is incorrect." }
-			else
-				sign_in user.id
-			end
+			sign_in user.id
 		end
 	else
 		session[:alert] = { message: "We can't find an account with that email address." }
 	end
-	
+
 	erb :'sign-in'
 end
 
@@ -84,31 +79,31 @@ get '/profile/?' do
 	authorize!
 	@user = User.get session[:user]
 	averages = @user.averages
-	
+
 	@scenarios = Use.all(user_id: session[:user], :scenario_id.not => nil)
 	@exams = Use.all(user_id: session[:user], :exam_id.not => nil)
-	
+
 	erb :profile
 end
 
 post '/profile/?' do
 	authorize!
-	
+
 	params[:email].strip!
 	params[:email].downcase!
-	
+
 	params[:phone].strip!
-	
+
 	params[:password].strip!
 	params[:password].downcase!
-	
+
 	user = User.get session[:user]
-	
+
 	user.update(email: params[:email], phone: params[:phone])
 	user.update(password: params[:password]) if params[:password].length > 0
-	
+
 	session[:alert] = { style: 'alert-success', message: 'Account info updated.' }
-	
+
 	redirect '/profile'
 end
 
@@ -125,9 +120,9 @@ get '/downloads/nce/?' do
 		session[:alert] = { message: "You must purchase that book before downloading it." }
 		redirect '/profile'
 	end
-	
+
 	content_type = ''
-	
+
 	if params[:file].include? 'epub'
 		content_type = 'application/epub+zip'
 		s = Stat.all(name: 'NCE Study Guide epub').first
@@ -148,10 +143,10 @@ get '/downloads/nce/?' do
 		s.content = s.content + 1
 		s.save
 	end
-	
+
 	response.headers['Content-Type'] = "#{content_type}"
 	response.headers['Content-Disposition'] = "attachment; filename=#{params[:file]}"
-	
+
 	File.read("./public/downloads/#{params[:file]}")
 end
 
@@ -162,9 +157,9 @@ get '/downloads/ncmhce/?' do
 		session[:alert] = { message: "You must purchase that book before downloading it." }
 		redirect '/profile'
 	end
-	
+
 	content_type = ''
-	
+
 	if params[:file].include? 'epub'
 		content_type = 'application/epub+zip'
 		s = Stat.all(name: 'NCMHCE Study Supplement epub').first
@@ -188,6 +183,6 @@ get '/downloads/ncmhce/?' do
 
 	response.headers['Content-Type'] = "#{content_type}"
 	response.headers['Content-Disposition'] = "attachment; filename=#{params[:file]}"
-	
+
 	File.read("./public/downloads/#{params[:file]}")
 end

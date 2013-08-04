@@ -3,7 +3,7 @@ get '/nce/?' do
 		user = User.get session[:user]
 		redirect '/nce/exams' if user.max_exams > 0
 	end
-	
+
 	erb :nce
 end
 
@@ -15,7 +15,7 @@ end
 
 get '/nce/exams/?' do
 	authorize!
-	
+
 	user = User.get session[:user]
 	redirect '/nce' unless user.max_exams > 0
 
@@ -26,9 +26,9 @@ end
 
 get '/nce/guide/:id/:group/?' do
 	authorize!
-	
+
 	max_exams = User.get(session[:user]).max_exams
-	
+
 	if (params[:id] == '1') || (params[:id] == '4')
 		unless max_exams >= 2
 			session[:alert] = { message: "You haven't purchased that exam." }
@@ -49,9 +49,10 @@ end
 
 get '/nce/exams/:id/?' do
 	authorize!
-	
+	expired?
+
 	max_exams = User.get(session[:user]).max_exams
-	
+
 	if (params[:id] == '1') || (params[:id] == '4')
 		unless max_exams >= 2
 			session[:alert] = { message: "You haven't purchased that exam." }
@@ -63,7 +64,7 @@ get '/nce/exams/:id/?' do
 			redirect '/nce'
 		end
 	end
-	
+
 	if Average.all(exam_id: params[:id], user_id: session[:user]).count > 0
 		redirect "/nce/exams/#{params[:id]}/score"
 	end
@@ -80,23 +81,25 @@ end
 
 get '/nce/exams/:id/score/?' do
 	authorize!
+	expired?
+
 	@scores = []
 	scores = Score.all(user_id: session[:user], exam_id: params[:id])
 	scores.each {|s| @scores << s.answer_id }
 	@exam = Exam.get params[:id]
 	@questions = @exam.questions(:order => :position)
 	@answers = @questions.answers(:order => :body)
-	
-	@average = ((scores.all(countable: true, required: true).count.to_f / @exam.questions(:countable => true).count.to_f)*100).to_i
-	
 
-	
+	@average = ((scores.all(countable: true, required: true).count.to_f / @exam.questions(:countable => true).count.to_f)*100).to_i
+
+
+
 	@average = 0 if @average < 0
 	Average.first_or_create(exam_id: params[:id], user_id: session[:user], score: @average)
 	Use.first_or_create(user_id: session[:user], exam_id: params[:id], sample: @exam.sample)
-	
+
 	@breakdown = {}
-	@breakdown['Professional Orientation'] 				 = {possible: 0, correct: 0}	
+	@breakdown['Professional Orientation'] 				 = {possible: 0, correct: 0}
 	@breakdown['Research and Program Evaluation']  = {possible: 0, correct: 0}
 	@breakdown['Appraisal']	 											 = {possible: 0, correct: 0}
 	@breakdown['Lifestyle and Career Development'] = {possible: 0, correct: 0}
@@ -113,7 +116,7 @@ get '/nce/exams/:id/score/?' do
 	scores.each do |s|
 		@breakdown[s.score_type][:correct]  += 1 if s.required?
 	end
-	
+
 	if params[:group]
 		@questions = @questions.all(score_type: params[:group])
 	end
@@ -123,6 +126,8 @@ end
 
 get '/nce/exams/:id/restart/?' do
 	authorize!
+	expired?
+
 	Score.all(user_id: session[:user], exam_id: params[:id]).destroy
 	Average.all(exam_id: params[:id], user_id: session[:user]).destroy
 	redirect "/nce/exams/#{params[:id]}"

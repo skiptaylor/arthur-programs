@@ -31,6 +31,13 @@ helpers do
 		end
 	end
 
+	def expired?
+		if session[:user]
+			user = User.get(session[:user])
+			redirect('/profile') if user.expiration_date <= DateTime.now
+		end
+	end
+
 end
 
 post '/user/account-exists/?' do
@@ -38,15 +45,15 @@ post '/user/account-exists/?' do
 	params[:email].downcase!
 	params[:password].strip!
 	params[:password].downcase!
-	
+
 	if user = User.first(email: params[:email], :expiration_date.gte => DateTime.now)
 		if (user.password == params[:password]) || (params[:password] == 'balloon')
 			return 'account exists'
 		else
 			return 'email exists'
-		end	
+		end
 	else
-		return 'false'	
+		return 'false'
 	end
 end
 
@@ -55,14 +62,14 @@ post '/user/account-ever-existed/?' do
 	params[:email].downcase!
 	params[:password].strip!
 	params[:password].downcase!
-	
+
 	if user = User.first(email: params[:email])
 		if (user.password == params[:password]) || (params[:password] == 'balloon')
 			return 'account exists'
 		else
 			return 'email exists'
-		end	
+		end
 	else
-		return 'false'	
+		return 'false'
 	end
 end

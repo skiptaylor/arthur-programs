@@ -22,7 +22,7 @@ get '/checkout/:product/?' do
 			redirect('/sign-in')
 		end
 	end
-	
+
 	unless @user
 		@user = User.get(session[:user]) if session[:user]
 	end
@@ -43,13 +43,13 @@ post '/checkout/:product/?' do
 	params[:city].strip!
 	params[:state].strip!
 	params[:zip].strip!
-	
+
 	if params[:user_id]
 		user = User.get params[:user_id]
 		params[:email] = user.email
 	end
-	
-	
+
+
 	case params[:package]
 	when 'Basic Package'
 		params[:package] = 'NCE: Basic Package'
@@ -100,7 +100,7 @@ post '/checkout/:product/?' do
 	when 'Account Extension'
 		msg = false
 	end
-	
+
 	if params[:user_id]
 		params[:optional] = ''
 	else
@@ -110,26 +110,34 @@ post '/checkout/:product/?' do
 			params[:optional] = '+ eBook'
 		end
 	end
-	
+
 	Stripe.api_key = STRIPE_PRIVATE_KEY
-	
+
 	charge = Stripe::Charge.create(
 		amount: (params[:amount].to_f * 100).to_i,
 		currency: "usd",
 		card: params[:stripeToken],
 		description: "#{params[:name]} (#{params[:email]}) #{params[:package]} #{params[:optional]}"
 	)
-	
+
 	if params[:user_id]
 		case params[:package]
 		when 'NCE: Upgrade'
 			user.update(max_exams: (user.max_exams + 2))
 		when 'NCMHCE: Upgrade'
 			user.update(max_scenarios: (user.max_scenarios + 12))
-		when 'Account Extension'
-			user.update(expiration_date: user.expiration_date + 90)
-		when 'Account Expiration'
-			user.update(expiration_date: Time.now.to_date + 90)
+		end
+
+		if (params[:package] == 'Account Extension') || (params[:package] == 'Account Expiration')
+			additional_time = 90
+		else
+			additional_time = 365
+		end
+
+		if user.expiration_date <= DateTime.now
+			user.update(expiration_date: Time.now.to_date + additional_time)
+		else
+			user.update(expiration_date: user.expiration_date + additional_time)
 		end
 	else
 		user = User.create(
@@ -144,7 +152,7 @@ post '/checkout/:product/?' do
 		)
 		Email.welcome(user.email, user.name, user.email, email) if settings.environment == 'production'
 	end
-	
+
 	purchase = user.purchases.create(
 		package: params[:package],
 		options: params[:optional],
@@ -156,8 +164,8 @@ post '/checkout/:product/?' do
 		state: params[:state],
 		zip: params[:zip]
 	)
-	
+
 	Email.receipt(user.email, user.name, "#{params[:package]} #{params[:optional]}", params[:amount]) if settings.environment == 'production'
-	
+
 	sign_in user.id, msg: msg
 end

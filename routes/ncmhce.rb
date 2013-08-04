@@ -3,7 +3,7 @@ get '/ncmhce/?' do
 		user = User.get session[:user]
 		redirect '/ncmhce/scenarios' if user.max_scenarios > 0
 	end
-	
+
 	erb :ncmhce
 end
 
@@ -24,7 +24,7 @@ end
 
 get '/ncmhce/scenarios/?' do
 	authorize!
-	
+
 	user = User.get session[:user]
 	redirect '/ncmhce' unless user.max_scenarios > 0
 
@@ -40,14 +40,16 @@ get '/ncmhce/scenarios/?' do
 end
 
 get '/ncmhce/scenarios/:id/?' do
+	expired?
+
 	@scenario = Scenario.get params[:id]
-	
+
 	if @scenario.sample?
 		authorize! sample = true
 	else
 		authorize!
 	end
-	
+
 	unless @scenario.sample? || @scenario.workshop? || @scenario.ceu?
 		if User.get(session[:user]).remaining_scenarios == 0
 			unless Use.all(user_id: session[:user], scenario_id: params[:id]).count > 0
@@ -56,7 +58,7 @@ get '/ncmhce/scenarios/:id/?' do
 			end
 		end
 	end
-	
+
 	if Average.all(scenario_id: params[:id], user_id: session[:user]).count > 0
 		redirect "/ncmhce/scenarios/#{params[:id]}/score"
 	end
@@ -68,8 +70,10 @@ get '/ncmhce/scenarios/:id/?' do
 end
 
 get '/ncmhce/scenarios/:id/score/?' do
+	expired?
+
 	@scenario = Scenario.get params[:id]
-	
+
 	if @scenario.sample?
 		authorize! sample = true
 	else
@@ -79,15 +83,15 @@ get '/ncmhce/scenarios/:id/score/?' do
 	@scores = []
 	scores = Score.all(user_id: session[:user], scenario_id: params[:id])
 	scores.each {|s| @scores << s.answer_id }
-	
+
 	@questions = @scenario.questions order: :position
 	@answers = @questions.answers order: :body
-	
+
 	actual_total = 0
 	scores.each {|s| actual_total = actual_total + s.value}
 	possible_total = 0
 	@answers.each {|a| possible_total = possible_total + a.value if a.value > 0}
-	
+
 	@average = ((actual_total.to_f/possible_total.to_f)*100).to_i
 	@average = 0 if @average < 0
 	a = Average.first_or_create(scenario_id: params[:id], user_id: session[:user], score: @average)
@@ -96,11 +100,11 @@ get '/ncmhce/scenarios/:id/score/?' do
 	@breakdown = {}
 	@breakdown['Information Gathering'] = {possible: 0, correct: 0}
 	@breakdown['Decision Making']				= {possible: 0, correct: 0}
-	
+
 	@answers.each do |a|
 		@breakdown[a.question.score_type][:possible] += a.value if a.value > 0
 	end
-	
+
 	scores.each do |s|
 		@breakdown[s.score_type][:correct]  += s.value
 	end
@@ -110,6 +114,8 @@ end
 
 get '/ncmhce/scenarios/:id/restart/?' do
 	authorize!
+	expired?
+
 	Score.all(user_id: session[:user], scenario_id: params[:id]).destroy
 	Average.all(scenario_id: params[:id], user_id: session[:user]).destroy
 	redirect "/ncmhce/scenarios/#{params[:id]}"

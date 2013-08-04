@@ -9,6 +9,9 @@ require 'net/http'
 #   ~: rake app:server env=production
 set :environment, ENV['RACK_ENV'] || ENV['env'] || :development
 
+enable :sessions
+set :session_secret, 'secret123'
+
 # Requires the necessary files, in order, for the app
 ['settings', 'libraries', 'models', 'routes'].each do |directory|
 	Dir["./#{directory}/**/*.rb"].each { |file| require file }
