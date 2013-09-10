@@ -113,4 +113,8 @@
 <% end %>
 
 <br />
-<p><center><a href="/ncmhce/scenarios">Take another scenario</a></center></p>
+<% if @scenario.ceu %>
+	<p><center><a href="/profile">Take another scenario</a></center></p>
+<% else %>
+	<p><center><a href="/ncmhce/scenarios">Take another scenario</a></center></p>
+<% end %>
