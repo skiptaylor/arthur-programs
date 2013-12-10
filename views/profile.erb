@@ -31,7 +31,7 @@
 					No expiration date.
 				<% else %>
 					<% if (@user.expiration_date - 30) > Time.now.to_date %>
-						Account expires on<br /><%= @user.expiration_date.display :american_day %>.
+						Account expires on <%= @user.expiration_date.display :american_day %>.
 					<% else %>
 						<strong style="color: red; font-size: 100%;">Account expires on <%= @user.expiration_date.display :american_day %>.</strong>
 					<% end %>
@@ -65,8 +65,10 @@
 					<% unless @user.max_exams > 2 %>
 						<span style="float: right; margin-left: 3px;">&nbsp;<a class="btn btn-success btn-small" href="/checkout/nce-upgrade">Buy 2 more practice exams for $60</a></span>
 					<% end %>
+					<% unless @user.expired? %>
 					<% unless @user.purchases.any? { |purchase| purchase.shipped_on != nil } %>
 						<span style="float: right;"><a class="btn btn-success btn-small" href="/checkout/nce-hard-copy">Buy a hard copy for $12.95</a></span>
+					<% end %>
 					<% end %>
 			</h3>
 		</div>
@@ -74,9 +76,9 @@
     <% Message.all(nce: true).each do |m| %>
       <div class="alert alert-info" style="border: none;"><%= m.body %></div>
     <% end %>
-
+	 <% unless @user.expired? %>
 		<p><a href="/nce/exams">Choose an exam</a> to get started.</p>
-
+		<% end %>
 		<% unless @exams.empty? %>
 			<table class="table table-condensed">
 				<thead>
@@ -122,8 +124,10 @@
 				<% if @user.max_scenarios < 36 %>
 					<span style="float: right;">&nbsp; <a class="btn btn-success btn-small" href="/checkout/ncmhce-upgrade">Buy 12 more scenarios for $80</a></span>
 				<% end %>
+				<% unless @user.expired? %>
 				<% unless @user.purchases.any? { |purchase| purchase.shipped_on != nil } %>
-						<span style="float: right;"><a class="btn btn-success btn-small" href="/checkout/ncmhce-hard-copy">Buy a hard copy for $12.95</a></span>
+					<span style="float: right;"><a class="btn btn-success btn-small" href="/checkout/ncmhce-hard-copy">Buy a hard copy for $12.95</a></span>
+				<% end %>
 				<% end %>
 			</h3>
 		</div>
@@ -131,9 +135,9 @@
     <% Message.all(ncmhce: true).each do |m| %>
       <div class="alert alert-info" style="border: none;"><%= m.body %></div>
     <% end %>
-
+	 	<% unless @user.expired? %>
 		<p><a href="/ncmhce/scenarios">Choose a scenario</a> to get started.</p>
-
+		<% end %>
 		<% unless @scenarios.empty? %>
 			<table class="table table-condensed">
 				<thead>
@@ -275,7 +279,9 @@
 						<td class="hidden-phone">iPhone/iPad, Android, eReaders</td>
 						<td><span class="badge badge-warning">11/21/2013</span></td>
 						<td class="hidden-phone">932KB</td>
+						<% unless @user.expired? %>
 						<td style="text-align: right;"><a href="/downloads/nce?file=NCE%20Study%20Guide.epub">Download</a></td>
+						<% end %>
 					</tr>
 					<tr>
 						<td>NCE Study Guide.mobi</td>
@@ -283,14 +289,18 @@
 						</td>
 						<td><span class="badge badge-warning">11/21/2013</span></td>
 						<td class="hidden-phone">3.2MB</td>
+						<% unless @user.expired? %>
 						<td style="text-align: right;"><a href="/downloads/nce?file=NCE%20Study%20Guide.mobi">Download</a></td>
+						<% end %>
 					</tr>
 					<tr>
 						<td>NCE Study Guide.pdf</td>
 						<td class="hidden-phone">Any device with a PDF Reader</td>
 						<td><span class="badge badge-warning">11/21/2013</span></td>
 						<td class="hidden-phone">2.6MB</td>
+						<% unless @user.expired? %>
 						<td style="text-align: right;"><a href="/downloads/nce?file=NCE%20Study%20Guide.pdf">Download</a></td>
+						<% end %>
 					</tr>
 				<% end %>
 				<% if @user.ncmhce_downloads %>
@@ -299,7 +309,9 @@
 						<td class="hidden-phone">iPhone/iPad, Android, eReaders</td>
 						<td><span class="badge badge-success">4/3/2013</span></td>
 						<td class="hidden-phone">500KB</td>
+						<% unless @user.expired? %>
 						<td style="text-align: right;"><a href="/downloads/ncmhce?file=NCMHCE%20Study%20Supplement.epub">Download</a></td>
+						<% end %>
 					</tr>
 					<tr>
 						<td>NCMHCE Study Supplement.mobi</td>
@@ -308,14 +320,18 @@
 						</td>
 						<td><span class="badge badge-success">4/3/2013</span></td>
 						<td class="hidden-phone">1.4MB</td>
+						<% unless @user.expired? %>
 						<td style="text-align: right;"><a href="/downloads/ncmhce?file=NCMHCE%20Study%20Supplement.mobi">Download</a></td>
+						<% end %>
 					</tr>
 					<tr>
 						<td>NCMHCE Study Supplement.pdf</td>
 						<td class="hidden-phone">Any device with a PDF Reader</td>
 						<td><span class="badge badge-success">3/30/2013</span></td>
 						<td class="hidden-phone">1.3MB</td>
+						<% unless @user.expired? %>
 						<td style="text-align: right;"><a href="/downloads/ncmhce?file=NCMHCE%20Study%20Supplement.pdf">Download</a></td>
+						<% end %>
 					</tr>
 				<% end %>
 			</tbody>
