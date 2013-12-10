@@ -101,7 +101,11 @@
 								<% end %>
 							</td>
 							<td><%= average.created_at.display %></td>
-							<td style="text-align: right;"><a href="/nce/exams/<%= average.exam_id %>">Review</a></td>
+							<td style="text-align: right;">
+								<% unless @user.expired? %>
+									<a href="/nce/exams/<%= average.exam_id %>">Review</a>
+								<% end %>
+							</td>
 						</tr>
 					<% end %>
 				</tbody>
@@ -155,7 +159,11 @@
 									<% end %>
 								</td>
 								<td><%= avg.updated_at.display if avg %></td>
-								<td style="text-align: right;"><a href="/ncmhce/scenarios/<%= average.scenario_id %>">Review</a></td>
+								<td style="text-align: right;">
+									<% unless @user.expired? %>
+										<a href="/ncmhce/scenarios/<%= average.scenario_id %>">Review</a>
+									<% end %>
+								</td>
 							</tr>
 						<% end %>
 					<% end %>
@@ -194,7 +202,9 @@
 							<%= avg ? avg.created_at.display : '' %>
 						</td>
 						<td style="text-align: right;">
-							<a href="/ncmhce/scenarios/<%= scenario.id %>">Take</a>
+							<% unless @user.expired? %>
+								<a href="/ncmhce/scenarios/<%= scenario.id %>">Take</a>
+							<% end %>
 						</td>
 					</tr>
 				<% end %>
@@ -232,7 +242,9 @@
 							<%= avg ? avg.created_at.display : '' %>
 						</td>
 						<td style="text-align: right;">
-							<a href="/ncmhce/scenarios/<%= scenario.id %>">Take</a>
+							<% unless @user.expired? %>
+								<a href="/ncmhce/scenarios/<%= scenario.id %>">Take</a>
+							<% end %>
 						</td>
 					</tr>
 				<% end %>

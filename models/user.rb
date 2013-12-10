@@ -4,12 +4,12 @@ class User
 	property   :id,        Serial
 	property   :delete_at, ParanoidDateTime
 	timestamps :at
-  
+
   property :legacy_id, Integer
 
 	property :email,    Text
 	property :password, BCryptHash
-	
+
 	property :pass_reset_key,	String
 	property :pass_reset_date, Date
 
@@ -18,7 +18,7 @@ class User
 	property :name,  				 String
 	property :phone, 				 String
 	property :hear_about_us, String
-	
+
 	property :notes,	Text
 
 	property :expiration_date, 		 Date, default: Chronic.parse('1 year from now')
@@ -30,9 +30,9 @@ class User
 
 	property :ncmhce_downloads, Boolean, default: false
 	property :nce_downloads, 		Boolean, default: false
-	
+
 	property :workshop_scenarios, Boolean, default: false
-  
+
   property :ceu_scenarios, Boolean, default: false
 
 	has n, :scores
@@ -57,6 +57,10 @@ class User
 		self.averages.each  {|a| a.remove}
 		Use.all(user_id: self.id).destroy
 		self.destroy!
+	end
+
+	def expired?
+		self.expiration_date < DateTime.now
 	end
 
 end
