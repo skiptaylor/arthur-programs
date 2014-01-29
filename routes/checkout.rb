@@ -37,7 +37,7 @@ post '/checkout/:product/?' do
 		params[:email].downcase!
 		params[:password].strip!
 		params[:password].downcase!
-	end
+  end
 	params[:name] = "#{params[:first_name].strip} #{params[:last_name].strip}"
 	params[:address1].strip!
 	params[:address2].strip!
@@ -49,7 +49,7 @@ post '/checkout/:product/?' do
 		user = User.get params[:user_id]
 		params[:email] = user.email
   else
-		user = User.create(email: params[:email],
+		user = User.new(email: params[:email],
 		                password: params[:password],
                         name: params[:name],
                hear_about_us: params[:hear_about_us],
@@ -57,39 +57,43 @@ post '/checkout/:product/?' do
                max_scenarios: 0,
                nce_downloads: false,
             ncmhce_downloads: false)
-	end
+  end
 
   case params[:package]
   when 'Basic Package'
-    user.update(nce_downloads: true, max_exams: (user.max_exams + 2))
+    user.nce_downloads = true
+    user.max_exams = (user.max_exams + 2)
     params[:package] = 'NCE: Basic Package'
                email = 'nce'
                  msg = true
     params[:optional] ? params[:optional] = '+ Hard Copy' : params[:optional] = '+ eBook'
     
   when 'Enhanced Package'
-    user.update(nce_downloads: true, max_exams: (user.max_exams + 4))
+    user.nce_downloads = true
+    user.max_exams = (user.max_exams + 4)
     params[:package] = 'NCE: Enhanced Package'
                email = 'nce'
                  msg = true
     params[:optional] ? params[:optional] = '+ Hard Copy' : params[:optional] = '+ eBook'
     
   when 'Starter Package'
-    user.update(ncmhce_downloads: true, max_scenarios: (user.max_scenarios + 12))
+    user.ncmhce_downloads = true
+    user.max_scenarios = (user.max_scenarios + 12)
     params[:package] = 'NCMHCE: Starter Package'
                email = 'ncmhce'
                  msg = true
     params[:optional] ? params[:optional] = '+ Hard Copy' : params[:optional] = '+ eBook'
     
   when 'Full Package'
-    user.update(ncmhce_downloads: true, max_scenarios: (user.max_scenarios + 36))
+    user.ncmhce_downloads = true
+    user.max_scenarios = (user.max_scenarios + 36)
     params[:package] = 'NCMHCE: Full Package'
                email = 'ncmhce'
                  msg = true
     params[:optional] ? params[:optional] = '+ Hard Copy' : params[:optional] = '+ eBook'
 
   when 'NCE Upgrade'
-    user.update(max_exams: (user.max_exams + 2))
+    user.max_exams = (user.max_exams + 2)
     params[:package] = 'NCE: Upgrade'
                  msg = false
 
@@ -98,7 +102,7 @@ post '/checkout/:product/?' do
                  msg = false
 
   when 'NCMHCE Upgrade'
-    user.update(max_scenarios: (user.max_scenarios + 12))
+    user.max_scenarios = (user.max_scenarios + 12)
     params[:package] = 'NCMHCE: Upgrade'
                  msg = false
 
@@ -122,34 +126,40 @@ post '/checkout/:product/?' do
 		end
 
 		if user.expiration_date <= DateTime.now
-			user.update(expiration_date: Time.now.to_date + additional_time)
+			user.expiration_date = Time.now.to_date + additional_time
 		else
-			user.update(expiration_date: user.expiration_date + additional_time)
+			user.expiration_date = user.expiration_date + additional_time
 		end
-	end
+  end
 
   
   Stripe.api_key = STRIPE_PRIVATE_KEY
-	charge = Stripe::Charge.create(amount: (params[:amount].to_f * 100).to_i,
+  
+  if charge = Stripe::Charge.create(amount: (params[:amount].to_f * 100).to_i,
                                currency: "usd",
                                    card: params[:stripeToken],
                             description: "#{params[:name]} (#{params[:email]}) #{params[:package]} #{params[:optional]}")
-
-	purchase = user.purchases.create(package: params[:package],
-		                               options: params[:optional],
-                                 stripe_id: charge.id,
-                                    amount: params[:amount],
-                                  address1: params[:address1],
-                                  address2: params[:address2],
-                                      city: params[:city],
-                                     state: params[:state],
-                                       zip: params[:zip])
-
+    user.save
+  	user.purchases.create(package: params[:package],
+  		                    options: params[:optional],
+                        stripe_id: charge.id,
+                           amount: params[:amount],
+                         address1: params[:address1],
+                         address2: params[:address2],
+                             city: params[:city],
+                            state: params[:state],
+                              zip: params[:zip])
   
-  if settings.environment == 'production'
-    Email.welcome(user.email, user.name, user.email, email)
-    Email.receipt(user.email, user.name, "#{params[:package]} #{params[:optional]}", params[:amount])
+    
+    if settings.environment == 'production'
+      Email.welcome(user.email, user.name, user.email, email)
+      Email.receipt(user.email, user.name, "#{params[:package]} #{params[:optional]}", params[:amount])
+    end
+  
+    sign_in user.id, msg: msg
+  else
+    session[:alert] = { style: 'alert-error',
+                      message: "There was an error charging your card. Please call support at 888-326-9229, Monday - Friday, 9:00 AM - 5:00 PM EST." }
+    redirect request.referrer
   end
-
-  sign_in user.id, msg: msg
 end
