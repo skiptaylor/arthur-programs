@@ -54,7 +54,9 @@
             </ul>
                         
             <form class="navbar-form pull-right" style="border: none;">
+					<% unless active 'sign-in' %>
             	<a class="btn btn-success btn-small" href="/sign-in"><strong>Sign In</strong></a>
+					<% end %>
             </form>
         	<% else %>
         		<ul class="nav">
@@ -109,8 +111,9 @@
                   </ul>
             		</li>
             	<% end %>
-            
-            	<li><a href="/sign-out">Sign Out</a></li>
+            	
+            		<li><a href="/sign-out">Sign Out</a></li>
+					
             </ul>
         	<% end %>
         </div>
