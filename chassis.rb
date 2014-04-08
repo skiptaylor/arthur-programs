@@ -9,6 +9,8 @@ require 'net/http'
 #   ~: rake app:server env=production
 set :environment, ENV['RACK_ENV'] || ENV['env'] || :development
 
+use Rack::Protection, :except => :session_hijacking
+
 enable :sessions
 set :session_secret, 'secret123'
 
