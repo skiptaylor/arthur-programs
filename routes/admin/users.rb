@@ -3,7 +3,7 @@ get '/admin/users/?' do
 	
 	@users = User.all
 	if params[:search] && !params[:search].nil?
-		@users = User.all(conditions: ["email ILIKE ? or name ILIKE ?", "%#{params[:search].strip}%", "%#{params[:search].strip}%"], limit: 100)
+		@users = User.all(conditions: ["email ILIKE ? or name ILIKE ?", "%#{params[:search].strip}%", "%#{params[:search].strip}%"])
 	else
 		@users = User.all(:email.not => 'sample', order: [:updated_at.desc], limit: 100)
 	end
@@ -145,6 +145,6 @@ get '/admin/users/:id/delete/?' do
 	admin!
 	@user = User.get params[:id]
 	@user.remove
-	# session[:alert] = { style: 'alert-success', message: "#{@user.name} has been removed." }
-	redirect request.referrer
+	session[:alert] = { style: 'alert-success', message: "#{@user.name} has been removed." }
+	redirect '/admin/users'
 end
