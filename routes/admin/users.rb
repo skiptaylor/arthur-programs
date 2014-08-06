@@ -145,6 +145,6 @@ get '/admin/users/:id/delete/?' do
 	admin!
 	@user = User.get params[:id]
 	@user.destroy
-	session[:alert] = { style: 'alert-success', message: "#{@user.name} has been removed." }
-	redirect '/admin/users'
+	session[:alert] = { style: 'alert-success', message: "User has been removed." }
+	redirect request.referrer
 end
