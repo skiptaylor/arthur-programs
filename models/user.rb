@@ -51,10 +51,16 @@ class User
 		self.max_scenarios - used
 	end
 
+  # def remove
+  #   self.scores.each     {|s| s.remove}
+  #   self.purchases.each {|p| p.remove}
+  #   self.averages.each  {|a| a.remove}
+  #   Use.all(user_id: self.id).destroy
+  #   self.destroy!
+  # end
+  
 	def remove
 		self.scores.each 		{|s| s.remove}
-		self.purchases.each {|p| p.remove}
-		self.averages.each  {|a| a.remove}
 		Use.all(user_id: self.id).destroy
 		self.destroy!
 	end

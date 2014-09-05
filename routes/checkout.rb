@@ -121,6 +121,8 @@ post '/checkout/:product/?' do
   if params[:user_id]
 		if (params[:package] == 'Account Extension') || (params[:package] == 'Account Expiration')
 			additional_time = 90
+  	elsif (params[:package] == 'NCMHCE Hard Copy') || (params[:package] == 'NCE Hard Copy')
+  		additional_time = 0
 		else
 			additional_time = 365
 		end
