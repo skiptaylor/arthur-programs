@@ -62,7 +62,6 @@ class User
       repository(:default).adapter.select("delete FROM purchases where user_id = #{u.id}")
       repository(:default).adapter.select("delete FROM averages where user_id = #{u.id}")
       repository(:default).adapter.select("delete FROM uses where user_id = #{u.id}")
-      self.delete
     end
   end
 	
