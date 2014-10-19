@@ -1,7 +1,9 @@
-# repository(:default).adapter.select("delete FROM users where email = 'sample'")
-# repository(:default).adapter.select("select count(*) FROM users where email = 'sample'")
-# User.all(email: 'sample').count
-# User.all.count
+# delete from scores where user_id in (select id from users where email = 'sample');
+# delete from purchases where user_id in (select id from users where email = 'sample');
+# delete from averages where user_id in (select id from users where email = 'sample');
+# delete from uses where user_id in (select id from users where email = 'sample');
+# delete from users where email = 'sample';
+
 
 class User
 	include DataMapper::Resource
@@ -56,36 +58,6 @@ class User
 		self.max_scenarios - used
 	end
 	
-	def self.clean
-    self.all(email: 'sample').each do |u|
-      repository(:default).adapter.select("delete FROM scores where user_id = #{u.id}")
-      repository(:default).adapter.select("delete FROM purchases where user_id = #{u.id}")
-      repository(:default).adapter.select("delete FROM averages where user_id = #{u.id}")
-      repository(:default).adapter.select("delete FROM uses where user_id = #{u.id}")
-    end
-  end
-	
-	def before_destroy
-    self.scores.each    { |s| s.delete! }
-    self.purchases.each { |p| p.destroy }
-    self.averages.each  { |a| a.destroy }
-    Use.all(user_id: self.id).destroy
-  end
-
-#   def remove
-#     self.scores.each     {|s| s.remove}
-#     self.purchases.each {|p| p.remove}
-#     self.averages.each  {|a| a.remove}
-#     Use.all(user_id: self.id).destroy
-#     self.destroy!
-#   end
-  
-  # def remove
-  #   self.scores.each     {|s| s.remove}
-  #   Use.all(user_id: self.id).destroy
-  #   self.destroy!
-  # end
-
 	def expired?
 		self.expiration_date < DateTime.now
 	end
