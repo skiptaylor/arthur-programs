@@ -1,3 +1,8 @@
+# repository(:default).adapter.select("delete FROM users where email = 'sample'")
+# repository(:default).adapter.select("select count(*) FROM users where email = 'sample'")
+# User.all(email: 'sample').count
+# User.all.count
+
 class User
 	include DataMapper::Resource
 
@@ -51,8 +56,18 @@ class User
 		self.max_scenarios - used
 	end
 	
+	def self.clean
+    self.all(email: 'sample').each do |u|
+      repository(:default).adapter.select("delete FROM scores where user_id = #{u.id}")
+      repository(:default).adapter.select("delete FROM purchases where user_id = #{u.id}")
+      repository(:default).adapter.select("delete FROM averages where user_id = #{u.id}")
+      repository(:default).adapter.select("delete FROM uses where user_id = #{u.id}")
+      self.delete
+    end
+  end
+	
 	def before_destroy
-    self.scores.each    { |s| s.destroy }
+    self.scores.each    { |s| s.delete! }
     self.purchases.each { |p| p.destroy }
     self.averages.each  { |a| a.destroy }
     Use.all(user_id: self.id).destroy
