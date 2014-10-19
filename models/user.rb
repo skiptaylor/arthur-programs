@@ -35,9 +35,9 @@ class User
 
   property :ceu_scenarios, Boolean, default: false
 
-	has n, :scores,     :constraint => :destroy
-	has n, :averages,   :constraint => :destroy
-	has n, :purchases,  :constraint => :destroy
+	has n, :scores
+	has n, :averages
+	has n, :purchases
 
 	def remaining_exams
 		self.max_exams - Use.all(user_id: self.id, :exam_id.not => nil, :sample => false).count
@@ -50,14 +50,21 @@ class User
 		end
 		self.max_scenarios - used
 	end
-
-  def remove
-    self.scores.each     {|s| s.remove}
-    self.purchases.each {|p| p.remove}
-    self.averages.each  {|a| a.remove}
+	
+	def before_destroy
+    self.scores.each    { |s| s.destroy }
+    self.purchases.each { |p| p.destroy }
+    self.averages.each  { |a| a.destroy }
     Use.all(user_id: self.id).destroy
-    self.destroy!
   end
+
+#   def remove
+#     self.scores.each     {|s| s.remove}
+#     self.purchases.each {|p| p.remove}
+#     self.averages.each  {|a| a.remove}
+#     Use.all(user_id: self.id).destroy
+#     self.destroy!
+#   end
   
   # def remove
   #   self.scores.each     {|s| s.remove}
