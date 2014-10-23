@@ -70,7 +70,7 @@ end
 
 post '/new-password/:key/?' do
 	user = User.first(pass_reset_key: params[:key])
-	user.update(password: params[:password], pass_reset_key: nil, pass_reset_date: nil)
+	user.update(password: params[:password].downcase!, pass_reset_key: nil, pass_reset_date: nil)
 	session[:alert] = { message: 'Your password has been reset.', style: 'alert-success' }
 	sign_in user.id
 end
