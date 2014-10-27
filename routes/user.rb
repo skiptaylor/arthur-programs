@@ -45,8 +45,9 @@ get '/reset-password/:email/?' do
 			to: user.email,
 			from: 'no-reply@counselorexams.com',
 			subject:'Counselor Exams password reset link',
-			body: "This link takes you to a page where you can reset your password: http://#{request.host}/new-password/#{user.pass_reset_key}"
-		)
+			body: "This link takes you to a page where you can enter a temporary password: http://#{request.host}/new-password/#{user.pass_reset_key}",
+		  body: "You should enter a permanent password on your profile page. Remember to Update Account to save"
+    )
 		session[:alert] = { style: 'alert-info', message: 'Password reset instructions have been sent to your inbox.' }
 	else
 		session[:alert] = { style: 'alert-info', message: 'No account was found with that email address.' }
@@ -63,7 +64,7 @@ get '/new-password/:key/?' do
 	if user = User.first(pass_reset_key: params[:key], :pass_reset_date.gte => Chronic.parse('1 day ago'))
 		erb :'new-password'
 	else
-		session[:alert] = { message: 'That password reset link has expired.' }
+		session[:alert] = { style: 'alert-info', message: 'That password reset link has expired.' }
 		redirect '/sign-in'
 	end
 end
