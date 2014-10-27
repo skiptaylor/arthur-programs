@@ -45,8 +45,8 @@ get '/reset-password/:email/?' do
 			to: user.email,
 			from: 'no-reply@counselorexams.com',
 			subject:'Counselor Exams password reset link',
-			body: "This link takes you to a page where you can enter a temporary password: http://#{request.host}/new-password/#{user.pass_reset_key}",
-		  body: "You should enter a permanent password on your profile page. Remember to Update Account to save"
+			body: "This link takes you to a page where you can enter a temporary password: http://#{request.host}/new-password/#{user.pass_reset_key} 
+		  You should enter a permanent password on your profile page. Remember to Update Account to save"
     )
 		session[:alert] = { style: 'alert-info', message: 'Password reset instructions have been sent to your inbox.' }
 	else
