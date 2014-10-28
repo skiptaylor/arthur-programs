@@ -55,7 +55,7 @@ get '/reset-password/:email/?' do
 end
 
 get '/reset-password/?' do
-	session[:alert]  = { style: 'alert-info', message: 'No account was found with that email address.' }
+	session[:alert] = { style: 'alert-info', message: 'No account was found with that email address.' }
 	erb :'sign-in'
 end
 
@@ -63,7 +63,7 @@ get '/new-password/:key/?' do
 	if user = User.first(pass_reset_key: params[:key], :pass_reset_date.gte => Chronic.parse('1 day ago'))
 		erb :'new-password'
 	else
-		session[:alert] = { style: 'alert-info', message: 'That password reset link has expired.' }
+		session[:alert] = { message: 'That password reset link has expired.', style: 'alert-info' }
 		redirect '/sign-in'
 	end
 end
@@ -71,7 +71,7 @@ end
 post '/new-password/:key/?' do
 	user = User.first(pass_reset_key: params[:key])
 	user.update(password: params[:password].downcase!, pass_reset_key: nil, pass_reset_date: nil)
-	session[:alert] = { message: 'You should now enter a new password and Update Account.', style: 'alert-success' }
+	session[:alert] = { message: 'You should now enter a new password and Update Account. This reset link can only be used once!', style: 'alert-success' }
 	sign_in user.id
 end
 
