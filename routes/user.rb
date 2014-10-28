@@ -60,7 +60,7 @@ get '/reset-password/?' do
 end
 
 get '/new-password/:key/?' do
-	if user = User.first(pass_reset_key: params[:key], :pass_reset_date.gte => Chronic.parse('1 day ago'))
+	if user = User.first(pass_reset_key: params[:key], :pass_reset_date.gte => Chronic.parse('1 day ago')) || (:pass_reset_key == nil)
 		erb :'new-password'
 	else
 		session[:alert] = { message: 'That password reset link has expired.', style: 'alert-info' }
