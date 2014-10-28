@@ -70,7 +70,7 @@ end
 
 post '/new-password/:key/?' do
 	user = User.first(pass_reset_key: params[:key])
-	user.update(password: params[:password].downcase!, pass_reset_key: nil, pass_reset_date: nil)
+	user.update(password: params[:password].downcase!)
 	session[:alert] = { message: 'You should now enter a new password and Update Account. This reset link can only be used once!', style: 'alert-success' }
 	sign_in user.id
 end
