@@ -64,7 +64,7 @@ get '/new-password/:key/?' do
 		erb :'new-password'
 	else
 		session[:alert] = { message: 'That password reset link has expired.', style: 'alert-info' }
-		redirect '/sign-in'
+		erb :'/sign-in'
 	end
 end
 
