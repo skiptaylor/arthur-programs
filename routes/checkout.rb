@@ -128,7 +128,7 @@ post '/checkout/:product/?' do
 		end
 
 		if user.expiration_date <= DateTime.now
-			user.expiration_date = Time.now.to_date + additional_time
+			user.expiration_date = user.expiration_date + additional_time
 		else
 			user.expiration_date = Time.now.to_date + additional_time
 		end
