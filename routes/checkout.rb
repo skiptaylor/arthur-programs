@@ -124,13 +124,13 @@ post '/checkout/:product/?' do
   	elsif (params[:package] == 'NCMHCE Hard Copy') || (params[:package] == 'NCE Hard Copy')
   		additional_time = 0
 		else
-			additional_time = (Time.now.to_date + 365)
+			additional_time = 365
 		end
 
 		if user.expiration_date <= DateTime.now
 			user.expiration_date = Time.now.to_date + additional_time
 		else
-			user.expiration_date = user.expiration_date + additional_time
+			user.expiration_date = Time.now.to_date + additional_time
 		end
   end
 
