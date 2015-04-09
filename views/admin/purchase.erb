@@ -20,7 +20,7 @@
 			<%= @purchase.user.name %><br />
 			<%= @purchase.address1 %><br />
 			<%= @purchase.address2 + '<br />' unless @purchase.address2.strip.length == 0 %>
-			<%= @purchase.city %> <%= @purchase.state %>, <%= @purchase.zip %>
+			<%= @purchase.city %>, <%= @purchase.state %> <%= @purchase.zip %>
 		</p>
 
 		<form class="form-horizontal" method="post">
