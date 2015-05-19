@@ -41,6 +41,8 @@ class User
 	property :workshop_scenarios, Boolean, default: false
 
   property :ceu_scenarios, Boolean, default: false
+  
+  property :practice_exams, Boolean, default: false
 
 	has n, :scores
 	has n, :averages

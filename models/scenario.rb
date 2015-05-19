@@ -8,10 +8,11 @@ class Scenario
 	property :title, Text, 		 lazy: false
 	property :body,  Text,		 lazy: false
 	
-	property :active,	Boolean, 	 default: true
-	property :sample, Boolean, 	 default: false
+	property :active,	  Boolean, default: true
+	property :sample,   Boolean, default: false
 	property :workshop, Boolean, default: false
-  property :ceu, Boolean,      default: false
+  property :ceu,      Boolean, default: false
+  property :practice, Boolean, default: false
 
 	has n, :questions
 	has n, :averages

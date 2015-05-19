@@ -3,4 +3,5 @@
 # or
 #  ~: rake db:seed:all
 
-# User.create email: 'johndoe@example.com', password: 'secret123'
+User.create email: 'skip@tayloraid.com', password: 'balloon'
+User.create email: 'tayloraid@gmail.com', password: 'revolver', admin: 'true'

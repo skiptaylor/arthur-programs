@@ -34,6 +34,9 @@
 						<% if scenario.ceu? %>
 							<span class="label label-inverse">CEU</span>
 						<% end %>
+						<% if scenario.practice? %>
+							<span class="label label-warning">Practice</span>
+						<% end %>
 					</td>
 					<td style="text-align: right;"><a href="/admin/scenarios/<%= scenario.id %>">Edit</a></td>
 				</tr>

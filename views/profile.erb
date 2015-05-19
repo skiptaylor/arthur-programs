@@ -152,7 +152,7 @@
 				</thead>
 				<tbody>
 					<% @scenarios.sort { |a,b| a.scenario_id <=> b.scenario_id }.each do |average| %>
-						<% unless average.scenario.workshop? %>
+						<% unless average.scenario.workshop? || average.scenario.practice? %>
 							<tr>
 								<td><%= average.scenario_id %>. <%= average.scenario.title %></td>
 								<td>
@@ -248,6 +248,46 @@
 						<td style="text-align: right;">
 							<% unless @user.expired? %>
 								<a href="/ncmhce/scenarios/<%= scenario.id %>">Take</a>
+							<% end %>
+						</td>
+					</tr>
+				<% end %>
+			</tbody>
+		</table>
+
+		<br />
+	<% end %>
+	
+	<% if @user.practice_exams? %>
+
+		<div class="page-header">
+			<h3>NCMHCE Practice Exams</h3>
+		</div>
+
+		<table class="table table-condensed">
+			<thead>
+				<tr>
+					<th>Scenario</th>
+					<th>Score</th>
+					<th>Taken On</th>
+					<th></th>
+				</tr>
+			</thead>
+			<tbody>
+				<% Scenario.all(practice: true, active: true).each do |scenario| %>
+					<% use = Use.last(scenario_id: scenario.id, user_id: @user.id) %>
+					<% avg = Average.last(scenario_id: scenario.id, user_id: @user.id) %>
+					<tr>
+						<td><%= scenario.title %></td>
+						<td>
+							<%= avg ? "#{avg.score}%" : 'N/A' %>
+						</td>
+						<td>
+							<%= avg ? avg.created_at.display : '' %>
+						</td>
+						<td style="text-align: right;">
+							<% unless @user.expired? %>
+								<a href="/ncmhce/scenarios/<%= scenario.id %>">Review</a>
 							<% end %>
 						</td>
 					</tr>

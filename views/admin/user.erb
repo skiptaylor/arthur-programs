@@ -104,6 +104,13 @@
 					<input type="checkbox" name="ceu_scenarios" id="ceu_scenarios" <%= 'checked' if @user.ceu_scenarios %> />
 				</div>
 			</div>
+			
+			<div class="control-group" id="ceu-scenarios-group">
+				<label class="control-label" for="practice_exams">NCMHCE Practice Exams</label>
+				<div class="controls">
+					<input type="checkbox" name="practice_exams" id="practice_exams" <%= 'checked' if @user.practice_exams %> />
+				</div>
+			</div>
 
 			<div class="control-group" id="expiration-group">
 				<label class="control-label" for="expiration_date">Expires</label>
@@ -334,6 +341,41 @@
       
       <br />
     <% end %>
+	 
+    <% if @user.practice_exams? %>
+      
+      <div class="page-header">
+        <h3>Practice Scenarios</h3>
+      </div>
+      
+      <table class="table table-condensed">
+        <thead>
+          <tr>
+            <th>Scenario</th>
+            <th>Score</th>
+            <th>Taken On</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% Scenario.all(practice: true, active: true).each do |scenario| %>
+            <% use = Use.last(scenario_id: scenario.id, user_id: @user.id) %>
+            <% avg = Average.last(scenario_id: scenario.id, user_id: @user.id) %>
+            <tr>
+              <td><%= scenario.title %></td>
+              <td>
+                <%= avg ? "#{avg.score}%" : 'N/A' %>
+              </td>
+              <td>
+                <%= avg ? avg.created_at.display : '' %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+      
+      <br />
+    <% end %>
+	 
 
 	</div>
 
