@@ -1,3 +1,4 @@
+# Used Postico.app
 # delete from scores where user_id in (select id from users where email = 'sample');
 # delete from purchases where user_id in (select id from users where email = 'sample');
 # delete from averages where user_id in (select id from users where email = 'sample');
@@ -59,6 +60,11 @@ class User
 		end
 		self.max_scenarios - used
 	end
+  
+  def remove_sample
+    Use.all(user_id: self.id).destroy
+    self.destroy!
+  end
 	
 	def expired?
 		self.expiration_date < DateTime.now
