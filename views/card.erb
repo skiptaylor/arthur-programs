@@ -33,7 +33,11 @@
 				  	<center><h2><%= card.term %></h2></center>
 				  	<hr style="margin: 0;" />
 				  	<span class="definition">
-					  	<%= markdown card.definition %>
+						<% unless card.short_def == '' %>
+					  	<%= markdown card.short_def %>
+						<% else %>
+						<%= markdown card.definition %>
+						<% end %>
 					  </span>
 				  </div>
 				  <br />
@@ -58,7 +62,7 @@
 				  	<center><h2><%= card.term %></h2></center>
 				  	<hr style="margin: 0;" />
 				  	<span class="definition">
-					  	<%= markdown card.definition %>
+					  	<%= markdown card.short_def %>
 					  </span>
 				  </div>
 				  

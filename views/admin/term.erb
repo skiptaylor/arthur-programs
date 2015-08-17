@@ -35,6 +35,13 @@
 			</div>
 
 			<div class="control-group" id="definition-group">
+				<label class="control-label" for="short_def">Short Definition</label>
+				<div class="controls">
+					<textarea name="short_def" id="short_def" class="input-xlarge" rows="7"><%= @term.short_def %></textarea>
+				</div>
+			</div>
+			
+			<div class="control-group" id="definition-group">
 				<label class="control-label" for="definition">Definition</label>
 				<div class="controls">
 					<textarea name="definition" id="definition" class="input-xlarge" rows="7"><%= @term.definition %></textarea>

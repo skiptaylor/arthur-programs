@@ -33,6 +33,7 @@ post '/admin/glossary/new/?' do
 	Glossary.create(
 		term: params[:term],
 		definition: params[:definition],
+    short_def: params[:short_def],
 		exam: params[:exam],
 		chapter: params[:chapter]
 	)
@@ -56,6 +57,7 @@ post '/admin/glossary/:id/?' do
 	@term.update(
 		term: params[:term],
 		definition: params[:definition],
+    short_def: params[:short_def],
 		exam: params[:exam],
 		chapter: params[:chapter]
 	)
