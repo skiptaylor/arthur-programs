@@ -17,8 +17,8 @@
 		<h1>Terms</h1>
 
 		<% @glossary.sort_by{|g| g.chapter}.group_by(&:chapter).each do |chapter, terms| %>
-			<div class="page-header">
-				<h3><%= chapter %></h3>
+			<div style="margin-bottom: 18px; border: 0; border-top: 1px solid #868686">
+				<h3 style="color: #b10000;"><%= chapter %></h3>
 			</div>
 			
 			<% terms.sort!{|a,b| a.term <=> b.term}.each do |glossary| %>
