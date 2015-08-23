@@ -6,7 +6,6 @@
 <script>
 	$(document).ready(function() {
 		var chapters = <%= chapters.to_json %>;
-		// $('#chapter').typeahead( { source: chapters } );
 	});
 </script>
 
@@ -62,7 +61,7 @@
 			<div class="control-group" id="chapter-group">
 				<label class="control-label" for="chapter">Chapter</label>
 				<div class="controls">
-					<input type="text" class="input-xlarge" id="chapter" name="chapter" value="<%= @term.chapter %>">
+					<input type="text" class="input-xlarge" autocomplete="off" id="chapter" name="chapter" value="<%= @term.chapter %>">
 				</div>
 			</div>
 
