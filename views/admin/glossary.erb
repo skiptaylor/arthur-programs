@@ -17,13 +17,13 @@
 		<h1>Terms</h1>
 
 		<% @glossary.sort_by{|g| g.chapter}.group_by(&:chapter).each do |chapter, terms| %>
-			<div style="margin: 18px 0; padding: 0 6px; background-color: #b10000; color: #ffffff;">
+			<div style="margin: 18px 0 4px 0; padding: 0 6px; background-color: #b10000; color: #ffffff;">
 				<h3 style="color: #ffffff;"><%= chapter %></h3>
 			</div>
 			
 			<% terms.sort!{|a,b| a.term <=> b.term}.each do |glossary| %>
 				<div class="row">
-				<hr style="margin: 2px 0 4px 18px; border: 0; border-bottom: 1px solid #ccc;">
+				<hr style="margin: 9px 0 9px 18px; border: 0; border-bottom: 1px solid #868686;">
 					<div class="span2">
 						<strong><%= glossary.term %></strong>
 						<br />
