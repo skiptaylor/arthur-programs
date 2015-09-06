@@ -22,7 +22,10 @@ end
 # Catches all routes and attempts to match them to a view file
 #   This must load AFTER all other routes
 #   Otherwise it catches all incoming GET requests
-get('/*/?') { erb :"#{params[:splat].first}" }
+get '/*/?' do
+	puts "--> #{request.referrer} // #{request.user_agent} // #{request.xhr?} // #{request.ip}"
+	erb :"#{params[:splat].first}"
+end
 
 # Finalizes the models
 DataMapper.finalize
