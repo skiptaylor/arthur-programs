@@ -3,7 +3,7 @@ get '/admin/users/?' do
 	
 	@users = User.all
 	if params[:search] && !params[:search].nil?
-		@users = User.all(conditions: ["email ILIKE ? or name ILIKE ?", "%#{params[:search].strip}%", "%#{params[:search].strip}%"], limit: 300)
+		@users = User.all(conditions: ["email ILIKE ? or name ILIKE ?", "%#{params[:search].strip}%", "%#{params[:search].strip}%"], limit: 100)
 	else
 		@users = User.all(:email.not => 'sample', order: [:updated_at.desc], limit: 100)
 	end
