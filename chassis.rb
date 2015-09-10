@@ -27,5 +27,10 @@ get '/*/?' do
 	erb :"#{params[:splat].first}"
 end
 
+configure :production do
+  require "skylight/sinatra"
+  Skylight.start!
+end
+
 # Finalizes the models
 DataMapper.finalize
