@@ -10,9 +10,10 @@
 
 <div class="span5 <%= 'offset1' if offset == true %>">
 	<%= label %>:
+	
 	<%= correct %>/<%= possible %> points
 	
 	<div class="progress <%= style %>">
-		<div class="bar" style="width: <%= percent %>%;"></div>
+		<div class="bar" style="width: <%= percent %>%; line-height: 1.7em;"><%= percent = ((correct.to_f/possible.to_f)*100).to_i %>%</div>
 	</div>
 </div>

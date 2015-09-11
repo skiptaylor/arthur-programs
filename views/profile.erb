@@ -148,6 +148,8 @@
 					<tr>
 						<th>Scenario</th>
 						<th>Score</th>
+						<!-- <th>IG</th>
+						<th>DM</th> -->
 						<th>Taken On</th>
 						<th></th>
 					</tr>
@@ -164,6 +166,7 @@
 										N/A
 									<% end %>
 								</td>
+
 								<td><%= avg.updated_at.display if avg %></td>
 								<td style="text-align: right;">
 									<% unless @user.expired? %>

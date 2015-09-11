@@ -15,24 +15,24 @@
 	<div class="well">
 		<div class="row">
 			<div class="span11">
-				<h3>
+				<!-- <h3>
 					Your Score: <%= @average %>% &nbsp;
 				</h3>
 				<%
 					style = 'progress'
 					style = 'progress' if @average > 60
 					style = 'progress' if @average > 80
-				%>
-				<div class="progress <%= style %>">
+				%> -->
+				<!-- <div class="progress <%= style %>">
 					<div class="bar" style="width: <%= @average %>%;"></div>
-				</div>
+				</div> -->
 			</div>
 		</div>
 		
 		<% unless @scenario.ceu %>
 		<div class="row">
-			<%= erb :progressbar, layout: false, locals: { label: 'Information Gathering', correct: @breakdown['Information Gathering'][:correct], possible: @breakdown['Information Gathering'][:possible] } %>			
-			<%= erb :progressbar, layout: false, locals: { offset: true, label: 'Decision Making', correct: @breakdown['Decision Making'][:correct], possible: @breakdown['Decision Making'][:possible] } %>
+			<h3><%= erb :progressbar, layout: false, locals: { label: 'Information Gathering', correct: @breakdown['Information Gathering'][:correct], possible: @breakdown['Information Gathering'][:possible] } %></h3>			
+			<h3><%= erb :progressbar, layout: false, locals: { offset: true, label: 'Decision Making', correct: @breakdown['Decision Making'][:correct], possible: @breakdown['Decision Making'][:possible] } %></h3>
 		</div>
 		<% end %>
 		
