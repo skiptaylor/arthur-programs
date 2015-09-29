@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Counselor Exams</title>
+	<title>Dr. Arthur&rsquo;s Study Programs</title>
   <link rel="shortcut icon" href="/img/favicon.ico">
   <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/img/apple-touch-icon-144-precomposed.png">
   <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/img/apple-touch-icon-114-precomposed.png">
@@ -29,142 +29,102 @@
 </head>
 
 <body>
-	
-	<div class="navbar navbar-inverse navbar-fixed-top">
-		<div class="navbar-inner">
-			<div class="container">
-			
-				<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-        	<span class="icon-bar"></span>
-        	<span class="icon-bar"></span>
-        	<span class="icon-bar"></span>
-        </a>
-        
-        <a class="brand" href="/"><strong>Counselor</strong>Exams</a>
-        
-        <div class="nav-collapse">
-        	<% unless session[:user] %>
-            <ul class="nav">
-              <li class="<%= active 'welcome' %>"><a href="/welcome">Welcome</a></li>
-              <li class="<%= active 'nce' %>"><a href="/nce">NCE</a></li>
-              <li class="<%= active 'ncmhce' %>"><a href="/ncmhce">NCMHCE</a></li>
-              <li class="<%= active 'how-it-works' %>"><a href="/how-it-works">How It Works</a></li>
-              <li class="<%= active 'faq' %>"><a href="/faq">FAQ</a></li>
-              <li class="<%= active 'feedback' %>"><a href="/feedback">Feedback</a></li>
-            </ul>
-                        
-            <form class="navbar-form pull-right" style="border: none;">
-					<% unless active 'sign-in' %>
-            	<a class="btn btn-success btn-small" href="/sign-in"><strong>Sign In</strong></a>
-					<% end %>
-            </form>
-        	<% else %>
-        		<ul class="nav">
-              <li class="<%= active 'profile' %>"><a href="/profile">Profile</a></li>
-              
-              <% if session[:admin] %>
-	              <li class="dropdown <%= active 'nce' %>">
-	              	<a href="#" class="dropdown-toggle" data-toggle="dropdown">
-	              		NCE
-	              		<b class="caret"></b>
-	              	</a>
-	              	<ul class="dropdown-menu">
-	              		<li><a href="/nce/exams">Exams</a></li>
-	              		<li><a href="/nce/glossary">Flash Cards</a></li>
-	              	</ul>
-	              </li>
-	              <li class="dropdown <%= active 'ncmhce' %>">
-	              	<a href="#" class="dropdown-toggle" data-toggle="dropdown">
-	              		NCMHCE
-	              		<b class="caret"></b>
-	              	</a>
-	              	<ul class="dropdown-menu">
-	              		<li><a href="/ncmhce/scenarios">Scenarios</a></li>
-	              		<li><a href="/ncmhce/glossary">Flash Cards</a></li>
-	              	</ul>
-	              </li>
-              <% else %>
-              	<li class="<%= active 'nce' %>"><a href="/nce/exams">NCE</a></li>
-              	<li class="<%= active 'ncmhce' %>"><a href="/ncmhce/scenarios">NCMHCE</a></li>
-              <% end %>
-                          
-              <li class="<%= active 'how-it-works' %>"><a href="/how-it-works">How It Works</a></li>
-              <li class="<%= active 'faq' %>"><a href="/faq">FAQ</a></li>
-              <li class="<%= active 'feedback' %>"><a href="/feedback">Feedback</a></li>
-            </ul>
-            
-            <ul class="nav pull-right">
-            	<% if session[:admin] %>
-            		<li class="dropdown">
-            			<a href="#" class="dropdown-toggle" data-toggle="dropdown">
-            				Admin
-            				<b class="caret"></b>
-            			</a>
-            			<ul class="dropdown-menu">
-                    <li><a href="/admin/purchases">Purchases</a></li>
-                    <li><a href="/admin/users">Users</a></li>
-                    <li><a href="/admin/stats">Stats</a></li>
-                    <li><a href="/admin/messages">Messages</a></li>
-                    <li><a href="/admin/exams">NCE Exams</a></li>
-                    <li><a href="/admin/scenarios">NCMHCE Scenarios</a></li>
-                    <li><a href="/admin/glossary/other">Glossary</a></li>
-                  </ul>
-            		</li>
-            	<% end %>
-            	
-            		<li><a href="/sign-out">Sign Out</a></li>
-					
-            </ul>
-        	<% end %>
-        </div>
-			
+	<div class="row">
+		<div class="navbar navbar-inverse navbar-fixed-top">
+			<div class="navbar-inner">
+				<div class="container">
+					<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</a>
+					<div class="nav-collapse">
+						<% unless session[:user] %>
+						<ul class="nav">
+							<li class="<%= active 'welcome' %>"><a href="/welcome">Welcome</a></li>
+							<li class="<%= active 'nce' %>"><a href="/nce">NCE</a></li>
+							<li class="<%= active 'ncmhce' %>"><a href="/ncmhce">NCMHCE</a></li>
+							<li class="<%= active 'ceu' %>"><a href="/ceu">CEU</a></li>
+							<li class="<%= active 'how-it-works' %>"><a href="/how-it-works">How It Works</a></li>
+							<li class="<%= active 'faq' %>"><a href="/faq">FAQ</a></li>
+							<li class="<%= active 'feedback' %>"><a href="/feedback">Feedback</a></li>
+						</ul>
+						<ul class="nav pull-right">
+							<% unless active 'sign-in' %>
+							<li><a href="/sign-in">Sign In</a></li>
+							<% end %>
+						</ul>
+						<% else %>
+						<ul class="nav">
+							<li class="<%= active 'profile' %>"><a href="/profile">Profile</a></li>
+							<% if session[:admin] %>
+							<li class="dropdown <%= active 'nce' %>">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+									NCE
+									<b class="caret"></b>
+								</a>
+								<ul class="dropdown-menu">
+									<li><a href="/nce/exams">Exams</a></li>
+									<li><a href="/nce/glossary">Flash Cards</a></li>
+								</ul>
+							</li>
+							<li class="dropdown <%= active 'ncmhce' %>">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+									NCMHCE
+									<b class="caret"></b>
+								</a>
+								<ul class="dropdown-menu">
+									<li><a href="/ncmhce/scenarios">Scenarios</a></li>
+									<li><a href="/ncmhce/glossary">Flash Cards</a></li>
+								</ul>
+							</li>
+							<% else %>
+							<li class="<%= active 'nce' %>"><a href="/nce/exams">NCE</a></li>
+							<li class="<%= active 'ncmhce' %>"><a href="/ncmhce/scenarios">NCMHCE</a></li>
+							<% end %>
+							<li class="<%= active 'how-it-works' %>"><a href="/how-it-works">How It Works</a></li>
+							<li class="<%= active 'faq' %>"><a href="/faq">FAQ</a></li>
+							<li class="<%= active 'feedback' %>"><a href="/feedback">Feedback</a></li>
+						</ul>
+						<ul class="nav pull-right">
+							<% if session[:admin] %>
+							<li class="dropdown">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+									Admin
+									<b class="caret"></b>
+								</a>
+								<ul class="dropdown-menu">
+									<li><a href="/admin/purchases">Purchases</a></li>
+									<li><a href="/admin/users">Users</a></li>
+									<li><a href="/admin/stats">Stats</a></li>
+									<li><a href="/admin/messages">Messages</a></li>
+									<li><a href="/admin/exams">NCE Exams</a></li>
+									<li><a href="/admin/scenarios">NCMHCE Scenarios</a></li>
+									<li><a href="/admin/glossary/other">Glossary</a></li>
+								</ul>
+							</li>
+							<% end %>
+							<li><a href="/sign-out">Sign Out</a></li>
+						</ul>
+						<% end %>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
 	  
-  <div class="container" id="content">
-    <div class="row">
-      <div class="span12">
-        <%= alert %>        
-        <%= yield %>
-      </div>
-    </div>
-  </div>
+	<div id="content">
+		<div class="container">
+
+			<%= alert %>        
+			<%= yield %>
+		
+		</div>
+	</div>
   
-  <div class="container" id="footer">
-    <div class="row">
-      <div class="span12">
-        <p>        
-          <% unless session[:user] %>
-            <a href="/welcome">Welcome</a>
-            &nbsp; &nbsp;
-            <a href="/how-it-works">How It Works</a>
-            &nbsp; &nbsp;
-            <a href="/feedback">Questions & Comments</a>
-            &nbsp; &nbsp;
-            <a href="/terms-of-service">Terms of Service</a>
-          <% else %>
-            <a href="/profile">Profile</a>
-            &nbsp; &nbsp;
-            <a href="/how-it-works">How It Works</a>
-            &nbsp; &nbsp;
-            <a href="/faq">FAQ</a>
-            &nbsp; &nbsp;
-            <a href="/feedback">Feedback</a>
-            &nbsp; &nbsp;
-            <a href="/terms-of-service">Terms of Service</a>
-          <% end %>
-        </p>
-        <p>
-          Published by <a href="http://careertrainingconcepts.com/" target="_blank">Career Training Concepts Inc.</a> &nbsp; &nbsp; 888-326-9229
-          <br />
-          &copy; 2006-<%= Time.now.strftime("%Y") %> Dr. Gary Arthur. All rights reserved.
-          <br />
-          <a href="http://www.arthurnceworkshop.com/" class="btn btn-mini btn-info" style="margin-top: 9px;" target="_blank">Dr. Arthur's Workshops</a>
-        </p>
-      </div>
-    </div>
-  </div>
+	<div id="footer">
+		<p>Published by <a href="http://careertrainingconcepts.com/" target="_blank"><strong>Career Training Concepts Inc.</strong></a> &nbsp; 888-326-9229<br /> &copy; 2006-<%= Time.now.strftime("%Y") %> Dr. Gary Arthur. All rights reserved. Reproduction in whole or in part without permission is prohibited.<br /><a href="http://www.arthurnceworkshop.com/" class="btn btn-small btn-primary" style="margin-top: 9px;" target="_blank"><strong>Dr. Arthur's Workshops</strong></a></p>
+	</div>
 
 </body>
 </html>

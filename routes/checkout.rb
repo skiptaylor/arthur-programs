@@ -111,10 +111,12 @@ post '/checkout/:product/?' do
 		             msg = false
 
   when 'Account Extension'
-    msg = false
+    params[:package] = 'Account Extension'
+                 msg = false
     
   when 'Account Expiration'
-    msg = false
+    params[:package] = 'Account Expiration'
+                 msg = false
     
   end
   

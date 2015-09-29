@@ -39,6 +39,20 @@ module Chassis
 			end
 			self.strftime string
 		end
+    
+		def display_short format = :day
+			case format
+			when :date
+				string = "%A %b %d, %Y"
+			when :day
+				string = "%b %d, %Y"
+			when :day_with_time
+				string = "%b %d, %Y at %I:%M%P"
+			when :american_day
+				string = "%m/%d/%y"
+			end
+			self.strftime string
+		end
 		
 		def to_fields field
 			empty_date = true if self.strftime('%Y').to_i < 0

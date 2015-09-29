@@ -1,3 +1,5 @@
+<div class="container">
+
 <div class="page-header">
 	<h1>
 		<%= @user.name %>
@@ -60,6 +62,8 @@
   		<p><a href="/checkout/account-expiration?account=<%= @user.email %>" class="btn btn-success btn-small">Buy an Account Extension</a></p>
   	</div>
   <% end %>
+  
+ <!-- –––––––––––––––––– nce –––––––––––––––––– -->
 
 	<% if @user.max_exams > 0 %>
 
@@ -118,6 +122,8 @@
 
 		<br />
 	<% end %>
+	
+<!-- –––––––––––––––––– ncmhce –––––––––––––––––– -->
 
 	<% if @user.max_scenarios > 0 %>
 
@@ -148,8 +154,8 @@
 					<tr>
 						<th>Scenario</th>
 						<th>Score</th>
-						<!-- <th>IG</th>
-						<th>DM</th> -->
+						<th>IG</th>
+						<th>DM</th>
 						<th>Taken On</th>
 						<th></th>
 					</tr>
@@ -166,8 +172,14 @@
 										N/A
 									<% end %>
 								</td>
-
-								<td><%= avg.updated_at.display if avg %></td>
+									
+								<td>
+									<%= erb :progres, layout: false, locals: { correct: @breakdown['Information Gathering'][:correct], possible: @breakdown['Information Gathering'][:possible] } %>
+								</td>
+								<td>
+									<%= erb :progres, layout: false, locals: { correct: @breakdown['Decision Making'][:correct], possible: @breakdown['Decision Making'][:possible] } %>
+								</td>
+								<td><%= avg.updated_at.display_short if avg %></td>
 								<td style="text-align: right;">
 									<% unless @user.expired? %>
 										<a href="/ncmhce/scenarios/<%= average.scenario_id %>">Review</a>
@@ -182,6 +194,8 @@
 
 		<br />
 	<% end %>
+	
+<!-- –––––––––––––––––– workshop –––––––––––––––––– -->
 
 	<% if @user.workshop_scenarios? %>
 
@@ -222,6 +236,8 @@
 
 		<br />
 	<% end %>
+	
+<!-- –––––––––––––––––– ceu –––––––––––––––––– -->
 
 	<% if @user.ceu_scenarios? %>
 
@@ -263,6 +279,8 @@
 		<br />
 	<% end %>
 	
+<!-- –––––––––––––––––– practace –––––––––––––––––– -->
+	
 	<% if @user.practice_exams? %>
 
 		<div class="page-header">
@@ -302,6 +320,8 @@
 
 		<br />
 	<% end %>
+	
+<!-- –––––––––––––––––– downloads –––––––––––––––––– -->
 
 	<% if @user.nce_downloads || @user.ncmhce_downloads %>
 		<div class="page-header">
@@ -386,6 +406,8 @@
 
 		<br />
 	<% end %>
+	
+<!-- –––––––––––––––––– purchases –––––––––––––––––– -->
 
 	<% if @user.purchases.count > 0 %>
 
@@ -418,6 +440,8 @@
 		</table>
 
 	<% end %>
+
+</div>
 
 </div>
 

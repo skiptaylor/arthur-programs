@@ -2,15 +2,16 @@
 	<div class="span8 offset2">
 		
 		<div class="page-header">
-			<h1>Sign In</h1>
+			<h1 class="oswald" style="font-size: 2.7em; color: #1c89de; margin: 1em 0 0.5em 0;">Sign In</h1>
 		</div>
+		<br />
 		
 		<form class="form-horizontal" id="sign-in-form" method="post" action="/sign-in">
 			
 			<div class="control-group" id="email-group">
-				<label class="control-label" for="email">Email address</label>
+				<label class="control-label" type="email">Email address</label>
 				<div class="controls">
-					<input type="text" class="input-xlarge" id="email" name="email" value="<%= params[:email] %>">
+					<input type="email" class="input-xlarge" id="email" name="email" value="<%= params[:email] %>">
 				</div>
 			</div>
 						
@@ -19,7 +20,7 @@
 				<div class="controls">
 					<input type="password" class="input-xlarge" id="password" name="password" value="<%= params[:password] %>" autocomplete="off">
 					<br />
-					<small>Forget your password? Fill in your account email address <br />and we will email you a link to reset your password.<br /><a href="#" id="reset-password" class="btn btn-mini">Reset my password</a></small>
+					<small>Forget your password? Fill in your account email address <br />and we will email you a link to reset your password.<br /><a href="#" id="reset-password" class="btn btn-mini btn-primary">Reset my password</a></small>
 				</div>
 			</div>
 			
@@ -33,15 +34,16 @@
 			
 			<div class="control-group">
 				<div class="controls">
-					<input type="submit" class="btn btn-primary" id="sign-in-btn" value="Sign in" />
+					<input type="submit" class="btn btn-large btn-success" id="sign-in-btn" value="Sign in" />
 				</div>
 			</div>
 			
 			<div class="control-group">
 				<div class="controls">
-					<i class="icon-info-sign icon-info"> </i> If you are unable to sign in to your account using Internet Explorer, use another web browser such as <a href="http://mozilla-firefox.todownload.com">Mozilla Firefox</a> or <a href="https://www.google.com/intl/en/chrome/browser">Google Chrome</a>.
+					<i class="icon-info-sign icon-info"> </i> If you are unable to sign in to your account using Internet Explorer, try another web browser such as <a href="https://www.google.com/intl/en/chrome/browser">Google Chrome</a> or <a href="http://mozilla-firefox.todownload.com">Mozilla Firefox</a>.
 				</div>
 			</div>
+			<br /><br />
 
 		</form>
 		

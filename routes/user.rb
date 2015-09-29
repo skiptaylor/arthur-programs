@@ -82,6 +82,14 @@ get '/profile/?' do
 
 	@scenarios = Use.all(user_id: session[:user], :scenario_id.not => nil)
 	@exams = Use.all(user_id: session[:user], :exam_id.not => nil)
+  
+  @breakdown = {}
+	@breakdown['Information Gathering'] = {possible: 0, correct: 0}
+	@breakdown['Decision Making']				= {possible: 0, correct: 0}
+
+  
+  
+
 
 	erb :profile
 end

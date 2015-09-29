@@ -101,7 +101,8 @@ get '/ncmhce/scenarios/:id/score/?' do
 	@breakdown = {}
 	@breakdown['Information Gathering'] = {possible: 0, correct: 0}
 	@breakdown['Decision Making']				= {possible: 0, correct: 0}
-
+  
+  
 	@answers.each do |a|
 		@breakdown[a.question.score_type][:possible] += a.value if a.value > 0
 	end
