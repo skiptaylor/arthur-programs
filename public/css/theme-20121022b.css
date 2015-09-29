@@ -1353,16 +1353,16 @@ div.bubble {
 	margin: 30px auto 0 auto;
 	color: #ffffff;
 	width: 600px;
-	font-weight: 300;
+	font-weight: 400;
 	font-size: 1.2em;
 	line-height: 1.3em;
 	text-align: left;
-	background-color: #6c4192;
+	background-color: #20c5b1;
 	border: 0;
 	padding: 13px 18px 18px 18px;
-	-webkit-border-radius:16px;
-	-moz-border-radius:16px;
-	border-radius:16px;
+	-webkit-border-radius:22px;
+	-moz-border-radius:22px;
+	border-radius:22px;
 /*   -webkit-text-shadow: -1px -1px 0px #868686;
    -moz-text-shadow: -1px -1px 0px #868686;
    text-shadow: -1px -1px 0px #868686;*/
@@ -1431,7 +1431,7 @@ div.bubble {
 }
 
 .program-nav-nce:hover	{
-	background-color: #244983;
+	background-color: #244883;
    -webkit-transition: all 0.2s ease-in-out;
            transition: all 0.2s ease-in-out;
 }
@@ -1455,7 +1455,7 @@ div.bubble {
 }
 
 .program-nav-ceu:hover	{
-	background-color: #41823e;
+	background-color: #008d23;
    -webkit-transition: all 0.2s ease-in-out;
            transition: all 0.2s ease-in-out;
 }
