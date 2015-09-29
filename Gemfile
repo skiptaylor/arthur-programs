@@ -27,4 +27,3 @@ gem 'sprockets', '~> 2.0'
 gem 'stripe', '~> 1.6.2'
 gem 'addressable', '~> 2.3.7'
 
-gem "skylight"

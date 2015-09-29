@@ -14,11 +14,6 @@ use Rack::Protection, :except => :session_hijacking
 enable :sessions
 set :session_secret, 'secret123'
 
-configure :production do
-  require 'skylight/sinatra'
-  Skylight.start!
-end
-
 # Requires the necessary files, in order, for the app
 ['settings', 'libraries', 'models', 'routes'].each do |directory|
 	Dir["./#{directory}/**/*.rb"].each { |file| require file }
@@ -30,11 +25,6 @@ end
 get '/*/?' do
 	puts "--> #{request.referrer} // #{request.user_agent} // #{request.xhr?} // #{request.ip}"
 	erb :"#{params[:splat].first}"
-end
-
-configure :production do
-  require "skylight/sinatra"
-  Skylight.start!
 end
 
 # Finalizes the models
