@@ -1425,37 +1425,37 @@ div.bubble {
 
 
 .program-nav-nce	{
-	background-color: #213672;
+	background-color: #1c89de;
 	margin: 0;
 	padding: 16px 50px;
 }
 
 .program-nav-nce:hover	{
-	background-color: #002444;
+	background-color: #244983;
    -webkit-transition: all 0.2s ease-in-out;
            transition: all 0.2s ease-in-out;
 }
 
 .program-nav-ncmhce	{
-	background-color: #bc272e;
+	background-color: #1c89de;
 	margin: 0;
 	padding: 16px 50px;
 }
 
 .program-nav-ncmhce:hover	{
-	background-color: #ab0000;
+	background-color: #bc272e;
    -webkit-transition: all 0.2s ease-in-out;
            transition: all 0.2s ease-in-out;
 }
 
 .program-nav-ceu	{
-	background-color: #41823e;
+	background-color: #1c89de;
 	margin: 0;
 	padding: 16px 50px;
 }
 
 .program-nav-ceu:hover	{
-	background-color: #226c20;
+	background-color: #41823e;
    -webkit-transition: all 0.2s ease-in-out;
            transition: all 0.2s ease-in-out;
 }
