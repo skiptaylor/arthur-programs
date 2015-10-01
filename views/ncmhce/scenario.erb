@@ -39,7 +39,7 @@
 		<% end %>
 		
 		<br />
-		<a href="/ncmhce/scenarios/<%= params[:id] %>/restart" class="btn restart">Start Over</a> &nbsp; <a href="/ncmhce/scenarios" class="btn">New Scenario</a>
+		<a href="/ncmhce/scenarios/<%= params[:id] %>/restart" class="btn btn-primary restart">Start Over</a> &nbsp; <a href="/ncmhce/scenarios" class="btn btn-primary">New Scenario</a>
 		<br /><br />
 		<strong>
 			<span style="color: #666666; font-size: 90%;">Answers are highlighted as follows:</span> &nbsp;
@@ -49,6 +49,8 @@
 			<span class="badge" style="color: white; background-color: #777777;">Not Chosen</span>
 		</strong>
 	</div>
+	
+	<%= puts params.inspect %>
 	
 	<hr />
 <% end %>

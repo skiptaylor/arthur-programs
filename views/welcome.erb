@@ -1,153 +1,96 @@
-<script type="text/javascript">
-$(function() {
-    function changeSlide( newSlide ) {
-        // cancel any timeout
-        clearTimeout( slideTimeout );
-        
-        // change the currSlide value
-        currSlide = newSlide;
-        
-        // make sure the currSlide value is not too low or high
-        if ( currSlide > maxSlide ) currSlide = 0;
-        else if ( currSlide < 0 ) currSlide = maxSlide;
-        
-        // animate the slide reel
-        $slideReel.animate({
-            left : currSlide * -900
-        }, 400, 'swing', function() {
-            
-            // set new timeout if active
-            if ( activeSlideshow ) slideTimeout = setTimeout(nextSlide, 200);
-        });
-
-    }
-    
-    // define some variables / DOM references
-    var activeSlideshow = false,
-    currSlide = 0,
-    slideTimeout,
-    $slideshow = $('#slideshow'),
-    $slideReel = $slideshow.find('#slideshow-reel'),
-    maxSlide = $slideReel.children().length - 1,
-    $activeNavItem = $slideshow.find('#active-nav-item');
-    
-    // main navigation
-    $slideshow.find('#slideshow-nav a.nav-item').click(function(ev) {
-        ev.preventDefault();
-        
-        activeSlideshow = false;
-        
-        changeSlide( $(this).index() );
-    });
-    
-    // start the animation
-    slideTimeout = setTimeout(nextSlide, 200);
-});
-</script>
-
-
-<div class="container">
-	<div class="row">
-		<div class="span12" style="padding-top: 1em;">
-			<center><h1 class="oswald" style="font-weight: 400; font-size: 3.4em; color: #1c89de; padding-bottom: 0.2em;">Arthur-Brende Study Programs</h1></center>
-		</div>
-		
-		
-		<div id="slideshow" style="margin-bottom: 0.5em;">
-			<div id="slideshow-reel">
-				<div class="slide">
-						<div id="picmain" class="center span12">
-							<h5 style="font-size: 2.5em; font-weight: 400; line-height: 1em; color: #bc272e; margin-bottom: 0.5em;">Pass Your State Licensure Exam!</h5>
-							<p style="font-size: 1.4em; line-height: 1.5em; color: #535353; font-weight: 300; margin-bottom: 0.9em; margin-top: 0.9em;">Dr. Arthur's Study programs remain the most trusted tools in the field,<br /> 
-					designed to provide the most comprehensive material available! Guaranteed!</p>
-	
-					<div class="bubble">
-						<strong>&ldquo;</strong> The scenarios seem like one is in the office with the client challenging my analytical, organizational, and clinical skills. I passed the NCE and NCMHCE exams! I could not have done it without your study tools!. The practice was invaluable. Thank you Drs. Arthur and Brende. <strong>&rdquo;</strong> <em class="pull-right">Pam B.</em>
-					</div>
-					<img src="img/bubble-pointer.png" style="margin-top: -14px; margin-left: 300px; margin-bottom: -12px;"/>
-	
-							<p style="font-size: 1.4em; line-height: 1.5em; color: #535353; font-weight: 300; margin-bottom: 0.9em; margin-top: 0.9em;">Learn at your own pace! Exams may be taken multiple times for up to a full year. <br />Study guides are available as eBook for easy portability.</p>
-		
-			
-			
-						</div>
+<div class="row">
+	<div class="span12 center">
+		<h1 class="oswald center" style="font-weight: 400; font-size: 3.4em; color: #1c89de;">
+			Arthur-Brende Study Programs
+		</h1>
+	</div>
+		<div class="span12 center">
+			<div id="picmain">	
+				<h5 style="font-size: 2.5em; font-weight: 400; line-height: 1em; color: #213672; margin-bottom: 0.5em;">
+					Pass Your State Licensure Exam!
+				</h5>
+				<p style="font-size: 1.4em; line-height: 1.5em; color: #535353; font-weight: 300; margin-bottom: 0.9em; margin-top: 0.9em;">
+					Dr. Arthur's Study programs remain the most trusted tools in the field,<br /> 
+					designed to provide the most comprehensive material available! Guaranteed!
+				</p>
+				<div class="bubble">
+					<strong>&ldquo;</strong> The scenarios seem like one is in the office with the client and challenging my analytical, organizational, and clinical skills. I passed the NCE and NCMHCE exams! I could not have done it without your study tools!. The practice was invaluable. Thank you Drs. Arthur and Brende. <strong>&rdquo;</strong> <em class="pull-right">Pam B.</em>
 				</div>
-        
-				<div class="slide">
-					<div id="picnce" class="span12 center">
-						<p class="oswald" style="font-size: 2.5em; font-weight: 400; line-height: 1em; color: #244883;">National Counseling Examination</p>
-						<img src="img/nce-group-new.png" style="height: 308px;" />
-						<h5 style="font-size: 2em; font-weight: 400; color: #535353; margin-bottom: 0.5em;margin-top: -0.2em;">Pass Your State Licensure Exam. Guaranteed!</h5>
-					</div>
-				</div>
-        
-				<div class="slide">
-					<div id="picncmhce" class="span12 center">
-						<p class="oswald" style="font-size: 2.5em; font-weight: 400; line-height: 1em; color: #bc1425;">National Clinical Mental Health Counseling Examination</p>
-						<img src="/img/ncmhce-group.png" style="height: 308px;" />
-						<h5 style="font-size: 2em; font-weight: 400; color: #535353; margin-bottom: 0.5em;margin-top: -0.2em;">Pass Your State Licensure Exam. Guaranteed!</h5>
-					</div>
-				</div>
-        
-				<div class="slide">
-					<div id="picceu" class="span12 center">
-						<p class="oswald" style="font-size: 2.5em; font-weight: 400; line-height: 1em; color: #41823e;">Continuing Education Units</p>
-						<img src="img/.jpg" style="height: 308px;" />
-						<h5 style="font-size: 2em; font-weight: 400; color: #535353; margin-bottom: 0.5em;margin-top: -0.2em;">Return for Continuing Education Credits, Yearly!</h5>
-					</div>
-				</div>
+				<img src="img/bubble-pointer.png" style="margin-top: -14px; margin-left: 300px; margin-bottom: -9px;"/>
+				<p style="font-size: 1.4em; line-height: 1.5em; color: #535353; font-weight: 300; margin-top: 0.9em;">
+					Learn at your own pace! Exams may be taken multiple times for up to a full year. <br />Study guides are available as eBook for easy portability.
+				</p>
 			</div>
-	      
-			
 
-      <div id="slideshow-nav">
-          <a href="#" class="nav-item">
-              <span class="nav-item-dot"></span>
-          </a>
-     
-          <a href="#" class="nav-item">
-              <span class="nav-item-dot"></span>
-          </a>
-     
-          <a href="#" class="nav-item">
-              <span class="nav-item-dot"></span>
-          </a>
-     
-          <a href="#" class="nav-item">
-              <span class="nav-item-dot"></span>
-          </a>
-     
-      </div>
-		</div>		
-		
+
+
+			<div id="picnce">
+				<p class="oswald" style="font-size: 2.5em; font-weight: 400; line-height: 1em; color: #244883;">National Counseling Examination</p>
+				<img src="img/nce-group-new.png" style="height: 308px;" />
+				<h5 style="font-size: 2em; font-weight: 400; color: #535353; margin-bottom: 0.5em;margin-top: -0.2em;">Pass Your State Licensure Exam. Guaranteed!</h5>
+			</div>
+
+			<div id="picncmhce">
+				<p class="oswald" style="font-size: 2.5em; font-weight: 400; line-height: 1em; color: #bc1425;">National Clinical Mental Health Counseling Examination</p>
+				<img src="/img/ncmhce-group.png" style="height: 308px;" />
+				<h5 style="font-size: 2em; font-weight: 400; color: #535353; margin-bottom: 0.5em;margin-top: -0.2em;">Pass Your State Licensure Exam. Guaranteed!</h5>
+			</div>
+
+			<div id="picceu">
+				<p class="oswald" style="font-size: 2.5em; font-weight: 400; line-height: 1em; color: #41823e;">Continuing Education Units</p>
+				<img src="img/ceu-white.png" style="height: 308px;" />
+				<h5 style="font-size: 2em; font-weight: 400; color: #535353; margin-bottom: 0.5em;margin-top: -0.2em;">Return for Continuing Education Credits, Yearly!</h5>
+			</div>
+		</div>
+	</div>
 </div>
 
-    
-
-</div>
 </div>
 
 <div class="bar" style="text-align: center; display: block;">
-	<a href="/nce" id="ncebutton" style="background-color: #ffffff"><img src="img/nce-white.png" style="height: 100px; border-right: #ffffff 1px solid; border-left: #ffffff 1px solid;" class="program-nav-nce" /></a><a href="/ncmhce" id="ncmhcebutton"><img src="img/ncmhce-white.png" style="height: 100px; border-right: #ffffff 1px solid; border-left: transparent 0px solid;" class="program-nav-ncmhce" /></a><a href="/ceu" id="ceubutton"><img src="img/ceu-white.png" style="height: 100px; border-right: #ffffff 1px solid; border-left: transparent 0px solid;" class="program-nav-ceu" /></a>
-	
-
-	
+	<a href="/cnce" id="ncebutton" style="background-color: #ffffff"><img src="img/nce-white.png" style="height: 100px; border-right: #ffffff 1px solid; border-left: #ffffff 1px solid;" class="program-nav-nce" /></a><a href="/ncmhce" id="ncmhcebutton"><img src="img/ncmhce-white.png" style="height: 100px; border-right: #ffffff 1px solid; border-left: transparent 0px solid;" class="program-nav-ncmhce" /></a><a href="/ceu" id="ceubutton"><img src="img/ceu-white.png" style="height: 100px; border-right: #ffffff 1px solid; border-left: transparent 0px solid;" class="program-nav-ceu" /></a>
 </div>
 
-<!-- <div class="bar" id="slideshow-nav" style="text-align: center; display: block;">
-	<a href="/nce" class="nav-item" id="ncebutton" style="background-color: #ffffff"><img src="img/nce-white.png" style="height: 100px; border-right: #ffffff 1px solid; border-left: #ffffff 1px solid;" class="program-nav-nce" /></a><a href="/ncmhce" class="nav-item" id="ncmhcebutton"><img src="img/ncmhce-white.png" style="height: 100px; border-right: #ffffff 1px solid; border-left: transparent 0px solid;" class="program-nav-ncmhce" /></a><a href="/ceu" class="nav-item" id="ceubutton"><img src="img/ceu-white.png" style="height: 100px; border-right: #ffffff 1px solid; border-left: transparent 0px solid;" class="program-nav-ceu" /></a>
-
-   <span id="active-nav-item">
-       <span class="active-nav-item-inner"></span>
-   </span>
-
-</div> -->
-
-
 <div class="container">
-<div class="center" style="margin: 1.5em 0 2em 0;">
+<div class="center" style="margin: 1.5em 0 4em 0;">
 	<p style="font-weight: 300; font-size: 1.2em; line-height: 1.5em;"><strong>Not sure which licensure exam you need to take?</strong><br />
 		The NBCC web site has your state's specific licensure info.
 	</p>
 	<a class="btn btn-sm btn-primary">CHECK MY STATE</a>
 </div>
+
+	
+<script type="text/javascript">	
+	$('#mainbutton').hover(
+	    function() {
+ 		  	$('#picnce').hide();
+ 			$('#picncmhce').hide();
+ 			$('#picceu').hide();
+	      $('#picmain').fadeIn('slow');
+	    }
+	);
+	$('#ncebutton').hover(
+	    function() {
+		  	$('#picmain').hide();
+			$('#picncmhce').hide();
+			$('#picceu').hide();
+			$('#picnce').fadeIn('slow');
+	    }
+	);
+	$('#ncmhcebutton').hover(
+	    function() {
+			 $('#picmain').hide();
+			 $('#picnce').hide();
+			 $('#picceu').hide();
+	       $('#picncmhce').fadeIn('slow');
+	    }
+	);
+	$('#ceubutton').hover(
+	    function() {
+			 $('#picmain').hide();
+			 $('#picnce').hide();
+			 $('#picncmhce').hide();
+			 $('#picceu').fadeIn('slow');
+	    }
+	);
+</script>
