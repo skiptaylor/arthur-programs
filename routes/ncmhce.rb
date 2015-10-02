@@ -110,7 +110,29 @@ get '/ncmhce/scenarios/:id/score/?' do
 		@breakdown[s.score_type][:correct]  += s.value
 	end
 
-
+  info_gathering = Scoretype.first_or_create(
+    type: "Information Gathering",
+    scenario_id: @scenario.id,
+    user_id: session[:user]
+  )
+    
+  info_gathering.update(
+    possible: @breakdown["Information Gathering"][:possible],
+    correct: @breakdown["Information Gathering"][:correct]
+  )
+    
+  decision_making = Scoretype.first_or_create(
+    type: "Decision Making",
+    scenario_id: @scenario.id,
+    user_id: session[:user]
+  )
+    
+  decision_making.update(
+    possible: @breakdown["Decision Making"][:possible],
+    correct: @breakdown["Decision Making"][:correct]
+  )
+  
+   
   
 	erb :'ncmhce/scenario'
 end

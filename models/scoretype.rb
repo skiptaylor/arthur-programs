@@ -6,8 +6,8 @@ class Scoretype
 	timestamps :at
 
 	property :type, String,	 default: 'Undefined'
-  property :possible, Integer
-  property :correct, Integer
+  property :possible, Integer,	 default: 0
+  property :correct, Integer,	 default: 0
 
 	belongs_to :scenario
 	belongs_to :user

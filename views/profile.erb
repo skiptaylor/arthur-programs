@@ -153,7 +153,6 @@
 				<thead>
 					<tr>
 						<th>Scenario</th>
-						<th>Score</th>
 						<th>IG</th>
 						<th>DM</th>
 						<th>Taken On</th>
@@ -164,20 +163,29 @@
 					<% @scenarios.sort { |a,b| a.scenario_id <=> b.scenario_id }.each do |average| %>
 						<% unless average.scenario.workshop? || average.scenario.practice? %>
 							<tr>
-								<td><%= average.scenario_id %>. <%= average.scenario.title %></td>
 								<td>
-									<% if avg = Average.last(user_id: session[:user], scenario_id: average.scenario_id) %>
-										<%= avg.score %>%
-									<% else %>
-										N/A
-									<% end %>
+									<%= average.scenario_id %>. <%= average.scenario.title %>
 								</td>
+								
+									<% avg = Average.last(user_id: session[:user], scenario_id: average.scenario_id) %>
 									
 								<td>
-									<%= erb :progres, layout: false, locals: { correct: @breakdown['Information Gathering'][:correct], possible: @breakdown['Information Gathering'][:possible] } %>
+									<%= @decision_making = Scoretype.first(
+										type: "Information Gathering"
+									)
+									@decision_making.correct %>/<%= @information_gathering = Scoretype.last(
+										type: "Information Gathering"
+									)
+									@information_gathering.possible %> 
 								</td>
 								<td>
-									<%= erb :progres, layout: false, locals: { correct: @breakdown['Decision Making'][:correct], possible: @breakdown['Decision Making'][:possible] } %>
+									<%= @decision_making = Scoretype.first(
+										type: "Decision Making"
+									)
+									@decision_making.correct %>/<%= @decision_making = Scoretype.last(
+										type: "Decision Making"
+									)
+									@decision_making.possible %>
 								</td>
 								<td><%= avg.updated_at.display_short if avg %></td>
 								<td style="text-align: right;">
