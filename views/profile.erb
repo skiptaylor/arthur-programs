@@ -153,8 +153,8 @@
 				<thead>
 					<tr>
 						<th>Scenario</th>
-						<th>IG</th>
-						<th>DM</th>
+						<th style="text-align: center;">IG</th>
+						<th style="text-align: center;">DM</th>
 						<th>Taken On</th>
 						<th></th>
 					</tr>
@@ -166,28 +166,27 @@
 								<td>
 									<%= average.scenario_id %>. <%= average.scenario.title %>
 								</td>
-								
-									<% avg = Average.last(user_id: session[:user], scenario_id: average.scenario_id) %>
-									
-								<td>
-									<%= @decision_making = Scoretype.first(
-										type: "Information Gathering"
-									)
-									@decision_making.correct %>/<%= @information_gathering = Scoretype.last(
-										type: "Information Gathering"
-									)
-									@information_gathering.possible %> 
+								<td style="text-align: center;">
+									<% @information_gathering = Scoretype.last(
+										type: "Information Gathering",
+										scenario_id: average.scenario_id,
+										user_id: session[:user]
+									) %>
+									<% if @information_gathering %>
+									<%= @information_gathering.correct %>/<%= @information_gathering.possible %> 
+									<% else %><small>N/A</small><% end %>
 								</td>
-								<td>
-									<%= @decision_making = Scoretype.first(
-										type: "Decision Making"
-									)
-									@decision_making.correct %>/<%= @decision_making = Scoretype.last(
-										type: "Decision Making"
-									)
-									@decision_making.possible %>
+								<td style="text-align: center;">
+									<% @decision_making = Scoretype.last(
+										type: "Decision Making",
+										scenario_id: average.scenario_id,
+										user_id: session[:user]
+									) %>
+									<% if @decision_making %>
+									<%= @decision_making.correct %>/<%= @decision_making.possible %>
+									<% else %><small>N/A</small><% end %>
 								</td>
-								<td><%= avg.updated_at.display_short if avg %></td>
+								<td><%= average.updated_at.display_short if average %></td>
 								<td style="text-align: right;">
 									<% unless @user.expired? %>
 										<a href="/ncmhce/scenarios/<%= average.scenario_id %>">Review</a>
@@ -287,7 +286,7 @@
 		<br />
 	<% end %>
 	
-<!-- –––––––––––––––––– practace –––––––––––––––––– -->
+<!-- –––––––––––––––––– practice –––––––––––––––––– -->
 	
 	<% if @user.practice_exams? %>
 
