@@ -6,7 +6,7 @@
 				
 			<p style="margin-top: 2.5em;">
 				<label class="radio package-name">
-					<input name="package" type="radio" id="starter-package" value="Starter Package" data-price='80' <%= 'checked="checked"' if params[:package] == 'Starter Package' %> /> &nbsp;Starter Package <strong>$80</strong>
+					<input name="package" type="radio" id="starter-package" value="Starter Package" data-price='80' <%= 'checked="checked"' if params[:package] == 'Starter Package' %> /> &nbsp;<span style="font-size: 1.3em;" class="oswald">Starter Package $80</span>
 					<ul class="package-features">
 						<li><strong>12 Online Scenarios</strong></li>
 						<li>Study Supplement eBook (updated for DSM-5&trade;)</li>
@@ -14,7 +14,7 @@
 						<li>Pass Guarantee</li>
 						<li>Receive unlimited access to online exams for one full year</li>
 					</ul>
-					<p><small>(Additional online scenarios can be purchased later in sets of 12 for $80.)</small></p>
+					
 				</label>
 			</p>
 				
@@ -24,8 +24,8 @@
 				
 			<p style="margin-top: 2.5em;">
 				<label class="radio package-name">
-					<input name="package" type="radio" id="full-package" value="Full Package" data-price='190' <%= 'checked="checked"' if params[:package] == 'Full Package' %> /> &nbsp;Full Package <strong>$190</strong>
-					 &nbsp; <span class="badge badge-important">Save $50!</span>
+					<input name="package" type="radio" id="full-package" value="Full Package" data-price='190' <%= 'checked="checked"' if params[:package] == 'Full Package' %> /> &nbsp;<span style="font-size: 1.3em;" class="oswald">Full Package $190</span>
+					 &nbsp; &nbsp; <span style="font-size: 1.3em; color: #bc272e;" class="oswald">Save $50!</span>
 					<ul class="package-features">
 						<li><strong>All 36 Online Scenarios</strong></li>
 						<li>Study Supplement eBook (updated for DSM-5&trade;)</li>
@@ -36,15 +36,18 @@
 				</label>
 			</p>			
 		</div>	<!-- span5 -->
+		<div class="span7">
+		<p><small>(Additional online scenarios can be purchased later in sets of 12 for $80.)</small></p>
+	</div>
 	</div>	<!-- row -->
 	<hr style="margin: 9px 0" />
 	<h3 class="option-header">Optional Enhancements <small>for either package &nbsp;&nbsp;(Must purchase Starter or Full Package to buy Optional Hard Copy)</small></h3>
 	
 		<p style="margin: 9px 0;">
 			<label class="checkbox">
-				<input type="checkbox" name="optional" value="Hard Copy" id="ncmhce-hard-copy" data-price='12.95' <%= 'checked="checked"' if params[:optional] %> /> Study Supplement <span class="badge badge-success">Hard Copy</span> <strong>$12.95 shipping</strong> &nbsp; <small>Same study supplement as the eBook and updated for DSM-5&trade;</small>
+				<input type="checkbox" name="optional" value="Hard Copy" id="ncmhce-hard-copy" data-price='12.95' <%= 'checked="checked"' if params[:optional] %> /> &nbsp; <span style="font-size: 1.3em;" class="oswald">Study Supplement Hard Copy $12.95 shipping</span> &nbsp; <small>Same study supplement as the eBook and updated for DSM-5&trade;</small>
 				<br />
-				<small style="color: black;"><strong>Note:</strong> If you require shipment to a PO Box please call toll free 888-326-9229 for details.</small>
+				<small style="color: black;"> &nbsp; <strong>Note:</strong> If you require shipment to a PO Box please call toll free 888-326-9229 for details.</small>
 												
 			</label>
 		</p>	

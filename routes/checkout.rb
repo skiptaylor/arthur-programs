@@ -7,6 +7,8 @@ get '/checkout/:product/?' do
 		@product_name = "Dr. Arthur's NCE Study Guide"
 	when 'nce-hard-copy'
 		@product_name = "Dr. Arthur's NCE Study Guide"
+	when 'single-senario'
+		@product_name = "Arthur-Brende CEU Study Program"
 	when 'ncmhce'
 		@product_name = "Arthur-Brende NCMHCE Study Program"
 	when 'ncmhce-upgrade'
@@ -91,6 +93,12 @@ post '/checkout/:product/?' do
                email = 'ncmhce'
                  msg = true
     params[:optional] ? params[:optional] = '+ Hard Copy' : params[:optional] = '+ eBook'
+    
+  when 'Single Scenario'
+    user.ncmhce_downloads = false
+    user.max_scenarios = (user.max_scenarios + 1)
+    params[:package] = 'CEU: Single Scenario'
+                 msg = false
 
   when 'NCE Upgrade'
     user.max_exams = (user.max_exams + 2)
@@ -125,6 +133,8 @@ post '/checkout/:product/?' do
 			additional_time = 90
   	elsif (params[:package] == 'NCMHCE Hard Copy') || (params[:package] == 'NCE Hard Copy')
   		additional_time = 0
+  	elsif (params[:package] == 'Single Scenario')
+  		additional_time = 30
 		else
 			additional_time = 365
 		end
