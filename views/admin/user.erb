@@ -99,9 +99,9 @@
 			</div>
 			
 			<div class="control-group" id="ceu-scenarios-group">
-				<label class="control-label" for="ceu_scenarios">CEU Scenarios</label>
+				<label class="control-label" for="ceu_scenario">CEU Scenarios</label>
 				<div class="controls">
-					<input type="checkbox" name="ceu_scenarios" id="ceu_scenarios" <%= 'checked' if @user.ceu_scenarios %> />
+					<input type="text" class="input-small" id="ceu_scenario" name="ceu_scenario" value="<%= @user.ceu_scenario %>">
 				</div>
 			</div>
 			
@@ -308,7 +308,7 @@
       <br />
     <% end %>
     
-    <% if @user.ceu_scenarios? %>
+    <% if @user.ceu_scenario > 0 %>
       
       <div class="page-header">
         <h3>CEU Scenarios</h3>
@@ -323,18 +323,20 @@
           </tr>
         </thead>
         <tbody>
-          <% Scenario.all(ceu: true, active: true).each do |scenario| %>
-            <% use = Use.last(scenario_id: scenario.id, user_id: @user.id) %>
-            <% avg = Average.last(scenario_id: scenario.id, user_id: @user.id) %>
-            <tr>
-              <td><%= scenario.title %></td>
-              <td>
-                <%= avg ? "#{avg.score}%" : 'N/A' %>
-              </td>
-              <td>
-                <%= avg ? avg.created_at.display : '' %>
-              </td>
-            </tr>
+          <% @scenarios.sort { |a,b| a.scenario_id <=> b.scenario_id }.each do |average| %>
+            <% if average.scenario.ceu? %>
+              <tr>
+                <td><%= average.scenario_id %>. <%= average.scenario.title %></td>
+                <td>
+                  <% if avg = Average.last(user_id: @user.id, scenario_id: average.scenario_id) %>
+                    <%= avg.score %>%
+                  <% else %>
+                    N/A
+                  <% end %>
+                </td>
+                <td><%= avg.updated_at.display if avg %></td>
+              </tr>
+            <% end %>
           <% end %>
         </tbody>
       </table>

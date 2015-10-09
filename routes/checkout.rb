@@ -95,8 +95,7 @@ post '/checkout/:product/?' do
     params[:optional] ? params[:optional] = '+ Hard Copy' : params[:optional] = '+ eBook'
     
   when 'Single Scenario'
-    user.ncmhce_downloads = false
-    user.max_scenarios = (user.max_scenarios + 1)
+    user.ceu_scenario = (user.ceu_scenario + 1)
     params[:package] = 'CEU: Single Scenario'
                  msg = false
 

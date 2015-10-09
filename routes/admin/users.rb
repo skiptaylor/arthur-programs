@@ -34,6 +34,7 @@ post '/admin/users/new/?' do
 	
 	params[:max_exams].is_numeric? ? params[:max_exams] = params[:max_exams].to_i : params[:max_exams] = user.max_exams
 	params[:max_scenarios].is_numeric? ? params[:max_scenarios] = params[:max_scenarios].to_i : params[:max_scenarios] = user.max_scenarios
+  params[:ceu_scenario].is_numeric? ? params[:ceu_scenario] = params[:ceu_scenario].to_i : params[:ceu_scenario] = user.ceu_scenario
   
   puts 'Creating user'
 	user = User.create(
@@ -45,6 +46,7 @@ post '/admin/users/new/?' do
 		notes:					 	params[:notes],
 		max_exams: 		 	 	params[:max_exams],
 		max_scenarios: 	 	params[:max_scenarios],
+    ceu_scenario: 	 	params[:ceu_scenario],
 		ncmhce_downloads: false,
 		nce_downloads: 		false,
 		expiration_date: Date.from_fields(
@@ -63,7 +65,6 @@ post '/admin/users/new/?' do
 
 	user.update(workshop_scenarios: true) if params[:workshop_scenarios]
   
-  user.update(ceu_scenarios: true) if params[:ceu_scenarios]
   
   user.update(practice_exams: true) if params[:practice_exams]
 
@@ -100,7 +101,8 @@ post '/admin/users/:id/?' do
 	
 	params[:max_exams].is_numeric? ? params[:max_exams] = params[:max_exams].to_i : params[:max_exams] = user.max_exams
 	params[:max_scenarios].is_numeric? ? params[:max_scenarios] = params[:max_scenarios].to_i : params[:max_scenarios] = user.max_scenarios
-	
+	params[:ceu_scenario].is_numeric? ? params[:ceu_scenario] = params[:ceu_scenario].to_i : params[:ceu_scenario] = user.ceu_scenario
+  
 	user.update(
 		email: 				 	 params[:email],
 		name:  				 	 params[:name],
@@ -108,6 +110,7 @@ post '/admin/users/:id/?' do
 		notes:					 params[:notes],
 		max_exams: 		 	 params[:max_exams],
 		max_scenarios: 	 params[:max_scenarios],
+    ceu_scenario: 	 params[:ceu_scenario],
 		expiration_date: Date.from_fields(
 			params[:expiration_year],
 			params[:expiration_month],
@@ -137,7 +140,6 @@ post '/admin/users/:id/?' do
 	
 	params[:workshop_scenarios] ? user.update(workshop_scenarios: true) : user.update(workshop_scenarios: false)
   
-  params[:ceu_scenarios] ? user.update(ceu_scenarios: true) : user.update(ceu_scenarios: false)
   
   params[:practice_exams] ? user.update(practice_exams: true) : user.update(practice_exams: false)
 	
