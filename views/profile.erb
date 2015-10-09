@@ -214,7 +214,8 @@
 			<thead>
 				<tr>
 					<th>Scenario</th>
-					<th>Score</th>
+					<th style="text-align: center;">IG</th>
+					<th style="text-align: center;">DM</th>
 					<th>Taken On</th>
 					<th></th>
 				</tr>
@@ -225,12 +226,27 @@
 					<% avg = Average.last(scenario_id: scenario.id, user_id: @user.id) %>
 					<tr>
 						<td><%= scenario.title %></td>
-						<td>
-							<%= avg ? "#{avg.score}%" : 'N/A' %>
+						<td style="text-align: center;">
+							<% @information_gathering = Scoretype.last(
+								type: "Information Gathering",
+								scenario_id: avg.scenario_id,
+								user_id: session[:user]
+							) %>
+							<% if @information_gathering %>
+							<%= @information_gathering.correct %>/<%= @information_gathering.possible %> 
+							<% else %><small>N/A</small><% end %>
 						</td>
-						<td>
-							<%= avg ? avg.created_at.display : '' %>
+						<td style="text-align: center;">
+							<% @decision_making = Scoretype.last(
+								type: "Decision Making",
+								scenario_id: avg.scenario_id,
+								user_id: session[:user]
+							) %>
+							<% if @decision_making %>
+							<%= @decision_making.correct %>/<%= @decision_making.possible %>
+							<% else %><small>N/A</small><% end %>
 						</td>
+						<td><%= avg.updated_at.display_short if avg %></td>
 						<td style="text-align: right;">
 							<% unless @user.expired? %>
 								<a href="/ncmhce/scenarios/<%= scenario.id %>">Take</a>
@@ -256,7 +272,8 @@
 			<thead>
 				<tr>
 					<th>Scenario</th>
-					<th>Score</th>
+					<th style="text-align: center;">IG</th>
+					<th style="text-align: center;">DM</th>
 					<th>Taken On</th>
 					<th></th>
 				</tr>
@@ -267,12 +284,27 @@
 					<% avg = Average.last(scenario_id: scenario.id, user_id: @user.id) %>
 					<tr>
 						<td><%= scenario.title %></td>
-						<td>
-							<%= avg ? "#{avg.score}%" : 'N/A' %>
+						<td style="text-align: center;">
+							<% @information_gathering = Scoretype.last(
+								type: "Information Gathering",
+								scenario_id: avg.scenario_id,
+								user_id: session[:user]
+							) %>
+							<% if @information_gathering %>
+							<%= @information_gathering.correct %>/<%= @information_gathering.possible %> 
+							<% else %><small>N/A</small><% end %>
 						</td>
-						<td>
-							<%= avg ? avg.created_at.display : '' %>
+						<td style="text-align: center;">
+							<% @decision_making = Scoretype.last(
+								type: "Decision Making",
+								scenario_id: avg.scenario_id,
+								user_id: session[:user]
+							) %>
+							<% if @decision_making %>
+							<%= @decision_making.correct %>/<%= @decision_making.possible %>
+							<% else %><small>N/A</small><% end %>
 						</td>
+						<td><%= avg.updated_at.display_short if avg %></td>
 						<td style="text-align: right;">
 							<% unless @user.expired? %>
 								<a href="/ncmhce/scenarios/<%= scenario.id %>">Take</a>
@@ -298,7 +330,8 @@
 			<thead>
 				<tr>
 					<th>Scenario</th>
-					<th>Score</th>
+					<th style="text-align: center;">IG</th>
+					<th style="text-align: center;">DM</th>
 					<th>Taken On</th>
 					<th></th>
 				</tr>
@@ -309,12 +342,27 @@
 					<% avg = Average.last(scenario_id: scenario.id, user_id: @user.id) %>
 					<tr>
 						<td><%= scenario.title %></td>
-						<td>
-							<%= avg ? "#{avg.score}%" : 'N/A' %>
+						<td style="text-align: center;">
+							<% @information_gathering = Scoretype.last(
+								type: "Information Gathering",
+								scenario_id: avg.scenario_id,
+								user_id: session[:user]
+							) %>
+							<% if @information_gathering %>
+							<%= @information_gathering.correct %>/<%= @information_gathering.possible %> 
+							<% else %><small>N/A</small><% end %>
 						</td>
-						<td>
-							<%= avg ? avg.created_at.display : '' %>
+						<td style="text-align: center;">
+							<% @decision_making = Scoretype.last(
+								type: "Decision Making",
+								scenario_id: avg.scenario_id,
+								user_id: session[:user]
+							) %>
+							<% if @decision_making %>
+							<%= @decision_making.correct %>/<%= @decision_making.possible %>
+							<% else %><small>N/A</small><% end %>
 						</td>
+						<td><%= avg.updated_at.display_short if avg %></td>
 						<td style="text-align: right;">
 							<% unless @user.expired? %>
 								<a href="/ncmhce/scenarios/<%= scenario.id %>">Review</a>

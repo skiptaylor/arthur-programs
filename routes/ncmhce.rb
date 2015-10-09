@@ -7,14 +7,14 @@ get '/ncmhce/?' do
 	erb :ncmhce
 end
 
-get '/ceu/?' do
-	if session[:user]
-		user = User.get session[:user]
-		redirect '/ncmhce/scenarios' if user.ceu_scenario > 0
-	end
-
-	erb :ceu
-end
+# get '/ceu/?' do
+#   if session[:user]
+#     user = User.get session[:user]
+#     redirect '/ncmhce/scenarios' if user.ceu_scenario > 0
+#   end
+#
+#   erb :ceu
+# end
 
 
 get '/ncmhce/glossary/?' do
