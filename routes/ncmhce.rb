@@ -7,14 +7,14 @@ get '/ncmhce/?' do
 	erb :ncmhce
 end
 
-# get '/ceu/?' do
-#   if session[:user]
-#     user = User.get session[:user]
-#     redirect '/ncmhce/scenarios' if user.ceu_scenario > 0
-#   end
-#
-#   erb :ceu
-# end
+get '/ceu/?' do
+  if session[:user]
+    user = User.get session[:user]
+    redirect '/ceu/scenarios' if user.ceu_scenario > 0
+  end
+
+  erb :ceu
+end
 
 
 get '/ncmhce/glossary/?' do
@@ -37,7 +37,6 @@ get '/ncmhce/scenarios/?' do
 
 	user = User.get session[:user]
 	redirect '/ncmhce' unless user.max_scenarios > 0
-  redirect '/ceu' unless user.ceu_scenario > 0
 
 	@max_scenarios = User.get(session[:user]).max_scenarios
   @scenarios = Scenario.all(order: :id, active: true)
@@ -50,6 +49,25 @@ get '/ncmhce/scenarios/?' do
 	Use.all(user_id: session[:user]).each { |u| @uses << u.scenario_id }
 	erb :'ncmhce/index'
 end
+
+get '/ceu/scenarios/?' do
+	authorize!
+
+	user = User.get session[:user]
+  redirect '/ceu' unless user.ceu_scenario > 0
+
+	@max_scenarios = User.get(session[:user]).max_scenarios
+  @scenarios = Scenario.all(order: :id, active: true)
+  @scenarios = @scenarios.all(workshop: false) unless user.workshop_scenarios == true
+  @ceu_scenario = User.get(session[:user]).ceu_scenario
+  @scenarios = @scenarios.all(practice: false) unless user.practice_exams == true
+	@averages = Average.all(:user_id => session[:user], :scenario_id.not => nil)
+	@remaining_scenarios = User.get(session[:user]).remaining_scenarios
+	@uses = []
+	Use.all(user_id: session[:user]).each { |u| @uses << u.scenario_id }
+	erb :'ceu/index'
+end
+
 
 get '/ncmhce/scenarios/:id/?' do
 	expired?
