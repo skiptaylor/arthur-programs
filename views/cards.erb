@@ -19,7 +19,7 @@
 		<div class="tab-pane <%= 'active' if index == 0 %>" id="terms-<%= index %>">
 		
 			<p>
-				<a href="/cards/<%= @exam %>/<%= chapter %>" class="btn btn-info"><%= chapter %> Flash Cards</a>
+				<a href="/cards/<%= @exam %>/<%= chapter %>" class="btn btn-primary"><%= chapter %> Flash Cards</a>
 			</p>
 			
 			<hr />
@@ -31,7 +31,9 @@
 						<strong><%= glossary.term %></strong>
 					</div>
 					<div class="span9">
-						<%= markdown glossary.definition %>
+						<%= markdown glossary.short_def %>
+						<% unless glossary.definition == "" %><hr style="margin: .6em 0;" />
+						<small><%= markdown glossary.definition %></small><% else %><% end %>
 					</div>
 					
 				</div>

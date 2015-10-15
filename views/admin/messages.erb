@@ -39,21 +39,21 @@
     </form>
     
     <h2>Messages</h2>
-    <table class="table">
+    <table class="table table-bordered">
       <thead>
-        <th>Message</th>
-        <th>Profile</th>
-        <th>NCMHCE</th>
-        <th>NCE</th>
+        <th><small>Message</small></th>
+        <th style="text-align: center;"><small>Profile</small></th>
+        <th style="text-align: center;"><small>NCMHCE</small></th>
+        <th style="text-align: center;"><small>NCE</small></th>
         <th></th>
       </thead>
       <tbody>
         <% @messages.each do |m| %>
           <tr>
             <td><%= m.body %></td>
-            <td><%= '<i class="icon-check"' if m.profile == true %></td>
-            <td><%= '<i class="icon-check"' if m.ncmhce == true %></td>
-            <td><%= '<i class="icon-check"' if m.nce == true %></td>
+            <td style="text-align: center;"><%= '<i class="icon-check"' if m.profile == true %></td>
+            <td style="text-align: center;"><%= '<i class="icon-check"' if m.ncmhce == true %></td>
+            <td style="text-align: center;"><%= '<i class="icon-check"' if m.nce == true %></td>
             <td><a href="/admin/messages/<%= m.id %>/delete" class='delete'><i class="icon icon-remove"></i></a></td>
           </tr>
         <% end %>

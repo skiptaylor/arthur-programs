@@ -45,9 +45,9 @@ class User
   
   property :practice_exams, Boolean, default: false
 
-	has n, :scores
-	has n, :averages
-	has n, :purchases
+	has n, :scores, :constraint => :destroy
+	has n, :averages, :constraint => :destroy
+	has n, :purchases, :constraint => :destroy
 
 	def remaining_exams
 		self.max_exams - Use.all(user_id: self.id, :exam_id.not => nil, :sample => false).count

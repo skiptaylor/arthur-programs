@@ -18,12 +18,12 @@
 	<div class="row">
 		<div class="span12">
 			<div class="accordion">
-				<a class="btn btn-info" data-toggle="collapse" href="#collapseOne">
-					Instructions
+				<a class="btn btn-warning" data-toggle="collapse" href="#collapseOne">
+					<strong>Instructions</strong> &nbsp;
 					<span class="caret"></span>
-				</a>
+				</a> &nbsp; <span style="color: #d45f11;">Please read instructions before beginning.</span>
 			</div>
-	        <div id="collapseOne" class="collapse in">
+	        <div id="collapseOne" class="collapse">
 				<div class="accordion-inner">
 					<h3>Exam Format Instructions</h3>
 					<br />
@@ -46,25 +46,26 @@
 					<p>IF YOU PURCHASED THE STARTER PACKAGE you may choose any 12 of the 37 online scenarios (scenario 1 is a sample and doesn't count against your total). It may be to your benefit to mix them up and not just take the first 12 in order because they become more complex as the scenario number gets larger. You may read the entire scenario synopsis of every scenario without being charged towards your 12; the count begins once you start answering the scenario. Once you have selected the 12th scenario, the link to obtain access to all other scenarios will disappear and you will no longer be able to access additional scenarios without purchasing an upgrade package. You may, however, retake the same 12 scenarios you selected multiple times.</p>
 				</div>
 			</div>
-			
+			<div class="row">
 <% @scenarios.each do |scenario| %>
-	<%= '<div class="row">' if scenario.id.odd? %>
-		<div class="span6">
+<% unless scenario.ceu || scenario.sample || scenario.workshop || scenario.practice %>
+		<div class="span6" style="min-height: 22em;">
 			<h3>
 				<%= scenario.id %>. <%= scenario.title %>
 				<%= '<span class="label label-info">Sample</span>' if scenario.sample? %>
 				<% avg = @averages.detect {|a| a.scenario_id == scenario.id} %>
-				<%= "<small class='darker-gray'>#{avg.score}%</small>" if avg %>
+				<small style="color: #20ae32;" class='darker-gray'>&nbsp; <% if avg %>Last taken - <%= avg.updated_at.display_short if avg %><% end %></small>
 			</h3>
 			<%= markdown scenario.body.truncate(100) %>
 			
 			<% if scenario.sample? || @uses.include?(scenario.id) || @remaining_scenarios > 0 %>
-				<p><a href="/ncmhce/scenarios/<%= scenario.id %>">Go to scenario <%= scenario.id %></a></p>
+				<p><a class="btn btn-small btn-primary" href="/ncmhce/scenarios/<%= scenario.id %>">Go to scenario <%= scenario.id %></a></p>
 			<% end %>
 			
 			<br />
 		</div>
-	<%= '</div>' if scenario.id.even? %>
+<% end %>
 <% end %>
 
+</div>
 </div>

@@ -163,7 +163,7 @@
 			<h2>Purchases</h2>
 		</div>
 		
-		<table class="table table-condensed">
+		<table class="table table-condensed table-striped table-hover">
 			<thead>
 				<tr>
 					<th>Date</th>
@@ -204,7 +204,7 @@
       </div>
       
       <% unless @exams.empty? %>
-        <table class="table table-condensed">
+        <table class="table table-condensed table-striped table-hover">
           <thead>
             <tr>
               <th>Exam</th>
@@ -243,18 +243,18 @@
       </div>
       
       <% unless @scenarios.empty? %>
-        <table class="table table-condensed">
+        <table class="table table-condensed table-striped table-hover">
           <thead>
             <tr>
   				<th>Scenario</th>
   				<th style="text-align: center;">IG</th>
   				<th style="text-align: center;">DM</th>
-  				<th>Taken On</th>
+  				<th style="text-align: center;">Taken On</th>
             </tr>
           </thead>
           <tbody>
             <% @scenarios.sort { |a,b| a.scenario_id <=> b.scenario_id }.each do |average| %>
-              <% unless average.scenario.workshop? %>
+              <% unless average.scenario.workshop? || average.scenario.practice? || average.scenario.ceu? %>
                 <tr>
                   <td><%= average.scenario_id %>. <%= average.scenario.title %></td>
 						<td style="text-align: center;">
@@ -277,7 +277,7 @@
 							<%= @decision_making.correct %>/<%= @decision_making.possible %>
 							<% else %><small>N/A</small><% end %>
 						</td>
-						<td><%= average.updated_at.display_short if average %></td>
+						<td style="text-align: center;"><%= average.updated_at.display_short if average %></td>
                 </tr>
               <% end %>
             <% end %>
@@ -294,12 +294,11 @@
         <h3>Workshop Scenarios</h3>
       </div>
       
-      <table class="table table-condensed">
+      <table class="table table-condensed table-striped table-hover">
         <thead>
           <tr>
 				<th>Scenario</th>
-				<th style="text-align: center;">IG</th>
-				<th style="text-align: center;">DM</th>
+				
 				<th>Taken On</th>
           </tr>
         </thead>
@@ -309,26 +308,7 @@
             <% avg = Average.last(scenario_id: scenario.id, user_id: @user.id) %>
             <tr>
               <td><%= scenario.title %></td>
-				<td style="text-align: center;">
-					<% @information_gathering = Scoretype.last(
-						type: "Information Gathering",
-						scenario_id: avg.scenario_id,
-						user_id: session[:user]
-					) %>
-					<% if @information_gathering %>
-					<%= @information_gathering.correct %>/<%= @information_gathering.possible %> 
-					<% else %><small>N/A</small><% end %>
-				</td>
-				<td style="text-align: center;">
-					<% @decision_making = Scoretype.last(
-						type: "Decision Making",
-						scenario_id: avg.scenario_id,
-						user_id: session[:user]
-					) %>
-					<% if @decision_making %>
-					<%= @decision_making.correct %>/<%= @decision_making.possible %>
-					<% else %><small>N/A</small><% end %>
-				</td>
+				
 				<td><%= avg.updated_at.display_short if avg %></td>
             </tr>
           <% end %>
@@ -344,12 +324,11 @@
         <h3>CEU Scenarios</h3>
       </div>
       
-      <table class="table table-condensed">
+      <table class="table table-condensed table-striped table-hover">
         <thead>
           <tr>
 				<th>Scenario</th>
-				<th style="text-align: center;">IG</th>
-				<th style="text-align: center;">DM</th>
+				
 				<th>Taken On</th>
           </tr>
         </thead>
@@ -358,26 +337,7 @@
             <% if average.scenario.ceu? %>
               <tr>
                 <td><%= average.scenario_id %>. <%= average.scenario.title %></td>
-					<td style="text-align: center;">
-						<% @information_gathering = Scoretype.last(
-							type: "Information Gathering",
-							scenario_id: average.scenario_id,
-							user_id: session[:user]
-						) %>
-						<% if @information_gathering %>
-						<%= @information_gathering.correct %>/<%= @information_gathering.possible %> 
-						<% else %><small>N/A</small><% end %>
-					</td>
-					<td style="text-align: center;">
-						<% @decision_making = Scoretype.last(
-							type: "Decision Making",
-							scenario_id: average.scenario_id,
-							user_id: session[:user]
-						) %>
-						<% if @decision_making %>
-						<%= @decision_making.correct %>/<%= @decision_making.possible %>
-						<% else %><small>N/A</small><% end %>
-					</td>
+					
 					<td><%= average.updated_at.display_short if average %></td>
               </tr>
             <% end %>
@@ -394,12 +354,11 @@
         <h3>Practice Scenarios</h3>
       </div>
       
-      <table class="table table-condensed">
+      <table class="table table-condensed table-striped table-hover">
         <thead>
           <tr>
 				<th>Scenario</th>
-				<th style="text-align: center;">IG</th>
-				<th style="text-align: center;">DM</th>
+				
 				<th>Taken On</th>
           </tr>
         </thead>
@@ -409,26 +368,6 @@
             <% avg = Average.last(scenario_id: scenario.id, user_id: @user.id) %>
             <tr>
               <td><%= scenario.title %></td>
-  				<td style="text-align: center;">
-  					<% @information_gathering = Scoretype.last(
-  						type: "Information Gathering",
-  						scenario_id: avg.scenario_id,
-  						user_id: session[:user]
-  					) %>
-  					<% if @information_gathering %>
-  					<%= @information_gathering.correct %>/<%= @information_gathering.possible %> 
-  					<% else %><small>N/A</small><% end %>
-  				</td>
-  				<td style="text-align: center;">
-  					<% @decision_making = Scoretype.last(
-  						type: "Decision Making",
-  						scenario_id: avg.scenario_id,
-  						user_id: session[:user]
-  					) %>
-  					<% if @decision_making %>
-  					<%= @decision_making.correct %>/<%= @decision_making.possible %>
-  					<% else %><small>N/A</small><% end %>
-  				</td>
   				<td><%= avg.updated_at.display_short if avg %></td>
             </tr>
           <% end %>

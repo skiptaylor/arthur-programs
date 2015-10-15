@@ -8,63 +8,66 @@
 <div>
 	<h1>
 		CEU Scenarios
-		<% if @ceu_scenario < 2 %>
-			<span style="float: right;"><a class="btn btn-success" href="/checkout/ncmhce-upgrade">Buy another CEU scenarios for $20</a></span>
+		<% if @ceu_scenario < 5 %>
+			<span style="float: right;"><a class="btn btn-success" href="/checkout/ceu?package=Single%20Scenario">Buy another <strong>CEU</strong> scenario for <strong>$20</strong></a></span>
 		<% end %>
 	</h1>
+	<hr />
 </div>
 <br />
 
 	<div class="row">
 		<div class="span12">
-			<!-- <div class="accordion">
-				<a class="btn btn-info" data-toggle="collapse" href="#collapseOne">
-					Instructions
-					<span class="caret"></span>
-				</a>
-			</div>
-	        <div id="collapseOne" class="collapse in">
-				<div class="accordion-inner">
-					<h3>Exam Format Instructions</h3>
-					<br />
-					<p>The scenario questions become more complex as you advance deeper into the list.</p>
-
-					<p>The 37 Exam Format scenarios are similar to the design utilized by the National Board for Certified Counselors (NBCC) for the NCMHCE. These scenarios follow the standard protocol used to assess a mental health disorder for a simulated client case. Many of the scenarios will provide adequate information to make only a single provisional diagnosis; however, several scenarios will provide information that point to two or three diagnoses.</p>
-
-					<p>The Exam Format scenarios will be introduced with a brief description of the client's initial statement or presenting complaint. Read each summary carefully. The scenario questions then simulate your actions as a counselor. You are to select answers to each scenario question so they are best choices to gather information necessary to formulate a diagnosis and later a treatment plan. For example, in the first question you are only an assessor for symptoms even though it is likely all of the selections could be helpful throughout the scenario.</p>
-
-					<p>As you select answers to each question, note that most have more than one answer that will provide important information. These selections will positively affect your score, and it is best to select as many positive answers as possible. Other answers will not be helpful to answer the question, and thus will negatively affect your score. Still other selections will be neutral for our scenarios. You will be able to view all scores and answers associated with each question when you click submit after the last question of each scenario.</p>
-
-					<p>Part of the critical thinking evaluation is for you to determine which selections are most important to answer the question. A response is displayed or revealed immediately upon choosing an answer.</p>
-
-					<p>Important: Each scenario contains a diagnosis and is a Stop question. After initial information gathering questions, sufficient information will have been provided for you to make a correct diagnosis. For the Stop question, you will be instructed not to go forward until a correct diagnosis is made.</p>
-
-					<p>In selecting the provisional diagnosis you may have sufficient information for two or three diagnoses that meet full criteria.  When there are two correct diagnoses, this will require one answer that lists the correct diagnoses on the same answer line. (Example: Alcohol Use Disorder, Obsessive Compulsive Disorder.) The predominate diagnosis requiring the most work is listed first followed by the second diagnosis, if it also meets full criteria. NOTE: For now, those scenarios that require a third diagnosis before going to the next question will require three separate answers.</p>
-
-					<p>Note: Your previous selections and answers are available during the entire exercise. To review previous selections and answers during the scenario, go to the bottom of the page and select the page number that corresponds to the question and answers you desire to review. You will be able to review answers to each question previously selected but you will not be able to select any additional answers.</p>
-
-					<p>IF YOU PURCHASED THE STARTER PACKAGE you may choose any 12 of the 37 online scenarios (scenario 1 is a sample and doesn't count against your total). It may be to your benefit to mix them up and not just take the first 12 in order because they become more complex as the scenario number gets larger. You may read the entire scenario synopsis of every scenario without being charged towards your 12; the count begins once you start answering the scenario. Once you have selected the 12th scenario, the link to obtain access to all other scenarios will disappear and you will no longer be able to access additional scenarios without purchasing an upgrade package. You may, however, retake the same 12 scenarios you selected multiple times.</p>
-				</div>
-			</div> -->
 			
+			
+			
+		<div class="accordion">
+			<a class="btn btn-warning" data-toggle="collapse" href="#collapseOne">
+				<strong>Instructions</strong> &nbsp;
+				<span class="caret"></span>
+			</a> &nbsp; <span style="color: #d45f11;">Please read instructions before beginning.</span>
+		</div>
+        <div id="collapseOne" class="collapse">
+			<div class="accordion-inner">
+				<h3>Exam Format Instructions</h3>
+				<br />
+				<p>The Exam Format scenarios will be introduced with a <strong>Summary</strong> of the client's initial statement or chief complaint. Read each summary carefully.</p> 
+				<p>As the counselor, you must then work through appropriate questions and gather the information necessary to formulate a diagnosis and treatment plan.</p> 
+				<p>As you answer each question, note that most have more than one answer that will provide important information. These answers will <strong>positively affect your score</strong>, so it is best to select as many positive answers as possible. Other answers will not be helpful, and thus will <strong>negatively affect your score</strong>. Still other answers will be neutral. You will find out the score associated with each answer at the end of the scenario.</p> 
+				<p>Part of the critical thinking evaluation is for you to determine which answers are important. A response is displayed immediately upon choosing an answer.</p> 
+				<p><strong>Important:</strong> each scenario contains a diagnosis <strong>Stop question</strong>. After initial information gathering questions, sufficient information will have been provided for you to make a correct diagnosis.</p> 
+				<p>For the Stop question, you will be instructed not to go forward until a correct diagnosis is made. For some scenarios, you may be instructed to find a second or third diagnosis before going to the next question. A recommended treatment question usually follows the diagnosis question. When dual or multiple diagnoses are identified, the treatment question should be answered with treatments for all identified diagnoses.</p>
+				<hr />
+				<p>To access a scenario, log into your account and click on the link “choose a scenario to get started”.</p>
+				<p>To answer a question, click on a box.</p>
+				<p>To move to the next question, click on the next question number at the bottom of the page. NOTE: You may not skip a page. The system will only allow you to open the next page in succession.</p>
+				<p>Once you have finished all of the questions, click on the “Show Score” box at the bottom of the page.</p>
+			</div>
+		</div>	
+			
+			
+
+			<div class="row">
 <% @scenarios.each do |scenario| %>
-	<%= '<div class="row">' if scenario.id.odd? %>
+<% if scenario.ceu %>
+	<!-- <%= '<div class="row">' if scenario.id.odd? %> -->
 		<div class="span6">
 			<h3>
 				<%= scenario.id %>. <%= scenario.title %>
 				<%= '<span class="label label-info">Sample</span>' if scenario.sample? %>
 				<% avg = @averages.detect {|a| a.scenario_id == scenario.id} %>
-				<%= "<small class='darker-gray'>#{avg.score}%</small>" if avg %>
+				<small style="color: #20ae32;" class='darker-gray'>&nbsp; <% if avg %>Last taken - <%= avg.updated_at.display_short if avg %><% end %></small>
 			</h3>
 			<%= markdown scenario.body.truncate(100) %>
 			
 			<% if scenario.sample? || @uses.include?(scenario.id) || @remaining_scenarios > 0 %>
-				<p><a href="/ncmhce/scenarios/<%= scenario.id %>">Go to scenario <%= scenario.id %></a></p>
+				<p><a class="btn btn-small btn-primary" href="/ncmhce/scenarios/<%= scenario.id %>">Go to scenario <%= scenario.id %></a></p>
 			<% end %>
 			
 			<br />
 		</div>
-	<%= '</div>' if scenario.id.even? %>
+	<!-- <%= '</div>' if scenario.id.even? %> -->
+<% end %>
 <% end %>
 
 </div>

@@ -7,7 +7,7 @@
 			<small><%= params[:chapter] %></small>
 		</h2>
 		<p class="pull-right">
-			<a href="/<%= params[:exam].downcase %>/glossary" class="btn">Glossary</a> &nbsp; 
+			<a href="/<%= params[:exam].downcase %>/glossary" class="btn btn-info">Glossary</a> &nbsp; 
 			<a href="<%= request.url %>" class="btn btn-success">Start over</a>
 		</p>
 		<h1 class="hidden-phone">
@@ -29,26 +29,27 @@
 					<p><a href="#" class="last pull-right" style="<%= hidden if i == 0 %>"><img src="/img/arrow-left.png" /></a></p>
 				</div>
 				<div class="span8">
-					<div class="flashcard">
+					<div class="flashcard" style="cursor: pointer;">
 				  	<center><h2><%= card.term %></h2></center>
 				  	<hr style="margin: 0;" />
 				  	<span class="definition">
-						<% unless card.short_def == '' %>
-					  	<%= markdown card.short_def %>
-						<% else %>
-						<%= markdown card.definition %>
-						<% end %>
-					  </span>
+						
+					  	<span style="font-size: 1.1em; line-height: 1.6em;"><%= markdown card.short_def %></span>
+						<hr />
+						<small style="color: gray;"><%= markdown card.definition %></small>
+						
+					</span>
 				  </div>
 				  <br />
-				  
-				  <p style="text-align: center;"><img src="/img/arrow-reveal.png" /></p>
+				  <p style="text-align: center; color: #bc272e;"><small>Click card to toggle definition</small> &nbsp;<i class="icon-hand-up"></i> </p>
 				</div>
 				<div class="span2">
 					<a href="#" class="next"><img src="/img/arrow-right.png" /></a>
 				</div>
 			</div>
-		</div>
+			</div>
+		  
+		
 		
 		<div class="span12 visible-phone">	
 			<div class="row">
@@ -81,3 +82,6 @@
 		<h4 style="text-align: center;">No more cards</h4><br /><br />
 	</div>
 </div>
+
+
+				

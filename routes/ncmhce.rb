@@ -56,11 +56,10 @@ get '/ceu/scenarios/?' do
 	user = User.get session[:user]
   redirect '/ceu' unless user.ceu_scenario > 0
 
-	@max_scenarios = User.get(session[:user]).max_scenarios
-  @scenarios = Scenario.all(order: :id, active: true)
-  @scenarios = @scenarios.all(workshop: false) unless user.workshop_scenarios == true
   @ceu_scenario = User.get(session[:user]).ceu_scenario
-  @scenarios = @scenarios.all(practice: false) unless user.practice_exams == true
+  @scenarios = Scenario.all(order: :id, active: true)
+  @scenarios = @scenarios.all(workshop: false)
+  @scenarios = @scenarios.all(practice: false)
 	@averages = Average.all(:user_id => session[:user], :scenario_id.not => nil)
 	@remaining_scenarios = User.get(session[:user]).remaining_scenarios
 	@uses = []
