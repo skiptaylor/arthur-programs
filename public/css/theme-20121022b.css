@@ -1374,11 +1374,6 @@ div.bubble {
    text-shadow: -1px -1px 0px #868686;*/
 }
 
-.bar	{
-	background-color: #1c89de;
-	margin: 0px auto;
-}
-
 
 .white	{
 	background-color: #ffffff;
@@ -1429,11 +1424,27 @@ div.bubble {
     outline: none;
 }
 
+.bar	{
+	background-color: #1c89de;
+	margin: 0px auto;
+}
+
+.program-nav-main	{
+	background-color: #1c89de;
+	margin: 0;
+	padding: 7px 32px;
+}
+
+.program-nav-main:hover	{
+	background-color: #6c4192;
+   -webkit-transition: all 0.2s ease-in-out;
+           transition: all 0.2s ease-in-out;
+}
 
 .program-nav-nce	{
 	background-color: #1c89de;
 	margin: 0;
-	padding: 16px 50px;
+	padding: 16px 40px;
 }
 
 .program-nav-nce:hover	{
@@ -1445,7 +1456,7 @@ div.bubble {
 .program-nav-ncmhce	{
 	background-color: #1c89de;
 	margin: 0;
-	padding: 16px 50px;
+	padding: 16px 40px;
 }
 
 .program-nav-ncmhce:hover	{
@@ -1457,7 +1468,7 @@ div.bubble {
 .program-nav-ceu	{
 	background-color: #1c89de;
 	margin: 0;
-	padding: 16px 50px;
+	padding: 16px 40px;
 }
 
 .program-nav-ceu:hover	{
