@@ -60,7 +60,7 @@
 </div>
 
 <div class="bar" style="text-align: center; display: block;">
-	<a href="#picmain" id="mainbutton"><img src="img/welcome-white-90.png" style="height: 88px; border-left: #ffffff 1px solid;" class="program-nav-main" /></a><a href="/nce" id="ncebutton" style="background-color: #ffffff"><img src="img/nce-white.png" style="height: 70px; border-right: #ffffff 1px solid; border-left: #ffffff 1px solid;" class="program-nav-nce" /></a><a href="/ncmhce" id="ncmhcebutton"><img src="img/ncmhce-white.png" style="height: 70px; border-right: #ffffff 1px solid; border-left: transparent 0px solid;" class="program-nav-ncmhce" /></a><a href="/ceu" id="ceubutton"><img src="img/ceu-white.png" style="height: 70px; border-right: #ffffff 1px solid; border-left: transparent 0px solid;" class="program-nav-ceu" /></a><a href="#picguarantee" id="guaranteebutton"><img src="img/guarantee-white-90.png" style="height: 88px; border-right: #ffffff 1px solid;" class="program-nav-guarantee" /></a>
+	<a href="#picmain" id="mainbutton"><img src="img/welcome-white-90.png" id="mainbut" style="height: 88px; border-left: #ffffff 1px solid;" class="program-nav-main" /></a><a href="/nce" id="ncebutton" style="background-color: #ffffff"><img src="img/nce-white.png" id="ncebut" style="height: 70px; border-right: #ffffff 1px solid; border-left: #ffffff 1px solid;" class="program-nav-nce" /></a><a href="/ncmhce" id="ncmhcebutton"><img src="img/ncmhce-white.png" id="ncmhcebut" style="height: 70px; border-right: #ffffff 1px solid; border-left: transparent 0px solid;" class="program-nav-ncmhce" /></a><a href="/ceu" id="ceubutton"><img src="img/ceu-white.png" id="ceubut" style="height: 70px; border-right: #ffffff 1px solid; border-left: transparent 0px solid;" class="program-nav-ceu" /></a><a href="#picguarantee" id="guaranteebutton"><img src="img/guarantee-white-90.png" id="guaranteebut" style="height: 88px; border-right: #ffffff 1px solid;" class="program-nav-guarantee" /></a>
 </div>
 
 <div class="container">
@@ -75,46 +75,71 @@
 <script type="text/javascript">	
 	$('#mainbutton').hover(
 	    function() {
- 		  	$('#picnce').hide();
- 			$('#picncmhce').hide();
- 			$('#picceu').hide();
-			$('#picguarantee').hide();
+			 $('#picceu').hide();
+			 $('#ceubut').css('background-color' , '#1c89de');
+			 $('#picnce').hide();
+			 $('#ncebut').css('background-color' , '#1c89de');
+			 $('#picncmhce').hide();
+			 $('#ncmhcebut').css('background-color' , '#1c89de');
+			 $('#picguarantee').hide();
+			 $('#guaranteebut').css('background-color' , '#1c89de');
+			$('#mainbut').css('background-color' , '#6c4192');
 	      $('#picmain').show();
-	    }
+	   }
 	);
 	$('#ncebutton').hover(
 	    function() {
-		  	$('#picmain').hide();
-			$('#picncmhce').hide();
-			$('#picceu').hide();
-			$('#picguarantee').hide();
+			 $('#picmain').hide();
+			 $('#mainbut').css('background-color' , '#1c89de');
+			 $('#picceu').hide();
+			 $('#ceubut').css('background-color' , '#1c89de');
+			 $('#picncmhce').hide();
+			 $('#ncmhcebut').css('background-color' , '#1c89de');
+			 $('#picguarantee').hide();
+			 $('#guaranteebut').css('background-color' , '#1c89de');
+			$('#ncebut').css('background-color' , '#244883');
 			$('#picnce').show();
 	    }
 	);
 	$('#ncmhcebutton').hover(
 	    function() {
 			 $('#picmain').hide();
+			 $('#mainbut').css('background-color' , '#1c89de');
 			 $('#picnce').hide();
+			 $('#ncebut').css('background-color' , '#1c89de');
 			 $('#picceu').hide();
+			 $('#ceubut').css('background-color' , '#1c89de');
 			 $('#picguarantee').hide();
+			 $('#guaranteebut').css('background-color' , '#1c89de');
+			 $('#ncmhcebut').css('background-color' , '#bc272e');
 	       $('#picncmhce').show();
 	    }
 	);
 	$('#ceubutton').hover(
 	    function() {
 			 $('#picmain').hide();
+			 $('#mainbut').css('background-color' , '#1c89de');
 			 $('#picnce').hide();
+			 $('#ncebut').css('background-color' , '#1c89de');
 			 $('#picncmhce').hide();
+			 $('#ncmhcebut').css('background-color' , '#1c89de');
 			 $('#picguarantee').hide();
+			 $('#guaranteebut').css('background-color' , '#1c89de');
+			 $('#ceubut').css('background-color' , '#008d23');
 			 $('#picceu').show();
 	    }
 	);
 	$('#guaranteebutton').hover(
 	    function() {
 			 $('#picmain').hide();
+			 $('#mainbut').css('background-color' , '#1c89de');
 			 $('#picnce').hide();
+			 $('#ncebut').css('background-color' , '#1c89de');
+			 $('#picncmhce').hide();
+			 $('#ncmhcebut').css('background-color' , '#1c89de');
 			 $('#picceu').hide();
-	       $('#picncmhce').hide();
+			 $('#ceubut').css('background-color' , '#1c89de');
+			 $('#guaranteebut').css('background-color' , '#6c4192');
 			 $('#picguarantee').show();
 	    }
 	);
