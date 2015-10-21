@@ -42,6 +42,17 @@
 				<img src="img/ceu-white.png" style="height: 308px;" />
 				<h5 style="font-size: 2em; font-weight: 400; color: #535353; margin-bottom: 0.5em;margin-top: -0.2em;">Return for Continuing Education Credits, Yearly!</h5>
 			</div>
+			
+			<div id="picguarantee">
+				<h5 style="font-size: 2.5em; font-weight: 400; line-height: 1em; color: #213672;">
+					Pass Your State Licensure Exam!
+				</h5>
+				<div style="min-height: 308px;">
+				<img src="img/pass_icon-left.png" style="height: 200px; padding: 54px;" />
+				<h5 style="font-size: 2em; font-weight: 400; color: #535353; margin-bottom: 1.15em; margin-top: -0.2em;">Pass Your Exam. Guaranteed!</h5>
+				</div>
+			</div>
+			
 		</div>
 	</div>
 </div>
@@ -49,7 +60,7 @@
 </div>
 
 <div class="bar" style="text-align: center; display: block;">
-	<a href="" id="mainbutton"><img src="img/welcome-white-90.png" style="height: 88px; border-left: #ffffff 1px solid;" class="program-nav-main" /></a><a href="/nce" id="ncebutton" style="background-color: #ffffff"><img src="img/nce-white.png" style="height: 70px; border-right: #ffffff 1px solid; border-left: #ffffff 1px solid;" class="program-nav-nce" /></a><a href="/ncmhce" id="ncmhcebutton"><img src="img/ncmhce-white.png" style="height: 70px; border-right: #ffffff 1px solid; border-left: transparent 0px solid;" class="program-nav-ncmhce" /></a><a href="/ceu" id="ceubutton"><img src="img/ceu-white.png" style="height: 70px; border-right: #ffffff 1px solid; border-left: transparent 0px solid;" class="program-nav-ceu" /></a>
+	<a href="#picmain" id="mainbutton"><img src="img/welcome-white-90.png" style="height: 88px; border-left: #ffffff 1px solid;" class="program-nav-main" /></a><a href="/nce" id="ncebutton" style="background-color: #ffffff"><img src="img/nce-white.png" style="height: 70px; border-right: #ffffff 1px solid; border-left: #ffffff 1px solid;" class="program-nav-nce" /></a><a href="/ncmhce" id="ncmhcebutton"><img src="img/ncmhce-white.png" style="height: 70px; border-right: #ffffff 1px solid; border-left: transparent 0px solid;" class="program-nav-ncmhce" /></a><a href="/ceu" id="ceubutton"><img src="img/ceu-white.png" style="height: 70px; border-right: #ffffff 1px solid; border-left: transparent 0px solid;" class="program-nav-ceu" /></a><a href="#picguarantee" id="guaranteebutton"><img src="img/guarantee-white-90.png" style="height: 88px; border-right: #ffffff 1px solid;" class="program-nav-guarantee" /></a>
 </div>
 
 <div class="container">
@@ -67,6 +78,7 @@
  		  	$('#picnce').hide();
  			$('#picncmhce').hide();
  			$('#picceu').hide();
+			$('#picguarantee').hide();
 	      $('#picmain').show();
 	    }
 	);
@@ -75,6 +87,7 @@
 		  	$('#picmain').hide();
 			$('#picncmhce').hide();
 			$('#picceu').hide();
+			$('#picguarantee').hide();
 			$('#picnce').show();
 	    }
 	);
@@ -83,6 +96,7 @@
 			 $('#picmain').hide();
 			 $('#picnce').hide();
 			 $('#picceu').hide();
+			 $('#picguarantee').hide();
 	       $('#picncmhce').show();
 	    }
 	);
@@ -91,7 +105,17 @@
 			 $('#picmain').hide();
 			 $('#picnce').hide();
 			 $('#picncmhce').hide();
+			 $('#picguarantee').hide();
 			 $('#picceu').show();
+	    }
+	);
+	$('#guaranteebutton').hover(
+	    function() {
+			 $('#picmain').hide();
+			 $('#picnce').hide();
+			 $('#picceu').hide();
+	       $('#picncmhce').hide();
+			 $('#picguarantee').show();
 	    }
 	);
 </script>
