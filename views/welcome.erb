@@ -1,6 +1,6 @@
 <div class="row">
 	<div class="span12 center">
-		<h1 class="oswald center" style="font-weight: 400; font-size: 3.4em; color: #1c89de;">
+		<h1 class="oswald center" style="font-weight: 400; font-size: 3.4em; color: #1c89de; margin-top: 0.7em;">
 			Arthur-Brende Study Programs
 		</h1>
 	</div>
@@ -27,13 +27,13 @@
 			
 			<div id="picnce">
 				<p class="oswald" style="font-size: 2.5em; font-weight: 400; line-height: 1em; color: #244883; margin-top: 0.29em;">National Counseling Examination</p>
-				<img src="img/nce-group-new.png" style="height: 308px;" />
+				<img src="img/nce-group-new.png" style="height: 260px; padding: 24px 0;" />
 				<h5 style="font-size: 2em; font-weight: 400; color: #535353; margin-bottom: 0.5em;margin-top: -0.2em;">Pass Your State Licensure Exam. Guaranteed!</h5>
 			</div>
 
 			<div id="picncmhce">
 				<p class="oswald" style="font-size: 2.5em; font-weight: 400; line-height: 1em; color: #bc1425; margin-top: 0.29em;">National Clinical Mental Health Counseling Examination</p>
-				<img src="/img/ncmhce-group.png" style="height: 308px;" />
+				<img src="/img/ncmhce-group.png" style="height: 260px; padding: 24px 0;" />
 				<h5 style="font-size: 2em; font-weight: 400; color: #535353; margin-bottom: 0.5em;margin-top: -0.2em;">Pass Your State Licensure Exam. Guaranteed!</h5>
 			</div>
 
@@ -49,8 +49,18 @@
 				</h5>
 				<div style="min-height: 308px;">
 				<img src="img/pass_icon-left.png" style="height: 200px; padding: 54px;" />
-				<h5 style="font-size: 2em; font-weight: 400; color: #535353; margin-bottom: 1.15em; margin-top: -0.2em;">Pass Your Exam. Guaranteed!</h5>
+				<h5 style="font-size: 2em; font-weight: 400; color: #535353; margin-bottom: 1.15em; margin-top: -0.2em;">Pass Your Exam or Your Money Back! Guaranteed!</h5>
 				</div>
+			</div>
+			
+			<!-- <div id="picworkshops">
+				<h5 style="font-size: 2.5em; font-weight: 400; line-height: 1em; color: #213672;">
+					Dr Arthur Workshops
+				</h5>
+				<div style="min-height: 308px;">
+				<img src="" style="height: 200px; padding: 54px;" />
+				<h5 style="font-size: 2em; font-weight: 400; color: #535353; margin-bottom: 1.15em; margin-top: -0.2em;">Take a Workshop from Dr. Arthur Himself!!!</h5>
+				</div> -->
 			</div>
 			
 		</div>
@@ -60,7 +70,7 @@
 </div>
 
 <div class="bar" style="text-align: center; display: block;">
-	<a href="#picmain" id="mainbutton"><img src="img/welcome-white-90.png" id="mainbut" style="height: 88px; border-left: #ffffff 1px solid;" class="program-nav-main" /></a><a href="/nce" id="ncebutton" style="background-color: #ffffff"><img src="img/nce-white.png" id="ncebut" style="height: 70px; border-right: #ffffff 1px solid; border-left: #ffffff 1px solid;" class="program-nav-nce" /></a><a href="/ncmhce" id="ncmhcebutton"><img src="img/ncmhce-white.png" id="ncmhcebut" style="height: 70px; border-right: #ffffff 1px solid; border-left: transparent 0px solid;" class="program-nav-ncmhce" /></a><a href="/ceu" id="ceubutton"><img src="img/ceu-white.png" id="ceubut" style="height: 70px; border-right: #ffffff 1px solid; border-left: transparent 0px solid;" class="program-nav-ceu" /></a><a href="#picguarantee" id="guaranteebutton"><img src="img/guarantee-white-90.png" id="guaranteebut" style="height: 88px; border-right: #ffffff 1px solid;" class="program-nav-guarantee" /></a>
+	<a href="#picmain" id="mainbutton"><img src="img/welcome-white-90.png" id="mainbut" style="height: 88px; border-left: #ffffff 1px solid;" class="program-nav-main" /></a><a href="/nce" id="ncebutton" style="background-color: #ffffff"><img src="img/nce-white.png" id="ncebut" style="height: 70px; border-right: #ffffff 1px solid; border-left: #ffffff 1px solid;" class="program-nav-nce" /></a><a href="/ncmhce" id="ncmhcebutton"><img src="img/ncmhce-white.png" id="ncmhcebut" style="height: 70px; border-right: #ffffff 1px solid; border-left: transparent 0px solid;" class="program-nav-ncmhce" /></a><a href="/ceu" id="ceubutton"><img src="img/ceu-white.png" id="ceubut" style="height: 70px; border-right: #ffffff 1px solid; border-left: transparent 0px solid;" class="program-nav-ceu" /></a><a href="#picguarantee" id="guaranteebutton"><img src="img/guarantee-white-90.png" id="guaranteebut" style="height: 88px; border-right: #ffffff 1px solid;" class="program-nav-guarantee" /></a><!-- <a href="#picworkshops" id="workshopsbutton"><img src="img/workshops-white-90.png" id="workshopsbut" style="height: 88px; border-right: #ffffff 1px solid;" class="program-nav-workshops" /></a> -->
 </div>
 
 <div class="container">
@@ -83,6 +93,8 @@
 			 $('#ncmhcebut').css('background-color' , '#1c89de');
 			 $('#picguarantee').hide();
 			 $('#guaranteebut').css('background-color' , '#1c89de');
+			 $('#picworkshops').hide();
+			 $('#workshopsbut').css('background-color' , '#1c89de');
 			$('#mainbut').css('background-color' , '#6c4192');
 	      $('#picmain').show();
 	   }
@@ -97,6 +109,8 @@
 			 $('#ncmhcebut').css('background-color' , '#1c89de');
 			 $('#picguarantee').hide();
 			 $('#guaranteebut').css('background-color' , '#1c89de');
+			 $('#picworkshops').hide();
+			 $('#workshopsbut').css('background-color' , '#1c89de');
 			$('#ncebut').css('background-color' , '#244883');
 			$('#picnce').show();
 	    }
@@ -111,6 +125,8 @@
 			 $('#ceubut').css('background-color' , '#1c89de');
 			 $('#picguarantee').hide();
 			 $('#guaranteebut').css('background-color' , '#1c89de');
+			 $('#picworkshops').hide();
+			 $('#workshopsbut').css('background-color' , '#1c89de');
 			 $('#ncmhcebut').css('background-color' , '#bc272e');
 	       $('#picncmhce').show();
 	    }
@@ -125,6 +141,8 @@
 			 $('#ncmhcebut').css('background-color' , '#1c89de');
 			 $('#picguarantee').hide();
 			 $('#guaranteebut').css('background-color' , '#1c89de');
+			 $('#picworkshops').hide();
+			 $('#workshopsbut').css('background-color' , '#1c89de');
 			 $('#ceubut').css('background-color' , '#008d23');
 			 $('#picceu').show();
 	    }
@@ -139,8 +157,26 @@
 			 $('#ncmhcebut').css('background-color' , '#1c89de');
 			 $('#picceu').hide();
 			 $('#ceubut').css('background-color' , '#1c89de');
+			 $('#picworkshops').hide();
+			 $('#workshopsbut').css('background-color' , '#1c89de');
 			 $('#guaranteebut').css('background-color' , '#6c4192');
 			 $('#picguarantee').show();
 	    }
 	);
+	// $('#workshopsbutton').hover(
+// 	    function() {
+// 			 $('#picmain').hide();
+// 			 $('#mainbut').css('background-color' , '#1c89de');
+// 			 $('#picnce').hide();
+// 			 $('#ncebut').css('background-color' , '#1c89de');
+// 			 $('#picncmhce').hide();
+// 			 $('#ncmhcebut').css('background-color' , '#1c89de');
+// 			 $('#picceu').hide();
+// 			 $('#ceubut').css('background-color' , '#1c89de');
+// 			 $('#picguarantee').hide();
+// 			 $('#guaranteebut').css('background-color' , '#1c89de');
+// 			 $('#workshopsbut').css('background-color' , '#3a3a3a');
+// 			 $('#picworkshops').show();
+// 	    }
+// 	);
 </script>

@@ -1364,6 +1364,15 @@ hr  {
 	min-height: 400px;
 }
 
+#picworkshops	{
+	background-color: #ffffff;
+	display: none;
+	width: 100%;
+	height: 400px;
+	min-width: 100%;
+	min-height: 400px;
+}
+
 div.bubble {
 	margin: 30px auto 0 auto;
 	color: #ffffff;
@@ -1494,6 +1503,18 @@ div.bubble {
 
 .program-nav-ceu:hover	{
 	background-color: #008d23;
+   -webkit-transition: all 0.2s ease-in-out;
+           transition: all 0.2s ease-in-out;
+}
+
+.program-nav-workshops	{
+	background-color: #1c89de;
+	margin: 0;
+	padding: 7px 32px;
+}
+
+.program-nav-workshops:hover	{
+	background-color: #535353;
    -webkit-transition: all 0.2s ease-in-out;
            transition: all 0.2s ease-in-out;
 }
