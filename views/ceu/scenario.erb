@@ -33,7 +33,7 @@
 		
 		
 		<div class="row">
-			<h3><%= erb :progressbar, layout: false, locals: { label: 'Information Gathering', correct: @breakdown['Information Gathering'][:correct], possible: @breakdown['Information Gathering'][:possible] } %></h3>			
+			<h3><%= erb :progressbar, layout: false, locals: { label: 'Information Gathering', correct: @breakdown['Information Gathering'][:correct], possible: @breakdown['Information Gathering'][:possible] } %></h3>
 			<h3><%= erb :progressbar, layout: false, locals: { offset: true, label: 'Decision Making', correct: @breakdown['Decision Making'][:correct], possible: @breakdown['Decision Making'][:possible] } %></h3>
 		</div>
 		

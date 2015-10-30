@@ -65,6 +65,7 @@ post '/admin/users/new/?' do
 
 	user.update(workshop_scenarios: true) if params[:workshop_scenarios]
   
+  user.update(ceu_scenario: true) if params[:ceu_scenario]
   
   user.update(practice_exams: true) if params[:practice_exams]
 
@@ -150,7 +151,7 @@ end
 get '/admin/users/:id/delete/?' do
 	admin!
 	@user = User.get params[:id]
-  @user.remove_sample
+  @user.remove
 	session[:alert] = { style: 'alert-success', message: "User has been removed." }
-	redirect request.referrer
+	redirect "/admin/users"
 end

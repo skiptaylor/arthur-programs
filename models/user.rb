@@ -69,5 +69,11 @@ class User
 	def expired?
 		self.expiration_date < DateTime.now
 	end
-
+  
+  def remove
+    self.averages.each {|a| a.remove}
+    self.purchases.each {|p| p.remove}
+    self.scores.each {|s| s.remove}
+    self.destroy
+  end
 end
