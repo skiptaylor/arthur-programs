@@ -12,9 +12,9 @@
 		</ul>
 		
 		<div class="page-header">
-			<% if @user.id %>
+			<!-- <% if @user.id %>
 				<a href="/admin/users/<%= @user.id %>/delete" class="btn btn-danger" style="float: right;">Delete This User</a>
-			<% end %>
+			<% end %> -->
 			<h2>
 				<% if @user.name %>
 					<%= @user.name %>
@@ -151,7 +151,7 @@
 						
 			<div class="control-group">
 				<div class="controls">
-					<input type="submit" class="btn btn-primary" value="<%= @user.id ? 'Update' : 'Create' %>" />
+					<input type="submit" class="btn btn-primary" value="<%= @user.id ? 'Update' : 'Create' %>" /> &nbsp; <a type="submit" class="btn btn-primary" href="<%= request.referrer %>">Cancel</a>
 				</div>
 			</div>
 			<!-- <%= @user.inspect %> -->

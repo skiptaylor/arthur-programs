@@ -31,8 +31,8 @@
 			<tbody>
 				<% @users.sort{|a,b| b.expiration_date <=> a.expiration_date}.each do |user| %>
 					<tr>
-						<td><% if user.email == 'sample' %><%= user.id %> <a href="/admin/users/<%= user.id %>/delete" class="btn btn-danger btn-mini" style="float: right;">Delete</a><% end %><%= user.name %> <%= '<span class="label label-inverse">Admin</span>' if user.admin? %></td>
-						<td><a href="mailto:<%= user.email %>"><%= user.email %></a></td>
+						<td><% unless user.name == 'Sample User (do not delete)' %><a href="/admin/users/<%= user.id %>/delete" style="float: right; padding: 0 4px;" class="btn btn-danger btn-mini"><strong>x</strong></a><% end %><% if user.email == "sample" %>Sample <%= user.id %><% end %><%= user.name %> <%= '<span class="label label-inverse">Admin</span>' if user.admin? %></td>
+						<td><% if user.email == "sample" %>None<% else %><a href="mailto:<%= user.email %>"><%= user.email %></a><% end %></td>
 						<td><a href="/admin/users/<%= user.id %>">Edit</a></td>
 					</tr>
 				<% end %>
