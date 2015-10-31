@@ -202,44 +202,7 @@
 		<br />
 	<% end %>
 	
-<!-- –––––––––––––––––– workshop –––––––––––––––––– -->
 
-	<% if @user.workshop_scenarios? %>
-
-		<div class="page-header">
-			<h3>Workshop Scenarios</h3>
-		</div>
-
-		<table class="table table-condensed table-striped table-hover">
-			<thead>
-				<tr>
-					<th>Scenario</th>
-					
-					<th>Taken On</th>
-					<th></th>
-				</tr>
-			</thead>
-			<tbody>
-				<% Scenario.all(workshop: true, active: true).each do |scenario| %>
-					<% use = Use.last(scenario_id: scenario.id, user_id: @user.id) %>
-					<% avg = Average.last(scenario_id: scenario.id, user_id: @user.id) %>
-					<tr>
-						<td><%= scenario.title %></td>
-						
-						<td><%= avg.updated_at.display_short if avg %></td>
-						<td style="text-align: right;">
-							<% unless @user.expired? %>
-								<a href="/ncmhce/scenarios/<%= scenario.id %>">Take</a>
-							<% end %>
-						</td>
-					</tr>
-				<% end %>
-			</tbody>
-		</table>
-
-		<br />
-	<% end %>
-	
 <!-- –––––––––––––––––– ceu –––––––––––––––––– -->
 
 	<% if @user.ceu_scenario > 0 %>
@@ -247,41 +210,141 @@
 		<div class="page-header">
 			<h3>
 				CEU Scenarios
-				<small><%= @user.remaining_scenarios %> Remaining</small>
+				<small><%= @user.remaining_ceu_scenario %> Remaining</small>
+				<% if @user.ceu_scenario < 15 %>
+					<span style="float: right;">&nbsp; <a class="btn btn-success btn-small" href="/checkout/ceu?package=Single%20Scenario">Buy another CEU scenario for $20</a></span>
+				<% end %>
 			</h3>
 		</div>
-	 	<% unless @user.expired? %>
+	 	<% unless @user.expired? || (@user.remaining_ceu_scenario < 1) %>
 		<p><a href="/ceu/scenarios">Choose a scenario</a> to get started.</p>
 		<% end %>
 		<table class="table table-condensed table-striped table-hover">
 			<thead>
 				<tr>
 					<th>Scenario</th>
-					
-					<th>Taken On</th>
+					<th style="text-align: center;">Score</th>
+					<th style="text-align: center;">Last Taken</th>
+					<th style="text-align: center;">Remaining</th>
 					<th></th>
 				</tr>
 			</thead>
 			<tbody>
-				<% Scenario.all(ceu: true, active: true).each do |scenario| %>
-					<% use = Use.last(scenario_id: scenario.id, user_id: @user.id) %>
-					<% avg = Average.last(scenario_id: scenario.id, user_id: @user.id) %>
+				<% @scenarios.sort { |a,b| a.scenario_id <=> b.scenario_id }.each do |average| %>
+					<% unless average.scenario.workshop? || average.scenario.practice? %>
 					<tr>
-						<td><%= scenario.title %></td>
-						
-						<td><%= avg.updated_at.display_short if avg %></td>
+						<td>
+							<%= average.scenario_id %>. <%= average.scenario.title %>
+						</td>
+						<td style="text-align: center;">
+							<% if avg = Average.last(user_id: session[:user], scenario_id: average.scenario_id) %>
+								<%= avg.score %>%
+							<% else %>
+								N/A
+							<% end %>
+						</td>
+						<td style="text-align: center;"><%= average.updated_at.display_short if average %></td>
+						<td style="text-align: center;"><%= ((@user.created_at + 30) - Time.now.to_date).to_i %> Days</td>
 						<td style="text-align: right;">
 							<% unless @user.expired? %>
-								<a href="/ncmhce/scenarios/<%= scenario.id %>">Take</a>
+								<a href="/ncmhce/scenarios/<%= average.scenario_id %>">Review</a>
 							<% end %>
 						</td>
 					</tr>
+					
 				<% end %>
+					
+					<% end %>
+					
+				
 			</tbody>
 		</table>
 
 		<br />
 	<% end %>
+	
+	<!-- –––––––––––––––––– ceu –––––––––––––––––– -->
+
+		<!-- <% if @user.ceu_scenario > 0 %>
+
+			<div class="page-header">
+				<h3>
+					CEU Scenarios
+					<small><%= @user.ceu_scenario %> Remaining</small>
+				</h3>
+			</div>
+		 	<% unless @user.expired? %>
+			<p><a href="/ceu/scenarios">Choose a scenario</a> to get started.</p>
+			<% end %>
+			<table class="table table-condensed table-striped table-hover">
+				<thead>
+					<tr>
+						<th>Scenario</th>
+						<th>Taken On</th>
+						<th style="text-align: center;">Remaining</th>
+						<th></th>
+					</tr>
+				</thead>
+				<tbody>
+					<% Scenario.all(ceu: true, active: true).each do |scenario| %>
+						<% use = Use.last(scenario_id: scenario.id, user_id: @user.id) %>
+						<% avg = Average.last(scenario_id: scenario.id, user_id: @user.id) %>
+						<tr>
+							<td><%= scenario.title %></td>
+							<td><%= avg.updated_at.display_short if avg %></td>
+							<td style="text-align: center;"><%= ((@user.created_at + 30) - Time.now.to_date).to_i %> Days</td>
+							<td style="text-align: right;">
+								<% unless @user.expired? %>
+									<a href="/ncmhce/scenarios/<%= scenario.id %>">Take</a>
+								<% end %>
+							</td>
+						</tr>
+					<% end %>
+				</tbody>
+			</table>
+
+			<br />
+		<% end %> -->
+	
+	
+	<!-- –––––––––––––––––– workshop –––––––––––––––––– -->
+
+		<% if @user.workshop_scenarios? %>
+
+			<div class="page-header">
+				<h3>Workshop Scenarios</h3>
+			</div>
+
+			<table class="table table-condensed table-striped table-hover">
+				<thead>
+					<tr>
+						<th>Scenario</th>
+					
+						<th>Taken On</th>
+						<th></th>
+					</tr>
+				</thead>
+				<tbody>
+					<% Scenario.all(workshop: true, active: true).each do |scenario| %>
+						<% use = Use.last(scenario_id: scenario.id, user_id: @user.id) %>
+						<% avg = Average.last(scenario_id: scenario.id, user_id: @user.id) %>
+						<tr>
+							<td><%= scenario.title %></td>
+						
+							<td><%= avg.updated_at.display_short if avg %></td>
+							<td style="text-align: right;">
+								<% unless @user.expired? %>
+									<a href="/ncmhce/scenarios/<%= scenario.id %>">Take</a>
+								<% end %>
+							</td>
+						</tr>
+					<% end %>
+				</tbody>
+			</table>
+
+			<br />
+		<% end %>
+	
 	
 <!-- –––––––––––––––––– practice –––––––––––––––––– -->
 	

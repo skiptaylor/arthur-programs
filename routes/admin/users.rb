@@ -140,8 +140,6 @@ post '/admin/users/:id/?' do
 	params[:nce_downloads] ? user.update(nce_downloads: true) : user.update(nce_downloads: false)
 	
 	params[:workshop_scenarios] ? user.update(workshop_scenarios: true) : user.update(workshop_scenarios: false)
-  
-  
   params[:practice_exams] ? user.update(practice_exams: true) : user.update(practice_exams: false)
 	
 	session[:alert] = { style: 'alert-success', message: "#{user.name} has been updated." }

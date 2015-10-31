@@ -41,7 +41,9 @@ get '/ncmhce/scenarios/?' do
 	@max_scenarios = User.get(session[:user]).max_scenarios
   @scenarios = Scenario.all(order: :id, active: true)
   @scenarios = @scenarios.all(workshop: false) unless user.workshop_scenarios == true
-  @ceu_scenario = User.get(session[:user]).ceu_scenario
+  
+  
+  @ceu_scenario = @scenarios.all(ceu_scenario: false) unless user.ceu_scenario == true
   @scenarios = @scenarios.all(practice: false) unless user.practice_exams == true
 	@averages = Average.all(:user_id => session[:user], :scenario_id.not => nil)
 	@remaining_scenarios = User.get(session[:user]).remaining_scenarios
@@ -61,7 +63,7 @@ get '/ceu/scenarios/?' do
   @scenarios = @scenarios.all(workshop: false)
   @scenarios = @scenarios.all(practice: false)
 	@averages = Average.all(:user_id => session[:user], :scenario_id.not => nil)
-	@remaining_scenarios = User.get(session[:user]).remaining_scenarios
+	@remaining_ceu_scenario = User.get(session[:user]).remaining_ceu_scenario
 	@uses = []
 	Use.all(user_id: session[:user]).each { |u| @uses << u.scenario_id }
 	erb :'ceu/index'
