@@ -9,5 +9,6 @@ class Message
   property :ncmhce,  Boolean, default: false
   property :nce,     Boolean, default: false
   property :profile, Boolean, default: false
+  property :ceu,     Boolean, default: false
   
 end

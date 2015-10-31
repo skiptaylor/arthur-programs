@@ -14,22 +14,27 @@
     
     <form method="post">
       <p>
-        <textarea name="body" id="body" class="span9"></textarea>
+        <textarea name="body" id="body" rows="5" class="span9"></textarea>
       </p>
       <div class="row">
-        <div class="span2">
+        <div class="span1">
           <label class="checkbox" for="profile">
             <input type="checkbox" name="profile" id="profile" /> Profile
           </label>
         </div>
-        <div class="span2">
+        <div class="span1">
           <label class="checkbox" for="ncmhce">
             <input type="checkbox" name="ncmhce" id="ncmhce"> NCMHCE
           </label>
         </div>
-        <div class="span2">
+        <div class="span1" style="margin-left: 3em;">
           <label class="checkbox" for="nce">
             <input type="checkbox" name="nce" id="nce"> NCE
+          </label>
+        </div>
+        <div class="span1">
+          <label class="checkbox" for="ceu">
+            <input type="checkbox" name="ceu" id="ceu"> CEU
           </label>
         </div>
         <div class="span3" style="text-align: right;">
@@ -45,6 +50,7 @@
         <th style="text-align: center;"><small>Profile</small></th>
         <th style="text-align: center;"><small>NCMHCE</small></th>
         <th style="text-align: center;"><small>NCE</small></th>
+		  <th style="text-align: center;"><small>CEU</small></th>
         <th></th>
       </thead>
       <tbody>
@@ -54,6 +60,7 @@
             <td style="text-align: center;"><%= '<i class="icon-check"' if m.profile == true %></td>
             <td style="text-align: center;"><%= '<i class="icon-check"' if m.ncmhce == true %></td>
             <td style="text-align: center;"><%= '<i class="icon-check"' if m.nce == true %></td>
+				<td style="text-align: center;"><%= '<i class="icon-check"' if m.ceu == true %></td>
             <td><a href="/admin/messages/<%= m.id %>/delete" class='delete'><i class="icon icon-remove"></i></a></td>
           </tr>
         <% end %>

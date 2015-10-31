@@ -13,6 +13,7 @@ post '/admin/messages/?' do
   message.update(ncmhce: true) if params[:ncmhce]
   message.update(nce: true) if params[:nce]
   message.update(profile: true) if params[:profile]
+  message.update(ceu: true) if params[:ceu]
   
   redirect '/admin/messages'
 end

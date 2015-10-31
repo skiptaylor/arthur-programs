@@ -97,7 +97,7 @@ post '/checkout/:product/?' do
   when 'Single Scenario'
     user.ceu_scenario = (user.ceu_scenario + 1)
     params[:package] = 'CEU: Single Scenario'
-    
+               email = 'ceu'
                  msg = false
 
   when 'NCE Upgrade'

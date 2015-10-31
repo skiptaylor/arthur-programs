@@ -216,6 +216,9 @@
 				<% end %>
 			</h3>
 		</div>
+      <% Message.all(ceu: true).each do |m| %>
+        <div class="alert alert-info" style="border: none;"><%= m.body %></div>
+      <% end %>
 	 	<% unless @user.expired? || (@user.remaining_ceu_scenario < 1) %>
 		<p><a href="/ceu/scenarios">Choose a scenario</a> to get started.</p>
 		<% end %>
