@@ -235,6 +235,7 @@
 			<tbody>
 				<% @scenarios.sort { |a,b| a.scenario_id <=> b.scenario_id }.each do |average| %>
 					<% unless average.scenario.workshop? || average.scenario.practice? %>
+					<% if average.scenario.ceu? %>
 					<tr>
 						<td>
 							<%= average.scenario_id %>. <%= average.scenario.title %>
@@ -247,19 +248,22 @@
 							<% end %>
 						</td>
 						<td style="text-align: center;"><%= average.updated_at.display_short if average %></td>
-						<td style="text-align: center;"><%= ((@user.created_at + 30) - Time.now.to_date).to_i %> Days</td>
+						<td style="text-align: center;"><% if (((average.created_at + 30) - Time.now.to_date).to_i) > 0 %><%= ((average.created_at + 30) - Time.now.to_date).to_i %><% else %>0<% end %> Days</td>
 						<td style="text-align: right;">
 							<% unless @user.expired? %>
+							<% if ((average.created_at + 30) - Time.now.to_date).to_i <0 %>
+								<span style="color: red;"><small>Expired</small></span>
+								<% else %>
 								<a href="/ncmhce/scenarios/<%= average.scenario_id %>">Review</a>
+								<% end %>
 							<% end %>
 						</td>
 					</tr>
-					
+					<% end %>
 				<% end %>
 					
 					<% end %>
 					
-				
 			</tbody>
 		</table>
 

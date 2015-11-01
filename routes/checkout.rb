@@ -98,7 +98,7 @@ post '/checkout/:product/?' do
     user.ceu_scenario = (user.ceu_scenario + 1)
     params[:package] = 'CEU: Single Scenario'
                email = 'ceu'
-                 msg = false
+                 msg = true
 
   when 'NCE Upgrade'
     user.max_exams = (user.max_exams + 2)
@@ -134,7 +134,7 @@ post '/checkout/:product/?' do
   	elsif (params[:package] == 'NCMHCE Hard Copy') || (params[:package] == 'NCE Hard Copy')
   		additional_time = 0
   	elsif (params[:package] == 'Single Scenario')
-  		additional_time = 30
+  		additional_time = 32
 		else
 			additional_time = 365
 		end
@@ -169,7 +169,7 @@ post '/checkout/:product/?' do
       Email.welcome(user.email, user.name, user.email, email)
       Email.receipt(user.email, user.name, "#{params[:package]} #{params[:optional]}", params[:amount])
     end
-  
+    
     sign_in user.id, msg: msg
   else
     session[:alert] = { style: 'alert-error',

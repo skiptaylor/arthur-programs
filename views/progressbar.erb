@@ -12,11 +12,22 @@
 	
 	<%= label %>:
 	
+	<% unless (possible == '') &&  (correct == '') %>
 	<%= correct %>/<%= possible %> points
+	<% else %>
+	<%= correct == 0 %>/<%= possible == 0 %>
+	<% end %>
 	
+	<% unless @scenario.ceu %>
 	<div class="progress">
 		<div class="bar" style="width: <%= percent %>%; font-size: .9em;"><%= percent = ((correct.to_f/possible.to_f)*100).to_i %>%</div>
 	</div>
-	
+	<% else %>
+	<div class="progress">
+		<% unless (possible == 0 ) &&  (correct == 0 ) %>
+		<div class="bar" style="width: <%= percent %>%; font-size: .9em;"><%= percent = ((correct.to_f/possible.to_f)*100).to_i %>%</div>
+		<% end %>
+	</div>
+	<% end %>
 </div>
 

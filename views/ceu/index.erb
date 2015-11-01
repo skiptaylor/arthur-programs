@@ -51,7 +51,7 @@
 <% @scenarios.each do |scenario| %>
 <% if scenario.ceu %>
 	<!-- <%= '<div class="row">' if scenario.id.odd? %> -->
-		<div class="span6" style="min-height: 23em;">
+		<div class="span6" style="min-height: 24em;">
 			<h3>
 				<%= scenario.id %>. <%= scenario.title %>
 				<%= '<span class="label label-info">Sample</span>' if scenario.sample? %>
@@ -60,7 +60,7 @@
 			</h3>
 			<%= markdown scenario.body.truncate(100) %>
 			
-			<% if scenario.sample? || @uses.include?(scenario.id) || (@remaining_ceu_scenario > 1) %>
+			<% if scenario.sample? || @uses.include?(scenario.id) || (@remaining_ceu_scenario > 0) %>
 				<p><a class="btn btn-small btn-primary" href="/ncmhce/scenarios/<%= scenario.id %>">Go to scenario <%= scenario.id %></a></p>
 			<% else %>
 			<br />
