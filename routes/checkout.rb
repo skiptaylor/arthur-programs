@@ -152,7 +152,7 @@ post '/checkout/:product/?' do
   if charge = Stripe::Charge.create(amount: (params[:amount].to_f * 100).to_i,
                                currency: "usd",
                                    card: params[:stripeToken],
-                                  email: params[:email],
+                                  email: "(#{params[:email]})",
                             description: "#{params[:name]} (#{params[:email]}) #{params[:package]} #{params[:optional]}")
     user.save
   	user.purchases.create(package: params[:package],
