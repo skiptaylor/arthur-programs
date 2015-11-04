@@ -186,7 +186,9 @@
 									<%= @decision_making.correct %>/<%= @decision_making.possible %>
 									<% else %><small>N/A</small><% end %>
 								</td>
-								<td style="text-align: center;"><%= average.updated_at.display_short if average %></td>
+								<% if avg = Average.last(user_id: session[:user], scenario_id: average.scenario_id) %>
+								<td style="text-align: center;"><%= avg.updated_at.display_short if average %></td>
+								<% end %>
 								<td style="text-align: right;">
 									<% unless @user.expired? %>
 										<a href="/ncmhce/scenarios/<%= average.scenario_id %>">Review</a>
@@ -247,11 +249,11 @@
 								N/A
 							<% end %>
 						</td>
-						<td style="text-align: center;"><%= average.updated_at.display_short if average %></td>
-						<td style="text-align: center;"><% if (((average.created_at + 30) - Time.now.to_date).to_i) > 0 %><%= ((average.created_at + 30) - Time.now.to_date).to_i %><% else %>0<% end %> Days</td>
+						<td style="text-align: center;"><%= avg.updated_at.display_short if average %></td>
+						<td style="text-align: center;"><% if (((avg.created_at + 30) - Time.now.to_date).to_i) > 0 %><strong><%= ((avg.created_at + 30) - Time.now.to_date).to_i %></strong><% else %>0<% end %> Days</td>
 						<td style="text-align: right;">
 							<% unless @user.expired? %>
-							<% if ((average.created_at + 30) - Time.now.to_date).to_i <0 %>
+							<% if ((average.created_at + 30) - Time.now.to_date).to_i < 0 %>
 								<span style="color: red;"><small>Expired</small></span>
 								<% else %>
 								<a href="/ncmhce/scenarios/<%= average.scenario_id %>">Review</a>
@@ -261,57 +263,13 @@
 					</tr>
 					<% end %>
 				<% end %>
-					
-					<% end %>
+			<% end %>
 					
 			</tbody>
 		</table>
 
 		<br />
 	<% end %>
-	
-	<!-- –––––––––––––––––– ceu –––––––––––––––––– -->
-
-		<!-- <% if @user.ceu_scenario > 0 %>
-
-			<div class="page-header">
-				<h3>
-					CEU Scenarios
-					<small><%= @user.ceu_scenario %> Remaining</small>
-				</h3>
-			</div>
-		 	<% unless @user.expired? %>
-			<p><a href="/ceu/scenarios">Choose a scenario</a> to get started.</p>
-			<% end %>
-			<table class="table table-condensed table-striped table-hover">
-				<thead>
-					<tr>
-						<th>Scenario</th>
-						<th>Taken On</th>
-						<th style="text-align: center;">Remaining</th>
-						<th></th>
-					</tr>
-				</thead>
-				<tbody>
-					<% Scenario.all(ceu: true, active: true).each do |scenario| %>
-						<% use = Use.last(scenario_id: scenario.id, user_id: @user.id) %>
-						<% avg = Average.last(scenario_id: scenario.id, user_id: @user.id) %>
-						<tr>
-							<td><%= scenario.title %></td>
-							<td><%= avg.updated_at.display_short if avg %></td>
-							<td style="text-align: center;"><%= ((@user.created_at + 30) - Time.now.to_date).to_i %> Days</td>
-							<td style="text-align: right;">
-								<% unless @user.expired? %>
-									<a href="/ncmhce/scenarios/<%= scenario.id %>">Take</a>
-								<% end %>
-							</td>
-						</tr>
-					<% end %>
-				</tbody>
-			</table>
-
-			<br />
-		<% end %> -->
 	
 	
 	<!-- –––––––––––––––––– workshop –––––––––––––––––– -->

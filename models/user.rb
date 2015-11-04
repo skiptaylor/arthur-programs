@@ -56,7 +56,7 @@ class User
 	def remaining_scenarios
 		used = 0
 		Use.all(user_id: self.id, :scenario_id.not => nil, :sample => false).each do |use|
-			used = used + 1 unless use.scenario.workshop?
+			used = used + 1 unless use.scenario.workshop? || use.scenario.ceu? || use.scenario.practice? 
 		end
 		self.max_scenarios - used
 	end
@@ -64,7 +64,7 @@ class User
 	def remaining_ceu_scenario
 		used = 0
 		Use.all(user_id: self.id, :scenario_id.not => nil, :sample => false).each do |use|
-			used = used + 1 unless use.scenario.workshop?
+			used = used + 1 if use.scenario.ceu
 		end
 		self.ceu_scenario - used
 	end

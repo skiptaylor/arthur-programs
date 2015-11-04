@@ -69,6 +69,15 @@ get '/ceu/scenarios/?' do
 	erb :'ceu/index'
 end
 
+get '/ceu/ceus_buy/?' do
+
+  @scenarios = Scenario.all(order: :id, active: true)
+
+	
+	erb :'ceu/ceus_buy'
+end
+
+
 
 get '/ncmhce/scenarios/:id/?' do
 	expired?
