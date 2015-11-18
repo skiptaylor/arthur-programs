@@ -13,7 +13,7 @@ class Question
 
 	belongs_to :scenario, required: false
 	belongs_to :exam,     required: false
-	has n,     :answers
+	has n,     :answers, :constraint => :destroy
 
 	def passed? user
 		if self.exam_id
@@ -46,8 +46,8 @@ class Question
 	end
 
 	def remove
-		self.answers.each {|a| a.remove}
+		self.answers.each {|a| a.delete}
 		self.destroy!
 	end
-
+  
 end

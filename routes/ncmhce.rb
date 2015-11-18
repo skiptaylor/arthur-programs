@@ -43,7 +43,6 @@ get '/ncmhce/scenarios/?' do
   @scenarios = @scenarios.all(workshop: false) unless user.workshop_scenarios == true
   
   
-  @ceu_scenario = @scenarios.all(ceu_scenario: false) unless user.ceu_scenario == true
   @scenarios = @scenarios.all(practice: false) unless user.practice_exams == true
 	@averages = Average.all(:user_id => session[:user], :scenario_id.not => nil)
 	@remaining_scenarios = User.get(session[:user]).remaining_scenarios

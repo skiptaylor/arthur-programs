@@ -18,7 +18,7 @@ $(window).load ->
 		$('#address-confirmation').html								$('input#address1').val()
 		$('#address-confirmation').append(", #{$('input#address2').val()}") unless $('input#address2').val() == ''
 		$('#city-confirmation').html									$('input#city').val()
-		$('#state-confirmation').html									$('input#state').val()
+		$('#state-confirmation').html									$('select#state').val()
 		$('#zip-confirmation').html										$('input#zip').val()
 		
 		total = 0
@@ -66,7 +66,7 @@ $(window).load ->
 			errors.push 'You must enter a credit card number.'
 		if $('input.card-cvc').val() == ''
 			errors.push 'You must enter a credit card validation code (CVC).'
-		if ($('input#address1').val() == '') || ($('input#city').val() == '') || ($('input#state').val() == '') || ($('input#zip').val() == '')
+		if ($('input#address1').val() == '') || ($('input#city').val() == '') || ($('select#state').val() == '') || ($('input#zip').val() == '')
 			errors.push 'You must enter an address, city, state, and zip.'
 		
 		unless ($('input#email').is(':disabled')) || ($('input#email').val() == '') || ($('input#password').val() == '')

@@ -14,8 +14,8 @@ class Scenario
   property :ceu,      Boolean, default: false
   property :practice, Boolean, default: false
 
-	has n, :questions
-	has n, :averages
+	has n, :questions, :constraint => :destroy
+	has n, :averages,  :constraint => :destroy
 	
 	def group_average
 		averages = self.averages

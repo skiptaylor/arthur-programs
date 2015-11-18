@@ -58,7 +58,7 @@ end
 get '/admin/scenarios/:id/questions/:question_id/delete/?' do
 	admin!
 	question = Question.get params[:question_id]
-	question.remove
+	question.destroy
 	session[:alert] = { style: 'alert-success', message: 'Question removed.' }
 	redirect "/admin/scenarios/#{params[:id]}"
 end
@@ -98,7 +98,7 @@ end
 get '/admin/scenarios/:id/questions/:question_id/answers/:answer_id/delete/?' do
 	admin!
 	answer = Answer.get params[:answer_id]
-	answer.remove
+	answer.destroy
 	session[:alert] = { style: 'alert-success', message: 'Answer removed.' }
 	redirect "/admin/scenarios/#{params[:id]}"
 end

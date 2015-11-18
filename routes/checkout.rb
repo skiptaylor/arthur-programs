@@ -57,6 +57,7 @@ post '/checkout/:product/?' do
                hear_about_us: params[:hear_about_us],
                    max_exams: 0,
                max_scenarios: 0,
+                ceu_scenario: 0,
                nce_downloads: false,
             ncmhce_downloads: false)
   end
@@ -134,7 +135,7 @@ post '/checkout/:product/?' do
   	elsif (params[:package] == 'NCMHCE Hard Copy') || (params[:package] == 'NCE Hard Copy')
   		additional_time = 0
   	elsif (params[:package] == 'Single Scenario')
-  		additional_time = 32
+  		additional_time = 432
 		else
 			additional_time = 365
 		end
@@ -152,7 +153,6 @@ post '/checkout/:product/?' do
   if charge = Stripe::Charge.create(amount: (params[:amount].to_f * 100).to_i,
                                currency: "usd",
                                    card: params[:stripeToken],
-                                  email: "(#{params[:email]})",
                             description: "#{params[:name]} (#{params[:email]}) #{params[:package]} #{params[:optional]}")
     user.save
   	user.purchases.create(package: params[:package],

@@ -69,7 +69,12 @@
 		<label class="control-label" for="city">City, State Zip</label>
 		<div class="controls">
 			<input type="text" class="span2" id="city" name="city" />,
-			<input type="text" class="span1" id="state" name="state" />
+			<select type="text" name="state" class="span1" id="state">
+				<option>  </option>
+				<% State.all(:order => :name).each do |state| %>
+				<option value="<%= state.abbr %>"><%= state.abbr %></option>
+				<% end %>
+			</select>
 			<input type="text" class="span1" id="zip" name="zip" />
 			<span class="help-inline" id="tax">+ sales tax in GA.</span>
 		</div>

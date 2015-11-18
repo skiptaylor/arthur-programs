@@ -25,6 +25,7 @@ class User
 
 	property :name,  				 String
 	property :phone, 				 String
+  property :license,       String
 	property :hear_about_us, String
 
 	property :notes,	Text
@@ -35,14 +36,12 @@ class User
 
 	property :max_exams, 		 Integer, default: 0
 	property :max_scenarios, Integer, default: 0
+  property :ceu_scenario,  Integer, default: 0
 
 	property :ncmhce_downloads, Boolean, default: false
 	property :nce_downloads, 		Boolean, default: false
 
 	property :workshop_scenarios, Boolean, default: false
-
-  property :ceu_scenario, Integer, default: 0
-  
   property :practice_exams, Boolean, default: false
 
 	has n, :scores, :constraint => :destroy

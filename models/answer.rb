@@ -11,11 +11,13 @@ class Answer
 	property :required, Boolean, default: false
 
 	belongs_to :question
-	has n,     :scores
+	has n,     :scores, :constraint => :destroy
 
-	def remove
-		self.scores.each {|s| s.remove}
-		self.destroy!
-	end
+  
+  def remove
+    self.scores.each {|s| s.delete}
+    self.destroy!
+  end
 
 end
+
