@@ -12,7 +12,7 @@
 	
 	<%= label %>:
 	
-	<% unless (possible == '') &&  (correct == '') %>
+	<% unless (possible == nil) || (correct == nil) %>
 	<%= correct %>/<%= possible %> points
 	<% else %>
 	<%= correct == 0 %>/<%= possible == 0 %>

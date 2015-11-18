@@ -249,8 +249,12 @@
 								N/A
 							<% end %>
 						</td>
-						<td style="text-align: center;"><%= avg.updated_at.display_short if average %></td>
-						<td style="text-align: center;"><% if (((avg.created_at + 30) - Time.now.to_date).to_i) > 0 %><strong><%= ((avg.created_at + 30) - Time.now.to_date).to_i %></strong><% else %>0<% end %> Days</td>
+						<td style="text-align: center;">
+							<% unless average.updated_at == nil %>
+								<%= average.updated_at.display_short if average %>
+							<% end %>
+						</td>
+						<td style="text-align: center;"><% if (((average.created_at + 30) - Time.now.to_date).to_i) > 0 %><strong><%= ((average.created_at + 30) - Time.now.to_date).to_i %></strong><% else %>0<% end %> Days</td>
 						<td style="text-align: right;">
 							<% unless @user.expired? %>
 							<% if ((average.created_at + 30) - Time.now.to_date).to_i < 0 %>
