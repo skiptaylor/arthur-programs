@@ -18,7 +18,7 @@
 	<%= correct == 0 %>/<%= possible == 0 %>
 	<% end %>
 	
-	<% unless @scenario.ceu %>
+	<% unless @scenario.ceu || @scenario.workshop %>
 	<div class="progress">
 		<div class="bar" style="width: <%= percent %>%; font-size: .9em;"><%= percent = ((correct.to_f/possible.to_f)*100).to_i %>%</div>
 	</div>
