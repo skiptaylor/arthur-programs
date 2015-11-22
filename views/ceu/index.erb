@@ -54,7 +54,7 @@
 					<small style="color: #20ae32; font-weight: 800;" class='darker-gray'>&nbsp; <% if avg %>Last taken - <%= avg.updated_at.display_short if avg %><% end %></small>
 				</h3>
 				<%= markdown scenario.body.truncate(100) %>
-				<% if @uses.include?(scenario.id) || (@remaining_ceu_scenario < 0) %>
+				<% if @uses.include?(scenario.id) || (@remaining_ceu_scenario > 0) %>
 					<% if avg %>
 					<% if ((avg.created_at + 30) - Time.now.to_date).to_i < 0 %>
 						<p class="btn btn-small btn-danger">Expired</p>
