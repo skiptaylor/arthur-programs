@@ -46,17 +46,17 @@
 		<div class="row">
 			<% params[:group] ? offset ||= true : offset ||= false %>
 		
-			<%= erb(:progressbar, layout: false, locals: { label: 'Professional Orientation', correct: @breakdown['Professional Orientation'][:correct], possible: @breakdown['Professional Orientation'][:possible] }) if (params[:group] == 'Professional Orientation') || !params[:group] %>
-			<%= erb(:progressbar, layout: false, locals: { offset: offset, label: 'Research and Program Evaluation', correct: @breakdown['Research and Program Evaluation'][:correct], possible: @breakdown['Research and Program Evaluation'][:possible] }) if (params[:group] == 'Research and Program Evaluation') || !params[:group] %>
+			<%= erb(:progressbar_nce, layout: false, locals: { label: 'Professional Orientation', correct: @breakdown['Professional Orientation'][:correct], possible: @breakdown['Professional Orientation'][:possible] }) if (params[:group] == 'Professional Orientation') || !params[:group] %>
+			<%= erb(:progressbar_nce, layout: false, locals: { offset: offset, label: 'Research and Program Evaluation', correct: @breakdown['Research and Program Evaluation'][:correct], possible: @breakdown['Research and Program Evaluation'][:possible] }) if (params[:group] == 'Research and Program Evaluation') || !params[:group] %>
 
-			<%= erb(:progressbar, layout: false, locals: { label: 'Appraisal', correct: @breakdown['Appraisal'][:correct], possible: @breakdown['Appraisal'][:possible] }) if (params[:group] == 'Appraisal') || !params[:group] %>
-			<%= erb(:progressbar, layout: false, locals: { offset: offset, label: 'Lifestyle and Career Development', correct: @breakdown['Lifestyle and Career Development'][:correct], possible: @breakdown['Lifestyle and Career Development'][:possible] }) if (params[:group] == 'Lifestyle and Career Development') || !params[:group] %>
+			<%= erb(:progressbar_nce, layout: false, locals: { label: 'Appraisal', correct: @breakdown['Appraisal'][:correct], possible: @breakdown['Appraisal'][:possible] }) if (params[:group] == 'Appraisal') || !params[:group] %>
+			<%= erb(:progressbar_nce, layout: false, locals: { offset: offset, label: 'Lifestyle and Career Development', correct: @breakdown['Lifestyle and Career Development'][:correct], possible: @breakdown['Lifestyle and Career Development'][:possible] }) if (params[:group] == 'Lifestyle and Career Development') || !params[:group] %>
 
-			<%= erb(:progressbar, layout: false, locals: { label: 'Helping Relationships', correct: @breakdown['Helping Relationships'][:correct], possible: @breakdown['Helping Relationships'][:possible] }) if (params[:group] == 'Helping Relationships') || !params[:group] %>
-			<%= erb(:progressbar, layout: false, locals: { offset: offset, label: 'Group Counseling', correct: @breakdown['Group Counseling'][:correct], possible: @breakdown['Group Counseling'][:possible] }) if (params[:group] == 'Group Counseling') || !params[:group] %>
+			<%= erb(:progressbar_nce, layout: false, locals: { label: 'Helping Relationships', correct: @breakdown['Helping Relationships'][:correct], possible: @breakdown['Helping Relationships'][:possible] }) if (params[:group] == 'Helping Relationships') || !params[:group] %>
+			<%= erb(:progressbar_nce, layout: false, locals: { offset: offset, label: 'Group Counseling', correct: @breakdown['Group Counseling'][:correct], possible: @breakdown['Group Counseling'][:possible] }) if (params[:group] == 'Group Counseling') || !params[:group] %>
 
-			<%= erb(:progressbar, layout: false, locals: { label: 'Human Growth and Development', correct: @breakdown['Human Growth and Development'][:correct], possible: @breakdown['Human Growth and Development'][:possible] }) if (params[:group] == 'Human Growth and Development') || !params[:group] %>
-			<%= erb(:progressbar, layout: false, locals: { offset: offset, label: 'Social and Cultural Foundations', correct: @breakdown['Social and Cultural Foundations'][:correct], possible: @breakdown['Social and Cultural Foundations'][:possible] }) if (params[:group] == 'Social and Cultural Foundations') || !params[:group] %>
+			<%= erb(:progressbar_nce, layout: false, locals: { label: 'Human Growth and Development', correct: @breakdown['Human Growth and Development'][:correct], possible: @breakdown['Human Growth and Development'][:possible] }) if (params[:group] == 'Human Growth and Development') || !params[:group] %>
+			<%= erb(:progressbar_nce, layout: false, locals: { offset: offset, label: 'Social and Cultural Foundations', correct: @breakdown['Social and Cultural Foundations'][:correct], possible: @breakdown['Social and Cultural Foundations'][:possible] }) if (params[:group] == 'Social and Cultural Foundations') || !params[:group] %>
 		</div>
 		<br />
 		<a href="/nce/exams/<%= params[:id] %>/restart" class="btn restart">Start Over</a> &nbsp; <a href="/nce/exams" class="btn">Exams</a>

@@ -9,25 +9,21 @@
 	<h1>
 		CEU Scenarios
 		<% if @ceu_scenario < 14 %>
-			<span style="float: right;"><a class="btn btn-success" href="/ceu/ceus_buy">Buy another <strong>CEU</strong> scenario for <strong>$20</strong></a></span>
+			<span style="float: right;"><a class="btn btn-success" href="/checkout/ceu?package=Single%20Scenario">Buy another <strong>CEU</strong> scenario for <strong>$20</strong></a></span>
 		<% end %>
 	</h1>
 	<hr />
 </div>
 <br />
-
-	<div class="row">
-		<div class="span12">
-			
-			
-			
+<div class="row">
+	<div class="span12">
 		<div class="accordion">
 			<a class="btn btn-warning" data-toggle="collapse" href="#collapseOne">
 				<strong>Instructions</strong> &nbsp;
 				<span class="caret"></span>
 			</a> &nbsp; <span style="color: #d45f11;">Please read instructions before beginning.</span>
 		</div>
-        <div id="collapseOne" class="collapse">
+		<div id="collapseOne" class="collapse">
 			<div class="accordion-inner">
 				<h3>Exam Format Instructions</h3>
 				<br />
@@ -47,30 +43,35 @@
 			
 			
 
-			<div class="row">
-<% @scenarios.each do |scenario| %>
-<% if scenario.ceu %>
-	<!-- <%= '<div class="row">' if scenario.id.odd? %> -->
-		<div class="span6" style="min-height: 24em;">
-			<h3>
-				<%= scenario.id %>. <%= scenario.title %>
-				<%= '<span class="label label-info">Sample</span>' if scenario.sample? %>
-				<% avg = @averages.detect {|a| a.scenario_id == scenario.id} %>
-				<small style="color: #20ae32;" class='darker-gray'>&nbsp; <% if avg %>Last taken - <%= avg.updated_at.display_short if avg %><% end %></small>
-			</h3>
-			<%= markdown scenario.body.truncate(100) %>
-			
-			<% if scenario.sample? || @uses.include?(scenario.id) || (@remaining_ceu_scenario > 0) %>
+		<div class="row">
+			<% @scenarios.each do |scenario| %>
+			<% if scenario.ceu %>
+			<div class="span6" style="min-height: 24em;">
+				<h3>
+					<%= scenario.id %>. <%= scenario.title %>
+					<%= '<span class="label label-info">Sample</span>' if scenario.sample? %>
+					<% avg = @averages.detect {|a| a.scenario_id == scenario.id} %>
+					<small style="color: #20ae32; font-weight: 800;" class='darker-gray'>&nbsp; <% if avg %>Last taken - <%= avg.updated_at.display_short if avg %><% end %></small>
+				</h3>
+				<%= markdown scenario.body.truncate(100) %>
+				<% if @uses.include?(scenario.id) || (@remaining_ceu_scenario < 0) %>
+					<% if avg %>
+					<% if ((avg.created_at + 30) - Time.now.to_date).to_i < 0 %>
+						<p class="btn btn-small btn-danger">Expired</p>
+					<% else %>
+						<p><a class="btn btn-small btn-primary" href="/ncmhce/scenarios/<%= scenario.id %>">Go to scenario <%= scenario.id %></a></p>
+					<% end %>
+				<% else %>
 				<p><a class="btn btn-small btn-primary" href="/ncmhce/scenarios/<%= scenario.id %>">Go to scenario <%= scenario.id %></a></p>
-			<% else %>
-			<br />
+				<% end %>
+				<% else %>
+				<br />
+				<% end %>
+				<br />
+			</div>
 			<% end %>
-			
-			<br />
-		</div>
-	<!-- <%= '</div>' if scenario.id.even? %> -->
-<% end %>
-<% end %>
+			<% end %>
 
-</div>
+		</div>
+	</div>
 </div>

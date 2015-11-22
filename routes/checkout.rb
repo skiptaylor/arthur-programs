@@ -128,23 +128,19 @@ post '/checkout/:product/?' do
                  msg = false
     
   end
-  
+    
+    
   if params[:user_id]
 		if (params[:package] == 'Account Extension') || (params[:package] == 'Account Expiration')
-			additional_time = 90
-  	elsif (params[:package] == 'NCMHCE Hard Copy') || (params[:package] == 'NCE Hard Copy')
-  		additional_time = 0
-  	elsif (params[:package] == 'Single Scenario')
-  		additional_time = 432
+			user.expiration_date = user.expiration_date + 90
+  	elsif (params[:package] == 'NCMHCE: Hard Copy') || (params[:package] == 'NCE: Hard Copy')
+  		user.expiration_date = user.expiration_date + 0
+  	elsif (params[:package] == 'CEU: Single Scenario')
+  		user.expiration_date = Time.now.to_date + 90
 		else
-			additional_time = 365
+			user.expiration_date = Time.now.to_date + 365
 		end
-
-		if user.expiration_date <= DateTime.now
-      user.expiration_date = Time.now.to_date + additional_time
-		else
-			user.expiration_date = user.expiration_date + additional_time
-		end
+    user.save
   end
 
   
