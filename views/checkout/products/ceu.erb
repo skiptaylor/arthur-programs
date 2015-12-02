@@ -21,7 +21,11 @@
 			<div class="control-group" style="margin-top: 2.5em;">
 				<label class="control-label" for="license"><strong>License</strong> <small>(Reqired for Continuing Education Units)</small></label>
 				<div class="controls">
-					<input type="text" class="input-xlarge focus" id="license" name="license"  <%= "value='#{locals[:user].license}' disabled" unless @user.license == "" %> autofocus required/>
+					<% if @user.license %>
+					<input type="text" class="input-xlarge focus" id="license" name="license"  <%= "value='#{locals[:user].license}'" %> autofocus required/>
+					<% else %>
+					<input type="text" class="input-xlarge focus" id="license" name="license"  <%= "value='#{locals[:user].license}' disabled" %> />
+					<% end %>
 				</div>
 			</div>
 			
