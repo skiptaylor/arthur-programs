@@ -46,7 +46,7 @@ class Question
 	end
 
 	def remove
-		self.answers.each {|a| a.delete}
+		self.answers.each {|a| a.remove}
 		self.destroy!
 	end
   

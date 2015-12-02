@@ -129,20 +129,20 @@ post '/checkout/:product/?' do
     
   end
     
-    
   if params[:user_id]
-		if (params[:package] == 'Account Extension') || (params[:package] == 'Account Expiration')
-			user.expiration_date = user.expiration_date + 90
-  	elsif (params[:package] == 'NCMHCE: Hard Copy') || (params[:package] == 'NCE: Hard Copy')
-  		user.expiration_date = user.expiration_date + 0
+		if (params[:package] == 'Account Extension')
+			user.expiration_date = (user.expiration_date + 90)
+    elsif (params[:package] == 'Account Expiration')
+      user.expiration_date = (DateTime.now + 90)
   	elsif (params[:package] == 'CEU: Single Scenario')
-  		user.expiration_date = Time.now.to_date + 90
+  		user.expiration_date = (DateTime.now + 120)
+  	elsif (params[:package] == 'NCMHCE: Hard Copy') || (params[:package] == 'NCE: Hard Copy')
+  		user.expiration_date = (user.expiration_date + 0)
 		else
-			user.expiration_date = Time.now.to_date + 365
+			user.expiration_date = (DateTime.now + 365)
 		end
-    user.save
-  end
 
+  end
   
   Stripe.api_key = STRIPE_PRIVATE_KEY
   

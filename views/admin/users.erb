@@ -16,35 +16,43 @@
 			<button type="submit" style="border: 1px solid green;" class="btn btn-success ">Search</button>
 		</div>
 		</form>
-		
-		
-		
-		
+
 		<table class="table table-condensed">
 			<thead>
 				<tr>
 					<th>Name</th>
 					<th>Email</th>
-					<th><a class="btn btn-mini btn-success" href="/admin/users/new"><i class="icon-plus icon-white"></i></a></th>
+					<th>Expires</th>
+					<td> </td>
+					<th style="text-align: right;"><a class="btn btn-mini btn-success" href="/admin/users/new"><i class="icon-plus icon-white"></i></a></th>
 				</tr>
 			</thead>
 			<tbody>
 				<% @users.sort{|a,b| b.expiration_date <=> a.expiration_date}.each do |user| %>
 					<tr>
-						<td><% unless user.name == 'Sample User (do not delete)' %><a href="/admin/users/<%= user.id %>/delete" style="float: right; padding: 0 4px;" class="btn btn-danger btn-mini"><strong>x</strong></a><% end %><% if user.email == "sample" %>Sample <%= user.id %><% end %><%= user.name %> <%= '<span class="label label-inverse">Admin</span>' if user.admin? %></td>
-						<td><% if user.email == "sample" %>None<% else %><a href="mailto:<%= user.email %>"><%= user.email %></a><% end %></td>
-						<td><a href="/admin/users/<%= user.id %>">Edit</a></td>
+						<td>
+							<%= user.name %> <%= '<span class="label label-inverse">Admin</span>' if user.admin? %> 
+						</td>
+						<td>	
+							<a href="mailto:<%= user.email %>"><%= user.email %></a>
+						</td>
+						<td>
+							<small><%= user.expiration_date %>  &nbsp; <span style="color: #45a3e6;"><a href="#" data-toggle="tooltip" data-placement="top" title="Number of Purchases"><%= user.purchases.count %></a></span></small>  &nbsp;  
+							<% user.purchases.each do |purchase| %>
+								<% if purchase.package == 'Account Extension' || purchase.package == 'Account Expiration' %> <small><a href="#" data-toggle="tooltip" data-placement="top" title="Account Extension">e</a></small> <% end %>
+								<% if purchase.package == 'NCMHCE: Hard Copy' || purchase.package == 'NCE: Hard Copy' %> <small><a href="#" data-toggle="tooltip" data-delay="0" title="Purchased Hard Copy">h</a></small> <% end %>
+							<% end %>
+						</td>
+						<td>
+							<% unless user.name == 'Sample User (do not delete)' %><a href="/admin/users/<%= user.id %>/delete" style="float: right; padding: 0 2px;" class="btn btn-danger btn-mini"><strong>X</strong></a> &nbsp; <% end %><% if user.email == "sample" %>Sample <%= user.id %><% end %>
+						<td style="text-align: right;">
+							<a href="/admin/users/<%= user.id %>">Edit</a>
+						</td>
 					</tr>
 				<% end %>
-				<!-- <% @users.each do |user| %>
-					<tr>
-						<td><% if user.email == 'sample' %><%= user.id %> <a href="/admin/users/<%= user.id %>/delete" class="btn btn-danger btn-mini" style="float: right;">Delete</a><% end %><%= user.name %> <%= '<span class="label label-inverse">Admin</span>' if user.admin? %></td>
-						<td><a href="mailto:<%= user.email %>"><%= user.email %></a></td>
-						<td><a href="/admin/users/<%= user.id %>">Edit</a></td>
-					</tr>
-				<% end %> -->
 		  </tbody>
 		</table>
 	</div>
 	
 </div>
+
