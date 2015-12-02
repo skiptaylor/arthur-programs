@@ -46,6 +46,7 @@ post '/checkout/:product/?' do
 	params[:city].strip!
 	params[:state].strip!
 	params[:zip].strip!
+  params[:license].strip!
 	
   if params[:user_id]
 		user = User.get params[:user_id]
@@ -54,6 +55,7 @@ post '/checkout/:product/?' do
 		user = User.new(email: params[:email],
 		                password: params[:password],
                         name: params[:name],
+                     license: params[:license],
                hear_about_us: params[:hear_about_us],
                    max_exams: 0,
                max_scenarios: 0,
@@ -164,7 +166,8 @@ post '/checkout/:product/?' do
                          address2: params[:address2],
                              city: params[:city],
                             state: params[:state],
-                              zip: params[:zip])
+                              zip: params[:zip],
+                          license: params[:license])
   
     
     if settings.environment == 'production'
