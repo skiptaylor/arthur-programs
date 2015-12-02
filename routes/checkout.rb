@@ -166,8 +166,7 @@ post '/checkout/:product/?' do
                          address2: params[:address2],
                              city: params[:city],
                             state: params[:state],
-                              zip: params[:zip],
-                          license: params[:license])
+                              zip: params[:zip])
   
     
     if settings.environment == 'production'
