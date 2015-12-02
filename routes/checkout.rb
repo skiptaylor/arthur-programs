@@ -135,13 +135,18 @@ post '/checkout/:product/?' do
     elsif (params[:package] == 'Account Expiration')
       user.expiration_date = (DateTime.now + 90)
   	elsif (params[:package] == 'CEU: Single Scenario')
-  		user.expiration_date = (DateTime.now + 120)
+  		user.expiration_date = (DateTime.now + 120),
+        user.max_exams = 0,
+        user.max_scenarios = 0,
+        user.nce_downloads = false,
+        user.ncmhce_downloads = false,
+        user.license = params[:license]
   	elsif (params[:package] == 'NCMHCE: Hard Copy') || (params[:package] == 'NCE: Hard Copy')
   		user.expiration_date = (user.expiration_date + 0)
 		else
 			user.expiration_date = (DateTime.now + 365)
 		end
-
+    user.save
   end
   
   Stripe.api_key = STRIPE_PRIVATE_KEY

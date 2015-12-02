@@ -16,16 +16,19 @@
 			</p>
 				
 		</div>	<!-- span5 -->				
-	
+		
 		<div class="span5 content">
 			<div class="control-group" style="margin-top: 2.5em;">
 				<label class="control-label" for="license"><strong>License</strong> <small>(Reqired for Continuing Education Units)</small></label>
 				<div class="controls">
-					<input type="text" class="input-xlarge" id="license" name="license" value="<%= params[:license] %>" />
+					<input type="text" class="input-xlarge focus" id="license" name="license"  <%= "value='#{locals[:user].license}' disabled" unless user.license == "" %> autofocus required/>
 				</div>
 			</div>
 			
 		</div>   <!-- span5 -->
+			<div class="span9">
+			<p style="color: #bc272e;"><small><strong>NOTE: Purchasing CEU scenarios will make all other purchased NCMHCE and NCE exams unavailable for further use.</strong></small></p>
+		</div>
 	</div>	   <!-- row -->
 
 	

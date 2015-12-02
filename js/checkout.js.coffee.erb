@@ -8,18 +8,19 @@ $(window).load ->
 	
 	summarize = () ->
 		$('#program-package-confirmation').html 			$("input[name='package']:checked").val()
-		$('#optional-enhancements-confirmation').html $("input[name='optional']:checked").val()
-		$('#name-confirmation').html 									"#{$('input#first_name').val()} #{$('input#last_name').val()}"
-		$('#email-confirmation').html 								$('input#email').val()
-		$('#password-confirmation').html 							$('input#password').val()
-		$('#card-number-confirmation').html 					$('input.card-number').val()
-		$('#cvc-confirmation').html 									$('input.card-cvc').val()
-		$('#expiration-confirmation').html 						"#{$('.card-expiry-month').val()} / #{$('.card-expiry-year').val()}"
-		$('#address-confirmation').html								$('input#address1').val()
+		$('#optional-enhancements-confirmation').html 	$("input[name='optional']:checked").val()
+		$('#name-confirmation').html 							"#{$('input#first_name').val()} #{$('input#last_name').val()}"
+		$('#email-confirmation').html 						$('input#email').val()
+		$('#password-confirmation').html 					$('input#password').val()
+		$('#card-number-confirmation').html 				$('input.card-number').val()
+		$('#cvc-confirmation').html 							$('input.card-cvc').val()
+		$('#expiration-confirmation').html 					"#{$('.card-expiry-month').val()} / #{$('.card-expiry-year').val()}"
+		$('#address-confirmation').html						$('input#address1').val()
 		$('#address-confirmation').append(", #{$('input#address2').val()}") unless $('input#address2').val() == ''
-		$('#city-confirmation').html									$('input#city').val()
-		$('#state-confirmation').html									$('select#state').val()
-		$('#zip-confirmation').html										$('input#zip').val()
+		$('#city-confirmation').html							$('input#city').val()
+		$('#state-confirmation').html							$('select#state').val()
+		$('#zip-confirmation').html							$('input#zip').val()
+		$('#license-confirmation').html						$('input#license').val()
 		
 		total = 0
 		package_total  = parseFloat($("input[name='package']:checked").attr('data-price'))  || 0
@@ -62,6 +63,8 @@ $(window).load ->
 			errors.push 'You must enter a valid email address.'
 		if $('input#password').val() == ''
 			errors.push 'You must enter a password.'
+		if $('input#license').val() == ''
+			errors.push 'You must enter a license number.'
 		if $('input.card-number').val() == ''
 			errors.push 'You must enter a credit card number.'
 		if $('input.card-cvc').val() == ''
