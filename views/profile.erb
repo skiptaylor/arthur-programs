@@ -262,17 +262,17 @@
 						</td>
 						<td style="text-align: center;">
 							<% unless avg == nil %>
-								<% if (((avg.created_at + 30) - Time.now.to_date).to_i) > 0 %>
-								<strong><%= ((avg.created_at + 30) - Time.now.to_date).to_i %></strong>
+								<% if (((average.created_at + 30) - Time.now.to_date).to_i) > 0 %>
+								<strong><%= ((average.created_at + 30) - Time.now.to_date).to_i %></strong>
 								<% else %>
 								0
-								<% end %> Days &nbsp; <span style="color: #bc1424;"><small><%= avg.created_at.to_date %></small></span>
+								<% end %> Days &nbsp; <span style="color: #bc1424;"><small><%= average.created_at.to_date %></small></span>
 							<% end %>
 						</td>
 						<td style="text-align: right;">
 						<% unless avg == nil %>	
 							<% unless @user.expired? || avg == nil %>
-								<% if (((avg.created_at + 30) - Time.now.to_date).to_i) < 0 %>
+								<% if (((average.created_at + 30) - Time.now.to_date).to_i) < 0 %>
 									<span style="color: red;"><small>Expired</small></span>
 								<% else %>
 									<a href="/ncmhce/scenarios/<%= average.scenario_id %>">Review</a>
