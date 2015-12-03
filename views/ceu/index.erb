@@ -21,7 +21,7 @@
 			<a class="btn btn-warning" data-toggle="collapse" href="#collapseOne">
 				<strong>Instructions</strong> &nbsp;
 				<span class="caret"></span>
-			</a> &nbsp; <span style="color: #d45f11;">Please read instructions before beginning.</span>
+			</a> &nbsp; <span style="color: #d45f11;"><strong>Please read instructions before beginning.</strong></span>
 		</div>
 		<div id="collapseOne" class="collapse">
 			<div class="accordion-inner">
@@ -59,10 +59,18 @@
 					<% if ((avg.created_at + 30) - Time.now.to_date).to_i < 0 %>
 						<p class="btn btn-small btn-danger">Expired</p>
 					<% else %>
-						<p><a class="btn btn-small btn-primary" href="/ncmhce/scenarios/<%= scenario.id %>">Go to scenario <%= scenario.id %></a></p>
+						<p><a class="btn btn-small btn-success" href="/ncmhce/scenarios/<%= scenario.id %>">Review scenario <strong><%= scenario.id %></strong></a>
+						&nbsp; &nbsp; 
+						<% if (((avg.created_at + 30) - Time.now.to_date).to_i) > 0 %>
+						<strong><%= ((avg.created_at + 30) - Time.now.to_date).to_i %></strong>
+						<% else %>
+						0
+						<% end %> Days Remaining &nbsp; &nbsp; &nbsp; &nbsp; <small><%= Use.created_at %></small></p>
 					<% end %>
+				<% elsif @uses.include?(scenario.id) %><%= Use.last.created_at.to_date %>
+					<p><a class="btn btn-small btn-info" href="/ncmhce/scenarios/<%= scenario.id %>">Continue with scenario <strong><%= scenario.id %></strong></a></p>
 				<% else %>
-				<p><a class="btn btn-small btn-primary" href="/ncmhce/scenarios/<%= scenario.id %>">Go to scenario <%= scenario.id %></a></p>
+					<p><a class="btn btn-small btn-primary" href="/ncmhce/scenarios/<%= scenario.id %>">Take scenario <strong><%= scenario.id %></strong></a></p>
 				<% end %>
 				<% else %>
 				<br />

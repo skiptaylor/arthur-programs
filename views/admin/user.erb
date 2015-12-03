@@ -59,35 +59,35 @@
 				<label class="control-label" for="password">New password</label>
 				<div class="controls">
 					<input type="text" class="input-xlarge" id="password" name="password">
-					<span class="help-inline">This will override the existing password.</span>
+					<span class="help-inline"><small>This will override the existing password.</small></span>
 				</div>
 			</div>
 			
 			<div class="control-group" id="exams-group">
 				<label class="control-label" for="max_exams">NCE exams</label>
 				<div class="controls">
-					<input type="text" class="input-small" id="max_exams" name="max_exams" value="<%= @user.max_exams %>">
-				</div>
+					<input type="text" class="span1" id="max_exams" name="max_exams" value="<%= @user.max_exams %>"> &nbsp; &nbsp; &nbsp; &nbsp; 
+				<!-- </div>
 			</div>
-			
+
 			<div class="control-group" id="nce-downloads-group">
 				<label class="control-label" for="nce_downloads">NCE Downloads</label>
-				<div class="controls">
-					<input type="checkbox" name="nce_downloads" id="nce_downloads" <%= 'checked' if @user.nce_downloads %> />
+				<div class="controls"> -->
+					<input type="checkbox" style="margin-top: -3px;" name="nce_downloads" id="nce_downloads" <%= 'checked' if @user.nce_downloads %> /> &nbsp; NCE Downloads
 				</div>
 			</div>
 			
 			<div class="control-group" id="scenarios-group">
 				<label class="control-label" for="max_scenarios">NCMHCE scenarios</label>
 				<div class="controls">
-					<input type="text" class="input-small" id="max_scenarios" name="max_scenarios" value="<%= @user.max_scenarios %>">
-				</div>
+					<input type="text" class="span1" id="max_scenarios" name="max_scenarios" value="<%= @user.max_scenarios %>"> &nbsp; &nbsp; &nbsp; &nbsp; 
+			<!-- </div>
 			</div>
 
 			<div class="control-group" id="ncmhce-downloads-group">
 				<label class="control-label" for="ncmhce_downloads">NCMHCE Downloads</label>
-				<div class="controls">
-					<input type="checkbox" name="ncmhce_downloads" id="ncmhce_downloads" <%= 'checked' if @user.ncmhce_downloads %> />
+				<div class="controls"> -->
+					<input type="checkbox" style="margin-top: -3px;" name="ncmhce_downloads" id="ncmhce_downloads" <%= 'checked' if @user.ncmhce_downloads %> /> &nbsp; NCMHCE Downloads
 				</div>
 			</div>
 
@@ -101,12 +101,13 @@
 			<div class="control-group" id="ceu-scenarios-group">
 				<label class="control-label" for="ceu_scenario">CEU Scenarios</label>
 				<div class="controls">
-					<input type="text" class="input-small" id="ceu_scenario" name="ceu_scenario" value="<%= @user.ceu_scenario %>">
+					<input type="checkbox" name="ceu_scenario" id="ceu_scenario" <%= 'checked' if @user.ceu_scenario %> /> &nbsp; &nbsp; &nbsp; &nbsp;
+					License &nbsp; <input type="text" class="span3" id="license" name="license" value="<%= @user.license %>" >
 				</div>
 			</div>
 			
 			<div class="control-group" id="ceu-scenarios-group">
-				<label class="control-label" for="practice_exams">NCMHCE Practice Exams</label>
+				<label class="control-label" for="practice_exams">Practice Exams</label>
 				<div class="controls">
 					<input type="checkbox" name="practice_exams" id="practice_exams" <%= 'checked' if @user.practice_exams %> />
 				</div>
@@ -145,7 +146,7 @@
 			<div class="control-group" id="notes-group">
 				<label class="control-label" for="notes">Notes</label>
 				<div class="controls">
-					<textarea name="notes" id="notes" class="input-xlarge" rows="7"><%= @user.notes %></textarea>
+					<textarea name="notes" id="notes"  style="width: 440px;" rows="9"><%= @user.notes %></textarea>
 				</div>
 			</div>
 						

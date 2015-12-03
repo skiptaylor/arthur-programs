@@ -21,7 +21,7 @@
 			<div class="control-group" style="margin-top: 2.5em;">
 				<label class="control-label" for="license"><strong>License</strong> <small>(Reqired for Continuing Education Units)</small></label>
 				<div class="controls">
-					<input type="text" class="input-xlarge focus" id="license" name="license" value="<%= params[:license]  || (/(.*)\z/.match(@user.license).to_s.strip if @user) || nil %>" autofocus required/>
+					<input type="text" class="input-xlarge focus" id="license" name="license" value="<%= params[:license] || (/(.*)\z/.match(@user.license).to_s.strip if @user) || nil %>" autofocus required/>
 				</div>
 			</div>
 			
