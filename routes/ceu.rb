@@ -119,6 +119,14 @@ get '/ceu/scenarios/:id/score/?' do
 	erb :'ceu/scenario'
 end
 
+get '/ceu/ceu_certificate/?' do
+	authorize!
+	@user = User.get session[:user]
+	
+  
+  erb :'ceu/ceu_certificate'
+end
+
 get '/ceu/scenarios/:id/restart/?' do
 	authorize!
 	expired?
