@@ -38,13 +38,13 @@
 					No expiration date.
 				<% else %>
 					<% if (@user.expiration_date - 30) > Time.now.to_date %>
-						Account expires on <%= @user.expiration_date.display :american_day %>.
+						<small>Account expires on <%= @user.expiration_date.display :american_day %>.</small>
 					<% else %>
-						<strong style="color: red; font-size: 100%;">Account expires on <%= @user.expiration_date.display :american_day %>.</strong>
+						<small><strong style="color: red; font-size: 100%;">Account expires on <%= @user.expiration_date.display :american_day %>.</strong></small>
 					<% end %>
 				<% end %>
 			</p>
-			<% unless @user.expiration_date <= DateTime.now %>
+			<% unless @user.expiration_date <= DateTime.now || @user.ceu_scenario %>
 				<p><a class="btn btn-success btn-small" href="/checkout/account-extension">Add 90 days for $30</a></p>
 			<% end %>
 		</form>
@@ -53,18 +53,19 @@
 
 	<div class="span9">
 
-  <% Message.all(profile: true).each do |m| %>
-    <div class="alert alert-info" style="border: none;"><%= m.body %></div>
-  <% end %>
-
-  <% if @user.expiration_date <= DateTime.now %>
-  	<div class="alert alert-warning" style="border: none;">
-  		<h3>Your account has expired.</h3>
-  		<p>You can extend your account by purchasing any product or add-on, or by purchasing an account extension.</p>
-  		<p><a href="/checkout/account-expiration?account=<%= @user.email %>" class="btn btn-success btn-small">Buy an Account Extension</a></p>
-  	</div>
-  <% end %>
-  
+	<% Message.all(profile: true).each do |m| %>
+		<div class="alert alert-info" style="border: none;"><%= m.body %></div>
+	<% end %>
+	
+	<% unless @user.ceu_scenario %>
+		<% if @user.expiration_date <= DateTime.now %>
+			<div class="alert alert-warning" style="border: none;">
+				<h3>Your account has expired.</h3>
+				<p>You can extend your account by purchasing any product or add-on, or by purchasing an account extension.</p>
+				<p><a href="/checkout/account-expiration?account=<%= @user.email %>" class="btn btn-success btn-small">Buy an Account Extension</a></p>
+			</div>
+		<% end %>
+	<% end %> 
  <!-- –––––––––––––––––– nce –––––––––––––––––– -->
 
 	<% if @user.max_exams > 0 %>
