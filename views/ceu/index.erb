@@ -59,7 +59,7 @@
 					<% if ((avg.created_at + 30) - Time.now.to_date).to_i < 0 %>
 						<p class="btn btn-small btn-danger">Expired</p>
 					<% else %>
-						<p><a class="btn btn-small btn-success" href="/ncmhce/scenarios/<%= scenario.id %>">Review scenario <strong><%= scenario.id %></strong></a>
+						<p><a class="btn btn-small btn-success" href="/ceu/scenarios/<%= scenario.id %>">Review scenario <strong><%= scenario.id %></strong></a>
 						&nbsp; &nbsp; 
 						<% if (((avg.created_at + 30) - Time.now.to_date).to_i) > 0 %>
 						<strong><%= ((avg.created_at + 30) - Time.now.to_date).to_i %></strong>
@@ -68,9 +68,9 @@
 						<% end %> Days Remaining</p>
 					<% end %>
 				<% elsif @uses.include?(scenario.id) %>
-					<p><a class="btn btn-small btn-info" href="/ncmhce/scenarios/<%= scenario.id %>">Continue with scenario <strong><%= scenario.id %></strong></a></p>
+					<p><a class="btn btn-small btn-info" href="/ceu/scenarios/<%= scenario.id %>">Continue with scenario <strong><%= scenario.id %></strong></a></p>
 				<% else %>
-					<p><a class="btn btn-small btn-primary" href="/ncmhce/scenarios/<%= scenario.id %>">Take scenario <strong><%= scenario.id %></strong></a></p>
+					<p><a class="btn btn-small btn-primary" href="/ceu/scenarios/<%= scenario.id %>">Take scenario <strong><%= scenario.id %></strong></a></p>
 				<% end %>
 				<% else %>
 				<br />

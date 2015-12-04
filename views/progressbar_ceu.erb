@@ -3,9 +3,8 @@
 
 	percent = ((correct.to_f/possible.to_f)*100)#.to_i
 	
-	style = 'progress'
 	style = 'progress' if percent < 70
-	style = 'progress' if percent > 70
+	style = 'progress' if percent >= 70
 %>
 
 <div class="span5 <%= 'offset1' if offset == true %>">

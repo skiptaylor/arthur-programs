@@ -1,47 +1,30 @@
-get '/ncmhce/?' do
-	if session[:user]
-		user = User.get session[:user]
-		redirect '/ncmhce/scenarios' if user.max_scenarios > 0
-	end
+get '/ceu/?' do
+  if session[:user]
+    user = User.get session[:user]
+    redirect '/ceu/scenarios' if user.ceu_scenario > 0
+  end
 
-	erb :ncmhce
+  erb :ceu
 end
 
-get '/ncmhce/glossary/?' do
-	@exam = 'NCMHCE'
-	@glossary = Glossary.all(exam: 'NCMHCE').sort!{|a,b| a.chapter <=> b.chapter}
-	erb :'cards'
-end
-
-get '/ncmhce/sample/?' do
-	unless session[:user]
-		user = User.create(email: 'sample', password: 'sample')
-		session[:user] = user.id
-		session[:sample] = true
-	end
-	redirect '/ncmhce/scenarios/1'
-end
-
-get '/ncmhce/scenarios/?' do
+get '/ceu/scenarios/?' do
 	authorize!
 
 	user = User.get session[:user]
-	redirect '/ncmhce' unless user.max_scenarios > 0
+  redirect '/ceu' unless user.ceu_scenario > 0
 
-	@max_scenarios = User.get(session[:user]).max_scenarios
+  @ceu_scenario = User.get(session[:user]).ceu_scenario
   @scenarios = Scenario.all(order: :id, active: true)
-  @scenarios = @scenarios.all(workshop: false) unless user.workshop_scenarios == true
-  
-  
-  @scenarios = @scenarios.all(practice: false) unless user.practice_exams == true
+  @scenarios = @scenarios.all(workshop: false)
+  @scenarios = @scenarios.all(practice: false)
 	@averages = Average.all(:user_id => session[:user], :scenario_id.not => nil)
-	@remaining_scenarios = User.get(session[:user]).remaining_scenarios
+	@remaining_ceu_scenario = User.get(session[:user]).remaining_ceu_scenario
 	@uses = []
 	Use.all(user_id: session[:user]).each { |u| @uses << u.scenario_id }
-	erb :'ncmhce/index'
+	erb :'ceu/index'
 end
 
-get '/ncmhce/scenarios/:id/?' do
+get '/ceu/scenarios/:id/?' do
 	expired?
 
 	@scenario = Scenario.get params[:id]
@@ -56,22 +39,22 @@ get '/ncmhce/scenarios/:id/?' do
 		if User.get(session[:user]).remaining_scenarios == 0
 			unless Use.all(user_id: session[:user], scenario_id: params[:id]).count > 0
 				session[:alert] = { message: "Please purchase more scenarios to continue." }
-				redirect '/ncmhce'
+				redirect '/ceu'
 			end
 		end
 	end
 
 	if Average.all(scenario_id: params[:id], user_id: session[:user]).count > 0
-		redirect "/ncmhce/scenarios/#{params[:id]}/score"
+		redirect "/ceu/scenarios/#{params[:id]}/score"
 	end
 	@scores = []
 	Score.all(user_id: session[:user], scenario_id: params[:id]).each {|s| @scores << s.answer_id }
 	@questions = @scenario.questions order: :position
 	@answers = @questions.answers order: :body
-	erb :'ncmhce/scenario'
+	erb :'ceu/scenario'
 end
 
-get '/ncmhce/scenarios/:id/score/?' do
+get '/ceu/scenarios/:id/score/?' do
 	expired?
 
 	@scenario = Scenario.get params[:id]
@@ -133,14 +116,14 @@ get '/ncmhce/scenarios/:id/score/?' do
     correct: @breakdown["Decision Making"][:correct]
   )
   
-	erb :'ncmhce/scenario'
+	erb :'ceu/scenario'
 end
 
-get '/ncmhce/scenarios/:id/restart/?' do
+get '/ceu/scenarios/:id/restart/?' do
 	authorize!
 	expired?
 
 	Score.all(user_id: session[:user], scenario_id: params[:id]).destroy
 	Average.all(scenario_id: params[:id], user_id: session[:user]).destroy
-	redirect "/ncmhce/scenarios/#{params[:id]}"
+	redirect "/ceu/scenarios/#{params[:id]}"
 end
