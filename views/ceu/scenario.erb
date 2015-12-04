@@ -18,7 +18,7 @@
 		<div class="row">
 			<div class="span11">
 				<h3>
-					Your Score: <%= @average %>% &nbsp;
+					Your Score: <%= @average %>% &nbsp; <% unless @average < 70 %><span style="color: #009c23;">Congratulations! You Passed.</span><% end %>
 				</h3>
 				<%
 					style = 'bar-warning' if @average < 70
@@ -38,7 +38,7 @@
 		
 		
 		<br />
-		<a href="/ceu/scenarios/<%= params[:id] %>/restart" class="btn btn-primary restart">Start Over</a>
+		<% unless @average < 70 %><a href="#" class="btn btn-success"><strong>Get Your Certificate</strong></a> &nbsp; &nbsp; &nbsp; &nbsp; <% end %><a href="/ceu/scenarios/<%= params[:id] %>/restart" class="btn btn-primary restart">Start Over</a>
 		<br /><br />
 		<strong>
 			<span style="color: #666666; font-size: 90%;">Answers are highlighted as follows:</span> &nbsp;
