@@ -38,7 +38,7 @@
 		
 		
 		<br />
-		<% unless @average < 70 %><a href="/ceu/ceu_certificate" class="btn btn-success"><strong>Get Your Certificate</strong></a> &nbsp; &nbsp; &nbsp; &nbsp; <% end %><a href="/ceu/scenarios/<%= params[:id] %>/restart" class="btn btn-primary restart">Start Over</a>
+		<a href="/ceu/scenarios/<%= params[:id] %>/restart" class="btn btn-primary restart">Start Over</a>
 		<br /><br />
 		<strong>
 			<span style="color: #666666; font-size: 90%;">Answers are highlighted as follows:</span> &nbsp;
@@ -49,9 +49,77 @@
 		</strong>
 	</div>
 	
+	<% end %>
+			
+	<% unless @average < 70 %>
 	
+	<ul id="myTab" class="nav nav-pills">
+		<li class="active"><a href="#certificate" data-toggle="pill">Get My Certificate</a></li>
+		<li><a href="#test" data-toggle="pill">View Scenario</a></li>
+	</ul>
 	<hr />
-<% end %>
+	<div id="myTabContent" class="tab-content">
+		<div class="tab-pane active" id="certificate">
+			<% @user = User.get session[:user] %>
+			<div class="row">
+				<div class="span12">
+					<h3>
+						You have passed NCMHCE CEU Scenario <%= @scenario.id %>.
+					</h3>
+					<p>Please review your account information and submit to receive your certificate.</p>
+					<br />
+					<address>
+					  <strong><%= @user.name %></strong><br>
+					  <%= @user.email %><br>
+					  <%= @user.phone %><br><br>
+					  <% if @user.license %><strong>License:</strong> <%= @user.license %></small><% end %>
+					</address>
+					<p><a href="#" class="btn btn-default">Edit</a> &nbsp; <a href="#" data-toggle="pill" class="btn btn-success">Submit</a></p>
+				</div>
+			</div>
+		</div>
+
+		<div class="tab-pane fade" id="test">
+			<%= markdown @scenario.body %>
+			<hr />
+			<% @questions.each do |question| %>
+			<div class="question" id="question-<%= question.position %>" style="<%= hidden unless @average || question.position == 1 %>">
+				<p><strong><%= question.position %>. <%= question.body %></strong></p>
+				<% answers = @answers.find_all {|a| a.question_id == question.id } %>
+				<form>
+					<% answers.each do |answer| %>
+						<%
+							if answer.value > 0
+								style = 'correct'
+							elsif answer.value < 0
+								style = 'incorrect'
+							elsif answer.value == 0
+								style = 'neutral'
+							else
+								style = ''
+							end
+						%>
+				<label class="checkbox <%= style if @average && @scores.include?(answer.id) %>">
+					<input type="checkbox" class="<%= 'required' if answer.required? %>" id="<%= answer.id %>" name="<%= answer.id %>" <%= 'checked' if @scores.include?(answer.id) %> <%= 'disabled' if @average || @scores.include?(answer.id) %>>
+					<% if @average %>
+						<strong>
+							<span class="badge"><%= '+' if answer.value > 0 %><%= answer.value %></span>
+						</strong>
+					<% end %>
+					<%= answer.body.sub /\w[.]/, '' %>
+				</label>
+				<blockquote style="<%= hidden unless @average || @scores.include?(answer.id) %>" class="<%= style if (@average && @scores.include?(answer.id)) || answer.required? %>" id="response-<%= answer.id %>">
+					<%= markdown answer.response %>
+				</blockquote>
+				<% end %>
+			</form>
+			<%= markdown question.notes if @average && question.notes %>
+		</div>
+		<% end %>
+	</div>
+</div>
+
+	<% else %>
 
 <%= markdown @scenario.body %>
 
@@ -113,11 +181,4 @@
 </div>
 <% end %>
 
-<br />
-<% if @scenario.ceu || @scenario.workshop %>
-	<p><center><a href="/profile">Take another scenario</a></center></p>
-<% else %>
-	<p><center><a href="/ceu/scenarios">Take another scenario</a></center></p>
 <% end %>
-
-</div>
