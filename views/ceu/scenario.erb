@@ -38,7 +38,7 @@
 		
 		
 		<br />
-		<a href="/ceu/scenarios/<%= params[:id] %>/restart" class="btn btn-primary restart">Start Over</a>
+		<a href="/ceu/scenarios/<%= params[:id] %>/restart" class="btn btn-primary restart">Start Over</a><% unless @average < 70 %> &nbsp; &nbsp; <span style="color: #db7820;"><small><strong>Starting over now will reset you passing score.</strong></small></span><% end %>
 		<br /><br />
 		<strong>
 			<span style="color: #666666; font-size: 90%;">Answers are highlighted as follows:</span> &nbsp;
