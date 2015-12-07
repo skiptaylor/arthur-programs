@@ -64,10 +64,11 @@
 			<div class="row">
 				<div class="span12">
 					<h3>
-						You have passed NCMHCE CEU Scenario <%= @scenario.id %>.
+						<img src="/img/check.png" class="pull-left" style="margin: 0.3em 1em 1em 0;" />You have passed NCMHCE CEU Scenario <%= @scenario.id %>.
 					</h3>
 					<p>Please review your account information and submit to receive your certificate.</p>
 					<br />
+					<div class="span9 offset1">
 					<address>
 					  <strong><%= @user.name %></strong><br>
 					  <%= @user.email %><br>
@@ -75,6 +76,8 @@
 					  <% if @user.license %><strong>License:</strong> <%= @user.license %></small><% end %>
 					</address>
 					<p><a href="#" class="btn btn-default">Edit</a> &nbsp; <a href="#" data-toggle="pill" class="btn btn-success">Submit</a></p>
+					<p><small>You will not be able to retake this exam once certificate is issued.</small></p>
+				</div>
 				</div>
 			</div>
 		</div>
