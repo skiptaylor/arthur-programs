@@ -12,17 +12,17 @@
 	<div class="span3">
 		<form class="well form-horizontal" method="post">
 			<p>
-				<label for="email">Email address</label>
-				<input type="text" style="width: 96%;" name="email" id="email" value="<%= @user.email %>" />
+				<label for="email"><strong>Email address</strong></label>
+				<input type="text" style="width: 96%; color: #333333;" name="email" id="email" value="<%= @user.email %>" disabled />
 			</p>
 			<p>
-				<label for="phone">Phone number</label>
+				<label for="phone"><strong>Phone number</strong></label>
 				<input type="text" style="width: 96%;" name="phone" id="phone" value="<%= @user.phone %>" />
 			</p>
 			<p>
-				<label for="password">New password</label>
+				<label for="password"><strong>New password</strong></label>
 				<input type="password" style="width: 96%;" name="password" id="password" />
-				<span class="help-inline">Leave blank unless you want a new password.</span>
+				<span class="help-inline"  style="line-height: 1em; margin: 3px 0;"><small>Leave blank unless you want a new password.</small></span>
 			</p>
 			<% if @user.license %>
 			<p>
@@ -38,9 +38,9 @@
 					No expiration date.
 				<% else %>
 					<% if (@user.expiration_date - 30) > Time.now.to_date %>
-						<small>Account expires on <%= @user.expiration_date.display :american_day %>.</small>
+						<small>Account expires on <strong><%= @user.expiration_date.display :american_day %></strong>.</small>
 					<% else %>
-						<small><strong style="color: red; font-size: 100%;">Account expires on <%= @user.expiration_date.display :american_day %>.</strong></small>
+						<small><span style="color: red;">Account expires on <strong><%= @user.expiration_date.display :american_day %></strong>.</span></small>
 					<% end %>
 				<% end %>
 			</p>
@@ -281,7 +281,7 @@
 								<% end %>
 							<% end %>
 						<% else %>
-								<a href="/ceu/scenarios/<%= average.scenario_id %>">Finish</a>
+								<a href="/ceu/scenarios/<%= average.scenario_id %>">Continue</a>
 						<% end %>
 						</td>
 					</tr>
