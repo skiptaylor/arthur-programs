@@ -7,7 +7,7 @@ get '/checkout/:product/?' do
 		@product_name = "Dr. Arthur's NCE Study Guide"
 	when 'nce-hard-copy'
 		@product_name = "Dr. Arthur's NCE Study Guide"
-	when 'single-senario'
+	when 'ceu'
 		@product_name = "Arthur-Brende CEU Study Program"
 	when 'ncmhce'
 		@product_name = "Arthur-Brende NCMHCE Study Program"
@@ -46,7 +46,7 @@ post '/checkout/:product/?' do
 	params[:city].strip!
 	params[:state].strip!
 	params[:zip].strip!
-  params[:license].strip!
+  params[:license]
 	
   if params[:user_id]
 		user = User.get params[:user_id]
@@ -137,7 +137,7 @@ post '/checkout/:product/?' do
     elsif (params[:package] == 'Account Expiration')
       user.expiration_date = (DateTime.now + 90)
   	elsif (params[:package] == 'CEU: Single Scenario')
-  		user.expiration_date = (DateTime.now + 120),
+  		user.expiration_date = (DateTime.now + 731),
         user.max_exams = 0,
         user.max_scenarios = 0,
         user.nce_downloads = false,

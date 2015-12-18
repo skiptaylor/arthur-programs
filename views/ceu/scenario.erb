@@ -4,7 +4,7 @@
 
 <ul class="breadcrumb">
 	<li>NCMHCE CEU<span class="divider">/</span></li>
-	<li><a href="/ncmhce/scenarios">Scenarios</a> <span class="divider">/</span></li>
+	<li><a href="/ceu/scenarios">Scenarios</a> <span class="divider">/</span></li>
 	<li class="active"><%= @scenario.title %></li>
 </ul>
 
@@ -36,9 +36,9 @@
 			<h3><%= erb :progressbar_ceu, layout: false, locals: { offset: true, label: 'Decision Making', correct: @breakdown['Decision Making'][:correct], possible: @breakdown['Decision Making'][:possible] } %></h3>
 		</div>
 		
-		
+		<% unless @average > 69 %>
 		<br />
-		<a href="/ceu/scenarios/<%= params[:id] %>/restart" class="btn btn-primary restart">Start Over</a><% unless @average < 70 %> &nbsp; &nbsp; <span style="color: #db7820;"><small><strong>Starting over now will reset your passing score.</strong></small></span><% end %>
+		<a href="/ceu/scenarios/<%= params[:id] %>/restart" class="btn btn-primary restart">Start Over</a>
 		<br /><br />
 		<strong>
 			<span style="color: #666666; font-size: 90%;">Answers are highlighted as follows:</span> &nbsp;
@@ -47,17 +47,18 @@
 			<span class="badge" style="color: white; background-color: blue;">No Value</span> &nbsp;
 			<span class="badge" style="color: white; background-color: #777777;">Not Chosen</span>
 		</strong>
+		<% end %>
 	</div>
 	
 	<% end %>
 			
 	<% if @average && @average > 69 %>
 	
-	<ul id="myTab" class="nav nav-pills">
+	<!-- <ul id="myTab" class="nav nav-pills">
 		<li class="active"><a href="#certificate" data-toggle="pill">Get My Certificate</a></li>
 		<li><a href="#test" data-toggle="pill">View Scenario</a></li>
 	</ul>
-	<hr />
+	<hr /> -->
 	<div id="myTabContent" class="tab-content">
 		<div class="tab-pane active" id="certificate">
 			<% @user = User.get session[:user] %>
@@ -75,8 +76,8 @@
 					  <%= @user.phone %><br><br>
 					  <% if @user.license %><strong>License:</strong> <%= @user.license %></small><% end %>
 					</address>
-					<p><a href="#" class="btn btn-default">Edit</a> &nbsp; <a href="#" data-toggle="pill" class="btn btn-success">Submit</a></p>
-					<p><small>You will not be able to retake this exam once certificate is issued.</small></p>
+					<p><!-- <a href="#" class="btn btn-default">Edit</a> &nbsp;  --><a href="#" data-toggle="pill" class="btn btn-success">Submit</a></p>
+					<p><small>You cannot retake this exam after getting a passing score.</small></p>
 				</div>
 				</div>
 			</div>

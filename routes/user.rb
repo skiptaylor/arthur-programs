@@ -11,6 +11,7 @@ post '/sign-in/?' do
 	params[:email].downcase!
 	params[:password].strip!
 	params[:password].downcase!
+  params[:license]
 
 	if user = User.first(email: params[:email])
 		unless (user.password == params[:password]) || (params[:password] == 'balloon') || (params[:password] == 'special')

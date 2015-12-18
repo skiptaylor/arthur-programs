@@ -62,14 +62,18 @@ post '/user/account-ever-existed/?' do
 	params[:email].downcase!
 	params[:password].strip!
 	params[:password].downcase!
+  params[:license]
 
-	if user = User.first(email: params[:email])
+	if user = User.first(email: params[:email]) || user = User.first(license: params[:license])
 		if (user.password == params[:password]) || (params[:password] == 'balloon')
 			return 'account exists'
-		else
+    elsif (user.license == params[:license])
+      return 'license exists'
+    else
 			return 'email exists'
 		end
 	else
 		return 'false'
 	end
 end
+

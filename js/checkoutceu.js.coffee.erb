@@ -20,6 +20,7 @@ $(window).load ->
 		$('#city-confirmation').html							$('input#city').val()
 		$('#state-confirmation').html							$('select#state').val()
 		$('#zip-confirmation').html							$('input#zip').val()
+		$('#license-confirmation').html						$('input#license').val()
 		
 		total = 0
 		package_total  = parseFloat($("input[name='package']:checked").attr('data-price'))  || 0
@@ -62,6 +63,8 @@ $(window).load ->
 			errors.push 'You must enter a valid email address.'
 		if $('input#password').val() == ''
 			errors.push 'You must enter a password.'
+		if $('input#license').val() == ''
+			errors.push 'You must enter a license number.'
 		if $('input.card-number').val() == ''
 			errors.push 'You must enter a credit card number.'
 		if $('input.card-cvc').val() == ''
@@ -69,13 +72,15 @@ $(window).load ->
 		if ($('input#address1').val() == '') || ($('input#city').val() == '') || ($('select#state').val() == '') || ($('input#zip').val() == '')
 			errors.push 'You must enter an address, city, state, and zip.'
 		
-		unless ($('input#email').is(':disabled')) || ($('input#email').val() == '') || ($('input#password').val() == '')
+		unless ($('input#email').is(':disabled')) || ($('input#email').val() == '') || ($('input#password').val() == '') || ($('input#license').is(':disabled')) || ($('input#license').val() == '')
 			$.post(
 				'/user/account-ever-existed',
-				{ email: $('input#email').val(), password: $('input#password').val() },
+				{ email: $('input#email').val(), password: $('input#password').val(), license: $('input#license').val() }
 				(data) ->
 					if (data == 'account exists') || (data == 'email exists')
 						errors.push 'That email address is already in use. Maybe you need to <a href="/sign-in">sign in</a> first?'
+					if (data == 'license exists')
+						errors.push 'That license is already in use. Maybe you need to <a href="/sign-in">sign in</a> your existing account first?'
 			)
 					
 		displayErrors(errors) if errors[0]

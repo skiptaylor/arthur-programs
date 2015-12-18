@@ -13,7 +13,7 @@
 		<form class="well form-horizontal" method="post">
 			<p>
 				<label for="email"><strong>Email address</strong></label>
-				<input type="text" style="width: 96%; color: #333333;" name="email" id="email" value="<%= @user.email %>" disabled />
+				<input type="text" style="width: 96%; color: #333333;" name="email" id="email" value="<%= @user.email %>" readonly="readonly" />
 				<span class="hidden"><input type="text" style="width: 96%; color: #333333;" name="email" id="email" value="<%= @user.email %>" /></span>
 			</p>
 			<p>
@@ -25,7 +25,7 @@
 				<input type="password" style="width: 96%;" name="password" id="password" />
 				<span class="help-inline"  style="line-height: 1em; margin: 3px 0;"><small>Leave blank unless you want a new password.</small></span>
 			</p>
-			<% if @user.license %>
+			<% unless @user.license == "" %>
 			<p>
 				<small><strong>License:</strong> <%= @user.license %></small>
 			</p>
