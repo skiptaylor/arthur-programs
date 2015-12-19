@@ -65,7 +65,7 @@
 			<div class="row">
 				<div class="span12">
 					<h3>
-						<img src="/img/check.png" class="pull-left" style="margin: 0.3em 1em 1em 0;" />You have passed NCMHCE CEU Scenario <%= @scenario.id %>.
+						<img src="/img/check.png" class="pull-left" style="margin: 0.3em 1em 1em 0;" />You have passed CEU Scenario <%= @scenario.id %>.
 					</h3>
 					<p>Please review your account information and submit to receive your certificate.</p>
 					<br />
@@ -77,7 +77,8 @@
 					  <% if @user.license %><strong>License:</strong> <%= @user.license %></small><% end %>
 					</address>
 					<p><!-- <a href="#" class="btn btn-default">Edit</a> &nbsp;  --><a href="#" data-toggle="pill" class="btn btn-success">Submit</a></p>
-					<p><small>You cannot retake this exam after getting a passing score.</small></p>
+					<p><small>You cannot retake this exam after getting a passing score.<br />
+						<strong>NOTE:</strong> If your account information is incorrect please call 888-326-9229 before submitting your certificate.</small></p>
 				</div>
 				</div>
 			</div>

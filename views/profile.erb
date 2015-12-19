@@ -263,11 +263,13 @@
 						</td>
 						<td style="text-align: center;">
 							<% unless avg == nil %>
-								<% if (((average.created_at + 30) - Time.now.to_date).to_i) > 0 %>
+								<% if avg.score > 69 %>
+									0
+								<% elsif (((average.created_at + 30) - Time.now.to_date).to_i) > 0 %>
 								<strong><%= ((average.created_at + 30) - Time.now.to_date).to_i %></strong>
 								<% else %>
 								0
-								<% end %> Days &nbsp; <span style="color: #bc1424;"><small><%= average.created_at.to_date %></small></span>
+								<% end %> Days <!-- &nbsp; <span style="color: #bc1424;"><small><%= average.created_at.to_date %></small></span> -->
 							<% end %>
 						</td>
 						<td style="text-align: right;">
@@ -276,13 +278,13 @@
 								<% if (((average.created_at + 30) - Time.now.to_date).to_i) < 1 %>
 									<span style="color: red;"><small>Expired</small></span>
 								<% elsif avg.score > 69 %>
-									<a href="/ceu/scenarios/<%= average.scenario_id %>"><span style="color: #21b935;">Passed</span></a>
+									<a href="/ceu/scenarios/<%= average.scenario_id %>"><span style="color: #21b935;"><strong>Passed</strong></span></a>
 								<% else %>
 									<a href="/ceu/scenarios/<%= average.scenario_id %>">Review</a>
 								<% end %>
 							<% end %>
 						<% else %>
-								<a href="/ceu/scenarios/<%= average.scenario_id %>"><small>Continue</small></a>
+								<a href="/ceu/scenarios/<%= average.scenario_id %>">Continue</a>
 						<% end %>
 						</td>
 					</tr>
