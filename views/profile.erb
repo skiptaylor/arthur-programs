@@ -273,7 +273,7 @@
 						<td style="text-align: right;">
 						<% unless avg == nil %>	
 							<% unless @user.expired? || avg == nil %>
-								<% if (((average.created_at + 30) - Time.now.to_date).to_i) < 0 %>
+								<% if (((average.created_at + 30) - Time.now.to_date).to_i) < 1 %>
 									<span style="color: red;"><small>Expired</small></span>
 								<% elsif avg.score > 69 %>
 									<a href="/ceu/scenarios/<%= average.scenario_id %>"><span style="color: #21b935;">Passed</span></a>

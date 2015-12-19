@@ -50,24 +50,29 @@
 				<h3>
 					<%= scenario.id %>. <%= scenario.title %>
 					<% avg = @averages.detect {|a| a.scenario_id == scenario.id} %>
+					
+		 			
+					
 					<small style="color: #20ae32; font-weight: 800;" class='darker-gray'>&nbsp; <% if avg %>Last taken - <%= avg.updated_at.display_short if avg %><% end %></small>
 				</h3>
 				<%= markdown scenario.body.truncate(100) %>
 				<% if @uses.include?(scenario.id) || (@remaining_ceu_scenario > 0) %>
 					
-				<% if avg %>
-					<% if ((avg.created_at + 30) - Time.now.to_date).to_i < 0 %>
+		<% average = Average.first(user_id: session[:user], scenario_id: scenario.id) %>		
+				
+				<% if average %>
+					<% if ((average.created_at + 30) - Time.now.to_date).to_i < 1 %>
 						<p class="btn btn-small btn-danger">Expired</p>
 					<% else %>
 						<p><a class="btn btn-small btn-success" href="/ceu/scenarios/<%= scenario.id %>">Review scenario <strong><%= scenario.id %></strong></a>
 						&nbsp; &nbsp;
 						
 						
-						<!-- <% if (((avg.created_at + 30) - Time.now.to_date).to_i) > 0 %>
-						<strong><%= ((avg.created_at + 30) - Time.now.to_date).to_i %></strong>
+						<% if (((average.created_at + 30) - Time.now.to_date).to_i) > 0 %>
+						<strong><%= ((average.created_at + 30) - Time.now.to_date).to_i %></strong>
 						<% else %>
 						0
-						<% end %> Days Remaining</p> -->
+						<% end %> Days Remaining</p>
 						
 						
 					<% end %>
@@ -76,9 +81,6 @@
 				<% else %>
 					<p><a class="btn btn-small btn-primary" href="/ceu/scenarios/<%= scenario.id %>">Take scenario <strong><%= scenario.id %></strong></a></p>
 				<% end %>
-				<% else %>
-				
-				<br />
 				<% end %>
 				<br />
 			</div>
