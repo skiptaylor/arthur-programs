@@ -12,25 +12,25 @@
 	<div class="control-group">
 		<label class="control-label" for="first_name">First Name</label>
 		<div class="controls">
-			<input type="text" class="input-xlarge" id="first_name" name="first_name" value="<%= params[:first_name] || (/\A(.*)\W/.match(@user.name).to_s.strip if @user) || nil %>" />
+			<input type="text" class="input-xlarge" id="first_name" name="first_name" style="color: #000000;" value="<%= params[:first_name] || (/\A(.*)\W/.match(@user.name).to_s.strip if @user) || nil %>" disabled if user />
 		</div>
 	</div>
 	<div class="control-group">
 		<label class="control-label" for="last_name">Last Name</label>
 		<div class="controls">
-			<input type="text" class="input-xlarge" id="last_name" name="last_name" value="<%= params[:last_name]  || (/\W(.*)\z/.match(@user.name).to_s.strip if @user) || nil %>" />
+			<input type="text" class="input-xlarge" id="last_name" name="last_name" style="color: #000000;" value="<%= params[:last_name]  || (/\W(.*)\z/.match(@user.name).to_s.strip if @user) || nil %>" disabled if user />
 		</div>
 	</div>
 	<div class="control-group" id="email-group">
 		<label class="control-label" for="email">Email address</label>
 		<div class="controls">
-			<input type="text" class="input-xlarge" id="email" name="email" <%= "value='#{locals[:user].email}' disabled" if user %> />
+			<input type="text" class="input-xlarge" id="email" name="email" style="color: #000000;" <%= "value='#{locals[:user].email}' disabled" if user %> />
 		</div>
 	</div>
 	<div class="control-group">
 		<label class="control-label" for="password">Password</label>
 		<div class="controls">
-			<input type="password" class="input-xlarge" id="password" name="password" <%= "value='secret123' disabled" if user %> />
+			<input type="password" class="input-xlarge" id="password" name="password" style="color: #000000;" <%= "value='secret123' disabled" if user %> />
 		</div>
 	</div>
 	
