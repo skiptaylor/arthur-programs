@@ -119,6 +119,23 @@ get '/ceu/scenarios/:id/score/?' do
 	erb :'ceu/scenario'
 end
 
+
+
+
+post '/ceu/scenarios/:id/score/?' do
+  scenario = Scenario.get params[:id]
+  
+  
+
+  
+  redirect "/ceu/scenarios/#{scenario.id}/score"
+end
+
+
+
+
+
+
 get '/ceu/ceu_certificate/?' do
 	authorize!
 	@user = User.get session[:user]

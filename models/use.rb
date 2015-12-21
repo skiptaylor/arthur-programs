@@ -6,7 +6,7 @@ class Use
 	timestamps :at
 
 	property :sample, Boolean, default: false
-
+   
 	belongs_to :user
 	belongs_to :scenario, required: false
 	belongs_to :exam, 		required: false

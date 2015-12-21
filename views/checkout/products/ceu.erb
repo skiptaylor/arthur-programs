@@ -9,8 +9,8 @@
 				<label class="radio package-name">
 					<input name="package" type="radio" id="single-scenario" value="Single Scenario" data-price='20' <%= 'checked="checked"' if params[:package] == 'Single Scenario' %> /> &nbsp;<span style="font-size: 1.3em;" class="oswald">Single Scenario $20</span>
 					<ul class="package-features">
-						<li><strong>1 Online Scenario - 13579 A-12 B</strong></li>
-						<li>Receive unlimited access to online exams for 30 days</li>
+						<li><strong>1 Online CEU Scenario</strong></li>
+						<li>Receive unlimited access to online exams for 30 days or until you get a passing score.</li>
 					</ul>
 					
 				</label>
@@ -22,13 +22,13 @@
 			<div class="control-group" style="margin-top: 2.5em;">
 				<label class="control-label" for="license"><strong>License</strong> <small>(Reqired for Continuing Education Units)</small></label>
 				<div class="controls">
-					<input type="text" style="color: #000000;" class="input-xlarge focus" id="license" name="license" <%= "value='#{locals[:user].license}' disabled" if user %> autofocus required />
+					<input type="text" style="color: #000000;" class="input-xlarge focus" id="license" name="license" <%= "value='#{locals[:user].license}' disabled" if user.license %> autofocus required />
 				</div>
 			</div>
 			
 		</div>   <!-- span5 -->
 			<div class="span9">
-			<p style="color: #bc272e;"><small><strong>NOTE: Purchasing CEU scenarios will make all other purchased NCMHCE and NCE exams unavailable for further use.</strong></small></p>
+			<p><small><strong>NOTE:</strong> Purchasing CEU scenarios will make all other purchased NCMHCE and NCE exams unavailable for further use.</small></p>
 		</div>
 	</div>	   <!-- row -->
 

@@ -12,13 +12,22 @@
 	<div class="control-group">
 		<label class="control-label" for="first_name">First Name</label>
 		<div class="controls">
-			<input type="text" class="input-xlarge" id="first_name" name="first_name" style="color: #000000;" value="<%= params[:first_name] || (/\A(.*)\W/.match(@user.name).to_s.strip if @user) || nil %>" disabled if user />
+			<% unless user %>
+			<input type="text" class="input-xlarge" id="first_name" name="first_name" style="color: #000000;" value="<%= params[:first_name] %>" />
+			<% else %>
+			<input type="text" class="input-xlarge" id="first_name" name="first_name" style="color: #000000;" value="<%= (/\A(.*)\W/.match(@user.name).to_s.strip if @user) %>" disabled />
+			<% end %>
 		</div>
 	</div>
+	
 	<div class="control-group">
 		<label class="control-label" for="last_name">Last Name</label>
 		<div class="controls">
-			<input type="text" class="input-xlarge" id="last_name" name="last_name" style="color: #000000;" value="<%= params[:last_name]  || (/\W(.*)\z/.match(@user.name).to_s.strip if @user) || nil %>" disabled if user />
+			<% unless user %>
+			<input type="text" class="input-xlarge" id="last_name" name="last_name" style="color: #000000;" value="<%= params[:last_name] %>" />
+			<% else %>
+			<input type="text" class="input-xlarge" id="last_name" name="last_name" style="color: #000000;" value="<%= (/\W(.*)\z/.match(@user.name).to_s.strip if @user) %>" disabled />
+			<% end %>
 		</div>
 	</div>
 	<div class="control-group" id="email-group">
