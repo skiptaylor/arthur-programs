@@ -39,6 +39,7 @@ post '/checkout/:product/?' do
 		params[:email].downcase!
 		params[:password].strip!
 		params[:password].downcase!
+    params[:license].strip!
   end
 	params[:name] = "#{params[:first_name].strip} #{params[:last_name].strip}"
 	params[:address1].strip!
@@ -46,7 +47,7 @@ post '/checkout/:product/?' do
 	params[:city].strip!
 	params[:state].strip!
 	params[:zip].strip!
-  params[:license]
+  params[:license].strip!
 	
   if params[:user_id]
 		user = User.get params[:user_id]

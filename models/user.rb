@@ -25,7 +25,7 @@ class User
 
 	property :name,  				 String
 	property :phone, 				 String
-  property :license,       String
+  property :license,       String,	 default: ""
 	property :hear_about_us, String
 
 	property :notes,	Text

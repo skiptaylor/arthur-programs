@@ -1,5 +1,7 @@
 <fieldset>
 	
+	
+	
 	<legend><span style="padding: 0 9px 0 7px;">1</span> Package <small>Choose one</small></legend>
 	
 	<div class="row">		
@@ -22,9 +24,17 @@
 			<div class="control-group" style="margin-top: 2.5em;">
 				<label class="control-label" for="license"><strong>License</strong> <small>(Reqired for Continuing Education Units)</small></label>
 				<div class="controls">
-					
-					<input type="text" style="color: #000000;" class="input-xlarge focus" id="license" name="license" <%= "value='#{locals[:user].license}' disabled" if user %> autofocus required />
-					
+					<% if locals[:user] %>
+						<% if user.license == "" %>
+						<input type="text" style="color: #000000;" class="input-xlarge focus" id="license" name="license" value="<%= @user.license %>" autofocus required />
+						<% elsif user.license == nil %>
+						<input type="text" style="color: #000000;" class="input-xlarge focus" id="license" name="license" value="<%= @user.license %>" autofocus required />
+						<% else %>
+						<input type="text" style="color: #000000;" class="input-xlarge focus" id="license" name="license" value="<%= @user.license %>" disabled />
+						<% end %>
+					<% else %>
+					<input type="text" class="input-xlarge" id="license" name="license" value="<%= params[:license] %>" autofocus required />
+					<% end %>
 				</div>
 			</div>
 			
