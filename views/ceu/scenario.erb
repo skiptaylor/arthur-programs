@@ -52,7 +52,7 @@
 
 <!---- end well ---->
 			
-<% if @average > 69 %>
+<% if @average && @average > 69 %>
 
 <% @user = User.get session[:user] %>
 <div class="row">
@@ -117,7 +117,7 @@
 
 </div>
 	
-<% elsif @average < 70 %>	
+<% elsif @average && @average < 70 %>	
 	
 <!------------ EXAM VIEW ------------>
 			<%= markdown @scenario.body %>
