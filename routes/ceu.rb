@@ -122,13 +122,21 @@ end
 
 
 
-post '/ceu/scenarios/:id/score/?' do
-  scenario = Scenario.get params[:id]
-  
-  
 
+
+post '/ceu/scenarios/:id/score/?' do
+
+	uses = Use.all(user_id: session[:user], scenario_id: params[:id])
+	uses.each do |u|
+		u.update(
+      certificate: true,
+      cert_date: Time.now
+    )
+	end
   
-  redirect "/ceu/scenarios/#{scenario.id}/score"
+  session[:alert] = { style: 'alert-success',
+       message: "Your CEU Certificate has been submitted." }
+  redirect "/ceu/scenarios/#{params[:id]}/score"
 end
 
 

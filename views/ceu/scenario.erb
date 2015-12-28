@@ -14,84 +14,112 @@
 </div>
 
 <% if @average %>
-	<div class="well">
-		<div class="row">
-			<div class="span11">
-				<h3>
-					Your Score: <%= @average %>% &nbsp; <% unless @average < 70 %><span style="color: #009c23;">Congratulations! You Passed.</span><% end %>
-				</h3>
-				<%
-					style = 'bar-warning' if @average < 70
-					style = 'bar-success' if @average >= 70
-				%>
-				<div class="progress">
-					<div class="bar  <%= style %>" style="width: <%= @average %>%;"></div>
-				</div>
+<div class="well">
+	<div class="row">
+		<div class="span11">
+			<h3>
+				Your Score: <%= @average %>% &nbsp; <% unless @average < 70 %><span style="color: #009c23;">Congratulations! You Passed.</span><% end %>
+			</h3>
+			<%
+				style = 'bar-warning' if @average < 70
+				style = 'bar-success' if @average >= 70
+			%>
+			<div class="progress">
+				<div class="bar  <%= style %>" style="width: <%= @average %>%;"></div>
 			</div>
 		</div>
-		
-		
-		<div class="row">
-			<h3><%= erb :progressbar_ceu, layout: false, locals: { label: 'Information Gathering', correct: @breakdown['Information Gathering'][:correct], possible: @breakdown['Information Gathering'][:possible] } %></h3>	
-			<h3><%= erb :progressbar_ceu, layout: false, locals: { offset: true, label: 'Decision Making', correct: @breakdown['Decision Making'][:correct], possible: @breakdown['Decision Making'][:possible] } %></h3>
-		</div>
-		
-		<% unless @average > 69 %>
-		<br />
-		<a href="/ceu/scenarios/<%= params[:id] %>/restart" class="btn btn-primary restart">Start Over</a>
-		<br /><br />
-		<strong>
-			<span style="color: #666666; font-size: 90%;">Answers are highlighted as follows:</span> &nbsp;
-			<span class="badge" style="color: white; background-color: green;">Correct</span> &nbsp;
-			<span class="badge" style="color: white; background-color: red;">Incorrect</span> &nbsp;
-			<span class="badge" style="color: white; background-color: blue;">No Value</span> &nbsp;
-			<span class="badge" style="color: white; background-color: #777777;">Not Chosen</span>
-		</strong>
-		<% end %>
 	</div>
 	
-	<% end %>
-			
-	<% if @average && @average > 69 %>
+	<div class="row">
+		<h3><%= erb :progressbar_ceu, layout: false, locals: { label: 'Information Gathering', correct: @breakdown['Information Gathering'][:correct], possible: @breakdown['Information Gathering'][:possible] } %></h3>	
+		<h3><%= erb :progressbar_ceu, layout: false, locals: { offset: true, label: 'Decision Making', correct: @breakdown['Decision Making'][:correct], possible: @breakdown['Decision Making'][:possible] } %></h3>
+	</div>
 	
-	<!-- <ul id="myTab" class="nav nav-pills">
-		<li class="active"><a href="#certificate" data-toggle="pill">Get My Certificate</a></li>
-		<li><a href="#test" data-toggle="pill">View Scenario</a></li>
-	</ul>
-	<hr /> -->
-	<div id="myTabContent" class="tab-content">
-		<div class="tab-pane active" id="certificate">
-			
-			<form method="post" id="/ceu/scenarios/:id/score/?">
-			
-			<% @user = User.get session[:user] %>
-			<div class="row">
-				<div class="span12">
-					<h3>
-						<img src="/img/check.png" class="pull-left" style="margin: 0.3em 1em 1em 0;" />You have passed CEU Scenario <%= @scenario.id %>.
-					</h3>
-					<p>Please review your account information and submit to receive your certificate.</p>
-					<br />
-					<div class="span9 offset1">
-					<address>
-					  <strong><%= @user.name %></strong><br>
-					  <%= @user.email %><br>
-					  <%= @user.phone %><br><br>
-					  <% if @user.license %><strong>License:</strong> <%= @user.license %></small><% end %>
-					</address>
-					<p><!-- <a href="#" class="btn btn-default">Edit</a> &nbsp;  --><a href="#" data-toggle="pill" class="btn btn-success">Submit</a></p>
-					<p><small>You cannot retake this exam after getting a passing score.<br />
-						<strong>NOTE:</strong> If your account information is incorrect please call 888-326-9229 before submitting your certificate.</small></p>
-						
-				</div>
-				</div>
-			</div>
-			
-		</form>
-			
-		</div>
+	<% unless @average > 69 %>
+	<br />
+	<a href="/ceu/scenarios/<%= params[:id] %>/restart" class="btn btn-primary restart">Start Over</a>
+	<br /><br />
+	<strong>
+		<span style="color: #666666; font-size: 90%;">Answers are highlighted as follows:</span> &nbsp;
+		<span class="badge" style="color: white; background-color: green;">Correct</span> &nbsp;
+		<span class="badge" style="color: white; background-color: red;">Incorrect</span> &nbsp;
+		<span class="badge" style="color: white; background-color: blue;">No Value</span> &nbsp;
+		<span class="badge" style="color: white; background-color: #777777;">Not Chosen</span>
+	</strong>
+	<% end %>
+</div>
+<% end %>
 
-		<div class="tab-pane fade" id="test">
+<!---- end well ---->
+			
+<% if @average > 69 %>
+
+<% @user = User.get session[:user] %>
+<div class="row">
+	<div class="span12">
+		<form method="post" id="/ceu/scenarios/:id/score/?">
+			<% @uses = Use.all(user_id: session[:user], scenario_id: params[:id]) %>	
+			<% @uses.each do |u| %>
+			<input type="checkbox" class="hidden" name="certificate" id="certificate" <%= 'checked' if u.certificate %> disabled/>
+			<% u.cert_date %>
+			<% unless u.cert_date %>
+			<h3>
+				<img src="/img/check.png" class="pull-left" style="margin: 0.3em 1em 1em 0;" />You have passed CEU Scenario <%= @scenario.id %>.
+			</h3>
+			<p>Please review your account information and submit to receive your certificate.</p>
+			<br />
+			<div class="span9 offset1">
+				<address>
+					<strong><%= @user.name %></strong><br>
+					<%= @user.email %><br>
+					<%= @user.phone %><br><br>
+					<% if @user.license %><strong>License:</strong> <%= @user.license %><% end %>
+				</address>
+				<p>
+					<input type="submit" class="btn btn-success" value="Submit" />
+				</p>
+				<p><small>You cannot retake this exam after getting a passing score.<br />
+					<strong>NOTE:</strong> If your account information is incorrect please call 888-326-9229 before submitting your certificate.</small>
+				</p>
+			</div>
+		</form>
+					<% else u.cert_date %>
+	</div>
+	
+	
+	<div class="span12">
+	<h3>
+		<img src="/img/check.png" class="pull-left" style="margin: 0.3em 1em 1em 0;" />Your Certificate for CEU Scenario <%= @scenario.id %> was submitted on <%= u.cert_date.display_short %>.
+	</h3>
+	<p style="margin-left: 3em;">This certificte will be sent to the NBCC and you will receive 3 Continuing Education Units.<br />
+		<small>Allow 3 working days for information to be received by NBCC.</small></p>
+	<br />
+	<p style="margin-left: 3em;">
+		<button class="btn btn-success">Download Certificate PDF</button>
+	</p>
+	<br />
+	<div class="well certificate">
+	<h1 class="center oswald">Continuing Education Certificate</h1>
+	<p><%= u.cert_date.display_short %></p>
+	<p>You received <strong>3 CEU Credits</strong> for passing Scenario <%= @scenario.id %>.</p>
+	<address>
+		<strong><%= @user.name %></strong><br>
+		<%= @user.email %><br>
+		<%= @user.phone %><br><br>
+		<% if @user.license %><strong>License:</strong> <%= @user.license %><% end %>
+	</address>
+	</div>
+</div>
+					<% end %>
+<% end %>
+	
+</div>
+
+</div>
+	
+<% elsif @average < 70 %>	
+	
+<!------------ EXAM VIEW ------------>
 			<%= markdown @scenario.body %>
 			<hr />
 			<% @questions.each do |question| %>

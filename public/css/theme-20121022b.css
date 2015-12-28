@@ -1409,7 +1409,22 @@ div.bubble {
 	color: #1c89de;
 }
 
-
+.certificate	{
+	width: 70%;
+	margin: 26px 10% 48px 10%;
+	border-color: #0e5fe1;
+	border-width: 6px;
+	border-color: #999999;
+	border-style: double; 
+	background-color: #ffffff;
+	padding: 48px;
+	-webkit-border-radius:22px;
+	-moz-border-radius:22px;
+	border-radius:22px;
+   -webkit-box-shadow: inset 0 0 40px 0 rgba(0, 0, 0, .2);
+   -moz-box-shadow: 0 2 2 rgba(0, 0, 0, .2);
+   box-shadow: 0 2 2 rgba(0, 0, 0, .2);
+}
 
 #slideshow {
     width: 900px;

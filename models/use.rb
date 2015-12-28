@@ -6,6 +6,9 @@ class Use
 	timestamps :at
 
 	property :sample, Boolean, default: false
+  
+  property :certificate, 	Boolean, default: false
+  property :cert_date, 	  Date
    
 	belongs_to :user
 	belongs_to :scenario, required: false

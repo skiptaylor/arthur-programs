@@ -9,8 +9,6 @@ class Score
 	property :score_type,   String,	 default: 'Undefined'
 	property :countable,	  Boolean, default: true
 	property :required, 	  Boolean, default: false
-  property :certificate, 	Boolean, default: false
-  
 
 	belongs_to :user
 	belongs_to :answer
