@@ -95,13 +95,13 @@
 		<small>Allow 3 working days for information to be received by NBCC.</small></p>
 	<br />
 	<p style="margin-left: 3em;">
-		<button class="btn btn-success">Download Certificate PDF</button>
+		<button class="btn btn-success" disabled>Download Certificate PDF</button>
 	</p>
 	<br />
 	<div class="well certificate">
 	<h1 class="center oswald">Continuing Education Certificate</h1>
-	<p><%= u.cert_date.display_short %></p>
-	<p>You received <strong>3 CEU Credits</strong> for passing Scenario <%= @scenario.id %>.</p>
+	<p class="center"><strong><%= u.cert_date.display_short %></strong><br /><br />
+	You received <strong>3 CEU Credits</strong> for passing Scenario <%= @scenario.id %>.</p>
 	<address>
 		<strong><%= @user.name %></strong><br>
 		<%= @user.email %><br>
