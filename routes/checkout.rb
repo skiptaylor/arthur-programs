@@ -41,7 +41,7 @@ post '/checkout/:product/?' do
 		params[:password].downcase!
     params[:license].strip!
   end
-	params[:name] = "#{params[:first_name]} #{params[:last_name]}"
+	params[:name] = "#{params[:first_name]} #{params[:last_name].strip}"
 	params[:address1].strip!
 	params[:address2].strip!
 	params[:city].strip!
