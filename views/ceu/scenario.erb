@@ -111,7 +111,7 @@
 		<img src="/img/nbcc.png" class="pull-right" style="width: 240px;" />
 		<br /><br /><br /><br />
 	<h1 class="center oswald">Certificate of Completion</h1>
-	<h3 class="center"><strong><%= u.cert_name %> <%= @user.name %></strong></h3>
+	<h2 class="center"><strong><%= u.cert_name %> <%= @user.name %></strong></h2>
 	<p class="center">License/Credential Number: <strong><% if @user.license %><%= @user.license %><% end %></strong></p>
 	<!-- <p class="center"><% if @user.license %><strong>License:</strong> <%= @user.license %><% end %></p> -->
 	<p class="center"><strong>On <%= u.cert_date.display_short %> <%= @user.name %> successfully completed all requirements <br />of the Arthur-Brende CEU Study Program.</strong></p>
@@ -128,9 +128,10 @@
 			License #: xxxxxxxxxx</small>
 		</div>
 	</div>
-	<br />
-	<p class="center clearfix">NBCC-Approved Continuing Education Provider Number XXXXX</p>
+	
 	<hr />
+	<p class="center clearfix">NBCC-Approved Continuing Education Provider Number XXXXX</p>
+	
 	<p class="center"><small>Career Training Concepts, Inc. &bull; 3640 Hewatt Court, Snellville, GA 30039<br />
 		Toll Free: 888-326-9229 &bull; Fax: 770-672-8099 &bull; www.counselorexams.com</small></p>
 	</div>
