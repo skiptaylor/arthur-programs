@@ -107,25 +107,28 @@
 	</p>
 	<br />
 	<div class="well certificate">
+		<img src="/img/ctc.png" class="pull-left" style="width: 150px;" />
+		<img src="/img/nbcc.png" class="pull-right" style="width: 240px;" />
+		<br /><br /><br /><br />
 	<h1 class="center oswald">Certificate of Completion</h1>
 	<h3 class="center"><strong><%= u.cert_name %> <%= @user.name %></strong></h3>
 	<p class="center">License/Credential Number: <strong><% if @user.license %><%= @user.license %><% end %></strong></p>
 	<!-- <p class="center"><% if @user.license %><strong>License:</strong> <%= @user.license %><% end %></p> -->
 	<p class="center">On <%= u.cert_date.display_short %> <%= @user.name %> successfully completed all requirements <br />of the Arthur-Brende CEU Study Program.</p>
-	<p class="center"><%= @user.name %> is awarded 2 hours of Continuing Education Units (CEU)</p><br /><br />
+	<p class="center"><%= @user.name %> is awarded 2 hours of Continuing Education Units (CEU)</p><br />
 	<div class="row">
 		<div class="span3">
 			<span style="font-family: fantasy; font-size: 2em; color: #1c89de;">Gary Arthur</span><br />
-			Gary L. Arthur, Ed., LPC, NCC<br />
-			License #: xxxxxxxxxx
+			<small>Gary L. Arthur, Ed., LPC, NCC<br />
+			License #: xxxxxxxxxx</small>
 		</div>
 		<div class="span3 pull-right">
 			<span style="font-family: fantasy; font-size: 2em; color: #1c89de;">Joel Brende</span><br />
-			Joel O. Brende, M.D.<br />
-			License #: xxxxxxxxxx
+			<small>Joel O. Brende, M.D.<br />
+			License #: xxxxxxxxxx</small>
 		</div>
 	</div>
-	<br /><br />
+	<br />
 	<p class="center clearfix">NBCC-Approved Continuing Education Provider Number XXXXX</p>
 	<hr />
 	<p class="center"><small>Career Training Concepts, Inc.' 3640 Hewatt Court, Snellville, GHA 30039<br />
