@@ -36,7 +36,9 @@
 			<hr />
 			<p>
 				<% if @user.admin? %>
-					No expiration date.
+					<small>No expiration date.</small>
+				<% elsif @user.ceu_scenario %>
+					<small>Active CEU Account</small>
 				<% else %>
 					<% if (@user.expiration_date - 30) > Time.now.to_date %>
 						<small>Account expires on <strong><%= @user.expiration_date.display :american_day %></strong>.</small>
@@ -67,6 +69,7 @@
 			</div>
 		<% end %>
 	<% end %> 
+	
  <!-- –––––––––––––––––– nce –––––––––––––––––– -->
 
 	<% if @user.max_exams > 0 %>
@@ -225,7 +228,7 @@
       <% Message.all(ceu: true).each do |m| %>
         <div class="alert alert-info" style="border: none;"><%= m.body %></div>
       <% end %>
-	 	<% unless @user.expired? || (@user.remaining_ceu_scenario < 1) %>
+	 	<% unless (@user.remaining_ceu_scenario < 1) %>
 		<p><a href="/ceu/scenarios">Choose a scenario</a> to get started.</p>
 		<% end %>
 		<table class="table table-condensed table-striped table-hover">
@@ -269,12 +272,12 @@
 								<strong><%= ((average.created_at + 30) - Time.now.to_date).to_i %></strong>
 								<% else %>
 								0
-								<% end %> Days <!-- &nbsp; <span style="color: #bc1424;"><small><%= average.created_at.to_date %></small></span> -->
+								<% end %> Days &nbsp; <span style="color: #bc1424;"><small><%= average.created_at.to_date %></small></span>
 							<% end %>
 						</td>
 						<td style="text-align: right;">
 						<% unless avg == nil %>	
-							<% unless @user.expired? || avg == nil %>
+							<% unless avg == nil %>
 								<% if (((average.created_at + 30) - Time.now.to_date).to_i) < 1 %>
 									<span style="color: red;"><small>Expired</small></span>
 								<% elsif avg.score > 69 %>

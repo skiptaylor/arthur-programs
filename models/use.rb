@@ -9,6 +9,7 @@ class Use
   
   property :certificate, 	Boolean, default: false
   property :cert_date, 	  Date
+  property :cert_name, 	  String,	 default: ""
    
 	belongs_to :user
 	belongs_to :scenario, required: false

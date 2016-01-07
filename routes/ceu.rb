@@ -25,7 +25,7 @@ get '/ceu/scenarios/?' do
 end
 
 get '/ceu/scenarios/:id/?' do
-	expired?
+	# expired?
 
 	@scenario = Scenario.get params[:id]
 
@@ -55,7 +55,7 @@ get '/ceu/scenarios/:id/?' do
 end
 
 get '/ceu/scenarios/:id/score/?' do
-	expired?
+	# expired?
 
 	@scenario = Scenario.get params[:id]
 
