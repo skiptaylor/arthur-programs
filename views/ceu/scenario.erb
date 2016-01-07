@@ -37,6 +37,8 @@
 	
 	<% unless @average > 69 %>
 	<br />
+	<p style="color: #c70004;"><strong>You did not score the required minimum of 70%. The selections you made are shown below with the point value(s) associated with each selection. Once you are done reviewing your selections, click on the START OVER button to retake your CEU.</strong></p>
+	<br />
 	<a href="/ceu/scenarios/<%= params[:id] %>/restart" class="btn btn-primary restart">Start Over</a>
 	<br /><br />
 	<strong>
@@ -143,11 +145,11 @@
 						%>
 				<label class="checkbox <%= style if @average && @scores.include?(answer.id) %>">
 					<input type="checkbox" class="<%= 'required' if answer.required? %>" id="<%= answer.id %>" name="<%= answer.id %>" <%= 'checked' if @scores.include?(answer.id) %> <%= 'disabled' if @average || @scores.include?(answer.id) %>>
-					<!-- <% if @average %>
+					<% if @average %>
 						<strong>
 							<span class="badge"><%= '+' if answer.value > 0 %><%= answer.value %></span>
 						</strong>
-					<% end %> -->
+					<% end %>
 					<%= answer.body.sub /\w[.]/, '' %>
 				</label>
 				<blockquote style="<%= hidden unless @average || @scores.include?(answer.id) %>" class="<%= style if (@average && @scores.include?(answer.id)) || answer.required? %>" id="response-<%= answer.id %>">
