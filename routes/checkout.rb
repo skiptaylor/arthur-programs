@@ -47,7 +47,7 @@ post '/checkout/:product/?' do
 	params[:city].strip!
 	params[:state].strip!
 	params[:zip].strip!
-  params[:license].strip!
+  params[:license]
 	
   if params[:user_id]
 		user = User.get params[:user_id]
