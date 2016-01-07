@@ -248,7 +248,7 @@
 
 					<tr>
 						<td>
-							<%= average.scenario_id %>. <%= average.scenario.title %>
+							<%= average.scenario_id %>. <%= average.scenario.title %><span class="pull-right" style="color: #bc1424;"><small><%= average.created_at.to_date %></small></span>
 						</td>
 						<td style="text-align: center;">
 							<% if avg = Average.last(user_id: session[:user], scenario_id: average.scenario_id) %>
@@ -272,7 +272,7 @@
 								<strong><%= ((average.created_at + 30) - Time.now.to_date).to_i %></strong>
 								<% else %>
 								0
-								<% end %> Days &nbsp; <span style="color: #bc1424;"><small><%= average.created_at.to_date %></small></span>
+								<% end %> Days
 							<% end %>
 						</td>
 						<td style="text-align: right;">
