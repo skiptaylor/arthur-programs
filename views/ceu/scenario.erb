@@ -68,20 +68,26 @@
 			<h3>
 				<img src="/img/check.png" class="pull-left" style="margin: 0.3em 1em 1em 0;" />You have passed CEU Scenario <%= @scenario.id %>.
 			</h3>
-			<p>Please review your account information and submit to receive your certificate.</p>
+			<p style="margin-left: 3em;">You cannot retake this exam after getting a passing score.<br />Please review your account information below. If your account information is incorrect please call 888-326-9229.<br />Please enter your name as you want it to appear on your certificate.</p>
 			<br />
 			<div class="span9 offset1">
 				<address>
 					<strong><%= @user.name %></strong><br>
 					<%= @user.email %><br>
-					<%= @user.phone %><br><br>
-					<% if @user.license %><strong>License:</strong> <%= @user.license %><% end %>
+					<% if @user.license %><strong>License:</strong> <%= @user.license %><% end %><br /><br />
+					
+					
+					<div class="control-group" id="name-group">
+						<label class="control-label" for="cert_name">Name to appear on certificate</label>
+						<div class="controls">
+							<input type="text" class="input-xlarge" id="cert_name" name="cert_name" value="<%= u.cert_name %>">
+						</div>
+					</div>
+					
+					
 				</address>
 				<p>
 					<input type="submit" class="btn btn-success" value="Submit" />
-				</p>
-				<p><small>You cannot retake this exam after getting a passing score.<br />
-					<strong>NOTE:</strong> If your account information is incorrect please call 888-326-9229 before submitting your certificate.</small>
 				</p>
 			</div>
 		</form>
