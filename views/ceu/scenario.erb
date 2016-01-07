@@ -107,15 +107,29 @@
 	</p>
 	<br />
 	<div class="well certificate">
-	<h1 class="center oswald">Continuing Education Certificate</h1>
-	<p class="center"><strong><%= u.cert_date.display_short %></strong><br /><br />
-	You received <strong>3 CEU Credits</strong> for passing Scenario <%= @scenario.id %>.</p>
-	<address>
-		<strong><%= @user.name %></strong><br>
-		<%= @user.email %><br>
-		<%= @user.phone %><br><br>
-		<% if @user.license %><strong>License:</strong> <%= @user.license %><% end %>
-	</address>
+	<h1 class="center oswald">Certificate of Completion</h1>
+	<h3 class="center"><strong><%= u.cert_name %> <%= @user.name %></strong></h3>
+	<p class="center">License/Credential Number: <strong><% if @user.license %><%= @user.license %><% end %></strong></p>
+	<!-- <p class="center"><% if @user.license %><strong>License:</strong> <%= @user.license %><% end %></p> -->
+	<p class="center">On <%= u.cert_date.display_short %> <%= @user.name %> successfully completed all requirements <br />of the Arthur-Brende CEU Study Program.</p>
+	<p class="center"><%= @user.name %> is awarded 2 hours of Continuing Education Units (CEU)</p><br /><br />
+	<div class="row">
+		<div class="span3">
+			<span style="font-family: fantasy; font-size: 2em; color: #1c89de;">Gary Arthur</span><br />
+			Gary L. Arthur, Ed., LPC, NCC<br />
+			License #: xxxxxxxxxx
+		</div>
+		<div class="span3 pull-right">
+			<span style="font-family: fantasy; font-size: 2em; color: #1c89de;">Joel Brende</span><br />
+			Joel O. Brende, M.D.<br />
+			License #: xxxxxxxxxx
+		</div>
+	</div>
+	<br /><br />
+	<p class="center clearfix">NBCC-Approved Continuing Education Provider Number XXXXX</p>
+	<hr />
+	<p class="center"><small>Career Training Concepts, Inc.' 3640 Hewatt Court, Snellville, GHA 30039<br />
+		Toll Free: 888-326-9229 &bull; Fax: 770-672-8099 &bull; www.counselorexams.com</small></p>
 	</div>
 </div>
 					<% end %>
