@@ -66,7 +66,7 @@
 			<% u.cert_date %>
 			<% unless u.cert_date %>
 			<h3>
-				<img src="/img/check.png" class="pull-left" style="margin: 0.3em 1em 1em 0;" />You have passed CEU Scenario <%= @scenario.id %>.
+				<img src="/img/check.png" class="pull-left" style="margin: 0.3em 1em 1em 0;" />You have passed CEU Scenario <%= @scenario.id %> on <%= u.cert_date.display_short %>.
 			</h3>
 			<p style="margin-left: 3em;">You cannot retake this exam after getting a passing score.<br />Please review your account information below. If your account information is incorrect please call 888-326-9229.<br />Please complete short NBCC survey and submit to get your certificate.</p>
 			
