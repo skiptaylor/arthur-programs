@@ -330,8 +330,9 @@
         <thead>
           <tr>
 				<th>Scenario</th>
-				
-				<th>Taken On</th>
+				<th>Created On</th>
+				<th>Expires On</th>
+				<th>Last Taken</th>
           </tr>
         </thead>
         <tbody>
@@ -339,7 +340,12 @@
             <% if average.scenario.ceu? %>
               <tr>
                 <td><%= average.scenario_id %>. <%= average.scenario.title %></td>
-					
+					<td><%= average.created_at.display_short %></td>
+					<% if ((average.created_at + 30) - Time.now.to_date) > 0 %>
+					<td><%= (average.created_at + 30).display_short %></td>
+					<% else %>
+					<td style="color: #c70004;"><%= (average.created_at + 30).display_short %></td>
+					<% end %>
 					<td><%= average.updated_at.display_short if average %></td>
               </tr>
             <% end %>
