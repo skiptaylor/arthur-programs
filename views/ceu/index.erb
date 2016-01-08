@@ -61,11 +61,11 @@
 				<% average = Use.first(user_id: session[:user], scenario_id: scenario.id) %>		
 				
 				<% if avg %>
-				<% if avg.score > 69 %>
+					<% if avg.score > 69 %>
 					<p><a class="btn btn-small btn-success" href="/ceu/scenarios/<%= scenario.id %>"><strong><i class="icon-ok icon-white"></i>  &nbsp;Passed scenario <%= scenario.id %></strong></a></p>
 					
 					
-					<% elsif ((average.created_at + 30) - Time.now.to_date).to_i < 1 %>
+					<% elsif ((average.created_at + 30) - Time.now.to_date).to_i < 0 %>
 						<p class="btn btn-small btn-danger">Expired</p>
 					
 					<% else %>
@@ -77,6 +77,8 @@
 						0
 						<% end %> Days Remaining</p>
 					<% end %>
+				<% elsif (((average.created_at + 30) - Time.now.to_date).to_i < 0) && (avg == nil) %>
+					<p class="btn btn-small btn-danger">Expired</p>
 				<% elsif avg == nil %>
 				<p><a class="btn btn-small btn-info" href="/ceu/scenarios/<%= scenario.id %>">Continue with scenario <strong><%= scenario.id %></strong></a></p>
 				<% else %>

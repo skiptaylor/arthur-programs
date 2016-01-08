@@ -284,10 +284,14 @@
 							<% else %>
 								<a href="/ceu/scenarios/<%= average.scenario_id %>">Review</a>
 							<% end %>
-
 						<% else %>
+							<% if (((average.created_at + 30) - Time.now.to_date).to_i) < 0 %>
+								<span style="color: red;"><small>Expired</small></span>
+							<% else %>
 								<a href="/ceu/scenarios/<%= average.scenario_id %>">Continue</a>
+							<% end %>
 						<% end %>
+						
 						</td>
 					</tr>
 					<% end %>
