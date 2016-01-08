@@ -68,27 +68,115 @@
 			<h3>
 				<img src="/img/check.png" class="pull-left" style="margin: 0.3em 1em 1em 0;" />You have passed CEU Scenario <%= @scenario.id %>.
 			</h3>
-			<p style="margin-left: 3em;">You cannot retake this exam after getting a passing score.<br />Please review your account information below. If your account information is incorrect please call 888-326-9229.<br />Please enter your name as you want it to appear on your certificate.</p>
+			<p style="margin-left: 3em;">You cannot retake this exam after getting a passing score.<br />Please review your account information below. If your account information is incorrect please call 888-326-9229.<br />Please complete required NBCC survey and submit to get your certificate.</p>
 			<br />
-			<div class="span9 offset1">
-				<address>
+
+				<address style="margin-left: 6em;">
 					<strong><%= @user.name %></strong><br>
 					<%= @user.email %><br>
-					<% if @user.license %><strong>License:</strong> <%= @user.license %><% end %><br /><br />
-					
-					
-					<div class="control-group" id="name-group">
-						<label class="control-label" for="cert_name">Name to appear on certificate</label>
-						<div class="controls">
-							<input type="text" class="input-xlarge" id="cert_name" name="cert_name" value="<%= u.cert_name %>">
-						</div>
-					</div>
-					
-					
+					<% if @user.license %><strong>License:</strong> <%= @user.license %><% end %><br />
 				</address>
-				<p>
-					<input type="submit" class="btn btn-success" value="Submit" />
-				</p>
+	</div>	
+	<div class="span12" >	
+				<h3>Course Evaluation for the Arthur-Brende CEU Study Program &nbsp; <small>All fields required</small></h3>
+				<p><small>Sponsor: Career Training Concepts Inc. NBCC ACEP # xxxxxxxxxx</small></p>
+	</div>
+	<div class="span5" style="margin-top: 1em;">
+				<div class="control">
+					<label class="control-label" for="cert_name">Name to display on certificate</label>
+					<div class="controls">
+						<input type="text" class="input-xlarge"  id="cert_name" name="cert_name" value="<%= u.cert_name %>">
+					</div>
+				</div>
+				<div class="control">
+					<label class="control-label" for="address1">Address 1</label>
+					<div class="controls">
+						<input type="text" class="input-xlarge" id="address1" name="address1" />
+					</div>
+				</div>
+				<div class="control">
+					<label class="control-label" for="address2">Address 2</label>
+					<div class="controls">
+						<input type="text" class="input-xlarge" id="address2" name="address2" />
+					</div>
+				</div>	
+				<div class="control">
+					<label class="control-label" for="city">City, State Zip</label>
+					<div class="controls">
+						<input type="text" class="span2" id="city" name="city" />,
+						<select type="text" name="state" class="span1" id="state">
+							<option>  </option>
+							<% State.all(:order => :name).each do |state| %>
+							<option value="<%= state.abbr %>"><%= state.abbr %></option>
+							<% end %>
+						</select>
+						<input type="text" class="span1" id="zip" name="zip" />
+						<span class="help-inline" id="tax"></span>
+					</div>
+				</div>
+				<div class="control">
+					<label class="control-label" for="address2">Completion Date</label>
+					<div class="controls">
+						<input type="text" class="input-xlarge" id="address2" name="address2" />
+					</div>
+				</div>
+			</div>
+			<div class="span7" style="margin-top: 1em;">
+				<div class="control">
+					<label class="control-label" for="address1">What type of organization do you work for?</label>
+					<div class="controls">
+						<input type="text" style="width: 100%;" id="address1" name="address1" />
+					</div>
+				</div>
+				<div class="control">
+					<label class="control-label" for="address1">How did you become aware of this CEU program?</label>
+					<div class="controls">
+						<input type="text" style="width: 100%;" id="address1" name="address1" />
+					</div>
+				</div>
+				<div class="control">
+					<label class="control-label" for="address1">Do you feel this program met your expectations as a mental health professional?</label>
+					<div class="controls">
+						<input type="text" style="width: 100%;" id="address1" name="address1" />
+					</div>
+				</div>
+				<div class="control-group inline">
+					<label for="" class="control-label">Would you refer colleagues to this CEU Program? &nbsp; &nbsp; 
+						<label class="radio inline" style="margin-top: -5px;">
+						  <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+						  Yes
+						</label>
+						<label class="radio inline" style="margin-top: -5px;">
+						  <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+						  No
+						</label>
+					</label>
+				</div> 
+				<div class="control">
+					<label class="control-label" for="status">Please rate the overall score for this CEU &nbsp; &nbsp; 
+					
+						<select name="status" id="status" class="form-control" style="margin-top: 6px;">
+							<option value="Superior" <%= 'selected' if @user.name == 'Superior' %>>Superior</option>
+							<option value="Above Average" <%= 'selected' if @user.name == 'Above Average' %>>Above Average</option>
+							<option value="Average" <%= 'selected' if @user.name == 'Average' %>>Average</option>
+							<option value="Below Average" <%= 'selected' if @user.name == 'Below Average' %>>Below Average</option>
+							<option value="Drying" <%= 'Poor' if @user.name == 'Poor' %>>Poor</option>
+						</select>
+					</label>
+				</div>				
+				<div class="control-group">
+					<label class="control-label" for="address1">Please explain your score:</label>
+					<div class="controls">
+						<input type="text" style="width: 100%;" id="address1" name="address1" />
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label" for="address1"></label>
+					<div class="controls">
+						<input type="submit" class="btn btn-success" value="Submit for Certificate" />
+					</div>
+				</div>
+				
 			</div>
 		</form>
 					<% else u.cert_date %>
@@ -184,7 +272,7 @@
 			</form>
 			<%= markdown question.notes if @average && question.notes %>
 		</div>
-		<hr />
+		<hr style="border-width: 3px;" />
 		<% end %>
 	</div>
 </div>
