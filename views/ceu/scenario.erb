@@ -68,7 +68,7 @@
 			<h3>
 				<img src="/img/check.png" class="pull-left" style="margin: 0.3em 1em 1em 0;" />You have passed CEU Scenario <%= @scenario.id %>.
 			</h3>
-			<p style="margin-left: 3em;">You cannot retake this exam after getting a passing score.<br />Please review your account information below. If your account information is incorrect please call 888-326-9229.<br />Please complete required NBCC survey and submit to get your certificate.</p>
+			<p style="margin-left: 3em;">You cannot retake this exam after getting a passing score.<br />Please review your account information below. If your account information is incorrect please call 888-326-9229.<br />Please complete short NBCC survey and submit to get your certificate.</p>
 			
 
 				<address style="margin-left: 6em;">
@@ -162,11 +162,11 @@
 					<label class="control-label" for="status">Please rate the overall score for this CEU &nbsp; &nbsp; 
 					
 						<select name="status" id="status" class="form-control" style="margin-top: 6px;">
-							<option value="Superior" <%= 'selected' if @user.name == 'Superior' %>>Superior</option>
-							<option value="Above Average" <%= 'selected' if @user.name == 'Above Average' %>>Above Average</option>
-							<option value="Average" <%= 'selected' if @user.name == 'Average' %>>Average</option>
-							<option value="Below Average" <%= 'selected' if @user.name == 'Below Average' %>>Below Average</option>
-							<option value="Drying" <%= 'Poor' if @user.name == 'Poor' %>>Poor</option>
+							<option value="Superior" <%= 'selected' if @user.hear_about_us == 'Superior' %>>Superior</option>
+							<option value="Above Average" <%= 'selected' if @user.hear_about_us == 'Above Average' %>>Above Average</option>
+							<option value="Average" <%= 'selected' if @user.hear_about_us == 'Average' %>>Average</option>
+							<option value="Below Average" <%= 'selected' if @user.hear_about_us == 'Below Average' %>>Below Average</option>
+							<option value="Drying" <%= 'Poor' if @user.hear_about_us == 'Poor' %>>Poor</option>
 						</select>
 					</label>
 				</div>				
