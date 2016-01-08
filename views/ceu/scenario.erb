@@ -69,7 +69,7 @@
 				<img src="/img/check.png" class="pull-left" style="margin: 0.3em 1em 1em 0;" />You have passed CEU Scenario <%= @scenario.id %>.
 			</h3>
 			<p style="margin-left: 3em;">You cannot retake this exam after getting a passing score.<br />Please review your account information below. If your account information is incorrect please call 888-326-9229.<br />Please complete required NBCC survey and submit to get your certificate.</p>
-			<br />
+			
 
 				<address style="margin-left: 6em;">
 					<strong><%= @user.name %></strong><br>
@@ -135,19 +135,25 @@
 					</div>
 				</div>
 				<div class="control">
-					<label class="control-label" for="address1">Do you feel this program met your expectations as a mental health professional?</label>
-					<div class="controls">
-						<input type="text" style="width: 100%;" id="address1" name="address1" />
-					</div>
-				</div>
-				<div class="control-group inline">
-					<label for="" class="control-label">Would you refer colleagues to this CEU Program? &nbsp; &nbsp; 
-						<label class="radio inline" style="margin-top: -5px;">
+					<label class="control-label" for="address1">Do you feel this program met your expectations as a mental health professional? &nbsp; &nbsp; <br />
+						<label class="radio inline">
 						  <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
 						  Yes
 						</label>
-						<label class="radio inline" style="margin-top: -5px;">
+						<label class="radio inline">
 						  <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+						  No
+						</label>
+					</label>
+				</div>
+				<div class="control" style="margin-top: 12px;">
+					<label for="" class="control-label">Would you refer colleagues to this CEU Program? &nbsp; &nbsp; <br />
+						<label class="radio inline" >
+						  <input type="radio" name="optionsRadios2" id="optionsRadios3" value="option3" checked>
+						  Yes
+						</label>
+						<label class="radio inline">
+						  <input type="radio" name="optionsRadios2" id="optionsRadios3" value="option3">
 						  No
 						</label>
 					</label>
