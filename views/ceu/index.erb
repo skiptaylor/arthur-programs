@@ -77,10 +77,13 @@
 						0
 						<% end %> Days Remaining</p>
 					<% end %>
-				<% elsif (((average.created_at + 30) - Time.now.to_date).to_i < 0) && (avg == nil) %>
+				<% elsif (avg == nil) && average %>
+					<% if (((average.created_at + 30) - Time.now.to_date).to_i < 0) %>
 					<p class="btn btn-small btn-danger">Expired</p>
-				<% elsif avg == nil %>
+					
+				<% elsif average %>
 				<p><a class="btn btn-small btn-info" href="/ceu/scenarios/<%= scenario.id %>">Continue with scenario <strong><%= scenario.id %></strong></a></p>
+				<% end %>
 				<% else %>
 					<p><a class="btn btn-small btn-primary" href="/ceu/scenarios/<%= scenario.id %>">Take scenario <strong><%= scenario.id %></strong></a></p>
 				<% end %>
