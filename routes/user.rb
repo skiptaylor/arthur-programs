@@ -29,6 +29,7 @@ end
 get '/sign-out/?' do
 	session[:user] 	 = nil
 	session[:admin]  = nil
+  session[:ceu]    = nil
 	session[:sample] = nil
 	session.clear
 	session[:alert]  = { style: 'alert-info', heading: 'You are now signed out.', message: 'Thank you, come again!' }
@@ -110,7 +111,7 @@ post '/profile/?' do
 
 	user.update(email: params[:email], phone: params[:phone])
 	user.update(password: params[:password]) if params[:password].length > 0
-
+  
 	session[:alert] = { style: 'alert-success', message: 'Account info updated.' }
 
 	redirect '/profile'

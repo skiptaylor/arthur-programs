@@ -21,7 +21,8 @@ class User
 	property :pass_reset_key,	String
 	property :pass_reset_date, Date
 
-	property :admin, Boolean, default: false
+	property :admin,  Boolean, default: false
+  property :ceu,    Boolean, default: false
 
 	property :name,  				 String
 	property :phone, 				 String

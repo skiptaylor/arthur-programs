@@ -5,7 +5,7 @@ get '/admin/users/?' do
 	if params[:search] && !params[:search].nil?
 		@users = User.all(conditions: ["email ILIKE ? or name ILIKE ? or license ILIKE ?", "%#{params[:search].strip}%", "%#{params[:search].strip}%", "%#{params[:search].strip}%"], limit: 100)
 	else
-		@users = User.all(:email.not => 'sample', order: [:updated_at.desc], limit: 300)
+		@users = User.all(:email.not => 'sample', order: [:updated_at.desc], limit: 100)
 	end
 	erb :'admin/users'
 end
@@ -39,6 +39,7 @@ post '/admin/users/new/?' do
   puts 'Creating user'
 	user = User.create(
 		admin: 					 	false,
+    ceu:              false, 
 		email: 					 	params[:email],
 		password: 			 	params[:password],
 		name:  				 	 	params[:name],
@@ -59,6 +60,9 @@ post '/admin/users/new/?' do
 	
   puts 'Updating admin'
 	user.update(admin: true) if params[:admin]
+  
+  puts 'Updating ceu'
+  user.update(ceu: true) if params[:ceu]
 	
   puts 'Updating downloads'
 	user.update(ncmhce_downloads: true) if params[:ncmhce_downloads]
@@ -69,7 +73,7 @@ post '/admin/users/new/?' do
   user.update(ceu_scenario: true) if params[:ceu_scenario]
   
   user.update(practice_exams: true) if params[:practice_exams]
-
+  
   puts 'Setting session and redirecting'
 	session[:alert] = { style: 'alert-success', message: "#{user.name} has been created." }
 	redirect "/admin/users/#{user.id}"
@@ -105,6 +109,8 @@ post '/admin/users/:id/?' do
 	params[:max_scenarios].is_numeric? ? params[:max_scenarios] = params[:max_scenarios].to_i : params[:max_scenarios] = user.max_scenarios
 	params[:ceu_scenario].is_numeric? ? params[:ceu_scenario] = params[:ceu_scenario].to_i : params[:ceu_scenario] = user.ceu_scenario
   
+  params[:ceu] ? params[:ceu] = params[:ceu] : params[:ceu] = user.ceu
+  
 	user.update(
 		email: 				 	 params[:email],
 		name:  				 	 params[:name],
@@ -138,6 +144,7 @@ post '/admin/users/:id/?' do
 	user.update(password: params[:password]) unless params[:password].length == 0
 		
 	params[:admin] ? user.update(admin: true) : user.update(admin: false)
+  params[:ceu] ? user.update(ceu: true) : user.update(ceu: false)
 	params[:ncmhce_downloads] ? user.update(ncmhce_downloads: true) : user.update(ncmhce_downloads: false)
 	params[:nce_downloads] ? user.update(nce_downloads: true) : user.update(nce_downloads: false)
 	

@@ -39,7 +39,7 @@ post '/checkout/:product/?' do
 		params[:email].downcase!
 		params[:password].strip!
 		params[:password].downcase!
-    params[:license].strip!
+    params[:license]
   end
 	params[:name] = "#{params[:first_name]} #{params[:last_name]}"
 	params[:address1].strip!
@@ -103,6 +103,7 @@ post '/checkout/:product/?' do
     params[:package] = 'CEU: Single Scenario'
                email = 'ceu'
                  msg = true
+            user.ceu = true
 
   when 'NCE Upgrade'
     user.max_exams = (user.max_exams + 2)
@@ -138,12 +139,11 @@ post '/checkout/:product/?' do
     elsif (params[:package] == 'Account Expiration')
       user.expiration_date = (DateTime.now + 90)
   	elsif (params[:package] == 'CEU: Single Scenario')
-  		user.expiration_date = (DateTime.now + 731),
-        user.max_exams = 0,
-        user.max_scenarios = 0,
-        user.nce_downloads = false,
-        user.ncmhce_downloads = false,
-        user.license = params[:license]
+       user.expiration_date = (DateTime.now + 731),
+       user.max_exams = 0,
+       user.max_scenarios = 0,
+       user.nce_downloads = false,
+       user.ncmhce_downloads = false
   	elsif (params[:package] == 'NCMHCE: Hard Copy') || (params[:package] == 'NCE: Hard Copy')
   		user.expiration_date = (user.expiration_date + 0)
 		else

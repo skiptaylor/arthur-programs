@@ -97,16 +97,20 @@
 					<input type="checkbox" name="workshop_scenarios" id="workshop_scenarios" <%= 'checked' if @user.workshop_scenarios %> />
 				</div>
 			</div>
-			
-			<div class="control-group" id="ceu-scenarios-group">
-				<label class="control-label" for="ceu_scenario">CEU Scenarios</label>
+			<div class="control-group" id="ceu-scenarios-group">	
+				<label class="control-label" style="margin-bottom: -10px;" for="ceu">CEU Account</label>
 				<div class="controls">
-					<input type="checkbox" name="ceu_scenario" id="ceu_scenario" <%= 'checked' if @user.ceu_scenario %> /> &nbsp; &nbsp; &nbsp; &nbsp;
-					License &nbsp; <input type="text" class="span3" id="license" name="license" value="<%= @user.license %>" >
+					<input type="checkbox" name="ceu" id="ceu" <%= 'checked' if @user.ceu %> />
 				</div>
 			</div>
-			
 			<div class="control-group" id="ceu-scenarios-group">
+				<label class="control-label" style="margin-top: -10px;" for="ceu_scenario">CEU Scenarios</label>
+				<div class="controls" style="margin-top: -10px;">
+					<input type="checkbox" name="ceu_scenario" id="ceu_scenario" <%= 'checked' if @user.ceu_scenario %> /> &nbsp; &nbsp; &nbsp; &nbsp;
+					License &nbsp; <input type="text" class="span3" id="license" name="license" value="<%= @user.license %>" />
+				</div>
+			</div>
+			<div class="control-group" id="practice-exams-group">
 				<label class="control-label" for="practice_exams">Practice Exams</label>
 				<div class="controls">
 					<input type="checkbox" name="practice_exams" id="practice_exams" <%= 'checked' if @user.practice_exams %> />

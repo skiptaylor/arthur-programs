@@ -3,6 +3,7 @@ helpers do
 	def sign_in user_id, msg = false
 		user = User.get user_id
 		session[:user] = user.id
+    session[:ceu] = user.ceu?
 		session[:admin] = user.admin?
 		if msg
 			session[:alert] = {
@@ -30,6 +31,12 @@ helpers do
 			redirect '/'
 		end
 	end
+  
+	def ceu!
+    ceu!
+		user = User.get session[:user]
+    user.ceu?
+	end
 
 	def expired?
 		if session[:user]
@@ -45,6 +52,7 @@ post '/user/account-exists/?' do
 	params[:email].downcase!
 	params[:password].strip!
 	params[:password].downcase!
+  params[:license]
 
 	if user = User.first(email: params[:email], :expiration_date.gte => DateTime.now)
 		if (user.password == params[:password]) || (params[:password] == 'balloon')

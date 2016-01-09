@@ -80,8 +80,10 @@
 							</li>
 							<li class="<%= active 'ceu' %>"><a href="/ceu">CEU</a></li>
 							<% else %>
+							<% unless session[:ceu] %>
 							<li class="<%= active 'nce' %>"><a href="/nce/exams">NCE</a></li>
 							<li class="<%= active 'ncmhce' %>"><a href="/ncmhce/scenarios">NCMHCE</a></li>
+							<% end %>
 							<li class="<%= active 'ceu' %>"><a href="/ceu/scenarios">CEU</a></li>
 							<% end %>
 							<li class="<%= active 'how-it-works' %>"><a href="/how-it-works">How It Works</a></li>
