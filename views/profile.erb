@@ -92,7 +92,7 @@
       <div class="alert alert-info" style="border: none;"><%= m.body %></div>
     <% end %>
 	 <% unless @user.expired? %>
-		<p><a href="/nce/exams">Choose an exam</a> to get started.</p>
+		<p><a class="btn btn-primary btn-small" href="/nce/exams"><strong>Choose a NCE exam to take</strong></a></p>
 		<% end %>
 		<% unless @exams.empty? %>
 			<table class="table table-condensed table-striped table-hover">
@@ -100,7 +100,7 @@
 					<tr>
 						<th>Exam</th>
 						<th>Score</th>
-						<th>Taken On</th>
+						<th>Last Taken</th>
 						<th></th>
 					</tr>
 				</thead>
@@ -118,7 +118,11 @@
 							<td><%= average.created_at.display %></td>
 							<td style="text-align: right;">
 								<% unless @user.expired? %>
+								<% if avg == nil %>
+									<a href="/nce/exams/<%= average.exam_id %>">Continue</a>
+									<% else %>
 									<a href="/nce/exams/<%= average.exam_id %>">Review</a>
+								<% end %>
 								<% end %>
 							</td>
 						</tr>
@@ -153,7 +157,7 @@
       <div class="alert alert-info" style="border: none;"><%= m.body %></div>
     <% end %>
 	 	<% unless @user.expired? %>
-		<p><a href="/ncmhce/scenarios">Choose a scenario</a> to get started.</p>
+		<p><a class="btn btn-primary btn-small" href="/ncmhce/scenarios"><strong>Choose a NCMHCE scenario to take</strong></a></p>
 		<% end %>
 		<% unless @scenarios.empty? %>
 			<table class="table table-condensed table-striped table-hover">
@@ -162,8 +166,8 @@
 						<th>Scenario</th>
 						<th style="text-align: center;">IG</th>
 						<th style="text-align: center;">DM</th>
-						<th style="text-align: center;">Taken On</th>
-						<th></th>
+						<th>Last Taken</th>
+						<th style="text-align: right;"></th>
 					</tr>
 				</thead>
 				<tbody>
@@ -194,11 +198,17 @@
 									<% else %><small>N/A</small><% end %>
 								</td>
 								<% if avg = Average.last(user_id: session[:user], scenario_id: average.scenario_id) %>
-								<td style="text-align: center;"><%= avg.updated_at.display_short if average %></td>
+									<td><%= avg.updated_at.display_short if average %></td>
+								<% else %>
+									<td>Unfinished</td>
 								<% end %>
 								<td style="text-align: right;">
 									<% unless @user.expired? %>
+									<% if avg == nil %>
+										<a href="/ncmhce/scenarios/<%= average.scenario_id %>">Continue</a>
+										<% else %>
 										<a href="/ncmhce/scenarios/<%= average.scenario_id %>">Review</a>
+									<% end %>
 									<% end %>
 								</td>
 							</tr>
@@ -229,7 +239,7 @@
         <div class="alert alert-info" style="border: none;"><%= m.body %></div>
       <% end %>
 	 	<% unless (@user.remaining_ceu_scenario < 1) %>
-		<p><a class="btn btn-primary btn-small" href="/ceu/scenarios"><strong>Choose a CEU scenario</strong></a></p>
+		<p><a class="btn btn-primary btn-small" href="/ceu/scenarios"><strong>Choose a CEU scenario to take</strong></a></p>
 		<% end %>
 		<table class="table table-condensed table-striped table-hover">
 			<thead>

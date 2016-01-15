@@ -21,7 +21,7 @@
 		<h3>
 			Pre-Assessment Exam
 			<% if previous_score = Average.first(user_id: session[:user], exam_id: 4) %>
-				<small class="darker-gray"><%= previous_score.score %>%</small>
+				<small style="color: #009c23;"><strong> &nbsp; Last score <%= previous_score.score %>%</strong></small>
 			<% end %>
 		</h3>
 		<ul class="nav nav-pills">
@@ -51,18 +51,18 @@
 		
 		<h3>Practice Exam 1
 		<% if previous_score = Average.first(user_id: session[:user], exam_id: 1) %>
-				<small class="darker-gray"><%= previous_score.score %>%</small>
+				<small style="color: #009c23;"><strong> &nbsp; Last score <%= previous_score.score %>%</strong></small>
 		<% end %>
 		</h3>
 		<ul class="nav nav-pills">
 			<li class="active"><a href="/nce/exams/1" class="">Go to Practice Exam 1</a></li>
-	  		<li class="dropdown">
+	  		<li class="dropup">
 	  			<a href="#" class="dropdown-toggle" data-toggle="dropdown">
 	  				Exam Areas
 	  				<b class="caret"></b>
 	  			</a>
 	  			<ul class="dropdown-menu">
-						<li><h1 style="font-size: 1em; padding-left: 1em;">Study Areas</h1></li>
+						<li><h1 style="font-size: 1em; padding-left: 1em; color: black;"><strong>Study Areas</strong></h1></li>
 						<li class="divider"></li>
 						<li><a href="/nce/guide/1/Professional%20Orientation">Professional Orientation</a></li>
 						<li><a href="/nce/guide/1/Research%20and%20Program%20Evaluation">Research and Program Evaluation</a></li>
@@ -87,18 +87,18 @@
 			
 			<h3 style="margin-top: 9px;">Practice Exam 2
 			<% if previous_score = Average.first(user_id: session[:user], exam_id: 2) %>
-					<small class="darker-gray"l><%= previous_score.score %>%</small>
+					<small style="color: #009c23;"><strong> &nbsp; Last score <%= previous_score.score %>%</strong></small>
 			<% end %>
 			</h3>
 			<ul class="nav nav-pills">
 				<li class="active"><a href="/nce/exams/2" class="">Go to Practice Exam 2</a></li>
-	  		<li class="dropdown">
+	  		<li class="dropup">
 	  			<a href="#" class="dropdown-toggle" data-toggle="dropdown">
 	  				Exam Areas
 	  				<b class="caret"></b>
 	  			</a>
 	  			<ul class="dropdown-menu">
-						<li><h1 style="font-size: 1em; padding-left: 1em;">Study Areas</h1></li>
+						<li><h1 style="font-size: 1em; padding-left: 1em; color: black;"><strong>Study Areas</strong></h1></li>
 						<li class="divider"></li>
 						<li><a href="/nce/guide/2/Professional%20Orientation">Professional Orientation</a></li>
 						<li><a href="/nce/guide/2/Research%20and%20Program%20Evaluation">Research and Program Evaluation</a></li>
@@ -115,18 +115,18 @@
 			<h3 style="margin-top: 9px;">
 				Practice Exam 3
 				<% if previous_score = Average.first(user_id: session[:user], exam_id: 3) %>
-					<small class="darker-gray"><%= previous_score.score %>%</small>
+					<small style="color: #009c23;"><strong> &nbsp; Last score <%= previous_score.score %>%</strong></small>
 				<% end %>
 			</h3>
 			<ul class="nav nav-pills">
 				<li class="active"><a href="/nce/exams/3" class="">Go to Practice Exam 3</a></li>
-	  		<li class="dropdown">
+	  		<li class="dropup">
 	  			<a href="#" class="dropdown-toggle" data-toggle="dropdown">
 	  				Exam Areas
 	  				<b class="caret"></b>
 	  			</a>
 	  			<ul class="dropdown-menu">
-	          <li><h1 style="font-size: 1em; padding-left: 1em;">Study Areas</h1></li>
+	          <li><h1 style="font-size: 1em; padding-left: 1em; color: black;"><strong>Study Areas</strong></h1></li>
 						<li class="divider"></li>
 						<li><a href="/nce/guide/3/Professional%20Orientation">Professional Orientation</a></li>
 						<li><a href="/nce/guide/3/Research%20and%20Program%20Evaluation">Research and Program Evaluation</a></li>
