@@ -393,6 +393,19 @@
 		<br />
 	<% end %>
 	
+<!-- –––––––––––––––––– flash cards –––––––––––––––––– -->
+	
+	<% if @user.admin? %>
+
+		<div class="page-header">
+			<h3>Flash Cards</h3>
+		</div>	
+		<p><a class="btn btn-primary btn-small" href="/ncmhce/glossary"><strong>NCMHCE Flash Cards</strong></a></p>
+		<p><a class="btn btn-primary btn-small" href="/nce/glossary"><strong>NCE Flash Cards</strong></a></p>
+		
+		<br />
+	<% end %>
+	
 <!-- –––––––––––––––––– downloads –––––––––––––––––– -->
 
 	<% if @user.nce_downloads || @user.ncmhce_downloads %>

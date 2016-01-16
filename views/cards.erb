@@ -8,22 +8,26 @@
 	</div>
 </div>
 
-<ul class="nav nav-tabs">
+<ul class="nav nav-pills">
 	<% @glossary.group_by(&:chapter).each_with_index do |(chapter, terms), index| %>
 		<li <%= 'class="active"' if index == 0 %>><a href="#terms-<%= index %>" data-toggle="tab"><%= chapter %></a></li>
 	<% end %>
 </ul>
+
+
 
 <div class="tab-content">
 	<% @glossary.group_by(&:chapter).each_with_index do |(chapter, terms), index| %>
 		<div class="tab-pane <%= 'active' if index == 0 %>" id="terms-<%= index %>">
 		
 			<p>
-				<a href="/cards/<%= @exam %>/<%= chapter %>" class="btn btn-primary"><%= chapter %> Flash Cards</a>
+				<a href="/cards/<%= @exam %>/<%= chapter %>" class="btn btn-large btn-primary"><strong>View <%= chapter %> Flash Cards</strong></a>
 			</p>
 			
 			<hr />
-		
+			
+			<h2><%= chapter %> Terms</h2>
+			<hr style="margin: .6em 0;" />
 			<% terms.sort!{|a,b| a.term <=> b.term}.each do |glossary| %>
 				<div class="row">
 				
@@ -42,3 +46,6 @@
 		</div>
 	<% end %>
 </div>
+
+
+
