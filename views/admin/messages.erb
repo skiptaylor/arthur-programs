@@ -57,11 +57,11 @@
         <% @messages.each do |m| %>
           <tr>
             <td><%= m.body %></td>
-            <td style="text-align: center;"><%= '<i class="icon-check"' if m.profile == true %></td>
-            <td style="text-align: center;"><%= '<i class="icon-check"' if m.ncmhce == true %></td>
-            <td style="text-align: center;"><%= '<i class="icon-check"' if m.nce == true %></td>
-				<td style="text-align: center;"><%= '<i class="icon-check"' if m.ceu == true %></td>
-            <td><a href="/admin/messages/<%= m.id %>/delete" class='delete'><i class="icon icon-remove"></i></a></td>
+            <td style="text-align: center;"><%= '<i class="icon-ok"' if m.profile == true %></td>
+            <td style="text-align: center;"><%= '<i class="icon-ok"' if m.ncmhce == true %></td>
+            <td style="text-align: center;"><%= '<i class="icon-ok"' if m.nce == true %></td>
+				<td style="text-align: center;"><%= '<i class="icon-ok"' if m.ceu == true %></td>
+            <td><a href="/admin/messages/<%= m.id %>/delete" style="padding: 0 2px 2px 2px;" class='delete btn btn-small btn-danger'><small><i class="icon icon-remove icon-white"></i></small></a></td>
           </tr>
         <% end %>
       </tbody>
