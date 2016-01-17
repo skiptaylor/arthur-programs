@@ -1,45 +1,44 @@
-<div class="well" style="padding: .5em 0;">
+<div class="well" style="margin: 0; padding: 0; background: #ffffff;">
 	
 	<ul class="nav nav-list">
 		
-		<li class="nav-header">People</li>
+		
+		<li class="<%= active '/admin/users' %>">
+			<a href="/admin/users" class="list-nav" style="padding: 9px 6px 9px 14px;"> Users <i class="icon-chevron-right pull-right icon-gray <%= 'icon-white' if request.path_info.include? '/admin/users' %>"></i></a>
+		</li>
 		
 		<li class="<%= active '/admin/purchases' %>">
-			<a href="/admin/purchases"><i class="icon-shopping-cart <%= 'icon-white' if request.path_info.include? '/admin/purchases' %>"></i> Purchases</a>
-		</li>
-
-		<li class="<%= active '/admin/users' %>">
-			<a href="/admin/users"><i class="icon-user <%= 'icon-white' if request.path_info.include? '/admin/users' %>"></i> Users</a>
-		</li>
-
-		<li class="<%= active '/admin/stats' %>">
-			<a href="/admin/stats"><i class="icon-info-sign <%= 'icon-white' if request.path_info.include? '/admin/stats' %>"></i> Stats</a>
+			<a href="/admin/purchases" class="list-nav" style="padding: 9px 6px 9px 14px;"> Purchases <i class="icon-chevron-right pull-right icon-gray <%= 'icon-white' if request.path_info.include? '/admin/purchases' %>"></i></a>
 		</li>
 
 		<li class="<%= active '/admin/messages' %>">
-			<a href="/admin/messages"><i class="icon-comment <%= 'icon-white' if request.path_info.include? '/admin/messages' %>"></i> Messages</a>
+			<a href="/admin/messages" class="list-nav" style="padding: 9px 6px 9px 14px;"> Messages <i class="icon-chevron-right pull-right icon-gray  <%= 'icon-white' if request.path_info.include? '/admin/messages' %>"></i></a>
+		</li>
+
+		<li class="<%= active '/admin/stats' %>">
+			<a href="/admin/stats" class="list-nav" style="padding: 9px 6px 9px 14px;"> Stats <i class="icon-chevron-right pull-right icon-gray  <%= 'icon-white' if request.path_info.include? '/admin/stats' %>"></i></a>
 		</li>
 				
-		<li class="nav-header">Products</li>
+		<li class="nav-header" style="color: white; background-color: black; margin-top: -1px;">Products</li>
 		
 		<li class="<%= active '/admin/exams' %>">
-			<a href="/admin/exams"><i class="icon-list-alt <%= 'icon-white' if request.path_info.include? '/admin/exams' %>"></i> NCE Exams</a>
+			<a href="/admin/exams" class="list-nav" style="padding: 9px 6px 9px 14px;"> NCE Exams <i class="icon-chevron-right pull-right icon-gray <%= 'icon-white' if request.path_info.include? '/admin/exams' %>"></i></a>
 		</li>
 		
 		<li class="<%= active '/admin/glossary/nce' %>">
-			<a href="/admin/glossary/nce"><i class="icon-book <%= 'icon-white' if request.path_info.include? '/admin/glossary/nce' %>"></i> NCE Glossary</a>
+			<a href="/admin/glossary/nce" class="list-nav" style="padding: 9px 6px 9px 14px;"> NCE Glossary <i class="icon-chevron-right pull-right icon-gray <%= 'icon-white' if request.path_info.include? '/admin/glossary/nce' %>"></i></a>
 		</li>
 
 		<li class="<%= active '/admin/scenarios' %>">
-			<a href="/admin/scenarios"><i class="icon-list-alt <%= 'icon-white' if request.path_info.include? '/admin/scenarios' %>"></i> NCMHCE Scenarios</a>
+			<a href="/admin/scenarios" class="list-nav" style="padding: 9px 6px 9px 14px;"> NCMHCE Scenarios <i class="icon-chevron-right pull-right icon-gray <%= 'icon-white' if request.path_info.include? '/admin/scenarios' %>"></i></a>
 		</li>
 		
 		<li class="<%= active '/admin/glossary/ncmhce' %>">
-			<a href="/admin/glossary/ncmhce"><i class="icon-book <%= 'icon-white' if request.path_info.include? '/admin/glossary/ncmhce' %>"></i> NCMHCE Glossary</a>
+			<a href="/admin/glossary/ncmhce" class="list-nav" style="padding: 9px 6px 9px 14px;"> NCMHCE Glossary <i class="icon-chevron-right pull-right icon-gray <%= 'icon-white' if request.path_info.include? '/admin/glossary/ncmhce' %>"></i></a>
 		</li>
 
 		<li class="<%= active '/admin/glossary/other' %>">
-			<a href="/admin/glossary/other"><i class="icon-book <%= 'icon-white' if request.path_info.include? '/admin/glossary/other' %>"></i> Glossary (unorganized)</a>
+			<a href="/admin/glossary/other" class="list-nav" style="padding: 9px 6px 9px 14px; border-bottom: 0;"> Glossary (unused) <i class="icon-chevron-right pull-right icon-gray <%= 'icon-white' if request.path_info.include? '/admin/glossary/other' %>"></i></a>
 		</li>
 		
 	</ul>

@@ -90,13 +90,6 @@
 					<input type="checkbox" style="margin-top: -3px;" name="ncmhce_downloads" id="ncmhce_downloads" <%= 'checked' if @user.ncmhce_downloads %> /> &nbsp; NCMHCE Downloads
 				</div>
 			</div>
-
-			<div class="control-group" id="workshop-scenarios-group">
-				<label class="control-label" for="workshop_scenarios">Workshop Scenarios</label>
-				<div class="controls">
-					<input type="checkbox" name="workshop_scenarios" id="workshop_scenarios" <%= 'checked' if @user.workshop_scenarios %> />
-				</div>
-			</div>
 			<div class="control-group" id="ceu-scenarios-group">	
 				<label class="control-label" style="margin-bottom: -10px;" for="ceu">CEU Account</label>
 				<div class="controls">
@@ -116,7 +109,12 @@
 					<input type="checkbox" name="practice_exams" id="practice_exams" <%= 'checked' if @user.practice_exams %> />
 				</div>
 			</div>
-
+			<div class="control-group" id="workshop-scenarios-group">
+				<label class="control-label" for="workshop_scenarios">Workshop Scenarios</label>
+				<div class="controls">
+					<input type="checkbox" name="workshop_scenarios" id="workshop_scenarios" <%= 'checked' if @user.workshop_scenarios %> />
+				</div>
+			</div>
 			<div class="control-group" id="expiration-group">
 				<label class="control-label" for="expiration_date">Expires</label>
 				<div class="controls">
