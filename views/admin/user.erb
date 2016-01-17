@@ -41,21 +41,21 @@
 				</div>
 			</div>
 			
-			<div class="control-group" id="email-group">
+			<div class="control-group" id="email-group" style="margin-top: -20px;">
 				<label class="control-label" for="email">Email address</label>
 				<div class="controls">
 					<input type="text" class="input-xlarge" id="email" name="email" autocomplete="off" value="<%= @user.email %>">
 				</div>
 			</div>
 
-			<div class="control-group" id="phone-group">
+			<div class="control-group" id="phone-group" style="margin-top: -9px;">
 				<label class="control-label" for="phone">Phone number</label>
 				<div class="controls">
 					<input type="text" class="input-xlarge" id="phone" name="phone" value="<%= @user.phone %>">
 				</div>
 			</div>
 
-			<div class="control-group" id="password-group">
+			<div class="control-group" id="password-group" style="margin-top: -9px;">
 				<label class="control-label" for="password">New password</label>
 				<div class="controls">
 					<input type="text" class="input-xlarge" id="password" name="password">
@@ -73,7 +73,8 @@
 			<div class="control-group" id="nce-downloads-group">
 				<label class="control-label" for="nce_downloads">NCE Downloads</label>
 				<div class="controls"> -->
-					<input type="checkbox" style="margin-top: -3px;" name="nce_downloads" id="nce_downloads" <%= 'checked' if @user.nce_downloads %> /> &nbsp; NCE Downloads
+					<input type="checkbox" style="margin-top: -3px;" name="nce_downloads" id="nce_downloads" <%= 'checked' if @user.nce_downloads %> /> &nbsp; Downloads &nbsp; &nbsp; &nbsp; 
+					<input type="checkbox" style="margin-top: -3px;" name="nce_downloads" id="nce_downloads" <%= 'checked' if @user.nce_downloads %> /> &nbsp; Flash Cards
 				</div>
 			</div>
 			
@@ -87,31 +88,32 @@
 			<div class="control-group" id="ncmhce-downloads-group">
 				<label class="control-label" for="ncmhce_downloads">NCMHCE Downloads</label>
 				<div class="controls"> -->
-					<input type="checkbox" style="margin-top: -3px;" name="ncmhce_downloads" id="ncmhce_downloads" <%= 'checked' if @user.ncmhce_downloads %> /> &nbsp; NCMHCE Downloads
+					<input type="checkbox" style="margin-top: -3px;" name="ncmhce_downloads" id="ncmhce_downloads" <%= 'checked' if @user.ncmhce_downloads %> /> &nbsp; Downloads &nbsp; &nbsp; &nbsp; 
+					<input type="checkbox" style="margin-top: -3px;" name="nce_downloads" id="nce_downloads" <%= 'checked' if @user.nce_downloads %> /> &nbsp; Flash Cards
 				</div>
 			</div>
 			<div class="control-group" id="ceu-scenarios-group">	
-				<label class="control-label" style="margin-bottom: -10px;" for="ceu">CEU Account</label>
+				<label class="control-label" style="margin-bottom: -4px;" for="ceu">CEU Account</label>
 				<div class="controls">
-					<input type="checkbox" name="ceu" id="ceu" <%= 'checked' if @user.ceu %> />
+					<input type="checkbox" style="margin-bottom: -6px;" name="ceu" id="ceu" <%= 'checked' if @user.ceu %> />
 				</div>
 			</div>
-			<div class="control-group" id="ceu-scenarios-group">
+			<div class="control-group" id="ceu-scenarios-group" style="margin-top: -9px;">
 				<label class="control-label" style="margin-top: -10px;" for="ceu_scenario">CEU Scenarios</label>
 				<div class="controls" style="margin-top: -10px;">
-					<input type="checkbox" name="ceu_scenario" id="ceu_scenario" <%= 'checked' if @user.ceu_scenario %> /> &nbsp; &nbsp; &nbsp; &nbsp;
+					<input type="checkbox"  style="margin-bottom: 2px;" name="ceu_scenario" id="ceu_scenario" <%= 'checked' if @user.ceu_scenario %> /> &nbsp; &nbsp; &nbsp; &nbsp;
 					License &nbsp; <input type="text" class="span3" id="license" name="license" value="<%= @user.license %>" />
 				</div>
 			</div>
-			<div class="control-group" id="practice-exams-group">
+			<div class="control-group" id="practice-exams-group" style="margin-top: -9px;">
 				<label class="control-label" for="practice_exams">Practice Exams</label>
-				<div class="controls">
+				<div class="controls" style="margin-top: 3px;">
 					<input type="checkbox" name="practice_exams" id="practice_exams" <%= 'checked' if @user.practice_exams %> />
 				</div>
 			</div>
-			<div class="control-group" id="workshop-scenarios-group">
+			<div class="control-group" id="workshop-scenarios-group" style="margin-top: -18px;">
 				<label class="control-label" for="workshop_scenarios">Workshop Scenarios</label>
-				<div class="controls">
+				<div class="controls" style="margin-top: 3px;">
 					<input type="checkbox" name="workshop_scenarios" id="workshop_scenarios" <%= 'checked' if @user.workshop_scenarios %> />
 				</div>
 			</div>
