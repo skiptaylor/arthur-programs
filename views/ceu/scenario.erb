@@ -20,20 +20,20 @@
 			<h3>
 				Your Score: <%= @average %>% &nbsp; <% unless @average < 70 %><span style="color: #009c23;">Congratulations! You Passed.</span><% end %>
 			</h3>
-			<%
+			<!-- <%
 				style = 'bar-warning' if @average < 70
 				style = 'bar-success' if @average >= 70
-			%>
+			%> -->
 			<div class="progress">
 				<div class="bar  <%= style %>" style="width: <%= @average %>%;"></div>
 			</div>
 		</div>
 	</div>
 	
-	<div class="row">
-		<h3><%= erb :progressbar_ceu, layout: false, locals: { label: 'Information Gathering', correct: @breakdown['Information Gathering'][:correct], possible: @breakdown['Information Gathering'][:possible] } %></h3>	
+	<!-- <div class="row">
+		<h3><%= erb :progressbar_ceu, layout: false, locals: { label: 'Information Gathering', correct: @breakdown['Information Gathering'][:correct], possible: @breakdown['Information Gathering'][:possible] } %></h3>
 		<h3><%= erb :progressbar_ceu, layout: false, locals: { offset: true, label: 'Decision Making', correct: @breakdown['Decision Making'][:correct], possible: @breakdown['Decision Making'][:possible] } %></h3>
-	</div>
+	</div> -->
 	
 	<% unless @average > 69 %>
 	<br />
@@ -192,7 +192,7 @@
 	<h3>
 		<img src="/img/check.png" class="pull-left" style="margin: 0.3em 1em 1em 0;" />Your Certificate for CEU Scenario <%= @scenario.id %> was submitted on <%= u.cert_date.display_short %>.
 	</h3>
-	<p style="margin-left: 3em;">This certificte will be sent to the NBCC and you will receive 3 Continuing Education Units.<br />
+	<p style="margin-left: 3em;">This certificte will be sent to the NBCC and you will receive 2 Continuing Education Units.<br />
 		<small>Allow 3 working days for information to be received by NBCC.</small></p>
 	<br />
 	<p style="margin-left: 3em;">
@@ -207,7 +207,7 @@
 	<h2 class="center"><strong><%= u.cert_name %> <%= @user.name %></strong></h2>
 	<p class="center">License/Credential Number: <strong><% if @user.license %><%= @user.license %><% end %></strong></p>
 	<!-- <p class="center"><% if @user.license %><strong>License:</strong> <%= @user.license %><% end %></p> -->
-	<p class="center"><strong>On <%= u.cert_date.display_short %> <%= @user.name %> successfully completed all requirements <br />of the Arthur-Brende CEU Study Program.</strong></p>
+	<p class="center"><strong>On <%= u.cert_date.display_short %> <%= @user.name %> successfully completed all requirements <br />of the Arthur-Brende CEU Study Program for CEU Scenario <%= @scenario.id %>.</strong></p>
 	<p class="center"><strong><%= @user.name %> is awarded 2 hours of Continuing Education Units (CEU)</strong></p><br />
 	<div class="row">
 		<div class="span3" style="margin-left: 6em;">

@@ -27,3 +27,5 @@ gem 'sprockets', '~> 2.0'
 gem 'stripe', '~> 1.6.2'
 gem 'addressable', '~> 2.3.7'
 
+gem 'prawn', '~> 2.0.1'
+gem 'prawn-table', '~> 0.2.1'

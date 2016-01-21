@@ -95,23 +95,24 @@
 			<div class="control-group" id="ceu-scenarios-group">	
 				<label class="control-label" style="margin-bottom: -4px;" for="ceu">CEU Account</label>
 				<div class="controls">
-					<input type="checkbox" style="margin-bottom: -6px;" name="ceu" id="ceu" <%= 'checked' if @user.ceu %> />
-				</div>
-			</div>
-			<div class="control-group" id="ceu-scenarios-group" style="margin-top: -9px;">
-				<label class="control-label" style="margin-top: -10px;" for="ceu_scenario">CEU Scenarios</label>
-				<div class="controls" style="margin-top: -10px;">
-					<input type="checkbox"  style="margin-bottom: 2px;" name="ceu_scenario" id="ceu_scenario" <%= 'checked' if @user.ceu_scenario %> /> &nbsp; &nbsp; &nbsp; &nbsp;
+					<input type="checkbox" style="margin-bottom: 2px;" name="ceu" id="ceu" <%= 'checked' if @user.ceu %> /> &nbsp; &nbsp; &nbsp; &nbsp;
 					License &nbsp; <input type="text" class="span3" id="license" name="license" value="<%= @user.license %>" />
 				</div>
 			</div>
-			<div class="control-group" id="practice-exams-group" style="margin-top: -9px;">
+			<div class="control-group" id="ceu-scenarios-group" style="margin-top: -9px;">
+				<label class="control-label" style="margin-top: -4px;" for="ceu_scenario">CEU Scenarios</label>
+				<div class="controls" style="margin-top: -4px;">
+					<input type="text" class="span1" id="ceu_scenario" name="ceu_scenario" value="<%= @user.ceu_scenario %>"> &nbsp; &nbsp; &nbsp; &nbsp;
+					<input type="checkbox" class="hidden" style="margin-bottom: 2px;" name="ceu_scenario" id="ceu_scenario" <%= 'checked' if @user.ceu_scenario %> />
+				</div>
+			</div>
+			<div class="control-group" id="practice-exams-group" style="margin-top: -3px;">
 				<label class="control-label" for="practice_exams">Practice Exams</label>
 				<div class="controls" style="margin-top: 3px;">
 					<input type="checkbox" name="practice_exams" id="practice_exams" <%= 'checked' if @user.practice_exams %> />
 				</div>
 			</div>
-			<div class="control-group" id="workshop-scenarios-group" style="margin-top: -18px;">
+			<div class="control-group" id="workshop-scenarios-group" style="margin-top: -12px;">
 				<label class="control-label" for="workshop_scenarios">Workshop Scenarios</label>
 				<div class="controls" style="margin-top: 3px;">
 					<input type="checkbox" name="workshop_scenarios" id="workshop_scenarios" <%= 'checked' if @user.workshop_scenarios %> />
@@ -125,7 +126,7 @@
 				</div>
 			</div>
 						
-			<div class="control-group" id="refund-request-date-group">
+			<div class="control-group" id="refund-request-date-group" style="margin-top: -12px;">
 				<label class="control-label" for="refund_request_date">Refund Request Date</label>
 				<div class="controls">
 					<% if @user.refund_request_date.nil? %>
@@ -136,7 +137,7 @@
 				</div>
 			</div>
 
-			<div class="control-group" id="refund-check-date-group">
+			<div class="control-group" id="refund-check-date-group" style="margin-top: -12px;">
 				<label class="control-label" for="refund_check_date">Refund Check Date</label>
 				<div class="controls">
 					<% if @user.refund_check_date.nil? %>
