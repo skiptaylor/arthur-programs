@@ -82,7 +82,7 @@
 					<% end %>
 					<% unless @user.expired? %>
 					<% unless @user.purchases.any? { |purchase| purchase.options == "+ Hard Copy" } %>
-						<span style="float: right;"><a class="btn btn-success btn-small" href="/checkout/nce-hard-copy">Buy a hard copy for $12.95</a></span>
+						<span style="float: right;"><a class="btn btn-success btn-small" href="/checkout/nce-hard-copy">Buy a hard copy for $13.95</a></span>
 					<% end %>
 					<% end %>
 			</h3>
@@ -147,7 +147,7 @@
 				<% end %>
 				<% unless @user.expired? %>
 				<% unless @user.purchases.any? { |purchase| purchase.options == "+ Hard Copy" } %>
-					<span style="float: right;"><a class="btn btn-success btn-small" href="/checkout/ncmhce-hard-copy">Buy a hard copy for $12.95</a></span>
+					<span style="float: right;"><a class="btn btn-success btn-small" href="/checkout/ncmhce-hard-copy">Buy a hard copy for $13.95</a></span>
 				<% end %>
 				<% end %>
 			</h3>

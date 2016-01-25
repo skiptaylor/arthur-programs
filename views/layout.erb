@@ -38,7 +38,9 @@
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</a>
+					<% unless session[:admin] %>
 					<a class="brand oswald" href="#" style="">CounselorExams.com</a>
+					<% end %>
 					<div class="nav-collapse">
 						<% unless session[:user] %>
 						<ul class="nav">
