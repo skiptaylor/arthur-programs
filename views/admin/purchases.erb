@@ -2,6 +2,7 @@
 
 	<div class="span3">
 		<%= erb :'admin/navigation', layout: false %>
+		<br />
 		<form method="get" class="well">
 			<p><%= @start.to_fields 'start' %></p>
 			<p><%= @end.to_fields 'end' %></p>

@@ -192,22 +192,21 @@
 	<h3>
 		<img src="/img/check.png" class="pull-left" style="margin: 0.3em 1em 1em 0;" />Your Certificate for CEU Scenario <%= @scenario.id %> was submitted on <%= u.cert_date.display_short %>.
 	</h3>
-	<p style="margin-left: 3em;">This certificte will be sent to the NBCC and you will receive 2 Continuing Education Units.<br />
-		<small>Allow 3 working days for information to be received by NBCC.</small></p>
-	<br />
+	<!-- <p style="margin-left: 3em;">This certificte will be sent to the NBCC and you will receive 2 Continuing Education Units.<br />
+		<small>Allow 3 working days for information to be received by NBCC.</small></p> -->
+	<br /><br /><br />
 	<p style="margin-left: 3em;">
-		<a href="/ceu/scenarios/<%= @scenario.id %>/ceu-certificate" class="btn btn-success">View Certificate PDF</a> &nbsp; You can download PDF from browser.
+		<a href="/ceu/scenarios/<%= @scenario.id %>/ceu-certificate" class="btn btn-large btn-success"><strong>View Certificate PDF</strong></a> &nbsp;&nbsp;&nbsp; <strong>You can download your PDF from the browser.</strong>
 	</p>
-	<br />
-	<div class="well certificate">
+	<br /><br /><br /><br /><br />
+	<!-- <div class="well certificate">
 		<img src="/img/ctc.png" class="pull-left" style="width: 150px;" />
 		<img src="/img/nbcc.png" class="pull-right" style="width: 240px;" />
 		<br /><br /><br /><br />
 	<h1 class="center oswald">Certificate of Completion</h1>
 	<h2 class="center"><strong><%= u.cert_name %> <%= @user.name %></strong></h2>
 	<p class="center">License/Credential Number: <strong><% if @user.license %><%= @user.license %><% end %></strong></p>
-	<!-- <p class="center"><% if @user.license %><strong>License:</strong> <%= @user.license %><% end %></p> -->
-	<p class="center"><strong>On <%= u.cert_date.display_short %> <%= @user.name %> successfully completed all requirements <br />of the Arthur-Brende CEU Study Program for CEU Scenario <%= @scenario.id %>.</strong></p>
+		<p class="center"><strong>On <%= u.cert_date.display_short %> <%= @user.name %> successfully completed all requirements <br />of the Arthur-Brende CEU Study Program for CEU Scenario <%= @scenario.id %>.</strong></p>
 	<p class="center"><strong><%= @user.name %> is awarded 2 hours of Continuing Education Units (CEU)</strong></p><br />
 	<div class="row">
 		<div class="span3" style="margin-left: 6em;">
@@ -221,13 +220,13 @@
 			License #: xxxxxxxxxx</small>
 		</div>
 	</div>
-	
+
 	<hr />
 	<p class="center clearfix">NBCC-Approved Continuing Education Provider Number XXXXX</p>
-	
+
 	<p class="center"><small>Career Training Concepts, Inc. &bull; 3640 Hewatt Court, Snellville, GA 30039<br />
 		Toll Free: 888-326-9229 &bull; Fax: 770-672-8099 &bull; www.counselorexams.com</small></p>
-	</div>
+	</div> -->
 </div>
 					<% end %>
 <% end %>

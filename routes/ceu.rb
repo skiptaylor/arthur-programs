@@ -135,11 +135,6 @@ post '/ceu/scenarios/:id/score/?' do
 end
 
 
-
-
-
-
-
 get '/ceu/scenarios/:id/ceu-certificate/?' do
   
 	@scenario = Scenario.get params[:id]
@@ -157,8 +152,8 @@ get '/ceu/scenarios/:id/ceu-certificate/?' do
 
   pdf.stroke do
     pdf.rounded_rectangle [0, 540], 720, 540, 16
-    pdf.line_width = 12
-    pdf.stroke_color = '535353'
+    pdf.line_width = 7
+    pdf.stroke_color = '999999'
   end
 
 
@@ -167,14 +162,14 @@ get '/ceu/scenarios/:id/ceu-certificate/?' do
 
     pdf.image "img/nbcc.png", :width => 220, :at => [440, 510]
 
-    pdf.move_down(84)
+    pdf.move_down(100)
 
     pdf.move_down(30)
     pdf.default_leading 2
     pdf.font "Helvetica"
 
     pdf.font_size 40
-    pdf.text "Certificate of Completion", :color => "0e5fe1", :align => :center
+    pdf.text "Certificate of Completion", :color => "3257a1", :align => :center
 
     pdf.move_down(8)
     pdf.font_size 26
@@ -186,40 +181,34 @@ get '/ceu/scenarios/:id/ceu-certificate/?' do
 
     @uses.each do |u|
 
-      pdf.text "#{u.cert_date.display_short}", :inline_format => true, :align => :center
-
-    
-
-
-
+      pdf.text "#{u.cert_date.display(:month)}", :inline_format => true, :align => :center
 
     pdf.move_down(10)
     pdf.font_size 13
     pdf.text "License/Credential Number:<b> #{@user.license}</b>", :inline_format => true, :align => :center
     pdf.move_down(20)
-    pdf.text "On #{u.cert_date.display_short} #{@user.name} successfully completed all requirements <br />of the Arthur-Brende CEU Study Program for CEU Scenario #{@scenario.id}.", :inline_format => true, :align => :center
+    pdf.text "On #{u.cert_date.display(:month)} #{@user.name} successfully completed all requirements <br />of the Arthur-Brende CEU Study Program for CEU Scenario #{@scenario.id}.", :inline_format => true, :align => :center
 
-# <p class="center"><strong>On <%= u.cert_date.display_short %> <%= @user.name %> successfully completed all requirements <br />of the Arthur-Brende CEU Study Program for CEU Scenario <%= @scenario.id %>.</strong></p>
-pdf.move_down(10)
-pdf.text "<#{@user.name} is awarded 2 hours of Continuing Education Units (CEU) for CEU Scenario #{@scenario.id}", :inline_format => true, :align => :center
-end
-# <div class="row">
-#   <div class="span3" style="margin-left: 6em;">
-#     <span style="font-family: fantasy; font-size: 2em; color: #1c89de;">Gary Arthur</span><br />
-#     <small>Gary L. Arthur, Ed., LPC, NCC<br />
-#     License #: xxxxxxxxxx</small>
-#   </div>
-#   <div class="span3 pull-right">
-#     <span style="font-family: fantasy; font-size: 2em; color: #1c89de;">Joel Brende</span><br />
-#     <small>Joel O. Brende, M.D.<br />
-#     License #: xxxxxxxxxx</small>
-#   </div>
-# </div>
-  pdf.move_down(90)
+
+    pdf.move_down(10)
+    pdf.text "<#{@user.name} is awarded 2 hours of Continuing Education Units (CEU) for CEU Scenario #{@scenario.id}", :inline_format => true, :align => :center
+    end
+    
+    pdf.image "img/jim-shafe.png", :width => 200, :at => [440, 165]
+    pdf.image "img/jim-shafe.png", :width => 200, :at => [74, 165]
+    
+    pdf.font_size 9
+    pdf.text_box "Gary L. Arthur, Ed., LPC, NCC", :at => [110, 120]
+    pdf.text_box "License #: xxxxxxxxxx", :at => [110, 107] 
+    pdf.text_box "Joel O. Brende, M.D.", :at => [475, 120]
+    pdf.text_box "License #: xxxxxxxxxx", :at => [475, 107]          
+
+
+  pdf.move_down(119)
   pdf.line_width 0.3
   pdf.stroke_horizontal_rule
 
-  pdf.move_down(10)
+  pdf.move_down(18)
   pdf.font_size 10
   pdf.text "NBCC-Approved Continuing Education Provider Number XXXXX", :inline_format => true, :align => :center
 
@@ -227,25 +216,9 @@ end
 
   pdf.text "Career Training Concepts, Inc.    3640 Hewatt Court, Snellville, GA 30039    Toll Free: 888-326-9229     Fax: 770-672-8099    www.counselorexams.com", :inline_format => true, :align => :center
 
-
   pdf.render
 
-
-
 end
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 get '/ceu/scenarios/:id/restart/?' do

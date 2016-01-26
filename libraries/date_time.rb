@@ -30,6 +30,8 @@ module Chassis
 			case format
 			when :date
 				string = "%A %b %d, %Y"
+			when :month
+				string = "%B %d, %Y"
 			when :day
 				string = "%b %d, %Y"
 			when :day_with_time
