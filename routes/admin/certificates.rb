@@ -1,10 +1,8 @@
 get '/admin/certificates/?' do
 	admin!
 	
-	@user = User.get params[:id]
-  
+  @uses = Use.all(:cert_date.not => nil)
 
-  
 	erb :'admin/certificates'
 end
 

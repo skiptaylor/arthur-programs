@@ -14,5 +14,5 @@ class Use
 	belongs_to :user
 	belongs_to :scenario, required: false
 	belongs_to :exam, 		required: false
-
+  
 end
