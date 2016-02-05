@@ -23,7 +23,7 @@
 					<th>Name</th>
 					<th>Email</th>
 					<th>Expires</th>
-					<td> </td>
+					<!-- <td> </td> -->
 					<th style="text-align: right;"><a class="btn btn-mini btn-success" href="/admin/users/new"><i class="icon-plus icon-white"></i></a></th>
 				</tr>
 			</thead>
@@ -31,20 +31,20 @@
 				<% @users.sort{|a,b| b.expiration_date <=> a.expiration_date}.each do |user| %>
 					<tr>
 						<td>
-							<%= user.name %> <%= '<span class="label label-inverse"><small>Admin</small></span>' if user.admin? %> <% if user.license %><span style="color: #009c23;" class="pull-right"><small><%= user.license %></small></span><% end %>
+							<%= user.name %> <% if user.license %><a href="#" data-toggle="tooltip" data-delay="0" title="<%= user.license %>"><span class="label label-success pull-right"><small>CEU</small></span></a><% end %><%= '<span class="label label-inverse pull-right"><small>Admin</small></span>' if user.admin? %>
 						</td>
 						<td>	
 							<a href="mailto:<%= user.email %>"><%= user.email %></a>
 						</td>
 						<td>
-							<small><%= user.expiration_date %>  &nbsp; <span style="color: #45a3e6;"><a href="#" data-toggle="tooltip" data-placement="top" title="Number of Purchases"><%= user.purchases.count %></a></span></small>  
+							<small><%= user.expiration_date %>  <!-- &nbsp; <span style="color: #45a3e6;"><a href="#" data-toggle="tooltip" data-placement="top" title="Number of Purchases"><%= user.purchases.count %></a></span></small>
 							<% user.purchases.each do |purchase| %>
 								<% if purchase.package == 'Account Extension' || purchase.package == 'Account Expiration' %> <small><a href="#" data-toggle="tooltip" data-placement="top" title="Account Extension">e</a></small> <% end %>
 								<% if purchase.package == 'NCMHCE: Hard Copy' || purchase.package == 'NCE: Hard Copy' %> <small><a href="#" data-toggle="tooltip" data-delay="0" title="Purchased Hard Copy">h</a></small> <% end %>
-							<% end %>
+							<% end %> -->
 						</td>
-						<td>
-							<% unless user.name == 'Sample User (do not delete)' %><a href="/admin/users/<%= user.id %>/delete" style="float: right; padding: 0 2px;" class="btn btn-danger btn-mini"><strong>X</strong></a> &nbsp; <% end %><% if user.email == "sample" %>Sample <%= user.id %><% end %>
+						<!-- <td>
+							<% unless user.name == 'Sample User (do not delete)' %><a href="/admin/users/<%= user.id %>/delete" style="float: right; padding: 0 2px;" class="btn btn-danger btn-mini"><strong>X</strong></a> &nbsp; <% end %><% if user.email == "sample" %>Sample <%= user.id %><% end %> -->
 						<td style="text-align: right;">
 							<a href="/admin/users/<%= user.id %>">Edit</a>
 						</td>
