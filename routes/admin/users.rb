@@ -69,9 +69,7 @@ post '/admin/users/new/?' do
 	user.update(nce_downloads: true) if params[:nce_downloads]
 
 	user.update(workshop_scenarios: true) if params[:workshop_scenarios]
-  
-  user.update(ceu_scenario: true) if params[:ceu_scenario]
-  
+    
   user.update(practice_exams: true) if params[:practice_exams]
   
   puts 'Setting session and redirecting'
