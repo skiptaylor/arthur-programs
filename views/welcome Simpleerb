@@ -1,0 +1,36 @@
+<div class="row" style=" margin-top: 2.5em; margin-bottom: 3.8em;">
+	<div class="span8 offset2 center">
+		<h1 class="oswald" style="font-weight: 400; font-size: 3.7em; color: #535353;">
+			Arthur Study Programs
+		</h1>
+		<p style="font-weight: 300; font-size: 1.4em;">PASS YOUR STATE LICENSURE EXAM! &nbsp;GUARANTEED!</p>
+	</div>
+	<div class="span2">
+		<img src="/img/pass_icon.png" style="width: 100px;">
+	</div>
+</div>
+<div class="row" style="margin-bottom: 5em;">
+	<div class="span4 center">
+		<div class="shaddow-inset" style="border: 1px solid #e6e6e6; padding: 2em 0;">
+			<img src="/img/nce-badge.png">
+		</div>
+	</div>
+	<div class="span4 center">
+		<div class="shaddow-inset" style="border: 1px solid #e6e6e6; padding: 2em 0;">
+			<img src="/img/ncmhce-badge.png">
+		</div>
+	</div>
+	<div class="span4 center">
+		<div class="shaddow-inset" style="border: 1px solid #e6e6e6; padding: 2em 0;">
+			<img src="/img/ceu-badge.png">
+		</div>
+	</div>
+</div>	
+<div class="center">
+	<p style="font-weight: 300; font-size: 1.2em; line-height: 1.5em;"><strong>Not sure which licensure exam you need to take?</strong><br />
+		The NBCC web site has your state's specific licensure info.
+	</p>
+	<a class="btn btn-sm btn-primary" href="http://nbcc.org/directory" target="_blank">CHECK MY STATE</a>
+</div>
+
+	
