@@ -1,6 +1,6 @@
 configure :development do
 	DataMapper::Logger.new $stdout, :debug
-	DataMapper.setup :default, 'postgres://localhost:5432/counselorexamsdb'
+	DataMapper.setup :default, 'postgres://localhost:5432/counselorexams'
 end
 
 configure :production do

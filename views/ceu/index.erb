@@ -65,7 +65,7 @@
 					<p><a class="btn btn-small btn-success" href="/ceu/scenarios/<%= scenario.id %>"><strong><i class="icon-ok icon-white"></i>  &nbsp;Passed scenario <%= scenario.id %></strong></a></p>
 					
 					
-					<% elsif ((average.created_at + 30) - Time.now.to_date).to_i < 0 %>
+					<% elsif ((avg.created_at + 30) - Time.now.to_date).to_i < 0 %>
 						<p class="btn btn-small btn-danger">Expired</p>
 					
 					<% else %>
