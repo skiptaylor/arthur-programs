@@ -175,7 +175,17 @@ body	{
   }
   
   
-  
+  .grad-border {
+	  min-height: 32px;
+	  background-image: -moz-linear-gradient(top, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+	      background-image: -ms-linear-gradient(top, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+	      background-image: -webkit-gradient(linear, 0 0, 100% 0, from(rgba(255, 255, 255, 1)), to(rgba(255, 255, 255, 0)));
+	      background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+	      background-image: -o-linear-gradient(top, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+	      background-image: linear-gradient(top, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+	      background-repeat: repeat-x;
+	      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='rgba(255, 255, 255, 1)', endColorstr='rgba(255, 255, 255, 0)', GradientType=1);
+  }
   
   
   
@@ -242,7 +252,7 @@ body	{
 
 .product-header	{
 	font-family: 'Oswald', sans-serif;
-	font-size: 3em;
+	font-size: 2.6em;
 	color: #4c4c4c;
 	margin-top: 0.6em;
 	margin-bottom: 1em;
