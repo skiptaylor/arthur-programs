@@ -1,33 +1,33 @@
 
 
-@mixin border-radius($radius) {
+/*@mixin border-radius($radius) {
 	-webkit-border-radius: $radius;
 	 -moz-border-radius: $radius;
-	      border-radius: $radius;	
+	      border-radius: $radius;
 }
 
 @mixin border-top-left-radius($radius) {
 	-webkit-border-top-left-radius: $radius;
 	 		-moz-border-radius-topleft: $radius;
-	      	border-top-left-radius: $radius;	
+	      	border-top-left-radius: $radius;
 }
 
 @mixin border-top-right-radius($radius) {
 	-webkit-border-top-right-radius: $radius;
 	 		-moz-border-radius-topright: $radius;
-	      	border-top-right-radius: $radius;	
+	      	border-top-right-radius: $radius;
 }
 
 @mixin border-bottom-left-radius($radius) {
 	-webkit-border-bottom-left-radius: $radius;
 	 		-moz-border-radius-bottomleft: $radius;
-	      	border-bottom-left-radius: $radius;	
+	      	border-bottom-left-radius: $radius;
 }
 
 @mixin border-bottom-right-radius($radius) {
 	-webkit-border-bottom-right-radius: $radius;
 	 		-moz-border-radius-bottomright: $radius;
-	      	border-bottom-right-radius: $radius;	
+	      	border-bottom-right-radius: $radius;
 }
 
 @mixin box-shadow($x, $y, $blur, $color) {
@@ -41,6 +41,8 @@
      -moz-text-shadow: $x $y $blur $color;
           text-shadow: $x $y $blur $color;
 }
+*/
+
 
 body	{
 	font-family: 'Open Sans', sans-serif;
@@ -60,10 +62,11 @@ body	{
     line-height: 27px;
     margin: 0; }
 
-@media (max-width: 980px) {
+/*@media (max-width: 980px) {
   #content {
     margin-top: 0px; } }
 
+*/
   .nav	{
   	font-family: 'Open Sans', sans-serif;
 	font-weight: 600;
@@ -255,7 +258,7 @@ h1 {
 	font-family: 'Oswald', sans-serif;
 	font-size: 28px;
 	font-weight: 400;
-	line-height: 1.1em;
+	line-height: 1.2em;
 }
 
 .product-header	{
@@ -274,6 +277,10 @@ h1 {
 }
 .ncmhce-color {
 	color: #bc272e;
+}
+
+.blue-color {
+	color: #1c89de;
 }
 
 div.welcome-phone {
