@@ -283,6 +283,11 @@ h1 {
 	color: #1c89de;
 }
 
+.blue-ground {
+	background-color: #1c89de;
+}
+
+
 div.welcome-phone {
   text-align: center; }
   div.welcome-phone .btn {
