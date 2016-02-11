@@ -1,4 +1,5 @@
-<div id="#top"> </div>
+<div data-scroll-index=""> </div>
+
 <div class="row fixed" style="margin-top: -2em; position: fixed;">
 	<div class="span12 center" style="padding-top: 1em; padding-bottom: 3em; background-color: white;">
 		<!-- <div class="navbar">
@@ -23,10 +24,10 @@
 		<p></p>
 	</div>
 </div>
-		<!-- <div class="span2">
-			<img src="/img/pass_icon.png" style="width: 100px;">
-		</div> -->
-<div class="row" style="margin-bottom: 1em; margin-top: 12em;">
+
+<!-- ---- ncemhce ---- -->
+
+<div data-scroll-index="0" class="row" style="margin-bottom: 1em; margin-top: 11em;">
 	<div class="span8">
 		<img src="/img/ncmhce-group.png">
 	</div>
@@ -45,11 +46,14 @@
 <div class="row">
 	<div class="span12 center">
 		<div id="product" class="span12 section-div" style="clear: left;">
-			<a href="#nce"><img src="/img/page-pointer.png" /></a>
+			<a href="#nce" data-scroll-nav="1"><img src="/img/page-pointer.png" /></a>
 		</div>
 	</div>
 </div>
-<div class="row" style="margin-bottom: 1em; margin-top: 7em;">
+
+<!-- ---- nce ---- -->
+
+<div data-scroll-index="1" class="row" style="margin-bottom: 1em; margin-top: 6em;">
 	<div class="span8">
 		<img src="/img/nce-group-new.png">
 	</div>
@@ -69,11 +73,14 @@
 <div class="row">
 	<div class="span12 center">
 		<div id="product" class="span12 section-div" style="clear: left;">
-			<a href="#ceu" style="padding: 1px 60px;"><img src="/img/page-pointer.png" /></a>
+			<a href="#ceu" data-scroll-nav="2" style="padding: 1px 60px;"><img src="/img/page-pointer.png" /></a>
 		</div>
 	</div>
 </div>
-<div class="row" style="margin-bottom: 1em; margin-top: 7em;">
+
+<!-- ---- ceu ---- -->
+
+<div data-scroll-index="2" class="row" style="margin-bottom: 1em; margin-top: 7em;">
 	<div class="span8">
 		<img src="/img/nce-group-new.png">
 	</div>
@@ -93,14 +100,14 @@
 <div class="row">
 	<div class="span12 center">
 		<div id="product" class="span12 section-div" style="clear: left;">
-			<a href="#guarantee" style="padding: 1px 60px;"><img src="/img/page-pointer.png" /></a>
+			<a href="#guarantee" data-scroll-nav="3" style="padding: 1px 60px;"><img src="/img/page-pointer.png" /></a>
 		</div>
 	</div>
 </div>
 
+<!-- ---- guarantee ---- -->
 
-
-<div class="row" style="margin-bottom: 4em; margin-top: 8em;">
+<div data-scroll-index="3" class="row" style="margin-bottom: 1em;">
 	<div class="span12">
 		<p class="all-header blue-color" style="margin-bottom: 0.5em;">Satisfaction Guarantee + Money Back Pass Guarantee</p>
 		<p class="oswald-header">Pass the Exam or the purchase price will be refunded <span class="lead">(less shipping and taxes)</span></h3>
@@ -123,17 +130,23 @@
 			</div>
 		</div>
 	</div>
-	<a href="#top" style="position: fixed; bottom:24px;right: 26px;"><img src="/img/top-pointer.png" /></a>
+	<a data-scroll-goto="0" style="position: fixed; bottom:24px;right: 26px;"><img src="/img/top-pointer.png" /></a>
 </div>
 <div class="row">
 	<div class="span12 center">
 		<div id="product" class="span12 section-div" style="clear: left;">
-			<a href="#top" style="padding: 1px 60px;"><img src="/img/top-pointer.png" /></a>
+			<a data-scroll-goto="0" style="padding: 1px 60px;"><img src="/img/top-pointer.png" /></a>
 		</div>
 	</div>
 </div>
 			
-
+<script>
+	$(function(){
+	  $.scrollIt({
+	  	topOffset: -220
+	  });
+	});
+</script>
 
 
 
