@@ -43,8 +43,8 @@
 								<% if purchase.package == 'NCMHCE: Hard Copy' || purchase.package == 'NCE: Hard Copy' %> <small><a href="#" data-toggle="tooltip" data-delay="0" title="Purchased Hard Copy">h</a></small> <% end %>
 							<% end %> -->
 						</td>
-						<!-- <td>
-							<% unless user.name == 'Sample User (do not delete)' %><a href="/admin/users/<%= user.id %>/delete" style="float: right; padding: 0 2px;" class="btn btn-danger btn-mini"><strong>X</strong></a> &nbsp; <% end %><% if user.email == "sample" %>Sample <%= user.id %><% end %> -->
+						<td>
+							<% unless user.name == 'Sample User (do not delete)' %><a href="/admin/users/<%= user.id %>/delete" style="float: right; padding: 0 2px;" class="btn btn-danger btn-mini"><strong>X</strong></a> &nbsp; <% end %><% if user.email == "sample" %>Sample <%= user.id %><% end %> 
 						<td style="text-align: right;">
 							<a href="/admin/users/<%= user.id %>">Edit</a>
 						</td>
