@@ -277,8 +277,8 @@ h1 {
 	font-family: 'Oswald', sans-serif;
 	font-size: 2.2em;
 	color: #4c4c4c;
-	margin-top: 1em;
-	margin-bottom: 1.2em;
+	margin-top: 0.5em;
+	margin-bottom: 0.8em;
 }
 
 .oswald-header {
@@ -291,7 +291,7 @@ h1 {
 .product-header	{
 	font-family: 'Oswald', sans-serif;
 	font-weight: 400;
-	font-size: 2.8em;
+	font-size: 3em;
 	color: #4c4c4c;
 	margin-top: 0.6em;
 	margin-bottom: 1.4em;
