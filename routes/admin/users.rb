@@ -3,9 +3,9 @@ get '/admin/users/?' do
 	
 	@users = User.all
 	if params[:search] && !params[:search].nil?
-		@users = User.all(conditions: ["email ILIKE ? or name ILIKE ? or license ILIKE ?", "%#{params[:search].strip}%", "%#{params[:search].strip}%", "%#{params[:search].strip}%"], limit: 100)
+		@users = User.all(conditions: ["email ILIKE ? or name ILIKE ? or license ILIKE ?", "%#{params[:search].strip}%", "%#{params[:search].strip}%", "%#{params[:search].strip}%"], limit: 50)
 	else
-		@users = User.all(:email.not => 'sample', order: [:updated_at.desc], limit: 100)
+		@users = User.all(:email.not => 'sample', order: [:updated_at.desc], limit: 50)
 	end
 	erb :'admin/users'
 end
