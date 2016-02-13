@@ -157,7 +157,7 @@
       <div class="alert alert-info" style="border: none;"><%= m.body %></div>
     <% end %>
 	 	<% unless @user.expired? %>
-		<p><a class="btn btn-primary btn-small" href="/ncmhce/scenarios"><strong>Choose a NCMHCE scenario to take</strong></a></p>
+		<p><a class="btn btn-primary btn-small" href="/ncmhce/scenarios"><strong>Choose a NCMHCE scenario to take</strong></a>&nbsp; <small><%= @user.remaining_scenarios %> Remaining</small></p>
 		<% end %>
 		<% unless @scenarios.empty? %>
 			<table class="table table-condensed table-striped table-hover">
@@ -239,7 +239,8 @@
         <div class="alert alert-info" style="border: none;"><%= m.body %></div>
       <% end %>
 	 	<% unless (@user.remaining_ceu_scenario < 1) %>
-		<p><a class="btn btn-primary btn-small" href="/ceu/scenarios"><strong>Choose a CEU scenario to take</strong></a></p>
+		<p><a class="btn btn-primary btn-small" href="/ceu/scenarios"><strong>Choose a CEU scenario to take</strong></a>
+		&nbsp; <small><%= @user.remaining_ceu_scenario %> Remaining</small></p>
 		<% end %>
 		<table class="table table-condensed table-striped table-hover">
 			<thead>

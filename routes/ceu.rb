@@ -17,6 +17,7 @@ get '/ceu/scenarios/?' do
   @scenarios = Scenario.all(order: :id, active: true)
   @scenarios = @scenarios.all(workshop: false)
   @scenarios = @scenarios.all(practice: false)
+  @scenarios = @scenarios.all(ceu: true)
 	@averages = Average.all(:user_id => session[:user], :scenario_id.not => nil)
 	@remaining_ceu_scenario = User.get(session[:user]).remaining_ceu_scenario
 	@uses = []
@@ -34,8 +35,8 @@ get '/ceu/scenarios/:id/?' do
 		authorize!
 	end
 
-	unless @scenario.sample? || @scenario.workshop? || @scenario.ceu? || @scenario.practice?
-		if User.get(session[:user]).remaining_scenarios == 0
+	unless @scenario.sample? || @scenario.workshop? || @scenario.practice?
+		if User.get(session[:user]).remaining_ceu_scenario == 0
 			unless Use.all(user_id: session[:user], scenario_id: params[:id]).count > 0
 				session[:alert] = { message: "Please purchase more scenarios to continue." }
 				redirect '/ceu'
@@ -62,7 +63,7 @@ get '/ceu/scenarios/:id/score/?' do
 	else
 		authorize!
 	end
-
+	
 	@scores = []
 	scores = Score.all(user_id: session[:user], scenario_id: params[:id])
 	scores.each {|s| @scores << s.answer_id }
@@ -78,7 +79,7 @@ get '/ceu/scenarios/:id/score/?' do
 	@average = ((actual_total.to_f/possible_total.to_f)*100).to_i
 	@average = 0 if @average < 0
 	a = Average.first_or_create(scenario_id: params[:id], user_id: session[:user], score: @average)
-	Use.first_or_create(user_id: session[:user], scenario_id: params[:id], sample: @scenario.sample)
+  Use.first_or_create(user_id: session[:user], scenario_id: params[:id], sample: @scenario.sample)
 
 	@breakdown = {}
 	@breakdown['Information Gathering'] = {possible: 0, correct: 0}

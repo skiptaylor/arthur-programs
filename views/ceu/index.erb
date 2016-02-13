@@ -65,13 +65,13 @@
 					<p><a class="btn btn-small btn-success" href="/ceu/scenarios/<%= scenario.id %>"><strong><i class="icon-ok icon-white"></i>  &nbsp;Passed scenario <%= scenario.id %></strong></a></p>
 					
 					
-					<% elsif ((avg.created_at + 30) - Time.now.to_date).to_i < 0 %>
+					<% elsif ((average.created_at + 30) - Time.now.to_date).to_i < 0 %>
 						<p class="btn btn-small btn-danger">Expired</p>
 					
 					<% else %>
 						<p><a class="btn btn-small btn-success" href="/ceu/scenarios/<%= scenario.id %>">Review scenario <strong><%= scenario.id %></strong></a>
 						&nbsp; &nbsp;
-						<% if (((avg.created_at + 30) - Time.now.to_date).to_i) > 0 %>
+						<% if (((average.created_at + 30) - Time.now.to_date).to_i) > 0 %>
 						<strong><%= ((average.created_at + 30) - Time.now.to_date).to_i %></strong>
 						<% else %>
 						0
