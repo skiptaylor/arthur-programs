@@ -77,7 +77,7 @@ module Chassis
 	
 			date_field << "<select name='#{field}_year' id='#{field}_year' style='width: 74px;'>"
 			date_field << "<option value=''></option>"
-			(2007..Chronic.parse('3 years from now').strftime('%Y').to_i).each do |y|
+			(2007..Chronic.parse('7 years from now').strftime('%Y').to_i).each do |y|
 				date_field << "<option value='#{y}' #{'selected' if !empty_date && y == self.strftime('%Y').to_i}>#{y}</option>"
 			end
 			date_field << "</select>"
