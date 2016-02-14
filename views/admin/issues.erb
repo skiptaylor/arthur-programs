@@ -13,42 +13,38 @@
 		<div class="page-header">
 			<h2>Issues</h2>
 		</div>
-		<div>
-			<p>Issues editor uses Markdown for formatting. See <a href="/admin/markdown">Markdown Guidelines</a> for syntax.</p>
-		<div>
 			<table class="table table-striped">
 				<tr>
 					<th>
 						Issue
 					</th>
 					<th>
+						Problem
+					</th>
+					<th>
 						Solution
 					</th>
+					<th style="text-align: right;">
+						<a class="btn btn-mini btn-success" href="/admin/issues/new"><i class="icon-plus icon-white"></i></a>
+					</th>
 				</tr>
+				<% @issues.each do |i| %>
 				<tr>
-					<td>
-						<strong>Sign-in</strong> - upon submit reverts to empty form<br /><small>(Applies to all browsers)</small>
+					<td style="color: #bc272e;">
+						<strong><%= i.name %></strong>
 					</td>
 					<td>
-						Enable cookies in browser and try again. <br /><br /><strong>Note:</strong> We only use cookies to keep user signed-in until session ends.
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<strong>New passowrd</strong> does not work
+						<%= i.problem %>
 					</td>
 					<td>
-						User did not 'Update' profile after entering new password.
+						<%= i.solution %>
+					</td>
+					<td style="text-align: right;">
+						<a class="btn btn-mini btn-primary" href="/admin/issues/<%= i.id %>/edit"><i class="icon-edit icon-white"></i></a>
 					</td>
 				</tr>
-				<tr>
-					<td>
-						<strong>Scores</strong> are incorrect
-					</td>
-					<td>
-						Some scoring on Scenario questions have been updated. Retake the Scenario to get correct score.
-					</td>
-				</tr>
+				<% end %>
+
 			</table>
 		</div>
 		
