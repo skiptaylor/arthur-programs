@@ -82,7 +82,7 @@
 					<a data-toggle="modal" class="btn btn-mini btn-success" href="#new-question"><i class="icon-plus icon-white"></i></a>
 				</div>
 				<br /><br />
-				<a href="#references" class="btn btn-mini pull-right"><strong>Go to References</strong></a>
+				<a href="#references" class="btn btn-mini pull-right"><strong>Go to Resources</strong></a>
 			</div>
 		</div>
 	
@@ -251,8 +251,10 @@
 			<% unless @scenario.references == nil %>
 			<hr />
 			<a href="#top" class="btn btn-mini pull-right"><strong>Back to top</strong></a>
-				<h2>References</h2><br />
+				<h2>Resources</h2><br />
+				<span class="reference">
 				<%= markdown @scenario.references %>
+				</span>
 				<br />
 			<% end %>
 		</div>

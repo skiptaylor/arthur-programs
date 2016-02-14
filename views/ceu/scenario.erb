@@ -198,12 +198,14 @@
 	<p style="margin-left: 3em;">
 		<a href="/ceu/scenarios/<%= @scenario.id %>/ceu-certificate" class="btn btn-large btn-success"><strong>View Certificate PDF</strong></a> &nbsp;&nbsp;&nbsp; <strong>You can download your PDF from the browser.</strong>
 	</p>
-	<br /><br />
+	<br />
 	<div>
 		<% unless @scenario.references == nil %>
 		<hr />
-			<h2>References</h2><br />
-			<%= markdown @scenario.references %>
+			<h2>Resources</h2><br />
+				<span class="reference">
+				<%= markdown @scenario.references %>
+				</span>
 			<br />
 		<% end %>
 	</div>
