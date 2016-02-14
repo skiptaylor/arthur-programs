@@ -190,15 +190,24 @@
 	
 	<div class="span12">
 	<h3>
-		<img src="/img/check.png" class="pull-left" style="margin: 0.3em 1em 1em 0;" />Your Certificate for CEU Scenario <%= @scenario.id %> was submitted on <%= u.cert_date.display_short %>.
+		<img src="/img/check.png" class="pull-left" style="margin: 0.1em 1em 1em 0;" />Your Certificate for CEU Scenario <%= @scenario.id %> was submitted on <%= u.cert_date.display_short %>.
 	</h3>
 	<!-- <p style="margin-left: 3em;">This certificte will be sent to the NBCC and you will receive 2 Continuing Education Units.<br />
 		<small>Allow 3 working days for information to be received by NBCC.</small></p> -->
-	<br /><br /><br />
+	<br />
 	<p style="margin-left: 3em;">
 		<a href="/ceu/scenarios/<%= @scenario.id %>/ceu-certificate" class="btn btn-large btn-success"><strong>View Certificate PDF</strong></a> &nbsp;&nbsp;&nbsp; <strong>You can download your PDF from the browser.</strong>
 	</p>
-	<br /><br /><br /><br /><br />
+	<br /><br />
+	<div>
+		<% unless @scenario.references == nil %>
+		<hr />
+			<h2>References</h2><br />
+			<%= markdown @scenario.references %>
+			<br />
+		<% end %>
+	</div>
+	<br />
 	<!-- <div class="well certificate">
 		<img src="/img/ctc.png" class="pull-left" style="width: 150px;" />
 		<img src="/img/nbcc.png" class="pull-right" style="width: 240px;" />

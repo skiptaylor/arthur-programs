@@ -741,25 +741,6 @@ hr  {
 	min-height: 400px;
 }
 
-div.bubble {
-	margin: 30px auto 0 auto;
-	color: #ffffff;
-	width: 600px;
-	font-weight: 400;
-	font-size: 1.2em;
-	line-height: 1.3em;
-	text-align: left;
-	background-color: #20c5b1;
-	border: 0;
-	padding: 13px 18px 18px 18px;
-	-webkit-border-radius:22px;
-	-moz-border-radius:22px;
-	border-radius:22px;
-/*   -webkit-text-shadow: -1px -1px 0px #868686;
-   -moz-text-shadow: -1px -1px 0px #868686;
-   text-shadow: -1px -1px 0px #868686;*/
-}
-
 
 .white	{
 	background-color: #ffffff;
@@ -954,11 +935,15 @@ a.list-nav {
  }
  
  
- #passModal.modal-backdrop, #welcomeModal.modal-backdrop	{position:fixed;top:0;right:0;bottom:0;left:0;z-index:1040;background-color:#000000;}
- 
 
-#passModal.modal, #welcomeModal.modal	{max-height:740px;position:fixed;top:5%;left:5%;z-index:1050;overflow:auto;width:90%;margin:0 0 0 0;background-color:#ffffff;border:1px solid #999;border:1px solid rgba(0, 0, 0, 0.3);*border:1px solid #999;-webkit-border-radius:6px;-moz-border-radius:6px;border-radius:6px;-webkit-box-shadow:0 3px 7px rgba(0, 0, 0, 0.3);-moz-box-shadow:0 3px 7px rgba(0, 0, 0, 0.3);box-shadow:0 3px 7px rgba(0, 0, 0, 0.3);-webkit-background-clip:padding-box;-moz-background-clip:padding-box;background-clip:padding-box;}
+.modal	{max-height:80%;position:fixed;top:5%;left:10%;z-index:1050;overflow:auto;width:80%;margin:0 0 0 0;background-color:#ffffff;border:1px solid #999;border:1px solid rgba(0, 0, 0, 0.3);*border:1px solid #999;-webkit-border-radius:6px;-moz-border-radius:6px;border-radius:6px;-webkit-box-shadow:0 3px 7px rgba(0, 0, 0, 0.3);-moz-box-shadow:0 3px 7px rgba(0, 0, 0, 0.3);box-shadow:0 3px 7px rgba(0, 0, 0, 0.3);-webkit-background-clip:padding-box;-moz-background-clip:padding-box;background-clip:padding-box;}
 
+.modal-body {
+  position: relative;
+  max-height: 80%;
+  padding: 15px;
+  overflow-y: auto;
+}
 
 .left {
 	text-align: left;

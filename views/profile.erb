@@ -240,7 +240,7 @@
       <% end %>
 	 	<% unless (@user.remaining_ceu_scenario < 1) %>
 		<p><a class="btn btn-primary btn-small" href="/ceu/scenarios"><strong>Choose a CEU scenario to take</strong></a>
-		&nbsp; <small><%= @user.remaining_ceu_scenario %> Remaining</small></p>
+		&nbsp; <%= @user.remaining_ceu_scenario %> Remaining</p>
 		<% end %>
 		<table class="table table-condensed table-striped table-hover">
 			<thead>

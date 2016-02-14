@@ -1,6 +1,8 @@
 <script src="/js/admin/ncmhce.js"></script>
 
 <div class="container">
+	
+	<div id="top"> </div>
 
 <div class="row">
 	<div class="span3">
@@ -19,6 +21,7 @@
 			<div class="span7">
 				<h1><%= @scenario.title %></h1>
 				<%= markdown @scenario.body %>
+				
 				<div class="modal fade" id="edit-scenario" style="display: none;">
 					<div class="modal-body">
 						<form id="edit-scenario-form" class="form-horizontal" action="/admin/scenarios/<%= params[:id] %>/" method="post">
@@ -29,6 +32,10 @@
 								<br />
 								<label>Intoduction</label>
 								<textarea style="width: 98%; height: 200px;" name="body"><%= @scenario.body %></textarea>
+								<br />
+								<br />
+								<label>References</label>
+								<textarea style="width: 98%; height: 200px;" name="references"><%= @scenario.references %></textarea>
 								<br />
 								<br />
 								<div class="row">
@@ -58,6 +65,8 @@
 										</label>
 									</div>
 								</div>
+								
+								<br />
 							</fieldset>
 						</form>
 					</div>
@@ -72,6 +81,8 @@
 					<a data-toggle="modal" class="btn btn-mini btn-primary" href="#edit-scenario"><i class="icon-edit icon-white"></i></a>
 					<a data-toggle="modal" class="btn btn-mini btn-success" href="#new-question"><i class="icon-plus icon-white"></i></a>
 				</div>
+				<br /><br />
+				<a href="#references" class="btn btn-mini pull-right"><strong>Go to References</strong></a>
 			</div>
 		</div>
 	
@@ -235,6 +246,16 @@
 	</p>
 			
 <% end %>
+		<div id="references">
+			
+			<% unless @scenario.references == nil %>
+			<hr />
+			<a href="#top" class="btn btn-mini pull-right"><strong>Back to top</strong></a>
+				<h2>References</h2><br />
+				<%= markdown @scenario.references %>
+				<br />
+			<% end %>
+		</div>
 	</div>
 
 </div>

@@ -7,6 +7,8 @@ class Scenario
 
 	property :title, Text, 		 lazy: false
 	property :body,  Text,		 lazy: false
+  
+  property :references,  Text,		 lazy: false
 	
 	property :active,	  Boolean, default: true
 	property :sample,   Boolean, default: false
@@ -36,5 +38,4 @@ class Scenario
     
 	end
   
-
 end

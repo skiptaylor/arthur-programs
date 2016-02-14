@@ -15,7 +15,7 @@ end
 post '/admin/scenarios/:id/?' do
 	admin!
 	scenario = Scenario.get params[:id]
-	scenario.update(title: params[:title].strip, body: params[:body].strip, active: false, sample: false, workshop: false, ceu: false, practice: false)
+	scenario.update(title: params[:title].strip, body: params[:body].strip, references: params[:references].strip, active: false, sample: false, workshop: false, ceu: false, practice: false)
 	scenario.update(active: true) if params[:active]
 	scenario.update(sample: true) if params[:sample]
 	scenario.update(workshop: true) if params[:workshop]
