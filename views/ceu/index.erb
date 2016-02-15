@@ -50,12 +50,11 @@
 				<h3>
 					<%= scenario.id %>. <%= scenario.title %>
 					<% avg = @averages.detect {|a| a.scenario_id == scenario.id} %>
-					
-		 			
-					
 					<small style="color: #20ae32; font-weight: 800;" class='darker-gray'>&nbsp; <% if avg %>Last taken - <%= avg.updated_at.display_short if avg %><% end %></small>
 				</h3>
-				<%= markdown scenario.body.truncate(100) %>
+				
+				<%= (markdown scenario.body).truncate(100) %>
+				
 				<% if @uses.include?(scenario.id) || (@remaining_ceu_scenario > 0) %>
 					
 				<% average = Use.first(user_id: session[:user], scenario_id: scenario.id) %>		

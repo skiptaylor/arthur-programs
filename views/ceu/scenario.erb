@@ -294,7 +294,17 @@
 
 	<% else %>
 
-<%= markdown @scenario.body %>
+<div class="accordion">
+	<a class="btn btn-primary" style="margin-top: -8px;" data-toggle="collapse" href="#collapseOne">
+		<strong>CHART</strong>&nbsp;
+		<span style="margin-top: 10px;" class="caret"></span>
+	</a> &nbsp; &nbsp; <span style="color: gray;">Show and hide Chart</span>
+</div>
+<div id="collapseOne" class="collapse">
+	<div class="accordion-inner">
+		<%= markdown @scenario.body %>
+	</div>
+</div>
 
 	<hr />
 	
@@ -341,8 +351,9 @@
 
 <% unless @average %>
 <div class="pagination pagination-centered">
-	<p><small>Questions:</small></p>
+	<p><small><strong>Questions:</strong></small></p>
 	<ul>
+		
 		<li class="active"><a class="question-link" href="#question1">1</a></li>
 		<% @questions.each do |question| %>
 			<% if question.position > 1 %>
@@ -350,8 +361,12 @@
 			<% end %>
 		<% end %>
 		<li class="disabled"><a href="/ceu/scenarios/<%= @scenario.id %>/score" id="score-link">Show Score</a></li>
+		
 	</ul>
+	<br /><br />
 </div>
 <% end %>
 
 <% end %>
+
+
