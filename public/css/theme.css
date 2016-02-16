@@ -269,6 +269,40 @@ h1 {
   
   
   
+#main-alert {
+	display: none;
+	
+	width: 100%;
+	display: block;
+	padding: 0 0;
+	margin: 0 auto 0 auto;
+	z-index: 999;
+}
+
+.alert {
+  border: 1px solid #fbcf60; }
+
+.alert-success {
+  border-color: #468847; }
+
+.alert-danger, .alert-error {
+  border-color: #b94a48; }
+
+.alert-info {
+  border-color: #3a87ad; }
+
+#main-alert.alert {
+  	font-family: 'Open Sans', sans-serif;
+  	font-size: 16px;
+  	line-height: 2em;
+  	padding: 8px 0;
+  	text-align: center;
+  	color: #ffffff;
+  	font-weight: 700;
+  	text-shadow: 0 1px 0 rgba(0, 0, 0, 1);
+}
+
+  
   
   
     
@@ -538,18 +572,6 @@ div.features h2 {
 
 .darker-gray {
   color: #868686; }
-
-.alert {
-  border: 4px solid #fbcf60; }
-
-.alert-success {
-  border-color: #468847; }
-
-.alert-danger, .alert-error {
-  border-color: #b94a48; }
-
-.alert-info {
-  border-color: #3a87ad; }
 
 .guarantee ul li {
   padding: 4px 0; }

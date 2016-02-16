@@ -13,7 +13,7 @@ helpers do
 			session[:alert][:heading] ||= ''
 			session[:alert][:message] ||= ''
 			msg =  ''
-			msg << "<div class='alert #{session[:alert][:style]}'>"
+  		msg << "<div class='alert #{session[:alert][:style]}'>"
 			msg << "<a class='close' data-dismiss='alert'>x</a>"
 			msg << "<h4 class='alert-heading'>#{session[:alert][:heading]}</h4>" unless session[:alert][:heading] == ''
 			msg << "#{session[:alert][:message]}"

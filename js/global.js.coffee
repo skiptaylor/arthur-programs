@@ -1,5 +1,5 @@
-#= require 'prefixes/jquery-1.8.0.min'
-#= require 'prefixes/jquery-ui-1.8.22.min'
+#= require 'prefixes/jquery-1.11.3.min'
+#= require 'prefixes/jquery-ui-1.10.3.min'
 #= require 'prefixes/bootstrap.min'
 
 $(window).load ->

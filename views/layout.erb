@@ -102,11 +102,12 @@
 			</div>
 		</div>
 	</div>
-	  
+	
 	<div id="content">
+		
 		<div class="container">
-
-			<%= alert %>        
+			
+			<span id="main-alert"><%= alert %></span>
 			<%= yield %>
 		
 		</div>
@@ -118,3 +119,13 @@
 
 </body>
 </html>
+
+<script>
+	$(document).ready(function(){
+		setTimeout(function(){
+			$("#main-alert").fadeOut("slow", function () {
+			$("#main-alert").remove();
+	      });
+		}, 4000);
+	});
+</script>
