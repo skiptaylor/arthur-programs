@@ -13,6 +13,9 @@
 		<div class="page-header">
 			<h2>Issues</h2>
 		</div>
+		<div>
+			<p>Issues editor uses Markdown for formatting. See <a href="/admin/markdown">Markdown Guidelines</a> for syntax.</p>
+		<div>
 			<table class="table table-striped">
 				<tr>
 					<th>
@@ -34,10 +37,10 @@
 						<strong><%= i.name %></strong>
 					</td>
 					<td>
-						<%= i.problem %>
+						<%= markdown i.problem %>
 					</td>
 					<td>
-						<%= i.solution %>
+						<%= markdown i.solution %>
 					</td>
 					<td style="text-align: right;">
 						<a class="btn btn-mini btn-primary" href="/admin/issues/<%= i.id %>/edit"><i class="icon-edit icon-white"></i></a>

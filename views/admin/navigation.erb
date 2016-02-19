@@ -25,20 +25,18 @@
 				
 		<li class="nav-header" style="color: #535353; background-color: #cad2d4; margin-top: -1px;">Products</li>
 		
+		<li class="<%= active '/admin/scenarios' %>">
+			<a href="/admin/scenarios" class="list-nav" style="padding: 9px 6px 9px 14px;"> NCMHCE Scenarios <i class="icon-chevron-right pull-right icon-gray <%= 'icon-white' if request.path_info.include? '/admin/scenarios' %>"></i></a>
+		</li>
 		<li class="<%= active '/admin/exams' %>">
 			<a href="/admin/exams" class="list-nav" style="padding: 9px 6px 9px 14px;"> NCE Exams <i class="icon-chevron-right pull-right icon-gray <%= 'icon-white' if request.path_info.include? '/admin/exams' %>"></i></a>
 		</li>
 		
-		<li class="<%= active '/admin/glossary/nce' %>">
-			<a href="/admin/glossary/nce" class="list-nav" style="padding: 9px 6px 9px 14px;"> NCE Glossary <i class="icon-chevron-right pull-right icon-gray <%= 'icon-white' if request.path_info.include? '/admin/glossary/nce' %>"></i></a>
-		</li>
-
-		<li class="<%= active '/admin/scenarios' %>">
-			<a href="/admin/scenarios" class="list-nav" style="padding: 9px 6px 9px 14px;"> NCMHCE Scenarios <i class="icon-chevron-right pull-right icon-gray <%= 'icon-white' if request.path_info.include? '/admin/scenarios' %>"></i></a>
-		</li>
-		
 		<li class="<%= active '/admin/glossary/ncmhce' %>">
-			<a href="/admin/glossary/ncmhce" class="list-nav" style="padding: 9px 6px 9px 14px;"> NCMHCE Glossary <i class="icon-chevron-right pull-right icon-gray <%= 'icon-white' if request.path_info.include? '/admin/glossary/ncmhce' %>"></i></a>
+			<a href="/admin/glossary/ncmhce" class="list-nav" style="padding: 9px 6px 9px 14px;"> NCMHCE Flashcards <i class="icon-chevron-right pull-right icon-gray <%= 'icon-white' if request.path_info.include? '/admin/glossary/ncmhce' %>"></i></a>
+		</li>
+		<li class="<%= active '/admin/glossary/nce' %>">
+			<a href="/admin/glossary/nce" class="list-nav" style="padding: 9px 6px 9px 14px;"> NCE Flashcards <i class="icon-chevron-right pull-right icon-gray <%= 'icon-white' if request.path_info.include? '/admin/glossary/nce' %>"></i></a>
 		</li>
 
 		<li class="<%= active '/admin/glossary/other' %>">
@@ -47,11 +45,11 @@
 		
 		<li class="nav-header" style="color: #535353; background-color: #cad2d4; margin-top: -1px;">Guides</li>
 		
-		<li class="<%= active '/admin/markdown' %>">
-			<a href="/admin/markdown" class="list-nav" style="padding: 9px 6px 9px 14px;"> Markdown Guidelines <i class="icon-chevron-right pull-right icon-gray <%= 'icon-white' if request.path_info.include? '/admin/markdown' %>"></i></a>
-		</li>
 		<li class="<%= active '/admin/issues' %>">
 			<a href="/admin/issues" class="list-nav" style="padding: 9px 6px 9px 14px; border-bottom: 0;"> Issues <i class="icon-chevron-right pull-right icon-gray <%= 'icon-white' if request.path_info.include? '/admin/issues' %>"></i></a>
+		</li>
+		<li class="<%= active '/admin/markdown' %>">
+			<a href="/admin/markdown" class="list-nav" style="padding: 9px 6px 9px 14px;"> Markdown Guidelines <i class="icon-chevron-right pull-right icon-gray <%= 'icon-white' if request.path_info.include? '/admin/markdown' %>"></i></a>
 		</li>
 		
 	</ul>
