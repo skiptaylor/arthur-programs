@@ -267,11 +267,28 @@ h1 {
 }
   
   
-  
-  
-#main-alert {
+.nojs-alert {
 	display: none;
-	
+	position: fixed;
+	width: 100%;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 14px;
+	line-height: 1.6em;
+	text-shadow: -1px -1px 0px #000;
+	display: block;
+	background-color: #3aa839;
+	padding: 2px 0;
+	margin: 0px auto 0 auto;
+	text-align: center;
+	color: #ffffff;
+	font-weight: 700;
+	z-index: 999;
+}
+
+  
+.main-alert {
+	display: none;
+	position: fixed;
 	width: 100%;
 	display: block;
 	padding: 0 0;
