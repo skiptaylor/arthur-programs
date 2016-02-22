@@ -39,7 +39,9 @@
 	<br />
 	<p style="color: #c70004;"><strong>You did not score the required minimum of 70%. The selections you made are shown below with the point value(s) associated with each selection. Once you are done reviewing your selections, click on the START OVER button to retake your CEU.</strong></p>
 	<br />
+	<% if session[:admin] %>
 	<a href="/ceu/scenarios/<%= params[:id] %>/restart" class="btn btn-primary restart">Start Over</a>
+	<% end %>
 	<br /><br />
 	<strong>
 		<span style="color: #666666; font-size: 90%;">Answers are highlighted as follows:</span> &nbsp;
