@@ -215,7 +215,12 @@ h1 {
 
 .nav-pills > .active > a {
   color: #ffffff;
-  background-color: #1c89de;
+  background-color: #1d73d4;
+}
+
+.nav-pills > li > a:hover {
+  color: #ffffff;
+  background-color: #1d73d4;
 }
 
 .nav-pills > .active > a:hover {
