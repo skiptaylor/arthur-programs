@@ -1,3 +1,4 @@
+@import url(https://fonts.googleapis.com/css?family=Oswald:400,700|Open+Sans:400,400italic,600,800,700);
 
 
 /*@mixin border-radius($radius) {
@@ -303,7 +304,7 @@ h1 {
 	margin: 40px auto 0 auto;
 	text-align: center;
 	color: #ffd218;
-	font-weight: 300;
+	font-weight: 400;
 	z-index: 1444;
 }
   
@@ -449,7 +450,16 @@ div.welcome-phone {
   
 blockquote  {
  	border-left-color: #dde5f0;
+	font-size: 0.8em;
 }
+
+blockquote p {
+  margin-bottom: 0;
+  font-size: 1.3em;
+  font-weight: 400;
+  line-height: 1.4;
+}
+
 
 blockquote.correct {
   color: green;
@@ -516,9 +526,6 @@ div.features h2 {
 	border: 1px solid #c8c8c8;
 	border-top: 0;
 	border: 0 1px 1px 1px;
-/*   -webkit-border-radius: 4px;
-   -moz-border-radius: 4px;
-   border-radius: 4px;*/
 }
 
 
@@ -544,7 +551,7 @@ div.features h2 {
 
 .price-field ul li {
 	font-size: 1.2em;
-	font-weight: 300;
+	font-weight: 400;
 	list-style: none;
 	padding: 12px 0;
 	border: 0px;
@@ -577,7 +584,7 @@ div.features h2 {
 
 .grid-ground {
 	font-size: 1.2em;
-	font-weight: 300;
+	font-weight: 400;
 	list-style: none;
 	padding: 12px 0; }
   
