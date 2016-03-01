@@ -528,8 +528,19 @@ div.features h2 {
 	border: 0 1px 1px 1px;
 }
 
+.product-field  {
+   background-color: #1c89de;
+   color: white;
+	height: 9em;
+}
 
-
+.product-header {
+	font-family: 'Oswald', sans-serif;
+	color: #ffffff;
+	-webkit-text-shadow: -1px -1px 0px #333333; 
+	-moz-text-shadow: -1px -1px 0px #333333; 
+	text-shadow: -1px -1px 0px #333333;
+}
 
 .well {
 	background-color: #f5f5f5;
