@@ -1,4 +1,6 @@
-<div class="well affix span3" style="margin: 0; padding: 0; background: #ffffff;">
+<div class="affix">
+
+<div class="well span3" style="margin: 0 0 2em 0; padding: 0; background: #ffffff;">
 	
 	<ul class="nav nav-list">
 		
@@ -46,12 +48,27 @@
 		<li class="nav-header" style="color: #535353; background-color: #cad2d4; margin-top: -1px;">Guides</li>
 		
 		<li class="<%= active '/admin/issues' %>">
-			<a href="/admin/issues" class="list-nav" style="padding: 9px 6px 9px 14px; border-bottom: 0;"> Issues <i class="icon-chevron-right pull-right icon-gray <%= 'icon-white' if request.path_info.include? '/admin/issues' %>"></i></a>
+			<a href="/admin/issues" class="list-nav" style="padding: 9px 6px 9px 14px;"> Issues <i class="icon-chevron-right pull-right icon-gray <%= 'icon-white' if request.path_info.include? '/admin/issues' %>"></i></a>
 		</li>
 		<li class="<%= active '/admin/markdown' %>">
-			<a href="/admin/markdown" class="list-nav" style="padding: 9px 6px 9px 14px;"> Markdown Guidelines <i class="icon-chevron-right pull-right icon-gray <%= 'icon-white' if request.path_info.include? '/admin/markdown' %>"></i></a>
+			<a href="/admin/markdown" class="list-nav" style="padding: 9px 6px 9px 14px; border-bottom: 0;"> Markdown Guidelines <i class="icon-chevron-right pull-right icon-gray <%= 'icon-white' if request.path_info.include? '/admin/markdown' %>"></i></a>
 		</li>
 		
 	</ul>
 	
+</div>
+
+<% if request.path_info.include? '/admin/purchases' %>
+<div>		
+		<form method="get">
+			<p><%= @start.to_fields 'start' %></p>
+			<p><%= @end.to_fields 'end' %></p>
+			<p>
+				<button type="submit" class="btn btn-primary">Filter</button>
+				<a href="<%= request.url %><%= params.count > 0 ? '&export=true' : '?export=true' %>" class="btn">Export</a>
+			</p>
+		</form>
+</div>
+<% end %>
+
 </div>
