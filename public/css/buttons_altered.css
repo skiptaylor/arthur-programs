@@ -29,9 +29,9 @@ button.close {
 
 button {
 	font-weight: 600;
-	-webkit-text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.6); 
-		-moz-text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.6); 
-		 	  text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.6);
+	-webkit-text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.6); 
+		-moz-text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.6); 
+		 	  text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.6);
 }
 
 .btn:hover,
@@ -160,9 +160,9 @@ input[type="button"].btn-block {
   text-shadow: none;
   background-color: #1c89de;
   border-color: #2989f8;
--webkit-text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.6); 
-	-moz-text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.6); 
-	 	  text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.6);
+-webkit-text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.4); 
+	-moz-text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.4); 
+	 	  text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.4);
   
 }
 
@@ -175,9 +175,9 @@ input[type="button"].btn-block {
   color: #ffffff;
   background-color: #257de1;
   border-color: #257de1;
--webkit-text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.6); 
-	-moz-text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.6); 
-	 	  text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.6);
+-webkit-text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.4); 
+	-moz-text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.4); 
+	 	  text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.4);
   
   
 }
@@ -185,9 +185,9 @@ input[type="button"].btn-block {
 .btn-primary:active,
 .btn-primary.active {
   background-color: #257de1 \9;
--webkit-text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.6); 
-	-moz-text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.6); 
-	 	  text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.6);
+-webkit-text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.4); 
+	-moz-text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.4); 
+	 	  text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.4);
   
 }
 
@@ -196,9 +196,9 @@ input[type="button"].btn-block {
    text-shadow: none;
    background-color: #db7820;
    border-color: #db7820;
-	-webkit-text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.6); 
-		-moz-text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.6); 
-		 	  text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.6);
+	-webkit-text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.4); 
+		-moz-text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.4); 
+		 	  text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.4);
 	
 }
 
@@ -211,18 +211,18 @@ input[type="button"].btn-block {
   color: #ffffff;
   background-color: #c26a1b;
   *background-color: #c26a1b;
--webkit-text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.6); 
-	-moz-text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.6); 
-	 	  text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.6);
+-webkit-text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.4); 
+	-moz-text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.4); 
+	 	  text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.4);
   
 }
 
 .btn-warning:active,
 .btn-warning.active {
   background-color: #c26a1b \9;
--webkit-text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.6); 
-	-moz-text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.6); 
-	 	  text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.6);
+-webkit-text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.4); 
+	-moz-text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.4); 
+	 	  text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.4);
   
 }
 
@@ -242,18 +242,18 @@ input[type="button"].btn-block {
   color: #ffffff;
   background-color: #c6393c;
   *background-color: #c6393c;
--webkit-text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.6); 
-	-moz-text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.6); 
-	 	  text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.6);
+-webkit-text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.4); 
+	-moz-text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.4); 
+	 	  text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.4);
   
 }
 
 .btn-danger:active,
 .btn-danger.active {
   background-color: #c6393c \9;
--webkit-text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.6); 
-	-moz-text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.6); 
-	 	  text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.6);
+-webkit-text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.4); 
+	-moz-text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.4); 
+	 	  text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.4);
   
 }
 
@@ -262,9 +262,9 @@ input[type="button"].btn-block {
    text-shadow: none;
    background-color: #53b74e;
    border-color: #53b74e;
-	-webkit-text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.6); 
-		-moz-text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.6); 
-		 	  text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.6);
+	-webkit-text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.4); 
+		-moz-text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.4); 
+		 	  text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.4);
 	
 }
 
@@ -277,18 +277,18 @@ input[type="button"].btn-block {
   color: #ffffff;
   background-color: #4ba546;
   *background-color: #4ba546;
--webkit-text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.6); 
-	-moz-text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.6); 
-	 	  text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.6);
+-webkit-text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.4); 
+	-moz-text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.4); 
+	 	  text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.4);
   
 }
 
 .btn-success:active,
 .btn-success.active {
   background-color: #4ba546 \9;
--webkit-text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.6); 
-	-moz-text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.6); 
-	 	  text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.6);
+-webkit-text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.4); 
+	-moz-text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.4); 
+	 	  text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.4);
   
 }
 
@@ -297,9 +297,9 @@ input[type="button"].btn-block {
    text-shadow: none;
    background-color: #3dadfd;
    border-color: #3dadfd;
-	-webkit-text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.6); 
-		-moz-text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.6); 
-		 	  text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.6);
+	-webkit-text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.4); 
+		-moz-text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.4); 
+		 	  text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.4);
 	
 }
 
@@ -312,18 +312,18 @@ input[type="button"].btn-block {
   color: #ffffff;
   background-color: #38a0ea;
   *background-color: #38a0ea;
--webkit-text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.6); 
-	-moz-text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.6); 
-	 	  text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.6);
+-webkit-text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.4); 
+	-moz-text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.4); 
+	 	  text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.4);
   
 }
 
 .btn-info:active,
 .btn-info.active {
   background-color: #38a0ea \9;
--webkit-text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.6); 
-	-moz-text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.6); 
-	 	  text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.6);
+-webkit-text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.4); 
+	-moz-text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.4); 
+	 	  text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.4);
   
 }
 
