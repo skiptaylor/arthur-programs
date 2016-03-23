@@ -6,12 +6,12 @@
 </ul>
 
 <div>
-	<h1>
-		CEU Scenarios
-		<% if @ceu_scenario < 14 %>
-			<span style="float: right;"><a class="btn btn-success" href="/checkout/ceu?package=Single%20Scenario">Buy another <strong>CEU</strong> scenario for <strong>$20</strong></a></span>
-		<% end %>
-	</h1>
+	<% if @ceu_scenario < 14 %>
+		<span style="float: right;"><a class="btn btn-success" href="/checkout/ceu?package=Single%20Scenario">Buy another <strong>CEU</strong> scenario for <strong>$20</strong></a></span>
+	<% end %>
+ 	<h1>
+ 		CEU Scenarios
+ 	</h1>
 	<hr />
 </div>
 <br />

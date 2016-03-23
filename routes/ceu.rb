@@ -195,8 +195,8 @@ get '/ceu/scenarios/:id/ceu-certificate/?' do
     pdf.text "<#{@user.name} is awarded 2 hours of Continuing Education Units (CEU) for CEU Scenario #{@scenario.id}", :inline_format => true, :align => :center
     end
     
-    pdf.image "img/jim-shafe.png", :width => 200, :at => [440, 165]
-    pdf.image "img/jim-shafe.png", :width => 200, :at => [74, 165]
+    pdf.image "img/joel-brende-sig.png", :width => 190, :at => [440, 155]
+    pdf.image "img/gary-arthur-sig.png", :width => 200, :at => [74, 160]
     
     pdf.font_size 9
     pdf.text_box "Gary L. Arthur, Ed., LPC, NCC", :at => [110, 120]
