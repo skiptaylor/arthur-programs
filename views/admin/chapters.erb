@@ -1,0 +1,50 @@
+<div class="row">
+
+	<div class="span3">
+		<%= erb :'admin/navigation', layout: false %>
+	</div>
+
+	<div class="span9">
+		<ul class="breadcrumb">
+			<li>Admin <span class="divider">/</span></li>
+			<li>Manuals <span class="divider">/</span></li>
+			<li class="active">Chapters </li>
+		</ul>
+		<h5><%= @manual.name %> - <%= @section.section_title %></h5>
+		<p style="float: right;">
+			<a href="/admin/manuals/<%= @manual.id %>/sections" class="btn btn-default btn-small pull-right">Sections</a>
+		</p>
+		
+		<h1>Chapters</h1>
+		
+		<table class="table table-condensed">
+				<tr>
+					<th>
+						Number
+					</th>
+					<th>
+						Title
+					</th>
+					
+					<td>
+						<a href="/admin/manuals/<%= @manual.id %>/sections/<%= @section.id %>/chapters/new" class="btn btn-success btn-mini pull-right">New Chapter</a>
+					</td>
+				</tr>
+				<% @chapter.sort_by(&:chapter_number).each do |chapter| %>
+				<tr>
+					<td>
+						<%= chapter.chapter_number %>
+					</td>
+					<td>
+						<%= chapter.chapter_title %>
+					</td>
+					<td>
+						<span class="pull-right"><a href="/admin/manuals/<%= @manual.id %>/sections/<%= @section.id %>/chapters/<%= chapter.id %>/edit" class="btn btn-default btn-mini">Edit</a> <a href="/admin/manuals/<%= @manual.id %>/sections/<%= @section.id %>/chapters/<%= chapter.id %>/view" class="btn btn-primary btn-mini">View</a></span>
+					</td>
+				</tr>
+				<% end %>
+			</table>
+			
+	</div>
+
+</div>

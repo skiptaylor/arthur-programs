@@ -5,6 +5,9 @@
 # delete from uses where user_id in (select id from users where email = 'sample');
 # delete from users where email = 'sample';
 
+# delete from scores where deleted_at IS NOT NULL;
+# delete from averages where deleted_at IS NOT NULL;
+# delete from uses where delete_at IS NOT NULL;
 
 class User
 	include DataMapper::Resource
