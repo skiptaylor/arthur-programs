@@ -1,35 +1,53 @@
 <div class="row">
 	<div class="span12">
 			<h3 class="oswald" style="color: #1c89de; margin: 0.9em 0 0.5em 0;">Study Program Guide prepared for <%= @user.name %></h3>
-			<hr />
 	</div>
 </div>
-
-
 
 <% @manual.each do |manual| %>
 
-	<% if @user.ncmhce_downloads && manual.name == "NCMHCE Study Supplement" %><h1><%= manual.name %></h1>
 <div class="row">
 	<div class="span12">
-		<div class="affix">
-			<div class="well span4" style="margin: 0 0 2em 0; padding: 0; background: #ffffff;">
+	<% if @user.ncmhce_downloads && manual.name == "NCMHCE Study Supplement" %><h1 style="font-size: 2.5em;"><%= manual.name %></h1>
+	<hr />
+	</div>
+</div>
+
+<div class="row">
+	<div class="span12">
+		<div class="">
+			<div class="well span3 affix" style="margin: 0 0 2em 0; padding: 0; background: #ffffff;">
 				<ul class="nav nav-list">
+					
 					<% @section.sort_by(&:section_number).each do |section| %>
-					<li class="<%= active '/admin/users' %>">
-						<a href="" class="list-nav" style="padding: 9px 6px 9px 14px;"> <%= section.section_number %>. <%= section.section_title %> <i class="icon-chevron-right pull-right icon-gray <%= 'icon-white' if request.path_info.include? '/admin/users' %>"></i></a>
+					<li>
+						<a href="/manuals/manuals/sections" class="list-nav" style="padding: 9px 6px 9px 14px;"> <%= section.section_number %>. <%= section.section_title %> <i class="icon-chevron-right pull-right icon-gray <%= 'icon-white' if request.path_info.include? '/admin/users' %>"></i></a>
 					</li>
+					<% end %>
 					<% end %>
 				</ul>
 			</div>
+			<% if @user.ncmhce_downloads && manual.name == "NCMHCE Study Supplement" %>
+			<div class="span9 offset3" style="display: inline-block;">
+			
+			<% @chapter.each do |chapter| %>
+			
+				<h1><%= markdown chapter.chapter_title %></h1>
+				<%= markdown chapter.body %><br />
+			
+			<% end %>
+			
+			</div>
+			<% end %>
+							
 		</div>
-	</div>
-	<div class="span8">
-	</div>	
-	<% end %>
 
-<% end %>	
-	
+	</div>
 
 </div>
+
+
+
+
 	
+<% end %>
