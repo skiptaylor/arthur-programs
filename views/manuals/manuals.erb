@@ -29,6 +29,13 @@
 			</div>
 			<% if @user.ncmhce_downloads && manual.name == "NCMHCE Study Supplement" %>
 			<div class="span9 offset3" style="display: inline-block;">
+				
+			
+				<%= markdown manual.title_page %>
+				<p>Version <%= manual.version %></p>
+				<p>ISBN <%= manual.isbn %></p><br />
+			
+				
 			
 			<% @chapter.each do |chapter| %>
 			
