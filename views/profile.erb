@@ -156,6 +156,13 @@
     <% Message.all(ncmhce: true).each do |m| %>
       <div class="alert alert-info" style="border: none;"><%= m.body %></div>
     <% end %>
+	 
+	 <span style="float: right;"><a class="btn btn-success btn-small" href="#">Upgrade to Full Package now for $110</a></span>
+	 <h2 class="oswald ncmhce-color">Second Chance Offer! &nbsp; <small>14 days left.</small></h2> 
+	 <p style="line-height: 1.1em; padding-Bottom: 18px; border-bottom: 1px solid silver;"><small>If you want access to all 36 scenarios you have two weeks from your original purchase date to upgrade your <strong>Starter Package</strong> to our <strong>Full Package</strong> for the price difference of $110. <strong>You save $50.</strong> This equals the original Full Package price.</small></p>
+	 <br />
+	 <p><a class="btn btn-info" href="/manuals/manuals"><strong>Online NCMHCE Study Supplement</strong></a> &nbsp; <small>You can now study online.</small></p>
+	 <br />
 	 	<% unless @user.expired? %>
 		<p><a class="btn btn-primary btn-small" href="/ncmhce/scenarios"><strong>Choose a NCMHCE scenario to take</strong></a>&nbsp; <small><%= @user.remaining_scenarios %> Remaining</small></p>
 		<% end %>
@@ -219,7 +226,7 @@
 		<% end %>
 
 		
-		<p><a class="btn btn-info btn-large" href="/manuals/manuals"><strong>NCMHCE Study Supplement</strong></a></p>
+		
 		<br />
 	<% end %>
 	
