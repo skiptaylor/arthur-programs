@@ -91,6 +91,7 @@ post '/checkout/:product/?' do
     user.max_scenarios = (user.max_scenarios + 12)
     params[:package] = 'NCMHCE: Starter Package'
                email = 'ncmhce'
+               email = 'secondchance'
                  msg = true
     params[:optional] ? params[:optional] = '+ Hard Copy' : params[:optional] = '+ eBook'
     
@@ -113,8 +114,7 @@ post '/checkout/:product/?' do
   when 'Second Chance Upgrade'
     user.max_scenarios = (user.max_scenarios + 24)
     params[:package] = 'NCMHCE: Second Chance Upgrade'
-               email = 'secondchance'
-                 msg = true
+                 msg = false
 
 
   when 'NCE Upgrade'
@@ -181,6 +181,7 @@ post '/checkout/:product/?' do
     if settings.environment == 'production'
       Email.welcome(user.email, user.name, user.email, email)
       Email.receipt(user.email, user.name, "#{params[:package]} #{params[:optional]}", params[:amount])
+      Email.secondchance(user.email, user.name)
     end
     
     sign_in user.id, msg: msg
