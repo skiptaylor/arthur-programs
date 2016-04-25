@@ -15,6 +15,10 @@ get '/checkout/:product/?' do
 		@product_name = "Arthur-Brende NCMHCE Study Program"
 	when 'ncmhce-hard-copy'
 		@product_name = "Arthur-Brende NCMHCE Study Program"
+    
+	when 'second-chance-upgrade'
+		@product_name = "Arthur-Brende NCMHCE Study Program"
+    
 	when 'account-extension'
 		@product_name = "Extend Your Account"
 	when 'account-expiration'
@@ -104,6 +108,14 @@ post '/checkout/:product/?' do
                email = 'ceu'
                  msg = true
             user.ceu = true
+            
+
+  when 'Second Chance Upgrade'
+    user.max_scenarios = (user.max_scenarios + 24)
+    params[:package] = 'NCMHCE: Second Chance Upgrade'
+               email = 'secondchance'
+                 msg = true
+
 
   when 'NCE Upgrade'
     user.max_exams = (user.max_exams + 2)
@@ -140,7 +152,7 @@ post '/checkout/:product/?' do
       user.expiration_date = (DateTime.now + 90)
   	elsif (params[:package] == 'CEU: Single Scenario')
        user.expiration_date = (DateTime.now + 1825)
-  	elsif (params[:package] == 'NCMHCE: Hard Copy') || (params[:package] == 'NCE: Hard Copy')
+  	elsif (params[:package] == 'NCMHCE: Hard Copy') || (params[:package] == 'NCE: Hard Copy') || (params[:package] == 'NCMHCE: Second Chance Upgrade')
   		user.expiration_date = (user.expiration_date + 0)
 		else
 			user.expiration_date = (DateTime.now + 365)
