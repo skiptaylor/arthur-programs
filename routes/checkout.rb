@@ -113,8 +113,9 @@ post '/checkout/:product/?' do
 
   when 'Second Chance Upgrade'
     user.max_scenarios = (user.max_scenarios + 24)
-    params[:package] = 'NCMHCE: Second Chance Upgrade'
-                 msg = false
+      params[:package] = 'NCMHCE: Second Chance Upgrade'
+                 email = 'receipt'
+                   msg = true
 
 
   when 'NCE Upgrade'
