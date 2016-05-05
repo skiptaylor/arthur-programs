@@ -5,21 +5,13 @@
 	</div>
 
 	<div class="span9">
-		<ul class="breadcrumb">
-			<li>Admin <span class="divider">/</span></li>
-			<li class="active">Manuals</li>
-		</ul>
 
-		<p style="float: right;">
-			<a href="/admin/manuals/new" class="btn btn-success btn-small">New Manual</a>
-		</p>
-		
-		<h1>Manuals</h1>
+		<h1 class="blue-color">Manuals</h1>
 
 		<table class="table table-condensed">
 				<tr>
 					<th>
-						Manual
+						
 					</th>
 					<th style="text-align: center;">
 						Version
@@ -28,12 +20,13 @@
 						ISBN
 					</th>
 					<th>
+						<a href="/admin/manuals/new" class="btn btn-success btn-small pull-right">New Manual</a>
 					</th>
 				</tr>
 				<% @manual.each do |manual| %>
 				<tr>
 					<td>
-						<%= manual.name %>
+						<strong><%= manual.name %></strong>
 					</td>
 					<td style="text-align: center;">
 						<%= manual.version %>
@@ -52,12 +45,14 @@
 
 			<% @manual.each do |manual| %>
 			<hr />
-				<p><small class="blue-color">(Last updated <%= manual.updated_at.display_short %>)</small></p>
+			<div class="md">
+				<p class="para"><small class="blue-color">(Last updated <%= manual.updated_at.display_short %>)</small></p>
 				<%= markdown manual.title_page %>
 				<p>Version <%= manual.version %></p>
 				<p>ISBN <%= manual.isbn %></p>
 			<% end %>
 			<hr />
+			</div>
 	</div>
 
 </div>

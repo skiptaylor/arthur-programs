@@ -1,0 +1,9 @@
+<% @section = Section.all %>
+	<ul class="nav nav-list">
+		<% @section.sort_by(&:section_number).each do |section| %>
+		<li class="<%= active '/manuals/chapters' %>">
+			<a href="/manuals/<%= section.id %>/chapters" class="list-nav" style="padding: 9px 6px 9px 14px;"> <%= section.section_number %> &nbsp; <%= section.section_title %> <i class="icon-chevron-right pull-right icon-gray <%= 'icon-white' if request.path_info.include? "/manuals/chapters" %>"></i></a>
+		</li>
+		<% end %>
+	</ul>
+

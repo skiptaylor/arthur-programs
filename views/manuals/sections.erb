@@ -5,8 +5,6 @@
 	</div>
 </div>
 
-
-
 <% @manual.each do |manual| %>
 
 	<% if @user.ncmhce_downloads && manual.name == "NCMHCE Study Supplement" %><h1><%= manual.name %></h1>
@@ -24,8 +22,9 @@
 			</div>
 		</div>
 	</div>
+	
 	<div class="span8">
-		<% @chapter.each do |chapter| %>
+		<% @chapter.each do |chapter| %>		
 			<%= chapter.chapter_title %><br />
 			<%= chapter.body %>
 		<% end %>

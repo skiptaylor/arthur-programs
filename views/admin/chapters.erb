@@ -5,12 +5,8 @@
 	</div>
 
 	<div class="span9">
-		<ul class="breadcrumb">
-			<li>Admin <span class="divider">/</span></li>
-			<li>Manuals <span class="divider">/</span></li>
-			<li class="active">Chapters </li>
-		</ul>
-		<h5><%= @manual.name %> - <%= @section.section_title %></h5>
+
+		<h1 class="blue-color"><%= @manual.name %> - <%= @section.section_title %></h1>
 		<p style="float: right;">
 			<a href="/admin/manuals/<%= @manual.id %>/sections" class="btn btn-default btn-small pull-right">Sections</a>
 		</p>
@@ -30,7 +26,7 @@
 						<a href="/admin/manuals/<%= @manual.id %>/sections/<%= @section.id %>/chapters/new" class="btn btn-success btn-mini pull-right">New Chapter</a>
 					</td>
 				</tr>
-				<% @chapter.sort_by(&:chapter_number).each do |chapter| %>
+				<% @chapter.sort!{|a,b| a.chapter_number <=> b.chapter_number}.each do |chapter| %>
 				<tr>
 					<td>
 						<%= chapter.chapter_number %>
@@ -44,6 +40,8 @@
 				</tr>
 				<% end %>
 			</table>
+			<hr />
+			<p><small><strong>NOTE</strong> Chapter numbers are only used to order chapters. The numbers are not displayed to the user. This means you can add a chapter between existing chapters in the lsit without changing all the following numbers by adding a decimal. ( Number 03.1 will follow 03 )</small></p>
 			
 	</div>
 

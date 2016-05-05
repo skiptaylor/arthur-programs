@@ -1,0 +1,41 @@
+<% @manual.each do |manual| %>
+	<% if @user.ncmhce_downloads && manual.name == "NCMHCE Study Supplement" %>
+	<div class="row">
+		<div class="span3">
+			<div class="well" style="margin: 0 0 2em 0; padding: 0; background: #ffffff;">
+				<%= erb :'manuals/nav', layout: false %>
+				
+			</div>
+			
+			
+			<% @chapter.sort_by(&:chapter_number).each do |chapter| %>
+				<a href="#<%= chapter.id %>"><%= chapter.chapter_title %></a><br /><br />
+			<% end %>
+			
+			<a href="#top" style="position: fixed; bottom:52px;left: 140px;"><img src="/img/top-pointer.png" /></a>
+			
+		</div>
+		
+		
+		<div class="span9 md">
+			
+				<h3 class="oswald" style="color: #1c89de; margin: 0.9em 0 0.5em 0;">Study Program Guide prepared for <%= @user.name %></h3>
+				<h1 style="font-size: 2.5em;"><%= manual.name %></h1>
+				<hr />
+			
+			
+			<!-- <strong>Manual id <%= params[:section_id] %></strong><br /> -->
+						
+				<% @chapter.sort_by(&:chapter_number).each do |chapter| %>
+				
+					<!-- <span class="blue-color">Chapter id <%= chapter.id %></span> -->
+					<a name="<%= chapter.id %>" style="color: black; text-decoration: none;"><h1><%= chapter.chapter_title %></h1></a>
+					<%= markdown chapter.body %><br />
+				<% end %>
+			
+		</div>
+	
+	</div>
+	<% end %>
+<% end %>
+
