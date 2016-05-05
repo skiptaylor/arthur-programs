@@ -9,10 +9,10 @@
 			
 			
 			<% @chapter.sort_by(&:chapter_number).each do |chapter| %>
-				<a href="#<%= chapter.id %>"><%= chapter.chapter_title %></a><br /><br />
+				<a href="#<%= chapter.id %>"><p style="margin-bottom: 12px;"><%= chapter.chapter_title %></p></a>
 			<% end %>
 			
-			<a href="#top" style="position: fixed; bottom:52px;left: 140px;"><img src="/img/top-pointer.png" /></a>
+			<!-- <a href="#top" style=" position: absolute; bottom:100px;left: 14%;"><img src="/img/top-pointer.png" /></a> -->
 			
 		</div>
 		
@@ -28,9 +28,11 @@
 						
 				<% @chapter.sort_by(&:chapter_number).each do |chapter| %>
 				
+				
 					<!-- <span class="blue-color">Chapter id <%= chapter.id %></span> -->
 					<a name="<%= chapter.id %>" style="color: black; text-decoration: none;"><h1><%= chapter.chapter_title %></h1></a>
-					<%= markdown chapter.body %><br />
+					<%= markdown chapter.body %>
+					<a href="#top" class="pull-right"><img src="/img/top-pointer.png" /></a><br />
 				<% end %>
 			
 		</div>
