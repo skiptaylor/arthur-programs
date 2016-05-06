@@ -1084,6 +1084,9 @@ a.list-nav {
 .md blockquote p   { text-indent: 0em; }
 .md h3  { text-indent: 0em; padding: 0.4em 0 0.2em 0; }
 
-.top-margin  {
-	margin-top: 60px;
+:target:before {
+  content:"";
+  display:block;
+  height:60px; /* fixed header height*/
+  margin:-60px 0 0; /* negative fixed header height */
 }
