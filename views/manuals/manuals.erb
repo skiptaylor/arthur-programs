@@ -1,18 +1,18 @@
 <% @manual.each do |manual| %>
 	<% if @user.ncmhce_downloads && manual.name == "NCMHCE Study Supplement" %>
 	<div class="row">
-		<div class="well span3" style="margin: 0 0 2em 0; padding: 0; background: #ffffff;">
-			<%= erb :'manuals/nav', layout: false %>	
-		</div>
+		<div class="span3 affix">
+			<div class="well" style="margin: 0 0 1em 0; padding: 0; background: #ffffff;">
+				<%= erb :'manuals/nav', layout: false %>
+				
+			</div>
 
-	
-		<div class="span9 md">
+		</div>
+		<div class="span9 offset3">
 			<h3 class="oswald" style="color: #1c89de; margin: 0.9em 0 0.5em 0;">Study Program Guide prepared for <%= @user.name %></h3>
 			<h1 style="font-size: 2.5em;"><%= manual.name %></h1>
 			<hr />
-			<%= markdown manual.title_page %>
-			<p>Version <%= manual.version %></p>
-			<p>ISBN <%= manual.isbn %></p><br />
+			<p><img src="/img/NCMHCE-Cover.jpg" style="border: 1px solid silver; -webkit-box-shadow: 3px 6px 11px #b2b5bc; -moz-box-shadow: 3px 6px 11px #b2b5bc; box-shadow: 3px 6px 11px #b2b5bc; " /></src>
 		</div>
 	
 	</div>
