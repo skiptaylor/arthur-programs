@@ -1,9 +1,9 @@
 <% @section = Section.all %>
-	<ul class="nav nav-list">
+<nav class="chapter-nav">	<ul class="nav nav-list">
 		<% @section.sort_by(&:section_number).each do |section| %>
-		<li class="<%= active '#{request.url}' %>">
-			<a href="/manuals/<%= section.id %>/chapters" class="list-nav" style="padding: 5px 6px 6px 14px;"> <%= section.section_number %> &nbsp; <%= section.section_title %> <i class="icon-chevron-right pull-right icon-gray  <%= 'icon-white' if request.path_info.include? '#{request.url}' %>"></i></a>
+		<li class="<%= active "#{section.id}" %>">
+			<a href="/manuals/<%= section.id %>/chapters" class="list-nav" style="padding: 5px 6px 6px 14px;"> <%= section.section_number %> &nbsp; <%= section.section_title %> <i class="icon-chevron-right pull-right icon-gray  <%= 'icon-white' if request.path_info.include? "#{section.id}" %>"></i></a>
 		</li>
 		<% end %>
 	</ul>
-
+</nav>
