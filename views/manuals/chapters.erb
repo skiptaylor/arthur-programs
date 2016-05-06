@@ -1,19 +1,19 @@
 <% @manual.each do |manual| %>
 	<% if @user.ncmhce_downloads && manual.name == "NCMHCE Study Supplement" %>
 	<div class="row">
-		<div class="span3">
-			<div class="well" style="margin: 0 0 2em 0; padding: 0; background: #ffffff;">
+		<div class="span3 affix">
+			<div class="well" style="margin: 0 0 1em 0; padding: 0; background: #ffffff;">
 				<%= erb :'manuals/nav', layout: false %>
 				
 			</div>
 			
 			<% @chapter.sort_by(&:chapter_number).each do |chapter| %>
-				<a href="#<%= chapter.id %>"><p style="margin-bottom: 12px;"><%= chapter.chapter_title %></p></a>
+				<a href="#<%= chapter.id %>"><p style="margin-bottom: 8px; font-size: 0.9em;" class="oswald"><%= chapter.chapter_title %></p></a>
 			<% end %>
 			
 		</div>
 		
-		<div class="span9 md">
+		<div class="span9 offset3 md">
 			
 				<h3 class="oswald" style="color: #1c89de; margin: 0.9em 0 0.5em 0;">Study Program Guide prepared for <%= @user.name %></h3>
 				<h1 style="font-size: 2.5em;"><%= manual.name %></h1>
@@ -33,9 +33,3 @@
 	<% end %>
 <% end %>
 
-
-// <script>
-// 	var offset = $(':target').offset();
-// 	var scrollto = offset.top - 60; // minus fixed header height
-// 	$('html, body').animate({scrollTop:scrollto}, 2000);
-// </script>
