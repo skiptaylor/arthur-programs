@@ -1090,3 +1090,26 @@ a.list-nav {
   height:60px; /* fixed header height*/
   margin:-60px 0 0; /* negative fixed header height */
 }
+
+a.chapter-link  {
+	color: #1c89de;
+	font-family: 'Oswald', sans-serif;
+	font-size: 0.9em;
+	font-weight: 400;
+	margin-bottom: 8px;
+}
+
+a.chapter-link:hover  {
+	color: #090087;
+	text-decoration: none;
+}
+
+a.chapter-link:active  {
+	color: #bc272e;
+	text-decoration: none;
+}
+
+
+
+
+
