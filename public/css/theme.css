@@ -1075,6 +1075,11 @@ a.list-nav {
 	text-indent: -2em;
 }
 
+div.reference p  {
+	margin-left: 2em;
+	text-indent: -2em;
+}
+
 .md p  { text-indent: 1.7em; }
 .md p.para  { text-indent: 0em; }
 .md h1  { text-indent: 0em; }
