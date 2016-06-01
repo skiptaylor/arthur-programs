@@ -117,10 +117,16 @@ body	{
 .navbar .nav-collapse {
     background-color: #1c89de;
     border-color: #252525;
+	 color: #ffffff;
 }
+
+.navbar .nav-collapse ul.nav li a {
+	 color: #ffffff;
+}
+
   
 .navbar-inverse .nav .active>a,.navbar-inverse .nav .active>a:hover,.navbar-inverse .nav .active>a:focus {
-	color:#ffffff;
+	color: #ffffff;
 	font-weight: 600;
    background-color: #195fae;
  	background-image: -moz-linear-gradient(top, #195fae, #195fae);
@@ -157,7 +163,10 @@ body	{
 	color:#ffffff;
 }
   
-  
+.nav-collaspe  ul li  {
+	color: #ffffff;
+}
+ 
 .navbar-inverse .brand,
 .navbar-inverse .nav > li > a {
 	color:#ffffff;
