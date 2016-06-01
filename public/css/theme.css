@@ -1131,17 +1131,25 @@ a.chapter-link:active  {
 	text-decoration: none;
 }
 
-
+.home-space  {
+	margin-bottom: 9em;
+}
 
 @media (max-width: 767px) { 
 	.section-header {
 		font-size: 2.1em;
+	}
+	.home-space  {
+		margin-bottom: 1em;
 	}
 }
 
 @media (max-width: 480px) { 
 	.section-header {
 		font-size: 1.7em;
+	}
+	.home-space  {
+		margin-bottom: 1em;
 	}
 }
 
