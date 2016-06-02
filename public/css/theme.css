@@ -887,7 +887,7 @@ hr  {
    
 }
 
-#slideshow {
+/*#slideshow {
     width: 900px;
     height: 400px;
     overflow: hidden;
@@ -921,6 +921,7 @@ hr  {
     padding: 11px 0;
     outline: none;
 }
+*/
 
 .bar	{
 	background-color: #1c89de;
@@ -1153,6 +1154,11 @@ a.chapter-link:active  {
 	}
 }
 
+.btn-toolbar .btn-group a.btn  {
+	margin: 0 0 0.5em 0;
+}
 
-
+.btn-toolbar  {
+	margin: 0 0 0.5em 0;
+}
 
