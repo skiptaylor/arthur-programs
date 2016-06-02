@@ -12,7 +12,7 @@
 		</div>
 		<br class="hidden-phone" />
 		
-		<form class="form-horizontal" id="sign-in-form" method="post" action="/sign-in">
+		<form class="form-horizontal" id="sign-in-form" name="sign-in-form" method="post" action="/sign-in">
 			
 			<div class="control-group" id="email-group">
 				<label class="control-label" type="email">Email</label>
@@ -56,4 +56,8 @@
 	</div>
 </div>
 
-
+<script language="JavaScript" type="text/javascript"
+	xml:space="preserve">
+	var frmvalidator  = new Validator("sign-in-form");
+	frmvalidator.addValidation("tos","shouldselchk=on","Please agree to the Terms of Service");
+</script>
