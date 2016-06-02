@@ -398,7 +398,7 @@ h1 {
    padding-top: 1.5em;
    text-align: center;
   	border-top: #c7c8c8 1px solid;
-   background-color: #efefef;
+   /*background-color: #efefef;*/
    background-image: -moz-linear-gradient(top, #efefef, #ffffff);
    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#efefef), to(#ffffff));
    background-image: -webkit-linear-gradient(top, #efefef, #ffffff);

@@ -1,37 +1,65 @@
 <div id="#top"> </div>
 	
-<div class="row">
+<div class="row visible-desktop">
 	<div class="span12 center">
 		<p class="all-header">Arthur Study Programs</p>
 		<p class="product-header blue-color">National Counselor Examination</p>
 	</div>
 </div>
+
+<div class="row visible-tablet" style="margin-top: -50px;">
+	<div class="span12 center">
+		<p class="all-header" style="font-size: 2em;">Arthur Study Programs</p>
+		<p class="product-header blue-color" style="font-size: 2.2em;">National Counselor Examination</p>
+	</div>
+</div>
+
+<div class="row visible-phone" style="margin-top: -50px;">
+	<div class="span12 center">
+		<p class="all-header" style="font-size: 1.6em;">Arthur Study Programs</p>
+		<p class="product-header blue-color" style="font-size: 2.1em;">National Counselor Examination</p>
+	</div>
+</div>
+
+
 <div class="row">
 	<div class="span8 center">
-		<a href="#product"><img src="/img/nce-group.jpg" width="90%" /></a>
+		<a href="#product"><img src="/img/nce-group.jpg" width="90%" class="hidden-phone" /></a>
+		<a href="#product"><img src="/img/nce-group.jpg" width="100%" class="visible-phone" style="margin-top: -20px;" /></a>
 	</div>
 	<div class="span4">
-		<div class="well">
+		<div class="well hidden-phone">
 			<center><a href="#product"><img src="/img/nce-badge-solid.png" style="padding: 0em" /></a></center>
 			<a class="btn btn-primary btn-large btn-block" href="#pricing" style="font-weight: bold; margin: 18px 0 12px 0;">Pricing</a>
 			<a class="btn btn-success btn-large btn-block" href="/checkout/nce?package=Enhanced%20Package" style="font-weight: bold;">BUY NOW!</a>
 			<p><center><small>Order by phone +1-888-326-9229.</small></center></p>
 			<center><a href="#guarantee"><img src="/img/pass_icon-left.png" width="30%;" /></a></center>
 		</div>
+		<div class="visible-phone">
+			<a class="btn btn-success btn-large btn-block" href="/checkout/nce?package=Enhanced%20Package" style="font-weight: bold; margin-top: 12px;">BUY NOW!</a>
+			<p><center>Order by phone +1-888-326-9229.</center></p>
+			<center><a href="#guarantee"><img src="/img/pass_icon-left.png" width="80px" /></a></center>
+		</div>
 	</div>	
-	<div class="span12 center">
+	<div class="span12 center hidden-phone">
 		<p style="font-size: 1.3em; font-weight: 300; margin: 0.5em 0 12px 0;">We are very proud that 97% of our customers passed their exam in 2015!<sup style="font-size: .6em;">1</sup></p>
 		<p style="font-size: 1.3em; font-weight: 300; margin: 0 0 28px 0;">Our NCE study material has been updated for the DSM-5&trade;.</p>
 		<p style="font-size: 1.2em; font-weight: 600;">Free Sample eBook - download it now!<br />
-			<a href="/downloads/Sample%20NCE%20Study%20Guide.pdf" class="btn btn-primary btn" target="_blank" style="margin-top: 1em;">Sample eBook</a>
+			<a href="/downloads/Sample%20NCE%20Study%20Guide.pdf" class="btn btn-primary" target="_blank" style="margin-top: 1em;">Sample eBook</a>
 		</p>
+	</div>
+	<div class="span12 center visible-phone">
+		<p style="font-size: 1.1em; font-weight: 300; margin: 1em 0 12px 0;">We are very proud that 97% of our customers passed their exam in 2015!<sup style="font-size: .6em;">1</sup></p>
+		<p style="font-size: 1.1em; font-weight: 300; margin: 0 0 28px 0;">Our NCE study material has been updated for the DSM-5&trade;.</p>
+		
+			<!-- <a href="/downloads/Sample%20NCE%20Study%20Guide.pdf" class="btn btn-primary btn-large" target="_blank" style="margin-top: 0.2em;">Free Sample eBook</a> -->
 		
 	</div>
 </div>
 
 <!-- ======================= Product Info ======================= -->
 
-<div class="row">
+<div class="row hidden-phone">
 	<div class="span12 center">
 		<div id="product" class="span12 section-div" style="clear: left;">
 			<a href="#product" style="padding: 12px 60px;"><img src="/img/page-pointer.png" /></a>
@@ -88,7 +116,7 @@
 
 <!-- ======================= Pricing ======================= -->
 
-<div class="row">
+<div class="row hidden-phone">
 	<div class="span12 center">
 		<div id="pricing" class="span12 section-div" style="clear: left;">
 			<a href="#pricing" style="padding: 12px 60px;"><img src="/img/page-pointer.png" /></a>
@@ -104,7 +132,7 @@
 </div>
 <div class="row">
 	<div class="span4">
-		<div class="save-white">
+		<div class="save-white hidden-phone">
 			&nbsp;
 		</div>
 		<div class="price-ground">
@@ -122,6 +150,7 @@
 				<li><a class="btn btn-success btn-large" href="/checkout/nce?package=Basic%20Package" style="font-weight: bold; margin-bottom: -9px; width: 85%;">BUY NOW!</a></li>
 			</ul>
 			</div>
+			<br />
 		</div>
 		<div class="span4">
 			<div class="save-red" style="font-weight: 700;">
@@ -147,7 +176,7 @@
 		<div class="save-white">
 			&nbsp;
 		</div>
-		<div class="well well-small" style="padding: 0;">
+		<div class="well well-small hidden-phone" style="padding: 0;">
 			<center><img src="/img/nce-badge-solid.png" style="padding: 2em 0 0.6em 0;" /></center>
 			<hr />
 			<center><p>Buy with confidence</p></center>
@@ -157,17 +186,28 @@
 			<center><p>Call toll free <br /><span style="font-size: 1.4em;">888-326-9229</span></p>
 			<p>Our business hours are <br />Monday - Friday, 9:00 AM - 5:00 PM EST.</p><br /></center>
 		</div>
+		<div class="visible-phone" style="padding: 0;">
+			<center><p>Buy with confidence</p></center>
+			<center><img src="/img/badges/comodo_secure_113x59.png" /></center>				
+			<br />
+			<center><h4>To order by phone.</h4></center>
+			<center><p>Call toll free <br /><span style="font-size: 1.4em;">888-326-9229</span></p>
+			<p><small>Our business hours are <br />Monday - Friday, 9:00 AM - 5:00 PM EST.</small></p><br /></center>
+		</div>
 	</div>
 </div>
 <div class="row">	
 	<div class="span12">	
 		<div style="margin: 14px 0 12px 0; padding: 16px 0">
 			<img src="/img/nce-binder-small.png" width="100px" style="margin: -22px 2px 9px 18px; padding-right: 24px;" class="pull-left" />
-			<h2 class="oswald">Add the Study Guide Hard Copy for only $13.95 shipping.**</h2>
+			<h2 class="oswald hidden-phone">Add the Study Guide Hard Copy for only $13.95 shipping.**</h2>
+			<h3 class="oswald visible-phone">Add the Study Guide Hard Copy for only $13.95 shipping.**</h3>
 			<p><em>It's the same as the eBook and updated for the DSM-5&trade;.</em></p>
 		</div>
 		<hr style="clear: left;" />
-		<p><small>* Two additional practice exams can be purchased later for $60. <br />** Must purchase Basic or Enhanced Package to buy Optional Hard Copy for $13.95. See Optional Enhancements on Checkout page. <br />If you require we ship to a PO Box please call toll free 888-326-9229 for details. </small></p>
+		<p><small>* Two additional practice exams can be purchased later for $60.</small></p>
+		<p><small>** Must purchase Basic or Enhanced Package to buy Optional Hard Copy for $13.95. See Optional Enhancements on Checkout page.</small></p>
+		<p><small>If you require we ship to a PO Box please call toll free 888-326-9229 for details. </small></p>
 		</div>
 </div>
 
@@ -176,7 +216,8 @@
 <div class="section-div hidden-phone" id="guarantee" style="clear: left; padding-top: 14px;"><a href="#guarantee" style="padding: 12px 60px;"><img src="/img/page-pointer.png" /></a></div>
 
 <div class="page-header">
-	<img src="/img/pass_icon.png" width="124px" style="float: right; margin-top: -14px;" />
+	<img src="/img/pass_icon.png" width="124px" style="float: right; margin-top: -14px;" class="hidden-phone" />
+	<img src="/img/pass_icon.png" width="85px" style="float: right; margin-top: -14px;" class="visible-phone" />
 	<h1 class="section-header">Satisfaction Guarantee + Money Back Pass Guarantee</h1>
 </div>
 
@@ -229,7 +270,7 @@
 
 <!-- ======================= testimonials ======================= -->
 
-<div class="section-div" id="testimonials" style="clear: left; padding-top: 14px;"><a href="#testimonials" style="padding: 12px 60px;"><img src="/img/page-pointer.png" /></i></a></div>
+<div class="section-div hidden-phone" id="testimonials" style="clear: left; padding-top: 14px;"><a href="#testimonials" style="padding: 12px 60px;"><img src="/img/page-pointer.png" /></i></a></div>
 
 <div class="page-header">
 	<h1 class="section-header">Testimonials</h1>
@@ -297,7 +338,7 @@
 	<hr />
 	<p class="pull-left"><small><sup>1</sup> Based on number of refunds requested due to failed exams.</small></p>
 </div>
-	<a href="#top" style="position: fixed; bottom:24px;right: 26px;"><img src="/img/top-pointer.png" /></a>
+	<a href="#top" style="position: fixed; bottom:24px;right: 26px;" class="hidden-phone"><img src="/img/top-pointer.png" /></a>
 
 </div>
 
