@@ -1,11 +1,18 @@
-<div class="container">
-
-<div class="page-header">
-	<h1>
-		<%= @user.name %>
-		<%= '<small>Admin</small>' if @user.admin? %>
-	</h1>
+<div class="row">
+	<div class="span12">
+		<div class="page-header visible-desktop">
+			<h1>
+				<%= @user.name %> <small style="font-size: 0.75em;"><%= 'Admin' if @user.admin? %></small>
+			</h1>
+		</div>
+		<div class="page-header hidden-desktop" style="margin-top: -40px;">
+			<h1>
+				<%= @user.name %> <small style="font-size: 0.75em;"><%= 'Admin' if @user.admin? %></small>
+			</h1>
+		</div>
+	</div>
 </div>
+
 
 <div class="row">
 
@@ -138,19 +145,36 @@
 
 	<% if @user.max_scenarios > 0 %>
 
-		<div class="page-header">
+		<div class="page-header visible-desktop">
 			<h3>
 				NCMHCE Scenarios
 				<small><%= @user.remaining_scenarios %> Remaining</small>
 				<% if @user.max_scenarios < 36 %>
-					<span style="float: right;">&nbsp; <a class="btn btn-success btn-small" href="/checkout/ncmhce-upgrade">Buy 12 more scenarios for $80</a></span>
+					<span style="float: right; margin-top: -6px;">&nbsp; <a class="btn btn-success btn-small" href="/checkout/ncmhce-upgrade">Buy 12 more scenarios for $80</a></span>
 				<% end %>
 				<% unless @user.expired? %>
 				<% unless @user.purchases.any? { |purchase| purchase.options == "+ Hard Copy" } %>
-					<span style="float: right;"><a class="btn btn-success btn-small" href="/checkout/ncmhce-hard-copy">Buy a hard copy for $13.95</a></span>
+					<span style="float: right; margin-top: -6px;"><a class="btn btn-success btn-small" href="/checkout/ncmhce-hard-copy">Buy a hard copy for $13.95</a></span>
 				<% end %>
 				<% end %>
 			</h3>
+		</div>
+		
+		<div class="page-header hidden-desktop">
+			<h3>
+				NCMHCE Scenarios
+				<small><%= @user.remaining_scenarios %> Remaining</small>
+			</h3>
+			<div style="margin: 6px 0 0 0;">
+				<% if @user.max_scenarios < 36 %>
+					<a class="btn btn-success btn-small" style="margin: 0 0 6px 0;" href="/checkout/ncmhce-upgrade">Buy 12 more scenarios for $80</a>
+				<% end %>
+				<% unless @user.expired? %>
+				<% unless @user.purchases.any? { |purchase| purchase.options == "+ Hard Copy" } %>
+					<a class="btn btn-success btn-small" style="margin: 0 0 6px 0;" href="/checkout/ncmhce-hard-copy">Buy a hard copy for $13.95</a>
+				<% end %>
+				<% end %>
+			</div>
 		</div>
 
     <% Message.all(ncmhce: true).each do |m| %>
@@ -169,11 +193,11 @@
 	 </div>
 	 
 	 
-	 <br />
-	 <p><a class="btn btn-info" href="/manuals/manuals"><i class="icon-book icon-white"></i><strong> &nbsp; Online NCMHCE Study Supplement</strong></a> &nbsp; <small>You can now study online.</small></p>
-	 <br />
+	 
+	 <p><a class="btn btn-info" href="/manuals/manuals"><strong>Online NCMHCE Study Supplement</strong></a> &nbsp; <small>You can now study online.</small></p>
+	 
 	 	<% unless @user.expired? %>
-		<p><a class="btn btn-primary btn-small" href="/ncmhce/scenarios"><strong>Choose a NCMHCE scenario to take</strong></a>&nbsp; <small><%= @user.remaining_scenarios %> Remaining</small></p>
+		<p><a class="btn btn-primary btn-small" href="/ncmhce/scenarios"><strong>Choose a NCMHCE scenario to take</strong></a>&nbsp; <br class="visible-phone" /><small><%= @user.remaining_scenarios %> Remaining</small></p>
 		<% end %>
 		<% unless @scenarios.empty? %>
 			<table class="table table-condensed table-striped table-hover">
@@ -266,7 +290,7 @@
 					<th>Scenario</th>
 					<th style="text-align: center;">Score</th>
 					<th style="text-align: center;">Last Taken</th>
-					<th style="text-align: center;">Remaining</th>
+					<th style="text-align: center;" class="hidden-phone">Remaining</th>
 					<th></th>
 				</tr>
 			</thead>
@@ -277,7 +301,7 @@
 
 					<tr>
 						<td>
-							<%= average.scenario_id %>. <%= average.scenario.title %><span class="pull-right" style="color: #bc1424;"><small><%= average.created_at.to_date %></small></span>
+							<%= average.scenario_id %>. <%= average.scenario.title %><span class="pull-right hidden-phone" style="color: #bc1424;"><small><%= average.created_at.to_date %></small></span>
 						</td>
 						<td style="text-align: center;">
 							<% if avg = Average.last(user_id: session[:user], scenario_id: average.scenario_id) %>

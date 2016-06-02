@@ -1152,6 +1152,9 @@ a.chapter-link:active  {
 	.home-space  {
 		margin-bottom: 1em;
 	}
+	table th, table td  {
+		font-size: 0.8em;
+	}
 }
 
 .btn-toolbar .btn-group a.btn  {
