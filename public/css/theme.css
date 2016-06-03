@@ -1143,6 +1143,9 @@ a.chapter-link:active  {
 	.home-space  {
 		margin-bottom: 1em;
 	}
+	#footer  {
+		background-image: none;
+	}
 }
 
 @media (max-width: 480px) { 
@@ -1157,6 +1160,9 @@ a.chapter-link:active  {
 	}
 	table th, table td  {
 		font-size: 0.8em;
+	}
+	#footer  {
+		background-image: none;
 	}
 }
 
