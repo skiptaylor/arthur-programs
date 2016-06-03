@@ -2,14 +2,22 @@
 
 <div class="container">
 
-<ul class="breadcrumb">
+<!-- <ul class="breadcrumb hidden-phone">
 	<li>NCMHCE <span class="divider">/</span></li>
 	<li><a href="/ncmhce/scenarios">Scenarios</a> <span class="divider">/</span></li>
 	<li class="active"><%= @scenario.title %></li>
-</ul>
+</ul> -->
 
 
-<div class="page-header">
+<div class="page-header visible-desktop">
+	<h1><%= @scenario.id %>. <%= @scenario.title %></h1>
+</div>
+
+<div class="page-header visible-tablet" style="margin-top: -40px;">
+	<h1><%= @scenario.id %>. <%= @scenario.title %></h1>
+</div>
+
+<div class="page-header visible-phone" style="margin-top: -50px;">
 	<h1><%= @scenario.id %>. <%= @scenario.title %></h1>
 </div>
 
@@ -124,3 +132,5 @@
 <% end %>
 
 </div>
+
+<a href="#top" style="position: fixed; bottom:7%;right: 0;" class="visible-phone"><img src="/img/up-pointer-side.svg" /></a>

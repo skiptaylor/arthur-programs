@@ -1,15 +1,35 @@
-<ul class="breadcrumb">
+<!-- <ul class="breadcrumb hidden-phone hidden-tablet">
 	<li>
 		NCMHCE <span class="divider">/</span>
 	</li>
 	<li class="active">Scenarios</li>
-</ul>
+</ul> -->
 
-<div>
+<div class="visible-desktop">
 	<h1>
 		NCMHCE Scenarios
 		<% if @max_scenarios < 36 %>
-			<span style="float: right;"><a class="btn btn-success" href="/checkout/ncmhce-upgrade">Buy 12 more scenarios for $80</a></span>
+			<span style="float: right;"><a class="btn btn-success" style="font-weight: 400;" href="/checkout/ncmhce-upgrade">Buy 12 more scenarios for $80</a></span>
+		<% end %>
+	</h1>
+	<hr />
+</div>
+
+<div class="visible-tablet" style="margin-top: -40px;">
+	<h1>
+		NCMHCE Scenarios
+		<% if @max_scenarios < 34 %>
+			<span style="float: right;"><a class="btn btn-success" style="font-weight: 400;" href="/checkout/ncmhce-upgrade">Buy 12 more scenarios for $80</a></span>
+		<% end %>
+	</h1>
+	<hr />
+</div>
+
+<div class="visible-phone" style="margin-top: -48px;">
+	<h1>
+		NCMHCE Scenarios
+		<% if @max_scenarios < 36 %>
+			<br /><span><a class="btn btn-success" style="margin-top: 9px; font-weight: 400;" href="/checkout/ncmhce-upgrade">Buy 12 more scenarios for $80</a></span>
 		<% end %>
 	</h1>
 	<hr />
@@ -22,7 +42,7 @@
 				<a class="btn btn-warning" data-toggle="collapse" href="#collapseOne">
 					<strong>Instructions</strong> &nbsp;
 					<span class="caret"></span>
-				</a> &nbsp; <span style="color: #d45f11;"><strong>Please read instructions before beginning.</strong></span>
+				</a> <br /><span style="color: #d45f11; font-size: 0.8em;"><strong>Please read instructions before beginning.</strong></span>
 			</div>
 	        <div id="collapseOne" class="collapse">
 				<div class="accordion-inner" style="border-color: #d45f11;">
@@ -78,3 +98,5 @@
 
 </div>
 </div>
+
+<a href="#top" style="position: fixed; bottom:7%;right: 0;" class="visible-phone"><img src="/img/up-pointer-side.svg" /></a>
