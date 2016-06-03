@@ -62,7 +62,17 @@
 	
 <% end %>
 
-<%= markdown @scenario.body %>
+<div class="accordion" style="margin: 6px 0;">
+	<a class="btn btn-primary" style="margin-top: -6px;" data-toggle="collapse" href="#collapseOne">
+		<strong>CHART</strong>&nbsp;
+		<span style="margin-top: 10px;" class="caret"></span>
+	</a> &nbsp; &nbsp; <span style="color: gray;">Show and hide Chart</span>
+</div>
+<div id="collapseOne" class="collapse">
+	<div class="accordion-inner">
+		<%= markdown @scenario.body %>
+	</div>
+</div>
 
 	<hr />
 	
