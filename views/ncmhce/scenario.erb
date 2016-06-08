@@ -1,5 +1,9 @@
 <script src="/js/scenario.js"></script>
 
+<div class="pull-right mini-well hidden-phone">	
+	<%= erb :'timer' %>
+</div>
+	
 <div class="container">
 
 <!-- <ul class="breadcrumb hidden-phone">
@@ -8,16 +12,15 @@
 	<li class="active"><%= @scenario.title %></li>
 </ul> -->
 
-
 <div class="page-header visible-desktop">
 	<h1><%= @scenario.id %>. <%= @scenario.title %></h1>
 </div>
 
-<div class="page-header visible-tablet" style="margin-top: -40px;">
+<div class="page-header visible-tablet" style="margin-top: -0px;">
 	<h1><%= @scenario.id %>. <%= @scenario.title %></h1>
 </div>
 
-<div class="page-header visible-phone" style="margin-top: -50px;">
+<div class="page-header visible-phone" style="margin-top: -10px;">
 	<h1><%= @scenario.id %>. <%= @scenario.title %></h1>
 </div>
 
@@ -78,6 +81,7 @@
 	
 <% @questions.each do |question| %>
 	<div class="question" id="question-<%= question.position %>" style="<%= hidden unless @average || question.position == 1 %>">
+		
 		<p><strong><%= question.position %>. <%= question.body %></strong></p>
 		
 		<% answers = @answers.find_all {|a| a.question_id == question.id } %>
@@ -120,6 +124,7 @@
 <% end %>
 
 <% unless @average %>
+	
 <div class="pagination pagination-centered">
 	<p><small>Questions:</small></p>
 	<ul>
@@ -132,14 +137,15 @@
 		<li class="disabled"><a href="/ncmhce/scenarios/<%= @scenario.id %>/score" id="score-link">Show Score</a></li>
 	</ul>
 </div>
+		
 <% end %>
 
 <br />
-<% if @scenario.ceu || @scenario.workshop %>
+<!-- <% if @scenario.ceu || @scenario.workshop %>
 	<p><center><a href="/profile">Take another scenario</a></center></p>
 <% else %>
 	<p><center><a href="/ncmhce/scenarios">Take another scenario</a></center></p>
-<% end %>
+<% end %> -->
 
 </div>
 

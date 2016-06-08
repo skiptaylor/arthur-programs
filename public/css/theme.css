@@ -414,11 +414,14 @@ h1 {
 
 
 .section-div {
-	font-size: 2em;
-	color: #d4d4d5;
-	margin: 1em 0;
-	text-align: center; 
+	margin: 2em 0;
+	text-align: center;
 }
+
+.section-div a img {
+	padding: 1em 3em;
+}
+
 
 .home-header	{
 	font-family: 'Oswald', sans-serif;
@@ -752,6 +755,12 @@ div#errors ul {
   -webkit-box-shadow: 0px 0px 7px #b2b5bc;
   -moz-box-shadow: 0px 0px 7px #b2b5bc;
   box-shadow: 0px 0px 7px #b2b5bc; 
+}
+
+.mini-well {
+	background-color: white;
+	border: 1px solid #e4e5ed;
+	padding: 6px 0 0 0;
 }
 
 .card {
@@ -1136,7 +1145,16 @@ a.chapter-link:active  {
 	margin-bottom: 9em;
 }
 
+@media (min-width: 768px) and (max-width: 979px) { 
+	#content  {
+		margin-top: 20px;
+	}
+}
+
 @media (max-width: 767px) { 
+	#content  {
+		margin-top: 20px;
+	}
 	.section-header {
 		font-size: 2.1em;
 	}
@@ -1148,7 +1166,10 @@ a.chapter-link:active  {
 	}
 }
 
-@media (max-width: 480px) { 
+@media (max-width: 480px) {
+	#content  {
+		margin-top: 16px;
+	} 
 	.section-header {
 		font-size: 1.7em;
 	}
@@ -1174,3 +1195,8 @@ a.chapter-link:active  {
 	margin: 0 0 0.5em 0;
 }
 
+.hidden {
+	width: 0px;
+	margin: 0px;
+	padding: 0px;
+}
