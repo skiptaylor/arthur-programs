@@ -181,7 +181,7 @@ post '/checkout/:product/?' do
     if settings.environment == 'production'
       Email.welcome(user.email, user.name, user.email, email)
       Email.receipt(user.email, user.name, "#{params[:package]} #{params[:optional]}", params[:amount])
-      if params[:package] == 'Starter Package'
+      if params[:package] = 'NCMHCE: Starter Package'
         Email.secondchance(user.email, user.name)
       end
     end
