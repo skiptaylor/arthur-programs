@@ -68,7 +68,8 @@ class Email
     body << "<p>Tip: as you decide which scenarios to access, please be aware that our scenarios get progressively more complex/difficult as the number of the scenario increases. Therefore, to get the most out of your purchase, you may want to try a range of the scenarios, versus just the 'first 12'.
 </p>"
     body << "<p>Depending on your specific situation and relative readiness for the exam, you may find the Starter Package is sufficient to prepare for the NCMHCE. However, we do have customers who state they wished they had purchased the Full Package shortly after their Starter purchase. For these customers, we are now offering a 'second chance' to save!</p>"
-    body << "<p>Second Chance Offer: Should you decide you want access to all 36 of the scenarios within two weeks of your original purchase date, you may upgrade your Starter Package to our Full Package for the price difference of $110. (This would equal the same price as if you had ordered the Full Package originally.)</p>"
+    body << "<h3>Second Chance Offer!</h3>" 
+    body << "<p>Should you decide you want access to <b>all 36</b> of the scenarios within two weeks of your original purchase date, you may upgrade your Starter Package to our Full Package for the price difference of $110. (This would equal the same price as if you had ordered the Full Package originally.)</p>"
     body << "<p>Note this is in contrast to the pricing of ordering additional scenarios after the two week period has passed, when the upgrade package(s) cost $80.00 per set of 12 scenarios (so the total would be $240 for access to all of the scenarios once the two weeks is up).
 </p>"
     body << "<p>To upgrade your package from Starter to Full to save this $50.00, sign-in to your account and select the 'Upgrade to Full Package now for $110' button on your Profile page</p>"
