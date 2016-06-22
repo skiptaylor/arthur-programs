@@ -187,7 +187,7 @@
 	 <% if @user.purchases.any? { |purchase| (purchase.package == "NCMHCE: Starter Package") && ((purchase.created_at + 14) > Time.now.to_date) } && @user.remaining_scenarios < 13 %>
 	 <span style="float: right;"><a class="btn btn-success btn-small" href="/checkout/second-chance-upgrade">Upgrade to Full Package now for $110</a></span>
 	 <h2 class="oswald ncmhce-color" style="margin-top: 0;">Second Chance Offer!</h2> 
-	 <p style="line-height: 1.1em;"><small>If you want access to all 36 scenarios you have two weeks from your original purchase date to upgrade your <strong>Starter Package</strong> to our <strong>Full Package</strong> for the price difference of $110. <strong>You save $50.</strong> This equals the Full Package price.</small></p>
+	 <p style="line-height: 1.1em;"><small>For access to all 36 scenarios, you have two weeks from your original purchase date to upgrade your <strong>Starter Package</strong> to our <strong>Full Package</strong> for the price difference of $110.</small><br /><span style="line-height: 2.5em;"><strong>You'll save $50!</strong></span></p>
 	 <% end %>
 	 
 	 </div>
