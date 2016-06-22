@@ -90,7 +90,7 @@ post '/checkout/:product/?' do
     user.ncmhce_downloads = true
     user.max_scenarios = (user.max_scenarios + 12)
     params[:package] = 'NCMHCE: Starter Package'
-               email = 'ncmhce'
+               email = ''
                  msg = true
     params[:optional] ? params[:optional] = '+ Hard Copy' : params[:optional] = '+ eBook'
     
