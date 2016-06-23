@@ -15,7 +15,7 @@
 	<hr />
 </div>
 
-<div class="visible-tablet" style="margin-top: -40px;">
+<div class="visible-tablet" style="margin-top: -10px;">
 	<h1>
 		NCMHCE Scenarios
 		<% if @max_scenarios < 34 %>
@@ -25,7 +25,7 @@
 	<hr />
 </div>
 
-<div class="visible-phone" style="margin-top: -48px;">
+<div class="visible-phone" style="margin-top: -12px;">
 	<h1>
 		NCMHCE Scenarios
 		<% if @max_scenarios < 36 %>
@@ -70,7 +70,7 @@
 			<hr style="margin-top: 0;" />
 			<div class="row">
 <% @scenarios.each do |scenario| %>
-<% unless scenario.ceu || scenario.sample || scenario.workshop || scenario.practice %>
+	<% unless scenario.ceu || scenario.sample || scenario.workshop || scenario.practice %>
 		<div class="span6" style="min-height: 22em;">
 			<h3>
 				<%= scenario.id %>. <%= scenario.title %>
@@ -78,7 +78,9 @@
 				<% avg = @averages.detect {|a| a.scenario_id == scenario.id} %>
 				<small style="color: #20ae32; font-weight: bold;" class='darker-gray'>&nbsp; <% if avg %>Last taken - <%= avg.updated_at.display_short if avg %><% end %></small>
 			</h3>
-			<%= markdown scenario.body.truncate(100) %>
+			<span class="visible-desktop"><%= markdown scenario.body.truncate(100) %></span>
+			<span class="visible-tablet"><%= markdown scenario.body.truncate(74) %></span>
+			<span class="visible-phone"><%= markdown scenario.body.truncate(80) %></span>
 			<% if scenario.sample? || @uses.include?(scenario.id) %>
 				<% if avg %>
 					<p><a class="btn btn-small btn-info" href="/ncmhce/scenarios/<%= scenario.id %>"><strong>Review scenario <%= scenario.id %></strong></a></p>
@@ -93,7 +95,7 @@
 
 			<br />
 		</div>
-<% end %>
+	<% end %>
 <% end %>
 
 </div>

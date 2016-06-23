@@ -25,7 +25,7 @@
 			</p>
 			<p>
 				<label for="phone"><strong>Phone number</strong></label>
-				<input type="text" style="width: 96%;" name="phone" id="phone" value="<%= @user.phone %>" />
+				<input type="text" style="width: 96%;" name="phone" id="phone" placeholder="Phone" value="<%= @user.phone %>" />
 			</p>
 			<p>
 				<label for="password"><strong>New password</strong></label>
@@ -187,14 +187,14 @@
 	 <% if @user.purchases.any? { |purchase| (purchase.package == "NCMHCE: Starter Package") && ((purchase.created_at + 14) > Time.now.to_date) } && @user.remaining_scenarios < 13 %>
 	 <span style="float: right;"><a class="btn btn-success btn-small" href="/checkout/second-chance-upgrade">Upgrade to Full Package now for $110</a></span>
 	 <h2 class="oswald ncmhce-color" style="margin-top: 0;">Second Chance Offer!</h2> 
-	 <p style="line-height: 1.1em;"><small>For access to all 36 scenarios, you have two weeks from your original purchase date to upgrade your <strong>Starter Package</strong> to our <strong>Full Package</strong> for the price difference of $110.</small><br /><span style="line-height: 2.5em;"><strong>You'll save $50!</strong></span></p>
+	 <p style="line-height: 1.1em;"><small><strong>For access to all 36 scenarios</strong>, you have two weeks from your original purchase date to upgrade your <strong>Starter Package</strong> to our <strong>Full Package</strong> for the price difference of $110.</small><br /><span style="font-size: 1.2em; line-height: 2.5em;" class="oswald ncmhce-color"><strong>You'll save $50!</strong></span></p>
 	 <% end %>
 	 
 	 </div>
 	 
 	 
+	 <p style="padding: 1em 0;"><a class="btn btn-info" href="/manuals/manuals"><strong>Online NCMHCE Study Supplement</strong></a> &nbsp; <small><br class="visible-phone" /><strong>You can now study online.</strong> No need to download ebook.</small></p>
 	 
-	 <p><a class="btn btn-info" href="/manuals/manuals"><strong>Online NCMHCE Study Supplement</strong></a> &nbsp; <small><br class="visible-phone" />You can now study online.</small></p>
 	 
 	 	<% unless @user.expired? %>
 		<p><a class="btn btn-primary btn-small" href="/ncmhce/scenarios"><strong>Choose a NCMHCE scenario to take</strong></a>&nbsp; <br class="visible-phone" /><small><%= @user.remaining_scenarios %> Remaining</small></p>
