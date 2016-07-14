@@ -193,7 +193,7 @@
 	 </div>
 	 
 	 
-	 <p style="padding: 1em 0;"><a class="btn btn-info" href="/manuals/manuals"><strong>Online NCMHCE Study Supplement</strong></a> &nbsp; <small><br class="visible-phone" /><strong>You can now study online.</strong> No need to download ebook.</small></p>
+	 <p style="padding: 1em 0;"><a class="btn btn-info" href="/manuals/manuals"><strong>Study Online Now</strong></a> &nbsp; <small><br class="visible-phone" /><span class="label label-important">NEW</span> &nbsp;<strong>Study Guide now available online.</strong> No need to download ebook.</small></p>
 	 
 	 
 	 	<% unless @user.expired? %>
@@ -455,7 +455,6 @@
 		<div class="page-header">
 			<h3>Downloads</h3>
 		</div>
-
 		<table class="table table-condensed">
 			<thead>
 				<tr>
@@ -498,6 +497,16 @@
 						<td style="text-align: right;"><a href="/downloads/ncmhce?file=NCMHCE%20Study%20Supplement.mobi">Download</a></td>
 						<% end %>
 					</tr>
+					<tr>
+						<td>NCMHCE Study Supplement online</td>
+						<td colspan="2">
+							<span class="label label-important">NEW</span> &nbsp;<span style="font-weight: 600;">Study online. No download needed!</span>
+						</td>
+						<td colspan="2" style="text-align: right;"><a href="/manuals/manuals">Study now</a></td>
+					</tr>
+					<tr>
+						<td colspan="5"> </td>
+					</tr>
 				<% end %>
 				<% if @user.nce_downloads %>
 					<tr>
@@ -527,6 +536,11 @@
 						<% unless @user.expired? %>
 						<td style="text-align: right;"><a href="/downloads/nce?file=NCE%20Study%20Guide.mobi">Download</a></td>
 						<% end %>
+					</tr>
+					<tr>
+						<td>
+							Study Guide is available online.
+						</td>
 					</tr>
 				<% end %>
 			</tbody>
