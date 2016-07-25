@@ -186,24 +186,3 @@ get '/admin/manuals/:manual_id/sections/:section_id/chapters/:id/delete/?' do
 	redirect "/admin/manuals/#{params[:manual_id]}/sections/#{params[:section_id]}/chapters"
 end
 
-
-
-
-get '/manuals/manuals/?' do
-	authorize!
-	@user = User.get session[:user]
-  @manual = Manual.all
-	@section = Section.all
-	
-	erb :'manuals/manuals'
-end
-
-get '/manuals/:section_id/chapters/?' do
-	authorize!
-	@user = User.get session[:user]
-  @manual = Manual.all
-  @chapter = Chapter.all(section_id: params[:section_id])
-	
-	erb :'manuals/chapters'
-end
-

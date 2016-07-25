@@ -17,7 +17,7 @@
 <div class="row">
 
 	<div class="span3">
-		<form class="well form-horizontal" method="post">
+		<form class="well form-horizontal" method="post" autocomplete="off">
 			<p>
 				<label for="email"><strong>Email address</strong></label>
 				<input type="text" style="width: 96%; color: #333333;" name="email" id="email" value="<%= @user.email %>" readonly="readonly" />
@@ -98,6 +98,10 @@
     <% Message.all(nce: true).each do |m| %>
       <div class="alert alert-info" style="border: none;"><%= m.body %></div>
     <% end %>
+	 
+	 <p style="padding: 1em 0;"><a class="btn btn-info" href="/manuals/3/manuals"><strong>Study Online Now</strong></a> &nbsp; <small><br class="visible-phone" /><span class="label label-important">NEW</span> &nbsp;<strong>Study Guide now available online.</strong> No need to download ebook.</small></p>
+
+	 
 	 <% unless @user.expired? %>
 		<p><a class="btn btn-primary btn-small" href="/nce/exams"><strong>Choose a NCE exam to take</strong></a></p>
 		<% end %>
@@ -193,7 +197,7 @@
 	 </div>
 	 
 	 
-	 <p style="padding: 1em 0;"><a class="btn btn-info" href="/manuals/manuals"><strong>Study Online Now</strong></a> &nbsp; <small><br class="visible-phone" /><span class="label label-important">NEW</span> &nbsp;<strong>Study Guide now available online.</strong> No need to download ebook.</small></p>
+	 <p style="padding: 1em 0;"><a class="btn btn-info" href="/manuals/2/manuals"><strong>Study Online Now</strong></a> &nbsp; <small><br class="visible-phone" /><span class="label label-important">NEW</span> &nbsp;<strong>Study Guide now available online.</strong> No need to download ebook.</small></p>
 	 
 	 
 	 	<% unless @user.expired? %>

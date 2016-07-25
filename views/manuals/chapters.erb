@@ -1,39 +1,32 @@
-<% @manual.each do |manual| %>
-	<% if @user.ncmhce_downloads && manual.name == "NCMHCE Study Supplement" %>
-	<div class="row">
-		<div class="span3 affix">
-			<div class="well" style="margin: 0 0 1em 0; padding: 0; background: #ffffff;">
-				<%= erb :'manuals/nav', layout: false %>
-				
-			</div>
-			
-			<% @chapter.sort_by(&:chapter_number).each do |chapter| %>
-				<a href="#<%= chapter.id %>" class="chapter-link"><p><%= chapter.chapter_title %></p></a>
-			<% end %>
-			<p style="margin: 1em 0 0 1em;"><a href="#top"><img src="/img/phone-up-pointer.svg" /></i></a><br /><br /><br />
-			
-			<!-- <img src="/img/ant.gif" style="padding-left: 600px; padding-top: 100px;"/> -->
-			</p>
-			
+
+<div class="row">
+	<div class="span3 affix">
+		<div class="well" style="margin: 0 0 1em 0; padding: 0; background: #ffffff;">
+		<%= erb :'manuals/nav', layout: false %>
 		</div>
-		
-		<div class="span9 offset3 md">
-			
-				<h3 class="oswald" style="color: #1c89de; margin: 0.9em 0 0.5em 0;">Study Program Guide prepared for <%= @user.name %></h3>
-				<h1 style="font-size: 2.5em;"><%= manual.name %></h1>
-				<hr />
-				<% @chapter.sort_by(&:chapter_number).each do |chapter| %>
-				
-					<!-- <span class="blue-color">Chapter id <%= chapter.id %></span> -->
-					<a name="<%= chapter.id %>" style="color: black; text-decoration: none;"><h1><%= chapter.chapter_title %></h1></a>
-					<%= markdown chapter.body %>
-					<br />
-				
-				<% end %>
-			
-		</div>
-	
+
+		<% @chapter.sort_by(&:chapter_number).each do |chapter| %>
+			<a href="#<%= chapter.id %>" class="chapter-link"><p><%= chapter.chapter_title %></p></a>
+		<% end %>
+		<p style="margin: 1em 0 0 1em;">
+			<a href="#top"><img src="/img/phone-up-pointer.svg" /></i></a><br /><br /><br />
+		</p>
 	</div>
-	<% end %>
-<% end %>
+
+	<div class="span9 offset3 md">
+	
+		<h3 class="oswald" style="color: #1c89de; margin: 0.9em 0 0.5em 0;">Study Program Guide prepared for <%= @user.name %></h3>
+		<h1 style="font-size: 2.5em;"><%= @manual.name %></h1>
+		<hr />
+		
+					<% @chapter.sort_by(&:chapter_number).each do |chapter| %>
+			
+				<a name="<%= chapter.id %>" style="color: black; text-decoration: none;"><h1><%= chapter.chapter_title %></h1></a>
+				<%= markdown chapter.body %>
+				<br />
+
+			<% end %>
+			
+	</div>
+</div>
 

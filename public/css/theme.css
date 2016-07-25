@@ -1093,10 +1093,12 @@ a.list-nav {
 	
 }
 
+
 .reference p  {
 	margin-left: 2em;
 	text-indent: -2em;
 }
+
 
 div.reference p  {
 	margin-left: 2em;
@@ -1105,6 +1107,7 @@ div.reference p  {
 
 .md p  { text-indent: 1.7em; }
 .md p.para  { text-indent: 0em; }
+.md p.reference  { margin-left: 2em; text-indent: -2em; }
 .md h1  { text-indent: 0em; }
 .md ol li, .md ul li   { margin-left: 2em; }
 .md ol li p, .md ul li p  { text-indent: 0em; }
@@ -1196,3 +1199,4 @@ a.chapter-link:active  {
 	margin: 0px;
 	padding: 0px;
 }
+
