@@ -44,6 +44,9 @@ class User
 
 	property :ncmhce_downloads, Boolean, default: false
 	property :nce_downloads, 		Boolean, default: false
+  
+	property :ncmhce_flashcards,  Boolean, default: false
+	property :nce_flashcards, 	  Boolean, default: false
 
 	property :workshop_scenarios, Boolean, default: false
   property :practice_exams, Boolean, default: false

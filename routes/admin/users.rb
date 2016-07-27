@@ -51,6 +51,8 @@ post '/admin/users/new/?' do
     ceu_scenario: 	 	params[:ceu_scenario],
 		ncmhce_downloads: false,
 		nce_downloads: 		false,
+    nce_flashcards: 	 false,
+    ncmhce_flashcards: false,
 		expiration_date: Date.from_fields(
 			params[:expiration_year],
 			params[:expiration_month],
@@ -67,6 +69,9 @@ post '/admin/users/new/?' do
   puts 'Updating downloads'
 	user.update(ncmhce_downloads: true) if params[:ncmhce_downloads]
 	user.update(nce_downloads: true) if params[:nce_downloads]
+  
+	user.update(ncmhce_flashcards: true) if params[:ncmhce_flashcards]
+	user.update(nce_flashcards: true) if params[:nce_flashcards]
 
 	user.update(workshop_scenarios: true) if params[:workshop_scenarios]
     
@@ -145,6 +150,9 @@ post '/admin/users/:id/?' do
   params[:ceu] ? user.update(ceu: true) : user.update(ceu: false)
 	params[:ncmhce_downloads] ? user.update(ncmhce_downloads: true) : user.update(ncmhce_downloads: false)
 	params[:nce_downloads] ? user.update(nce_downloads: true) : user.update(nce_downloads: false)
+  
+	params[:ncmhce_flashcards] ? user.update(ncmhce_flashcards: true) : user.update(ncmhce_flashcards: false)
+	params[:nce_flashcards] ? user.update(nce_flashcards: true) : user.update(nce_flashcards: false)
 	
 	params[:workshop_scenarios] ? user.update(workshop_scenarios: true) : user.update(workshop_scenarios: false)
   params[:practice_exams] ? user.update(practice_exams: true) : user.update(practice_exams: false)
