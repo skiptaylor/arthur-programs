@@ -81,9 +81,9 @@
 
 	<% if @user.max_exams > 0 %>
 
-		<div class="page-header">
+		<div>
 			<h3>
-				NCE Exams
+				<span class="oswald" style="font-size: 1.5em;">NCE Exams</span>
 					<% unless @user.max_exams > 2 %>
 						<span style="float: right; margin-left: 3px;">&nbsp;<a class="btn btn-success btn-small" href="/checkout/nce-upgrade">Buy 2 more practice exams for $60</a></span>
 					<% end %>
@@ -93,13 +93,14 @@
 					<% end %>
 					<% end %>
 			</h3>
+			<br />
 		</div>
 
     <% Message.all(nce: true).each do |m| %>
       <div class="alert alert-info" style="border: none;"><%= m.body %></div>
     <% end %>
 	 
-	 <p style="padding: 1em 0;"><a class="btn btn-info" href="/manuals/99/manuals"><strong>Study Online Now</strong></a> &nbsp; <small><br class="visible-phone" /><span class="label label-important">NEW</span> &nbsp;<strong>Study Guide now available online.</strong> No need to download ebook.</small></p>
+	 <p style="padding: 0.2em 0 0.7em 0;"><a class="btn btn-info" href="/manuals/99/manuals"><strong>Study Online Now</strong></a> &nbsp; <small><br class="visible-phone" /><span class="label label-important">NEW</span> &nbsp;<strong>Study Guide now available online.</strong> No need to download ebook.</small></p>
 
 	 
 	 <% unless @user.expired? %>
@@ -143,35 +144,35 @@
 		<% end %>
 		
 		<% if @user.nce_flashcards %>
-		<a href="/nce/glossary" class="btn btn-small btn-primary">NCE Flashcards</a>
+		<a href="/nce/glossary" class="btn btn-info">NCE Flashcards</a>
 		<% end %>
 		
-		<br />
+		<br /><hr /><br />
 	<% end %>
 	
 <!-- –––––––––––––––––– ncmhce –––––––––––––––––– -->
 
 	<% if @user.max_scenarios > 0 %>
 
-		<div class="page-header visible-desktop">
+		<div class="visible-desktop">
 			<h3>
-				NCMHCE Scenarios
-				<small><%= @user.remaining_scenarios %> Remaining</small>
+				<span class="oswald" style="font-size: 1.5em;">NCMHCE Scenarios</span>
+				
 				<% if @user.max_scenarios < 36 %>
-					<span style="float: right; margin-top: -6px;">&nbsp; <a class="btn btn-success btn-small" href="/checkout/ncmhce-upgrade">Buy 12 more scenarios for $80</a></span>
+					<span style="float: right;">&nbsp; <a class="btn btn-success btn-small" href="/checkout/ncmhce-upgrade">Buy 12 more scenarios for $80</a></span>
 				<% end %>
 				<% unless @user.expired? %>
 				<% unless @user.purchases.any? { |purchase| purchase.options == "+ Hard Copy" } %>
-					<span style="float: right; margin-top: -6px;"><a class="btn btn-success btn-small" href="/checkout/ncmhce-hard-copy">Buy a hard copy for $13.95</a></span>
+					<span style="float: right;"><a class="btn btn-success btn-small" href="/checkout/ncmhce-hard-copy">Buy a hard copy for $13.95</a></span>
 				<% end %>
 				<% end %>
 			</h3>
+			<br />
 		</div>
 		
-		<div class="page-header hidden-desktop">
+		<div class="hidden-desktop">
 			<h3>
-				NCMHCE Scenarios
-				<small><%= @user.remaining_scenarios %> Remaining</small>
+				<span class="oswald" style="font-size: 1.5em;">NCMHCE Scenarios</span>
 			</h3>
 			<div style="margin: 6px 0 0 0;">
 				<% if @user.max_scenarios < 36 %>
@@ -201,7 +202,7 @@
 	 </div>
 	 
 	 
-	 <p style="padding: 1em 0;"><a class="btn btn-info" href="/manuals/98/manuals"><strong>Study Online Now</strong></a> &nbsp; <small><br class="visible-phone" /><span class="label label-important">NEW</span> &nbsp;<strong>Study Guide now available online.</strong> No need to download ebook.</small></p>
+	 <p style="padding: 0.2em 0 0.7em 0;"><a class="btn btn-info" href="/manuals/98/manuals"><strong>Study Online Now</strong></a> &nbsp; <small><br class="visible-phone" /><span class="label label-important">NEW</span> &nbsp;<strong>Study Guide now available online.</strong> No need to download ebook.</small></p>
 	 
 	 
 	 	<% unless @user.expired? %>
@@ -270,7 +271,7 @@
 		<a href="/ncmhce/glossary" class="btn btn-small btn-primary">NCMHCE Flashcards</a>
 		<% end %>
 		
-		<br />
+		<br /><hr /><br />
 	<% end %>
 	
 
@@ -278,14 +279,14 @@
 
 	<% if @user.ceu_scenario > 0 %>
 
-		<div class="page-header">
+		<div>
 			<h3>
-				CEU Scenarios
-				<small><%= @user.remaining_ceu_scenario %> Remaining</small>
+				<span class="oswald" style="font-size: 1.5em;">CEU Scenarios</span>
 				<% if @user.ceu_scenario < 14 %>
 					<span style="float: right;">&nbsp; <a class="btn btn-success btn-small" href="/checkout/ceu?package=Single%20Scenario">Buy another CEU scenario for $20</a></span>
 				<% end %>
 			</h3>
+			<br />
 		</div>
       <% Message.all(ceu: true).each do |m| %>
         <div class="alert alert-info" style="border: none;"><%= m.body %></div>
@@ -364,7 +365,7 @@
 			</tbody>
 		</table>
 
-		<br />
+		<hr /><br />
 	<% end %>
 	
 	
@@ -372,8 +373,9 @@
 
 		<% if @user.workshop_scenarios? %>
 
-			<div class="page-header">
-				<h3>Workshop Scenarios</h3>
+			<div>
+				<h3><span class="oswald" style="font-size: 1.5em;">Workshop Scenarios</span></h3>
+				<br />
 			</div>
 
 			<table class="table table-condensed table-striped table-hover">
@@ -403,7 +405,7 @@
 				</tbody>
 			</table>
 
-			<br />
+			<hr /><br />
 		<% end %>
 	
 	
@@ -411,8 +413,9 @@
 	
 	<% if @user.practice_exams? %>
 
-		<div class="page-header">
-			<h3>NCMHCE Practice Exams</h3>
+		<div>
+			<h3><span class="oswald" style="font-size: 1.5em;">NCMHCE Practice Exams</span></h3>
+			<br />
 		</div>
 
 		<table class="table table-condensed table-striped table-hover">
@@ -443,27 +446,16 @@
 			</tbody>
 		</table>
 
-		<br />
+		<hr /><br />
 	<% end %>
 	
-<!-- –––––––––––––––––– flash cards –––––––––––––––––– -->
-	
-	<% if @user.admin? %>
-
-		<div class="page-header">
-			<h3>Flash Cards</h3>
-		</div>	
-		<p><a class="btn btn-primary btn-small" href="/ncmhce/glossary"><strong>NCMHCE Flash Cards</strong></a></p>
-		<p><a class="btn btn-primary btn-small" href="/nce/glossary"><strong>NCE Flash Cards</strong></a></p>
-		
-		<br />
-	<% end %>
 	
 <!-- –––––––––––––––––– downloads –––––––––––––––––– -->
 
 	<% if @user.nce_downloads || @user.ncmhce_downloads %>
-		<div class="page-header">
-			<h3>Downloads</h3>
+		<div>
+			<h3><span class="oswald" style="font-size: 1.5em;">Downloads</span></h3>
+			<br />
 		</div>
 		<table class="table table-condensed">
 			<thead>
@@ -556,15 +548,16 @@
 			</tbody>
 		</table>
 
-		<br />
+		<hr /><br />
 	<% end %>
 	
 <!-- –––––––––––––––––– purchases –––––––––––––––––– -->
 
 	<% if @user.purchases.count > 0 %>
 
-		<div class="page-header">
-			<h3>Purchases</h3>
+		<div>
+			<h3><span class="oswald" style="font-size: 1.5em;">Purchases</span></h3>
+			<br />
 		</div>
 
 		<table class="table table-condensed table-striped table-hover">
