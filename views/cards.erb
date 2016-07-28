@@ -1,7 +1,7 @@
 <div class="row">	
 	<div class="span12">
 		
-			<h1><%= @exam %> Study Glossary</h1>
+			<h1><%= @exam %> Study Glossary and Flashcards</h1>
 						
 			<p>Use these flash cards to promote active recall. The following terms are taken from the study material. <br />The definitions of these terms are brief to re-enforcing learning and may require further research.</p>
 		
@@ -16,7 +16,7 @@
       </a>
     <ul class="dropdown-menu">
 		<% @glossary.group_by(&:chapter).each_with_index do |(chapter, terms), index| %>
-			<li <%= 'class="active"' if index == 0 %>><a href="#terms-<%= index %>" data-toggle="tab"><%= chapter %></a></li>
+			<li><a href="#terms-<%= index %>" data-toggle="tab"><%= chapter %></a></li>
 		<% end %>
     </ul>
   </li>
@@ -24,10 +24,10 @@
 
 <div class="tab-content">
 	<% @glossary.group_by(&:chapter).each_with_index do |(chapter, terms), index| %>
-		<div class="tab-pane <%= 'active' if index == 0 %>" id="terms-<%= index %>">
+		<div class="tab-pane" id="terms-<%= index %>">
 
 			<p>
-				<a href="/cards/<%= @exam %>/<%= chapter %>" class="btn btn-large btn-success"><strong>View <%= chapter %> Flash Cards</strong></a>
+				<a href="/cards/<%= @exam %>/<%= chapter %>" class="btn btn-large btn-success"><strong>View <%= chapter %> Flash Cards &nbsp;<i class="icon-arrow-right icon-white"></i></strong></a>
 			</p>
 
 			<hr />
