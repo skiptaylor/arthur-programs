@@ -1,11 +1,8 @@
 
 <div class="row">
 	<div class="span3 affix">
-		<!-- <div class="well" style="margin: 0 0 1em 0; padding: 0; background: #ffffff;"> -->
-		
 		
 		<%= erb :'manuals/nav', layout: false %>
-		<!-- </div> -->
 		<br />
 		<h4 class="oswald">Chapters</h4>
 		<% @chapter.sort_by(&:chapter_number).each do |chapter| %>
@@ -37,9 +34,6 @@
 
 
 
-		<!-- <% @chapter.sort_by(&:chapter_number).each do |chapter| %>
-			<a href="#<%= chapter.id %>" class="chapter-link"><p><%= chapter.chapter_title %></p></a>
-		<% end %> -->
 		
 		
 		

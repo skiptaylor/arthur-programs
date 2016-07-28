@@ -9,28 +9,34 @@
 </div>
 
 <ul class="nav nav-pills">
-	<% @glossary.group_by(&:chapter).each_with_index do |(chapter, terms), index| %>
-		<li <%= 'class="active"' if index == 0 %>><a href="#terms-<%= index %>" data-toggle="tab"><%= chapter %></a></li>
-	<% end %>
+  <li class="dropdown">
+    <a class="dropdown-toggle" data-toggle="dropdown" href="#" style="padding: 7px 12px 9px;">
+        Select Chapter 
+        <b class="caret"></b>
+      </a>
+    <ul class="dropdown-menu">
+		<% @glossary.group_by(&:chapter).each_with_index do |(chapter, terms), index| %>
+			<li <%= 'class="active"' if index == 0 %>><a href="#terms-<%= index %>" data-toggle="tab"><%= chapter %></a></li>
+		<% end %>
+    </ul>
+  </li>
 </ul>
-
-
 
 <div class="tab-content">
 	<% @glossary.group_by(&:chapter).each_with_index do |(chapter, terms), index| %>
 		<div class="tab-pane <%= 'active' if index == 0 %>" id="terms-<%= index %>">
-		
+
 			<p>
-				<a href="/cards/<%= @exam %>/<%= chapter %>" class="btn btn-large btn-primary"><strong>View <%= chapter %> Flash Cards</strong></a>
+				<a href="/cards/<%= @exam %>/<%= chapter %>" class="btn btn-large btn-success"><strong>View <%= chapter %> Flash Cards</strong></a>
 			</p>
-			
+
 			<hr />
-			
-			<h2><%= chapter %> Terms</h2>
+
+			<h1 class="blue-color"><%= chapter %> Terms</h1>
 			<hr style="margin: .6em 0;" />
 			<% terms.sort!{|a,b| a.term <=> b.term}.each do |glossary| %>
 				<div class="row">
-				
+
 					<div class="span3">
 						<strong><%= glossary.term %></strong>
 					</div>
@@ -39,13 +45,10 @@
 						<% unless glossary.definition == "" %><hr style="margin: .6em 0;" />
 						<small><%= markdown glossary.definition %></small><% else %><% end %>
 					</div>
-					
+
 				</div>
 				<hr style="margin: 3px 0 6px 0;" />
 			<% end %>
 		</div>
 	<% end %>
 </div>
-
-
-
