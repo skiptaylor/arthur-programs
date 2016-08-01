@@ -18,7 +18,7 @@
       <% end %>
     </ul>
   </div>
-	 <h1 style="font-size: 1.3em; padding: 0.2em 0;">
+	 <h1 style="font-size: 1.3em; padding: 0.2em 0;" class="center">
 	 <% @section.sort_by(&:section_number).each do |section| %>
  <%= section.section_title if request.path_info.include? "#{section.id}" %>
  <% end %>
