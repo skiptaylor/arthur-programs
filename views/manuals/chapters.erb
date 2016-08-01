@@ -3,8 +3,8 @@
 	<div class="span3 affix">
 		
 		<%= erb :'manuals/nav', layout: false %>
-		<br />
-		<h4 class="oswald">Chapters</h4>
+		
+		<h4 class="oswald" style="color: gray; margin: 0.3em 0 0.8em 0;">Chapters</h4>
 		<% @chapter.sort_by(&:chapter_number).each do |chapter| %>
 			<a href="#<%= chapter.id %>" class="chapter-link"><p><%= chapter.chapter_title %></p></a>
 		<% end %>
@@ -21,13 +21,11 @@
 		<h1 style="font-size: 2.5em;"><%= @manual.name %></h1>
 		<hr />
 		
-					<% @chapter.sort_by(&:chapter_number).each do |chapter| %>
-			
-				<a name="<%= chapter.id %>" style="color: black; text-decoration: none;"><h1><%= chapter.chapter_title %></h1></a>
-				<%= markdown chapter.body %>
-				<br />
-
-			<% end %>
+	 <% @chapter.sort_by(&:chapter_number).each do |chapter| %>
+	 <a name="<%= chapter.id %>" style="color: black; text-decoration: none;"><h1><%= chapter.chapter_title %></h1></a>
+	 <%= markdown chapter.body %>
+	 <br />
+	 <% end %>
 			
 	</div>
 </div>
