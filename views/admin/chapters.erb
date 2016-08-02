@@ -32,7 +32,11 @@
 						<%= chapter.chapter_number %>
 					</td>
 					<td>
+						<% if chapter.chapter_title != "" %>
 						<%= chapter.chapter_title %>
+						<% else %>
+						<span style="padding-left: 2em;"><%= sub_chapter.chapter_title %>
+						<% end %>
 					</td>
 					<td>
 						<span class="pull-right"><a href="/admin/manuals/<%= @manual.id %>/sections/<%= @section.id %>/chapters/<%= chapter.id %>/edit" class="btn btn-default btn-mini">Edit</a> <a href="/admin/manuals/<%= @manual.id %>/sections/<%= @section.id %>/chapters/<%= chapter.id %>/view" class="btn btn-primary btn-mini">View</a></span>
