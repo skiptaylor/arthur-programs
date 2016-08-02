@@ -40,9 +40,10 @@ class Chapter
   property   :deleted_at, ParanoidDateTime
   timestamps :at
 
-  property :chapter_number, Text,    default: ''
-  property :chapter_title,  Text,    default: ''
-  property :body,           Text,    default: ''
+  property :chapter_number,     Text, default: ''
+  property :chapter_title,      Text, default: ''
+  property :sub_chapter_title,  Text, default: ''
+  property :body,               Text, default: ''
   
   belongs_to :section, required: false
   

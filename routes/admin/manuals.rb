@@ -140,6 +140,7 @@ post '/admin/manuals/:manual_id/sections/:section_id/chapters/new/?' do
     section_id: params[:section_id],
 		chapter_number: params[:chapter_number],
     chapter_title: params[:chapter_title],
+    sub_chapter_title: params[:sub_chapter_title],
     body: params[:body]
 	)
   
@@ -161,6 +162,7 @@ post '/admin/manuals/:manual_id/sections/:section_id/chapters/:id/edit/?' do
 	chapter.update(
 	  chapter_number: params[:chapter_number],
     chapter_title: params[:chapter_title],
+    sub_chapter_title: params[:sub_chapter_title],
     body: params[:body]
 	)
   
