@@ -23,7 +23,10 @@
   </div>
 	 <h1 style="font-size: 1.3em; padding: 0.2em 0;" class="center">
 	 <% @chapter.sort_by(&:chapter_number).each do |chapter| %>
+ 
+ <% if chapter.chapter_title != "" %>
  <%= chapter.chapter_title if request.path_info.include? "chapters#{chapter.id}" %>
+ <% end %>
  <% end %>
 	 </h1>
 	 <hr style="margin: 0.2em 0 0 0;" />
