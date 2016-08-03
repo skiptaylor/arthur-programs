@@ -22,14 +22,16 @@
 							<input type="text" name="chapter_number" id="chapter_number" class="span2" value="<%= @chapter.chapter_number %>" />
 						</div>
 					</div>
+					<p class="center"><small>Use either <strong>Chapter Title</strong> or <strong>Sub-Chapter Title</strong>. Do not use both.</small></p>
 					<div class="control-group">
-						<label class="control-label" for="chapter_title">Title</label>
+						<label class="control-label" for="chapter_title">Chapter Title</label>
 						<div class="controls">
-							<input type="text" name="chapter_title" id="chapter_title" class="span7" value="<%= @chapter.chapter_title %>" />
+							<input type="text" name="chapter_title" id="chapter_title" class="span7" value="<%= @chapter.chapter_title %>" /> 
 						</div>
+						
 					</div>
 					<div class="control-group">
-						<label class="control-label" for="sub_chapter_title">Sub-Title</label>
+						<label class="control-label" for="sub_chapter_title">Sub-Chapter Title</label>
 						<div class="controls">
 							<input type="text" name="sub_chapter_title" id="sub_chapter_title" class="span7" value="<%= @chapter.sub_chapter_title %>" />
 						</div>
