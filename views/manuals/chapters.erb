@@ -9,9 +9,6 @@
 			<a href="#<%= chapter.id %>" class="chapter-link"><p><%= chapter.chapter_title %></p></a>
 		<% end %> -->
 
-
-
-
 <div class="dropdown">
     <button class="btn btn-primary btn-block dropdown-toggle" id="menu1" type="button" data-toggle="dropdown">Select Chapter
     <span class="caret"></span></button>
@@ -28,13 +25,8 @@
 	 	<%= chapter.chapter_title if request.path_info.include? "chapters#{chapter.id}" %>
  	 <% end %>
 	 </h1>
-	 <hr style="margin: 0.2em 0 0 0;" />
 	 
-	 
-	 
-	 
-			
-		<p style="margin: 1em 0 0 1em;">
+		<p class="center">
 			<a href="#top"><img src="/img/phone-up-pointer.svg" /></i></a><br /><br /><br />
 		</p>
 	</div>
@@ -58,7 +50,7 @@
 	</div>
 </div>
 
-
+<a href="#top"><img src="/img/phone-up-pointer.svg" style="position: fixed; bottom: 32px; right: 32px;" /></a>
 
 		
 		
