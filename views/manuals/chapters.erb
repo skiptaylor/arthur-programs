@@ -10,12 +10,12 @@
 		<% end %> -->
 
 <div class="dropdown">
-    <button class="btn btn-primary btn-block dropdown-toggle" id="menu1" type="button" data-toggle="dropdown">Select Chapter
+    <button class="btn btn-primary btn-block dropdown-toggle" id="menu1" type="button" data-toggle="dropdown">Select Chapter 
     <span class="caret"></span></button>
     <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
 		 <% @chapter.sort_by(&:chapter_number).each do |chapter| %>
 		 <% if chapter.chapter_title != "" %>
-      <li role="presentation" class="<%= active "chapters#{chapter.id}" %>"><a role="menuitem" tabindex="-1" href="#<%= chapter.id %>"><%= chapter.chapter_title %></a></li>
+      <li role="presentation" class="<%= active "#{chapter.id}" %>"><a role="menuitem" tabindex="-1" href="#<%= chapter.id %>"><%= chapter.chapter_title %></a></li>
       <% end %>
 		<% end %>
     </ul>
@@ -52,6 +52,3 @@
 
 <a href="#top"><img src="/img/phone-up-pointer.svg" style="position: fixed; bottom: 32px; right: 32px;" /></a>
 
-		
-		
-		
