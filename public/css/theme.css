@@ -1115,7 +1115,7 @@ div.reference p  {
 .md p.para  { text-indent: 0em; }
 .md p.reference  { margin-left: 2em; text-indent: -2em; }
 .md h1  { text-indent: 0em; }
-.md ol li, .md ul li   { margin-left: 2em; }
+.md ol li, .md ul li   { margin-left: 2em; margin-bottom: 5px; }
 .md ol li p, .md ul li p  { text-indent: 0em; }
 .md h1 p  { text-indent: 0em; padding-bottom: 0.2em; }
 .md blockquote p   { text-indent: 0em; }
