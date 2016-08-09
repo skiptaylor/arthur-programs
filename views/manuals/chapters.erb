@@ -15,16 +15,16 @@
     <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
 		 <% @chapter.sort_by(&:chapter_number).each do |chapter| %>
 		 <% if chapter.chapter_title != "" %>
-      <li role="presentation" class="<%= active "#{chapter.id}" %>"><a role="menuitem" tabindex="-1" href="#<%= chapter.id %>"><%= chapter.chapter_title %></a></li>
+      <li role="presentation"><a role="menuitem" tabindex="-1" href="#<%= chapter.id %>"><%= chapter.chapter_title %></a></li>
       <% end %>
 		<% end %>
     </ul>
   </div>
-	 <h1 style="font-size: 1.3em; padding: 0.2em 0;" class="center">
+	 <!-- <h1 style="font-size: 1.3em; padding: 0.2em 0;" class="center">
 	 <% @chapter.sort_by(&:chapter_number).each do |chapter| %>
-	 	<%= chapter.chapter_title if request.path_info.include? "chapters#{chapter.id}" %>
+	 	<%= chapter.chapter_title if request.path_info.include? "#{chapter.id}" %>
  	 <% end %>
-	 </h1>
+	 </h1> -->
 	 
 		<p class="center">
 			<a href="#top"><img src="/img/phone-up-pointer.svg" /></i></a><br /><br /><br />
