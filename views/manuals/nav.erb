@@ -10,18 +10,21 @@
 
 
 <div class="dropdown">
-    <button class="btn btn-primary btn-block dropdown-toggle" id="menu1" type="button" data-toggle="dropdown">Select Section
-    <span class="caret"></span></button>
-    <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
-		 <% @section.sort_by(&:section_number).each do |section| %>
-      <li role="presentation" class="<%= active "#{section.id}" %>"><a role="menuitem" tabindex="-1" href="/manuals/<%= @manual.id %>/sections/<%= section.id %>/chapters"><%= section.section_title %></a></li>
-      <% end %>
-    </ul>
-  </div>
-	 <h1 style="font-size: 1.3em; padding: 0.2em 0;" class="center">
-	 <% @section.sort_by(&:section_number).each do |section| %>
- <%= section.section_title if request.path_info.include? "#{section.id}" %>
- <% end %>
-	 </h1>
-	 <hr style="margin: 0.2em 0 0 0;" />
-  
+	<button class="btn btn-primary btn-block dropdown-toggle" id="menu1" type="button" data-toggle="dropdown">Select Section
+	<span class="caret"></span></button>
+	<ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+		<% @section.sort_by(&:section_number).each do |section| %>
+		<li role="presentation" class="<%= active "#{section.id}" %>">
+			<a role="menuitem" tabindex="-1" href="/manuals/<%= @manual.id %>/sections/<%= section.id %>/chapters"><%= section.section_title %></a>
+		</li>
+		<% end %>
+	</ul>
+</div>
+<div>
+	<h1 style="font-size: 1.3em; padding: 0.2em 0;" class="center">
+		<% @section.sort_by(&:section_number).each do |section| %>
+		<%= section.section_title if request.path_info.include? "#{section.id}" %>
+		<% end %>
+	</h1>
+	<hr style="margin: 0.2em 0 0 0;" />
+</div>  

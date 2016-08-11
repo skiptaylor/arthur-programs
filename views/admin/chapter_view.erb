@@ -16,11 +16,14 @@
 		<div class="md">
 		<div class="pull-right"><a class="btn btn-small" href="/admin/manuals/<%= @manual.id %>/sections/<%= @section.id %>/chapters">Chapters</a>  <a href="/admin/manuals/<%= @manual.id %>/sections/<%= @section.id %>/chapters/<%= @chapter.id %>/edit" class="btn btn-primary btn-small">Edit</a></div>
 		<p class="para"><small class="blue-color">(Last updated <%= @chapter.updated_at.display_short %>)</small></p>
+		<% if @chapter.chapter_title != "" %>
 		<h1><%= @chapter.chapter_title %></h1>
+  	 	<% else %>
+  	 	<h2 style="margin-top: 0;"><%= @chapter.sub_chapter_title %></h2>
+  	 	<% end %>
 		<%= markdown @chapter.body %>
 		<hr />
 		</div>
-
 
 	</div>
 

@@ -13,7 +13,7 @@
 		
 		<h1>Chapters</h1>
 		
-		<table class="table table-condensed">
+		<table class="table table-condensed table-striped table-hover">
 				<tr>
 					<th>
 						Number
@@ -33,9 +33,9 @@
 					</td>
 					<td>
 						<% if chapter.chapter_title != "" %>
-						<%= chapter.chapter_title %>
+						<span style="font-weight: 600;"><%= chapter.chapter_title %></span>
 						<% else %>
-						<span style="padding-left: 2em;"><%= chapter.sub_chapter_title %>
+						<span style="padding-left: 1.2em;"><%= chapter.sub_chapter_title %>
 						<% end %>
 					</td>
 					<td>
