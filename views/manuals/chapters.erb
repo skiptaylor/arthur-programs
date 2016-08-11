@@ -1,44 +1,54 @@
+
 <div class="row">
 	<div class="span3 affix">
+		
 		<%= erb :'manuals/nav', layout: false %>
-		<div class="dropdown">
-			<button class="btn btn-primary btn-block dropdown-toggle" id="menu1" type="button" data-toggle="dropdown">Select Chapter
-			<span class="caret"></span></button>
-			<ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
-				<% @chapter.sort_by(&:chapter_number).each do |chapter| %>
-				<li role="presentation" class="<%= active "#{chapter.id}" %>">
-					<a role="menuitem" tabindex="-1" href=""><%= chapter.chapter_title %></a>
-				</li>
-				<% end %>
-			</ul>
-		</div>
-		<div>
-			<h1 style="font-size: 1.3em; padding: 0.2em 0;" class="center">
-				<% @chapter.sort_by(&:chapter_number).each do |chapter| %>
-				<%= chapter.chapter_title if request.path_info.include? "#{chapter.id}" %>
-				<% end %>
-			</h1>
-			<hr style="margin: 0.2em 0 0 0;" />
-		</div>  
-		 <br />
+		
+		<!-- <h4 class="oswald" style="color: gray; margin: 0.3em 0 0.8em 0;">Chapters</h4>
+		<% @chapter.sort_by(&:chapter_number).each do |chapter| %>
+			<a href="#<%= chapter.id %>" class="chapter-link"><p><%= chapter.chapter_title %></p></a>
+		<% end %> -->
+
+<div class="dropdown">
+    <button class="btn btn-primary btn-block dropdown-toggle" id="menu1" type="button" data-toggle="dropdown">Select Chapter 
+    <span class="caret"></span></button>
+    <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+		 <% @chapter.sort_by(&:chapter_number).each do |chapter| %>
+		 <% if chapter.chapter_title != "" %>
+      <li role="presentation"><a role="menuitem" tabindex="-1" href="#<%= chapter.id %>"><%= chapter.chapter_title %></a></li>
+      <% end %>
+		<% end %>
+    </ul>
+  </div>
+	 <!-- <h1 style="font-size: 1.3em; padding: 0.2em 0;" class="center">
+	 <% @chapter.sort_by(&:chapter_number).each do |chapter| %>
+	 	<%= chapter.chapter_title if request.path_info.include? "#{chapter.id}" %>
+ 	 <% end %>
+	 </h1> -->
+	 <br />
 		<p class="center">
 			<a href="#top"><img src="/img/phone-up-pointer.svg" /></i></a><br /><br /><br />
 		</p>
 	</div>
+
 	<div class="span9 offset3 md">
+	
 		<h3 class="oswald" style="color: #1c89de; margin: 0.9em 0 0.5em 0;">Study Program Guide prepared for <%= @user.name %></h3>
 		<h1 style="font-size: 2.5em;"><%= @manual.name %></h1>
 		<hr />
-		<% @chapter.sort_by(&:chapter_number).each do |chapter| %>
-		<% if chapter.chapter_title != "" %>
-		<a name="<%= chapter.id %>" style="color: #244883; text-decoration: none;"><h1 style="font-size: 2em;"><%= chapter.chapter_title %></h1></a>
-		<% else %>
-		<h2 style="margin-top: 0;"><%= chapter.sub_chapter_title %></h2>
-		<% end %>
-		<%= markdown chapter.body %>
-		<br />
-		<% end %>
+		
+	 <% @chapter.sort_by(&:chapter_number).each do |chapter| %>
+	 <% if chapter.chapter_title != "" %>
+	 <a name="<%= chapter.id %>" style="color: #244883; text-decoration: none;"><h1 style="font-size: 2em;"><%= chapter.chapter_title %></h1></a>
+	 <% else %>
+	 <h2 style="margin-top: 0;"><%= chapter.sub_chapter_title %></h2>
+	 <% end %>
+	 <%= markdown chapter.body %>
+	 <br />
+	 <% end %>
+			
 	</div>
 </div>
+
 <a href="#top"><img src="/img/phone-up-pointer.svg" style="position: fixed; bottom: 32px; right: 32px;" /></a>
 
