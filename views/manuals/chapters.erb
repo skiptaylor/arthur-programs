@@ -3,7 +3,7 @@
 		
 		<%= erb :'manuals/nav', layout: false %>
 		
-		<h4 class="oswald center" style="margin: 0.2em 0 0.5em 0;">Chapters</h4>
+		<h4 class="oswald center" style="margin: 0.2em 0 0.5em 0; font-size: 1.05em;">Chapters</h4>
 		<% @chapter.sort_by(&:chapter_number).each do |chapter| %>
 			<a href="#<%= chapter.id %>" class="chapter-link"><p><%= chapter.chapter_title %></p></a>
 		<% end %>
