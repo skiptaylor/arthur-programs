@@ -1,30 +1,25 @@
-
 <div class="row">
 	<div class="span3 affix">
 		
 		<%= erb :'manuals/nav', layout: false %>
 		
-		<!-- <h4 class="oswald" style="color: gray; margin: 0.3em 0 0.8em 0;">Chapters</h4>
+		<h4 class="oswald center" style="margin: 0.2em 0 0.5em 0;">Chapters</h4>
 		<% @chapter.sort_by(&:chapter_number).each do |chapter| %>
 			<a href="#<%= chapter.id %>" class="chapter-link"><p><%= chapter.chapter_title %></p></a>
-		<% end %> -->
-
-<div class="dropdown">
-    <button class="btn btn-primary btn-block dropdown-toggle" id="menu1" type="button" data-toggle="dropdown">Select Chapter 
-    <span class="caret"></span></button>
-    <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
-		 <% @chapter.sort_by(&:chapter_number).each do |chapter| %>
-		 <% if chapter.chapter_title != "" %>
-      <li role="presentation"><a role="menuitem" tabindex="-1" href="#<%= chapter.id %>"><%= chapter.chapter_title %></a></li>
-      <% end %>
 		<% end %>
-    </ul>
-  </div>
-	 <!-- <h1 style="font-size: 1.3em; padding: 0.2em 0;" class="center">
-	 <% @chapter.sort_by(&:chapter_number).each do |chapter| %>
-	 	<%= chapter.chapter_title if request.path_info.include? "#{chapter.id}" %>
- 	 <% end %>
-	 </h1> -->
+		
+		<!-- <div class="dropdown">
+			<button class="btn btn-primary btn-block dropdown-toggle" id="menu1" type="button" data-toggle="dropdown">Select Chapter
+			<span class="caret"></span></button>
+			<ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+				<% @chapter.sort_by(&:chapter_number).each do |chapter| %>
+				<% if chapter.chapter_title != "" %>
+				<li role="presentation"><a role="menuitem" tabindex="-1" href="#<%= chapter.id %>"><%= chapter.chapter_title %></a></li>
+				<% end %>
+				<% end %>
+			</ul>
+		</div> -->
+
 	 <br />
 		<p class="center">
 			<a href="#top"><img src="/img/phone-up-pointer.svg" /></i></a><br /><br /><br />
@@ -51,4 +46,3 @@
 </div>
 
 <a href="#top"><img src="/img/phone-up-pointer.svg" style="position: fixed; bottom: 32px; right: 32px;" /></a>
-

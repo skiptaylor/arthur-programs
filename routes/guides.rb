@@ -10,7 +10,7 @@ get '/manuals/:manual_id/sections/?' do
    authorize!
    @user = User.get session[:user]
    @manual = Manual.get(params[:manual_id])
-   @section = @manual.sections
+   @section = Section.all(manual_id: params[:manual_id])
 	
 	erb :'manuals/sections'
 end
@@ -19,7 +19,7 @@ get '/manuals/:manual_id/sections/:section_id/chapters/?' do
   authorize!
   @user = User.get session[:user]
   @manual = Manual.get(params[:manual_id])
-  @section = @manual.sections
+  @section = Section.all(manual_id: params[:manual_id])
   @chapter = Chapter.all(section_id: params[:section_id])
 
   erb :'manuals/chapters'
@@ -29,8 +29,8 @@ get '/manuals/:manual_id/sections/:section_id/chapters/:chapter_id/chapter/?' do
   authorize!
   @user = User.get session[:user]
   @manual = Manual.get(params[:manual_id])
-  @section = @manual.sections
-  @chapter = Chapter.get(params[:chapter_id])
+  @section = Sections.get(params[:section_id])
+  @chapter = Chapter.get(section_id: params[:chapter_id])
 
-  erb :'manuals/chapters'
+  erb :'manuals/chapter'
 end

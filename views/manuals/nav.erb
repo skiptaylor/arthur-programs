@@ -1,14 +1,3 @@
-<!-- <nav class="chapter-nav">	<ul class="nav nav-list">
-		<% @section.sort_by(&:section_number).each do |section| %>
-		<li class="<%= active "#{section.id}" %>">
-			<a href="/manuals/<%= @manual.id %>/sections/<%= section.id %>/chapters" class="list-nav" style="padding: 5px 6px 6px 14px;font-family: 'Oswald', sans-serif;font-weight: 400;"><%= section.section_title %> <i class="icon-chevron-right pull-right icon-gray  <%= 'icon-white' if request.path_info.include? "#{section.id}" %>"></i></a>
-		</li>
-		<% end %>
-	</ul>
-</nav> -->
-
-
-
 <div class="dropdown">
 	<button class="btn btn-primary btn-block dropdown-toggle" id="menu1" type="button" data-toggle="dropdown">Select Section
 	<span class="caret"></span></button>
