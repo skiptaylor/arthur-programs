@@ -11,7 +11,7 @@
 		<ul>
 			<% @chapter.sort_by(&:chapter_number).each do |chapter| %>
 			<% if chapter.chapter_title != "" %>
-			<li class="active">
+			<li class="">
 				
 				<a href="#<%= chapter.id %>" class="chapter-link"><%= chapter.chapter_title %></a>
 				
@@ -37,7 +37,7 @@
 	 <% @chapter.sort_by(&:chapter_number).each do |chapter| %>
 	 <% if chapter.chapter_title != "" %>
 	 
-	 <a name="<%= chapter.id %>" id="<%= chapter.id %>" data-spy="scroll" data-target=".nav" data-offset="0" style="color: #244883; text-decoration: none;" data-spy="scroll"><h1 style="font-size: 2em;"><%= chapter.chapter_title %></h1></a>
+	 <a name="<%= chapter.id %>" id="<%= chapter.id %>" style="color: #244883; text-decoration: none;" data-spy="scroll"><h1 style="font-size: 2em;"><%= chapter.chapter_title %></h1></a>
 	 <% else %>
 	 <h2 style="margin-top: 0;"><%= chapter.sub_chapter_title %></h2>
  	
@@ -51,3 +51,32 @@
 
 <a href="#top"><img src="/img/phone-up-pointer.svg" style="position: fixed; bottom: 12px; right: 6px;" /></a>
 
+<script>
+	
+$(document).ready(function(){
+    
+    $('.scroll').click(function(event) {
+        event.preventDefault();
+ 
+        var full_url = this.href;
+        
+        var parts = full_url.split('#');
+        var trgt = parts[1];
+
+        var target_offset = $('#'+trgt).offset();
+        var target_top = target_offset.top;
+
+        $('html, body').animate({scrollTop:target_top}, 500);
+
+
+    });
+    
+    $('.nav#navbarChapter a').click(function(){
+         $('.nav#navbarChapter a').removeClass('active');
+         $(this).addClass('active');
+    });
+    
+});
+
+	
+</script>

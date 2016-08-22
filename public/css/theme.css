@@ -1132,29 +1132,29 @@ div.reference p  {
 
 /*Guides Nav*/  /*.navbar .nav-collapse ul.nav li .dropdown-menu a:hover*/
 
-div.nav#navbarChapter ul  {
+.nav#navbarChapter ul  {
 	list-style-type: none;
 }
 
-div.nav#navbarChapter ul li  {
+.nav#navbarChapter ul li  {
 	margin: 9px 0 9px -22px;
 	line-height: 1em;
 }
 
-div.nav#navbarChapter ul li a.chapter-link   {
+.nav#navbarChapter ul li a.chapter-link   {
 	color: #195fae;
 	font-family: 'Oswald', sans-serif;
 	font-size: 0.9em;
 	font-weight: 400;
 }
 
-div.nav#navbarChapter ul li a.chapter-link:hover   {
+.nav#navbarChapter ul li a.chapter-link:hover   {
 	color: #000000;
 	text-decoration: none;
 	background-color: none;
 }
 
-div.nav#navbarChapter ul li a.chapter-link:active, div.nav#navbarChapter ul li a.chapter-link:focus   {
+.nav#navbarChapter ul li a.chapter-link:active, .nav#navbarChapter ul li a.chapter-link.active, .nav#navbarChapter ul li a.chapter-link:focus   {
 	color: #7f0224;
 	text-decoration: none;
 }
