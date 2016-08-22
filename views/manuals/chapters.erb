@@ -36,11 +36,11 @@
 		
 	 <% @chapter.sort_by(&:chapter_number).each do |chapter| %>
 	 <% if chapter.chapter_title != "" %>
-	 <div data-spy="scroll" data-target=".nav" data-offset="0">
-	 <a name="<%= chapter.id %>" id="<%= chapter.id %>" style="color: #244883; text-decoration: none;" data-spy="scroll"><h1 style="font-size: 2em;"><%= chapter.chapter_title %></h1></a>
+	 
+	 <a name="<%= chapter.id %>" id="<%= chapter.id %>" data-spy="scroll" data-target=".nav" data-offset="0" style="color: #244883; text-decoration: none;" data-spy="scroll"><h1 style="font-size: 2em;"><%= chapter.chapter_title %></h1></a>
 	 <% else %>
 	 <h2 style="margin-top: 0;"><%= chapter.sub_chapter_title %></h2>
- 	</div>
+ 	
 	 <% end %>
 	 <%= markdown chapter.body %>
 	 <br />
