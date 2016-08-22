@@ -1130,24 +1130,32 @@ div.reference p  {
   margin:-60px 0 0; /* negative fixed header height */
 }
 
-a.chapter-link p  {
+/*Guides Nav*/  /*.navbar .nav-collapse ul.nav li .dropdown-menu a:hover*/
+
+div.nav#navbarChapter ul  {
+	list-style-type: none;
+}
+
+div.nav#navbarChapter ul li  {
+	margin: 9px 0 9px -22px;
+	line-height: 1em;
+}
+
+div.nav#navbarChapter ul li a.chapter-link   {
 	color: #195fae;
 	font-family: 'Oswald', sans-serif;
 	font-size: 0.9em;
 	font-weight: 400;
-	margin: 6px 0;
-	line-height: 1.3em;
-	margin-left: 1.3em;
-	text-indent: -1.3em;
 }
 
-a.chapter-link:hover p  {
+div.nav#navbarChapter ul li a.chapter-link:hover   {
 	color: #000000;
 	text-decoration: none;
+	background-color: none;
 }
 
-a.chapter-link:active p  {
-	color: #000000;
+div.nav#navbarChapter ul li a.chapter-link:active, div.nav#navbarChapter ul li a.chapter-link:focus   {
+	color: #7f0224;
 	text-decoration: none;
 }
 
