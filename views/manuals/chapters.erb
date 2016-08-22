@@ -1,31 +1,33 @@
-<div class="row">
+
+
+<divclass="row" data-spy="scroll" data-target=".nav-bar" data-offset="20" style="position: relative;">
 	<div class="span4 affix">
 		
 		<%= erb :'manuals/nav', layout: false %>
 		
 		
-		
-		
-		<div class="nav nav-stacked chapter-nav"  id="navbarChapter">
-		<p class="oswald center" style="background-color: #868686; color: white; margin: 0.2em 0 0.5em 0; font-size: 0.8em;">CHAPTERS</p>
-		<ul>
+		<div class="menu">
+			<p class="oswald center" style="background-color: #868686; color: white; margin: 0.2em 0 0.5em 0; font-size: 0.8em;">CHAPTERS</p>
+			<div id="menu-center" class="nav">
+				
+				<ul class="nav nav-stacked">
 			<% @chapter.sort_by(&:chapter_number).each do |chapter| %>
 			<% if chapter.chapter_title != "" %>
-			<li class="">
+			<li>
 				
-				<a href="#<%= chapter.id %>" class="chapter-link"><%= chapter.chapter_title %></a>
+				<a href="#<%= chapter.id %>"><%= chapter.chapter_title %></a>
 				
 			</li>
 			<% end %>
 			<% end %>
 		</ul>
 		</div>
-		
+		</div>
 		
 	 <br />
-		<p class="center">
+		<!-- <p class="center">
 			<a href="#top"><img src="/img/phone-up-pointer.svg" /></i></a><br /><br /><br />
-		</p>
+		</p> -->
 	</div>
 
 	<div class="span8 offset4 md">
@@ -36,47 +38,76 @@
 		
 	 <% @chapter.sort_by(&:chapter_number).each do |chapter| %>
 	 <% if chapter.chapter_title != "" %>
-	 
-	 <a name="<%= chapter.id %>" id="<%= chapter.id %>" style="color: #244883; text-decoration: none;" data-spy="scroll"><h1 style="font-size: 2em;"><%= chapter.chapter_title %></h1></a>
+	 <div id="<%= chapter.id %>">
+	 <a name="<%= chapter.id %>" style="color: #244883; text-decoration: none;" data-spy="scroll"><h1 style="font-size: 2em;"><%= chapter.chapter_title %></h1></a>
 	 <% else %>
 	 <h2 style="margin-top: 0;"><%= chapter.sub_chapter_title %></h2>
- 	
 	 <% end %>
+	 
 	 <%= markdown chapter.body %>
 	 <br />
 	 <% end %>
-			
+	</div>	
 	</div>
 </div>
 
-<a href="#top"><img src="/img/phone-up-pointer.svg" style="position: fixed; bottom: 12px; right: 6px;" /></a>
+<!-- <a href="#top"><img src="/img/phone-up-pointer.svg" style="position: fixed; bottom: 12px; right: 6px;" /></a> -->
 
 <script>
-	
-$(document).ready(function(){
+$(document).ready(function () {
+    $(document).on("scroll", onScroll);
     
-    $('.scroll').click(function(event) {
-        event.preventDefault();
- 
-        var full_url = this.href;
+    //smoothscroll
+    $('a[href^="#"]').on('click', function (e) {
+        e.preventDefault();
+        $(document).off("scroll");
         
-        var parts = full_url.split('#');
-        var trgt = parts[1];
-
-        var target_offset = $('#'+trgt).offset();
-        var target_top = target_offset.top;
-
-        $('html, body').animate({scrollTop:target_top}, 500);
-
-
+        $('a').each(function () {
+            $(this).removeClass('active');
+        })
+        $(this).addClass('active');
+      
+        var target = this.hash,
+            menu = target;
+        $target = $(target);
+        $('html, body').stop().animate({
+            'scrollTop': $target.offset().top-44
+        }, 500, 'swing', function () {
+            window.location.hash = target;
+            $(document).on("scroll", onScroll);
+        });
     });
-    
-    $('.nav#navbarChapter a').click(function(){
-         $('.nav#navbarChapter a').removeClass('active');
-         $(this).addClass('active');
-    });
-    
 });
 
-	
+function onScroll(event){
+    var scrollPos = $(document).scrollTop();
+    $('#menu-center a').each(function () {
+        var currLink = $(this);
+        var refElement = $(currLink.attr("href"));
+        if (refElement.position().top <= scrollPos && refElement.position().top + refElement.height() > scrollPos) {
+            $('#menu-center ul li a').removeClass("active");
+            currLink.addClass("active");
+        }
+        else{
+            currLink.removeClass("active");
+        }
+    });
+}
 </script>
+// <script>
+// 	$(document).ready(function(){
+// 		$('.scroll').click(function(event) {
+// 	        event.preventDefault();
+// 	        var full_url = this.href;
+// 	        var parts = full_url.split('#');
+// 	        var trgt = parts[1];
+// 	        var target_offset = $('#'+trgt).offset();
+// 	        var target_top = target_offset.top;
+// 	        $('html, body').animate({scrollTop:target_top}, 500);
+// 	    });
+// 	    $('nav#navChapter a').click(function(){
+// 	         $('nav#navChapter a').removeClass('active');
+// 	         $(this).addClass('active');
+// 	    });
+// 	});
+// </script>

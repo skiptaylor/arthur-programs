@@ -1132,29 +1132,29 @@ div.reference p  {
 
 /*Guides Nav*/  /*.navbar .nav-collapse ul.nav li .dropdown-menu a:hover*/
 
-.nav#navbarChapter ul  {
+.nav.navChapter ul  {
 	list-style-type: none;
 }
 
-.nav#navbarChapter ul li  {
-	margin: 9px 0 9px -22px;
+.nav.navChapter ul li  {
+	margin: 9px 0 9px 0;
 	line-height: 1em;
 }
 
-.nav#navbarChapter ul li a.chapter-link   {
+.nav.navChapter ul li a.chapter-link   {
 	color: #195fae;
 	font-family: 'Oswald', sans-serif;
 	font-size: 0.9em;
 	font-weight: 400;
 }
 
-.nav#navbarChapter ul li a.chapter-link:hover   {
+.nav.navChapter ul li a.chapter-link:hover   {
 	color: #000000;
 	text-decoration: none;
 	background-color: none;
 }
 
-.nav#navbarChapter ul li a.chapter-link:active, .nav#navbarChapter ul li a.chapter-link.active, .nav#navbarChapter ul li a.chapter-link:focus   {
+.nav.navChapter ul li a.chapter-link:active, .nav.navChapter ul li a.chapter-link.active   {
 	color: #7f0224;
 	text-decoration: none;
 }
@@ -1219,3 +1219,46 @@ div.reference p  {
 	padding: 0px;
 }
 
+
+
+
+
+
+
+.menu {
+
+}
+.light-menu {
+	
+}
+#menu-center {
+    
+}
+#menu-center ul {
+    
+}
+#menu-center ul li a{
+	color: #195fae;
+	font-family: 'Oswald', sans-serif;
+	font-size: 0.9em;
+	line-height: 1.2em;
+	font-weight: 400;
+	margin: 9px 0 9px 0;
+}
+#menu-center ul li {
+    list-style: none;
+    display: inline;
+ }
+#menu-center ul li a:hover  {
+    color: black;
+	 background-color: white;
+    text-decoration: none;
+ }
+#menu-center ul li a:active, #menu-center ul li a.active {
+     color: #7f0224;
+     text-decoration: none;
+  }
+a {
+    color: black;
+    text-decoration: none;
+}
