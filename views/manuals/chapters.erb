@@ -36,14 +36,13 @@
 		<% @chapter.sort_by(&:chapter_number).each do |chapter| %>
 		<% if chapter.chapter_title != "" %>
 
-		<div id="<%= chapter.id %>">
+		<div id="<%= chapter.id %>" style="margin-top: 2em;">
 
-			<a name="<%= chapter.id %>" style="color: #244883; text-decoration: none;"><h1 style="font-size: 2em; padding-top: 22px;"><%= chapter.chapter_title %></h1></a>
+			<a name="<%= chapter.id %>" style="color: #244883; text-decoration: none;"><h1 style="font-size: 2em;"><%= chapter.chapter_title %></h1></a>
 		<% else %>
 			<h2 style="padding-top: 0;"><%= chapter.sub_chapter_title %></h2>
 			<% end %>	
 			<%= markdown chapter.body %>
-			
 		<% end %>
 		<br />
 		<br />
@@ -71,7 +70,7 @@
 	            menu = target;
 	        $target = $(target);
 	        $('html, body').stop().animate({
-	            'scrollTop': $target.offset().top-38
+	            'scrollTop': $target.offset().top-50
 	        }, 500, 'swing', function () {
 	            window.location.hash = target;
 	            $(document).on("scroll", onScroll);
@@ -84,7 +83,7 @@
 	    $('#menu-center a').each(function () {
 	        var currLink = $(this);
 	        var refElement = $(currLink.attr("href"));
-	        if (refElement.position().top <= scrollPos && refElement.position().top + refElement.height() > scrollPos) {
+	        if (refElement.position().top-98 <= scrollPos && refElement.position().top + refElement.height() > scrollPos) {
 	            $('#menu-center ul li a').removeClass("active");
 	            currLink.addClass("active");
 	        }
@@ -95,20 +94,3 @@
 	}
 </script>
 
-<!--  // <script>
-// 	$(document).ready(function(){
-// 		$('.scroll').click(function(event) {
-// 	        event.preventDefault();
-// 	        var full_url = this.href;
-// 	        var parts = full_url.split('#');
-// 	        var trgt = parts[1];
-// 	        var target_offset = $('#'+trgt).offset();
-// 	        var target_top = target_offset.top;
-// 	        $('html, body').animate({scrollTop:target_top}, 500);
-// 	    });
-// 	    $('nav#navChapter a').click(function(){
-// 	         $('nav#navChapter a').removeClass('active');
-// 	         $(this).addClass('active');
-// 	    });
-// 	});
-// </script>  -->
