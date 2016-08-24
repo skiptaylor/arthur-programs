@@ -1161,11 +1161,11 @@ div.reference p  {
 #menu-center ul li a:hover  {
     color: black;
 	 background-color: white;
-    text-decoration: none;
+    text-decoration: underline;
  }
 #menu-center ul li a:active, #menu-center ul li a.active {
      color: #7f0224;
-     text-decoration: none;
+     text-decoration: underline;
   }
 a {
     color: black;
