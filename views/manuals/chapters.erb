@@ -29,22 +29,23 @@
 
 	<div class="span8 offset4 md">
 	
-		<h3 class="oswald" style="color: #1c89de; margin: 0.9em 0 0.5em 0;">Study Program Guide prepared for <%= @user.name %></h3>
+		<h3 class="oswald" style="color: #1c89de; margin: 0.9em 0 0.5em 0; padding-top:">Study Program Guide prepared for <%= @user.name %></h3>
 		<h1 style="font-size: 2.5em;"><%= @manual.name %></h1>
 		<hr />
 		
 		<% @chapter.sort_by(&:chapter_number).each do |chapter| %>
-		
+		<% if chapter.chapter_title != "" %>
 
 		<div id="<%= chapter.id %>">
 
-			<a name="<%= chapter.id %>" style="color: #244883; text-decoration: none;"><h1 style="font-size: 2em;"><%= chapter.chapter_title %></h1></a>
-		
-			<h2 style="margin-top: 0;"><%= chapter.sub_chapter_title %></h2>
-				
+			<a name="<%= chapter.id %>" style="color: #244883; text-decoration: none;"><h1 style="font-size: 2em; padding-top: 22px;"><%= chapter.chapter_title %></h1></a>
+		<% else %>
+			<h2 style="padding-top: 0;"><%= chapter.sub_chapter_title %></h2>
+			<% end %>	
 			<%= markdown chapter.body %>
 			
 		<% end %>
+		<br />
 		<br />
 		<br />
 	</div>
@@ -53,45 +54,45 @@
 <!-- <a href="#top"><img src="/img/phone-up-pointer.svg" style="position: fixed; bottom: 12px; right: 6px;" /></a> -->
 
 <script>
-$(document).ready(function () {
-    $(document).on("scroll", onScroll);
+	$(document).ready(function () {
+	    $(document).on("scroll", onScroll);
     
-    //smoothscroll
-    $('a[href^="#"]').on('click', function (e) {
-        e.preventDefault();
-        $(document).off("scroll");
+	    //smoothscroll
+	    $('a[href^="#"]').on('click', function (e) {
+	        e.preventDefault();
+	        $(document).off("scroll");
         
-        $('a').each(function () {
-            $(this).removeClass('active');
-        })
-        $(this).addClass('active');
+	        $('a').each(function () {
+	            $(this).removeClass('active');
+	        })
+	        $(this).addClass('active');
       
-        var target = this.hash,
-            menu = target;
-        $target = $(target);
-        $('html, body').stop().animate({
-            'scrollTop': $target.offset().top-44
-        }, 500, 'swing', function () {
-            window.location.hash = target;
-            $(document).on("scroll", onScroll);
-        });
-    });
-});
+	        var target = this.hash,
+	            menu = target;
+	        $target = $(target);
+	        $('html, body').stop().animate({
+	            'scrollTop': $target.offset().top-38
+	        }, 500, 'swing', function () {
+	            window.location.hash = target;
+	            $(document).on("scroll", onScroll);
+	        });
+	    });
+	});
 
-function onScroll(event){
-    var scrollPos = $(document).scrollTop();
-    $('#menu-center a').each(function () {
-        var currLink = $(this);
-        var refElement = $(currLink.attr("href"));
-        if (refElement.position().top <= scrollPos && refElement.position().top + refElement.height() > scrollPos) {
-            $('#menu-center ul li a').removeClass("active");
-            currLink.addClass("active");
-        }
-        else{
-            currLink.removeClass("active");
-        }
-    });
-}
+	function onScroll(event){
+	    var scrollPos = $(document).scrollTop();
+	    $('#menu-center a').each(function () {
+	        var currLink = $(this);
+	        var refElement = $(currLink.attr("href"));
+	        if (refElement.position().top <= scrollPos && refElement.position().top + refElement.height() > scrollPos) {
+	            $('#menu-center ul li a').removeClass("active");
+	            currLink.addClass("active");
+	        }
+	        else{
+	            currLink.removeClass("active");
+	        }
+	    });
+	}
 </script>
 
 <!--  // <script>
