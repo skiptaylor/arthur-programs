@@ -6,7 +6,7 @@ get '/manuals/:manual_id/manuals/?' do
 	erb :'manuals/ncmhce_guide'
 end
 
-get '/manuals/:manual_id/sections/?' do
+get '/manuals/:manual_id/sections/cover/?' do
    authorize!
    @user = User.get session[:user]
    @manual = Manual.get(params[:manual_id])

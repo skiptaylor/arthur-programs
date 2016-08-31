@@ -2,6 +2,9 @@
 	<button class="btn btn-primary btn-block dropdown-toggle" id="menu1" type="button" data-toggle="dropdown">SECTIONS &nbsp;
 	<span class="caret"></span></button>
 	<ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+		<li role="presentation" class="<%= active "cover" %>">
+			<a role="menuitem" tabindex="-1" href="/manuals/<%= @manual.id %>/sections/cover">Cover</a>
+		</li>
 		<% @section.sort_by(&:section_number).each do |section| %>
 		<li role="presentation" class="<%= active "#{section.id}" %>">
 			<a role="menuitem" tabindex="-1" href="/manuals/<%= @manual.id %>/sections/<%= section.id %>/chapters"><%= section.section_title %></a>
