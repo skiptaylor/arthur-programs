@@ -1046,6 +1046,7 @@ div.reference p  {
 .md blockquote p   { text-indent: 0em; }
 .md h2  { text-indent: 0em; font-weight: 600; color: #244883; }
 .md h3  { text-indent: 0em; padding: 0.4em 0 0.2em 0; }
+.md h5  { text-indent: 0em; padding: 0.4em 0 0.4em 0; font-size: 1.1em; }
 .md h6  { text-indent: 0em; font-size: 1.05em;  margin-bottom: 5px; margin-top: 14px; }
 
 :target:before {
