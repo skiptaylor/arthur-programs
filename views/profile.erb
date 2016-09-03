@@ -471,6 +471,13 @@
 			<tbody>
 				<% if @user.ncmhce_downloads %>
 					<tr>
+						<td>NCMHCE Study Supplement online</td>
+						<td colspan="2">
+							<span class="label label-important">NEW</span> &nbsp;<span style="font-weight: 600;">Study online. <small>No download needed!</small></span>
+						</td>
+						<td colspan="2" style="text-align: right;"><a href="/manuals/98/sections/cover">Study now</a></td>
+					</tr>
+					<tr>
 						<td>NCMHCE Study Supplement.pdf</td>
 						<td class="hidden-phone">Any device with a PDF Reader</td>
 						<td style="text-align: center;"><span class="badge badge-info"><small>5/26/2015</small></span></td>
@@ -498,13 +505,6 @@
 						<% unless @user.expired? %>
 						<td style="text-align: right;"><a href="/downloads/ncmhce?file=NCMHCE%20Study%20Supplement.mobi">Download</a></td>
 						<% end %>
-					</tr>
-					<tr>
-						<td>NCMHCE Study Supplement online</td>
-						<td colspan="2">
-							<span class="label label-important">NEW</span> &nbsp;<span style="font-weight: 600;">Study online. No download needed!</span>
-						</td>
-						<td colspan="2" style="text-align: right;"><a href="/manuals/98/sections/cover">Study now</a></td>
 					</tr>
 					<tr>
 						<td colspan="5"> </td>
