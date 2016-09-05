@@ -201,9 +201,11 @@
 	 
 	 </div>
 	 
-	 
 	 <p style="padding: 0.2em 0 0.7em 0;"><a class="btn btn-info" href="/manuals/98/sections/cover"><strong>Study Online Now</strong></a> &nbsp; <small><br class="visible-phone" /><span class="label label-important">NEW</span> &nbsp;<strong>Study Guide now available online.</strong> No need to download ebook.</small></p>
 	 
+	 <% if @user.ncmhce_flashcards %>
+	 <p style="padding: 0em 0 0.7em 0;"><a class="btn btn-info" href="/ncmhce/glossary"><strong>NCMHCE Flashcards</strong></a> &nbsp; <small><br class="visible-phone" /><span class="label label-important">NEW</span> &nbsp;<strong>Use these flashcards to promote active recall.</strong></p>
+	 <% end %>
 	 
 	 	<% unless @user.expired? %>
 		<p><a class="btn btn-primary btn-small" href="/ncmhce/scenarios"><strong>Choose a NCMHCE scenario to take</strong></a>&nbsp; <br class="visible-phone" /><small><%= @user.remaining_scenarios %> Remaining</small></p>
@@ -267,11 +269,7 @@
 			</table>
 		<% end %>
 
-		<% if @user.ncmhce_flashcards %>
-		<a href="/ncmhce/glossary" class="btn btn-small btn-primary">NCMHCE Flashcards</a>
-		<% end %>
-		
-		<br /><hr /><br />
+		<hr /><br />
 	<% end %>
 	
 
