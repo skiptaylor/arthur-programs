@@ -26,7 +26,7 @@
 		
 		<form class="form-horizontal" method="post">
 			
-			<div class="control-group pull-right">
+			<div class="control-group" style="width: 100px;">
 				<div class="controls">
 					<label class="checkbox">
 						<input type="checkbox" name="admin" id="admin" <%= 'checked' if @user.admin? %> /> Admin
@@ -34,14 +34,14 @@
 				</div>
 			</div>
 			
-			<div class="control-group" id="name-group">
+			<div class="control-group" id="name-group" style="margin-top: -9px;">
 				<label class="control-label" for="name">Name</label>
 				<div class="controls">
 					<input type="text" class="input-xlarge" id="name" name="name" value="<%= @user.name %>">
 				</div>
 			</div>
 			
-			<div class="control-group" id="email-group" style="margin-top: -20px;">
+			<div class="control-group" id="email-group" style="margin-top: -9px;">
 				<label class="control-label" for="email">Email address</label>
 				<div class="controls">
 					<input type="text" class="input-xlarge" id="email" name="email" autocomplete="off" value="<%= @user.email %>">
@@ -203,12 +203,12 @@
 		
 		<br />
 
-    <% if @user.max_exams > 0 %>
-      
+    <!-- <% if @user.max_exams > 0 %>
+
       <div class="page-header">
         <h3>NCE Exams</h3>
       </div>
-      
+
       <% unless @exams.empty? %>
         <table class="table table-condensed table-striped table-hover">
           <thead>
@@ -235,19 +235,19 @@
           </tbody>
         </table>
       <% end %>
-      
+
       <br />
-    <% end %>
+    <% end %> -->
     
-    <% if @user.max_scenarios > 0 %>
-      
+    <!-- <% if @user.max_scenarios > 0 %>
+
       <div class="page-header">
         <h3>
           NCMHCE Scenarios
           <small><%= @user.remaining_scenarios %> Remaining</small>
         </h3>
       </div>
-      
+
       <% unless @scenarios.empty? %>
         <table class="table table-condensed table-striped table-hover">
           <thead>
@@ -270,7 +270,7 @@
 								user_id: session[:user]
 							) %>
 							<% if @information_gathering %>
-							<%= @information_gathering.correct %>/<%= @information_gathering.possible %> 
+							<%= @information_gathering.correct %>/<%= @information_gathering.possible %>
 							<% else %><small>N/A</small><% end %>
 						</td>
 						<td style="text-align: center;">
@@ -290,21 +290,21 @@
           </tbody>
         </table>
       <% end %>
-      
+
       <br />
-    <% end %>
+    <% end %> -->
     
-    <% if @user.workshop_scenarios? %>
-    
+    <!-- <% if @user.workshop_scenarios? %>
+
       <div class="page-header">
         <h3>Workshop Scenarios</h3>
       </div>
-      
+
       <table class="table table-condensed table-striped table-hover">
         <thead>
           <tr>
 				<th>Scenario</th>
-				
+
 				<th>Taken On</th>
           </tr>
         </thead>
@@ -314,22 +314,22 @@
             <% avg = Average.last(scenario_id: scenario.id, user_id: @user.id) %>
             <tr>
               <td><%= scenario.title %></td>
-				
+
 				<td><%= avg.updated_at.display_short if avg %></td>
             </tr>
           <% end %>
         </tbody>
       </table>
-      
+
       <br />
-    <% end %>
+    <% end %> -->
     
-    <% if @user.ceu_scenario > 0 %>
-      
+    <!-- <% if @user.ceu_scenario > 0 %>
+
       <div class="page-header">
         <h3>CEU Scenarios</h3>
       </div>
-      
+
       <table class="table table-condensed table-striped table-hover">
         <thead>
           <tr>
@@ -356,21 +356,21 @@
           <% end %>
         </tbody>
       </table>
-      
+
       <br />
-    <% end %>
+    <% end %> -->
 	 
-    <% if @user.practice_exams? %>
-      
+    <!-- <% if @user.practice_exams? %>
+
       <div class="page-header">
         <h3>Practice Scenarios</h3>
       </div>
-      
+
       <table class="table table-condensed table-striped table-hover">
         <thead>
           <tr>
 				<th>Scenario</th>
-				
+
 				<th>Taken On</th>
           </tr>
         </thead>
@@ -385,9 +385,9 @@
           <% end %>
         </tbody>
       </table>
-      
+
       <br />
-    <% end %>
+    <% end %> -->
 	 
 
 	</div>
