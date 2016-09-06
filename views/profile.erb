@@ -190,17 +190,20 @@
     <% end %>
 	 
 	 
-	 <div style="border-left: 3px solid #bc272e; padding-left: 1.5em;">
+	 <div class="well">
 	 
 	 <% if @user.purchases.any? { |purchase| (purchase.package == "NCMHCE: Starter Package") && ((purchase.created_at + 14) > Time.now.to_date) } && @user.remaining_scenarios < 13 %>
 	 <span style="float: right;"><a class="btn btn-success btn-small" href="/checkout/second-chance-upgrade">Upgrade to Full Package now for $110</a></span>
-	 <h2 class="oswald ncmhce-color" style="margin-top: 0;">Second Chance Offer!</h2> 
-	 <p style="line-height: 1.1em;"><small><strong>For access to all 36 scenarios</strong>, you have two weeks from your original purchase date to upgrade your <strong>Starter Package</strong> to our <strong>Full Package</strong> for the price difference of $110.</small><br /><span style="font-size: 1.2em; line-height: 2.5em;" class="oswald ncmhce-color"><strong>You'll save $50!</strong></span></p>
+	 <h2 class="oswald ncmhce-color" style="margin-top: -6px;">Second Chance Offer!</h2> 
+	 <p><strong>For access to all 36 scenarios</strong>, you have two weeks from your original purchase date to upgrade your <strong>Starter Package</strong> to our <strong>Full Package</strong> for the price difference of <strong>$110</strong>.</p>
+	 <h2 class="oswald ceu-color" style="margin-bottom: -6px;">You'll save $50!</h2>
 	 <% end %>
 	 
 	 </div>
-	 
+
+	 <% if @user.ncmhce_downloads %>
 	 <p style="padding: 0.2em 0 0.7em 0;"><a class="btn btn-info" href="/manuals/98/sections/cover"><strong>Study Online Now</strong></a> &nbsp; <small><br class="visible-phone" /><span class="label label-important">NEW</span> &nbsp;<strong>Study Guide now available online.</strong> No need to download ebook.</small></p>
+	 <% end %>
 	 
 	 <% if @user.ncmhce_flashcards %>
 	 <p style="padding: 0em 0 0.7em 0;"><a class="btn btn-info" href="/ncmhce/glossary"><strong>NCMHCE Flashcards</strong></a> &nbsp; <small><br class="visible-phone" /><span class="label label-important">NEW</span> &nbsp;<strong>Use these flashcards to promote active recall.</strong></p>
