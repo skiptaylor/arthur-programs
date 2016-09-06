@@ -44,8 +44,7 @@
 			<p>
 				<% if @user.admin? %>
 					<small>No expiration date.</small>
-				<% elsif @user.ceu_scenario %>
-					<small>Active CEU Account</small>
+				
 				<% else %>
 					<% if (@user.expiration_date - 30) > Time.now.to_date %>
 						<small>Account expires on <strong><%= @user.expiration_date.display :american_day %></strong>.</small>
