@@ -189,14 +189,20 @@
       <div class="alert alert-info" style="border: none;"><%= m.body %></div>
     <% end %>
 	 
-	 
 	 <div class="well">
 	 
 	 <% if @user.purchases.any? { |purchase| (purchase.package == "NCMHCE: Starter Package") && ((purchase.created_at + 14) > Time.now.to_date) } && @user.remaining_scenarios < 13 %>
-	 <span style="float: right;"><a class="btn btn-success btn-small" href="/checkout/second-chance-upgrade">Upgrade to Full Package now for $110</a></span>
-	 <h2 class="oswald ncmhce-color" style="margin-top: -6px;">Second Chance Offer!</h2> 
-	 <p><strong>For access to all 36 scenarios</strong>, you have two weeks from your original purchase date to upgrade your <strong>Starter Package</strong> to our <strong>Full Package</strong> for the price difference of <strong>$110</strong>.</p>
-	 <h2 class="oswald ceu-color" style="margin-bottom: -6px;">You'll save $50!</h2>
+	 
+	 <h2 class="oswald ncmhce-color" style="margin-top: -6px;">Second Chance Offer! &nbsp; You'll save $50!</h2> 
+	 <p><strong>For access to all 36 scenarios</strong>, you have two weeks from your original purchase date to upgrade your <strong>Starter Package</strong> to our <strong>Full Package</strong> for the price difference of <strong>$110</strong>. <small>(Same price as purchasing Full Package)</small></p>
+ 	<% @user.purchases.each do |purchase| %>
+ 		<% if @user.purchases.any? { |purchase| (purchase.package == "NCMHCE: Starter Package")  && ((purchase.created_at + 14) > Time.now.to_date) } %>
+	 <span style="float: right; margin-top: 5px;"><a class="btn btn-success btn-small" href="/checkout/second-chance-upgrade">Upgrade to Full Package now for $110</a></span>
+	 <h2 class="oswald ceu-color" style="margin-bottom: -6px; font-size: 1.4em;">You have <%= ((purchase.created_at.to_date + 14) - Time.now.to_date).to_i %> days left.</h2>
+	 
+ 	<% end %>
+ 	 <% end %>
+
 	 <% end %>
 	 
 	 </div>
