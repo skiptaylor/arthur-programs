@@ -189,9 +189,11 @@
       <div class="alert alert-info" style="border: none;"><%= m.body %></div>
     <% end %>
 	 
-	 <div class="well">
+	 
 	 
 	 <% if @user.purchases.any? { |purchase| (purchase.package == "NCMHCE: Starter Package") && ((purchase.created_at + 14) > Time.now.to_date) } && @user.remaining_scenarios < 13 %>
+	
+	 <div class="well">
 	 
 	 <h2 class="oswald ncmhce-color" style="margin-top: -6px;">Second Chance Offer! &nbsp; You'll save $50!</h2> 
 	 <p><strong>For access to all 36 scenarios</strong>, you have two weeks from your original purchase date to upgrade your <strong>Starter Package</strong> to our <strong>Full Package</strong> for the price difference of <strong>$110</strong>. <small>(Equals price of purchasing Full Package)</small></p>
@@ -202,10 +204,12 @@
 	 
  	<% end %>
  	 <% end %>
+	 
+	 </div>
 
 	 <% end %>
 	 
-	 </div>
+	 
 
 	 <% if @user.ncmhce_downloads %>
 	 <p style="padding: 0.2em 0 0.7em 0;"><a class="btn btn-info" href="/manuals/98/sections/cover"><strong>Study Online Now</strong></a> &nbsp; <small><br class="visible-phone" /><span class="label label-important">NEW</span> &nbsp;<strong>Study Guide now available online.</strong> No need to download ebook.</small></p>
