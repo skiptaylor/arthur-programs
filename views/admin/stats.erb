@@ -5,20 +5,39 @@
 	</div>
 
 	<div class="span9">
-		<ul class="breadcrumb">
+		<!-- <ul class="breadcrumb">
 			<li>Admin <span class="divider">/</span></li>
 			<li class="active">Stats</li>
-		</ul>
+		</ul> -->
 		
-		<div class="page-header">
-			<h2>Stats</h2>
-		</div>
+			<h1 class="page-header">Stats</h1>
 		
 		<table class="table">
+			<tr>
+				<th>Guide</th>
+				<th style="text-align: center;">Total Downloads<br /><small class="ceu-color">Grand Total</small></th>
+				<th style="text-align: center;">New Downloads<br /><small class="ceu-color">Since 9-7-2016</small></th>
+			</tr>
 			<% @stats.each do |stat| %>
 			<tr>
 				<td><%= stat.name %></td>
-				<td><%= stat.content %></td>
+				<td style="text-align: center;"><%= stat.content %></td>
+				
+				<td class="ncmhce-color" style="text-align: center;">
+					<% if stat.name == 'NCE Study Guide pdf' %>
+					<%= stat.content - 2593 %>
+					<% elsif stat.name == 'NCE Study Guide mobi' %>
+					<%= stat.content - 1120 %>
+					<% elsif stat.name == 'NCE Study Guide epub' %>
+					<%= stat.content - 1627 %>
+					<% elsif stat.name == 'NCMHCE Study Supplement epub' %>
+					<%= stat.content - 6269 %>
+					<% elsif stat.name == 'NCMHCE Study Supplement mobi' %>
+					<%= stat.content - 4205 %>
+					<% else stat.name == 'NCMHCE Study Supplement pdf' %>
+					<%= stat.content - 11101 %>
+					<% end %>
+				</td>
 			</tr>
 			<% end %>
 		</table>
