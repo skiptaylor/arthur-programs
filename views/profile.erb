@@ -209,18 +209,10 @@
 
 	 <% end %>
 	 
-	 
 
-	 <% if @user.ncmhce_downloads %>
-	 <p style="padding: 0.2em 0 0.7em 0;"><a class="btn btn-info" href="/manuals/98/sections/cover"><strong>Study Online Now</strong></a> &nbsp; <small><br class="visible-phone" /><span class="label label-important">NEW</span> &nbsp;<strong>Study Guide now available online.</strong> No need to download ebook.</small></p>
-	 <% end %>
-	 
-	 <% if @user.ncmhce_flashcards %>
-	 <p style="padding: 0em 0 0.7em 0;"><a class="btn btn-info" href="/ncmhce/glossary"><strong>NCMHCE Flashcards</strong></a> &nbsp; <small><br class="visible-phone" /><span class="label label-important">NEW</span> &nbsp;<strong>Use these flashcards to promote active recall.</strong></p>
-	 <% end %>
 	 
 	 	<% unless @user.expired? %>
-		<p><a class="btn btn-primary btn-small" href="/ncmhce/scenarios"><strong>Choose a NCMHCE scenario to take</strong></a>&nbsp; <br class="visible-phone" /><small><%= @user.remaining_scenarios %> Remaining</small></p>
+		<p><a class="btn btn-primary btn-small" href="/ncmhce/scenarios"><strong>Choose a NCMHCE scenario to take</strong></a>&nbsp; <br class="visible-phone" /> &nbsp; <small>You have <%= @user.remaining_scenarios %> of <%= @user.max_scenarios %> remaining.</small></p>
 		<% end %>
 		<% unless @scenarios.empty? %>
 			<table class="table table-condensed table-striped table-hover">
@@ -284,6 +276,27 @@
 		<hr /><br />
 	<% end %>
 	
+<!-- –––––––––––––––––– study –––––––––––––––––– -->
+
+	<% if @user.max_scenarios > 0 && @user.ncmhce_downloads %>
+
+		<div class="visible-desktop">
+			<h3>
+				<span class="oswald" style="font-size: 1.5em;">Study Online</span>
+			</h3>
+			<br />
+			
+		  	 <% if @user.ncmhce_downloads %>
+		  	 <p style="padding: 0.2em 0 0.7em 0;"><a class="btn btn-info" href="/manuals/98/sections/cover"><strong>Study Online Now</strong></a> &nbsp; <small><br class="visible-phone" /><span class="label label-important">NEW</span> &nbsp;<strong>Study Guide now available online.</strong> No need to download ebook.</small></p>
+		  	 <% end %>
+	 
+		  	 <% if @user.ncmhce_flashcards %>
+		  	 <p style="padding: 0em 0 0.7em 0;"><a class="btn btn-info" href="/ncmhce/glossary"><strong>NCMHCE Flashcards</strong></a> &nbsp; <small><br class="visible-phone" /><span class="label label-important">NEW</span> &nbsp;<strong>Use these flashcards to promote active recall.</strong></p>
+		  	 <% end %>
+				
+		</div>
+		<hr /><br />
+		<% end %>
 
 <!-- –––––––––––––––––– ceu –––––––––––––––––– -->
 
