@@ -62,11 +62,18 @@ body	{
 	line-height: 36px; 
 }
 
-#content h3 {
+/*#content h3 {
+	font-size: 16px;
+	line-height: 22px;
+	margin: 0;
+}*/
+
+h3 {
 	font-size: 16px;
 	line-height: 22px;
 	margin: 0; 
 }
+
 
 /*@media (max-width: 980px) {
   #content {
@@ -1039,14 +1046,15 @@ div.reference p  {
 .md p  { text-indent: 1.7em; }
 .md p.para  { text-indent: 0em; }
 .md p.reference  { margin-left: 2em; text-indent: -2em; }
-.md h1  { text-indent: 0em; }
+
 .md ol li, .md ul li   { margin-left: 2em; margin-bottom: 5px; }
 .md ol li p, .md ul li p  { text-indent: 0em; }
 .md h1 p  { text-indent: 0em; padding-bottom: 0.2em; }
 .md blockquote   {  font-size: 14px; font-weight: 600; }
 .md blockquote p   { text-indent: 0em; }
+.md h1  { text-indent: 0em; }
 .md h2  { text-indent: 0em; font-weight: 600; color: #244883; }
-.md h3  { text-indent: 0em; padding: 0.4em 0 0.2em 0; }
+.md h3  { text-indent: 0em; padding: 0.4em 0 0.2em 0; font-size: 1.4em; }
 .md h5  { text-indent: 0em; padding: 0.4em 0 0.4em 0; font-size: 1.2em; }
 .md h6  { text-indent: 0em; font-size: 1em;  margin-bottom: 5px; margin-top: 14px; }
 
