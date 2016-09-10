@@ -1063,6 +1063,11 @@ div.reference p  {
 .md h4  { text-indent: 0em; padding: 0.4em 0 0.2em 0; font-weight: 600; font-size: 1.3em; }
 .md h5  { text-indent: 0em; padding: 0.4em 0 0.1em 0; font-size: 1.1em; }
 .md h6  { text-indent: 0em; font-size: 1.1em;  margin-bottom: 5px; margin-top: 14px; }
+.md .sansbullet	{
+	list-style-position: inside;
+	list-style-type: none;
+	margin: ;
+}
 
 :target:before {
   content:"";
