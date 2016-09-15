@@ -1054,6 +1054,8 @@ div.reference p  {
 
 .md ol li, .md ul li   { margin-left: 2em; margin-bottom: 5px; }
 .md ol li p, .md ul li p  { text-indent: 0em; }
+.md ul.a  { list-style-type: lower-alpha; }
+.md ul.none  { list-style-type: none; }
 .md h1 p  { text-indent: 0em; padding-bottom: 0.2em; }
 .md blockquote   {  font-size: 14px; font-weight: 600; }
 .md blockquote p   { text-indent: 0em; }
@@ -1167,15 +1169,22 @@ div.reference p  {
 
 
 
-#menu-center ul li a{
+#menu-center .nav li > a  {
 	color: #195fae;
 	font-family: 'Oswald', sans-serif;
 	font-size: 0.9em;
 	line-height: 1.2em;
 	font-weight: 400;
-	margin: 9px 0 9px 0;
+	margin: 9px 0 9px -1em;
 }
-#menu-center ul li {
+#menu-center .nav  {
+	color: #195fae;
+	font-family: 'Oswald', sans-serif;
+	line-height: 1.2em;
+	font-weight: 400;
+	margin: 0 0 0 1.4em;
+}
+#menu-center ul li  {
     list-style: none;
     display: inline;
  }

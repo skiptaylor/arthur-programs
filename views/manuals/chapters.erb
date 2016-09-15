@@ -5,20 +5,44 @@
 		
 		<div class="menu">
 			<p class="oswald center" style="background-color: #868686; color: white; margin: 0.2em 0 0.5em 0; font-size: 0.8em;">CHAPTERS</p>
-			<div id="menu-center" class="nav">
+			
+			
+			
+			
+			<div id="menu-center" style="height: 550px; overflow: scroll;">
 				
 				<ul class="nav nav-stacked">
 					<% @chapter.sort_by(&:chapter_number).each do |chapter| %>
 					<% if chapter.chapter_title != "" %>
 					<li>
-				
 						<a href="#<%= chapter.id %>"><%= chapter.chapter_title %></a>
-				
+						
+						
+						
+						
+						
+							<% elsif chapter.sub_chapter_title != "" %>
+							<ul class="nav">
+								<li>
+									<a href="#<%= chapter.id %>"><%= chapter.sub_chapter_title %></a>
+								</li>
+							</ul>
+							<% end %>
+						
+						
+						
+						
+						
+						
 					</li>
 					<% end %>
-					<% end %>
 				</ul>
+				
 			</div>
+			
+			
+			
+			
 		</div>
 		
 	 <br />
@@ -34,13 +58,14 @@
 		<hr />
 		
 		<% @chapter.sort_by(&:chapter_number).each do |chapter| %>
-		<% if chapter.chapter_title != "" %>
+		
 
 		<div id="<%= chapter.id %>" style="margin-top: 2em;" class="md">
+			<% if chapter.chapter_title != "" %>
 
 			<a name="<%= chapter.id %>" style="color: #244883; text-decoration: none;"><h1 style="font-size: 2em;"><%= chapter.chapter_title %></h1></a>
 		<% else %>
-			<h2 style="padding-top: 0.6em; font-size: 1.6em; line-height: 1.2em;"><%= chapter.sub_chapter_title %></h2>
+			<a name="<%= chapter.id %>" style="color: #244883; text-decoration: none;"><h2 style="padding-top: 0.6em; font-size: 1.6em; line-height: 1.2em;"><%= chapter.sub_chapter_title %></h2></a>
 			<% end %>	
 			<%= markdown chapter.body %>
 		<% end %>
@@ -84,7 +109,7 @@
 	        var currLink = $(this);
 	        var refElement = $(currLink.attr("href"));
 	        if (refElement.position().top-98 <= scrollPos && refElement.position().top + refElement.height() > scrollPos) {
-	            $('#menu-center ul li a').removeClass("active");
+	            $('#menu-center ul li a, #menu-center ul li ul li a').removeClass("active");
 	            currLink.addClass("active");
 	        }
 	        else{
