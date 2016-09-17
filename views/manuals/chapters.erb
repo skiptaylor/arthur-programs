@@ -5,22 +5,15 @@
 		
 		<div class="menu">
 			<p class="oswald center" style="background-color: #868686; color: white; margin: 0.2em 0 0.5em 0; font-size: 0.8em;">CHAPTERS</p>
-			
-			
-			
-			
-			<div id="menu-center" style="height: 550px; padding: 3px 0 3px 0; overflow-y: scroll; border: 1px solid #b5b5b5; z-index: 1003;">
+
+			<div id="menu-center" style="height: calc(100vh - 200px); padding: 3px 0 3px 0; overflow-y: scroll; border: 1px solid #b5b5b5; z-index: 1003;">
 				
 				<ul class="nav nav-stacked">
 					<% @chapter.sort_by(&:chapter_number).each do |chapter| %>
 					<% if chapter.chapter_title != "" %>
 					<li>
 						<a href="#<%= chapter.id %>"><%= chapter.chapter_title %></a>
-						
-						
-						
-						
-						
+
 							<% elsif chapter.sub_chapter_title != "" %>
 							<ul class="nav">
 								<li>
@@ -28,21 +21,13 @@
 								</li>
 							</ul>
 							<% end %>
-						
-						
-						
-						
-						
-						
+
 					</li>
 					<% end %>
 				</ul>
 				
 			</div>
-			
-			
-			
-			
+
 		</div>
 		
 	 <br />
