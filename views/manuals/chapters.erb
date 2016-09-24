@@ -45,19 +45,20 @@
 		<% @chapter.sort_by(&:chapter_number).each do |chapter| %>
 		
 
-		<div id="<%= chapter.id %>" style="margin-top: 2em;" class="md">
+		<div id="<%= chapter.id %>" style="margin: 2em 0;" class="md">
 			<% if chapter.chapter_title != "" %>
 
 			<a name="<%= chapter.id %>" style="color: #244883; text-decoration: none;"><h1 style="font-size: 2em;"><%= chapter.chapter_title %></h1></a>
-		<% else %>
+			<% else %>
 			<a name="<%= chapter.id %>" style="color: #244883; text-decoration: none;"><h2 style="padding-top: 0.1em; font-size: 1.6em; line-height: 1.2em;"><%= chapter.sub_chapter_title %></h2></a>
 			<% end %>	
+
 			<%= markdown chapter.body %>
-		<% end %>
+			
 		</div>
-		<br />
-		<br />
-		<br />
+		<% end %>
+		
+	
 	
 	</div>
 </div>
@@ -82,7 +83,7 @@
 	            menu = target;
 	        $target = $(target);
 	        $('body, body, #chap-top').stop().animate({
-	            'scrollTop': $target.offset().top-90
+	            '#chap-top': $target.offset().top-90
 	        }, 500, 'swing', function () {
 	            window.location.hash = target;
 	            $(document).on("scroll", onScroll);
