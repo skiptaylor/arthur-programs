@@ -4,11 +4,11 @@
 		<%= erb :'manuals/nav', layout: false %>
 		
 		<div class="menu">
-			<p class="oswald center" style="background-color: #868686; color: white; margin: 0.2em 0 0.5em 0; font-size: 0.8em;">CHAPTERS</p>
+			<p class="oswald center" style="background-color: #868686; color: white; margin: 0.2em 0 0 0; font-size: 0.8em;">CHAPTERS</p>
 
-			<div onmouseover="document.body.style.overflow='hidden';"  onmouseout="document.body.style.overflow='auto';" id="menu-center" style="height: calc(100vh - 200px); padding: 3px 0 3px 0; overflow-y: scroll; border: 1px solid #b5b5b5;display: flex;">
+			<div onmouseover="document.body.style.overflow='hidden';"  onmouseout="document.body.style.overflow='auto';" id="menu-center" style="height: calc(100vh - 210px); overflow-y: scroll; border: 1px solid #dbdbdb; display: flex;">
 				
-				<ul class="nav nav-stacked">
+				<ul class="nav nav-stacked" style="padding: 4px 0 0 0;">
 					<% @chapter.sort_by(&:chapter_number).each do |chapter| %>
 					<% if chapter.chapter_title != "" %>
 					<li>
@@ -36,7 +36,7 @@
 		</p> -->
 	</div>
 
-	<div class="span8 offset4 md">
+	<div class="span8 offset4 md" id="chap-top">
 	
 		<h4 class="oswald" style="color: #1c89de; font-weight: 400; margin: 0 0 0.5em 0; padding-top:">Study Program Guide prepared for <%= @user.name %></h4>
 		<h1 style="font-size: 2.5em;"><%= @manual.name %></h1>
@@ -50,7 +50,7 @@
 
 			<a name="<%= chapter.id %>" style="color: #244883; text-decoration: none;"><h1 style="font-size: 2em;"><%= chapter.chapter_title %></h1></a>
 		<% else %>
-			<a name="<%= chapter.id %>" style="color: #244883; text-decoration: none;"><h2 style="padding-top: 0.6em; font-size: 1.6em; line-height: 1.2em;"><%= chapter.sub_chapter_title %></h2></a>
+			<a name="<%= chapter.id %>" style="color: #244883; text-decoration: none;"><h2 style="padding-top: 0.1em; font-size: 1.6em; line-height: 1.2em;"><%= chapter.sub_chapter_title %></h2></a>
 			<% end %>	
 			<%= markdown chapter.body %>
 		<% end %>
@@ -79,7 +79,7 @@
 	        var target = this.hash,
 	            menu = target;
 	        $target = $(target);
-	        $('html, body').stop().animate({
+	        $('body, #chap-top').stop().animate({
 	            'scrollTop': $target.offset().top-50
 	        }, 500, 'swing', function () {
 	            window.location.hash = target;
