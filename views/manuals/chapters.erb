@@ -83,7 +83,7 @@
 	            menu = target;
 	        $target = $(target);
 	        $('body, body, #chap-top').stop().animate({
-	            '#chap-top': $target.offset().top-90
+	            '#top': $target.offset().top-90
 	        }, 500, 'swing', function () {
 	            window.location.hash = target;
 	            $(document).on("scroll", onScroll);
