@@ -1071,12 +1071,12 @@ div.reference p  {
 	margin: ;
 }
 
-:target:before {
+/*:target:before {
   content:"";
   display:block;
-  height:60px; /* fixed header height*/
-  margin:-60px 0 0; /* negative fixed header height */
-}
+  height:40px;
+  margin:-40px 0 0;
+}*/
 
 
 /*.nav.navChapter ul  {
@@ -1201,3 +1201,5 @@ div.reference p  {
     color: black;
     text-decoration: none;
 }
+
+
