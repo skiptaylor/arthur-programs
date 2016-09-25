@@ -1071,12 +1071,12 @@ div.reference p  {
 	margin: ;
 }
 
-/*:target:before {
+:target:before {
   content:"";
   display:block;
   height:40px;
   margin:-40px 0 0;
-}*/
+}
 
 
 /*.nav.navChapter ul  {
