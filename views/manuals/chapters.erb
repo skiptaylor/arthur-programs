@@ -44,11 +44,11 @@
 
 			
 			
-		<div onmouseover="document.body.style.overflow='hidden';"  onmouseout="document.body.style.overflow='auto';" style="height: calc(100vh - 210px); overflow-y: scroll; ">
+		<div id="chap-top">
 		<% @chapter.sort_by(&:chapter_number).each do |chapter| %>
 		
 
-		<div id="<%= chapter.id %>" class="md">
+		<div id="<%= chapter.id %>" class="md" style="padding-right: 12px;">
 			<% if chapter.chapter_title != "" %>
 
 			<a name="<%= chapter.id %>" style="color: #244883; text-decoration: none;"><h1 style="font-size: 2em; margin: 1em 0 0.6em 0;"><%= chapter.chapter_title %></h1></a>
@@ -60,9 +60,6 @@
 			
 		</div>
 		<% end %>
-		
-
-		
 		
 		
 		</div>
@@ -90,8 +87,8 @@
 	        var target = this.hash,
 	            menu = target;
 	        $target = $(target);
-	        $('body').stop().animate({
-	            'scrollTop': $target.offset().top+0
+	        $('html, body').stop().animate({
+	            'scrollTop': $target.offset().top-50
 	        }, 500, 'swing', function () {
 	            window.location.hash = target;
 	            $(document).on("scroll", onScroll);
@@ -104,7 +101,7 @@
 	    $('#menu-center a').each(function () {
 	        var currLink = $(this);
 	        var refElement = $(currLink.attr("href"));
-	        if (refElement.position().top-98 <= scrollPos && refElement.position().top + refElement.height() > scrollPos) {
+	        if (refElement.position().top+100 <= scrollPos && refElement.position().top + refElement.height() > scrollPos) {
 	            $('#menu-center ul li a, #menu-center ul li ul li a').removeClass("active");
 	            currLink.addClass("active");
 	        }
