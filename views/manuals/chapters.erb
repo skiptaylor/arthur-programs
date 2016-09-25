@@ -42,7 +42,9 @@
 		<h1 style="font-size: 2.5em;"><%= @manual.name %></h1>
 		<hr />
 
-		<div id="chap-top">
+			
+			
+		<div onmouseover="document.body.style.overflow='hidden';"  onmouseout="document.body.style.overflow='auto';" style="height: calc(100vh - 210px); overflow-y: scroll; ">
 		<% @chapter.sort_by(&:chapter_number).each do |chapter| %>
 		
 
@@ -58,6 +60,11 @@
 			
 		</div>
 		<% end %>
+		
+
+		
+		
+		
 		</div>
 	
 	
