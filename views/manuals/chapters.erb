@@ -1,3 +1,5 @@
+
+
 <div class="row">
 	<div class="span4 affix">
 		
@@ -44,7 +46,6 @@
 
 			
 			
-		<div>
 		<% @chapter.sort_by(&:chapter_number).each do |chapter| %>
 		
 
@@ -62,7 +63,6 @@
 		<% end %>
 		
 		
-		</div>
 	
 	
 	</div>
@@ -88,7 +88,7 @@
 	            menu = target;
 	        $target = $(target);
 	        $('html, body').stop().animate({
-	            'scrollTop': $target.position().top-60
+	            'scrollTop': $target.offset().top-58
 	        }, 500, 'swing', function () {
 	            window.location.hash = target;
 	            $(document).on("scroll", onScroll);
