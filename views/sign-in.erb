@@ -1,14 +1,3 @@
-// <script language="JavaScript" type="text/javascript">
-// $(document).ready(function() {
-// 	var x = readCookie('agree');
-// 		if (x) {
-// 			$(tos).prop('checked', true);
-// 		}
-// });
-// </script>
-
-
-
 <div class="row">	
 	<div class="span8 offset2">
 		
@@ -102,7 +91,7 @@
 		createCookie(name,"",-1);
 	}
 	
-	$(document).ready(function() {
+	jQuery(document).ready(function() {
 		var x = readCookie('agree');
 			if (x) {
 				$(tos).prop('checked', true);
