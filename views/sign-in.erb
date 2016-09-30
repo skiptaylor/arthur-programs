@@ -1,11 +1,11 @@
-<script language="JavaScript" type="text/javascript">
-$(document).ready(function() {
-	var x = readCookie('agree');
-		if (x) {
-			$(tos).prop('checked', true);
-		}
-});
-</script>
+// <script language="JavaScript" type="text/javascript">
+// $(document).ready(function() {
+// 	var x = readCookie('agree');
+// 		if (x) {
+// 			$(tos).prop('checked', true);
+// 		}
+// });
+// </script>
 
 
 
@@ -101,5 +101,12 @@ $(document).ready(function() {
 	function eraseCookie(name) {
 		createCookie(name,"",-1);
 	}
+	
+	$(document).ready(function() {
+		var x = readCookie('agree');
+			if (x) {
+				$(tos).prop('checked', true);
+			}
+	});
 	
 </script>
