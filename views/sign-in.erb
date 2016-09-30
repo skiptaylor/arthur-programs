@@ -1,3 +1,12 @@
+<script>
+	window.console = window.console || {log:function(){}};
+    if (typeof console === "undefined"){
+        console={};
+        console.log = function(){};
+    }
+</script>
+
+
 <div class="row">	
 	<div class="span8 offset2">
 		
@@ -91,7 +100,7 @@
 		createCookie(name,"",-1);
 	}
 	
-	jQuery(document).ready(function() {
+	$(document).ready(function() {
 		var x = readCookie('agree');
 			if (x) {
 				$(tos).prop('checked', true);
