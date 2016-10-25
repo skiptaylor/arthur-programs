@@ -289,12 +289,12 @@ h6 {
 
 .nav-pills > .active > a:hover {
   color: #ffffff;
-  background-color: #1d73d4;
+  background-color: #0a49a7;
 }
 
 .nav-pills > .active > a:focus {
   color: #ffffff;
-  background-color: #0088cc;
+  background-color: #0a49a7;
 }
 
   
@@ -427,12 +427,12 @@ h6 {
 
 
 .section-div {
-	margin: 2em 0;
+	margin: 2em 0 0 0;
 	text-align: center;
 }
 
 .section-div a img {
-	padding: 1em 3em;
+	padding: 1em 3em 0 3em;
 }
 
 
