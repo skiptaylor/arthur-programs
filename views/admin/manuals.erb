@@ -11,20 +11,7 @@
 		
 		
 		<table class="table table-hover">
-				<!-- <tr>
-					<th>
 
-					</th>
-					<th style="text-align: center;">
-						Version
-					</th>
-					<th>
-						ISBN
-					</th>
-					<th>
-						<a href="/admin/manuals/new" class="btn btn-success btn-small pull-right">New Manual</a>
-					</th>
-				</tr> -->
 				<% @manual.each do |manual| %>
 				<tr>
 					<td>
@@ -38,26 +25,10 @@
 				</tr>
 				
 				<% end %>
-				<tr><td> </td><td> </td></tr>
 				
 			</table>
 			
-			
-			
-			
-			<!-- <hr />
-			<h4 class="oswald blue-color">Title Pages in View Mode Displayed Below</h4>
 
-			<% @manual.each do |manual| %>
-			<hr />
-			<div class="md">
-				<p class="para"><small class="blue-color">(Last updated <%= manual.updated_at.display_short %>)</small></p>
-				<%= markdown manual.title_page %>
-				<p>Version <%= manual.version %></p>
-				<p>ISBN <%= manual.isbn %></p>
-			<% end %>
-			<hr />
-			</div> -->
 	</div>
 
 </div>
