@@ -70,8 +70,8 @@
 			<hr style="margin-top: 0;" />
 			<div class="row">
 <% @scenarios.each do |scenario| %>
-	<% unless scenario.ceu || scenario.sample || scenario.workshop || scenario.practice %>
-		<div class="span6" style="min-height: 22em;">
+	<% unless scenario.ceu || scenario.workshop || scenario.practice %>
+		<div class="span6" style="min-height: 23em;">
 			<h3>
 				<%= scenario.id %>. <%= scenario.title %>
 				<%= '<span class="label label-info">Sample</span>' if scenario.sample? %>

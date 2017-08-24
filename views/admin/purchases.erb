@@ -2,15 +2,17 @@
 
 	<div class="span3">
 		<%= erb :'admin/navigation', layout: false %>
-		<!-- <br />
-		<form method="get" class="well">
-			<p><%= @start.to_fields 'start' %></p>
-			<p><%= @end.to_fields 'end' %></p>
-			<p>
-				<button type="submit" class="btn btn-primary">Filter</button>
-				<a href="<%= request.url %><%= params.count > 0 ? '&export=true' : '?export=true' %>" class="btn">Export</a>
-			</p>
-		</form> -->
+		<br />
+		<div class="affix" style="margin-top: 570px;">
+			<form method="get">
+				<p><%= @start.to_fields 'start' %></p>
+				<p><%= @end.to_fields 'end' %></p>
+				<p>
+					<button type="submit" class="btn btn-primary">Filter</button>
+					<a href="<%= request.url %><%= params.count > 0 ? '&export=true' : '?export=true' %>" class="btn">Export</a>
+				</p>
+			</form>
+		</div>
 	</div>
 
 	<div class="span9">
