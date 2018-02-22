@@ -52,12 +52,12 @@ body	{
 }
 */
 
-.row	{
+/*.row	{
    -webkit-transition: all .8s ease-in-out;
         -o-transition: all .8s ease-in-out;
            transition: all .8s ease-in-out;
 }
-
+*/
 #content {
 	font-size: 15px;
 	line-height: 21px;
