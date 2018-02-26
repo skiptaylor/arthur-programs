@@ -1145,7 +1145,7 @@ div.reference p  {
 	}
 }
 
-@media (max-width: 767px) { 
+/*@media (max-width: 767px) {
 	#content  {
 		margin-top: 20px;
 	}
@@ -1159,7 +1159,7 @@ div.reference p  {
 		background-image: none;
 	}
 }
-
+*/
 @media (max-width: 480px) {
 	#content  {
 		margin-top: 16px;
