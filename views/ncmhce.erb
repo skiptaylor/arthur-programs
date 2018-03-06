@@ -2,8 +2,11 @@
 <!-- ---------- ncmhce header ---------- -->
 
 
+
 <div class="container">
 	
+<div id="top">  </div>
+
 <div class="row">	
 	<div class="span12">
 		
@@ -46,7 +49,7 @@
 			
 		<p style="font-weight: 300; font-size: 1.2em; line-height: 1.4em;"><span style="font-weight: 900; color: #0572d8;">Exam Scenarios</span> provide practice using the exam format.</p>
 		<p>
-			<a href="#testimonials" class="btn" style="margin: 26px 0 10px 0; padding: 9px 12px; font-size: 1.1em; border-color: #1b88dc; background-color: #ffffff; color: #063d4c;"><img style="height: 18px; opacity: 0.6;" src="img/quote-open.png"/> &nbsp; See What Our Users Are Saying</a>
+			<a class="btn" id="section1Btn" style="margin: 26px 0 10px 0; padding: 9px 12px; font-size: 1.1em; border-color: #1b88dc; background-color: #ffffff; color: #063d4c;"><img style="height: 18px; opacity: 0.6;" src="img/quote-open.png"/> &nbsp; See What Our Users Are Saying</a>
 		</p>	
 			
 		
@@ -74,7 +77,7 @@
 <div class="row" style="margin-top: 2em;">
 	<div class="span6 features">
 		<img src="img/check.png" class="check" /><h2 class="oswald">Online Scenario Simulator</h2>
-		<p>The Arthur-Brende Scenario Simulator includes up tp 46 online scenarios measuring your information gathering and decision making abilities. You get up to 36 <em>tutorial</em> and 10 <em>exam-formatted</em> online scenarios. The tutorial scenarios, written in the same basic format as the exam, give you additional information as you proceed through the scenario to teach you why each selection is a good or bad choice. Then the exam scenarios will give you practice using the nbcc exam format, both in structure and informational responses, so you will be properly prepared to pass your exam. Perfect for those experiencing text anxiety! You may purchase all 46 scenarios, or "pay as you go" in sets of 12. The “pay as you go” packages contain only the tutorial scenarios; the practice exam scenarios may be purchased separately. See <a href="#pricing"><strong>pricing</strong></a> to get started.</p> 
+		<p>The Arthur-Brende Scenario Simulator includes up tp 46 online scenarios measuring your information gathering and decision making abilities. You get up to 36 <em>tutorial</em> and 10 <em>exam-formatted</em> online scenarios. The tutorial scenarios, written in the same basic format as the exam, give you additional information as you proceed through the scenario to teach you why each selection is a good or bad choice. Then the exam scenarios will give you practice using the nbcc exam format, both in structure and informational responses, so you will be properly prepared to pass your exam. Perfect for those experiencing text anxiety! You may purchase all 46 scenarios, or "pay as you go" in sets of 12. The “pay as you go” packages contain only the tutorial scenarios; the practice exam scenarios may be purchased separately. See <a id="section2Btn" style="cursor: pointer; cursor: hand;"><strong>pricing</strong></a> to get started.</p> 
 		<img src="img/check.png" class="check" /><h2 class="oswald">Study Supplement</h2>
 		<p>The Study Supplement contains an Introduction section that will explain what to expect on your exam and also give you valuable information on how to approach the scenarios to maximize your exam scores. This is followed by a section that contains the most commonly-tested diagnoses from the huge DSM-5 that has been compressed and put into a format that is much easier to apply to the exam. It is finished off with a Reference section and helpful Appendices covering Treatment Instruments. View a <a href="/downloads/Sample%20NCMHCE%20Supplement.pdf" target="_blank"><strong>Sample PDF</strong></a>.</p>
 		<img src="img/check.png" class="check" /><h2 class="oswald">Flash Card Study Module</h2>
@@ -82,7 +85,7 @@
 	</div>
 	<div class="span6 features">
 		<img src="img/check.png" class="check" /><h2 class="oswald">Money-Back Pass Guarantee</h2>
-		<p>We are so confident our material will help you pass your exam that is you are not successful, we will give you your money back or grant you additional assistance at no additional charge. Your choice! The only requirements are you must purchase a minimum of 30 days prior to your exam and you have 90 days from the date of your exam to return any written materials received along with a copy of your exam scores. See <a href="#guarantee"><strong>guarantee policies</strong></a> for details.</p>
+		<p>We are so confident our material will help you pass your exam that is you are not successful, we will give you your money back or grant you additional assistance at no additional charge. Your choice! The only requirements are you must purchase a minimum of 30 days prior to your exam and you have 90 days from the date of your exam to return any written materials received along with a copy of your exam scores. See <a id="section3Btn" style="cursor: pointer; cursor: hand;"><strong>guarantee policies</strong></a> for details.</p>
 		<img src="img/check.png" class="check" /><h2 class="oswald">Learn at your own pace</h2>
 		<p>Unlike many other NCMHCE scenario products, our scenarios may be taken multiple times for up to one full year. This allows you to study at the pace that works best for you.</p>
 		<img src="img/check.png" class="check" /><h2 class="oswald">Consultation</h2>
@@ -111,7 +114,7 @@
 
 
 <div id="pricing" style="margin-top: -2em;">
-	<p> <br /></p>
+	<!-- <p> <br /></p> -->
 </div>
 
 <div class="container">
@@ -610,6 +613,36 @@
 
 
 
-		<a href="#top" style="position: fixed; bottom:24px;right: 26px;" class="hidden-phone"><img src="/img/phone-up-pointer.svg" /></a>
-		<a href="#top" style="position: fixed; bottom:7%;right: 0;" class="visible-phone"><img src="/img/up-pointer-side.svg" /></a>
+		<a id="section4Btn" style="position: fixed; bottom:24px;right: 26px; cursor: pointer; cursor: hand;" class="hidden-phone"><img src="/img/phone-up-pointer.svg" /></a>
+		<a  id="section4Btn" style="position: fixed; bottom:7%;right: 0;" class="visible-phone"><img src="/img/up-pointer-side.svg" /></a>
+
+
+
+<script>
+	
+var section1Btn = document.getElementById("section1Btn"),
+    section2Btn = document.getElementById("section2Btn"),
+    section3Btn = document.getElementById("section3Btn")
+	section4Btn = document.getElementById("section4Btn");
+
+section1Btn.onclick = function() {
+  TweenLite.to(window, 1, {scrollTo:{y:"#testimonials", offsetY:0}});
+}
+
+section2Btn.onclick = function() {
+  TweenLite.to(window, 1, {scrollTo:{y:"#pricing", offsetY:24}});
+}
+
+section3Btn.onclick = function() {
+  TweenLite.to(window, 1, {scrollTo:{y:"#guarantee", offsetY:0}});
+}
+
+section4Btn.onclick = function() {
+  TweenLite.to(window, 1, {scrollTo:{y:"#top", offsetY:60}});
+}
+
+	
+</script>
+
+
 
