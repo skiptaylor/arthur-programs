@@ -21,7 +21,7 @@
 		</div>
 		<div class="span7" style="margin-top: 2.5em;">
 			<p style="font-size: 1.3em; font-weight: 300; color: #535353; line-height: 1.4em;">
-			Dr. Arthur's Study programs remain the most trusted tools in the field when preparing for your NCE and/or NCMHCE, designed to provide the most comprehensive study material available! Money-back Pass Guaranteed! Prepare using both our tutorial scenarios and our exam scenarios for your NCMHCE. Phone consult directly with the co-author included in your study package! 
+			Dr. Arthur's Study programs remain the most trusted tools in the field when preparing for your NCE and/or NCMHCE, designed to provide the most comprehensive study material available! Money-back Pass Guaranteed! Prepare using both our tutorial scenarios and our exam scenarios for your NCMHCE. Phone consult directly with the co-author included in your study package! &nbsp; <a id="section1Btn" style="cursor: pointer; cursor: hand;"><strong>Let's Get Started!</strong></a>
 			</p>
 		</div>
 	</div>
@@ -32,7 +32,7 @@
 		</div>
 		<div class="span7" style="margin-top: 1em;">
 			<p style="font-size: 1.1em; font-weight: 300; color: #535353; line-height: 1.3em;">
-			Dr. Arthur's Study programs remain the most trusted tools in the field when preparing for your NCE and/or NCMHCE, designed to provide the most comprehensive study material available! Money-back Pass Guaranteed! Prepare using both our tutorial scenarios and our exam scenarios for your NCMHCE. Phone consult directly with the co-author included in your study package! 
+			Dr. Arthur's Study programs remain the most trusted tools in the field when preparing for your NCE and/or NCMHCE, designed to provide the most comprehensive study material available! Money-back Pass Guaranteed! Prepare using both our tutorial scenarios and our exam scenarios for your NCMHCE. Phone consult directly with the co-author included in your study package! &nbsp; <a id="section1Btn" style="cursor: pointer; cursor: hand;"><strong>Let's Get Started!</strong></a> 
 			</p>
 		</div>
 	</div>
@@ -91,6 +91,7 @@
 
 <!-- ------------ get started (uses layout container div) ---------- -->
 
+<div id="getStarted"> </div>
 
 <div class="container" style="margin-top: 3.8em;">
 	<div class="row" style="margin-bottom: 3.5em;">
@@ -218,48 +219,12 @@
 <a href="#top" style="position: fixed; bottom:7%;right: 0;" class="visible-phone"><img src="/img/up-pointer-side.svg" /></a>
 
 
-<!-- <script>
-	function sceneOne() {
-		var tl = new TimelineLite({id:"one"});
+<script>
+	
+	var section1Btn = document.getElementById("section1Btn");
 
-		tl.to("#step1", 0.4, {autoAlpha:0});
-
-		return tl;
+	section1Btn.onclick = function() {
+	  TweenLite.to(window, 1, {scrollTo:{y:"#getStarted", offsetY:60}});
 	}
-
-	var triggerOne = new TimelineLite({
-	  paused: true
-	});
-	triggerOne.add(sceneOne());
-
-
-
-	function sceneTwo() {
-		var tl = new TimelineLite({id:"two"});
-
-		tl.to("#step2", 0.4, {autoAlpha:0});
-
-		return tl;
-	}
-
-	var triggerTwo = new TimelineLite({
-	  paused: true
-	});
-	triggerTwo.add(sceneTwo());
-
-
-
-
-
-	$("#play1").on("click", function(e) {
-	  e.preventDefault();
-	  triggerOne.restart();
-	});
-
-	$("#play2").on("click", function(e) {
-	  e.preventDefault();
-	  triggerTwo.restart();
-	});
-
-</script> -->
-
+	
+</script>
