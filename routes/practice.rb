@@ -11,7 +11,7 @@ get '/ncmhce/scenarios/?' do
 	authorize!
 
 	user = User.get session[:user]
-  redirect '/ncmhce' unless user.exam_scenarios > 0
+  redirect '/ncmhce' unless user.practice_scenarios > 0
 
   @practice_scenario = User.get(session[:user]).practice_scenario
   @scenarios = Scenario.all(order: :id, active: true)
