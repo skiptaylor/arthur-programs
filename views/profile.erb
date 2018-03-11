@@ -53,9 +53,7 @@
 					<% end %>
 				<% end %>
 			</p>
-			<% unless @user.expiration_date <= DateTime.now || @user.ceu_scenario %>
-				<p><a class="btn btn-success btn-small" href="/checkout/account-extension">Add 90 days for $30</a></p>
-			<% end %>
+			
 		</form>
 		
 	</div>
@@ -66,7 +64,7 @@
 		<div class="alert alert-info" style="border: none;"><%= m.body %></div>
 	<% end %>
 	
-	<% unless @user.ceu_scenario %>
+	<% unless @user.practice_exams %>
 		<% if @user.expiration_date <= DateTime.now %>
 			<div class="alert alert-warning" style="border: none;">
 				<h3>Your account has expired.</h3>
@@ -82,31 +80,27 @@
 
 		<div class="visible-desktop">
 			<h3>
-				<span class="oswald" style="font-size: 1.8em;">NCMHCE Scenarios</span>
+				<span class="oswald" style="font-size: 1.8em;">NCMHCE Tutorial Scenarios</span>
 				
 				<% if @user.max_scenarios < 36 %>
-					<span style="float: right;">&nbsp; <a class="btn btn-success btn-small" href="/checkout/ncmhce-upgrade">Buy 12 more scenarios for $80</a></span>
+					<span style="float: right;">&nbsp; <a class="btn btn-success btn-small" href="/checkout/ncmhce-upgrade">Buy 12 more scenarios for $95</a></span>
 				<% end %>
-				<% unless @user.expired? %>
-				<% unless @user.purchases.any? { |purchase| purchase.options == "+ Hard Copy" } %>
-					<span style="float: right;"><a class="btn btn-success btn-small" href="/checkout/ncmhce-hard-copy">Buy a hard copy for $13.95</a></span>
-				<% end %>
-				<% end %>
+				
 			</h3>
 			<br />
 		</div>
 		
 		<div class="hidden-desktop">
 			<h3>
-				<span class="oswald" style="font-size: 1.5em;">NCMHCE Scenarios</span>
+				<span class="oswald" style="font-size: 1.5em;">NCMHCE Tutorial Scenarios</span>
 			</h3>
 			<div style="margin: 6px 0 0 0;">
 				<% if @user.max_scenarios < 36 %>
-					<a class="btn btn-success btn-small" style="margin: 0 0 6px 0;" href="/checkout/ncmhce-upgrade">Buy 12 more scenarios for $80</a>
+					<a class="btn btn-success btn-small" style="margin: 0 0 6px 0;" href="/checkout/ncmhce-upgrade">Buy 12 more scenarios for $95</a>
 				<% end %>
 				<% unless @user.expired? %>
 				<% unless @user.purchases.any? { |purchase| purchase.options == "+ Hard Copy" } %>
-					<a class="btn btn-success btn-small" style="margin: 0 0 6px 0;" href="/checkout/ncmhce-hard-copy">Buy a hard copy for $13.95</a>
+					<a class="btn btn-success btn-small" style="margin: 0 0 6px 0;" href="/checkout/ncmhce-hard-copy">Buy a hard copy for $40.65</a>
 				<% end %>
 				<% end %>
 			</div>
@@ -139,7 +133,7 @@
 
 	 
 	 	<% unless @user.expired? %>
-		<p><a class="btn btn-info" href="/ncmhce/scenarios"><strong>Choose a NCMHCE scenario to take</strong></a>&nbsp; <br class="visible-phone" /> &nbsp; <small>You have <%= @user.remaining_scenarios %> of <%= @user.max_scenarios %> remaining.</small></p>
+		<p><a class="btn btn-info" href="/ncmhce/scenarios"><strong>Choose a scenario to take</strong></a>&nbsp; <br class="visible-phone" /> &nbsp; <small>You have <%= @user.remaining_scenarios %> of <%= @user.max_scenarios %> remaining.</small></p>
 		<% end %>
 		<% unless @scenarios.empty? %>
 			<table class="table table-condensed table-striped table-hover">
@@ -154,7 +148,7 @@
 				</thead>
 				<tbody>
 					<% @scenarios.sort { |a,b| a.scenario_id <=> b.scenario_id }.each do |average| %>
-						<% unless average.scenario.workshop? || average.scenario.practice? || average.scenario.ceu? %>
+						<% unless average.scenario.workshop? || average.scenario.practice? %>
 							<tr>
 								<td>
 									<%= average.scenario_id %>. <%= average.scenario.title %>
@@ -203,9 +197,101 @@
 		<hr /><br />
 	<% end %>
 	
+<!-- –––––––––––––––––– practice –––––––––––––––––– -->
+		
+	
+	
+	
+	
+	<% if @user.max_scenarios > 0 %>
+	
+	
+
+		<div>
+			<h3>
+				<span class="oswald" style="font-size: 1.8em;">NCMHCE Exam Scenarios</span>
+			</h3>
+			<br />
+		</div>
+      <% Message.all(ncmhce: true).each do |m| %>
+        <div class="alert alert-info" style="border: none;"><%= m.body %></div>
+      <% end %>
+	 	<% unless @user.expired? %>
+		<p><a class="btn btn-info" href="/ncmhce/practice-scenarios"><strong>Choose a scenario to take</strong></a>&nbsp; <br class="visible-phone" /> &nbsp; <small>You have <%= @user.remaining_practice_scenarios %> of <%= @user.max_practice_scenarios %> remaining.</small></p>
+		<% end %>
+		<% unless @scenarios.empty? %>
+			<table class="table table-condensed table-striped table-hover">
+				<thead>
+					<tr>
+						<th>Scenario</th>
+						<th style="text-align: center;">IG</th>
+						<th style="text-align: center;">DM</th>
+						<th>Last Taken</th>
+						<th style="text-align: right;"></th>
+					</tr>
+				</thead>
+				<tbody>
+					<% @scenarios.sort { |a,b| a.scenario_id <=> b.scenario_id }.each do |average| %>
+						<% if average.scenario.practice? %>
+							<tr>
+								<td>
+									<%= average.scenario_id %>. <%= average.scenario.title %>
+								</td>
+								<td style="text-align: center;">
+									<% @information_gathering = Scoretype.last(
+										type: "Information Gathering",
+										scenario_id: average.scenario_id,
+										user_id: session[:user]
+									) %>
+									<% if @information_gathering %>
+									<%= @information_gathering.correct %>/<%= @information_gathering.possible %> 
+									<% else %><small>N/A</small><% end %>
+								</td>
+								<td style="text-align: center;">
+									<% @decision_making = Scoretype.last(
+										type: "Decision Making",
+										scenario_id: average.scenario_id,
+										user_id: session[:user]
+									) %>
+									<% if @decision_making %>
+									<%= @decision_making.correct %>/<%= @decision_making.possible %>
+									<% else %><small>N/A</small><% end %>
+								</td>
+								<% if avg = Average.last(user_id: session[:user], scenario_id: average.scenario_id) %>
+									<td><%= avg.updated_at.display_short if average %></td>
+								<% else %>
+									<td>Unfinished</td>
+								<% end %>
+								<td style="text-align: right;">
+									<% unless @user.expired? %>
+									<% if avg == nil %>
+										<a href="/ncmhce/scenarios/<%= average.scenario_id %>">Continue</a>
+										<% else %>
+										<a href="/ncmhce/scenarios/<%= average.scenario_id %>">Review</a>
+									<% end %>
+									<% end %>
+								</td>
+							</tr>
+						<% end %>
+					<% end %>
+				</tbody>
+			</table>
+	 	<% end %>
+					
+			</tbody>
+		</table>
+
+		<hr /><br />
+	<% end %>
 	
 	<!-- –––––––––––––––––– NCMHCE study –––––––––––––––––– -->
 
+		<% unless @user.expired? %>
+		<% unless @user.purchases.any? { |purchase| purchase.options == "+ Hard Copy" } %>
+			<span style="float: right;"><a class="btn btn-success btn-small" href="/checkout/ncmhce-hard-copy">Buy a hard copy for $40.65</a></span>
+		<% end %>
+		<% end %>
+		
 		<% if @user.max_scenarios > 0 && @user.ncmhce_downloads %>
 
 			<div class="visible-desktop">
@@ -323,99 +409,6 @@
 	
 	
 
-<!-- –––––––––––––––––– ceu –––––––––––––––––– -->
-
-	<% if @user.ceu_scenario > 0 %>
-
-		<div>
-			<h3>
-				<span class="oswald" style="font-size: 1.8em;">CEU Scenarios</span>
-				<% if @user.ceu_scenario < 14 %>
-					<span style="float: right;">&nbsp; <a class="btn btn-success btn-small" href="/checkout/ceu?package=Single%20Scenario">Buy another CEU scenario for $20</a></span>
-				<% end %>
-			</h3>
-			<br />
-		</div>
-      <% Message.all(ceu: true).each do |m| %>
-        <div class="alert alert-info" style="border: none;"><%= m.body %></div>
-      <% end %>
-	 	<% unless (@user.remaining_ceu_scenario < 1) %>
-		<p><a class="btn btn-primary btn-small" href="/ceu/scenarios"><strong>Choose a CEU scenario to take</strong></a>
-		&nbsp; <%= @user.remaining_ceu_scenario %> Remaining</p>
-		<% end %>
-		<table class="table table-condensed table-striped table-hover">
-			<thead>
-				<tr>
-					<th>Scenario</th>
-					<th style="text-align: center;">Score</th>
-					<th style="text-align: center;">Last Taken</th>
-					<th style="text-align: center;" class="hidden-phone">Remaining</th>
-					<th></th>
-				</tr>
-			</thead>
-			<tbody>
-				<% @scenarios.sort { |a,b| a.scenario_id <=> b.scenario_id }.each do |average| %>
-					<% unless average.scenario.workshop? || average.scenario.practice? %>
-					<% if average.scenario.ceu? %>
-
-					<tr>
-						<td>
-							<%= average.scenario_id %>. <%= average.scenario.title %><span class="pull-right hidden-phone" style="color: #bc1424;"><small><%= average.created_at.to_date %></small></span>
-						</td>
-						<td style="text-align: center;">
-							<% if avg = Average.last(user_id: session[:user], scenario_id: average.scenario_id) %>
-								<%= avg.score %>%
-							<% else %>
-								N/A
-							<% end %>
-						</td>
-						<td style="text-align: center;">
-							<% if avg = Average.last(user_id: session[:user], scenario_id: average.scenario_id) %>
-							<% unless avg.updated_at == nil %>
-								<%= avg.updated_at.display_short if average %>
-							<% end %>
-							<% end %>
-						</td>
-						<td style="text-align: center;">
-							<% unless avg == nil %>
-								<% if avg.score > 69 %>
-									0
-								<% elsif (((average.created_at + 30) - Time.now.to_date).to_i) > 0 %>
-								<strong><%= ((average.created_at + 30) - Time.now.to_date).to_i %></strong>
-								<% else %>
-									0
-								<% end %> Days
-							<% end %>
-						</td>
-						<td style="text-align: right;">
-						<% if avg != nil %>	
-							<% if avg.score > 69 %>
-								<a href="/ceu/scenarios/<%= average.scenario_id %>"><span style="color: #21b935;"><strong>Passed</strong></span></a>
-							<% elsif (((average.created_at + 30) - Time.now.to_date).to_i) < 0 %>
-								<span style="color: red;"><small>Expired</small></span>
-							<% else %>
-								<a href="/ceu/scenarios/<%= average.scenario_id %>">Review</a>
-							<% end %>
-						<% else %>
-							<% if (((average.created_at + 30) - Time.now.to_date).to_i) < 0 %>
-								<span style="color: red;"><small>Expired</small></span>
-							<% else %>
-								<a href="/ceu/scenarios/<%= average.scenario_id %>">Continue</a>
-							<% end %>
-						<% end %>
-						
-						</td>
-					</tr>
-					<% end %>
-				<% end %>
-			<% end %>
-					
-			</tbody>
-		</table>
-
-		<hr /><br />
-	<% end %>
-	
 	
 	<!-- –––––––––––––––––– workshop –––––––––––––––––– -->
 
@@ -456,46 +449,6 @@
 			<hr /><br />
 		<% end %>
 	
-	
-<!-- –––––––––––––––––– practice –––––––––––––––––– -->
-	
-	<% if @user.practice_exams? %>
-
-		<div>
-			<h3><span class="oswald" style="font-size: 1.8em;">NCMHCE Practice Exams</span></h3>
-			<br />
-		</div>
-
-		<table class="table table-condensed table-striped table-hover">
-			<thead>
-				<tr>
-					<th>Scenario</th>
-					
-					<th>Taken On</th>
-					<th></th>
-				</tr>
-			</thead>
-			<tbody>
-				<% Scenario.all(practice: true, active: true).each do |scenario| %>
-					<% use = Use.last(scenario_id: scenario.id, user_id: @user.id) %>
-					<% avg = Average.last(scenario_id: scenario.id, user_id: @user.id) %>
-					<tr>
-						<td><%= scenario.title %></td>
-						<td><%= avg.updated_at.display_short if avg %></td>
-						<td style="text-align: right;">
-							<% unless @user.expired? %>
-								<a href="/ncmhce/scenarios/<%= scenario.id %>">Review</a>
-							<% end %>
-						</td>
-						
-						
-					</tr>
-				<% end %>
-			</tbody>
-		</table>
-
-		<hr /><br />
-	<% end %>
 	
 	
 <!-- –––––––––––––––––– downloads –––––––––––––––––– -->

@@ -1,40 +1,42 @@
-<fieldset style="background-color: #fafafa;" id="summary">
+<style>
+	p	{
+		color: #063c4b; font-weight: 300; line-height: 1.7em;
+	}
+</style>
+
+<fieldset id="summary">
 	<legend class="summary"> &nbsp;  Summary</legend>
-	<br />	
+		
 	<div class="row-fluid">
-		<div class="span4">
-			<p><strong>Program Package:</strong> <span id="program-package-confirmation"></span></p>
-			<p><strong>Optional Enhancements:</strong> <span id="optional-enhancements-confirmation"></span></p>
-	
-			<p><strong>Name:</strong> <span id="name-confirmation"></span></p>
-			<p><strong>Email address:</strong> <span id="email-confirmation"></span></p>
-			<p><strong>Password:</strong> <span id="password-confirmation"></span></p>
-			
+		<div class="span6">
+			<p>
+				Program Package: &nbsp; <span style="font-weight: 700;" id="program-package-confirmation"></span><br />
+				Optional Enhancements: &nbsp; <span style="font-weight: 700;" id="optional-enhancements-confirmation"></span><br />
+				Name: &nbsp; <span style="font-weight: 700;" id="name-confirmation"></span><br />
+				Email address: &nbsp; <span style="font-weight: 700;" id="email-confirmation"></span><br />
+				Password: &nbsp; <span style="font-weight: 700;" id="password-confirmation"></span>
+			</p>
 		</div>
 		
-		<div class="span4">
-			
-			<p><strong>Card number:</strong> <span id="card-number-confirmation"></span></p>
-			<p><strong>CVC:</strong> <span id="cvc-confirmation"></span></p>
-			<p><strong>Expiration:</strong> <span id="expiration-confirmation"></span></p><br />
-			<p><strong>License:</strong> <span id="license-confirmation"></span></p>
-	
-		</div>
-		
-		<div class="span4">
-			<p><strong>Address:</strong> <span id="address-confirmation"></span></p>
-			<p><strong>City:</strong> <span id="city-confirmation"></span></p>
-			<p><strong>State:</strong> <span id="state-confirmation"></span></p>
-			<p><strong>Zip:</strong> <span id="zip-confirmation"></span></p>
+		<div class="span6">
+			<p>
+				Card number: &nbsp; <span style="font-weight: 700;" id="card-number-confirmation"></span><br />
+				CVC: &nbsp; <span style="font-weight: 700;" id="cvc-confirmation"></span><br />
+				Expiration: &nbsp; <span style="font-weight: 700;" id="expiration-confirmation"></span>
+			</p>
+			<p>
+				Address:<span style="font-weight: 700; margin-left:1em;" id="address-confirmation"></span><br />
+				<span style="font-weight: 700; margin-left: 5em;" id="city-confirmation"></span> &nbsp;<span style="font-weight: 700;" id="state-confirmation"></span> &nbsp;<span style="font-weight: 700;" id="zip-confirmation"></span>
+			</p>
 			
 		</div>
 	</div>
 	
 	<div id="errors"></div>
 	
-	<p style="text-align: right;">
-		<strong style="vertical-align: middle;">Total: $<span id='total-display'></span></strong>
-		&nbsp;
+	<p style="text-align: right; margin-right: 2em;">
+		<strong style="vertical-align: middle; font-size: 1.2em;">Total: $<span id='total-display'></span></strong>
+		&nbsp;&nbsp;
 		<input type="submit" class="btn btn-success btn-large submit-button" value="Checkout" style="font-weight: bold;" />
 	</p>
 	

@@ -3,6 +3,12 @@
 		<!-- <meta HTTP-EQUIV="REFRESH" content="0; url=https://www.counselorexams.com/nojs"> -->
 </noscript>
 
+<style>
+	form ul li	{
+		font-size: 1.2em; margin-left: 0.6em;
+	}
+</style>
+
 <% if params[:product] == 'ceu' %>
 	<script src="/js/checkoutceu.js"></script>
 <% else %>
@@ -11,10 +17,10 @@
 
 
 <div class="page-header">
-	<h1>
+	<h1 style="color: #063d4c; font-size: 2em;">
 		Checkout
 		&nbsp;
-		<small><%= @product_name %></small>
+		<span style="color: #0671d8;"><%= @product_name %>
 	</h1>
 </div>
 
@@ -42,8 +48,9 @@
 	</div>
 	
 </form>
-	<p class="pull-right" style="margin: -22px 24px 0 0; padding: 0;">Buy with confidence  
-	<img src="/img/badges/comodo_secure_113x59.png" /></p>
+<hr style="margin-top: -2em;" />
+	<p class="pull-right" style="margin: 0 24px 0 0; padding: 0;"><small>Buy with confidence</small>  &nbsp; 
+	<img src="/img/letsencrypt-logo-horizontal.svg" style="width: 140px; margin-top: -10px;" /></p>
 
 <!-- Google Code for Counselor Exams - Buy Me Now Conversion Page --> 
 <script type="text/javascript">

@@ -5,7 +5,7 @@ class Use
 	property   :delete_at, ParanoidDateTime
 	timestamps :at
 
-	property :sample, Boolean, default: false
+	property :sample,   Boolean, default: false
     
   property :certificate, 	Boolean, default: false
   property :cert_date, 	  Date

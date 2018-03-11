@@ -34,21 +34,21 @@ post '/admin/users/new/?' do
 	
 	params[:max_exams].is_numeric? ? params[:max_exams] = params[:max_exams].to_i : params[:max_exams] = user.max_exams
 	params[:max_scenarios].is_numeric? ? params[:max_scenarios] = params[:max_scenarios].to_i : params[:max_scenarios] = user.max_scenarios
-  params[:ceu_scenario].is_numeric? ? params[:ceu_scenario] = params[:ceu_scenario].to_i : params[:ceu_scenario] = user.ceu_scenario
+  params[:max_practice_scenarios].is_numeric? ? params[:max_practice_scenarios] = params[:max_practice_scenarios].to_i : params[:max_practice_scenarios] = user.max_practice_scenarios
+  params[:practice_scenario].is_numeric? ? params[:practice_scenario] = params[:practice_scenario].to_i : params[:practice_scenario] = user.practice_scenario
   
   puts 'Creating user'
 	user = User.create(
 		admin: 					 	false,
-    ceu:              false, 
-		email: 					 	params[:email],
-		password: 			 	params[:password],
-		name:  				 	 	params[:name],
-		phone: 				 	 	params[:phone],
-		notes:					 	params[:notes],
-    license:					params[:license],
-		max_exams: 		 	 	params[:max_exams],
-		max_scenarios: 	 	params[:max_scenarios],
-    ceu_scenario: 	 	params[:ceu_scenario],
+		email: 					 	        params[:email],
+		password: 			 	        params[:password],
+		name:  				 	 	        params[:name],
+		phone: 				 	 	        params[:phone],
+		notes:					 	        params[:notes],
+    license:					        params[:license],
+		max_exams: 		 	 	        params[:max_exams],
+		max_scenarios: 	 	        params[:max_scenarios],
+    max_practice_scenarios: 	params[:max_practice_scenarios],
 		ncmhce_downloads: false,
 		nce_downloads: 		false,
     nce_flashcards: 	 false,
@@ -63,8 +63,8 @@ post '/admin/users/new/?' do
   puts 'Updating admin'
 	user.update(admin: true) if params[:admin]
   
-  puts 'Updating ceu'
-  user.update(ceu: true) if params[:ceu]
+  puts 'Updating practice'
+  user.update(practice: true) if params[:practice]
 	
   puts 'Updating downloads'
 	user.update(ncmhce_downloads: true) if params[:ncmhce_downloads]
@@ -75,6 +75,8 @@ post '/admin/users/new/?' do
 
 	user.update(workshop_scenarios: true) if params[:workshop_scenarios]
     
+  user.update(practice_scenario: true) if params[:practice_scenario]
+  
   user.update(practice_exams: true) if params[:practice_exams]
   
   puts 'Setting session and redirecting'
@@ -110,19 +112,19 @@ post '/admin/users/:id/?' do
 	
 	params[:max_exams].is_numeric? ? params[:max_exams] = params[:max_exams].to_i : params[:max_exams] = user.max_exams
 	params[:max_scenarios].is_numeric? ? params[:max_scenarios] = params[:max_scenarios].to_i : params[:max_scenarios] = user.max_scenarios
-	params[:ceu_scenario].is_numeric? ? params[:ceu_scenario] = params[:ceu_scenario].to_i : params[:ceu_scenario] = user.ceu_scenario
+  params[:max_practice_scenarios].is_numeric? ? params[:max_practice_scenarios] = params[:max_practice_scenarios].to_i : params[:max_practice_scenarios] = user.max_practice_scenarios
   
-  params[:ceu] ? params[:ceu] = params[:ceu] : params[:ceu] = user.ceu
+  
   
 	user.update(
-		email: 				 	 params[:email],
-		name:  				 	 params[:name],
-		phone: 				 	 params[:phone],
-		notes:					 params[:notes],
-    license:				 params[:license],
-		max_exams: 		 	 params[:max_exams],
-		max_scenarios: 	 params[:max_scenarios],
-    ceu_scenario: 	 params[:ceu_scenario],
+		email: 				 	          params[:email],
+		name:  				 	          params[:name],
+		phone: 				 	          params[:phone],
+		notes:					          params[:notes],
+    license:				          params[:license],
+		max_exams: 		 	          params[:max_exams],
+		max_scenarios: 	          params[:max_scenarios],
+    max_practice_scenarios: 	params[:max_practice_scenarios],
 		expiration_date: Date.from_fields(
 			params[:expiration_year],
 			params[:expiration_month],
@@ -147,7 +149,7 @@ post '/admin/users/:id/?' do
 	user.update(password: params[:password]) unless params[:password].length == 0
 		
 	params[:admin] ? user.update(admin: true) : user.update(admin: false)
-  params[:ceu] ? user.update(ceu: true) : user.update(ceu: false)
+  
 	params[:ncmhce_downloads] ? user.update(ncmhce_downloads: true) : user.update(ncmhce_downloads: false)
 	params[:nce_downloads] ? user.update(nce_downloads: true) : user.update(nce_downloads: false)
   

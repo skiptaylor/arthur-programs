@@ -3,7 +3,6 @@ helpers do
 	def sign_in user_id, msg = false
 		user = User.get user_id
 		session[:user] = user.id
-    session[:ceu] = user.ceu?
 		session[:admin] = user.admin?
 		if msg
 			session[:alert] = {

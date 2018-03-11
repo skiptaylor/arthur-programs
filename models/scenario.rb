@@ -13,8 +13,8 @@ class Scenario
 	property :active,	  Boolean, default: true
 	property :sample,   Boolean, default: false
 	property :workshop, Boolean, default: false
-  property :ceu,      Boolean, default: false
   property :practice, Boolean, default: false
+
 
 	has n, :questions, :constraint => :destroy
 	has n, :averages,  :constraint => :destroy

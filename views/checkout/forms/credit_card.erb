@@ -1,7 +1,7 @@
 <fieldset id="credit_card">
-	<legend><span style="padding: 0 9px 0 7px;">3</span> Credit card/shipping</legend>
+	<legend><span class="oswald" style="padding: 0 9px 0 7px;">3</span> Credit card/shipping</legend>
 	
-	<div class="control-group" id="card-number-group" style="display: inline-block;">
+	<div class="control-group" id="card-number-group" style="display: inline-block; margin: 0;">
 		<label class="control-label">Card number</label>
 		<div class="controls">
 			<input type="text" autocomplete="off" class="input-xlarge card-number span2">
@@ -14,9 +14,9 @@
 	
 	
 		<label class="control-label">CVC 
-			<a href="#" rel="popover" class="bottom" data-placement="bottom" title="Location of CVC on credit card" data-content="<img src='/img/cvc.jpg'>">
+			<!-- <a href="#" rel="popover" class="bottom" data-placement="bottom" title="Location of CVC on credit card" data-content="<img src='/img/cvc.jpg'>">
 				<span class="badge" style="padding: 3px 8px;">?</span>
-			</a>
+			</a> -->
 		</label>
 		
 		
@@ -53,22 +53,22 @@
 			<span class="help-inline" id="invalid_expiry_year" style="display: none;">The card's expiration year is invalid.</span>
 		</div>
 	</div>
-	<div class="control-group">
+	<div class="control-group" style="margin: 0;">
 		<label class="control-label" for="address1">Address 1</label>
 		<div class="controls">
 			<input type="text" class="input-xlarge" id="address1" name="address1" />
 		</div>
 	</div>
-	<div class="control-group">
+	<div class="control-group" style="margin: 0;">
 		<label class="control-label" for="address2">Address 2</label>
 		<div class="controls">
 			<input type="text" class="input-xlarge" id="address2" name="address2" />
 		</div>
 	</div>	
-	<div class="control-group">
+	<div class="control-group" style="margin: 0;">
 		<label class="control-label" for="city">City, State Zip</label>
 		<div class="controls">
-			<input type="text" class="span2" id="city" name="city" />,
+			<input type="text" class="span2" id="city" name="city" />
 			<select type="text" name="state" class="span1" id="state">
 				<option>  </option>
 				<% State.all(:order => :name).each do |state| %>
@@ -78,10 +78,11 @@
 			<input type="text" class="span1" id="zip" name="zip" />
 			<span class="help-inline" id="tax">+ sales tax in GA.</span>
 		</div>
+		<!-- <p style="clear: both;"><small style="color: black;"><strong>Note:</strong> If you require shipment to a PO Box please call toll free 888-326-9229.</small></p> -->
 	</div>
 </fieldset>
 
-<p style="clear: both;"><small style="color: black;"><strong>Note:</strong> If you require shipment to a PO Box please call toll free 888-326-9229.</small></p>
+
 
 
 <div class="control-group" id="generic-card-group">

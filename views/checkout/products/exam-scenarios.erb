@@ -1,0 +1,28 @@
+<fieldset>
+	<legend><span class="oswald" style="padding: 0 9px 0 7px;">1</span> Package</legend>
+	
+	<div class="row">	
+		<div class="span6 content">
+			
+			<label class="radio package-name">
+				<p>
+					<input style="font-size: 2em;" name="package" type="radio" id="exam-scenario" value="Exam Scenario" data-price='40' checked="checked" /> &nbsp;<span style="font-size: 1.8em;" class="oswald">10 Exam Scenarios $40</span>
+					<ul class="package-features">
+						
+						<li>Exam Scenarios provide practice using the exam format</li>
+						<li>Online account active for one year</li>
+					</ul>
+				</p>
+				</label>
+			</p>
+				
+		</div>
+
+	</div>
+
+	<% if locals[:user] %>
+		<input type="hidden" name="user_id" id="user_id" value="<%= locals[:user].id %>" />
+	<% end %>
+	
+</fieldset>
+

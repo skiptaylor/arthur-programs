@@ -101,7 +101,7 @@ h3 {
 }
 
 .nav	{
-  	font-family: 'Open Sans', sans-serif;
+  	font-family: 'Muli', sans-serif;
 	font-weight: 600;
 }
   
@@ -363,7 +363,7 @@ h6 {
 	display: none;
 	position: fixed;
 	width: 100%;
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'Muli', sans-serif;
 	font-size: 14px;
 	line-height: 1.6em;
 	text-shadow: -1px -1px 0px #000;
@@ -381,7 +381,7 @@ h6 {
 	display: none;
 	position: fixed;
 	width: 100%;
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'Muli', sans-serif;
 	font-size: 12px;
 	line-height: 0.8em;
 	display: block;
@@ -417,7 +417,7 @@ h6 {
   border-color: #3a87ad; }
 
 #main-alert.alert {
-  	font-family: 'Open Sans', sans-serif;
+  	font-family: 'Muli', sans-serif;
   	font-size: 16px;
   	line-height: 2em;
   	padding: 8px 0;
@@ -480,6 +480,10 @@ h6 {
 	line-height: 1.2em;
 }
 
+.sum-pak	{
+	color: #0a4d9f;
+	font-weight: 900;
+}
 
 .ceu-color {
 	color: #339933;
@@ -744,33 +748,15 @@ textarea[readonly] {
   width: 64px; }
 
 form#payment-form fieldset {
-  border: 1px solid silver;
   margin-bottom: 1em;
-  padding: 2.5em 2em .5em 2em;
-  position: relative;
-  -webkit-border-radius: 6px;
-  -moz-border-radius: 6px;
-  border-radius: 6px; }
+  padding: 0.5em 0 .5em 0; }
 
 form#payment-form fieldset legend {
-  background-color: #f0f0f0;
-  background-image: url("../img/number-button.png");
-  background-position: 9px 7px;
-  background-repeat: no-repeat;
-  margin: 0;
-  position: absolute;
-  left: 0;
-  top: 0;
-  -webkit-border-top-left-radius: 6px;
-  -moz-border-top-left-radius: 6px;
-  border-top-left-radius: 6px;
-  -webkit-border-top-right-radius: 6px;
-  -moz-border-top-right-radius: 6px;
-  border-top-right-radius: 6px; }
+  background-color: #063d4c;
+  color: white; }
 
 form#payment-form fieldset legend.summary {
-  color: #006cbf;
-  background-image: none; }
+  color: #ffffff; }
 
 form#payment-form fieldset legend span {
   color: white;
@@ -1240,5 +1226,4 @@ div.reference p  {
     color: black;
     text-decoration: none;
 }
-
 

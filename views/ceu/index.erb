@@ -1,16 +1,6 @@
-<ul class="breadcrumb">
-	<li>
-		CEU <span class="divider">/</span>
-	</li>
-	<li class="active">Scenarios</li>
-</ul>
-
 <div>
-	<% if @ceu_scenario < 14 %>
-		<span style="float: right;"><a class="btn btn-success" href="/checkout/ceu?package=Single%20Scenario">Buy another <strong>CEU</strong> scenario for <strong>$20</strong></a></span>
-	<% end %>
  	<h1>
- 		CEU Scenarios
+ 		Exam Scenarios
  	</h1>
 	<hr />
 </div>
@@ -45,7 +35,7 @@
 
 		<div class="row">
 			<% @scenarios.each do |scenario| %>
-			<% if scenario.ceu %>
+			<% if scenario.practice %>
 			<div class="span6" style="min-height: 26em;">
 				<h3>
 					<%= scenario.id %>. <%= scenario.title %>
@@ -55,20 +45,20 @@
 				
 				<%= (markdown scenario.body).truncate(100) %>
 				
-				<% if @uses.include?(scenario.id) || (@remaining_ceu_scenario > 0) %>
+				<% if @uses.include?(scenario.id) || (@remaining_practice_scenario > 0) %>
 					
 				<% average = Use.first(user_id: session[:user], scenario_id: scenario.id) %>		
 				<% unless session[:admin] %>
 				<% if avg %>
 					<% if avg.score > 69 %>
-					<p><a class="btn btn-small btn-success" href="/ceu/scenarios/<%= scenario.id %>"><strong><i class="icon-ok icon-white"></i>  &nbsp;Passed scenario <%= scenario.id %></strong></a></p>
+					<p><a class="btn btn-small btn-success" href="/practice/scenarios/<%= scenario.id %>"><strong><i class="icon-ok icon-white"></i>  &nbsp;Passed scenario <%= scenario.id %></strong></a></p>
 					
 					
 					<% elsif ((avg.created_at + 30) - Time.now.to_date).to_i < 0 %>
 						<p class="btn btn-small btn-danger">Expired</p>
 					
 					<% else %>
-						<p><a class="btn btn-small btn-success" href="/ceu/scenarios/<%= scenario.id %>">Review scenario <strong><%= scenario.id %></strong></a>
+						<p><a class="btn btn-small btn-success" href="/practice/scenarios/<%= scenario.id %>">Review scenario <strong><%= scenario.id %></strong></a>
 						&nbsp; &nbsp;
 						<% if (((average.created_at + 30) - Time.now.to_date).to_i) > 0 %>
 						<strong><%= ((average.created_at + 30) - Time.now.to_date).to_i %></strong>
@@ -81,13 +71,13 @@
 					<p class="btn btn-small btn-danger">Expired</p>
 					
 				<% elsif average %>
-				<p><a class="btn btn-small btn-info" href="/ceu/scenarios/<%= scenario.id %>">Continue with scenario <strong><%= scenario.id %></strong></a></p>
+				<p><a class="btn btn-small btn-info" href="/practice/scenarios/<%= scenario.id %>">Continue with scenario <strong><%= scenario.id %></strong></a></p>
 				<% end %>
 				<% else %>
-					<p><a class="btn btn-small btn-primary" href="/ceu/scenarios/<%= scenario.id %>">Take scenario <strong><%= scenario.id %></strong></a></p>
+					<p><a class="btn btn-small btn-primary" href="/practice/scenarios/<%= scenario.id %>">Take scenario <strong><%= scenario.id %></strong></a></p>
 				<% end %>
 				<% else %>
-					<p><a class="btn btn-small btn-default" href="/ceu/scenarios/<%= scenario.id %>">View scenario <strong><%= scenario.id %></strong></a></p>
+					<p><a class="btn btn-small btn-default" href="/practicescenarios/<%= scenario.id %>">View scenario <strong><%= scenario.id %></strong></a></p>
 				<% end %>
 				
 				<% end %>

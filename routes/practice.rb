@@ -1,41 +1,25 @@
 get '/ncmhce/?' do
-	if session[:user]
-		user = User.get session[:user]
-		redirect '/ncmhce/scenarios' if user.max_scenarios > 0
-	end
+  if session[:user]
+    user = User.get session[:user]
+    redirect '/ncmhce/scenarios' if user.exam_scenario > 0
+  end
 
-	erb :ncmhce
-end
-
-get '/ncmhce/glossary/?' do
-	@exam = 'NCMHCE'
-	@glossary = Glossary.all(exam: 'NCMHCE').sort!{|a,b| a.chapter <=> b.chapter}
-	erb :'cards'
-end
-
-get '/ncmhce/sample/?' do
-	unless session[:user]
-		user = User.create(email: 'sample', password: 'sample')
-		session[:user] = user.id
-		session[:sample] = true
-	end
-	redirect '/ncmhce/scenarios/1'
+  erb :practice
 end
 
 get '/ncmhce/scenarios/?' do
 	authorize!
 
 	user = User.get session[:user]
-	redirect '/ncmhce' unless user.max_scenarios > 0
+  redirect '/ncmhce' unless user.exam_scenarios > 0
 
-	@max_scenarios = User.get(session[:user]).max_scenarios
+  @practice_scenario = User.get(session[:user]).practice_scenario
   @scenarios = Scenario.all(order: :id, active: true)
-  @scenarios = @scenarios.all(workshop: false) unless user.workshop_scenarios == true
-  
-  
-  @scenarios = @scenarios.all(practice: false) unless user.practice_exams == true
+  @scenarios = @scenarios.all(workshop: false)
+  @scenarios = @scenarios.all(practice: false)
+  @scenarios = @scenarios.all(practice: true)
 	@averages = Average.all(:user_id => session[:user], :scenario_id.not => nil)
-	@remaining_scenarios = User.get(session[:user]).remaining_scenarios
+	@remaining_practice_scenario = User.get(session[:user]).remaining_practice_scenario
 	@uses = []
 	Use.all(user_id: session[:user]).each { |u| @uses << u.scenario_id }
 	erb :'ncmhce/index'
@@ -45,14 +29,13 @@ get '/ncmhce/practice-scenarios/?' do
 	authorize!
 
 	user = User.get session[:user]
-	redirect '/ncmhce' unless user.max_practice_scenarios > 0
+  redirect '/ncmhce' unless user.exam_scenarios > 0
 
-	@max_scenarios = User.get(session[:user]).max_scenarios
+  @practice_scenario = User.get(session[:user]).practice_scenario
   @scenarios = Scenario.all(order: :id, active: true)
-  @scenarios = @scenarios.all(workshop: false) unless user.workshop_scenarios == true
-  
-  
-  @scenarios = @scenarios.all(practice: false) unless user.practice_exams == true
+  @scenarios = @scenarios.all(workshop: false)
+  @scenarios = @scenarios.all(practice: false)
+  @scenarios = @scenarios.all(practice: true)
 	@averages = Average.all(:user_id => session[:user], :scenario_id.not => nil)
 	@remaining_practice_scenarios = User.get(session[:user]).remaining_practice_scenarios
 	@uses = []
@@ -61,7 +44,6 @@ get '/ncmhce/practice-scenarios/?' do
 end
 
 get '/ncmhce/scenarios/:id/?' do
-	expired?
 
 	@scenario = Scenario.get params[:id]
 
@@ -72,7 +54,7 @@ get '/ncmhce/scenarios/:id/?' do
 	end
 
 	unless @scenario.sample? || @scenario.workshop?
-		if User.get(session[:user]).remaining_scenarios == 0
+		if User.get(session[:user]).remaining_scenario == 0
 			unless Use.all(user_id: session[:user], scenario_id: params[:id]).count > 0
 				session[:alert] = { message: "Please purchase more scenarios to continue." }
 				redirect '/ncmhce'
@@ -87,11 +69,10 @@ get '/ncmhce/scenarios/:id/?' do
 	Score.all(user_id: session[:user], scenario_id: params[:id]).each {|s| @scores << s.answer_id }
 	@questions = @scenario.questions order: :position
 	@answers = @questions.answers order: :body
-	erb :'ncmhce/scenario'
+	erb :'practice/scenario'
 end
 
 get '/ncmhce/scenarios/:id/score/?' do
-	expired?
 
 	@scenario = Scenario.get params[:id]
 
@@ -100,7 +81,7 @@ get '/ncmhce/scenarios/:id/score/?' do
 	else
 		authorize!
 	end
-
+	
 	@scores = []
 	scores = Score.all(user_id: session[:user], scenario_id: params[:id])
 	scores.each {|s| @scores << s.answer_id }
@@ -116,7 +97,7 @@ get '/ncmhce/scenarios/:id/score/?' do
 	@average = ((actual_total.to_f/possible_total.to_f)*100).to_i
 	@average = 0 if @average < 0
 	a = Average.first_or_create(scenario_id: params[:id], user_id: session[:user], score: @average)
-	Use.first_or_create(user_id: session[:user], scenario_id: params[:id], sample: @scenario.sample)
+  Use.first_or_create(user_id: session[:user], scenario_id: params[:id], sample: @scenario.sample)
 
 	@breakdown = {}
 	@breakdown['Information Gathering'] = {possible: 0, correct: 0}
@@ -151,9 +132,26 @@ get '/ncmhce/scenarios/:id/score/?' do
     possible: @breakdown["Decision Making"][:possible],
     correct: @breakdown["Decision Making"][:correct]
   )
+    
+	erb :'practice/scenario'  
   
-	erb :'ncmhce/scenario'
 end
+
+post '/ncmhce/scenarios/:id/score/?' do
+
+	uses = Use.all(user_id: session[:user], scenario_id: params[:id])
+	uses.each do |u|
+		u.update(
+      certificate: true,
+      cert_date: Time.now
+    )
+	end
+  
+  
+end
+
+
+
 
 get '/ncmhce/scenarios/:id/restart/?' do
 	authorize!

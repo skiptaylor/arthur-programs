@@ -1,18 +1,5 @@
-<ul class="breadcrumb">
-	<li>
-		CEU <span class="divider">/</span>
-	</li>
-	<li class="active">Scenarios</li>
-</ul>
-<div>
-	<h1>
-		Purchase CEU Scenarios Individually
-	</h1>
-	<hr />
-	<p><strong>Do not purchase more CEU Scenarios than you state will credit in a single year.</strong> You have 30 days from the purchase date to complete your Home Study Program to qualify for XX CEU credits. You do not have to complete the entire program in one sitting. You may begin an online scenario and finish at a later date.</p>
-	<p><strong>You must receive a minimum score of 70% on each scenario to qualify for your CEU credits.</strong> If you score less than the minimum score, you may retake the scenario until you successfully reach the minimum score. Upon completion of all scenarios included in your CEU Study Program, click on the “Submit my scores to the account administrator”. Once received, your Certificate of Completion will be emailed to you. Your name and number of credit hours received will be forwarded to NBCC and also be kept on file in our office for five years.</p>
-</div>
-<br />
+
+
 	<div class="row">
 		<div class="span12">
 		<div class="accordion">
@@ -40,15 +27,14 @@
 		</div>	
 		<div class="row">
 		<% @scenarios.each do |scenario| %>
-			<% if scenario.ceu %>
+			<% if scenario.practice %>
 	<!-- <%= '<div class="row">' if scenario.id.odd? %> -->
 		<div class="span6" style="min-height: 24em;">
 			<h3>
 				<%= scenario.id %>. <%= scenario.title %>
 			</h3>
 			<%= markdown scenario.body.truncate(100) %>
-			<p><a class="btn btn-success btn" href="/checkout/ceu?package=Single%20Scenario" style="font-weight: bold;">Buy This CEU Scenario for $20</a>
-			</p>
+			
 			<br />
 		</div>
 		<% end %>

@@ -1,59 +1,122 @@
 <fieldset>
-	<legend><span style="padding: 0 9px 0 7px;">1</span> Package <small>Choose one</small></legend>
+	<legend><span class="oswald" style="padding: 0 9px 0 7px;">1</span> Package</legend>
 	
-	<div class="row">		
-		<div class="span5 content">
-				
-			<p style="margin-top: 2.5em;">
-				<label class="radio package-name">
-					<input name="package" type="radio" id="starter-package" value="Starter Package" data-price='80' <%= 'checked="checked"' if params[:package] == 'Starter Package' %> /> &nbsp;<span style="font-size: 1.3em;" class="oswald">Starter Package $80</span>
-					<ul class="package-features">
-						<li><strong>12 Online Scenarios</strong></li>
-						<li>Study Supplement eBook (updated for DSM-5&trade;)</li>
-						<li>Consultation with Dr. Gary Arthur for up to 30 minutes</li>
-						<li>Pass Guarantee</li>
-						<li>Receive unlimited access to online exams for one full year</li>
-					</ul>
-					
+	<div class="row">	
+		<div class="span6 content">
+			
+			<label class="radio package-name">
+				<input style="font-size: 2em;" name="package" type="radio" id="starter-package" value="Starter Package" data-price='95' onclick="show1();" <%= 'checked="checked"' if params[:package] == 'Starter Package' %> /> &nbsp;<span style="font-size: 1.8em;" class="oswald">Starter Package $95</span>
 				</label>
-			</p>
+				<p>
+				<ul class="package-features">
+					<li><strong>12 Online Tutorial Scenarios</strong></li>
+					<li> Second Chance Upgrade</li>
+					<li>Study Supplement Online</li>
+					<li>Virtual Flash Cards</li>
+					<li>Phone consultation directly with Dr. Gary Arthur</li>
+					<li>Money Back Pass Guarantee</li>
+					<li>3-day Satisfaction Guarantee</li>
+					<li>Online account active for one year</li>
+				</ul>
+				<small>(Additional online scenarios can be purchased later in sets of 12 for $95.)</small>
+				</p>
 				
-		</div>	<!-- span5 -->				
-	
-		<div class="span5 content">
-				
-			<p style="margin-top: 2.5em;">
-				<label class="radio package-name">
-					<input name="package" type="radio" id="full-package" value="Full Package" data-price='190' <%= 'checked="checked"' if params[:package] == 'Full Package' %> /> &nbsp;<span style="font-size: 1.3em;" class="oswald">Full Package $190</span>
-					 &nbsp; &nbsp; <span style="font-size: 1.3em; color: #bc272e;" class="oswald">Save $50!</span>
+				<!-- <p style="margin: 1em 0.2em 0 0;">
+					<label class="checkbox">
+						<input type="checkbox" style="font-size: 2em;" name="package" value="Exam Scenarios" id="practice-exams" data-price='40' <%= 'checked="checked"' if params[:optional] %> /> &nbsp; <span style="font-size: 1.5em;" class="oswald">Add 10 Online Exam Scenarios $40
+					</label>
 					<ul class="package-features">
-						<li><strong>All 36 Online Scenarios</strong></li>
-						<li>Study Supplement eBook (updated for DSM-5&trade;)</li>
-						<li>Consultation with Dr. Gary Arthur for up to 30 minutes</li>
-						<li>Pass Guarantee</li>
-						<li>Receive unlimited access to online exams for one full year</li>
+						<li><strong>Exam Scenarios</strong> provide practice using the exam format.</li>
 					</ul>
-				</label>
-			</p>			
-		</div>	<!-- span5 -->
-		<div class="span7">
-		<p><small>(Additional online scenarios can be purchased later in sets of 12 for $80.)</small></p>
-	</div>
-	</div>	<!-- row -->
-	<hr style="margin: 9px 0" />
-	<h3 class="option-header">Optional Enhancements <small>for either package &nbsp;&nbsp;(Must purchase Starter or Full Package to buy Optional Hard Copy)</small></h3>
+					<small>(Exam Scenarios can be purchased later)</small>
+				</p>	 -->
+			
+			
+		</div>	<!-- span6 -->				
 	
-		<p style="margin: 9px 0;">
-			<label class="checkbox">
-				<input type="checkbox" name="optional" value="Hard Copy" id="ncmhce-hard-copy" data-price='13.95' <%= 'checked="checked"' if params[:optional] %> /> &nbsp; <span style="font-size: 1.3em;" class="oswald">Study Supplement Hard Copy $13.95 shipping</span> &nbsp; <small>Same study supplement as the eBook and updated for DSM-5&trade;</small>
-				<br />
-				<small style="color: black;"> &nbsp; <strong>Note:</strong> If you require shipment to a PO Box please call toll free 888-326-9229 for details.</small>
-												
+		<div class="span6 content">
+				
+			<label class="radio package-name">
+				<input style="font-size: 2em;" name="package" type="radio" id="full-package" value="Full Package" data-price='249' onclick="show2();" <%= 'checked="checked"' if params[:package] == 'Full Package' %> /> &nbsp;<span style="font-size: 1.8em;" class="oswald">Full Package $249</span>
+				 &nbsp; &nbsp; <span style="font-size: 1.6em; color: #bc272e;" class="oswald">Save $86!</span>
 			</label>
-		</p>	
+			<p>
+			<ul class="package-features">
+				<li><strong>All 36 Online Tutorial Scenarios</strong></li>
+				<li><strong>10 Online Exam Scenarios</strong></li>
+				<li>Study Supplement Online</li>
+				<li>Virtual Flash Cards</li>
+				<li>Phone consultation directly with Dr. Gary Arthur</li>
+				<li>Money Back Pass Guarantee</li>
+				<li>3-day Satisfaction Guarantee</li>
+				<li>Online account active for one year</li>
+			</ul>
+			</p>
+			
+		</div>	<!-- span6 -->
+
+	</div>	<!-- row -->
+	<div class="row">
 		
-		<div class="hidden">
-			<input type="text" style="color: #333333;" class="input-xlarge focus" id="license" name="license" <%= "value='#{locals[:user].license}' disabled" if user %> autofocus required />
+		<div class="span12">
+			<hr style="margin: 1em 0; border-color: black" />
+			<p>
+				<h3 class="option-header">Optional Enhancements</h3>
+			</p>
 		</div>
+	</div>
+	<div class="row">
+		
+		<div class="span6">		
+			<p style="margin: 1em 0 0 0;">
+				<label class="checkbox">
+					<input style="font-size: 2em;" type="checkbox" name="optional" value="Hard Copy" id="ncmhce-hard-copy" data-price='40.65' <%= 'checked="checked"' if params[:optional] %> /> &nbsp; <span style="font-size: 1.8em;" class="oswald">Study Supplement Hard Copy $40.65</span>
+				</label>	
+					
+				<ul class="package-features">
+					<li>Same study supplement as the eBook and online.</li>
+				</ul>
+					
+					<small style="color: black;"><strong>Note:</strong> If you require shipment to a PO Box please call toll free 888-326-9229 for details.</small>
+			</p>
+		</div>
+		
+		<div class="span6" id="Starter Package" style="display: none">
+			<p style="margin: 1em 0 0 0;">
+				<label class="checkbox">
+					<input style="font-size: 2em;" type="checkbox" name="optional" value="Exam Scenarios" id="exam-scenarios" data-price='40.65' <%= 'checked="checked"' if params[:optional] %> /> &nbsp; <span style="font-size: 1.8em;" class="oswald">10 Online Exam Scenarios $40</span>
+				</label>
+				 
+			<ul class="package-features">
+				<li>Online Exam Scenarios can be purchased later.</li>
+			</ul>
+			<small style="color: black;"><strong>Note:</strong> Online Exam Scenarios are included with Full Package.</small>
+			</p>
+		</div>
+		
+		<!-- <div class="span6" id="Full Package">
+			<p style="margin: 1em 0 0 0;">
+			<span style="font-size: 1.8em;" class="oswald">10 Online Exam Scenarios Included</span>
+			<ul class="package-features">
+				<li>Online Exam Scenarios can be purchased later.</li>
+			</ul>
+			<small style="color: black;"><strong>Note:</strong> Online Exam Scenarios are included with Full Package.</small>
+			</p>
+		</div> -->
+		
+	</div>
 	
-</fieldset>
+</fieldset>	
+
+
+<script type="text/javascript">
+	function show1(){
+	  document.getElementById('Starter Package').style.display ='block';
+	}
+	function show2(){
+	  document.getElementById('Starter Package').style.display = 'none';
+	  document.getElementById("exam-scenarios").checked = false;
+	}
+	
+	
+</script>

@@ -1,39 +1,3 @@
-<!-- <ul class="breadcrumb hidden-phone hidden-tablet">
-	<li>
-		NCMHCE <span class="divider">/</span>
-	</li>
-	<li class="active">Scenarios</li>
-</ul> -->
-
-<div class="visible-desktop">
-	<h1>
-		NCMHCE Scenarios
-		<% if @max_scenarios < 36 %>
-			<span style="float: right;"><a class="btn btn-success" style="font-weight: 400;" href="/checkout/ncmhce-upgrade">Buy 12 more scenarios for $80</a></span>
-		<% end %>
-	</h1>
-	<hr />
-</div>
-
-<div class="visible-tablet" style="margin-top: -10px;">
-	<h1>
-		NCMHCE Scenarios
-		<% if @max_scenarios < 36 %>
-			<span style="float: right;"><a class="btn btn-success" style="font-weight: 400;" href="/checkout/ncmhce-upgrade">Buy 12 more scenarios for $80</a></span>
-		<% end %>
-	</h1>
-	<hr />
-</div>
-
-<div class="visible-phone" style="margin-top: -12px;">
-	<h1>
-		NCMHCE Scenarios
-		<% if @max_scenarios < 36 %>
-			<br /><span><a class="btn btn-success" style="margin-top: 9px; font-weight: 400;" href="/checkout/ncmhce-upgrade">Buy 12 more scenarios for $80</a></span>
-		<% end %>
-	</h1>
-	<hr />
-</div>
 
 	<div class="row">
 		<div class="span12">
@@ -70,7 +34,7 @@
 			<hr style="margin-top: 0;" />
 			<div class="row">
 <% @scenarios.each do |scenario| %>
-	<% unless scenario.workshop || scenario.practice %>
+	<% if scenario.practice? %>
 		<div class="span6" style="min-height: 23em;">
 			<h3>
 				<%= scenario.id %>. <%= scenario.title %>

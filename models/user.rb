@@ -25,7 +25,6 @@ class User
 	property :pass_reset_date, Date
 
 	property :admin,  Boolean, default: false
-  property :ceu,    Boolean, default: false
 
 	property :name,  				 String
 	property :phone, 				 String
@@ -40,7 +39,7 @@ class User
 
 	property :max_exams, 		 Integer, default: 0
 	property :max_scenarios, Integer, default: 0
-  property :ceu_scenario,  Integer, default: 0
+  property :max_practice_scenarios, Integer, default: 0
 
 	property :ncmhce_downloads, Boolean, default: false
 	property :nce_downloads, 		Boolean, default: false
@@ -62,17 +61,17 @@ class User
 	def remaining_scenarios
 		used = 0
 		Use.all(user_id: self.id, :scenario_id.not => nil, :sample => false).each do |use|
-			used = used + 1 unless use.scenario.workshop? || use.scenario.ceu? || use.scenario.practice? 
+			used = used + 1 unless use.scenario.practice? || use.scenario.workshop?
 		end
 		self.max_scenarios - used
 	end
   
-	def remaining_ceu_scenario
+	def remaining_practice_scenarios
 		used = 0
 		Use.all(user_id: self.id, :scenario_id.not => nil, :sample => false).each do |use|
-			used = used + 1 if use.scenario.ceu?
+			used = used + 1 if use.scenario.practice? unless use.scenario.workshop?
 		end
-		self.ceu_scenario - used
+		self.max_practice_scenarios - used
 	end
   
   def remove_sample

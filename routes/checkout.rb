@@ -15,10 +15,10 @@ get '/checkout/:product/?' do
 		@product_name = "Arthur-Brende NCMHCE Study Program"
 	when 'ncmhce-hard-copy'
 		@product_name = "Arthur-Brende NCMHCE Study Program"
-    
-	when 'second-chance-upgrade'
+	when 'exam-scenarios'
 		@product_name = "Arthur-Brende NCMHCE Study Program"
-    
+  when 'second-chance-upgrade'
+		@product_name = "Arthur-Brende NCMHCE Study Program"
 	when 'account-extension'
 		@product_name = "Extend Your Account"
 	when 'account-expiration'
@@ -85,7 +85,7 @@ post '/checkout/:product/?' do
                email = 'nce'
                  msg = true
     params[:optional] ? params[:optional] = '+ Hard Copy' : params[:optional] = '+ eBook'
-    
+
   when 'Starter Package'
     user.ncmhce_downloads = true
     user.max_scenarios = (user.max_scenarios + 12)
@@ -93,7 +93,7 @@ post '/checkout/:product/?' do
                email = 'ncmhce'
                  msg = true
     params[:optional] ? params[:optional] = '+ Hard Copy' : params[:optional] = '+ eBook'
-    
+
   when 'Full Package'
     user.ncmhce_downloads = true
     user.max_scenarios = (user.max_scenarios + 36)
@@ -101,21 +101,19 @@ post '/checkout/:product/?' do
                email = 'ncmhce'
                  msg = true
     params[:optional] ? params[:optional] = '+ Hard Copy' : params[:optional] = '+ eBook'
-    
+
   when 'Single Scenario'
     user.ceu_scenario = (user.ceu_scenario + 1)
     params[:package] = 'CEU: Single Scenario'
                email = 'ceu'
                  msg = true
             user.ceu = true
-            
 
   when 'Second Chance Upgrade'
     user.max_scenarios = (user.max_scenarios + 24)
       params[:package] = 'NCMHCE: Second Chance Upgrade'
                  email = 'ncmhce'
                    msg = true
-
 
   when 'NCE Upgrade'
     user.max_exams = (user.max_exams + 2)
@@ -134,7 +132,12 @@ post '/checkout/:product/?' do
   when 'NCMHCE Hard Copy'
     params[:package] = 'NCMHCE: Hard Copy'
 		             msg = false
-
+                 
+  when 'Exam Scenarios'
+    user.max_practice_scenarios = (user.max_practice_scenarios + 10)
+    params[:package] = 'NCMHCE: Exam Scenarios'
+     		         msg = false
+  
   when 'Account Extension'
     params[:package] = 'Account Extension'
                  msg = false
@@ -150,9 +153,7 @@ post '/checkout/:product/?' do
 			user.expiration_date = (user.expiration_date + 90)
     elsif (params[:package] == 'Account Expiration')
       user.expiration_date = (DateTime.now + 90)
-  	elsif (params[:package] == 'CEU: Single Scenario')
-       user.expiration_date = (DateTime.now + 1825)
-  	elsif (params[:package] == 'NCMHCE: Hard Copy') || (params[:package] == 'NCE: Hard Copy') || (params[:package] == 'NCMHCE: Second Chance Upgrade')
+  	elsif (params[:package] == 'NCMHCE: Hard Copy') || (params[:package] == 'NCE: Hard Copy') || (params[:package] == 'NCMHCE: Second Chance Upgrade') || (params[:package] == 'NCMHCE: Exam Scenarios')
   		user.expiration_date = (user.expiration_date + 0)
 		else
 			user.expiration_date = (DateTime.now + 365)

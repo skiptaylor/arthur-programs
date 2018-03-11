@@ -29,7 +29,7 @@ end
 get '/sign-out/?' do
 	session[:user] 	 = nil
 	session[:admin]  = nil
-  session[:ceu]    = nil
+  
 	session[:sample] = nil
 	session.clear
 	session[:alert]  = { style: 'alert-info', heading: 'You are now signed out.', message: 'Thank you, come again!' }

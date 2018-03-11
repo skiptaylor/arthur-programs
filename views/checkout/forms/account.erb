@@ -1,7 +1,7 @@
 <fieldset id="account">
 	
 	<legend>
-		<span style="padding: 0 9px 0 7px;">2</span>
+		<span class="oswald" style="padding: 0 9px 0 7px;">2</span>
 		<% if locals[:user] %>
 			You're already signed in
 		<% else %>
@@ -9,7 +9,7 @@
 		<% end %>
 	</legend>
 	
-	<div class="control-group">
+	<div class="control-group" style="margin: 0;">
 		<label class="control-label" for="first_name">First Name</label>
 		<div class="controls">
 			<% unless user %>
@@ -20,7 +20,7 @@
 		</div>
 	</div>
 	
-	<div class="control-group">
+	<div class="control-group" style="margin: 0;">
 		<label class="control-label" for="last_name">Last Name</label>
 		<div class="controls">
 			<% unless user %>
@@ -30,13 +30,13 @@
 			<% end %>
 		</div>
 	</div>
-	<div class="control-group" id="email-group">
+	<div class="control-group" id="email-group" style="margin: 0;">
 		<label class="control-label" for="email">Email address</label>
 		<div class="controls">
 			<input type="text" class="input-xlarge" id="email" name="email" style="color: #000000;" <%= "value='#{locals[:user].email}' disabled" if user %> />
 		</div>
 	</div>
-	<div class="control-group">
+	<div class="control-group" style="margin: 0;">
 		<label class="control-label" for="password">Password</label>
 		<div class="controls">
 			<input type="password" class="input-xlarge" id="password" name="password" style="color: #000000;" <%= "value='secret123' disabled" if user %>

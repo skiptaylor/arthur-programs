@@ -92,24 +92,11 @@
 					<input type="checkbox" style="margin-top: -3px;" name="ncmhce_flashcards" id="ncmhce_flashcards" <%= 'checked' if @user.ncmhce_flashcards %> /> &nbsp; Flash Cards
 				</div>
 			</div>
-			<div class="control-group" id="ceu-scenarios-group">	
-				<label class="control-label" style="margin-bottom: -4px;" for="ceu">CEU Account</label>
-				<div class="controls">
-					<input type="checkbox" style="margin-bottom: 2px;" name="ceu" id="ceu" <%= 'checked' if @user.ceu %> /> &nbsp; &nbsp; &nbsp; &nbsp;
-					License &nbsp; <input type="text" class="span3" id="license" name="license" value="<%= @user.license %>" />
-				</div>
-			</div>
-			<div class="control-group" id="ceu-scenarios-group" style="margin-top: -9px;">
-				<label class="control-label" style="margin-top: -4px;" for="ceu_scenario">CEU Scenarios</label>
-				<div class="controls" style="margin-top: -4px;">
-					<input type="text" class="span1" id="ceu_scenario" name="ceu_scenario" value="<%= @user.ceu_scenario %>"> &nbsp; &nbsp; &nbsp; &nbsp;
-					
-				</div>
-			</div>
-			<div class="control-group" id="practice-exams-group" style="margin-top: -3px;">
-				<label class="control-label" for="practice_exams">Practice Exams</label>
+			
+			<div class="control-group" id="max_practice_scenarios-group" style="margin-top: -3px;">
+				<label class="control-label" for="max_practice_scenarios">Exams Senarios</label>
 				<div class="controls" style="margin-top: 3px;">
-					<input type="checkbox" name="practice_exams" id="practice_exams" <%= 'checked' if @user.practice_exams %> />
+					<input type="text" class="span1" id="max_practice_scenarios" name="max_practice_scenarios" value="<%= @user.max_practice_scenarios %>"> &nbsp; &nbsp; &nbsp; &nbsp; <!-- <input type="checkbox" name="practice_exams" id="practice_exams" <%= 'checked' if @user.practice_exams %> /> -->
 				</div>
 			</div>
 			<div class="control-group" id="workshop-scenarios-group" style="margin-top: -12px;">
@@ -260,7 +247,7 @@
           </thead>
           <tbody>
             <% @scenarios.sort { |a,b| a.scenario_id <=> b.scenario_id }.each do |average| %>
-              <% unless average.scenario.workshop? || average.scenario.practice? || average.scenario.ceu? %>
+              <% unless average.scenario.workshop? || average.scenario.practice? %>
                 <tr>
                   <td><%= average.scenario_id %>. <%= average.scenario.title %></td>
 						<td style="text-align: center;">
@@ -324,41 +311,7 @@
       <br />
     <% end %> -->
     
-    <!-- <% if @user.ceu_scenario > 0 %>
-
-      <div class="page-header">
-        <h3>CEU Scenarios</h3>
-      </div>
-
-      <table class="table table-condensed table-striped table-hover">
-        <thead>
-          <tr>
-				<th>Scenario</th>
-				<th>Created On</th>
-				<th>Expires On</th>
-				<th>Last Taken</th>
-          </tr>
-        </thead>
-        <tbody>
-          <% @scenarios.sort { |a,b| a.scenario_id <=> b.scenario_id }.each do |average| %>
-            <% if average.scenario.ceu? %>
-              <tr>
-                <td><%= average.scenario_id %>. <%= average.scenario.title %></td>
-					<td><%= average.created_at.display_short %></td>
-					<% if ((average.created_at + 30) - Time.now.to_date) > 0 %>
-					<td><%= (average.created_at + 30).display_short %></td>
-					<% else %>
-					<td style="color: #c70004;"><%= (average.created_at + 30).display_short %></td>
-					<% end %>
-					<td><%= average.updated_at.display_short if average %></td>
-              </tr>
-            <% end %>
-          <% end %>
-        </tbody>
-      </table>
-
-      <br />
-    <% end %> -->
+    
 	 
     <!-- <% if @user.practice_exams? %>
 
