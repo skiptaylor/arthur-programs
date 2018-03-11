@@ -4,7 +4,7 @@ get '/ncmhce/?' do
     redirect '/ncmhce/scenarios' if user.exam_scenario > 0
   end
 
-  erb :practice
+  erb :ncmhce
 end
 
 get '/ncmhce/scenarios/?' do
