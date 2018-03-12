@@ -47,12 +47,12 @@ get '/ncmhce/practice-scenarios/?' do
 	user = User.get session[:user]
 	redirect '/ncmhce' unless user.max_practice_scenarios > 0
 
-	@max_scenarios = User.get(session[:user]).max_scenarios
+	@max_practice_scenarios = User.get(session[:user]).max_practice_scenarios
   @scenarios = Scenario.all(order: :id, active: true)
   @scenarios = @scenarios.all(workshop: false) unless user.workshop_scenarios == true
   
   
-  @scenarios = @scenarios.all(practice: false) unless user.practice_exams == true
+  @scenarios = @scenarios.all(practice: true) unless user.practice_exams == false
 	@averages = Average.all(:user_id => session[:user], :scenario_id.not => nil)
 	@remaining_practice_scenarios = User.get(session[:user]).remaining_practice_scenarios
 	@uses = []

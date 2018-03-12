@@ -35,7 +35,6 @@ post '/admin/users/new/?' do
 	params[:max_exams].is_numeric? ? params[:max_exams] = params[:max_exams].to_i : params[:max_exams] = user.max_exams
 	params[:max_scenarios].is_numeric? ? params[:max_scenarios] = params[:max_scenarios].to_i : params[:max_scenarios] = user.max_scenarios
   params[:max_practice_scenarios].is_numeric? ? params[:max_practice_scenarios] = params[:max_practice_scenarios].to_i : params[:max_practice_scenarios] = user.max_practice_scenarios
-  params[:practice_scenario].is_numeric? ? params[:practice_scenario] = params[:practice_scenario].to_i : params[:practice_scenario] = user.practice_scenario
   
   puts 'Creating user'
 	user = User.create(

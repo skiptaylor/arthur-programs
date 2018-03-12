@@ -34,33 +34,34 @@
 			<hr style="margin-top: 0;" />
 			<div class="row">
 <% @scenarios.each do |scenario| %>
-	<% if scenario.practice? %>
-		<div class="span6" style="min-height: 23em;">
-			<h3>
-				<%= scenario.id %>. <%= scenario.title %>
-				<%= '<span class="label label-info">Sample</span>' if scenario.sample? %>
-				<% avg = @averages.detect {|a| a.scenario_id == scenario.id} %>
-				<small style="color: #20ae32; font-weight: bold;" class='darker-gray'>&nbsp; <% if avg %>Last taken - <%= avg.updated_at.display_short if avg %><% end %></small>
-			</h3>
-			<span class="visible-desktop"><%= markdown scenario.body.truncate(100) %></span>
-			<span class="visible-tablet"><%= markdown scenario.body.truncate(74) %></span>
-			<span class="visible-phone"><%= markdown scenario.body.truncate(80) %></span>
-			<% if scenario.sample? || @uses.include?(scenario.id) %>
-				<% if avg %>
-					<p><a class="btn btn-small btn-info" href="/ncmhce/scenarios/<%= scenario.id %>"><strong>Review scenario <%= scenario.id %></strong></a></p>
+	<% unless scenario.workshop %>
+		<% if scenario.practice %>
+			<div class="span6" style="min-height: 23em;">
+				<h3>
+					<%= scenario.id %>. <%= scenario.title %>
+					<%= '<span class="label label-info">Sample</span>' if scenario.sample? %>
+					<% avg = @averages.detect {|a| a.scenario_id == scenario.id} %>
+					<small style="color: #20ae32; font-weight: bold;" class='darker-gray'>&nbsp; <% if avg %>Last taken - <%= avg.updated_at.display_short if avg %><% end %></small>
+				</h3>
+				<span class="visible-desktop"><%= markdown scenario.body.truncate(100) %></span>
+				<span class="visible-tablet"><%= markdown scenario.body.truncate(74) %></span>
+				<span class="visible-phone"><%= markdown scenario.body.truncate(80) %></span>
+				<% if scenario.sample? || @uses.include?(scenario.id) %>
+					<% if avg %>
+						<p><a class="btn btn-small btn-info" href="/ncmhce/scenarios/<%= scenario.id %>"><strong>Review scenario <%= scenario.id %></strong></a></p>
+					<% else %>
+						<p><a class="btn btn-small btn-info" href="/ncmhce/scenarios/<%= scenario.id %>"><strong>Continue with scenario <%= scenario.id %></strong></a></p>
+					<% end %>
+				<% elsif @remaining_practice_scenarios > 0 %>
+					<p><a class="btn btn-small btn-primary" href="/ncmhce/scenarios/<%= scenario.id %>">Take scenario <%= scenario.id %></a></p>
 				<% else %>
-					<p><a class="btn btn-small btn-info" href="/ncmhce/scenarios/<%= scenario.id %>"><strong>Continue with scenario <%= scenario.id %></strong></a></p>
+				  &nbsp;
 				<% end %>
-			<% elsif @remaining_scenarios > 0 %>
-				<p><a class="btn btn-small btn-primary" href="/ncmhce/scenarios/<%= scenario.id %>">Take scenario <%= scenario.id %></a></p>
-			<% else %>
-			  &nbsp;
-			<% end %>
 
-			<br />
-		</div>
+				<br />
+			</div>
 
-
+		<% end %>
 	<% end %>
 <% end %>
 
