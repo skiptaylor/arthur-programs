@@ -23,41 +23,43 @@ get '/ncmhce/sample/?' do
 end
 
 get '/ncmhce/scenarios/?' do
-	authorize!
+  authorize!
 
-	user = User.get session[:user]
-	redirect '/ncmhce' unless user.max_scenarios > 0
+  user = User.get session[:user]
+  redirect '/ncmhce' unless user.max_scenarios > 0
 
-	@max_scenarios = User.get(session[:user]).max_scenarios
+  @max_scenarios = User.get(session[:user]).max_scenarios
   @scenarios = Scenario.all(order: :id, active: true)
   @scenarios = @scenarios.all(workshop: false) unless user.workshop_scenarios == true
-  
-  
+
+  @max_practice_scenarios = User.get(session[:user]).max_practice_scenarios
+
   @scenarios = @scenarios.all(practice: false) unless user.practice_exams == true
-	@averages = Average.all(:user_id => session[:user], :scenario_id.not => nil)
-	@remaining_scenarios = User.get(session[:user]).remaining_scenarios
-	@uses = []
-	Use.all(user_id: session[:user]).each { |u| @uses << u.scenario_id }
-	erb :'ncmhce/index'
+  @averages = Average.all(:user_id => session[:user], :scenario_id.not => nil)
+  @remaining_scenarios = User.get(session[:user]).remaining_scenarios
+  @uses = []
+  Use.all(user_id: session[:user]).each { |u| @uses << u.scenario_id }
+  erb :'ncmhce/index'
 end
 
+
 get '/ncmhce/practice-scenarios/?' do
-	authorize!
+  authorize!
 
-	user = User.get session[:user]
-	redirect '/ncmhce' unless user.max_practice_scenarios > 0
+  user = User.get session[:user]
+  redirect '/ncmhce' unless user.max_practice_scenarios > 0
 
-	@max_practice_scenarios = User.get(session[:user]).max_practice_scenarios
+  @max_practice_scenarios = User.get(session[:user]).max_practice_scenarios
   @scenarios = Scenario.all(order: :id, active: true)
   @scenarios = @scenarios.all(workshop: false) unless user.workshop_scenarios == true
-  
-  
+
+
   @scenarios = @scenarios.all(practice: true) unless user.practice_exams == false
-	@averages = Average.all(:user_id => session[:user], :scenario_id.not => nil)
-	@remaining_practice_scenarios = User.get(session[:user]).remaining_practice_scenarios
-	@uses = []
-	Use.all(user_id: session[:user]).each { |u| @uses << u.scenario_id }
-	erb :'ncmhce/index-practice'
+  @averages = Average.all(:user_id => session[:user], :scenario_id.not => nil)
+  @remaining_practice_scenarios = User.get(session[:user]).remaining_practice_scenarios
+  @uses = []
+  Use.all(user_id: session[:user]).each { |u| @uses << u.scenario_id }
+  erb :'ncmhce/index-practice'
 end
 
 get '/ncmhce/scenarios/:id/?' do

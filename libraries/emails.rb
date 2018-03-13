@@ -17,10 +17,6 @@ class Email
       body << "<h3>Satisfaction Guarantee Return Policy:</h3>"
 			body << "<p>The customer has <em>3 days</em> from the purchase date to review the purchased <em>online services</em>, including online exams and eBook, to confirm that it is what he or she expected. If the customer has purchased a hard-copy of the NCE  Study Guide, he or she has <em>3 days from the date of delivery of the Study Guide</em>. If unhappy with the content for any reason, the customer is required to notify CTC within these 3 days either by phone or e-mail that he/she is requesting a refund and will be returning the Study Guide, if applicable. Further, to qualify for a refund, the customer <em>may not have completed any online exam; they are allowed access for review only</em> if they wish to request a Satisfaction Guarantee refund. Upon proper notification, CTC will turn off access to these online services, and a refund will be issued. For those customers who have purchased the hard-copy, it is required the hard-copy Study Guide be returned to CTC in good condition. Once CTC has received the hard-copy, a refund will be issued (excludes all shipping and any applicable sales tax). Note: The return expense is the responsibility of the customer.</p>"
 		end
-    
-		if policy == 'ceu'
-			body << ""
-		end
 		
 		if policy == 'ncmhce'
       body << "<h3>Satisfaction Guarantee Return Policy:</h3>"
@@ -70,9 +66,9 @@ class Email
     body << "<p>Depending on your specific situation and relative readiness for the exam, you may find the Starter Package is sufficient to prepare for the NCMHCE. However, we do have customers who state they wished they had purchased the Full Package shortly after their Starter purchase. For these customers, we are now offering a 'second chance' to save!</p>"
     body << "<h3>Second Chance Offer!</h3>" 
     body << "<p>Should you decide you want access to <b>all 36</b> of the scenarios within two weeks of your original purchase date, you may upgrade your Starter Package to our Full Package for the price difference of $110. (This would equal the same price as if you had ordered the Full Package originally.)</p>"
-    body << "<p>Note this is in contrast to the pricing of ordering additional scenarios after the two week period has passed, when the upgrade package(s) cost $80.00 per set of 12 scenarios (so the total would be $240 for access to all of the scenarios once the two weeks is up).
+    body << "<p>Note this is in contrast to the pricing of ordering additional scenarios after the two week period has passed, when the upgrade package(s) cost $95.00 per set of 12 scenarios (so the total would be $249 for access to all of the scenarios once the two weeks is up).
 </p>"
-    body << "<p>To upgrade your package from Starter to Full to save this $50.00, sign-in to your account and select the 'Upgrade to Full Package now for $110' button on your Profile page</p>"
+    body << "<p>To upgrade your package from Starter to Full to save this $86.00, sign-in to your account and select the 'Upgrade to Full Package now for $110' button on your Profile page</p>"
     body << "<p>Good luck on your exam!</p>"
 
     Pony.mail(
