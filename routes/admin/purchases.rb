@@ -27,7 +27,7 @@ get '/admin/purchases/?' do
   			csv << [
   				purchase.created_at.display(:american_day),
   				purchase.amount,
-  				"#{purchase.package} / #{purchase.options}",
+  				"#{purchase.package} / #{purchase.options}  #{purchase.options2}",
   				purchase.stripe_id,
   				purchase.user.name,
   				purchase.user.email,

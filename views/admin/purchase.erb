@@ -12,7 +12,7 @@
 		</ul>
 
 		<p><strong>Amount:</strong> $<%= @purchase.amount %></p>
-		<p><strong>Items:</strong> <%= @purchase.package %> / <%= @purchase.options %></p>
+		<p><strong>Items:</strong> <%= @purchase.package %> / <%= @purchase.options %> <% if @purchase.options2 %><% unless @purchase.options2 == '0' %> / +<%= @purchase.options2 %> Exam Scenarios<% end %><% end %></p>
 		<p><strong>Stripe ID:</strong> <a href="https://manage.stripe.com/#payments/<%= @purchase.stripe_id %>" target="_blank"><%= @purchase.stripe_id %></a></p>
 		<p>
 			<strong>Shipping:</strong>

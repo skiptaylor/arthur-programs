@@ -40,6 +40,8 @@
 							<%= purchase.package %>
 							<br />
 							<span style="font-size: 90%;"><%= purchase.options %></span>
+							<br />
+							<% if purchase.options2 %><% unless purchase.options2 == '0' %><span style="font-size: 90%;">+ <%= purchase.options2 %> Exam Scenarios</span><% end %><% end %>
 						</td>
 						<td>
 							<%= purchase.user.name %><br />

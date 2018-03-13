@@ -32,11 +32,11 @@
 				<input type="password" style="width: 96%;" name="password" id="password" />
 				<span class="help-inline"  style="line-height: 1em; margin: 3px 0;"><small>Leave blank unless you want a new password.</small></span>
 			</p>
-			<% unless @user.license == "" %>
+			<!-- <% unless @user.license == "" %>
 			<p>
 				<small><strong>License:</strong> <%= @user.license %></small>
 			</p>
-			<% end %>
+			<% end %> -->
 			<p>
 				<button type="submit" class="btn btn-primary">Update Account</button>
 			</p>
@@ -150,11 +150,13 @@
 					</tr>
 				</thead>
 				<tbody>
+					
 					<% @scenarios.sort { |a,b| a.scenario_id <=> b.scenario_id }.each do |average| %>
-						<% unless average.scenario.workshop? || average.scenario.practice? %>
+						<% unless average.scenario.workshop? || average.scenario.practice? || average.scenario(active: false) %>
 							<tr>
 								<td>
 									<%= average.scenario_id %>. <%= average.scenario.title %>
+									<%= '<span class="label label-info">Sample</span>' if average.scenario.sample? %>
 								</td>
 								<td style="text-align: center;">
 									<% @information_gathering = Scoretype.last(
@@ -192,6 +194,7 @@
 								</td>
 							</tr>
 						<% end %>
+						
 					<% end %>
 				</tbody>
 			</table>
@@ -216,7 +219,7 @@
 			</h3>
 			<br />
 		</div>
-      <% Message.all(ncmhce: true).each do |m| %>
+      <% Message.all(exams: true).each do |m| %>
         <div class="alert alert-info" style="border: none;"><%= m.body %></div>
       <% end %>
 	 	<% unless @user.expired? %>
@@ -584,6 +587,9 @@
 							<%= purchase.package %>
 							<% if purchase.options %>
 								<%= purchase.options %>
+							<% end %>
+							<% unless purchase.options2 == '0' %>
+								+ <%= purchase.options2 %> Exam Scenarios
 							<% end %>
 						</td>
 					</tr>

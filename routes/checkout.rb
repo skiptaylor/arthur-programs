@@ -93,13 +93,13 @@ post '/checkout/:product/?' do
                email = 'ncmhce'
                  msg = true
     params[:optional] ? params[:optional] = '+ Hard Copy' : params[:optional] = '+ eBook'
-    params[:optional2] ? params[:optional2] = '' : params[:optional2] = '+ Exam Scenarios'
-
+    params[:optional2] ? params[:optional2] = (user.max_practice_scenarios = (user.max_practice_scenarios + 10)) : params[:optional2] = '0' 
 
   when 'Full Package'
     user.ncmhce_downloads = true
     user.ncmhce_flashcards = true
     user.max_scenarios = (user.max_scenarios + 36)
+    user.max_practice_scenarios = (user.max_practice_scenarios + 10)
     params[:package] = 'NCMHCE: Full Package'
                email = 'ncmhce'
                  msg = true
@@ -166,6 +166,7 @@ post '/checkout/:product/?' do
     user.save
   	user.purchases.create(package: params[:package],
   		                    options: params[:optional],
+                         options2: params[:optional2],
                         stripe_id: charge.id,
                            amount: params[:amount],
                          address1: params[:address1],

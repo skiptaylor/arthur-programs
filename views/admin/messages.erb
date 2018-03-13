@@ -5,10 +5,6 @@
   </div>
   
   <div class="span9">
-    <!-- <ul class="breadcrumb">
-      <li>Admin <span class="divider">/</span></li>
-      <li class="active">Messages</li>
-    </ul> -->
     
     <h2>New Message</h2>
     
@@ -33,8 +29,8 @@
           </label>
         </div>
         <div class="span1">
-          <label class="checkbox" for="ceu">
-            <input type="checkbox" name="ceu" id="ceu"> CEU
+          <label class="checkbox" for="exams">
+            <input type="checkbox" name="exams" id="exams"> Exams
           </label>
         </div>
         <div class="span3" style="text-align: right;">
@@ -50,7 +46,7 @@
         <th style="text-align: center;"><small>Profile</small></th>
         <th style="text-align: center;"><small>NCMHCE</small></th>
         <th style="text-align: center;"><small>NCE</small></th>
-		  <th style="text-align: center;"><small>CEU</small></th>
+		  <th style="text-align: center;"><small>Exams</small></th>
         <th></th>
       </thead>
       <tbody>
@@ -60,7 +56,7 @@
             <td style="text-align: center;"><%= '<i class="icon-ok"' if m.profile == true %></td>
             <td style="text-align: center;"><%= '<i class="icon-ok"' if m.ncmhce == true %></td>
             <td style="text-align: center;"><%= '<i class="icon-ok"' if m.nce == true %></td>
-				<td style="text-align: center;"><%= '<i class="icon-ok"' if m.ceu == true %></td>
+				<td style="text-align: center;"><%= '<i class="icon-ok"' if m.exams == true %></td>
             <td><a href="/admin/messages/<%= m.id %>/delete" style="padding: 0 2px 2px 2px;" class='delete btn btn-small btn-danger'><small><i class="icon icon-remove icon-white"></i></small></a></td>
           </tr>
         <% end %>

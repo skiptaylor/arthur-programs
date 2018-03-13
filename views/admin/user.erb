@@ -175,7 +175,7 @@
 						<td>
 							<%= purchase.package %>
 							<br />
-							<span style="font-size: 90%;"><%= purchase.options %></span>
+							<span style="font-size: 90%;"><%= purchase.options %></span> <% unless purchase.options2 == '0' %><span style="font-size: 90%;">+ <%= purchase.options2 %> Exam Scenarios</span><% end %>
 						</td>
 						<td><a href="https://manage.stripe.com/#payments/<%= purchase.stripe_id %>" target="_blank">Stripe</a></td>
 						<td><a href="/admin/users/<%= purchase.user.id %>"><%= purchase.user.email %></a></td>

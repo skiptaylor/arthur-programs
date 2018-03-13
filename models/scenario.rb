@@ -33,9 +33,5 @@ class Scenario
 		self.destroy!
 	end
   
-	def expire_on_for_ceu
-		Use.first(user_id: self.id, scenario_id: self.id)
-    
-	end
   
 end

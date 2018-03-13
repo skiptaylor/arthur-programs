@@ -7,6 +7,7 @@ class Purchase
 
 	property :package,   String
 	property :options,   String
+  property :options2,   String
 	property :stripe_id, String
 	property :amount,	   Float
 	property :address1,  String
