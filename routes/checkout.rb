@@ -2,9 +2,9 @@ get '/checkout/:product/?' do
 	@product_name = ''
 	case params[:product]
 	when 'nce'
-		@product_name = "Dr. Arthur's NCE Study Guide"
+		@product_name = "Dr. Arthur's NCE Study Program"
 	when 'nce-upgrade'
-		@product_name = "Dr. Arthur's NCE Study Guide"
+		@product_name = "Dr. Arthur's NCE Study Program"
 	when 'nce-hard-copy'
 		@product_name = "Dr. Arthur's NCE Study Guide"
 	when 'ncmhce'

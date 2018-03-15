@@ -93,21 +93,6 @@
 			<br />
 		</div>
 		
-		<!-- <div class="hidden-desktop">
-			<h3>
-				<span class="oswald" style="font-size: 1.5em;">NCMHCE Tutorial Scenarios</span>
-			</h3>
-			<div style="margin: 6px 0 0 0;">
-				<% if @user.max_scenarios < 36 %>
-					<a class="btn btn-success btn-small" style="margin: 0 0 6px 0;" href="/checkout/ncmhce-upgrade">Buy 12 more scenarios for $95</a>
-				<% end %>
-				<% unless @user.expired? %>
-				<% unless @user.purchases.any? { |purchase| purchase.options == "+ Hard Copy" } %>
-					<a class="btn btn-success btn-small" style="margin: 0 0 6px 0;" href="/checkout/ncmhce-hard-copy">Buy a hard copy for $40.65</a>
-				<% end %>
-				<% end %>
-			</div>
-		</div> -->
 
     <% Message.all(ncmhce: true).each do |m| %>
       <div class="alert alert-info" style="border: none;"><%= m.body %></div>
@@ -292,13 +277,15 @@
 	
 	<!-- –––––––––––––––––– NCMHCE study –––––––––––––––––– -->
 
-		<% unless @user.expired? %>
-		<% unless @user.purchases.any? { |purchase| purchase.options == "+ Hard Copy" } %>
-			<span style="float: right;"><a class="btn btn-success btn-small" href="/checkout/ncmhce-hard-copy">Buy a hard copy for $40.65</a></span>
-		<% end %>
-		<% end %>
+		
 		
 		<% if @user.max_scenarios > 0 && @user.ncmhce_downloads %>
+		
+		<% unless @user.expired? %>
+		<% unless @user.purchases.any? { |purchase| purchase.options == "+ Hard Copy" } %>
+			<span style="float: right;"><a class="btn btn-success btn-small" href="/checkout/nce-hard-copy">Buy a hard copy for $40.65</a></span>
+		<% end %>
+		<% end %>
 
 			<div class="visible-desktop">
 				<h3>
@@ -330,11 +317,7 @@
   					<% unless @user.max_exams > 2 %>
   						<span style="float: right; margin-left: 3px;">&nbsp;<a class="btn btn-success btn-small" href="/checkout/nce-upgrade">Buy 2 more practice exams for $60</a></span>
   					<% end %>
-  					<% unless @user.expired? %>
-  					<% unless @user.purchases.any? { |purchase| purchase.options == "+ Hard Copy" } %>
-  						<span style="float: right;"><a class="btn btn-success btn-small" href="/checkout/nce-hard-copy">Buy a hard copy for $13.95</a></span>
-  					<% end %>
-  					<% end %>
+  					
   			</h3>
   			<br />
   		</div>
@@ -392,7 +375,15 @@
 <!-- –––––––––––––––––– NCE study –––––––––––––––––– -->
 	
 	
+	
+	
 	<% if @user.max_exams > 0 && @user.nce_downloads %>
+	
+	<% unless @user.expired? %>
+	<% unless @user.purchases.any? { |purchase| purchase.options == "+ Hard Copy" } %>
+		<span style="float: right;"><a class="btn btn-success btn-small" href="/checkout/nce-hard-copy">Buy a hard copy for $57.45</a></span>
+	<% end %>
+	<% end %>
 
 		<div class="visible-desktop">
 			<h3>

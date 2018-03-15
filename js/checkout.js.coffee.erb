@@ -9,7 +9,7 @@ $(window).load ->
 	summarize = () ->
 		$('#program-package-confirmation').html 			$("input[name='package']:checked").val()
 		$('#optional-enhancements-confirmation').html 	$("input[name='optional']:checked").val()
-		$('#optional2-enhancements-confirmation').html 	$("input[name='optional2']:checked").val()
+		$('#optional2-enhancements-confirmation').html 	$("input[name='optional2']:checked").val()		
 		$('#name-confirmation').html 							"#{$('input#first_name').val()} #{$('input#last_name').val()}"
 		$('#email-confirmation').html 						$('input#email').val()
 		$('#password-confirmation').html 					$('input#password').val()
@@ -21,7 +21,7 @@ $(window).load ->
 		$('#city-confirmation').html							$('input#city').val()
 		$('#state-confirmation').html							$('select#state').val()
 		$('#zip-confirmation').html							$('input#zip').val()
-		
+				
 		total = 0
 		package_total  = parseFloat($("input[name='package']:checked").attr('data-price'))  || 0
 		optional_total = parseFloat($("input[name='optional']:checked").attr('data-price')) || 0

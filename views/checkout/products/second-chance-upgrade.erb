@@ -1,28 +1,25 @@
 <fieldset>
-	<legend><span style="padding: 0 9px 0 7px;">1</span> NCMHCE Second Chance Upgrade</legend>
+	<legend><span class="oswald" style="padding: 0 9px 0 7px;">1</span> Package</legend>
 	
-	<div class="row">		
-		<div class="span10 content">
-				
-			<p style="margin-top: 2.5em;">
-				<label class="radio package-name">
-					<input name="package" type="radio" id="second-chance-upgrade" value="Second Chance Upgrade" data-price='110' checked="checked" /> &nbsp;<span style="font-size: 1.3em;" class="oswald">NCMHCE Second Chance Upgrade $110</span>
-					<ul class="package-features">
-						<li><strong>All 36 Online Scenarios</strong></li>
-						<li>Study Supplement eBook (updated for DSM-5&trade;)</li>
-						<li>Consultation with Dr. Gary Arthur for up to 30 minutes</li>
-						<li>Pass Guarantee</li>
-						<li>Receive unlimited access to online exams for one full year</li>
-					</ul>
-					
-				</label>
+	<div class="row">	
+		<div class="span12 content">
+			<label class="radio package-name">
+				<input style="font-size: 2em;" name="package" type="radio" id="second-chance-upgrade" value="Second Chance Upgrade" data-price='110' checked="checked" /> &nbsp;<span style="font-size: 1.3em;" class="oswald">NCMHCE Second Chance Upgrade $110</span>
+			</label>
+			<p>
+				<ul class="package-features">
+					<li><strong>All 36 Online Scenarios</strong></li>
+					<li>Study Supplement eBook (updated for DSM-5&trade;)</li>
+					<li>Consultation with Dr. Gary Arthur for up to 30 minutes</li>
+					<li>Pass Guarantee</li>
+					<li>Receive unlimited access to online exams for one full year</li>
+				</ul>
 			</p>
-				
-		</div>	<!-- span10 -->				
-	</div>	<!-- row -->
-	
-	<div class="hidden">
-		<input type="text" style="color: #333333;" class="input-xlarge focus" id="license" name="license" <%= "value='#{locals[:user].license}' disabled" if user %> autofocus required />
+		</div>
 	</div>
+	
+	<!-- <div class="hidden">
+		<input type="text" style="color: #333333;" class="input-xlarge focus" id="license" name="license" <%= "value='#{locals[:user].license}' disabled" if user %> autofocus required />
+	</div> -->
 	
 </fieldset>
