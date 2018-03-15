@@ -20,8 +20,8 @@
 		<form class="well form-horizontal" method="post" autocomplete="off">
 			<p>
 				<label for="email"><strong>Email address</strong></label>
-				<input type="text" style="width: 96%; color: #333333;" name="email" id="email" value="<%= @user.email %>" />
-				<span class="hidden"><input type="text" style="width: 96%; color: #333333;" name="email" id="email" value="<%= @user.email %>" /></span>
+				<input type="text" class="uneditable-input" style="width: 96%; color: #333333;" name="email" id="email" value="<%= @user.email %>" />
+				<!-- <span class="hidden"><input type="text" style="width: 96%; color: #333333;" name="email" id="email" value="<%= @user.email %>" /></span> -->
 			</p>
 			<p>
 				<label for="phone"><strong>Phone number</strong></label>
@@ -128,8 +128,8 @@
 				<thead>
 					<tr>
 						<th>Scenario</th>
-						<th style="text-align: center;">IG</th>
-						<th style="text-align: center;">DM</th>
+						<th>IG</th>
+						<th>DM</th>
 						<th>Last Taken</th>
 						<th style="text-align: right;"></th>
 					</tr>
@@ -143,24 +143,24 @@
 									<%= average.scenario_id %>. <%= average.scenario.title %>
 									<%= '<span class="label label-info">Sample</span>' if average.scenario.sample? %>
 								</td>
-								<td style="text-align: center;">
+								<td>
 									<% @information_gathering = Scoretype.last(
 										type: "Information Gathering",
 										scenario_id: average.scenario_id,
 										user_id: session[:user]
 									) %>
 									<% if @information_gathering %>
-									<%= @information_gathering.correct %>/<%= @information_gathering.possible %> 
+									<small><%= @information_gathering.correct %>/<%= @information_gathering.possible %> </small>
 									<% else %><small>N/A</small><% end %>
 								</td>
-								<td style="text-align: center;">
+								<td>
 									<% @decision_making = Scoretype.last(
 										type: "Decision Making",
 										scenario_id: average.scenario_id,
 										user_id: session[:user]
 									) %>
 									<% if @decision_making %>
-									<%= @decision_making.correct %>/<%= @decision_making.possible %>
+									<small><%= @decision_making.correct %>/<%= @decision_making.possible %></small>
 									<% else %><small>N/A</small><% end %>
 								</td>
 								<% if avg = Average.last(user_id: session[:user], scenario_id: average.scenario_id) %>
@@ -168,7 +168,7 @@
 								<% else %>
 									<td>Unfinished</td>
 								<% end %>
-								<td style="text-align: right;">
+								<td style="text-align: center; background-color: #f2f3f3;">
 									<% unless @user.expired? %>
 									<% if avg == nil %>
 										<a href="/ncmhce/scenarios/<%= average.scenario_id %>">Continue</a>
@@ -215,8 +215,8 @@
 				<thead>
 					<tr>
 						<th>Scenario</th>
-						<th style="text-align: center;">IG</th>
-						<th style="text-align: center;">DM</th>
+						<th>IG</th>
+						<th>DM</th>
 						<th>Last Taken</th>
 						<th style="text-align: right;"></th>
 					</tr>
@@ -228,24 +228,24 @@
 								<td>
 									<%= average.scenario_id %>. <%= average.scenario.title %>
 								</td>
-								<td style="text-align: center;">
+								<td>
 									<% @information_gathering = Scoretype.last(
 										type: "Information Gathering",
 										scenario_id: average.scenario_id,
 										user_id: session[:user]
 									) %>
 									<% if @information_gathering %>
-									<%= @information_gathering.correct %>/<%= @information_gathering.possible %> 
+									<small><%= @information_gathering.correct %>/<%= @information_gathering.possible %></small> 
 									<% else %><small>N/A</small><% end %>
 								</td>
-								<td style="text-align: center;">
+								<td>
 									<% @decision_making = Scoretype.last(
 										type: "Decision Making",
 										scenario_id: average.scenario_id,
 										user_id: session[:user]
 									) %>
 									<% if @decision_making %>
-									<%= @decision_making.correct %>/<%= @decision_making.possible %>
+									<small><%= @decision_making.correct %>/<%= @decision_making.possible %></small>
 									<% else %><small>N/A</small><% end %>
 								</td>
 								<% if avg = Average.last(user_id: session[:user], scenario_id: average.scenario_id) %>
@@ -253,7 +253,7 @@
 								<% else %>
 									<td>Unfinished</td>
 								<% end %>
-								<td style="text-align: right;">
+								<td style="text-align: center; background-color: #f2f3f3;">
 									<% unless @user.expired? %>
 									<% if avg == nil %>
 										<a href="/ncmhce/scenarios/<%= average.scenario_id %>">Continue</a>
@@ -353,7 +353,7 @@
   								<% end %>
   							</td>
   							<td><%= average.created_at.display %></td>
-  							<td style="text-align: right;">
+  							<td style="text-align: center; background-color: #f2f3f3;">
   								<% unless @user.expired? %>
   								<% if avg == nil %>
   									<a href="/nce/exams/<%= average.exam_id %>">Continue</a>
@@ -460,7 +460,7 @@
 				<tr>
 					<th>Book</th>
 					<th class="hidden-phone">Format</th>
-					<th style="text-align: center;">Last Update</th>
+					<!-- <th style="text-align: center;">Last Update</th> -->
 					<th class="hidden-phone"></th>
 					<th></th>
 				</tr>
@@ -471,15 +471,15 @@
 					<tr>
 						<td>NCMHCE Study Supplement online</td>
 						<td colspan="2">
-							<span class="label label-important">NEW</span> &nbsp;<span style="font-weight: 600;">Study online. <small>No download needed!</small></span>
+							<span class="label label-important">NEW</span> &nbsp;Study online. <small>No download needed!</small>
 						</td>
 						<td colspan="2" style="text-align: right;"><a href="/manuals/98/sections/cover">Study now</a></td>
 					</tr>
 					<tr>
 						<td>NCMHCE Study Supplement.pdf</td>
 						<td class="hidden-phone">Any device with a PDF Reader</td>
-						<td style="text-align: center;"><span class="badge badge-info"><small>5/26/2015</small></span></td>
-						<td class="hidden-phone">1.8MB</td>
+						<!-- <td style="text-align: center;"><span class="badge badge-info"><small>5/26/2015</small></span></td> -->
+						<td class="hidden-phone"><small>1.8MB</small></td>
 						<% unless @user.expired? %>
 						<td style="text-align: right;"><a href="/downloads/ncmhce?file=NCMHCE%20Study%20Supplement.pdf">Download</a></td>
 						<% end %>
@@ -487,8 +487,8 @@
 					<tr>
 						<td>NCMHCE Study Supplement.epub</td>
 						<td class="hidden-phone">iPhone/iPad, Android, eReaders</td>
-						<td style="text-align: center;"><span class="badge badge-info"><small>6/4/2015</small></span></td>
-						<td class="hidden-phone">499KB</td>
+						<!-- <td style="text-align: center;"><span class="badge badge-info"><small>6/4/2015</small></span></td> -->
+						<td class="hidden-phone"><small>499KB</small></td>
 						<% unless @user.expired? %>
 						<td style="text-align: right;"><a href="/downloads/ncmhce?file=NCMHCE%20Study%20Supplement.epub">Download</a></td>
 						<% end %>
@@ -498,8 +498,8 @@
 						<td class="hidden-phone">
 							<a href="#" class="top" rel="popover" title="Location of eBook on Kindle" data-content="Even if copied into the Books folder, this eBook might only be accessable from the Docs folder.">Kindle</a>
 						</td>
-						<td style="text-align: center;"><span class="badge badge-info"><small>6/19/2015</small></span></td>
-						<td class="hidden-phone">2.2MB</td>
+						<!-- <td style="text-align: center;"><span class="badge badge-info"><small>6/19/2015</small></span></td> -->
+						<td class="hidden-phone"><small>2.2MB</small></td>
 						<% unless @user.expired? %>
 						<td style="text-align: right;"><a href="/downloads/ncmhce?file=NCMHCE%20Study%20Supplement.mobi">Download</a></td>
 						<% end %>
