@@ -8,8 +8,8 @@ $(window).load ->
 	
 	summarize = () ->
 		$('#program-package-confirmation').html 			$("input[name='package']:checked").val()
-		$('#optional-enhancements-confirmation').html 	$("input[name='optional']:checked").val()
-		$('#optional2-enhancements-confirmation').html 	$("input[name='optional2']:checked").val()		
+		$('#optional-enhancements-confirmation').html 	$("input[name='optional']:checked").val() || ""
+		$('#optional2-enhancements-confirmation').html 	$("input[name='optional2']:checked").val() || ""		
 		$('#name-confirmation').html 							"#{$('input#first_name').val()} #{$('input#last_name').val()}"
 		$('#email-confirmation').html 						$('input#email').val()
 		$('#password-confirmation').html 					$('input#password').val()
