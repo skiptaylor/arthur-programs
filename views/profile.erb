@@ -283,7 +283,7 @@
 		
 		<% unless @user.expired? %>
 		<% unless @user.purchases.any? { |purchase| purchase.options == "+ Hard Copy" } %>
-			<span style="float: right;"><a class="btn btn-success btn-small oswald" style=" font-size: 0.9em;" href="/checkout/nce-hard-copy">Buy a hard copy for $40.65</a></span>
+			<span style="float: right;"><a class="btn btn-success btn-small oswald" style=" font-size: 0.9em;" href="/checkout/ncmhce-hard-copy">Buy a hard copy for $40.65</a></span>
 		<% end %>
 		<% end %>
 
