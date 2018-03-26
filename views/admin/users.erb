@@ -16,7 +16,6 @@
 			<button type="submit" style="border: 1px solid green;" class="btn btn-success ">Search</button>
 		</div>
 		</form>
-		
 
 		<table class="table table-condensed table-striped table-hover">
 			<thead>
@@ -45,11 +44,17 @@
 							<% end %> -->
 						</td>
 						<!-- <td>
-							<% unless user.name == 'Sample User (do not delete)' %><a href="/admin/users/<%= user.id %>/delete" style="float: right; padding: 0 2px;" class="btn btn-danger btn-mini"><strong>X</strong></a> &nbsp; <% end %><% if user.email == "sample" %>Sample <%= user.id %><% end %> -->
+							<% unless user.name == 'Sample User (do not delete)' %><a href="/admin/users/<%= user.id %>/delete" style="float: right; padding: 0 2px;" class="btn btn-danger btn-mini"><strong>X</strong></a> &nbsp; <% end %><% if user.email == "sample" %>Sample <%= user.id %><% end %>
+						</td> -->
 						<td style="text-align: right;">
+							<% if user.email == "sample" %>
+							<a href="/admin/users/<%= user.id %>/remove_sample">Remove</a>
+							<% else %>
 							<a href="/admin/users/<%= user.id %>">Edit</a>
+							<% end %>
 						</td>
 					</tr>
+					
 				<% end %>
 		  </tbody>
 		</table>

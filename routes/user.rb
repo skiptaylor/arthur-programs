@@ -32,7 +32,7 @@ get '/sign-out/?' do
   
 	session[:sample] = nil
 	session.clear
-	session[:alert]  = { style: 'alert-info', heading: 'You are now signed out.', message: 'Thank you, come again!' }
+	session[:alert]  = { style: 'alert-info', heading: 'You are now signed out.' }
 	redirect '/'
 end
 

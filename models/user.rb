@@ -76,6 +76,9 @@ class User
   
   def remove_sample
     Use.all(user_id: self.id).destroy
+    self.averages.each {|a| a.remove}
+    self.purchases.each {|p| p.remove}
+    self.scores.each {|s| s.remove}
     self.destroy!
   end
 	

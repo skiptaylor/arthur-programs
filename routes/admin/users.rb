@@ -177,3 +177,11 @@ get '/admin/users/:id/remove/?' do
 	session[:alert] = { style: 'alert-success', message: "User has been removed." }
 	redirect "/admin/users"
 end
+
+get '/admin/users/:id/remove_sample/?' do
+	admin!
+	@user = User.get params[:id]
+  @user.remove
+	session[:alert] = { style: 'alert-success', message: "Sample has been removed." }
+	redirect request.referrer
+end

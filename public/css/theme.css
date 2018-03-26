@@ -52,12 +52,12 @@ body	{
 }
 */
 
-/*.row	{
+.container	{
    -webkit-transition: all .8s ease-in-out;
         -o-transition: all .8s ease-in-out;
            transition: all .8s ease-in-out;
 }
-*/
+
 #content {
 	font-size: 15px;
 	line-height: 21px;
@@ -780,11 +780,27 @@ form#payment-form fieldset legend span {
 
 div#errors {
   background-color: lightyellow; 
+  color: #bc1424;
+  font-size: 0.7em;
 }
+
 div#errors ul {
-	color: red;
-	padding: .5em; 
+	color: #bc1424;
+	padding: 0.5em; 
 }
+
+
+div#errors.err {
+  background-color: #fffaa4; 
+  font-size: 0.85em;
+}
+
+div#errors.err ul li {
+	color: #bc1424;
+}
+
+
+
 
 .card-expiry-year {
 	width: 70px !important; 
@@ -1150,8 +1166,8 @@ div.reference p  {
 	.section-header {
 		font-size: 1.7em;
 	}
-	.page-header h1 {
-		font-size: 1.4em;
+	h1.page-header  {
+		font-size: 1.2em;
 	}
 	.home-space  {
 		margin-bottom: 1em;
