@@ -44,74 +44,74 @@
 </head>
 
 <body>
-	<div class="row">
-		<div class="navbar navbar-inverse navbar-fixed-top">
-			<div class="navbar-inner">
-				<div class="container">
-					<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-					</a>
-					<% unless session[:admin] %>
-					<a class="brand oswald" href="#" style="">CounselorExams.com</a>
-					<% end %>
-					<div class="nav-collapse">
-						<% unless session[:user] %>
-						<ul class="nav">
-							<li class="<%= active 'welcome' %>"><a href="/welcome">Welcome</a></li>
-							<li class="<%= active 'ncmhce' %>"><a href="/ncmhce">NCMHCE</a></li>
-							<li class="<%= active 'nce' %>"><a href="/nce">NCE</a></li>
-							<li class="<%= active 'how-it-works' %>"><a href="/how-it-works">How It Works</a></li>
-							<li class="<%= active 'faq' %>"><a href="/faq">FAQ</a></li>
-							<li class="<%= active 'feedback' %>"><a href="/feedback">Feedback</a></li>
-						</ul>
-						<ul class="nav pull-right">
-							<% unless active 'sign-in' %>
-							<li><a href="/sign-in"><span style="color: yellow;">Sign In</span></a></li>
-							<% end %>
-						</ul>
-						<% else %>
-						<ul class="nav">
-							<li class="<%= active 'profile' %>"><a href="/profile">Profile</a></li>
-							<li class="<%= active 'ncmhce' %>"><a href="/ncmhce/scenarios">NCMHCE</a></li>
-							<li class="<%= active 'nce' %>"><a href="/nce/exams">NCE</a></li>
-							<li class="<%= active 'how-it-works' %>"><a href="/how-it-works">How It Works</a></li>
-							<li class="<%= active 'faq' %>"><a href="/faq">FAQ</a></li>
-							<li class="<%= active 'feedback' %>"><a href="/feedback">Feedback</a></li>
-						</ul>
-						<ul class="nav pull-right">
-							<% if session[:admin] %>
-							<li class="dropdown visible-desktop">
-								<a href="#" class="dropdown-toggle" data-toggle="dropdown">
-									Admin
-									<span class="caret"></span>
-								</a>
-								<ul class="dropdown-menu">
-									<li><a href="/admin/users">Users</a></li>
-									<li><a href="/admin/purchases">Purchases</a></li>
-									<li><a href="/admin/messages">Messages</a></li>
-									<li><a href="/admin/stats">Stats</a></li>
-									<li class="divider"></li>
-									<li><a href="/admin/scenarios">NCMHCE Scenarios</a></li>
-									<li><a href="/admin/exams">NCE Exams</a></li>
-									<li><a href="/admin/glossary/ncmhce">NCMHCE Flashcards</a></li>
-									<li><a href="/admin/glossary/nce">NCE Flashcards</a></li>
-									<li class="divider"></li>
-									<li><a href="/admin/manuals">Manuals</a></li>
-									<li><a href="/admin/issues">Issues</a></li>
-									<li><a href="/admin/markdown">Markdown Guidelines</a></li>
-								</ul>
-							</li>
-							<% end %>
-							<li><a href="/sign-out"><span style="color: yellow;">Sign Out</span></a></li>
-						</ul>
+	
+	<div class="navbar navbar-inverse navbar-fixed-top">
+		<div class="navbar-inner">
+			<div class="container">
+				<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</a>
+				<% unless session[:admin] %>
+				<a class="brand oswald" href="#" style="">CounselorExams.com</a>
+				<% end %>
+				<div class="nav-collapse">
+					<% unless session[:user] %>
+					<ul class="nav">
+						<li class="<%= active 'welcome' %>"><a href="/welcome">Welcome</a></li>
+						<li class="<%= active 'ncmhce' %>"><a href="/ncmhce">NCMHCE</a></li>
+						<li class="<%= active 'nce' %>"><a href="/nce">NCE</a></li>
+						<li class="<%= active 'how-it-works' %>"><a href="/how-it-works">How It Works</a></li>
+						<li class="<%= active 'faq' %>"><a href="/faq">FAQ</a></li>
+						<li class="<%= active 'feedback' %>"><a href="/feedback">Feedback</a></li>
+					</ul>
+					<ul class="nav pull-right">
+						<% unless active 'sign-in' %>
+						<li><a href="/sign-in"><span style="color: yellow;">Sign In</span></a></li>
 						<% end %>
-					</div>
+					</ul>
+					<% else %>
+					<ul class="nav">
+						<li class="<%= active 'profile' %>"><a href="/profile">Profile</a></li>
+						<li class="<%= active 'ncmhce' %>"><a href="/ncmhce/scenarios">NCMHCE</a></li>
+						<li class="<%= active 'nce' %>"><a href="/nce/exams">NCE</a></li>
+						<li class="<%= active 'how-it-works' %>"><a href="/how-it-works">How It Works</a></li>
+						<li class="<%= active 'faq' %>"><a href="/faq">FAQ</a></li>
+						<li class="<%= active 'feedback' %>"><a href="/feedback">Feedback</a></li>
+					</ul>
+					<ul class="nav pull-right">
+						<% if session[:admin] %>
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+								Admin
+								<span class="caret"></span>
+							</a>
+							<ul class="dropdown-menu">
+								<li><a href="/admin/users">Users</a></li>
+								<li><a href="/admin/purchases">Purchases</a></li>
+								<li><a href="/admin/messages">Messages</a></li>
+								<li><a href="/admin/stats">Stats</a></li>
+								<li class="divider"></li>
+								<li><a href="/admin/scenarios">NCMHCE Scenarios</a></li>
+								<li><a href="/admin/exams">NCE Exams</a></li>
+								<li><a href="/admin/glossary/ncmhce">NCMHCE Flashcards</a></li>
+								<li><a href="/admin/glossary/nce">NCE Flashcards</a></li>
+								<li class="divider"></li>
+								<li><a href="/admin/manuals">Manuals</a></li>
+								<li><a href="/admin/issues">Issues</a></li>
+								<li><a href="/admin/markdown">Markdown Guidelines</a></li>
+							</ul>
+						</li>
+						<% end %>
+						<li><a href="/sign-out"><span style="color: yellow;">Sign Out</span></a></li>
+					</ul>
+					<% end %>
 				</div>
 			</div>
 		</div>
 	</div>
+	
    <noscript>
 	 <div class="nojavascript">
 		 <strong>It appears you don't have JavaScript enabled.</strong></strong> This site makes heavy use of JavaScript. Enable JavaScript in your browser for full functionality.

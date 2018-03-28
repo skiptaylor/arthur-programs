@@ -287,7 +287,7 @@
 		<% end %>
 		<% end %>
 
-			<div class="visible-desktop">
+			<div>
 				<h3>
 					<span class="oswald" style="font-size: 1.8em;">NCMHCE Study Online</span>
 				</h3>
@@ -450,7 +450,7 @@
 	
 <!-- –––––––––––––––––– downloads –––––––––––––––––– -->
 
-	<% if @user.nce_downloads || @user.ncmhce_downloads %>
+		<!-- <% if @user.nce_downloads || @user.ncmhce_downloads %>
 		<div>
 			<h3><span class="oswald" style="font-size: 1.8em;">Downloads</span></h3>
 			<br />
@@ -459,9 +459,9 @@
 			<thead>
 				<tr>
 					<th>Book</th>
-					<th class="hidden-phone">Format</th>
+					<th class="hidden-phone">Format</th> -->
 					<!-- <th style="text-align: center;">Last Update</th> -->
-					<th class="hidden-phone"></th>
+					<!-- <th class="hidden-phone"></th>
 					<th></th>
 				</tr>
 			</thead>
@@ -477,18 +477,18 @@
 					</tr>
 					<tr>
 						<td>NCMHCE Study Supplement.pdf</td>
-						<td class="hidden-phone">Any device with a PDF Reader</td>
+						<td class="hidden-phone">Any device with a PDF Reader</td> -->
 						<!-- <td style="text-align: center;"><span class="badge badge-info"><small>5/26/2015</small></span></td> -->
-						<td class="hidden-phone"><small>1.8MB</small></td>
+						<!-- <td class="hidden-phone"><small>1.8MB</small></td>
 						<% unless @user.expired? %>
 						<td style="text-align: right;"><a href="/downloads/ncmhce?file=NCMHCE%20Study%20Supplement.pdf">Download</a></td>
 						<% end %>
 					</tr>
 					<tr>
 						<td>NCMHCE Study Supplement.epub</td>
-						<td class="hidden-phone">iPhone/iPad, Android, eReaders</td>
+						<td class="hidden-phone">iPhone/iPad, Android, eReaders</td> -->
 						<!-- <td style="text-align: center;"><span class="badge badge-info"><small>6/4/2015</small></span></td> -->
-						<td class="hidden-phone"><small>499KB</small></td>
+						<!-- <td class="hidden-phone"><small>499KB</small></td>
 						<% unless @user.expired? %>
 						<td style="text-align: right;"><a href="/downloads/ncmhce?file=NCMHCE%20Study%20Supplement.epub">Download</a></td>
 						<% end %>
@@ -497,9 +497,9 @@
 						<td>NCMHCE Study Supplement.mobi</td>
 						<td class="hidden-phone">
 							<a href="#" class="top" rel="popover" title="Location of eBook on Kindle" data-content="Even if copied into the Books folder, this eBook might only be accessable from the Docs folder.">Kindle</a>
-						</td>
+						</td> -->
 						<!-- <td style="text-align: center;"><span class="badge badge-info"><small>6/19/2015</small></span></td> -->
-						<td class="hidden-phone"><small>2.2MB</small></td>
+						<!-- <td class="hidden-phone"><small>2.2MB</small></td>
 						<% unless @user.expired? %>
 						<td style="text-align: right;"><a href="/downloads/ncmhce?file=NCMHCE%20Study%20Supplement.mobi">Download</a></td>
 						<% end %>
@@ -544,13 +544,13 @@
 						<td style="text-align: right;"><a href="/downloads/nce?file=NCE%20Study%20Guide.mobi">Download</a></td>
 						<% end %>
 					</tr>
-					
+
 				<% end %>
 			</tbody>
 		</table>
 
 		<hr /><br />
-	<% end %>
+	<% end %> -->
 	
 <!-- –––––––––––––––––– purchases –––––––––––––––––– -->
 
