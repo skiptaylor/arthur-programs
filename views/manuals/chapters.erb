@@ -1,69 +1,102 @@
 <div class="row">
-	<div class="span4 affix">
-		
+	<div class="span4 affix hidden-phone">
 		<%= erb :'manuals/nav', layout: false %>
-		
 		<div class="menu">
 			<p class="oswald center" style="background-color: #868686; color: white; margin: 0.2em 0 0 0; font-size: 0.8em;">CHAPTERS</p>
-
 			<div onmouseover="document.body.style.overflow='hidden';"  onmouseout="document.body.style.overflow='auto';" id="menu-center" style="height: calc(100vh - 210px); overflow-y: scroll; border: 1px solid #dbdbdb; display: flex;">
-				
 				<ul class="nav nav-stacked" style="padding: 4px 0 0 0;">
 					<% @chapter.sort_by(&:chapter_number).each do |chapter| %>
 					<% if chapter.chapter_title != "" %>
 					<li>
 						<a href="#<%= chapter.id %>"><%= chapter.chapter_title %></a>
-
-							<% elsif chapter.sub_chapter_title != "" %>
+					<% elsif chapter.sub_chapter_title != "" %>
 							<ul class="nav">
 								<li>
 									<a href="#<%= chapter.id %>"><%= chapter.sub_chapter_title %></a>
 								</li>
 							</ul>
-							<% end %>
-
+					<% end %>
 					</li>
 					<% end %>
 				</ul>
-				
 			</div>
-
 		</div>
-		
 	 <br />
-		<!-- <p class="center">
-			<a href="#top"><img src="/img/phone-up-pointer.svg" /></i></a><br /><br /><br />
-		</p> -->
 	</div>
 
-	<div class="span8 offset4">
-
+	<div class="span8 offset4 hidden-phone">
 		<h4 class="oswald" style="color: #1c89de; font-weight: 400;">Study Program Guide prepared for <%= @user.name %></h4>
 		<h1 style="font-size: 2.5em;"><%= @manual.name %></h1>
 		<hr />
-
-		
-			
 		<% @chapter.sort_by(&:chapter_number).each do |chapter| %>
-		
-
 		<div id="<%= chapter.id %>" class="md">
 			<% if chapter.chapter_title != "" %>
-
 			<a name="<%= chapter.id %>" style="color: #244883; text-decoration: none;"><h1 style="font-size: 2em; margin: 1em 0 0.6em 0;"><%= chapter.chapter_title %></h1></a>
-			<% else %>
+			<% elsif chapter.sub_chapter_title != "" %>
 			<a name="<%= chapter.id %>" style="color: #244883; text-decoration: none;"><h2 style="padding-top: 0.1em; font-size: 1.6em; line-height: 1.2em;"><%= chapter.sub_chapter_title %></h2></a>
 			<% end %>	
-
 			<%= markdown chapter.body %>
-			
 		</div>
 		<% end %>
+	</div>
+	
+	
 		
+		
+			
+	
+	<div class="span12 visible-phone">
+		<div class="dropdown visible-phone affix" style="margin-top: -4.3em; display: block;">
+			<button class="btn btn-primary btn-block dropdown-toggle" id="menu1" type="button" data-toggle="dropdown" style="padding: 12px 15px 9px 15px;">Sections &nbsp;
+			<span class="caret"></span></button>
+			<ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+				<li role="presentation" class="<%= active "cover" %>">
+					<a role="menuitem" tabindex="-1" href="/manuals/<%= @manual.id %>/sections/cover">Cover</a>
+				</li>
+				<% @section.sort_by(&:section_number).each do |section| %>
+				<li role="presentation" class="<%= active "#{section.id}" %>">
+					<a role="menuitem" tabindex="-1" href="/manuals/<%= @manual.id %>/sections/<%= section.id %>/chapters"><%= section.section_title %></a>
+				</li>
+				<% end %>
+			</ul>
+		</div>
+		<div class="dropdown affix" style="margin-top: -4.3em; margin-left: 7.4em; display: block;">
+			<button class="btn btn-primary dropdown-toggle" id="menu1" type="button" data-toggle="dropdown" style="padding: 12px 15px 9px 15px;">Select Chapter
+			<span class="caret"></span></button>
+			<ul class="dropdown-menu" role="menu" aria-labelledby="menu1" style="margin-left: -7.4em;">
+				<% @chapter.sort_by(&:chapter_number).each do |chapter| %>
+					<% if chapter.chapter_title != "" %>
+					<li class="<%= active "#{chapter.id}" %>">
+						<a role="menuitem" tabindex="-1" href="#<%= chapter.id %>"><%= chapter.chapter_title %></a>
+					</li>
+					<% end %>
+				<% end %>
+			</ul>
+		</div>
 	</div>
 </div>
+<div class="row visible-phone">
+	<div class="span12 md">
+		<% @chapter.sort_by(&:chapter_number).each do |chapter| %>
+		<div id="<%= chapter.id %>" class="md">
+			<% if chapter.chapter_title != "" %>
+			<a name="<%= chapter.id %>" style="color: #244883; text-decoration: none;"><h1 style="font-size: 1.7em;"><%= chapter.chapter_title %></h1></a>
+			<% else %>
+			<a name="<%= chapter.id %>" style="color: #244883; text-decoration: none;"><h1 class="oswald" style="padding-top: 0.1em; font-size: 1.2em; line-height: 1.2em;"><%= chapter.sub_chapter_title %></h1></a>
+			<% end %>
+			<%= markdown chapter.body %>
+		<br />
+		</div>
+		<% end %>
+	</div>
+		
+</div>
 
-<!-- <a href="#top"><img src="/img/phone-up-pointer.svg" style="position: fixed; bottom: 12px; right: 6px;" /></a> -->
+
+
+
+
+
 
 <script>
 	$(document).ready(function () {
