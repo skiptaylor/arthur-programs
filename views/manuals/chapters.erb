@@ -44,17 +44,20 @@
 		
 	<div class="span12 visible-phone">
 		<%= erb :'manuals/nav', layout: false %>
-			<p>Chapters</p>
-			<ul>
-				<% @chapter.sort_by(&:chapter_number).each do |chapter| %>
-					<% if chapter.chapter_title != "" %>
-					<li role="presentation" class="<%= active "#{chapter.id}" %>">
-						<a role="menuitem" tabindex="-1" href="/manuals/<%= @manual.id %>/sections/<%= params[:section_id] %>/chapters/<%= chapter.id %>/chapter"><%= chapter.chapter_title %></a>
-					</li>
-					<% end %>
+		<br style="margin-top: 0.1em;" />
+		<h2 class="oswald">Chapters</h2>
+		<ul style=" margin: 1em 0 0 0;">
+			<% @chapter.sort_by(&:chapter_number).each do |chapter| %>
+				<% if chapter.chapter_title != "" %>
+				<li role="presentation" class="<%= active "#{chapter.id}" %>" style="list-style: none; display: block;">
+					<hr style="margin: 0.4em 0;" />
+					<a role="menuitem" tabindex="-1" href="/manuals/<%= @manual.id %>/sections/<%= params[:section_id] %>/chapters/<%= chapter.id %>/chapter"><%= chapter.chapter_title %></a>
+				</li>
+				
 				<% end %>
-			</ul>
-		
+			<% end %>
+			<hr style="margin: 0.4em 0;" />
+		</ul>		
 	</div>	
 			
 	
