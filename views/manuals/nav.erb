@@ -1,5 +1,5 @@
 <div class="dropdown hidden-phone">
-	<button class="btn btn-primary btn-block dropdown-toggle" id="menu1" type="button" data-toggle="dropdown">SECTIONS &nbsp;
+	<button class="btn btn-primary btn-block dropdown-toggle" id="menu1" type="button" data-toggle="dropdown">SECTIONS
 	<span class="caret"></span></button>
 	<ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
 		<li role="presentation" class="<%= active "cover" %>">
@@ -22,8 +22,8 @@
 
 
 
-<div class="dropdown visible-phone" style="margin-top: -1em;">
-	<button class="btn btn-primary btn-block dropdown-toggle" id="menu1" type="button" data-toggle="dropdown" style="padding: 12px 20px 9px 20px;">SECTIONS &nbsp;
+<div class="dropdown visible-phone affix" style="margin-top: -4.3em; display: block;">
+	<button class="btn btn-primary btn-block dropdown-toggle" id="menu1" type="button" data-toggle="dropdown" style="padding: 12px 15px 9px 15px;">Sections &nbsp; 
 	<span class="caret"></span></button>
 	<ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
 		<li role="presentation" class="<%= active "cover" %>">
@@ -36,10 +36,6 @@
 		<% end %>
 	</ul>
 </div>
-<div class="visible-phone">
-	<h1 style="font-size: 1.2em; padding: 0.05em 0;">
-		<% @section.sort_by(&:section_number).each do |section| %>
-		<%= section.section_title if request.path_info.include? "#{section.id}" %>
-		<% end %>
-	</h1>
-</div>
+
+
+
