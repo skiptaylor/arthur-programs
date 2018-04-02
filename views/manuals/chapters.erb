@@ -46,24 +46,24 @@
 		<%= erb :'manuals/nav', layout: false %>
 		<h2 class="oswald">Chapters</h2>
 		<ul style=" margin: 1em 0 0 0;">
+			
 			<% @chapter.sort_by(&:chapter_number).each do |chapter| %>
 				<% if chapter.chapter_title != "" %>
 				<a role="menuitem" tabindex="-1" href="/manuals/<%= @manual.id %>/sections/<%= params[:section_id] %>/chapters/<%= chapter.id %>/chapter" style="text-decoration: none;">
-				<li role="presentation" class="<%= active "#{chapter.id}" %>" style="list-style: none; display: block;">
-					<hr style="margin: 0.5em 0;" />
+				<li role="presentation" class="<%= active "#{chapter.id}" %>" style="list-style: none; display: block; padding: 9px 0; border-top: 1px solid silver;">
 					<span style="font-weight: 600;"><%= chapter.chapter_title %>
 				</li>
 				</a>
 				<% elsif chapter.sub_chapter_title != "" %>
 				<a role="menuitem" tabindex="-1" href="/manuals/<%= @manual.id %>/sections/<%= params[:section_id] %>/chapters/<%= chapter.id %>/chapter" style="text-decoration: none;">
-				<li role="presentation" class="<%= active "#{chapter.id}" %>" style="list-style: none; display: block; margin-left: 1.5em;">
-					<hr style="margin: 0.5em 0;" />
+				<li role="presentation" class="<%= active "#{chapter.id}" %>" style="list-style: none; display: block; margin-left: 1.5em; padding: 9px 0; border-top: 1px solid silver;">
 					<%= chapter.sub_chapter_title %>
 				</li>
 				</a>
 				<% end %>
 			<% end %>
-			<hr style="margin: 0.4em 0 2em 0;" />
+			<hr style="margin: 0;" />
+			<p> &nbsp; </p>
 		</ul>		
 	</div>	
 			
