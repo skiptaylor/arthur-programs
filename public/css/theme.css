@@ -913,7 +913,7 @@ div.reference p  {
 
 .md p  { text-indent: 1.7em; }
 .md p.para  { text-indent: 0em; }
-.md p.reference  { margin-left: 2em; text-indent: -2em; }
+.md .reference  { margin-left: 2em; text-indent: -2em; }
 
 .md ol li, .md ul li   { margin-left: 2em; margin-bottom: 5px; }
 .md ol li p, .md ul li p  { text-indent: 0em; }
@@ -932,6 +932,11 @@ div.reference p  {
 	list-style-position: inside;
 	list-style-type: none;
 	margin: ;
+}
+.md .sansbullet2	{
+	list-style-position: inside;
+	list-style-type: none;
+	margin-left: 2em;
 }
 
 /*:target:before {
