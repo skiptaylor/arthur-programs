@@ -36,6 +36,13 @@
 		<% end %>
 	</ul>
 </div>
+<div class="visible-phone">
+	<h1 style="font-size: 1.5em; padding: 0.05em 0;">
+		<% @section.sort_by(&:section_number).each do |section| %>
+		<%= section.section_title if request.path_info.include? "#{section.id}" %>
+		<% end %>
+	</h1>
+</div>  
 
 
 

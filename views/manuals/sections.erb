@@ -6,18 +6,34 @@
 				<%= erb :'manuals/nav', layout: false %>
 				
 			</div>
+			
+				<h3 class="oswald" style="color: #1c89de; margin: 0 0 0.5em 0;">Study Program Guide prepared for <%= @user.name %></h3>
+				<h1 style="font-size: 1.5em;"><%= @manual.name %></h1>
+				<hr />
+
+				<% if @manual.id == 98 %>
+				<img src="/img/NCMHCE-Cover.jpg" style="width: 50%; border: 1px solid silver; -webkit-box-shadow: 3px 6px 11px #b2b5bc; -moz-box-shadow: 3px 6px 11px #b2b5bc; box-shadow: 3px 6px 11px #b2b5bc; " />
+				<% else %>
+				<img src="/img/NCE-cover.png" style="width: 50%; border: 1px solid silver; -webkit-box-shadow: 3px 6px 11px #b2b5bc; -moz-box-shadow: 3px 6px 11px #b2b5bc; box-shadow: 3px 6px 11px #b2b5bc; " />
+				<% end %>
+			</div>
+			
+			<div>
+				<p>&nbsp;</p>
 			<h3>
 				To use this Guide
 			</h3>
 			<p>
 				Select sections from <strong>SECTIONS</strong> dropdown button above. Chapters for each section will appear below the section title.
 			</p>
-			<h3>
+			<!-- <h3>
 				Versions
 			</h3>
 			<p>
 				This online NCMHCE Study Supplement will always be the most current version.
-			</p>
+			</p> -->
+			
+		</div>
 			<!-- <h3>
 				Bookmarking location
 			</h3>
@@ -25,8 +41,8 @@
 				You can bookmark your current location at any time by using your browser's bookmark function. This bookmark link will return to the chapter you were studying at the time.
 			</p> -->
 		</div>
-		<div class="span8 offset4">
-	
+		<!-- <div class="span8 offset4">
+
 			<h3 class="oswald" style="color: #1c89de; margin: 0 0 0.5em 0;">Study Program Guide prepared for <%= @user.name %></h3>
 			<h1 style="font-size: 1.5em;"><%= @manual.name %></h1>
 			<hr />
@@ -36,7 +52,7 @@
 			<% else %>
 			<img src="/img/NCE-cover.png" style="width: 50%; border: 1px solid silver; -webkit-box-shadow: 3px 6px 11px #b2b5bc; -moz-box-shadow: 3px 6px 11px #b2b5bc; box-shadow: 3px 6px 11px #b2b5bc; " />
 			<% end %>
-		</div>
+		</div> -->
 	</div>
 
 

@@ -1,5 +1,5 @@
 <style>
-	div#phone-nav a:hover, div#phone-nav a:focus {
+	#phone-nav a:hover, #phone-nav a:focus {
 	     color: #a31521;
 	 }
 </style>
@@ -48,10 +48,10 @@
 	
 	
 		
-	<div class="span12 visible-phone" id="phone-nav">
+	<div class="span12 visible-phone">
 		<%= erb :'manuals/nav', layout: false %>
-		<h2 class="oswald">Chapters</h2>
-		<ul style=" margin: 1em 0 0 0;">
+		
+		<ul style=" margin: 1em 0 0 0;" id="phone-nav">
 			
 			<% @chapter.sort_by(&:chapter_number).each do |chapter| %>
 				<% if chapter.chapter_title != "" %>
