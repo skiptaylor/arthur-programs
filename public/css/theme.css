@@ -932,7 +932,8 @@ div.reference p  {
 .md .sansbullet	{
 	list-style-position: inside;
 	list-style-type: none;
-	margin: ;
+	margin-left: 0;
+	margin-bottom: 5px;
 }
 .md .sansbullet2	{
 	list-style-position: inside;
