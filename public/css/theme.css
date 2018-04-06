@@ -915,9 +915,10 @@ div.reference p  {
 .md p.para  { text-indent: 0em; }
 .md .reference  { margin-left: 2em; text-indent: -2em; }
 
+.md 
 .md ol li, .md ul li   { margin-left: 2em; margin-bottom: 5px; }
 .md ol li ol li, .md ul li ul li   { margin-left: 0; margin-bottom: 5px; }
-.md ol li p, .md ul li p  { text-indent: 0em; }
+.md ol li p, .md ul li p  { text-indent: 0em;  margin-bottom: 5px; }
 .md ul.a  { list-style-type: lower-alpha; }
 .md ul.none  { list-style-type: none; }
 .md h1 p  { text-indent: 0em; padding-bottom: 0.2em; }
