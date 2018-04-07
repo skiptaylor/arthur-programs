@@ -22,16 +22,42 @@ body	{
 	line-height: 36px; 
 }
 
+h1 {
+	font-family: 'Oswald', sans-serif;
+	font-size: 26px;
+	font-weight: 400;
+	line-height: 1.1em; 
+}
+
 h2 {
 	font-size: 24px;
 	line-height: 36px; 
 }
 
 h3 {
+	font-size: 20px;
+	line-height: 22px;
+	margin: 0; 
+}
+
+h4 {
+	font-size: 18px;
+	line-height: 22px;
+	margin: 0; 
+}
+
+h5 {
 	font-size: 16px;
 	line-height: 22px;
 	margin: 0; 
 }
+
+h6 {
+	font-size: 15px;
+	font-weight: 600;
+	margin-bottom: 1px;
+}
+
 
 #content p	{
 	font-weight: 400;
@@ -193,20 +219,7 @@ h3 {
 	color: #063c4b;
 	font-size: 2.25em;
 }
-  
-h1 {
-	font-family: 'Oswald', sans-serif;
-	font-size: 26px;
-	font-weight: 400;
-	line-height: 1.1em; 
-}
-
-h6 {
-	font-size: 14px;
-	font-weight: 600;
-	margin-bottom: 1px;
-}
-  
+    
 .media-heading {
 	font-family: 'Oswald', sans-serif;
 	font-size: 26px;
@@ -881,7 +894,6 @@ a.list-nav {
 	color: #c70004;
 }
 
-
 .shaddow	{
 	-webkit-text-shadow: -1px -1px 0px #333333; 
 	-moz-text-shadow: -1px -1px 0px #333333; 
@@ -896,26 +908,24 @@ a.list-nav {
 
 .paging {
 	height:90vh;
-	
 }
-
 
 .reference p  {
 	margin-left: 2em;
 	text-indent: -2em;
 }
 
-
 div.reference p  {
 	margin-left: 2em;
 	text-indent: -2em;
 }
 
+.md	{ font-family: 'Muli', sans-serif; }
 .md p  { text-indent: 1.7em; }
 .md p.para  { text-indent: 0em; }
 .md .reference  { margin-left: 2em; text-indent: -2em; }
 
-.md table 	{ border: 1px solid silver; border-collapse: collapse; width: 100%; }
+.md table 	{ border: 1px solid silver; border-collapse: collapse; }
 .md th, .md td	{ border: 1px solid silver; border-collapse: collapse; padding: 3px 12px; }
 .md ol li, .md ul li   { margin-left: 1.7em; margin-bottom: 3px; margin-top: 3px; }
 .md ol li ol li   { margin-left: 0.1em; margin-bottom: 3px; margin-top: 3px; }
@@ -927,10 +937,10 @@ div.reference p  {
 .md blockquote p   { text-indent: 0em; }
 .md h1  { text-indent: 0em; }
 .md h2  { text-indent: 0em; font-weight: 600; color: #244883; }
-.md h3  { text-indent: 0em; padding: 0.4em 0 0.2em 0; font-size: 1.2em; }
-.md h4  { text-indent: 0em; padding: 0.4em 0 0.2em 0; font-weight: 600; font-size: 1.3em; }
-.md h5  { text-indent: 0em; padding: 0.4em 0 0.1em 0; font-size: 1.1em; }
-.md h6  { text-indent: 0em; font-size: 1.03em;  margin-bottom: 5px; margin-top: 14px; }
+.md h3  { text-indent: 0em; padding: 0.4em 0 0.2em 0; }
+.md h4  { text-indent: 0em; padding: 0.4em 0 0.2em 0; font-weight: 600; }
+.md h5  { text-indent: 0em; padding: 0.4em 0 0.1em 0; }
+.md h6  { text-indent: 0em; margin-bottom: 1px; margin-top: 14px; }
 .md .sansbullet	{
 	list-style-position: inside;
 	list-style-type: none;
@@ -998,6 +1008,11 @@ div.reference p  {
 		margin-top: 60px;
 	}
 }
+
+@media (max-width: 480px) { 
+	.md table	{ font-size: 0.8em; }
+}
+
 
 .btn-toolbar .btn-group a.btn  {
 	margin: 0 0 0.5em 0;
