@@ -915,12 +915,12 @@ div.reference p  {
 .md p.para  { text-indent: 0em; }
 .md .reference  { margin-left: 2em; text-indent: -2em; }
 
-.md 
-.md ol li, .md ul li   { margin-left: 2em; margin-bottom: 5px; }
-.md ol li ol li, .md ul li ul li   { margin-left: 0; margin-bottom: 5px; }
-.md ol li p, .md ul li p  { text-indent: 0em; margin-bottom: 5px; }
-.md ul.a  { list-style-type: lower-alpha; margin-bottom: 5px; }
-.md ul.none  { list-style-type: none; }
+
+.md ol li, .md ul li   { margin-left: 1.7em; margin-bottom: 3px; margin-top: 3px; }
+.md ol li ol li   { margin-left: 0.1em; margin-bottom: 3px; margin-top: 3px; }
+.md ol li p, .md ul li p  { text-indent: 1.7em; margin-bottom: 3px; margin-top: 3px; }
+.md ul.a  { list-style-type: lower-alpha; margin-bottom: 3px; margin-top: 3px; }
+.md ul.none  { list-style-type: none; margin-bottom: 3px; margin-top: 3px; }
 .md h1 p  { text-indent: 0em; padding-bottom: 0.2em; }
 .md blockquote   {  font-size: 14px; font-weight: 600; }
 .md blockquote p   { text-indent: 0em; }
@@ -934,12 +934,12 @@ div.reference p  {
 	list-style-position: inside;
 	list-style-type: none;
 	margin-left: 0;
-	margin-bottom: 5px;
+	margin-bottom: 3px; margin-top: 3px;
 }
 .md .sansbullet2	{
 	list-style-position: inside;
 	list-style-type: none;
-	margin-left: 2em;
+	margin-left: 1.7em;
 }
 
 /*:target:before {
