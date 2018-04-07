@@ -915,7 +915,8 @@ div.reference p  {
 .md p.para  { text-indent: 0em; }
 .md .reference  { margin-left: 2em; text-indent: -2em; }
 
-
+.md table 	{ border: 1px solid silver; border-collapse: collapse; width: 100%; }
+.md th, .md td	{ border: 1px solid silver; border-collapse: collapse; padding: 3px 12px; }
 .md ol li, .md ul li   { margin-left: 1.7em; margin-bottom: 3px; margin-top: 3px; }
 .md ol li ol li   { margin-left: 0.1em; margin-bottom: 3px; margin-top: 3px; }
 .md ol li p, .md ul li p  { text-indent: 1.7em; margin-bottom: 3px; margin-top: 3px; }
