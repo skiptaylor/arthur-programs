@@ -924,7 +924,7 @@ div.reference p  {
 .md p  { text-indent: 1.7em; }
 .md p.para  { text-indent: 0em; margin-bottom: 6px; }
 
-.md p.ind  { margin-left: 3.7em; text-indent: -1.7em; margin-bottom: 6px; }
+.md p.ind  { margin-left: 5em; text-indent: -1.7em; margin-bottom: 6px; }
 
 .md .reference  { margin-left: 2em; text-indent: -2em; }
 
