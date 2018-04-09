@@ -922,7 +922,7 @@ div.reference p  {
 
 .md	{ font-family: 'Muli', sans-serif; }
 .md p  { text-indent: 1.7em; }
-.md p.para  { text-indent: 0em; }
+.md p.para  { text-indent: 0em; margin-bottom: 6px; }
 .md .reference  { margin-left: 2em; text-indent: -2em; }
 
 .md table 	{ border: 1px solid silver; border-collapse: collapse; }
