@@ -927,6 +927,14 @@ div.reference p  {
 
 .md table 	{ border: 1px solid silver; border-collapse: collapse; }
 .md th, .md td	{ border: 1px solid silver; border-collapse: collapse; padding: 3px 12px; }
+
+.md table.none	{ border: none; border-collapse: collapse; }
+.md th.none, .md td.none	{ border: none; border-collapse: collapse; padding: 3px 12px; }
+
+.md dl	{ margin-left: 1.7em;   }
+.md dt	{ float: left; margin-bottom: 1em; font-weight: normal; }
+.md dd	{ margin-left: 150px; margin-bottom: 1em; }
+
 .md ol li, .md ul li   { margin-left: 1.7em; margin-bottom: 3px; margin-top: 3px; }
 .md ol li ol li   { margin-left: 0.1em; margin-bottom: 3px; margin-top: 3px; }
 .md ol li p, .md ul li p  { text-indent: 1.7em; margin-bottom: 3px; margin-top: 3px; }
@@ -946,11 +954,6 @@ div.reference p  {
 	list-style-type: none;
 	margin-left: 0;
 	margin-bottom: 3px; margin-top: 3px;
-}
-.md .sansbullet2	{
-	list-style-position: inside;
-	list-style-type: none;
-	margin-left: 1.7em;
 }
 
 /*:target:before {
