@@ -931,8 +931,10 @@ div.reference p  {
 .md table 	{ border: 1px solid silver; border-collapse: collapse; }
 .md th, .md td	{ border: 1px solid silver; border-collapse: collapse; padding: 3px 12px; }
 
-.md table.none	{ border: none; border-collapse: collapse; }
-.md th.none, .md td.none	{ border: none; border-collapse: collapse; padding: 3px 12px; }
+.md table.none	{ border: none; border-collapse: collapse; margin-left: 3em; margin-bottom: 1.3em; margin-top: 0.6em; }
+
+.md table.none tr th, .md table.none tr td	{ border: none; border-collapse: collapse; padding: 3px 12px; }
+
 
 .md dl	{ margin-left: 1.7em;   }
 .md dt	{ float: left; margin-bottom: 1em; font-weight: normal; }
@@ -946,11 +948,11 @@ div.reference p  {
 .md h1 p  { text-indent: 0em; padding-bottom: 0.2em; }
 .md blockquote   {  font-size: 14px; font-weight: 600; }
 .md blockquote p   { text-indent: 0em; }
-.md h1  { text-indent: 0em; }
-.md h2  { text-indent: 0em; font-weight: 600; color: #244883; }
-.md h3  { text-indent: 0em; padding: 0.4em 0 0.2em 0; }
-.md h4  { text-indent: 0em; padding: 0.4em 0 0.2em 0; font-weight: 600; }
-.md h5  { text-indent: 0em; padding: 0.4em 0 0.1em 0; }
+.md h1  { text-indent: 0em; font-size: 1.8em; }
+.md h2  { text-indent: 0em; font-size: 2em; font-weight: 400; color: #244883; }
+.md h3  { text-indent: 0em; font-size: 1.5em; font-weight: 400; padding: 0.4em 0 0.4em 0; }
+.md h4  { text-indent: 0em; font-size: 1.3em; font-weight: 400; padding: 0.4em 0 0.2em 0; }
+.md h5  { text-indent: 0em; font-size: 1.1em; font-weight: 400; padding: 0.4em 0 0.1em 0; }
 .md h6  { text-indent: 0em; margin-bottom: 1px; margin-top: 14px; }
 .md .sansbullet	{
 	list-style-position: inside;
