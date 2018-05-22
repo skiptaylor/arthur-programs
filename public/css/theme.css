@@ -1,12 +1,12 @@
 
-body	{
-	font-family: 'Muli', sans-serif;
-}
-
 /*body	{
+	font-family: 'Muli', sans-serif;
+}*/
+
+body	{
 	font-family: 'Open Sans', sans-serif;
 }
-*/
+
 
 #content {
 	font-size: 15px;
@@ -65,7 +65,7 @@ h6 {
 }
 
 .nav	{
-  	font-family: 'Muli', sans-serif;
+  	font-family: 'Open Sans', sans-serif;
 	font-weight: 600;
 }
   
@@ -315,7 +315,7 @@ h6 {
 	display: none;
 	position: fixed;
 	width: 100%;
-	font-family: 'Muli', sans-serif;
+	font-family: 'Open Sans', sans-serif;
 	font-size: 14px;
 	line-height: 1.6em;
 	text-shadow: -1px -1px 0px #000;
@@ -333,7 +333,7 @@ h6 {
 	display: none;
 	position: fixed;
 	width: 100%;
-	font-family: 'Muli', sans-serif;
+	font-family: 'Open Sans', sans-serif;
 	font-size: 12px;
 	line-height: 0.8em;
 	display: block;
@@ -920,7 +920,7 @@ div.reference p  {
 	text-indent: -2em;
 }
 
-.md	{ font-family: 'Muli', sans-serif; }
+.md	{ font-family: 'Open Sans', sans-serif; }
 .md p  { text-indent: 1.7em; }
 .md p.para  { text-indent: 0em; margin-bottom: 6px; }
 
@@ -949,10 +949,10 @@ div.reference p  {
 .md blockquote   {  font-size: 14px; font-weight: 600; }
 .md blockquote p   { text-indent: 0em; }
 .md h1  { text-indent: 0em; font-size: 1.8em; }
-.md h2  { text-indent: 0em; font-size: 2em; font-weight: 400; color: #244883; }
-.md h3  { text-indent: 0em; font-size: 1.5em; font-weight: 400; padding: 0.4em 0 0.4em 0; }
-.md h4  { text-indent: 0em; font-size: 1.3em; font-weight: 400; padding: 0.4em 0 0.2em 0; }
-.md h5  { text-indent: 0em; font-size: 1.1em; font-weight: 400; padding: 0.4em 0 0.1em 0; }
+.md h2  { text-indent: 0em; font-size: 2em; font-weight: 600; color: #244883; }
+.md h3  { text-indent: 0em; font-size: 1.5em; font-weight: 600; padding: 0.4em 0 0.4em 0; }
+.md h4  { text-indent: 0em; font-size: 1.3em; font-weight: 600; padding: 0.4em 0 0.2em 0; }
+.md h5  { text-indent: 0em; font-size: 1em; font-weight: 700; padding: 0.4em 0 0.3em 0; }
 .md h6  { text-indent: 0em; margin-bottom: 1px; margin-top: 14px; }
 .md .sansbullet	{
 	list-style-position: inside;
