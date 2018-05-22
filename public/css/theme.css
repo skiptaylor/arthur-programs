@@ -944,7 +944,7 @@ div.reference p  {
 .md ol li ol li   { margin-left: 0.1em; margin-bottom: 4px; margin-top: 4px; }
 .md ol li p, .md ul li p  { text-indent: 1.7em; margin-bottom: 4px; margin-top: 4px; }
 .md ul.a  { list-style-type: lower-alpha; margin-bottom: 4px; margin-top: 4px; }
-.md ul.none  { list-style-type: none; margin-bottom: 9px; margin-top: 3px; }
+.md ul.none  { list-style-type: none; margin-bottom: 4px; margin-top: 4px; }
 .md h1 p  { text-indent: 0em; padding-bottom: 0.2em; }
 .md blockquote   {  font-size: 14px; font-weight: 600; }
 .md blockquote p   { text-indent: 0em; }
@@ -953,7 +953,7 @@ div.reference p  {
 .md h3  { text-indent: 0em; font-size: 1.5em; font-weight: 600; padding: 0.4em 0 0.4em 0; }
 .md h4  { text-indent: 0em; font-size: 1.3em; font-weight: 600; padding: 0.4em 0 0.2em 0; }
 .md h5  { text-indent: 0em; font-size: 1em; font-weight: 700; padding: 0.4em 0 0.3em 0; }
-.md h6  { text-indent: 0em; margin-bottom: 1px; margin-top: 14px; }
+.md h6  { text-indent: 0em; font-weight: 600; margin-bottom: 1px; margin-top: 14px; }
 .md .sansbullet	{
 	list-style-position: inside;
 	list-style-type: none;
