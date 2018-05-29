@@ -941,8 +941,8 @@ div.reference p  {
 .md dd	{ margin-left: 150px; margin-bottom: 1em; }
 
 .md ol li, .md ul li   { margin-left: 1.7em; margin-bottom: 4px; margin-top: 4px; }
-.md ol li ol li   { margin-left: 0.1em; margin-bottom: 4px; margin-top: 4px; }
-.md ol li p, .md ul li p  { text-indent: 1.7em; margin-bottom: 4px; margin-top: 4px; }
+.md ol li ol li   { margin-left: 0em; margin-bottom: 4px; margin-top: 4px; }
+.md ol li p, .md ul li p  { text-indent: 0em; margin-bottom: 4px; margin-top: 4px; }
 .md ul.a  { list-style-type: lower-alpha; margin-bottom: 4px; margin-top: 4px; }
 .md ul.none  { list-style-type: none; margin-bottom: 4px; margin-top: 4px; }
 .md h1 p  { text-indent: 0em; padding-bottom: 0.2em; }
@@ -958,7 +958,7 @@ div.reference p  {
 	list-style-position: inside;
 	list-style-type: none;
 	margin-left: 0;
-	margin-bottom: 3px; margin-top: 3px;
+	margin-bottom: 4px; margin-top: 4px;
 }
 
 /*:target:before {
