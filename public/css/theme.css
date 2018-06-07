@@ -945,6 +945,7 @@ div.reference p  {
 .md ol li p, .md ul li p  { text-indent: 0em; margin-bottom: 4px; margin-top: 4px; }
 .md ul.a  { list-style-type: lower-alpha; margin-bottom: 4px; margin-top: 4px; }
 .md ul.none  { list-style-type: none; margin-bottom: 4px; margin-top: 4px; }
+.md ul.none li  { list-style-type: none; margin-bottom: 4px; margin-top: 4px; }
 .md h1 p  { text-indent: 0em; padding-bottom: 0.2em; }
 .md blockquote   {  font-size: 14px; font-weight: 600; }
 .md blockquote p   { text-indent: 0em; }
@@ -1018,7 +1019,7 @@ div.reference p  {
 }
 
 @media (max-width: 480px) { 
-	.md table	{ font-size: 0.8em; }
+	.md table	{ font-size: 0.8em; }	
 }
 
 
