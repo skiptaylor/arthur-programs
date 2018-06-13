@@ -5,7 +5,12 @@
 				<%= @user.name %> <small style="font-size: 0.75em;"><%= 'Admin' if @user.admin? %></small>
 			</h1>
 		</div>
-		<div class="page-header hidden-desktop" style="margin-top: -40px;">
+		<div class="page-header visible-tablet" style="margin-top: -40px;">
+			<h1>
+				<%= @user.name %> <small style="font-size: 0.75em;"><%= 'Admin' if @user.admin? %></small>
+			</h1>
+		</div>
+		<div class="page-header visible-phone" style="margin-top: -10px;">
 			<h1>
 				<%= @user.name %> <small style="font-size: 0.75em;"><%= 'Admin' if @user.admin? %></small>
 			</h1>
