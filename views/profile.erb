@@ -83,10 +83,10 @@
 				<span class="oswald" style="font-size: 1.8em;">NCMHCE Tutorial Scenarios</span>
 				
 				<% if @user.max_scenarios < 36 %>
-					<span style="float: right; padding-left: 0.1em;">&nbsp; <a class="btn btn-success btn-small oswald" style=" font-size: 0.9em;" href="/checkout/ncmhce-upgrade">Buy 12 more Tutorial Scenarios for $95</a></span>
+					<span style="float: right; padding-left: 0.1em;">&nbsp; <a class="btn btn-success btn-small oswald" style=" font-size: 0.75em;" href="/checkout/ncmhce-upgrade">Buy 12 more Tutorial Scenarios for $95</a></span>
 				<% end %>
 				<% if @user.max_practice_scenarios < 10 %>
-					<span style="float: right;">&nbsp; <a class="btn btn-success btn-small oswald" style=" font-size: 0.9em;" href="/checkout/ncmhce-exam-scenarios">Buy 10 Exam Scenarios for $40</a></span>
+					<span style="float: right;">&nbsp; <a class="btn btn-success btn-small oswald" style=" font-size: 0.75em;" href="/checkout/ncmhce-exam-scenarios">Buy 10 Exam Scenarios for $40</a></span>
 				<% end %>
 				
 			</h3>
@@ -283,7 +283,7 @@
 		
 		<% unless @user.expired? %>
 		<% unless @user.purchases.any? { |purchase| purchase.options == "+ Hard Copy" } %>
-			<span style="float: right;"><a class="btn btn-success btn-small oswald" style=" font-size: 0.9em;" href="/checkout/ncmhce-hard-copy">Buy a hard copy for $40.65</a></span>
+			<span style="float: right;"><a class="btn btn-success btn-small oswald" style=" font-size: 0.95em;" href="/checkout/ncmhce-hard-copy">Buy a hard copy for $40.65</a></span>
 		<% end %>
 		<% end %>
 
@@ -315,7 +315,7 @@
   			<h3>
   				<span class="oswald" style="font-size: 1.8em;">NCE Exams</span>
   					<% unless @user.max_exams > 2 %>
-  						<span style="float: right; margin-left: 3px;">&nbsp;<a class="btn btn-success btn-small oswald" style=" font-size: 0.9em;" href="/checkout/nce-upgrade">Buy 2 more practice exams for $60</a></span>
+  						<span style="float: right; margin-left: 3px;">&nbsp;<a class="btn btn-success btn-small oswald" style=" font-size: 0.75em;" href="/checkout/nce-upgrade">Buy 2 more practice exams for $60</a></span>
   					<% end %>
   					
   			</h3>
@@ -381,7 +381,7 @@
 	
 	<% unless @user.expired? %>
 	<% unless @user.purchases.any? { |purchase| purchase.options == "+ Hard Copy" } %>
-		<span style="float: right;"><a class="btn btn-success btn-small oswald" style=" font-size: 0.9em;" href="/checkout/nce-hard-copy">Buy a hard copy for $57.45</a></span>
+		<span style="float: right;"><a class="btn btn-success btn-small oswald" style=" font-size: 0.95em;" href="/checkout/nce-hard-copy">Buy a hard copy for $57.45</a></span>
 	<% end %>
 	<% end %>
 
