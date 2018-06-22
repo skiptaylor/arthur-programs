@@ -998,6 +998,26 @@ div.reference p  {
 }*/
 
 
+
+.section-header {
+	font-size: 2.3em;
+	line-height: 1em;
+	font-weight: 400; 
+}
+
+.stacked-buttons	{
+	float: right;
+	text-align: right;
+	margin-bottom: 0.7em;
+}
+
+.stacked-each	{
+	margin: 0.35em 0;
+	
+}
+
+
+
 /* Portrait tablet to landscape and desktop */
 @media (min-width: 768px) { 
 	#content  {
@@ -1009,6 +1029,13 @@ div.reference p  {
 	#content  {
 		margin-top: 20px;
 	}
+	.section-header {
+		font-size: 2em;
+		line-height: 1em;
+		font-weight: 400;
+		margin-bottom: 0.5em;
+	}
+	
 }
 
 /* Large desktop */
@@ -1019,7 +1046,13 @@ div.reference p  {
 }
 
 @media (max-width: 480px) { 
-	.md table	{ font-size: 0.8em; }	
+	.md table	{ font-size: 0.8em; }
+	.section-header {
+		font-size: 1.8em;
+		line-height: 1em;
+		font-weight: 400;
+		margin-bottom: 0.3em; 
+	}	
 }
 
 

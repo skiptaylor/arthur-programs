@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby "2.2.0"
+ruby "2.5.1"
 
 gem 'chronic', '~> 0.10.2'
 
@@ -22,7 +22,7 @@ gem 'sass', '~> 3.1.19'
 gem 'sinatra', '~> 1.3.3'
 gem 'sinatra-contrib', '~> 1.3.1'
 
-gem 'sprockets', '~> 2.0'
+gem 'sprockets', '~> 2.12.5'
 
 gem 'stripe', '~> 1.6.2'
 gem 'addressable', '~> 2.3.7'

@@ -41,7 +41,6 @@ post '/checkout/:product/?' do
 		params[:email].downcase!
 		params[:password].strip!
 		params[:password].downcase!
-    params[:license]
   end
 	params[:name] = "#{params[:first_name]} #{params[:last_name]}"
 	params[:address1].strip!
@@ -49,7 +48,6 @@ post '/checkout/:product/?' do
 	params[:city].strip!
 	params[:state].strip!
 	params[:zip].strip!
-  params[:license]
 	
   if params[:user_id]
 		user = User.get params[:user_id]
@@ -63,7 +61,9 @@ post '/checkout/:product/?' do
                    max_exams: 0,
                max_scenarios: 0,
                nce_downloads: false,
-            ncmhce_downloads: false)
+            ncmhce_downloads: false,
+              nce_flashcards: false,
+           ncmhce_flashcards: false) 
   end
 
   case params[:package]
@@ -92,8 +92,7 @@ post '/checkout/:product/?' do
     params[:package] = 'NCMHCE: Starter Package'
                email = 'ncmhce'
                  msg = true
-    params[:optional] ? params[:optional] = '+ Hard Copy' : params[:optional] = '+ eBook'
-    params[:optional2] ? params[:optional2] = (user.max_practice_scenarios = (user.max_practice_scenarios + 10)) : params[:optional2] = '0' 
+    params[:optional] ? params[:optional] = '+ Hard Copy' : params[:optional] = '+ eBook' 
 
   when 'Full Package'
     user.ncmhce_downloads = true
