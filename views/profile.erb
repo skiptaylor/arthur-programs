@@ -109,7 +109,7 @@
 	
 	 <div class="well">
 	 
-	 <h2 class="oswald ncmhce-color" style="margin-top: -6px;">Second Chance Offer! &nbsp; You'll save $50!</h2> 
+	 <h2 class="oswald ncmhce-color" style="margin-top: -6px;">Second Chance Offer! &nbsp; You'll save $86!</h2> 
 	 <p><strong>For access to all 36 scenarios</strong>, you have two weeks from your original purchase date to upgrade your <strong>Starter Package</strong> to our <strong>Full Package</strong> for the price difference of <strong>$110</strong>. <small>(Equals price of purchasing Full Package)</small></p>
  	<% @user.purchases.each do |purchase| %>
  		<% if @user.purchases.any? { |purchase| (purchase.package == "NCMHCE: Starter Package")  && ((purchase.created_at + 14) > Time.now.to_date) } %>
