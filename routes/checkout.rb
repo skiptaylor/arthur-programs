@@ -92,7 +92,11 @@ post '/checkout/:product/?' do
     params[:package] = 'NCMHCE: Starter Package'
                email = 'ncmhce'
                  msg = true
-    params[:optional] ? params[:optional] = '+ Hard Copy' : params[:optional] = '+ eBook' 
+    params[:optional] ? params[:optional] = '+ Hard Copy' : params[:optional] = '+ eBook'
+    params[:optional2] ? params[:optional2] = '+ Exam Scenarios' : params[:optional2] = ''
+    if (params[:optional2] == '+ Exam Scenarios') 
+      user.max_practice_scenarios = (user.max_practice_scenarios + 10)
+    end
 
   when 'Full Package'
     user.ncmhce_downloads = true
@@ -106,9 +110,10 @@ post '/checkout/:product/?' do
 
   when 'Second Chance Upgrade'
     user.max_scenarios = (user.max_scenarios + 24)
+    user.max_practice_scenarios = (user.max_practice_scenarios + 10)
       params[:package] = 'NCMHCE: Second Chance Upgrade'
                  email = 'ncmhce'
-                   msg = true
+                   msg = false
 
   when 'NCE Upgrade'
     user.max_exams = (user.max_exams + 2)

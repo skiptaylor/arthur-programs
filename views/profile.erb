@@ -113,7 +113,7 @@
 	 <p><strong>For access to all 36 scenarios</strong>, you have two weeks from your original purchase date to upgrade your <strong>Starter Package</strong> to our <strong>Full Package</strong> for the price difference of <strong>$154</strong>. <small>(Equals price of purchasing Full Package)</small></p>
  	<% @user.purchases.each do |purchase| %>
  		<% if @user.purchases.any? { |purchase| (purchase.package == "NCMHCE: Starter Package")  && ((purchase.created_at + 14) > Time.now.to_date) } %>
-	 <span style="float: right; margin-top: 5px;"><a class="btn btn-success btn-small" href="/checkout/second-chance-upgrade">Upgrade to Full Package now for $110</a></span>
+	 <span style="float: right; margin-top: 5px;"><a class="btn btn-success btn-small" href="/checkout/second-chance-upgrade">Upgrade to Full Package now for $154</a></span>
 	 <h2 class="oswald ceu-color" style="margin-bottom: -6px; font-size: 1.4em;">You have <%= ((purchase.created_at.to_date + 14) - Time.now.to_date).to_i %> days left.</h2>
 	 
  	<% end %>
@@ -288,7 +288,9 @@
 		
 		<% unless @user.expired? %>
 		<% unless @user.purchases.any? { |purchase| purchase.options == "+ Hard Copy" } %>
+		<% unless @user.purchases.any? { |purchase| (purchase.package == "NCMHCE: Hard Copy") } %>
 			<span style="float: right;"><a class="btn btn-success btn-small oswald" style=" font-size: 0.95em;" href="/checkout/ncmhce-hard-copy">Buy a hard copy for $40.65</a></span>
+		<% end %>
 		<% end %>
 		<% end %>
 
@@ -585,7 +587,7 @@
 								<%= purchase.options %>
 							<% end %>
 							<% unless purchase.options2 == '0' %>
-								+ <%= purchase.options2 %>
+								<%= purchase.options2 %>
 							<% end %>
 						</td>
 					</tr>
