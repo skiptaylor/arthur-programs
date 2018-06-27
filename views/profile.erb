@@ -110,7 +110,7 @@
 	 <div class="well">
 	 
 	 <h2 class="oswald ncmhce-color" style="margin-top: -6px;">Second Chance Offer! &nbsp; You'll save $106!</h2> 
-	 <p><strong>For access to all 47 scenarios</strong>, you have two weeks from your original purchase date to upgrade your <strong>Starter Package</strong> to our <strong>Full Package</strong> for the price difference of <strong>$106</strong>. <small>(Equals price of purchasing Full Package)</small></p>
+	 <p><strong>For access to all 47 scenarios</strong>, you have two weeks from your original purchase date to upgrade your <strong>Starter Package</strong> to our <strong>Full Package</strong> for the price difference of <strong>$154</strong>. <small>(Equals price of purchasing Full Package)</small></p>
  	<% @user.purchases.each do |purchase| %>
  		<% if @user.purchases.any? { |purchase| (purchase.package == "NCMHCE: Starter Package")  && ((purchase.created_at + 14) > Time.now.to_date) } %>
 	 <span style="float: right; margin-top: 5px;"><a class="btn btn-success btn-small" href="/checkout/second-chance-upgrade">Upgrade to Full Package now for $154</a></span>
@@ -537,7 +537,7 @@
 					<tr>
 						<td>NCE Study Guide online</td>
 						<td colspan="2">
-							<span class="label label-important">NEW</span> &nbsp;<span style="font-weight: 600;">Study online. No download needed!</span>
+							<span class="label label-important">NEW</span> &nbsp;<span>Study online. No download needed!</span>
 						</td>
 						<td colspan="2" style="text-align: right;"><a href="/manuals/99/sections/cover">Study now</a></td>
 					</tr>
