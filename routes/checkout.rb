@@ -93,10 +93,6 @@ post '/checkout/:product/?' do
                email = 'ncmhce'
                  msg = true
     params[:optional] ? params[:optional] = '+ Hard Copy' : params[:optional] = '+ eBook'
-    params[:optional2] ? params[:optional2] = '+ Exam Scenarios' : params[:optional2] = ''
-    if (params[:optional2] == '+ Exam Scenarios') 
-      user.max_practice_scenarios = (user.max_practice_scenarios + 10)
-    end
 
   when 'Full Package'
     user.ncmhce_downloads = true

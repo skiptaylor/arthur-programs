@@ -90,9 +90,9 @@
 					<a class="btn btn-success btn-small oswald stacked-each" href="/checkout/ncmhce-upgrade">Buy 12 more Tutorial Scenarios for $95</a>
 				<% end %>
 				<br class="visible-phone" />
-				<% if @user.max_practice_scenarios < 10 %>
+				<!-- <% if @user.max_practice_scenarios < 10 %>
 					<a class="btn btn-success btn-small oswald stacked-each" href="/checkout/ncmhce-exam-scenarios">Buy 10 Exam Scenarios for $40</a>
-				<% end %>
+				<% end %> -->
 			</div>	
 			<h3 class="section-header visible-desktop">NCMHCE Tutorial Scenarios</h3>
 			<br />
@@ -109,8 +109,8 @@
 	
 	 <div class="well">
 	 
-	 <h2 class="oswald ncmhce-color" style="margin-top: -6px;">Second Chance Offer! &nbsp; You'll save $86!</h2> 
-	 <p><strong>For access to all 36 scenarios</strong>, you have two weeks from your original purchase date to upgrade your <strong>Starter Package</strong> to our <strong>Full Package</strong> for the price difference of <strong>$154</strong>. <small>(Equals price of purchasing Full Package)</small></p>
+	 <h2 class="oswald ncmhce-color" style="margin-top: -6px;">Second Chance Offer! &nbsp; You'll save $106!</h2> 
+	 <p><strong>For access to all 47 scenarios</strong>, you have two weeks from your original purchase date to upgrade your <strong>Starter Package</strong> to our <strong>Full Package</strong> for the price difference of <strong>$106</strong>. <small>(Equals price of purchasing Full Package)</small></p>
  	<% @user.purchases.each do |purchase| %>
  		<% if @user.purchases.any? { |purchase| (purchase.package == "NCMHCE: Starter Package")  && ((purchase.created_at + 14) > Time.now.to_date) } %>
 	 <span style="float: right; margin-top: 5px;"><a class="btn btn-success btn-small" href="/checkout/second-chance-upgrade">Upgrade to Full Package now for $154</a></span>
@@ -193,16 +193,34 @@
 		<hr /><br />
 	<% end %>
 	
-<!-- –––––––––––––––––– practice –––––––––––––––––– -->
+<!-- –––––––––––––––––– exam scenarios (practice) –––––––––––––––––– -->
 		
-	
-	
-	
+	<% if (@user.max_practice_scenarios < 1) && (@user.max_scenarios < 13)  %>
+ 	<% @user.purchases.each do |purchase| %>
+ 		<% unless @user.purchases.any? { |purchase| (purchase.package == "NCMHCE: Starter Package")  && ((purchase.created_at + 14) > Time.now.to_date) } %>
+		<div>
+			<div class="stacked-buttons">	
+				<br class="visible-phone" />
+				<% if @user.max_practice_scenarios < 10 %>
+					<a class="btn btn-success btn-small oswald stacked-each" href="/checkout/ncmhce-exam-scenarios">Buy 10 Exam Scenarios for $40</a>
+				<% end %>
+			</div>
+			<h3>
+				<span class="oswald" style="font-size: 1.8em;">NCMHCE Exam Scenarios</span>
+			</h3>
+			<br />
+			<h4>Purchase 10 Exam Scenarios for $70.</h4>
+			<p>Exam Scenarios provide practice using the exam format.</p>
+			
+		</div>
+		
+		<hr /><br />
+		
+	<% end %>
+	<% end %>
+	<% end %>
 	
 	<% if @user.max_practice_scenarios > 0 %>
-	
-	
-
 		<div>
 			<h3>
 				<span class="oswald" style="font-size: 1.8em;">NCMHCE Exam Scenarios</span>
@@ -457,7 +475,7 @@
 	
 <!-- –––––––––––––––––– downloads –––––––––––––––––– -->
 
-		<!-- <% if @user.nce_downloads || @user.ncmhce_downloads %>
+		<% if @user.nce_downloads || @user.ncmhce_downloads %>
 		<div>
 			<h3><span class="oswald" style="font-size: 1.8em;">Downloads</span></h3>
 			<br />
@@ -466,9 +484,9 @@
 			<thead>
 				<tr>
 					<th>Book</th>
-					<th class="hidden-phone">Format</th> -->
-					<!-- <th style="text-align: center;">Last Update</th> -->
-					<!-- <th class="hidden-phone"></th>
+					<th class="hidden-phone">Format</th>
+					<th style="text-align: center;">Last Update</th>
+					<th class="hidden-phone"></th>
 					<th></th>
 				</tr>
 			</thead>
@@ -484,18 +502,18 @@
 					</tr>
 					<tr>
 						<td>NCMHCE Study Supplement.pdf</td>
-						<td class="hidden-phone">Any device with a PDF Reader</td> -->
-						<!-- <td style="text-align: center;"><span class="badge badge-info"><small>5/26/2015</small></span></td> -->
-						<!-- <td class="hidden-phone"><small>1.8MB</small></td>
+						<td class="hidden-phone">Any device with a PDF Reader</td>
+						<td style="text-align: center;"><span class="badge badge-info"><small>5/26/2015</small></span></td>
+						<td class="hidden-phone"><small>1.8MB</small></td>
 						<% unless @user.expired? %>
 						<td style="text-align: right;"><a href="/downloads/ncmhce?file=NCMHCE%20Study%20Supplement.pdf">Download</a></td>
 						<% end %>
 					</tr>
 					<tr>
 						<td>NCMHCE Study Supplement.epub</td>
-						<td class="hidden-phone">iPhone/iPad, Android, eReaders</td> -->
-						<!-- <td style="text-align: center;"><span class="badge badge-info"><small>6/4/2015</small></span></td> -->
-						<!-- <td class="hidden-phone"><small>499KB</small></td>
+						<td class="hidden-phone">iPhone/iPad, Android, eReaders</td>
+						<td style="text-align: center;"><span class="badge badge-info"><small>6/4/2015</small></span></td> 
+						<td class="hidden-phone"><small>499KB</small></td>
 						<% unless @user.expired? %>
 						<td style="text-align: right;"><a href="/downloads/ncmhce?file=NCMHCE%20Study%20Supplement.epub">Download</a></td>
 						<% end %>
@@ -504,9 +522,9 @@
 						<td>NCMHCE Study Supplement.mobi</td>
 						<td class="hidden-phone">
 							<a href="#" class="top" rel="popover" title="Location of eBook on Kindle" data-content="Even if copied into the Books folder, this eBook might only be accessable from the Docs folder.">Kindle</a>
-						</td> -->
-						<!-- <td style="text-align: center;"><span class="badge badge-info"><small>6/19/2015</small></span></td> -->
-						<!-- <td class="hidden-phone"><small>2.2MB</small></td>
+						</td>
+						<td style="text-align: center;"><span class="badge badge-info"><small>6/19/2015</small></span></td>
+						<td class="hidden-phone"><small>2.2MB</small></td>
 						<% unless @user.expired? %>
 						<td style="text-align: right;"><a href="/downloads/ncmhce?file=NCMHCE%20Study%20Supplement.mobi">Download</a></td>
 						<% end %>
@@ -557,7 +575,7 @@
 		</table>
 
 		<hr /><br />
-	<% end %> -->
+	<% end %>
 	
 <!-- –––––––––––––––––– purchases –––––––––––––––––– -->
 
