@@ -87,7 +87,7 @@
 			<h3 class="section-header hidden-desktop">NCMHCE Tutorial Scenarios</h3>
 			<div class="stacked-buttons">	
 				<% if @user.max_scenarios < 36 %>
-					<a class="btn btn-success btn-small oswald stacked-each" href="/checkout/ncmhce-upgrade">Buy 12 more Tutorial Scenarios for $95</a>
+					<a class="btn btn-success btn-small oswald stacked-each" style="font-size: 1em;" href="/checkout/ncmhce-upgrade">Buy 12 more Tutorial Scenarios for $95</a>
 				<% end %>
 				<br class="visible-phone" />
 				<!-- <% if @user.max_practice_scenarios < 10 %>
@@ -113,7 +113,7 @@
 	 <p><strong>For access to all 47 scenarios</strong>, you have two weeks from your original purchase date to upgrade your <strong>Starter Package</strong> to our <strong>Full Package</strong> for the price difference of <strong>$154</strong>. <small>(Equals price of purchasing Full Package)</small></p>
  	<% @user.purchases.each do |purchase| %>
  		<% if @user.purchases.any? { |purchase| (purchase.package == "NCMHCE: Starter Package")  && ((purchase.created_at + 14) > Time.now.to_date) } %>
-	 <span style="float: right; margin-top: 5px;"><a class="btn btn-success btn-small" href="/checkout/second-chance-upgrade">Upgrade to Full Package now for $154</a></span>
+	 <span style="float: right; margin-top: 5px;"><a class="btn btn-success btn-small oswald" style="font-size: 1em;" href="/checkout/second-chance-upgrade">Upgrade to Full Package now for $154</a></span>
 	 <h2 class="oswald ceu-color" style="margin-bottom: -6px; font-size: 1.4em;">You have <%= ((purchase.created_at.to_date + 14) - Time.now.to_date).to_i %> days left.</h2>
 	 
  	<% end %>
@@ -202,7 +202,7 @@
 			<div class="stacked-buttons">	
 				<br class="visible-phone" />
 				<% if @user.max_practice_scenarios < 10 %>
-					<a class="btn btn-success btn-small oswald stacked-each" href="/checkout/ncmhce-exam-scenarios">Buy 10 Exam Scenarios for $40</a>
+					<a class="btn btn-success btn-small oswald stacked-each" style="font-size: 1em;" href="/checkout/ncmhce-exam-scenarios">Buy 10 Exam Scenarios for $40</a>
 				<% end %>
 			</div>
 			<h3>
@@ -307,7 +307,7 @@
 		<% unless @user.expired? %>
 		<% unless @user.purchases.any? { |purchase| purchase.options == "+ Hard Copy" } %>
 		<% unless @user.purchases.any? { |purchase| (purchase.package == "NCMHCE: Hard Copy") } %>
-			<p class="pull-right"><a class="btn btn-success btn-small oswald" style="font-size: 1.05em;" href="/checkout/ncmhce-hard-copy">Buy a hard copy for $40.65</a></p>
+			<p class="pull-right"><a class="btn btn-success btn-small oswald" style="font-size: 1em;" href="/checkout/ncmhce-hard-copy">Buy a hard copy for $40.65</a></p>
 		<% end %>
 		<% end %>
 		<% end %>
@@ -406,7 +406,7 @@
 	
 	<% unless @user.expired? %>
 	<% unless @user.purchases.any? { |purchase| purchase.options == "+ Hard Copy" } %>
-		<span style="float: right;"><a class="btn btn-success btn-small oswald" style=" font-size: 0.95em;" href="/checkout/nce-hard-copy">Buy a hard copy for $57.45</a></span>
+		<span style="float: right;"><a class="btn btn-success btn-small oswald" style=" font-size: 1em;" href="/checkout/nce-hard-copy">Buy a hard copy for $57.45</a></span>
 	<% end %>
 	<% end %>
 
