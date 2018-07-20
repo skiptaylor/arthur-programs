@@ -197,7 +197,7 @@
 	
 <!-- –––––––––––––––––– exam scenarios (practice) –––––––––––––––––– -->
 		
-	<% if (@user.max_practice_scenarios < 1) && (@user.max_scenarios < 13)  %>
+	<% if (@user.max_practice_scenarios < 1) && (@user.max_scenarios < 13) && (@user.max_scenarios > 1) %>
  	<% @user.purchases.each do |purchase| %>
  		<% unless @user.purchases.any? { |purchase| (purchase.package == "NCMHCE: Starter Package")  && ((purchase.created_at + 14) > Time.now.to_date) } %>
 		<div>
