@@ -32,7 +32,13 @@
 	   var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 	 })();
 	</script>
-	 <script src='https://www.google.com/recaptcha/api.js'></script>
+	 <script type="text/javascript">
+	       var onloadCallback = function() {
+	         grecaptcha.render('email-group', {
+	           'sitekey' : '6Lck-n4UAAAAAIb_PAKYTx-f4Nv5WhPvRKGc9dD2'
+	         });
+	       };
+	     </script>
 	
 
 	 <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
