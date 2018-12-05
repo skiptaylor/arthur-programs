@@ -197,28 +197,30 @@
 	
 <!-- –––––––––––––––––– exam scenarios (practice) –––––––––––––––––– -->
 		
-	<% if (@user.max_practice_scenarios < 1) && (@user.max_scenarios < 13) && (@user.max_scenarios > 1) %>
- 	<% @user.purchases.each do |purchase| %>
- 		<% unless @user.purchases.any? { |purchase| (purchase.package == "NCMHCE: Starter Package")  && ((purchase.created_at + 14) > Time.now.to_date) } %>
-		<div>
-			<div class="stacked-buttons">	
-				<br class="visible-phone" />
-				<% if @user.max_practice_scenarios < 10 %>
-					<a class="btn btn-success btn-small oswald stacked-each" style="font-size: 1em;" href="/checkout/ncmhce-exam-scenarios">Buy 10 Exam Scenarios for $40</a>
-				<% end %>
-			</div>
-			<h3>
-				<span class="oswald" style="font-size: 1.8em;">NCMHCE Exam Scenarios</span>
-			</h3>
-			<br />
-			<h4>Purchase 10 Exam Scenarios for $70.</h4>
-			<p>Exam Scenarios provide practice using the exam format.</p>
-			
+	<% if (@user.max_practice_scenarios < 1) %>
+	
+	<% unless @user.purchases.any? { |purchase| (purchase.package == "NCMHCE: Starter Package") && ((purchase.created_at + 14) > Time.now.to_date) } && @user.remaining_scenarios < 13 %>
+ 	
+	<div>
+		<h3 class="section-header hidden-desktop">NCMHCE Exam Scenarios</h3>
+		
+		
+		
+		<div class="stacked-buttons">	
+			<% if @user.max_practice_scenarios < 1 %>
+				<a class="btn btn-success btn-small oswald stacked-each" style="font-size: 1em;" href="/checkout/ncmhce-exam-scenarios">Buy 10 Exam Scenarios for $70</a>
+			<% end %>
 		</div>
 		
-		<hr /><br />
 		
-	<% end %>
+		
+		<h3 class="section-header visible-desktop">NCMHCE Exam Scenarios</h3>
+		<br />
+		<h4>Purchase 10 Exam Scenarios for $70.</h4>
+		<p>Exam Scenarios provide practice using the exam format.</p>
+		
+	</div>
+	<hr /><br />
 	<% end %>
 	<% end %>
 	

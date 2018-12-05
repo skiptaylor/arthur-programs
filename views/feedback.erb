@@ -16,13 +16,6 @@
 			<input type="text" class="input-xlarge" id="name" name="name" />
 		</div>
 	</div>
-	
-	<div class="control-group" id="base-group">
-		<label class="control-label" for="base">Base user</label>
-		<div class="controls">
-			<input type="text" class="input-xlarge" id="base" name="base" />
-		</div>
-	</div>
 		
 	<div class="control-group" id="email-group">
 		<label class="control-label" for="email">Email address</label>
@@ -52,11 +45,9 @@
 				
 	<div class="control-group">
 		<div class="controls">
-			<% if params[:base] == nil %>
+			
 			<input type="submit" class="btn btn-primary" value="Send" />
-			<% else %>
-			<input type="text" class="btn btn-primary" value="" />
-			<% end %>
+
 		</div>
 	</div>
 	
