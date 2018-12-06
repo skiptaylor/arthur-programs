@@ -8,72 +8,7 @@
 	</div>
 </div>
 
-
-		<form id="recaptcha-demo-form" method="POST">
-		<fieldset>
-			<legend>Sample Form with ReCAPTCHA</legend>
-			<ul>
-				<li>
-					<label for="input1">First Name</label>
-					<input class="" id="input1" name="input1" type="text" disabled aria-disabled="true">
-				</li>
-				
-				<li>
-					<label for="input3">Email</label>
-					<input class="" id="input3" name="input3" type="text" disabled aria-disabled="true">
-				</li>
-				
-				<li>
-					<div class="recaptcha-error"><!-- BEGIN: ReCAPTCHA implementation example. -->
-						<div id="recaptcha-demo" class="g-recaptcha" data-sitekey="6Lck-n4UAAAAAIb_PAKYTx-f4Nv5WhPvRKGc9dD2" data-callback="onSuccess">
-							
-						</div>
-						
-						<script>
-                      var onSuccess = function(response) {
-                        var errorDivs = document.getElementsByClassName("recaptcha-error");
-                        if (errorDivs.length) {
-                          errorDivs[0].className = "";
-                        }
-                        var errorMsgs = document.getElementsByClassName("recaptcha-error-message");
-                        if (errorMsgs.length) {
-                          errorMsgs[0].parentNode.removeChild(errorMsgs[0]);
-                        }
-                       };
-							</script>
-								
-								<!-- Optional noscript fallback. -->
-								<noscript>
-									<div style="width: 302px; height: 462px;">
-										<iframe src="/recaptcha/api/fallback?k=6Lck-n4UAAAAAIb_PAKYTx-f4Nv5WhPvRKGc9dD2" frameborder="0" scrolling="no">
-											
-										</iframe>
-										
-										<div>
-											<textarea id="g-recaptcha-response" name="g-recaptcha-response" class="g-recaptcha-response"></textarea>
-										</div>
-									</div>
-									<br>
-								</noscript>
-								
-								<!-- END: ReCAPTCHA implementation example. -->
-								
-								<div class="recaptcha-error-message">Please verify that you are not a robot.</div>
-							</div>
-						</li>
-						<li>
-							<input id="recaptcha-demo-submit" type="submit" value="Submit"/>
-						</li>
-					</ul>
-				</fieldset>
-			
-			</form>
-		</div>
-		
-		
-		
-
-<!-- <form class="form-horizontal" method="post">
+<form class="form-horizontal" method="post">
 
 	<div class="control-group" id="name-group">
 		<label class="control-label" for="name">Names</label>
@@ -95,7 +30,7 @@
 			<select id="subject" name="subject">
 				<option value="Counselor Exams feedback: I have a question">I have a question</option>
 				<!-- <option value="Counselor Exams feedback: Help, I'm stuck!">Help, I'm stuck!</option> -->
-				<!-- <option value="Counselor Exams feedback: I have a comment">I have a comment</option>
+				<option value="Counselor Exams feedback: I have a comment">I have a comment</option>
 				<option value="Counselor Exams feedback: Testimonial">Testimonial</option>
 			</select>
 		</div>
@@ -110,13 +45,24 @@
 
 	<div class="control-group">
 		<div class="controls">
-			<div class="g-recaptcha" data-sitekey="6Lck-n4UAAAAAIb_PAKYTx-f4Nv5WhPvRKGc9dD2"></div>
+			<div class="g-recaptcha" data-sitekey="6Lck-n4UAAAAAIb_PAKYTx-f4Nv5WhPvRKGc9dD2" data-callback="enableBtn"></div>
 			<br />
 
-			<input type="submit" class="btn btn-primary" value="Send" />
+			<input type="submit" id="submit" class="btn btn-primary" value="Submit" />
 
 		</div>
+		<textarea id="g-recaptcha-response" name="g-recaptcha-response" class="g-recaptcha-response"></textarea>
 	</div>
 
-</form> --> -->
+</form>
 
+
+
+<script>
+	
+	document.getElementById("submit").disabled = true;
+	function enableBtn(){
+	    document.getElementById("submit").disabled = false;
+	   }
+ 
+</script>
