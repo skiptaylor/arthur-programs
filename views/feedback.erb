@@ -16,6 +16,13 @@
 			<input type="text" class="input-xlarge" id="name" name="name" />
 		</div>
 	</div>
+	
+	<div class="control-group" id="name_email">
+		<label class="control-label" for="email">Email name</label>
+		<div class="controls">
+			<input type="text" class="input-xlarge" id="name_email" name="name_email" />
+		</div>
+	</div>
 
 	<div class="control-group" id="email-group">
 		<label class="control-label" for="email">Email address</label>
@@ -47,11 +54,10 @@
 		<div class="controls">
 			<div class="g-recaptcha" data-sitekey="6Lck-n4UAAAAAIb_PAKYTx-f4Nv5WhPvRKGc9dD2" data-callback="enableBtn"></div>
 			<br />
-
-			<input type="submit" id="submit" class="btn btn-primary" value="Submit" />
-
+			<% unless params[:name_email] == "" %>
+			<input type="submit" id="submit" class="btn btn-primary"  value="Submit" />
+			<% end %>
 		</div>
-		<textarea id="g-recaptcha-response" name="g-recaptcha-response" class="g-recaptcha-response"></textarea>
 	</div>
 
 </form>
@@ -59,10 +65,10 @@
 
 
 <script>
-	
+
 	document.getElementById("submit").disabled = true;
 	function enableBtn(){
 	    document.getElementById("submit").disabled = false;
 	   }
- 
+
 </script>
